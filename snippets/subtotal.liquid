@@ -1,0 +1,226 @@
+{%- if inside_sidebar == true -%}
+  <div
+    class='subtotal'
+    id='Sidebar-cart-subtotal'
+  >
+    {%- if settings.show_cart_order_note -%}
+      <accordeon-component
+        class='subtotal__accordeon-plus accordeon-plus accordeon-plus--top-bordered'
+        data-aria-expanded='false'
+        {{ block.shopify_attributes }}
+      >
+        <accordeon-btn class='accordeon-plus__btn subtotal__accordeon-plus-btn' tabindex='0'>
+          {{ 'general.subtotal.add_order_notes_button' | t }}
+          {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+        </accordeon-btn>
+        <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+          <div class='subtotal__accordeon-content accordeon-plus__content' data-accordeon-content>
+            <div class='subtotal__note'>
+              <textarea
+                class='textarea subtotal__tax-note-textarea'
+                name='note'
+                id='Cart-note'
+                form='Cart-form'
+                placeholder='{{ 'general.subtotal.placeholder_for_textarea_for_order_note' | t }}'
+              >{{ cart.note }}</textarea>
+            </div>
+          </div>
+        </div>
+      </accordeon-component>
+    {%- endif -%}
+
+    <div class='subtotal__content-wrap'>
+      <div class='subtotal__content'>
+        <div>
+          {%- if cart.cart_level_discount_applications.size > 0 -%}
+            <div class='subtotal__subtotals'>
+              <div class='subtotal__subtotals-item'>
+                <span class='subtotal__subtotals-item-name'>
+                  {{- 'general.subtotal.label_for_subtotal_price_html' | t: count: cart.item_count -}}
+                </span>
+                <span class='subtotal__subtotals-item-amount'>
+                  {{- cart.original_total_price | money_with_currency -}}
+                </span>
+              </div>
+              {%- for discount in cart.cart_level_discount_applications -%}
+                <div class='subtotal__subtotals-item'>
+                  <span class='subtotal__subtotals-item-name'>
+                    {{ discount.title }}
+                  </span>
+                  <span class='subtotal__subtotals-item-amount'
+                    >-{{ discount.total_allocated_amount | money_with_currency -}}
+                  </span>
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          <h6 class='subtotal__totals {% if cart.cart_level_discount_applications.size > 0 %} subtotal__totals--with-top-spacing{% endif %} {% if settings.show_taxes_and_shipping_costs_label %} subtotal__totals--with-bottom-spacing{% endif %}'>
+            <div class='subtotal__label'>{{ 'general.subtotal.label_for_total_price' | t }}</div>
+            <div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div>
+          </h6>
+          {%- if settings.show_taxes_and_shipping_costs_label -%}
+            <div class='subtotal__tax-note'>
+              {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- elsif cart.taxes_included -%}
+                {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
+              {%- elsif shop.shipping_policy.body != blank -%}
+                {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+              {%- else -%}
+                {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+        <div class='subtotal__cta' {{ block.shopify_attributes }}>
+          {%- if settings.cart_type != 'drawer_only' -%}
+            <a
+              class='btn btn--outline btn--lg subtotal__btn subtotal__cart-link'
+              href='{{ routes.cart_url }}'
+              aria-label='Cart'
+            >
+              {{- 'general.subtotal.text_for_go_to_cart_button' | t -}}
+            </a>
+          {%- endif -%}
+          <button
+            type='submit'
+            id='checkout'
+            class='subtotal__btn btn btn--solid btn--lg'
+            name='checkout'
+            {% if cart == empty %}
+              disabled
+            {% endif %}
+            form='Cart-form'
+            data-cart-checkout-button
+            aria-label='{{ 'general.subtotal.text_for_checkout_button' | t }}'
+          >
+            <span data-button-text>{{ 'general.subtotal.text_for_checkout_button' | t }}</span>
+
+            {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  <div class='subtotal subtotal--outside-sidebar '>
+    {%- if settings.show_cart_order_note -%}
+      <accordeon-component
+        class='subtotal__accordeon-plus accordeon-plus accordeon-plus--top-bordered'
+        data-aria-expanded='false'
+        {{ block.shopify_attributes }}
+      >
+        <accordeon-btn class='accordeon-plus__btn subtotal__accordeon-plus-btn' tabindex='0'>
+          {{ 'general.subtotal.add_order_notes_button' | t }}
+          {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+        </accordeon-btn>
+        <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+          <div class='subtotal__accordeon-content accordeon-plus__content' data-accordeon-content>
+            <div class='subtotal__note'>
+              <textarea
+                class='textarea subtotal__tax-note-textarea'
+                name='note'
+                id='Cart-note'
+                form='Cart-form'
+                placeholder='{{ 'general.subtotal.placeholder_for_textarea_for_order_note' | t }}'
+              >{{ cart.note }}</textarea>
+            </div>
+          </div>
+        </div>
+      </accordeon-component>
+    {%- endif -%}
+
+    <div class='subtotal__content-wrap' data-cart-page-subtotal>
+      <div class='subtotal__content'>
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'subtotal' %}
+              <div data-cart-page-subtotal-price>
+                {%- if cart.cart_level_discount_applications.size > 0 -%}
+                  <div class='subtotal__subtotals'>
+                    <div class='subtotal__subtotals-item'>
+                      <span class='subtotal__subtotals-item-name'>
+                        {{- 'general.subtotal.label_for_subtotal_price_html' | t: count: cart.item_count -}}
+                      </span>
+                      <span class='subtotal__subtotals-item-amount'>
+                        {{- cart.original_total_price | money_with_currency -}}
+                      </span>
+                    </div>
+                    {%- for discount in cart.cart_level_discount_applications -%}
+                      <div class='subtotal__subtotals-item'>
+                        <span class='subtotal__subtotals-item-name'>
+                          {{ discount.title }}
+                        </span>
+                        <span class='subtotal__subtotals-item-amount'
+                          >-{{ discount.total_allocated_amount | money_with_currency -}}
+                        </span>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+                <h6 class='subtotal__totals {% if cart.cart_level_discount_applications.size > 0 %} subtotal__totals--with-top-spacing{% endif %} {% if settings.show_taxes_and_shipping_costs_label %} subtotal__totals--with-bottom-spacing{% endif %}'>
+                  <div class='subtotal__label'>{{ 'general.subtotal.label_for_total_price' | t }}</div>
+                  <div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div>
+                </h6>
+                {%- if settings.show_taxes_and_shipping_costs_label -%}
+                  <div class='subtotal__tax-note'>
+                    {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                      {{
+                        'general.subtotal.taxes_included_and_shipping_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- elsif cart.taxes_included -%}
+                      {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
+                    {%- elsif shop.shipping_policy.body != blank -%}
+                      {{
+                        'general.subtotal.taxes_and_shipping_policy_at_checkout_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- else -%}
+                      {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {% when 'buttons' %}
+              <div class='subtotal__cta' {{ block.shopify_attributes }}>
+                {%- if settings.cart_type != 'drawer_only' -%}
+                  <a
+                    class='btn btn--outline btn--lg subtotal__btn subtotal__cart-link'
+                    href='{{ routes.cart_url }}'
+                    aria-label='Cart'
+                  >
+                    {{- 'general.subtotal.text_for_go_to_cart_button' | t -}}
+                  </a>
+                {%- endif -%}
+                <button
+                  type='submit'
+                  id='checkout'
+                  class='subtotal__btn btn btn--solid btn--lg'
+                  name='checkout'
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form='Cart-form'
+                  data-cart-page-checkout-button
+                  aria-label='{{ 'general.subtotal.text_for_checkout_button' | t }}'
+                >
+                  <span data-button-text>{{ 'general.subtotal.text_for_checkout_button' | t }}</span>
+
+                  {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+                </button>
+
+                {%- if additional_checkout_buttons -%}
+                  <div class='dynamic-checkout-buttons dynamic-checkout-buttons--cart-page'>
+                    {{ content_for_additional_checkout_buttons }}
+                  </div>
+                {%- endif -%}
+              </div>
+            {% when '@app' %}
+              {% render block %}
+          {% endcase %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,84 @@
+{%- liquid
+  assign options = block.settings
+
+  assign img_ratio = options.img_ratio
+  assign columns = options.columns
+  assign add_spacing = options.add_spacing
+  assign enable_autoplay = options.enable_autoplay
+  assign autoplay_interval = options.autoplay_interval
+
+  assign placeholder_count = columns | times: 2
+  assign products = blank
+  assign product_limit = columns | times: 3
+
+  assign product_card_align = options.product_card_align
+  assign product_card_with_bottom_spacing = true
+
+  if options.featured_products != blank
+    assign products = options.featured_products
+  elsif options.collection != blank
+    assign products = options.collection.products
+  else
+    assign products = (1..placeholder_count)
+  endif
+
+  if add_spacing
+    assign product_card_with_bottom_spacing = false
+  endif
+
+  assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
+-%}
+
+<div
+  class='{{ class }} mega-menu__block mega-menu__block--featured-collection block-{{ block.id }} {% if add_spacing %}mega-menu__block--spaced{% endif %}'
+  block-id='{{ block.id }}'
+  data-drawer-menu-block-id='{{ block.settings.mega_nav_item_name | downcase }}'
+  {{ block.shopify_attributes }}
+>
+  <carousel-component
+    class='card-carousel'
+    data-section-id='{{ section.id }}'
+    {% if enable_autoplay == true %}
+      data-autoplay-interval='{{ autoplay_interval }}'
+    {% endif %}
+  >
+    <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--prev'>
+      <div class='shape shape--{{ img_ratio }}'>
+        <carousel-btn
+          class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
+          data-scroll-direction='prev'
+          tabindex='0'
+        >
+          {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
+        </carousel-btn>
+      </div>
+    </div>
+    <div class='card-carousel__viewport embla' data-carousel-viewport>
+      <div class='card-carousel__container' data-carousel-container>
+        {%- for product in products limit: product_limit -%}
+          <div class='card-carousel__slide'>
+            {%- render 'product-card',
+              product: product,
+              show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+              color_swatch_variables: color_swatch_variables,
+              img_ratio: img_ratio,
+              product_card_align: product_card_align,
+              with_bottom_spacing: product_card_with_bottom_spacing
+            -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--next'>
+      <div class='shape shape--{{ img_ratio }}'>
+        <carousel-btn
+          class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
+          data-scroll-direction='next'
+          tabindex='0'
+        >
+          {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+        </carousel-btn>
+      </div>
+    </div>
+  </carousel-component>
+</div>

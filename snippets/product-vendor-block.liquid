@@ -1,0 +1,10 @@
+<div class='product-general-info-block' {{ block.shopify_attributes }}>
+  <a class='unstyled-link product-general-info-block__vendor' href="/collections/all?filter.p.vendor={{ product.vendor }}">
+    {%- if product != blank -%}
+      {{ product.vendor }}
+    {%- else -%}
+      {{ 'products.product.default_vendor' | t }}
+    {%- endif -%}
+  </a>
+</div>
+ 

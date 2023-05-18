@@ -1,0 +1,287 @@
+{%- liquid
+  assign default_colors = 'black,silver,gray,whitesmoke,maroon,red,purple,fuchsia,green,lime,olivedrab,yellow,navy,blue,teal,aquamarine,orange,aliceblue,antiquewhite,aqua,azure,beige,bisque,blanchedalmond,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,darkblue,darkcyan,darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,gainsboro,ghostwhite,goldenrod,gold,greenyellow,grey,honeydew,hotpink,indianred,indigo,ivory,khaki,lavenderblush,lavender,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgreen,lightgrey,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,limegreen,linen,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,oldlace,olive,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,rosybrown,royalblue,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,thistle,tomato,turquoise,violet,wheat,white,yellowgreen,rebeccapurple' | split: ','
+  assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
+  assign enable_darken_mode = settings.enable_product_darken_background
+
+  assign color_option = blank
+  assign prepared_color_option_names = settings.color_swatch_option_name_variants | newline_to_br | split: '<br />'
+
+  for option_name in prepared_color_option_names
+    if product.options_by_name[option_name] != blank
+      assign color_option = product.options_by_name[option_name]
+
+      break
+    endif
+  endfor
+
+  assign color_option_position = 'option' | append: color_option.position
+
+  assign current_color_scheme = 'default'
+  assign target_color_scheme = section.settings.color_scheme
+
+  assign block_option_name_downcase = block.settings.option_name | downcase
+  assign information_drawer_button_label = block.settings.information_drawer_button_label
+
+  if section.settings.color_scheme == 'default'
+    assign target_color_scheme = settings.default_color_scheme
+  endif
+
+  case target_color_scheme
+    when 'primary'
+      assign current_color_scheme = 'primary'
+    when 'secondary'
+      assign current_color_scheme = 'secondary'
+    when 'custom-1'
+      assign current_color_scheme = 'custom_1'
+    when 'custom-2'
+      assign current_color_scheme = 'custom_2'
+    when 'custom-3'
+      assign current_color_scheme = 'custom_3'
+  endcase
+
+  assign key = current_color_scheme | append: '_background_color'
+  assign section_background_color = settings[key] | downcase
+-%}
+
+{% if color_option_picker_type contains 'button' %}
+  <div class='product-variant-picker__option-label'>
+    {{ option.name }}
+
+    {%- assign option_name_downcase = option.name | downcase -%}
+
+    {%- if block_option_name_downcase == option_name_downcase -%}
+      <sidebar-button>
+        <button
+          data-sidebar-button
+          data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
+          class='unstyled-button product-variant-picker__popup-toggle'
+        >
+          <span>{{ information_drawer_button_label }}</span>
+        </button>
+      </sidebar-button>
+    {%- endif -%}
+  </div>
+  <div class='product-variant-picker__pill-list'>
+    {%- for value in option.values -%}
+      <label
+        for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+        class='pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if color_option_picker_type == 'button-outline' %}pill--outline{% endif %} {% if color_option_picker_type == 'button-solid' %}pill--solid{% endif %}'
+        {% if option.selected_value == value %}
+          tabindex='0'
+        {% endif %}
+      >
+        {{ value }}
+      </label>
+    {%- endfor -%}
+  </div>
+{% elsif color_option_picker_type contains 'dropdown' %}
+  <div class='product-variant-picker__option-label'>
+    {{ option.name }}
+
+    {%- assign option_name_downcase = option.name | downcase -%}
+
+    {%- if block_option_name_downcase == option_name_downcase -%}
+      <sidebar-button>
+        <button
+          data-sidebar-button
+          data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
+          class='unstyled-button product-variant-picker__popup-toggle'
+        >
+          <span>{{ information_drawer_button_label }}</span>
+        </button>
+      </sidebar-button>
+    {%- endif -%}
+  </div>
+  <dropdown-opener
+    class='dropdown__toggle dropdown__toggle--large {% if color_option_picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}'
+    data-aria-expanded='false'
+    data-float-element-id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+    data-trigger='click'
+    tabindex='0'
+  >
+    <div class='dropdown__toggle-label' data-dropdown-variant-picker-label>
+      {{ option.selected_value }}
+    </div>
+    {%- render 'icon', icon_name: 'chevron', class: 'dropdown__chevron' -%}
+  </dropdown-opener>
+  <float-element
+    class='dropdown'
+    aria-hidden='true'
+    id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+    data-placement='bottom-start'
+    data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
+  >
+    <template>
+      <div>
+        {%- for value in option.values -%}
+          <label
+            class='dropdown__item {% if option.selected_value == value %} selected {% endif %}'
+            for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+            {% if option.selected_value == value %}
+              tabindex='0'
+            {% endif %}
+            data-focus-trap-target
+          >
+            {{ value }}
+          </label>
+        {%- endfor -%}
+      </div>
+    </template>
+  </float-element>
+{% else %}
+  <color-swatches-picker>
+    <div class='product-variant-picker__option-label'>
+      {{ option.name }}
+
+      <span class='truncate product-variant-picker__option-active-color' data-color-swatches-picker-active-value>
+        {{- option.selected_value -}}
+      </span>
+
+      {%- assign option_name_downcase = option.name | downcase -%}
+
+      {%- if block_option_name_downcase == option_name_downcase -%}
+        <sidebar-button>
+          <button
+            data-sidebar-button
+            data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
+            class='unstyled-button product-variant-picker__popup-toggle'
+          >
+            <span>{{ information_drawer_button_label }}</span>
+          </button>
+        </sidebar-button>
+      {%- endif -%}
+    </div>
+    <div class='{%- if color_option_picker_type == 'circles' or color_option_picker_type == 'squares' -%} product-variant-picker__pill-list {% else %} product-variant-picker__image-list {% endif %}'>
+      {%- for value in option.values -%}
+        {%- liquid
+          assign color_downcase = value | downcase | strip
+
+          assign is_valid_color = false
+          assign is_image = false
+          assign is_image_url = false
+          assign selected_color_value = color_downcase
+
+          if color_option_picker_type contains 'images'
+            assign variant = product.variants | where: color_option_position, value | first
+          endif
+
+          if color_option_picker_type == 'circles' or color_option_picker_type == 'squares'
+            if default_colors contains color_downcase
+              assign is_valid_color = true
+            endif
+
+            for color_swatch_variable in color_swatch_variables
+              assign color_swatch_variable_config = color_swatch_variable | split: '::'
+              assign color_swatch_variable_label = color_swatch_variable_config[0]
+              assign color_swatch_variable_value = color_swatch_variable_config[1]
+
+              assign color_swatch_variable_label_downcase = color_swatch_variable_label | downcase | strip
+
+              if color_swatch_variable_label_downcase == color_downcase
+                assign is_valid_color = true
+                assign selected_color_value = color_swatch_variable_value
+
+                if color_swatch_variable_value contains 'http'
+                  assign is_image_url = true
+                elsif color_swatch_variable_value contains '.png' or color_swatch_variable_value contains '.jp'
+                  assign is_image = true
+                endif
+              endif
+            endfor
+          endif
+
+          assign hex_color = color_downcase | color_to_hex
+        -%}
+
+        <div>
+          {%- if color_option_picker_type == 'circles' or color_option_picker_type == 'squares' -%}
+            <label
+              for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+              class='color-swatch-select-parent {% if option.selected_value == value %} selected {% endif %}'
+              {% if option.selected_value == value %}
+                tabindex='0'
+              {% endif %}
+              data-focus-trap-target
+              data-color-swatches-picker-label
+              data-value='{{ value }}'
+            >
+              {%- if color_option_picker_type == 'circles' -%}
+                <div class='color-swatch color-swatch--large color-swatch--circle color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'>
+                  <div class='color-swatch__body'>
+                    {%- if is_valid_color -%}
+                      <div
+                        class='color-swatch__body-inner'
+                        style='--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};'
+                      >
+                        <div class='color-swatch__no-available-mark'>
+                          <div class='color-swatch__line'></div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      {% render 'icon-color-circle-placeholder',
+                        class: 'color-swatch__body-inner color-swatch__body-inner--placeholder'
+                      %}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- else -%}
+                <div class='color-swatch color-swatch--large color-swatch--square color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'>
+                  <div class='color-swatch__body'>
+                    {%- if is_valid_color -%}
+                      <div
+                        class='color-swatch__body-inner'
+                        style='--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};'
+                      >
+                        <div class='color-swatch__no-available-mark'>
+                          <div class='color-swatch__line'></div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      {% render 'icon-color-square-placeholder',
+                        class: 'color-swatch__body-inner color-swatch__body-inner--placeholder'
+                      %}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </label>
+          {% else %}
+            <label
+              for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+              class='product-color-swatch__image shape {% if color_option_picker_type == 'variant_images_portrait' %} shape--portrait{% elsif color_option_picker_type == 'variant_images_square' %} shape--square{% endif %} {% if option.selected_value == value %} selected {% endif %}'
+              {% if option.selected_value == value %}
+                tabindex='0'
+              {% endif %}
+              data-focus-trap-target
+              data-color-swatches-picker-label
+              data-value='{{ value }}'
+            >
+              {%- if variant.image.src != blank -%}
+                <div class='product-color-swatch__image-body {% if enable_darken_mode %}multiply-mode{% endif %}'>
+                  <img
+                    src='{{ variant.image | image_url: width: 128 }}'
+                    class='image {% if enable_darken_mode %}multiply-mode__target{% endif %}'
+                    width='64'
+                    height='64'
+                    alt='{{ variant.image.alt }}'
+                    loading='lazy'
+                    data-sizes='auto'
+                    data-aspectratio='{{ variant.image.aspect_ratio }}'
+                  >
+                </div>
+
+                <div class='product-color-swatch__image-no-available-marker'></div>
+              {%- else -%}
+                <div
+                  class='product-color-swatch__image-body product-color-swatch__image-body--placeholder {% if enable_darken_mode %}multiply-mode{% endif %}'
+                >
+                  {% render 'icon-color-image-placeholder' %}
+                </div>
+              {%- endif -%}
+            </label>
+          {% endif %}
+        </div>
+      {%- endfor -%}
+    </div>
+  </color-swatches-picker>
+{% endif %}

@@ -1,0 +1,11 @@
+{%- if product != blank -%}
+  <a
+    class='link'
+    href='{{ product.url }}'
+    aria-label='{{ 'products.product.view_full_details' | t }}'
+    {{ block.shopify_attributes }}
+  >
+    <span class='link__text'>{{ 'products.product.view_full_details' | t }}</span>
+    {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+  </a>
+{%- endif -%}

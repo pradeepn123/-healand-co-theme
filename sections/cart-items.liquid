@@ -1,0 +1,113 @@
+{%- liquid
+  assign options = section.settings
+  assign color_scheme = options.color_scheme
+  assign container_size = options.container_size
+  assign img_ratio = options.img_ratio
+-%}
+
+<div class='section color-{{ color_scheme }}' id='CartPage-CartItemsSection'>
+  <div class='container container--{{ container_size }}'>
+    <cart-component class='cart {% if cart == empty %} is-empty{% endif %}' id='cart-page-component'>
+      {%- if settings.cart_free_shipping_bar_visible -%}
+        <div class='cart__cart-free-shipping-bar' data-cart-page-free-shipping-bar>
+          {% render 'cart-free-shipping-bar', inside_sidebar: false %}
+        </div>
+      {%- endif -%}
+
+      {% render 'cart-placeholder' %}
+
+      <div data-cart-page-items>
+        {% render 'cart-items', inside_sidebar: false, section: section, img_ratio: img_ratio %}
+      </div>
+    </cart-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.cart_items.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        }
+      ],
+      "default": "large",
+      "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "select",
+      "id": "img_ratio",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.img_ratio_option_default_label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.general_section_settings.img_ratio_option_square_label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.general_section_settings.img_ratio_option_portrait_label"
+        },
+        {
+          "value": "portrait-xl",
+          "label": "t:sections.general_section_settings.img_ratio_option_portrait_xl_label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.general_section_settings.img_ratio_option_landscape_label"
+        }
+      ],
+      "default": "portrait-xl",
+      "label": "t:sections.general_section_settings.img_ratio_label"
+    }
+  ]
+}
+{% endschema %}

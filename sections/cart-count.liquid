@@ -1,0 +1,7 @@
+<div id='CartCount'>
+  {%- if cart != empty -%}
+    <div class='cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}'>
+      <span aria-hidden='true'>{{ cart.item_count }}</span>
+    </div>
+  {%- endif -%}
+</div>

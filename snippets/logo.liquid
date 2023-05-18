@@ -1,0 +1,29 @@
+{%- if image != blank -%}
+  <a
+    class='unstyled-link {{ class }}'
+    href='{{ routes.root_url }}'
+    aria-label='{{ 'general.logo.aria_label_for_logo_link' | t }}'
+  >
+    <img
+      loading='lazy'
+      src='{{ image | image_url: width: 160 }}'
+      alt='{{ image.alt | default: shop.name }}'
+      class='logo-img lazyload'
+      width='{{ image.width }}'
+      height='{{ image.height }}'
+      style='object-position: {{ image.presentation.focal_point }};'
+      data-aspectratio='{{ image.aspect_ratio }}'
+      data-srcset='{%- render 'srcset-for-image', image: image -%}'
+      data-sizes='auto'
+      {{ attrs }}
+    >
+  </a>
+{%- elsif logo_text != blank -%}
+  <a
+    class='logo-text {{ class }}'
+    href='{{ routes.root_url }}'
+    aria-label='{{ 'general.logo.aria_label_for_logo_link' | t }}'
+  >
+    {{- shop.name -}}
+  </a>
+{%- endif -%}

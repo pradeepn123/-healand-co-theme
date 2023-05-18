@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "split_image_banner": {
+      "type": "split-image-banner",
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 880,
+        "image_proportion": 0,
+        "content_wrapper_width": 50,
+        "caption": "SPLIT IMAGE BANNER",
+        "title": "Two images with text in between",
+        "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+        "heading_size": "h2",
+        "body_size": "body3",
+        "content_max_width": 468,
+        "desktop_content_align": "left",
+        "mobile_content_align": "center",
+        "btn_text": "Button label",
+        "btn_url": "",
+        "btn_style": "solid",
+        "extra_btn_text": "Button label",
+        "extra_btn_url": "",
+        "extra_btn_style": "solid"
+      }
+    },
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": true
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "xsmall",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "title": "Contact us",
+        "text": "Fill in the text to remind customers to fill in the form correctly so that your support team could contact them to help with the issues and answer all the questions.",
+        "heading_size": "h5",
+        "body_size": "body3",
+        "text_align": "center",
+        "input_style": "solid",
+        "show_phone": false,
+        "show_captcha": true
+      }
+    }
+  },
+  "order": [
+    "split_image_banner",
+    "page",
+    "contact-form"
+  ]
+}

@@ -1,0 +1,104 @@
+{% liquid
+  assign product_card_with_bottom_spacing = false
+  if settings.edge_rounding_degree != 'none'
+    assign product_card_with_bottom_spacing = true
+  endif
+%}
+
+<carousel-component
+  class='card-carousel collection__card-carousel {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{% endif %} {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}'
+  data-section-id='{{ section.id }}'
+  {% if enable_autoplay == true %}
+    data-autoplay-interval='{{ autoplay_interval }}'
+  {% endif %}
+>
+  <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--prev'>
+    <div class='shape shape--{{ img_ratio }}'>
+      <carousel-btn
+        class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
+        data-scroll-direction='prev'
+        tabindex='0'
+      >
+        {% render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' %}
+      </carousel-btn>
+    </div>
+  </div>
+  <div
+    class='card-carousel__viewport embla {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}'
+    data-carousel-viewport
+  >
+    <div class='card-carousel__container' data-carousel-container>
+      {% if featured_products != blank %}
+        {%- for product in featured_products limit: product_limit -%}
+          <div class='card-carousel__slide'>
+            {%- render 'product-card',
+              product: product,
+              show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+              color_swatch_variables: color_swatch_variables,
+              img_ratio: img_ratio,
+              product_card_align: product_card_align,
+              with_bottom_spacing: product_card_with_bottom_spacing
+            -%}
+          </div>
+        {%- endfor -%}
+      {% elsif featured_collection != blank %}
+        {%- for product in featured_collection.products limit: product_limit -%}
+          <div class='card-carousel__slide'>
+            {%- render 'product-card',
+              product: product,
+              show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+              color_swatch_variables: color_swatch_variables,
+              img_ratio: img_ratio,
+              product_card_align: product_card_align,
+              with_bottom_spacing: product_card_with_bottom_spacing
+            -%}
+          </div>
+        {%- endfor -%}
+        <div class='card-carousel__slide collection__collection-card-slide'>
+          {%- render 'collection-card',
+            title: featured_collection.title,
+            img: featured_collection.image,
+            img_ratio: img_ratio,
+            collection: featured_collection,
+            text_style: 'over-image',
+            show_product_count: true,
+            link_text: 'View all collection',
+            link_url: featured_collection.url
+          -%}
+        </div>
+      {% else %}
+        {%- for product in prepared_collection_placeholder limit: product_limit -%}
+          <div class='card-carousel__slide'>
+            {%- render 'product-card',
+              product: product,
+              show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+              color_swatch_variables: color_swatch_variables,
+              img_ratio: img_ratio,
+              product_card_align: product_card_align,
+              with_bottom_spacing: product_card_with_bottom_spacing
+            -%}
+          </div>
+        {%- endfor -%}
+      {% endif %}
+    </div>
+  </div>
+  <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--next'>
+    <div class='shape shape--{{ img_ratio }}'>
+      <carousel-btn
+        class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
+        data-scroll-direction='next'
+        tabindex='0'
+      >
+        {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+      </carousel-btn>
+    </div>
+  </div>
+  {%- if section_layout == 'carousel-overflow' -%}
+    <carousel-progress
+      class='progress-bar progress-bar--with-background card-carousel__progress-bar'
+      data-target='scroll'
+    >
+      <div class='progress-bar__indicator' data-carousel-progress-indicator></div>
+    </carousel-progress>
+  {%- endif -%}
+</carousel-component>

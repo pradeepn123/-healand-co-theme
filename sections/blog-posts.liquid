@@ -1,0 +1,357 @@
+{%- liquid
+  assign options = section.settings
+  assign section_spacing_top = options.section_spacing_top
+  assign section_spacing_bottom = options.section_spacing_bottom
+  assign color_scheme = options.color_scheme
+  assign desktop_columns = options.desktop_columns
+  assign img_ratio = options.img_ratio | times: 100
+  assign show_tags = options.show_tags
+  assign show_author = options.show_author
+  assign show_date = options.show_date
+  assign show_comment_count = options.show_comment_count
+  assign show_subheading = options.show_subheading
+  assign show_read_more = options.show_read_more
+  assign heading_alignment = options.heading_alignment
+  assign blog = options.blog
+  assign title = options.title
+  assign articles = blog.articles
+  assign desktop_space_between_cards = options.desktop_space_between_cards | times: 0.1
+  assign mobile_space_between_cards = options.mobile_space_between_cards | times: 0.1
+  assign heading_size = options.heading_size
+
+  assign container_size = options.container_size
+
+  assign enable_carousel_on_mobile = options.enable_carousel_on_mobile
+
+  if color_scheme == 'default'
+    assign color_scheme = settings.default_color_scheme
+  endif
+
+  if blog == empty
+    assign placeholder_count = desktop_columns | times: 2
+    assign articles = (1..placeholder_count)
+  endif
+-%}
+
+{% capture css %}
+  {% style %}
+    .section-{{ section.id }} {
+        --gsc-columns: 1;
+        --gsc-space-between-cards: {{mobile_space_between_cards}}rem;
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+    }
+
+    .section-{{section.id}} .article-card {
+      --gsc-img-ratio: {{ img_ratio }}%;
+    }
+
+    @media {% render 'media-queries', screen: 'md' %} {
+        .section-{{ section.id }}{
+            --gsc-columns: {{desktop_columns}};
+            --gsc-space-between-cards: {{desktop_space_between_cards}}rem;
+        }
+    }
+  {% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+
+<div class='articles section articles--section {% if enable_carousel_on_mobile %}articles--with-mobile-carousel{% endif %} section-{{ section.id }} color-{{ color_scheme }}'>
+  <div class='container container--{{ container_size }} section-spacing'>
+    {%- if title != blank -%}
+      <div class='articles__header {% if heading_alignment == 'center' %} articles__header--center-alignment {% endif %}'>
+        <h5 class='articles__title {{ heading_size }}'>
+          {{ title }}
+        </h5>
+      </div>
+    {%- endif -%}
+    {%- if articles.size > 0 -%}
+      <div class='card-grid articles__card-grid'>
+        {%- for article in articles limit: desktop_columns -%}
+          {%- render 'article-card',
+            class: 'card-grid__item',
+            with_bottom_spacing: true,
+            article: article,
+            img_ratio: 'nature',
+            show_read_more: show_read_more,
+            show_subheading: show_subheading,
+            show_comment_count: show_comment_count,
+            show_date: show_date,
+            show_author: show_author,
+            show_tags: show_tags
+          -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    {%- if enable_carousel_on_mobile and articles.size > 0 -%}
+      <carousel-component class='card-carousel articles__card-carousel' data-section-id='{{ section.id }}'>
+        <div class='card-carousel__viewport embla' data-carousel-viewport>
+          <div class='card-carousel__container' data-carousel-container>
+            {%- for article in articles limit: desktop_columns -%}
+              <div class='card-carousel__slide'>
+                {%- render 'article-card',
+                  article: article,
+                  img_ratio: 'nature',
+                  show_read_more: show_read_more,
+                  show_subheading: show_subheading,
+                  show_comment_count: show_comment_count,
+                  show_date: show_date,
+                  show_author: show_author,
+                  show_tags: show_tags
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </carousel-component>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.blog_posts.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.general_section_settings.container_size.small_width_option"
+        }
+      ],
+      "default": "large",
+      "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 48,
+      "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+      "label": "t:sections.general_section_settings.section_spacing_top.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 48,
+      "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+      "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.blog_posts.blog_settings_header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Blog posts",
+      "label": "t:sections.blog_posts.title_label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+      "options": [
+        {
+          "value": "h0",
+          "label": "t:sections.general_section_settings.heading_size_0_option"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.general_section_settings.heading_size_1_option"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.general_section_settings.heading_size_2_option"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.general_section_settings.heading_size_3_option"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.general_section_settings.heading_size_4_option"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.general_section_settings.heading_size_5_option"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.general_section_settings.heading_size_6_option"
+        },
+        {
+          "value": "h7",
+          "label": "t:sections.general_section_settings.heading_size_7_option"
+        }
+      ],
+      "default": "h5"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.general_section_settings.heading_alignment_label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.general_section_settings.alignment_option_left_label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.general_section_settings.alignment_option_center_label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.blog_posts.blog_label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.blog_posts.posts_settings_header"
+    },
+    {
+      "type": "range",
+      "id": "img_ratio",
+      "min": 0.5,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 0.6,
+      "unit": "t:sections.general_section_settings.img_ratio_unit",
+      "label": "t:sections.general_section_settings.img_ratio_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "default": true,
+      "label": "t:sections.blog_posts.show_tags_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "t:sections.blog_posts.show_author_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.blog_posts.show_date_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comment_count",
+      "default": true,
+      "label": "t:sections.blog_posts.show_comment_count_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subheading",
+      "default": true,
+      "label": "t:sections.blog_posts.show_subheading_label",
+      "info": "t:sections.blog_posts.show_subheading_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_read_more",
+      "default": true,
+      "label": "t:sections.blog_posts.show_read_more_label"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 2,
+      "label": "t:sections.blog_posts.desktop_columns_label"
+    },
+    {
+      "type": "range",
+      "id": "desktop_space_between_cards",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 16,
+      "unit": "t:sections.blog_posts.desktop_space_between_cards_unit",
+      "label": "t:sections.blog_posts.desktop_space_between_cards_label"
+    },
+    {
+      "type": "range",
+      "id": "mobile_space_between_cards",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 16,
+      "unit": "t:sections.blog_posts.mobile_space_between_cards_unit",
+      "label": "t:sections.blog_posts.mobile_space_between_cards_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_carousel_on_mobile",
+      "default": false,
+      "label": "t:sections.blog_posts.enable_carousel_on_mobile_label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog_posts.name"
+    }
+  ]
+}
+{% endschema %}

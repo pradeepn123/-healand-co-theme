@@ -1,0 +1,69 @@
+<div class='card-grid collection__card-grid'>
+  {% if featured_products != blank %}
+    {%- for product in featured_products limit: product_limit -%}
+      {% render 'product-card',
+        class: 'card-grid__item',
+        product: product,
+        show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+        color_swatch_variables: color_swatch_variables,
+        with_bottom_spacing: true,
+        show_mobile_carousel: true,
+        img_ratio: img_ratio,
+        product_card_align: product_card_align
+      %}
+    {%- endfor -%}
+  {% elsif featured_collection != blank %}
+    {%- for product in featured_collection.products limit: product_limit -%}
+      {% render 'product-card',
+        class: 'card-grid__item',
+        product: product,
+        show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+        color_swatch_variables: color_swatch_variables,
+        with_bottom_spacing: true,
+        show_mobile_carousel: true,
+        img_ratio: img_ratio,
+        product_card_align: product_card_align
+      %}
+    {%- endfor -%}
+    {%- render 'collection-card',
+      class: 'card-grid__item collection__collection-card',
+      title: featured_collection.title,
+      img: featured_collection.image,
+      img_ratio: img_ratio,
+      collection: featured_collection,
+      text_style: 'over-image',
+      show_product_count: true,
+      link_text: 'View all collection',
+      link_url: featured_collection.url
+    -%}
+  {% else %}
+    {%- for product in prepared_collection_placeholder limit: product_limit -%}
+      {% render 'product-card',
+        class: 'card-grid__item',
+        product: product,
+        show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+        color_swatch_variables: color_swatch_variables,
+        with_bottom_spacing: true,
+        show_mobile_carousel: true,
+        img_ratio: img_ratio,
+        product_card_align: product_card_align
+      %}
+    {%- endfor -%}
+  {% endif %}
+</div>
+
+{% if enable_carousel_on_mobile %}
+  {% render 'featured-collection-carousel',
+    featured_products: featured_products,
+    featured_collection: featured_collection,
+    enable_autoplay: enable_autoplay,
+    autoplay_interval: autoplay_interval,
+    img_ratio: img_ratio,
+    section_layout: section_layout,
+    product_limit: product_limit,
+    color_swatch_variables: color_swatch_variables,
+    product_card_align: product_card_align,
+    prepared_collection_placeholder: prepared_collection_placeholder,
+    show_navigation_on_hover: show_navigation_on_hover
+  %}
+{% endif %}

@@ -1,0 +1,91 @@
+<share-component class='share'>
+  <dropdown-opener
+    class='share__btn {{ btn_class }}'
+    data-float-element-id='{{ id }}'
+    data-aria-expanded='false'
+    data-trigger='click'
+    tabindex='0'
+  >
+    {%- render 'icon-pack', icon: 'share-button' -%}
+    {{ 'general.share.button_label' | t }}
+  </dropdown-opener>
+
+  <float-element
+    class='float-element share-dropdown {{ class }}'
+    aria-hidden='true'
+    id='{{ id }}'
+    data-placement='bottom-start'
+    data-main-axis-offset='10'
+    {{ block.shopify_attributes }}
+  >
+    <template>
+      <div class='share-dropdown__list'>
+        <a
+          href='https://www.facebook.com/sharer.php?u={{ value_to_copy }}'
+          class='share-dropdown__item'
+          target='_blank'
+          rel='noopener'
+          aria-label='Facebook'
+        >
+          {% render 'icon', icon_name: 'facebook', class: 'share-dropdown__item-icon' %}
+          {{ 'general.share.facebook_label' | t }}
+        </a>
+        <a
+          href='https://twitter.com/share?text={{ value_to_copy }}'
+          class='share-dropdown__item'
+          target='_blank'
+          rel='noopener'
+          aria-label='Twitter'
+        >
+          {% render 'icon', icon_name: 'twitter', class: 'share-dropdown__item-icon' %}
+          {{ 'general.share.twitter_label' | t }}
+        </a>
+        <a
+          href='https://www.instagram.com/?url={{ value_to_copy }}'
+          class='share-dropdown__item'
+          target='_blank'
+          rel='noopener'
+          aria-label='Instagram'
+        >
+          {% render 'icon', icon_name: 'instagram', type: 'solid', class: 'share-dropdown__item-icon' %}
+          {{ 'general.share.instagram_label' | t }}
+        </a>
+        <a
+          href='https://pinterest.com/pin/create/button/?url={{ value_to_copy }}'
+          class='share-dropdown__item'
+          target='_blank'
+          rel='noopener'
+          aria-label='Pinterest'
+        >
+          {% render 'icon', icon_name: 'pinterest', class: 'share-dropdown__item-icon' %}
+          {{ 'general.share.pinterest_label' | t }}
+        </a>
+        <clipboard-button-tooltip
+          class='tooltip share__copied-status-tooltip'
+          aria-hidden='true'
+          id='ShareCopiedStatus-{{ id }}'
+          data-placement='top'
+        >
+          <template>
+            <div>
+              <div class='tooltip__body'>
+                <div class='tooltip__arrow' data-float-element-arrow></div>
+                {{ 'sections.gift_card.copied' | t }}
+              </div>
+            </div>
+          </template>
+        </clipboard-button-tooltip>
+        <clipboard-button
+          data-value='{{ value_to_copy }}'
+          class='share-dropdown__item'
+          data-tooltip-id='ShareCopiedStatus-{{ id }}'
+          data-clipboard-button-tooltip-target-id='ShareCopiedStatus-{{ id }}'
+          tabindex='0'
+        >
+          {% render 'icon', icon_name: 'clipboard', class: 'share-dropdown__item-icon' %}
+          {{ 'general.share.base_label' | t }}
+        </clipboard-button>
+      </div>
+    </template>
+  </float-element>
+</share-component>

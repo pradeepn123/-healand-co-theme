@@ -1,0 +1,87 @@
+{%- liquid
+  assign options = section.settings
+  assign color_scheme = options.color_scheme
+  assign container_size = options.container_size
+-%}
+
+<div class='section color-{{ color_scheme }} {% if cart == empty %} is-empty{% endif %}' id='CartPage-SubtotalSection'>
+  <div class='container container--{{ container_size }} subtotal__container'>
+    {%- render 'subtotal', inside_sidebar: false -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.subtotal.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        }
+      ],
+      "default": "large",
+      "label": "t:sections.general_section_settings.container_size.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "subtotal",
+      "name": "t:sections.subtotal.subtotal_block_name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.subtotal.buttons_block_name",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

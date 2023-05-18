@@ -1,0 +1,21 @@
+<div class='product-general-info-block' {{ block.shopify_attributes }}>
+  {%- if sectionId contains 'MainSection' -%}
+    <h1 class='{{ block.settings.heading_size }}'>
+      {%- if product != blank -%}
+        {{ product.title }}
+      {%- else -%}
+        {{ 'products.product.default_title' | t }}
+      {%- endif -%}
+    </h1>
+  {%- else -%}
+    <a class="unstyled-link" href='{{ product.url }}'>
+      <h1 class='{{ block.settings.heading_size }}'>
+        {%- if product != blank -%}
+          {{ product.title }}
+        {%- else -%}
+          {{ 'products.product.default_title' | t }}
+        {%- endif -%}
+      </h1>
+    </a>
+  {%- endif -%}
+</div>

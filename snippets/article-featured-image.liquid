@@ -1,0 +1,30 @@
+{% assign image = article.image %}
+{% assign img_ratio = block.settings.img_ratio | times: 100 %}
+
+{% capture css %}
+  {% style %}
+    .block-{{ block.id }} {
+        --gsc-img-ratio: {{ img_ratio }}%;
+    }
+  {% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+
+{% if article.image != blank %}
+  <div class='container container--medium block-{{ block.id }}' {{ block.shopify_attributes }}>
+    <div class='article__image-wrap shape shape--nature'>
+      <img
+        loading='lazy'
+        src='{{ image | image_url: width: 160 }}'
+        alt='{{ image.alt }}'
+        width='{{ image.width }}'
+        height='{{ image.height }}'
+        class='image article__image lazyload'
+        data-aspectratio='{{ image.aspect_ratio }}'
+        data-srcset='{%- render 'srcset-for-image', image: image -%}'
+        data-sizes='auto'
+      >
+    </div>
+  </div>
+{% endif %}

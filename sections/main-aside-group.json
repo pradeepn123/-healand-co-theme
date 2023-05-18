@@ -1,0 +1,20 @@
+{
+  "type": "aside",
+  "name": "Aside Group",
+  "sections": {
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+      }
+    },
+    "search-sidebar": {
+      "type": "search-sidebar",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "cart-drawer",
+    "search-sidebar"
+  ]
+}

@@ -1,0 +1,73 @@
+{%- liquid
+  assign featured_media = product.featured_media
+  assign product_media = product.media | default: (1..6)
+-%}
+
+<product-media
+  class='product-media-grid {% if block_layout == 'two-column' and product_media.size > 1 %} product-media-grid--two-column {% endif %}'
+  data-section='{{ sectionId }}'
+  id='product-media-{{ product.id }}-{{ sectionId }}'
+>
+  {%- if product.media != blank -%}
+    {%- if featured_media != null -%}
+      <div
+        class='shape shape--{{ img_ratio }} product-media-grid__item'
+        data-media-id='{{ featured_media.id }}'
+        {% if featured_media.media_type == 'image' and enable_image_zoom %}
+          data-zoom-cursor-target
+        {% endif %}
+      >
+        {% render 'product-media',
+          product: product,
+          enable_image_zoom: enable_image_zoom,
+          enable_video_autoplay: enable_video_autoplay,
+          media: featured_media,
+          modal_media_id: featured_media.id,
+          enable_video_looping: enable_video_looping,
+          sectionId: sectionId
+        %}
+      </div>
+    {%- endif -%}
+    {%- for media in product_media -%}
+      {%- if media.id != featured_media.id or media.id == blank -%}
+        <div
+          class='shape shape--{{ img_ratio }} product-media-grid__item'
+          data-media-id='{{ media.id }}'
+          {% if media.media_type == 'image' and enable_image_zoom %}
+            data-zoom-cursor-target
+          {% endif %}
+        >
+          {% render 'product-media',
+            product: product,
+            enable_image_zoom: enable_image_zoom,
+            enable_video_autoplay: enable_video_autoplay,
+            media: media,
+            modal_media_id: media.id,
+            enable_video_looping: enable_video_looping,
+            sectionId: sectionId
+          %}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- for media in product_media -%}
+      <div
+        class='shape shape--{{ img_ratio }} product-media-grid__item'
+        data-media-id='{{ forloop.index }}'
+        {% if enable_image_zoom %}
+          data-zoom-cursor-target
+        {% endif %}
+      >
+        {% render 'product-media',
+          product: product,
+          enable_image_zoom: enable_image_zoom,
+          enable_video_autoplay: enable_video_autoplay,
+          media: media,
+          modal_media_id: forloop.index,
+          enable_video_looping: enable_video_looping,
+          sectionId: sectionId
+        %}
+      </div>
+    {%- endfor -%}
+  {%- endif -%}
+</product-media>

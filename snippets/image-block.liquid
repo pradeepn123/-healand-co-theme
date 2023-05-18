@@ -1,0 +1,53 @@
+<div class='image-block link-parent-for-hover zoom-parent-for-hover {{ class }}'>
+  <div class='shape shape--{{ img_ratio }}'>
+    <div class='overlay'></div>
+    {%- if video != blank -%}
+      {% render 'video-with-alt', video: video, class: 'image image-block__image zoom' %}
+    {%- elsif image != blank -%}
+      <img
+        class='image image-block__image zoom lazyload'
+        loading='lazy'
+        src='{{ image | image_url: width: 160 }}'
+        alt='{{ image.alt }}'
+        width='{{image.width}}'
+        height='{{image.height}}'
+        style='object-position: {{ image.presentation.focal_point }};'
+        data-aspectratio='{{ image.aspect_ratio }}'
+        data-srcset='{%- render 'srcset-for-image', image: image -%}'
+        data-sizes='auto'
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'image placeholder-image image-block__image zoom' }}
+    {%- endif -%}
+    {%- if caption != blank or title != blank or text != blank or link_text != blank -%}
+      <div class='image-block__content-wrap'>
+        <div class='image-block__content'>
+          {%- if caption != blank -%}
+            <div class='caption image-block__caption'>{{ caption }}</div>
+          {%- endif -%}
+          {%- if title != blank -%}
+            <h6 class='image-block__title {{ heading_size }}'>{{ title }}</h6>
+          {%- endif -%}
+          {%- if text != blank -%}
+            <div class='rte {{ body_size }} body-font-weight-from-global-settings'>{{ text }}</div>
+          {%- endif -%}
+          {%- if link_text != blank -%}
+            <a
+              class='link {% if enable_vertical_text %}link--vertical{% endif %}'
+              href='{% if link != blank %}{{ link }}{% else %}#{% endif %}'
+              aria-label='{{ link_text }}'
+            >
+              <span class='link__text'>{{ link_text }}</span>
+              {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+  <a
+    href='{% if link != blank %}{{ link }}{% else %}#{% endif %}'
+    class='unstyled-link image-block__image-link'
+    aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link.title != blank %}{{ link.title }}{% else %}#{% endif %}'
+  ></a>
+</div>

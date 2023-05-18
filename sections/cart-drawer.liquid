@@ -1,0 +1,174 @@
+{%- liquid
+  assign options = section.settings
+  assign color_scheme = options.color_scheme
+  assign img_ratio = options.img_ratio
+-%}
+
+{%- if settings.cart_type == 'drawer_and_page' or settings.cart_type == 'drawer_only' -%}
+  {%- unless template.name contains 'cart' -%}
+    <sidebar-cart
+      class='sidebar-cart color-{{ color_scheme }}'
+      id='sidebar-component-for-cart'
+      data-with-overlay
+      data-with-close-on-outside
+      data-with-close-on-escape
+      data-overlay-important
+      data-sidebar-section
+      data-section-id='{{ section.id }}'
+      data-open-direction='right'
+      tabindex='-1'
+      {% if cart == empty %}
+        is-empty
+      {% endif %}
+    >
+      <template id='CartInSidebar'>
+        <div class='sidebar-cart__body' data-sidebar-content>
+          <div class='sidebar-cart__header-wrap' data-sidebar-cart-header>
+            <div class='sidebar-cart__header'>
+              <div class='sidebar-cart__header-title'>
+                {{ 'general.sidebar_cart.title' | t }}
+                &nbsp;
+                {%- if cart.item_count > 0 -%}
+                  <span class='sidebar-cart__header-product-count'>
+                    {{- 'general.sidebar_cart.title_count' | t: count: cart.item_count -}}
+                  </span>
+                {%- endif -%}
+              </div>
+
+              <sidebar-button>
+                <button
+                  data-sidebar-button
+                  data-sidebar-id='sidebar-component-for-cart'
+                  class='unstyled-button sidebar-cart__close-button-wrapper close-button-with-scale-hover-wrapper'
+                  tabindex='0'
+                  aria-label='Close'
+                >
+                  <span class='close-button-with-scale-hover sidebar-cart__close-button'></span>
+                </button>
+              </sidebar-button>
+            </div>
+          </div>
+          <div class='sidebar-cart__content' data-sidebar-cart-viewport>
+            <div class='sidebar-cart__content-results' data-sidebar-cart-results>
+              <div class='sidebar-cart__warning' data-sidebar-cart-warning>
+                <h1 class='sidebar-cart__warning-title h6'>{{ 'general.empty_cart_page.title' | t }}</h1>
+              </div>
+              {%- if settings.cart_free_shipping_bar_visible -%}
+                <div class='sidebar-cart__cart-free-shipping-bar' data-sidebar-cart-free-shipping-bar>
+                  {% render 'cart-free-shipping-bar', inside_sidebar: true %}
+                </div>
+              {%- endif -%}
+              <div class='sidebar-cart__cart-items' data-sidebar-cart-items>
+                {%- render 'cart-items', inside_sidebar: true, section: section, img_ratio: img_ratio -%}
+              </div>
+            </div>
+          </div>
+          <div class='sidebar-cart__footer' data-sidebar-cart-footer>
+            <div class='sidebar-cart__subtotal-wrapper'>
+              <notification-component class='notification sidebar-cart__notification' id='SidebarCartNotification'>
+                <div class='notification__overlay'></div>
+                <div class='notification__body'>
+                  <div
+                    class='alert notification__alert'
+                    role='alert'
+                    data-notification-alert
+                  >
+                    {%- render 'icon', icon_name: 'error', class: 'alert__icon' -%}
+                    <div class='alert__text' data-notification-alert-text></div>
+                    <div class='alert__close-icon-wrapper' data-notification-close-button>
+                      {%- render 'icon', icon_name: 'notification-close', class: 'alert__close-icon' -%}
+                    </div>
+                  </div>
+                </div>
+              </notification-component>
+              {%- render 'subtotal', inside_sidebar: true -%}
+            </div>
+            <sidebar-button class='sidebar-cart__warning-button-wrapper'>
+              <button
+                data-sidebar-button
+                data-sidebar-id='sidebar-component-for-cart'
+                class='btn btn--lg btn--solid sidebar-cart__warning-button'
+                aria-label='{{ 'general.sidebar_cart.continue_shopping' | t }}'
+              >
+                {{ 'general.sidebar_cart.continue_shopping' | t }}
+              </button>
+            </sidebar-button>
+          </div>
+        </div>
+      </template>
+    </sidebar-cart>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.cart_drawer.name",
+  "tag": "aside",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Make the drawer section active or inactive in Theme settings > Cart"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "select",
+      "id": "img_ratio",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.img_ratio_option_default_label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.general_section_settings.img_ratio_option_square_label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.general_section_settings.img_ratio_option_portrait_label"
+        },
+        {
+          "value": "portrait-xl",
+          "label": "t:sections.general_section_settings.img_ratio_option_portrait_xl_label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.general_section_settings.img_ratio_option_landscape_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.img_ratio_label"
+    }
+  ]
+}
+{% endschema %}

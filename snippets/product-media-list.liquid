@@ -1,0 +1,115 @@
+{%- liquid
+  assign block_layout = section.settings.layout
+  assign img_ratio = section.settings.img_ratio
+  assign enable_image_zoom = section.settings.enable_image_zoom
+  assign enable_video_autoplay = section.settings.enable_video_autoplay
+  assign enable_video_looping = section.settings.enable_video_looping
+  assign product_media = product.media | default: (1..12)
+
+  assign show_part_of_next_slide = section.settings.show_part_of_next_slide
+  if product_media.size == 1
+    assign show_part_of_next_slide = false
+  endif
+-%}
+
+<div class='product-desktop-media'>
+  {%- liquid
+    if block_layout contains 'thumbnails' and product_media.size > 1
+      render 'product-media-carousel', product: product, block: block, block_layout: block_layout, section: section, sectionId: sectionId
+    else
+      render 'product-media-grid', product: product, block: block, block_layout: block_layout, img_ratio: img_ratio, enable_image_zoom: enable_image_zoom, enable_video_autoplay: enable_video_autoplay, enable_video_looping: enable_video_looping, sectionId: sectionId
+    endif
+  -%}
+</div>
+
+<div class='product-mobile-media {% if show_part_of_next_slide %} product-mobile-media--with-half-next-slide{% endif %}'>
+  <product-media-carousel data-section='{{ sectionId }}' id='product-media-{{ product.id }}-{{ sectionId }}'>
+    <carousel-component
+      class='carousel product-mobile-media__carousel '
+      data-section-id='{{ sectionId }}'
+      data-product-media-carousel-component
+      tabindex='-1'
+    >
+      <div class='carousel__viewport embla product-mobile-media__carousel-viewport' data-carousel-viewport>
+        <div class='carousel__container' data-carousel-container>
+          {%- if product.media != blank -%}
+            {%- for media in product_media -%}
+              {%- if forloop.index0 == 0 -%}
+                {% assign is_first_media = true %}
+              {%- else -%}
+                {%- assign is_first_media = false -%}
+              {%- endif -%}
+
+              <div class='carousel__slide product-mobile-media__carousel-slide' data-media-id='{{ media.id }}'>
+                <div class='shape shape--{{ img_ratio }}'>
+                  {%- render 'product-media',
+                    product: product,
+                    is_first_media: is_first_media,
+                    enable_image_zoom: enable_image_zoom,
+                    enable_video_autoplay: enable_video_autoplay,
+                    media: media,
+                    modal_media_id: media.id,
+                    enable_video_looping: enable_video_looping,
+                    sectionId: sectionId
+                  -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for media in product_media -%}
+              <div class='carousel__slide product-mobile-media__carousel-slide' data-media-id='{{ forloop.index }}'>
+                <div class='shape shape--{{ img_ratio }}'>
+                  {%- render 'product-media',
+                    product: product,
+                    enable_image_zoom: enable_image_zoom,
+                    enable_video_autoplay: enable_video_autoplay,
+                    media: media,
+                    modal_media_id: forloop.index,
+                    enable_video_looping: enable_video_looping,
+                    sectionId: sectionId
+                  -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+      {% if show_part_of_next_slide != true and product_media.size > 1 %}
+        <carousel-dots
+          class='dots-carousel product-mobile-media__dots-carousel'
+          data-contain-scroll='keepSnaps'
+          data-align='center'
+        >
+          <div class='dots-carousel__viewport embla' data-carousel-viewport>
+            <div class='dots-carousel__container' data-carousel-container>
+              {%- for media in product_media -%}
+                <carousel-dot
+                  class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
+                  tabindex='0'
+                >
+                  <div class='dots-carousel__slide-body'>
+                    <div class='dots-carousel__slide-inner-circle'></div>
+                    <div
+                      class='dots-carousel__loader'
+                      size='medium'
+                      variant='dark'
+                      data-autoplay-indicator
+                      style='--gsc-autoplay-interval: {{ autoplay_interval }}s;'
+                    >
+                      {% render 'icon',
+                        icon_name: 'circle',
+                        background_class: 'dots-carousel__loader-background',
+                        border_class: 'dots-carousel__loader-border',
+                        circle_class: 'dots-carousel__loader-circle'
+                      %}
+                    </div>
+                  </div>
+                </carousel-dot>
+              {%- endfor -%}
+            </div>
+          </div>
+        </carousel-dots>
+      {% endif %}
+    </carousel-component>
+  </product-media-carousel>
+</div>

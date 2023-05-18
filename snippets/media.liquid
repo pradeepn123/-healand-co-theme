@@ -1,0 +1,34 @@
+{%- liquid
+  assign placeholder_type = placeholder_type | default: 'lifestyle-2'
+-%}
+
+<div class='media {{ class }}'>
+  {%- if with_overlay -%}
+    <div class='overlay'></div>
+  {%- endif -%}
+
+  {%- if video != blank -%}
+    {% render 'video-with-alt', video: video, class: 'image media__image' %}
+  {%- elsif image != blank -%}
+    <img
+      class='image media__image lazyload'
+      loading='lazy'
+      src='{{ image | image_url: width: 160 }}'
+      alt='{{ image.alt }}'
+      width='{{image.width}}'
+      height='{{image.height}}'
+      data-parent-fit='cover'
+      style='object-position: {{ image.presentation.focal_point }};'
+      data-aspectratio='{{ image.aspect_ratio }}'
+      data-sizes='auto'
+      data-srcset='{%- render 'srcset-for-image', image: image -%}'
+    >
+  {%- endif -%}
+
+  {%- if image == blank and video == blank -%}
+    {{
+      placeholder_type
+      | placeholder_svg_tag: 'placeholder-image placeholder-image--with-content image media__image media__image-placeholder'
+    }}
+  {%- endif -%}
+</div>

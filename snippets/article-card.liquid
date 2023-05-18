@@ -1,0 +1,93 @@
+{%- liquid
+  assign img = article.image
+  assign title = article.title
+  assign content = article.excerpt_or_content | strip_html | truncatewords: 30
+  assign author = article.author
+  assign date = article.published_at
+  assign comments_count = article.comments_count
+
+  if article.title == blank
+    assign title = 'cards.article_card.default_title' | t
+  endif
+  if article.excerpt_or_content == blank
+    assign content = 'cards.article_card.default_content' | t
+  endif
+  if article.author == blank
+    assign author = 'cards.article_card.default_author' | t
+  endif
+  if article.published_at == blank
+    assign date = '11/03/2020'
+  endif
+  if article.comments_count == blank
+    assign comments_count = 0
+  endif
+-%}
+<div class='article-card link-parent-for-hover zoom-parent-for-hover {{ class }}'>
+  <a
+    class='article-card__link'
+    href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
+    aria-label='{{- 'cards.article_card.aria_label_for_link' | t: article_title: article.title -}}'
+  ></a>
+  <div class='shape shape--{{ img_ratio }} article-card__image-wrapper'>
+    {%- if img != blank -%}
+      <img
+        class='article-card__image zoom lazyload'
+        loading='lazy'
+        src='{{ img | image_url: width: 160 }}'
+        alt='{{ img.alt }}'
+        width='{{ img.width }}'
+        height='{{ img.height }}'
+        data-aspectratio='{{ img.aspect_ratio }}'
+        data-srcset='{%- render 'srcset-for-image', image: img -%}'
+        data-sizes='auto'
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'article-card__image placeholder-image zoom' }}
+    {%- endif -%}
+    {%- if show_tags and article.tags.size > 0 -%}
+      <div class='article-card__tags {% if settings.edge_rounding_degree == 'extra' %} article-card__tags--with-extra-rounded-tags{% endif %}'>
+        {%- for tag in article.tags -%}
+          <div class='article-card__tag'>
+            {{- tag -}}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+  <div class='article-card__details {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}'>
+    {%- if show_author or show_date or show_comment_count -%}
+      <div class='article-card__meta'>
+        {%- if show_author -%}
+          <span class='article-card__meta-item'>{{- author -}}</span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class='article-card__meta-item'>{{- date | date: format: 'abbreviated_date' -}}</span>
+        {%- endif -%}
+        {%- if show_comment_count -%}
+          <span class='article-card__meta-item'>
+            {{- 'cards.article_card.comments_count' | t: count: comments_count -}}
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if title != blank -%}
+      <h6 class='article-card__title'>
+        {{- title -}}
+      </h6>
+    {%- endif -%}
+    {%- if show_subheading and content != blank -%}
+      <div class='article-card__description body-font-weight-from-global-settings'>
+        {{- content -}}
+      </div>
+    {%- endif -%}
+    {%- if show_read_more -%}
+      <a
+        class='link article-card__read-more-link'
+        href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
+      >
+        <span class='link__text'>{{ 'cards.article_card.read_more_link' | t }}</span>
+        {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
