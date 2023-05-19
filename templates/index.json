@@ -19,7 +19,7 @@
             "desktop_content_position": "align-items:center;justify-content:flex-start;",
             "desktop_content_align": "left",
             "content_max_width": 528,
-            "content_spacing": 116,
+            "content_spacing": 0,
             "mobile_content_position": "align-items:flex-end;justify-content:center;",
             "mobile_content_align": "center",
             "desktop_content_background": "none",
