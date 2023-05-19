@@ -201,7 +201,7 @@
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
-            "desktop_rows": 3,
+            "desktop_rows": 2,
             "collection": "",
             "heading_size": "h6",
             "show_product_count": true,
@@ -215,7 +215,7 @@
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
-            "desktop_rows": 2,
+            "desktop_rows": 1,
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
