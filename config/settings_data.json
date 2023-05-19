@@ -57,6 +57,7 @@
     "img_hover": "show-secondary-media",
     "product_color_swatches_style": "none",
     "show_product_color_swatches_on_hover": true,
+    "show_quick_view": false,
     "desktop_button_style": "with_labels",
     "show_button_on_hover": true,
     "product_sale_badge_variant": "variant_1",
