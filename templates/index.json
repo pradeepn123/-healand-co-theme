@@ -6,7 +6,7 @@
         "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6": {
           "type": "image-banner",
           "settings": {
-            "color_scheme": "white",
+            "color_scheme": "primary",
             "desktop_img": "shopify:\/\/shop_images\/banner.png",
             "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
             "desktop_overlay_opacity": 20,
