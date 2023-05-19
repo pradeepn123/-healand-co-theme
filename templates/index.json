@@ -201,7 +201,7 @@
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
-            "desktop_rows": 2,
+            "desktop_rows": 3,
             "collection": "",
             "heading_size": "h6",
             "show_product_count": true,
@@ -215,7 +215,7 @@
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
-            "desktop_rows": 1,
+            "desktop_rows": 2,
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
@@ -232,7 +232,7 @@
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
-            "desktop_rows": 2,
+            "desktop_rows": 1,
             "collection": "",
             "heading_size": "h6",
             "show_product_count": true,
@@ -243,6 +243,7 @@
         },
         "template--16729789989105__bf9cb432-647e-4d8a-95e9-e0e83242d93a-1681819567e3686a56-3": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "color_scheme": "white",
             "desktop_columns": 2,
@@ -285,11 +286,11 @@
       "type": "collection-text",
       "settings": {
         "color_scheme": "default",
-        "container_size": "large",
+        "container_size": "page-width",
         "section_spacing_top": 64,
         "section_spacing_bottom": 64,
         "content_position": "left",
-        "collection": "",
+        "collection": "homepage-ca",
         "icon": "none",
         "caption": "COLLECTION WITH TEXT",
         "title": "Carousel of products",
@@ -712,6 +713,30 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "f948ea12-44af-4e7a-80cc-e5ed1492059d": {
+      "type": "blog-posts",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "title": "Blog posts",
+        "heading_size": "h5",
+        "heading_alignment": "center",
+        "blog": "",
+        "img_ratio": 0.6,
+        "show_tags": true,
+        "show_author": true,
+        "show_date": true,
+        "show_comment_count": true,
+        "show_subheading": true,
+        "show_read_more": true,
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false
+      }
     }
   },
   "order": [
@@ -727,6 +752,7 @@
     "73d14667-7990-4c4e-b25e-4bcc5aa291bb",
     "3224340c-15c1-440c-87fc-f21257311663",
     "dd10bcbe-6b5f-450d-ade6-fd728dbc9b00",
-    "53d67819-721d-46dc-889c-50c5eafb46fc"
+    "53d67819-721d-46dc-889c-50c5eafb46fc",
+    "f948ea12-44af-4e7a-80cc-e5ed1492059d"
   ]
 }
