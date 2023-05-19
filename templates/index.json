@@ -100,13 +100,43 @@
             "extra_btn_url": "",
             "extra_btn_style": "solid"
           }
+        },
+        "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6": {
+          "type": "image-banner",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_img": "shopify:\/\/shop_images\/banner.png",
+            "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
+            "desktop_overlay_opacity": 20,
+            "mobile_overlay_opacity": 20,
+            "caption": "",
+            "title": "Unlock the benefits of nature",
+            "text": "<p>Our supplements are made with pure, potent ingredients to help you feel your best from the inside out.<\/p>",
+            "heading_size": "h3",
+            "body_size": "body3",
+            "desktop_content_position": "align-items:center;justify-content:flex-start;",
+            "desktop_content_align": "left",
+            "content_max_width": 528,
+            "content_spacing": 116,
+            "mobile_content_position": "align-items:flex-end;justify-content:center;",
+            "mobile_content_align": "center",
+            "desktop_content_background": "none",
+            "mobile_content_background": "none",
+            "btn_text": "UNLOCK",
+            "btn_url": "",
+            "btn_style": "solid",
+            "extra_btn_text": "",
+            "extra_btn_url": "",
+            "extra_btn_style": "solid"
+          }
         }
       },
       "block_order": [
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-2",
-        "26ebac8c-4c8a-4e8c-bf1f-615a97d2f78b"
+        "26ebac8c-4c8a-4e8c-bf1f-615a97d2f78b",
+        "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6"
       ],
       "settings": {
         "color_scheme": "default",

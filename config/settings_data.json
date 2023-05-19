@@ -74,6 +74,8 @@
     "product_card_custom_badge_2_bg": "#5d54a3",
     "cart_type": "drawer_and_page",
     "show_sticky_cart": true,
+    "cart_status_background_color": "#dbff00",
+    "cart_status_text_color": "#383930",
     "cart_free_shipping_bar_visible": true,
     "cart_free_shipping_bar_threshold": 300,
     "back_to_top_button_position": "bottom-left",
@@ -125,9 +127,7 @@
     },
     "content_for_index": [
 
-    ],
-    "cart_status_background_color": "#dbff00",
-    "cart_status_text_color": "#383930"
+    ]
   },
   "presets": {
     "Pure": {
