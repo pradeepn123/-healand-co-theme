@@ -5,6 +5,7 @@
       "blocks": {
         "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "color_scheme": "custom-2",
             "desktop_img": "shopify:\/\/shop_images\/banner.png",
@@ -31,10 +32,33 @@
             "extra_btn_url": "",
             "extra_btn_style": "solid"
           }
+        },
+        "1bfc3be6-daa1-4f38-afe5-eab8e8dcfc3f": {
+          "type": "split-image-banner",
+          "settings": {
+            "color_scheme": "custom-2",
+            "image_proportion": 50,
+            "content_wrapper_width": 30,
+            "caption": "SPLIT IMAGE SLIDE",
+            "title": "Two images with text in between",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "heading_size": "h2",
+            "body_size": "body3",
+            "content_max_width": 424,
+            "desktop_content_align": "left",
+            "mobile_content_align": "left",
+            "btn_text": "Button label",
+            "btn_url": "",
+            "btn_style": "solid",
+            "extra_btn_text": "Button label",
+            "extra_btn_url": "",
+            "extra_btn_style": "solid"
+          }
         }
       },
       "block_order": [
-        "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6"
+        "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6",
+        "1bfc3be6-daa1-4f38-afe5-eab8e8dcfc3f"
       ],
       "settings": {
         "color_scheme": "primary",

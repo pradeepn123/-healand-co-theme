@@ -35,7 +35,7 @@
     "custom_1_button_background_color": "#6c745d",
     "custom_1_button_text_color": "#d9ded1",
     "custom_2_text_color": "#ffffff",
-    "custom_2_background_color": "#2d2d2d",
+    "custom_2_background_color": "rgba(0,0,0,0)",
     "custom_2_foreground_color": "#ffffff",
     "custom_2_border_color": "#ffffff",
     "custom_2_button_background_color": "#ee5c4c",
