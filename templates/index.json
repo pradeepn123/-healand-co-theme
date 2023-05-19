@@ -139,7 +139,7 @@
         "6794ac4e-ad78-46d9-aa1d-f983db9f0cd6"
       ],
       "settings": {
-        "color_scheme": "default",
+        "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
@@ -149,11 +149,11 @@
         "enable_circle_navigation": true,
         "enable_arrows_navigation": true,
         "arrows_style": "corner-buttons",
-        "show_arrows_on_hover": false,
+        "show_arrows_on_hover": true,
         "transition_style": "swipe",
-        "enable_autoplay": true,
+        "enable_autoplay": false,
         "autoplay_interval": 10,
-        "show_button_for_autoplay": true
+        "show_button_for_autoplay": false
       }
     },
     "bdfcb69a-fe4c-45c6-bccc-aaec4c360dc5": {
