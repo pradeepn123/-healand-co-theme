@@ -2,6 +2,7 @@
   "sections": {
     "page": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "xsmall",
@@ -9,9 +10,20 @@
         "section_spacing_bottom": 96,
         "show_heading": false
       }
+    },
+    "ba680ede-7008-4d5d-927e-ad20cfce2c26": {
+      "type": "about-banner",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/image_204.png",
+        "banner_image_mob": "shopify:\/\/shop_images\/about-banner-mob.png",
+        "heading": "Nature's Healing Power",
+        "subtext": "Made Accessible",
+        "banner_bgimage": "shopify:\/\/shop_images\/aboutus-banner-bg.png"
+      }
     }
   },
   "order": [
-    "page"
+    "page",
+    "ba680ede-7008-4d5d-927e-ad20cfce2c26"
   ]
 }

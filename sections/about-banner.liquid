@@ -1,0 +1,64 @@
+{% style %}
+.banner_text_wrp{
+background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }});
+}
+{% endstyle %}
+
+
+{{ 'about.css' | asset_url | stylesheet_tag }}
+<section class="about-banner">
+    <div class="container">
+        <div class="abanner_wrp">
+            <div class="about_banner_img Desktop">
+                <img class="abt-banner" src="{{section.settings.banner_image| image_url}}" alt="Banner Image" />
+            </div>
+            <div class="about_banner_imgmob Mobile">
+                <img class="abt-banner-mob" src="{{section.settings.banner_image_mob| image_url}}" alt="Banner Image" />
+            </div>
+            <div class="banner_text_wrp">
+                <p class="about-heading">{{ section.settings.heading }}</p>
+                <h1 class="about-subtext">{{ section.settings.subtext }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+"name": "About Banner Block",
+"tag": "section",
+"class": "section",
+"settings": [
+                {
+                    "type":"image_picker",
+                    "label":"Banner Image",
+                    "id":"banner_image"
+                },
+                {
+                    "type":"image_picker",
+                    "label":"Banner Image Mobile",
+                    "id":"banner_image_mob"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "subtext",
+                    "label": "Sub text"
+                },
+                {
+                    "type":"image_picker",
+                    "label":"Banner Background Image",
+                    "id":"banner_bgimage"
+                }
+            ],
+"presets": [
+                {
+                "name": "About Banner Block"
+                }
+            ]
+}
+{% endschema %}
