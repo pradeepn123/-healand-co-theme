@@ -2,6 +2,7 @@
   "sections": {
     "split_image_banner": {
       "type": "split-image-banner",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "enable_background_around_container": false,
@@ -40,19 +41,56 @@
     },
     "contact-form": {
       "type": "contact-form",
+      "blocks": {
+        "9f889d2f-4c6d-45df-b972-7d4a599d5655": {
+          "type": "contact_method",
+          "settings": {
+            "contact_icon": "shopify:\/\/shop_images\/Vector_b418f957-bb6c-4210-9b25-ea8a556c1b43.svg",
+            "contact_heading": "EMAIL ADDRESS",
+            "contact__method": "<p><a href=\"mailto:info@healandco.com\" title=\"mailto:info@healandco.com\">info@healandco.com<\/a><\/p>",
+            "contact_method_link": ""
+          }
+        },
+        "6cca9d96-7021-4ea3-a095-d19d64647a02": {
+          "type": "contact_method",
+          "settings": {
+            "contact_icon": "shopify:\/\/shop_images\/Vector.svg",
+            "contact_heading": "CHAT WITH US",
+            "contact__method": "<p>We’re available<br\/>9AM - 5PM EST<\/p>",
+            "contact_method_link": "https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker"
+          }
+        },
+        "4483188b-5fd4-460f-97ad-9839d5f266cf": {
+          "type": "contact_method",
+          "settings": {
+            "contact_icon": "shopify:\/\/shop_images\/Vector_14.svg",
+            "contact_heading": "SEND US A DM",
+            "contact__method": "<p><a href=\"https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker\" title=\"https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker\">@ healcohealth<\/a><\/p>",
+            "contact_method_link": "https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker"
+          }
+        }
+      },
+      "block_order": [
+        "9f889d2f-4c6d-45df-b972-7d4a599d5655",
+        "6cca9d96-7021-4ea3-a095-d19d64647a02",
+        "4483188b-5fd4-460f-97ad-9839d5f266cf"
+      ],
       "settings": {
-        "color_scheme": "default",
+        "color_scheme": "primary",
+        "form_bg_color": "#faf5ef",
         "container_size": "xsmall",
-        "section_spacing_top": 96,
-        "section_spacing_bottom": 96,
-        "title": "Contact us",
-        "text": "Fill in the text to remind customers to fill in the form correctly so that your support team could contact them to help with the issues and answer all the questions.",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "form_bg_colors": "#ffffff",
+        "title": "CONTACT US",
+        "text": "",
         "heading_size": "h5",
-        "body_size": "body3",
+        "body_size": "body6",
         "text_align": "center",
-        "input_style": "solid",
-        "show_phone": false,
-        "show_captcha": true
+        "input_style": "outline",
+        "btn_bg_color": "#ee5c4c",
+        "show_phone": true,
+        "show_captcha": false
       }
     }
   },

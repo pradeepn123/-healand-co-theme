@@ -17,7 +17,7 @@
     assign color_scheme = settings.default_color_scheme
   endif
 -%}
-
+<link rel="stylesheet" href="{{ 'contact-form.css' | asset_url }}">
 {% capture css %}
   {% style %}
     .section-{{section.id}} {
@@ -25,131 +25,173 @@
         --gsc-section-spacing-top: {{ section_spacing_top }}px;
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
+ 
+   .section-{{ section.id }}.contact_pg_aurora{
+      background:  {{ section.settings.form_bg_color }};
+    }
+   .contact_us_aurora{
+      background: {{ section.settings.form_bg_color }};
+    }
+   
+   .container--{{ container_size }}.contact_pg_form{
+      background : {{ section.settings.form_bg_colors }};
+    }
+    .btn.btn--solid.btn--lg.contact__btn.form--btn{
+      background: {{ section.settings.btn_bg_color }};
+    }
   {% endstyle %}
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
+<div class="contact_us_aurora">
+  <div class="contact section section-{{ section.id }} color-{{ color_scheme }} contact_pg_aurora">
+    <div class="contact__container container container--{{ container_size }} section-spacing contact_pg_form">
+      {%- if title != blank or text != blank -%}
+        <div class="contact__content">
+          {%- if title != blank -%}
+            <h5 class="contact__title {{ heading_size }}">{{ title }}</h5>
+          {%- endif -%}
+          {%- if text != blank -%}
+            <div class="rte contact__text body-font-weight-from-global-settings {{ body_size }}">
+              {{ text }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
 
-<div class='contact section section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='contact__container container container--{{ container_size }} section-spacing'>
-    {%- if title != blank or text != blank -%}
-      <div class='contact__content'>
-        {%- if title != blank -%}
-          <h5 class='contact__title {{ heading_size }}'>{{ title }}</h5>
+      {%- form 'contact', id: 'ContactForm', class: 'contact__form' -%}
+        {%- if form.posted_successfully? -%}
+          <script>
+            window.addEventListener('load', () => {
+              window.bodyElement.notification.show('Message has been sent', 'success');
+            });
+          </script>
         {%- endif -%}
-        {%- if text != blank -%}
-          <div class='rte contact__text body-font-weight-from-global-settings {{ body_size }}'>
-            {{ text }}
+
+        {%- if form.errors -%}
+          {%- assign error = form.errors.translated_fields.email
+            | capitalize
+            | append: ' '
+            | append: form.errors.messages.email
+          -%}
+          <script>
+            window.addEventListener('load', () => {
+              window.bodyElement.notification.show('{{ error }}', 'warning');
+            });
+          </script>
+        {%- endif -%}
+
+        <div class="field-group contact__field-group">
+          <div class="field contact__field">
+            <label class="visually-hidden" for="ContactForm-NameInput-{{ form.id }}">
+              {{- 'templates.contact.form.name' | t -}}
+            </label>
+            <input
+              btn
+              btn--solid
+              btn--lg
+              contact__btn
+              class="input input--large input--{{ input_style }}"
+              autocomplete="name"
+              type="text"
+              name="contact[{{ 'templates.contact.form.name' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name' | t }}"
+              id="ContactForm-NameInput-{{ form.id }}"
+              required
+            >
+          </div>
+          <div class="field contact__field">
+            <label class="visually-hidden" for="ContactForm-EmailInput-{{ form.id }}">
+              {{- 'templates.contact.form.email' | t -}}
+            </label>
+            <input
+              autocomplete="email"
+              type="email"
+              class="input input--large input--{{ input_style }}"
+              name="contact[email]"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% endif %}"
+              aria-required="true"
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+              id="ContactForm-EmailInput-{{ form.id }}"
+              required
+            >
+          </div>
+        </div>
+
+        {%- if show_phone -%}
+          <div class="field contact__field">
+            <label class="visually-hidden" for="ContactForm-PhoneInput-{{ form.id }}">
+              {{- 'templates.contact.form.phone' | t -}}
+            </label>
+            <input
+              type="tel"
+              class="input input--large input--{{ input_style }}"
+              autocomplete="tel"
+              name="contact[{{ 'templates.contact.form.phone' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.phone %}{{ form.phone }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.phone' | t }}"
+              id="ContactForm-PhoneInput-{{ form.id }}"
+            >
           </div>
         {%- endif -%}
-      </div>
-    {%- endif -%}
 
-    {%- form 'contact', id: 'ContactForm', class: 'contact__form' -%}
-      {%- if form.posted_successfully? -%}
-        <script>
-          window.addEventListener('load', () => {
-            window.bodyElement.notification.show('Message has been sent', 'success')
-          })
-        </script>
-      {%- endif -%}
-
-      {%- if form.errors -%}
-        {%- assign error = form.errors.translated_fields.email
-          | capitalize
-          | append: ' '
-          | append: form.errors.messages.email
-        -%}
-        <script>
-          window.addEventListener('load', () => {
-            window.bodyElement.notification.show('{{ error }}', 'warning')
-          })
-        </script>
-      {%- endif -%}
-
-      <div class='field-group contact__field-group'>
-        <div class='field contact__field'>
-          <label class='visually-hidden' for='ContactForm-NameInput-{{ form.id }}'>
-            {{- 'templates.contact.form.name' | t -}}
+        <div class="field contact__field">
+          <label class="hidden" for="ContactForm-MessageInput-{{ form.id }}">
+            {{- 'templates.contact.form.message' | t -}}
           </label>
-          <input
-            class='input input--large input--{{ input_style }}'
-            autocomplete='name'
-            type='text'
-            name='contact[{{ 'templates.contact.form.name' | t }}]'
-            value='{% if form.name %}{{ form.name }}{% endif %}'
-            placeholder='{{ 'templates.contact.form.name' | t }}'
-            id='ContactForm-NameInput-{{ form.id }}'
+          <textarea
+            class="textarea textarea--{{ input_style }}"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.message' | t }}"
+            id="ContactForm-MessageInput-{{ form.id }}"
             required
           >
-        </div>
-        <div class='field contact__field'>
-          <label class='visually-hidden' for='ContactForm-EmailInput-{{ form.id }}'>
-            {{- 'templates.contact.form.email' | t -}}
-          </label>
-          <input
-            autocomplete='email'
-            type='email'
-            class='input input--large input--{{ input_style }}'
-            name='contact[email]'
-            spellcheck='false'
-            autocapitalize='off'
-            value='{% if form.email %}{{ form.email }}{% endif %}'
-            aria-required='true'
-            placeholder='{{ 'templates.contact.form.email' | t }}'
-            id='ContactForm-EmailInput-{{ form.id }}'
-            required
-          >
-        </div>
-      </div>
-
-      {%- if show_phone -%}
-        <div class='field contact__field'>
-          <label class='visually-hidden' for='ContactForm-PhoneInput-{{ form.id }}'>
-            {{- 'templates.contact.form.phone' | t -}}
-          </label>
-          <input
-            type='tel'
-            class='input input--large input--{{ input_style }}'
-            autocomplete='tel'
-            name='contact[{{ 'templates.contact.form.phone' | t }}]'
-            pattern='[0-9\-]*'
-            value='{% if form.phone %}{{ form.phone }}{% endif %}'
-            placeholder='{{ 'templates.contact.form.phone' | t }}'
-            id='ContactForm-PhoneInput-{{ form.id }}'
-          >
-        </div>
-      {%- endif -%}
-
-      <div class='field contact__field'>
-        <label class='hidden' for='ContactForm-MessageInput-{{ form.id }}'>
-          {{- 'templates.contact.form.message' | t -}}
-        </label>
-        <textarea
-          class='textarea textarea--{{ input_style }}'
-          name='contact[{{ 'templates.contact.form.comment' | t }}]'
-          placeholder='{{ 'templates.contact.form.message' | t }}'
-          id='ContactForm-MessageInput-{{ form.id }}'
-          required
-        >
           {{- form.body -}}
         </textarea>
-      </div>
-
-      {%- if show_captcha -%}
-        <div class='contact__captcha-note'>
-          {{ 'sections.contact_form.captcha_note' | t }}
         </div>
-      {%- endif -%}
 
-      <button
-        type='submit'
-        class='btn btn--solid btn--lg contact__btn'
-        aria-label='{{ 'templates.contact.form.send' | t }}'
-      >
-        {{ 'templates.contact.form.send' | t }}
-      </button>
-    {%- endform -%}
+        {%- if show_captcha -%}
+          <div class="contact__captcha-note">
+            {{ 'sections.contact_form.captcha_note' | t }}
+          </div>
+        {%- endif -%}
+
+        <button
+          type="submit"
+          class="btn btn--solid btn--lg contact__btn form--btn"
+          aria-label="{{ 'templates.contact.form.send' | t }}"
+        >
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      {%- endform -%}
+    </div>
+    <div class="contact__methods__main container container--{{ container_size }}">
+      {% for block in section.blocks %}
+        <div class="contact__methods">
+          <a href="{{ block.settings.contact_method_link }}">
+          <div class="align_contact_methods"> 
+              <div class="contact__methods__heading_main">
+                {% if block.settings.contact_icon %}
+                  <div class="contact__methods_icon">
+                    <img src="{{ block.settings.contact_icon | img_url:'master' }}">
+                  </div>
+                {% endif %}
+                <div>
+                  <h6 class="contact__methods__heading">{{ block.settings.contact_heading }}</h6>
+                </div>
+              </div>
+              <div class="contact__method">
+                {{ block.settings.contact__method }}
+              </div>
+            </div> 
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -189,6 +231,11 @@
       ],
       "default": "default",
       "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "color",
+      "id": "form_bg_color",
+      "label": "Section Background color"
     },
     {
       "type": "select",
@@ -241,6 +288,12 @@
     {
       "type": "header",
       "content": "t:sections.contact_form.content_settings_header"
+    },
+    {
+      "type": "color",
+      "id": "form_bg_colors",
+      "label": "Form background",
+      "default": "#ffffff"
     },
     {
       "type": "text",
@@ -367,6 +420,12 @@
       "label": "t:sections.contact_form.input_style_label"
     },
     {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button background",
+      "default": "#EE5C4C"
+    },
+    {
       "type": "checkbox",
       "id": "show_phone",
       "default": false,
@@ -377,6 +436,34 @@
       "id": "show_captcha",
       "default": true,
       "label": "t:sections.contact_form.show_captcha_label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "contact_method",
+      "type": "contact_method",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "contact_icon",
+          "label": "select icon"
+        },
+        {
+          "type": "text",
+          "id": "contact_heading",
+          "label": "Contact heading"
+        },
+        {
+          "type": "richtext",
+          "id": "contact__method",
+          "label": "Contact method"
+        },
+        {
+          "type": "url",
+          "id": "contact_method_link",
+          "label": "contact method link"
+        }
+      ]
     }
   ],
   "presets": [
