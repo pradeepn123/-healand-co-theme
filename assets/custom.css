@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "BrownStd-Regular";    
+    src: url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Regular.eot'); /* IE9 Compat Modes */
+    src:url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'BrownStd-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.eot'); /* IE9 Compat Modes */
+    src:url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+        url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+p, a{
+    font-family: "BrownStd-Regular" !important;    
+}
+h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
+    font-family: 'BrownStd-Bold' !important;
+}
+.btn, a.product-card__title{
+    font-family: 'BrownStd-Bold' !important;
+}
+
+
+.decorated_heading{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.decorated_heading:after{
+    display: block;
+    position: absolute;
+    width: calc(100% + 0.25em);
+    height: 44%;
+    bottom: 2px;
+    left: 50%;
+    z-index: -1;
+    background-image: url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/decorated_bg_color.svg');
+    transform: translate(-50%);
+    content: "";
+}
