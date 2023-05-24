@@ -33,7 +33,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     margin-top: 48px;
 }
-.contact_us_page .contact__methods__main a{
+.contact.section .contact__methods__main a{
     text-decoration: none;
 }
 @media(min-width:767px){
