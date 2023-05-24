@@ -1,0 +1,16 @@
+.faq__blocks .faq__category{
+    color: #fff;
+    padding:1.6rem 2rem;
+    font-family: 'BrownStd-Bold';
+}
+.faq__accordeon-plus-btn.accordeon-plus__btn{
+    font-family: 'BrownStd-Bold';
+}
+@media(max-width:520px){
+    .faq__accordeon-plus-btn.accordeon-plus__btn{
+        font-size: 16px !important;
+    }
+}
+.faq__blocks .faq__accordeon-plus-btn{
+    padding: 3rem 1.6rem 2rem 2.4rem;
+}

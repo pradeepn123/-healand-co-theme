@@ -18,7 +18,7 @@
     assign color_scheme = settings.default_color_scheme
   endif
 -%}
-
+<link rel="stylesheet" href="{{ 'faq.css' | asset_url }}">
 {% capture css %}
   {% style %}
     .section-{{ section.id }} {
@@ -65,7 +65,7 @@
 
           {%- case block.type -%}
             {%- when 'category' -%}
-              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }}>
+              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px">
                 {%- if custom_icon_image != blank -%}
                   <img
                     loading='lazy'
@@ -97,7 +97,7 @@
                 data-block-id='{{ block.id }}'
                 {{ block.shopify_attributes }}
               >
-                <accordeon-btn class='faq__accordeon-plus-btn accordeon-plus__btn' tabindex='0'>
+                <accordeon-btn class='faq__accordeon-plus-btn accordeon-plus__btn' style="font-size: {{ block.settings.subhead_fontsize }}px;" tabindex='0'>
                   {%- if custom_icon_image != blank -%}
                     <img
                       loading='lazy'
@@ -121,7 +121,7 @@
                 </accordeon-btn>
                 <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                   <div
-                    class='faq__accordeon-plus-content accordeon-plus__content body-font-weight-from-global-settings'
+                    class='faq__accordeon-plus-content accordeon-plus__content body-font-weight-from-global-settings' style="font-size: {{ block.settings.content_font }}px;"
                     data-accordeon-content
                   >
                     {% if block.settings.text != blank %}
@@ -408,6 +408,21 @@
           "label": "t:sections.faq.category_block_title_label",
           "default": "Category"
         },
+        {
+          "type": "color",
+          "id": "faq_heading_bg",
+          "label": "Heading background"
+        },
+        {
+          "type": "range",
+          "id": "head_font_size",
+          "min": 1,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "label": "Header font size ",
+          "default": 24
+        },        
         {
           "type": "select",
           "id": "icon",
@@ -945,6 +960,16 @@
           "default": "Frequently asked question"
         },
         {
+          "type": "range",
+          "id": "subhead_fontsize",
+          "min": 10,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size title",
+          "default": 20
+        },
+        {
           "type": "select",
           "id": "icon",
           "options": [
@@ -1477,6 +1502,16 @@
           "id": "text",
           "label": "t:sections.faq.question_block_text_label",
           "default": "<p>Brief and clear answer</p>"
+        },
+        {
+          "type": "range",
+          "id": "content_font",
+          "min": 10,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Font Size Text",
+          "default": 16
         },
         {
           "type": "page",
