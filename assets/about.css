@@ -1,5 +1,3 @@
-/* Banner section css starts here */
-
 .Desktop{
     display: none;
 }
@@ -56,7 +54,37 @@ color: #FFFFFF;
 padding-top: 36px;
 
 }
+.astory_wrp{
+    padding:50px 0;
+}
+.story-heading{
+    text-align: center;
+   padding-bottom: 20px;
+    font-size: 24px;
+    line-height: 33px;
+    font-style: normal;
+    font-weight: 700;
+}
 
+.decorated_heading:after{
+
+        background-repeat: no-repeat;
+}
+  
+
+
+.story-subtext{
+    text-align: center;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px; 
+}
+
+.creator-inner-flex{
+    display: flex;
+}
 @media(max-width:320px){
     .about-heading{
         font-size: 20px;
@@ -80,6 +108,8 @@ padding-top: 36px;
     .about_banner_img{
         padding-bottom: 36%;
     }
+
+   
     
 }
 @media(min-width:1200px){
@@ -92,9 +122,29 @@ padding-top: 36px;
         font-size: 96px;
         line-height: 80px;
     }
-}
+
+    .story-heading{
+        font-size: 40px;
+        line-height: 77px;
+    }
+
+    .story-subtext{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        width: 53%;
+    }
+
+    .astory_wrp{
+        padding:80px 0;
+    }
 
 .banner_text_wrp{
     background-repeat: no-repeat;
     background-size: cover;
+}
+.creator-content{
+    padding: 7em 3em 4em 2em;
+}
+
 }

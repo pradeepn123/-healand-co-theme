@@ -1,0 +1,49 @@
+<section class="about-creator">
+    <div class="container">
+        <div class="about_creatot_wrp">
+            {% if section.settings.cimage != blank %}
+            <div class="creator-flex">
+                <div class="creator-inner-flex">
+                    <div class="creator-img">
+                        <img class="cimage" src="{{section.settings.cimage| image_url}}" alt="Creator Image" />
+                    </div>
+                    <div class="creator-content">
+                        <h3 class="creator-heading">{{section.settings.creator-heading}}</h3>
+                        <p class="creator-desc">{{section.settings.creator-desc}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "About Creator Block",
+    "tag": "section",
+    "class": "section",
+    "settings": [ 
+                   {
+                        "type": "image_picker",
+                        "id": "cimage",
+                        "label": "Creator Image"
+                   },
+                   {
+                        "type": "text",
+                        "id": "creator-heading",
+                        "label": "Heading"
+                   },
+                   {
+                        "type": "text",
+                        "id": "creator-desc",
+                        "label": "Description"
+                    }
+                ],
+"presets": [
+        {
+        "name": "About Creator Block"
+        }
+    ]
+}
+{% endschema %}
