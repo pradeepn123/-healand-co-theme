@@ -47,7 +47,8 @@
           "settings": {
             "contact_icon": "shopify:\/\/shop_images\/Vector_b418f957-bb6c-4210-9b25-ea8a556c1b43.svg",
             "contact_heading": "EMAIL ADDRESS",
-            "contact__method": "<p><a href=\"mailto:info@healandco.com\" title=\"mailto:info@healandco.com\">info@healandco.com<\/a><\/p>",
+            "contact__method": "<p>info@healandco.com<\/p>",
+            "text-decoration": true,
             "contact_method_link": "mailto:info@healandco.com"
           }
         },
@@ -57,6 +58,7 @@
             "contact_icon": "shopify:\/\/shop_images\/Vector.svg",
             "contact_heading": "CHAT WITH US",
             "contact__method": "<p>We’re available<br\/>9AM - 5PM EST<\/p>",
+            "text-decoration": false,
             "contact_method_link": "https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker"
           }
         },
@@ -65,8 +67,9 @@
           "settings": {
             "contact_icon": "shopify:\/\/shop_images\/Vector_14.svg",
             "contact_heading": "SEND US A DM",
-            "contact__method": "<p><a href=\"https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker\" title=\"https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker\">@ healcohealth<\/a><\/p>",
-            "contact_method_link": "https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker"
+            "contact__method": "<p>@ healcohealth<\/p>",
+            "text-decoration": true,
+            "contact_method_link": "https:\/\/www.instagram.com\/hela_health\/?hl=en"
           }
         }
       },

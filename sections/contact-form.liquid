@@ -171,9 +171,10 @@
     </div>
     <div class="contact__methods__main container container--{{ container_size }}">
       {% for block in section.blocks %}
-        <div class="contact__methods">
-          <a href="{{ block.settings.contact_method_link }}">
-          <div class="align_contact_methods"> 
+        <div class="Contact_method_links">
+        <a href="{{ block.settings.contact_method_link }}">
+          <div class="contact__methods">
+            <div class="align_contact_methods">
               <div class="contact__methods__heading_main">
                 {% if block.settings.contact_icon %}
                   <div class="contact__methods_icon">
@@ -184,12 +185,13 @@
                   <h6 class="contact__methods__heading">{{ block.settings.contact_heading }}</h6>
                 </div>
               </div>
-              <div class="contact__method">
+              <div class="contact__method {% if block.settings.text-decoration %} text-decoration{% endif %}">
                 {{ block.settings.contact__method }}
               </div>
-            </div> 
-          </a>
-        </div>
+            </div>
+          </div>
+        </a>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -458,6 +460,12 @@
           "id": "contact__method",
           "label": "Contact method"
         },
+        {
+          "type": "checkbox",
+          "id": "text-decoration",
+          "label": "Underlined text",
+          "default": true
+        },        
         {
           "type": "url",
           "id": "contact_method_link",
