@@ -26,7 +26,6 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     font-family: 'BrownStd-Bold' !important;
 }
 
-
 .decorated_heading{
     display: inline-block;
     position: relative;
@@ -44,10 +43,14 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     transform: translate(-50%);
     content: "";
 }
-
-@media screen and (min-width: 768px){
-    .collection-text__content {
-        flex: 0 0 30%;
-        align-self: center;
-    }
+.header__dropdown-toggle .header__item div {
+    padding-left: 5px;
+    margin-top: 4px;
+}
+.header__dropdown-toggle[data-aria-expanded="true"] svg{
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;
+}
+.header__dropdown-menu--with-mega-menu .image-block__content-wrap{
+    padding: 2.5rem;
 }
