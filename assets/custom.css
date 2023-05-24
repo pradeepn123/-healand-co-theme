@@ -16,13 +16,13 @@
         url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
-p, a{
+p, a, li, .rtl p, .caption, .rte, label, input, textarea{
     font-family: "BrownStd-Regular" !important;    
 }
 h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     font-family: 'BrownStd-Bold' !important;
 }
-.btn, a.product-card__title{
+.btn, a.product-card__title, .footer__title{
     font-family: 'BrownStd-Bold' !important;
 }
 
@@ -43,4 +43,11 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     background-image: url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/decorated_bg_color.svg');
     transform: translate(-50%);
     content: "";
+}
+
+@media screen and (min-width: 768px){
+    .collection-text__content {
+        flex: 0 0 30%;
+        align-self: center;
+    }
 }
