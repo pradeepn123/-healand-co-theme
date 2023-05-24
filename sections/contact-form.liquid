@@ -26,10 +26,10 @@
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
  
-   .section-{{ section.id }}.contact_pg_aurora{
+   .section-{{ section.id }}.contact_us_page{
       background:  {{ section.settings.form_bg_color }};
     }
-   .contact_us_aurora{
+   .contact_us_page_main{
       background: {{ section.settings.form_bg_color }};
     }
    
@@ -43,8 +43,8 @@
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
-<div class="contact_us_aurora">
-  <div class="contact section section-{{ section.id }} color-{{ color_scheme }} contact_pg_aurora">
+<div class="contact_us_page_main">
+  <div class="contact section section-{{ section.id }} color-{{ color_scheme }} contact_us_page">
     <div class="contact__container container container--{{ container_size }} section-spacing contact_pg_form">
       {%- if title != blank or text != blank -%}
         <div class="contact__content">
