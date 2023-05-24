@@ -1,6 +1,9 @@
 {%- liquid
   assign options = block.settings
   assign collection = options.collection
+  assign article = options.article
+  assign img = options.blog_image | default: article.image
+  assign blog_title = article.title
   assign show_product_count = options.show_product_count
   assign image = options.image | default: collection.image
   assign video = options.video
@@ -22,6 +25,8 @@
   case block.type
     when 'collection'
       render 'collection-card', class: 'collage__collection-card' img_ratio: 'adapt', heading_size: heading_size, overlay_type: 'solid', content_position: content_position, title: collection.title, img: image, collection: collection, text_style: 'over-image', show_product_count: show_product_count, link_text: link_text, link_url: collection.url
+    when 'featured_post'      
+      render 'article-card', class: 'collage__blog-card', blog_title: article.title, article: article, img: blog_image, img_ratio: 'adapt', heading_size: heading_size, text_style: 'over-image', content_position: content_position, overlay_type: 'solid', block: block
     when 'image'
       render 'image-block', class: 'collage__image-block', img_ratio: 'adapt', heading_size: heading_size, body_size: body_size, caption: caption, title: title, text: text, image: image, video: video, link: link, link_text: link_text
     when 'product'

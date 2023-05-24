@@ -20,15 +20,23 @@
             "title": "Menu"
           }
         },
+        "018fbce4-9340-47e5-b816-7dd578360ba6": {
+          "type": "menu",
+          "settings": {
+            "menu": "new-menu",
+            "title": "Menu"
+          }
+        },
         "footer-3": {
           "type": "social_media",
           "settings": {
             "title": "Social media",
-            "text": "<p>Add links to your accounts in Theme settings > Social media so that they appear as icons below.<\/p>"
+            "text": "<p>Want to learn more about us? Check out our recent posts and join the community<\/p>"
           }
         },
         "footer-4": {
           "type": "subscribe",
+          "disabled": true,
           "settings": {
             "title": "Subscribe",
             "text": "<p>Invite customers to join your mailing list.<\/p>",
@@ -39,6 +47,7 @@
       "block_order": [
         "footer-1",
         "footer-2",
+        "018fbce4-9340-47e5-b816-7dd578360ba6",
         "footer-3",
         "footer-4"
       ],
