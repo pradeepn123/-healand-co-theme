@@ -253,6 +253,11 @@
                     aria-label='{{ link.title }}'
                   >
                     <span class='underline-text__label'>{{ link.title }}</span>
+                    <div>
+                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 1L5 5L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>  
                   </a>
                 </float-element-btn>
               {%- else -%}
@@ -567,8 +572,11 @@
             </sidebar-button>
           {%- endif -%}
         {% endif %}
-
-        {%- if profile_url != blank -%}
+        
+        {% comment %} ------ this part is rendering search icon, as moving search icon after cart icon 
+                                          so commented here for now --------------- {% endcomment %} 
+        
+        {% comment %} {%- if profile_url != blank -%}
           <a
             class='icon header__icon header__icon--people'
             href='{{ profile_url }}'
@@ -577,7 +585,7 @@
           >
             {% render 'icon-pack', icon: 'header-account-icon', class: '', icon_style: icon_style %}
           </a>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
 
         {%- if settings.cart_type == 'page_only' or template.name contains 'cart' -%}
           <a
@@ -626,6 +634,18 @@
             </button>
           </sidebar-button>
         {%- endif -%}
+
+       {%- if profile_url != blank -%}
+          <a
+            class='icon header__icon header__icon--people'
+            href='{{ profile_url }}'
+            tabindex='0'
+            aria-label='{{ 'sections.header.aria_label_for_account_icon' | t }}'
+          >
+            {% render 'icon-pack', icon: 'header-account-icon', class: '', icon_style: icon_style %}
+          </a>
+        {%- endif -%}
+
       </div>
     </div>
   </div>
@@ -821,6 +841,10 @@
         {
           "value": "round-outline",
           "label": "t:sections.header.icon_style.option_4"
+        },
+        {
+          "value": "bold-outline",
+          "label": "Style 3 - bold (outline)"
         }
       ],
       "default": "solid",
