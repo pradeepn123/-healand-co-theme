@@ -1,24 +1,24 @@
 
-.faq__blocks .faq__category{
-    color: #fff;
+.faq--main--parent .faq__blocks .faq__category{
     padding:1.6rem 2rem;
     font-family: 'BrownStd-Bold';
 }
-.faq__accordeon-plus-btn.accordeon-plus__btn{
+.faq--main--parent .faq__accordeon-plus-btn.accordeon-plus__btn{
     font-family: 'BrownStd-Bold';
 }
 @media(max-width:520px){
-    .faq__accordeon-plus-btn.accordeon-plus__btn{
+  .faq--main--parent .faq__accordeon-plus-btn.accordeon-plus__btn{
         font-size: 16px !important;
     }
-    .faq--main--parent{
+    .faq .faq--main--parent{
         padding-right: 0;
         padding-left: 0;
     }
 }
-.faq__blocks .faq__accordeon-plus-btn{
+.faq--main--parent .faq__blocks .faq__accordeon-plus-btn{
     padding: 3rem 1.6rem 2rem 2.4rem;
+    line-height: 20px;
 }
-.accordeon-plus__content-wrap .faq__accordeon-plus-content p,.faq__content h5{
+.faq--main--parent .accordeon-plus__content-wrap .faq__accordeon-plus-content p,.faq__content h5{
     color: #000;
 }

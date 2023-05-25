@@ -25,7 +25,7 @@
       --gsc-section-spacing-top: {{ section_spacing_top }}px;
       --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
-
+    
     {% for block in section.blocks %}
       .block-{{ block.id }} {
         --gsc-image-width: {{ block.settings.image_width }}%;
@@ -65,7 +65,7 @@
 
           {%- case block.type -%}
             {%- when 'category' -%}
-              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px">
+              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};">
                 {%- if custom_icon_image != blank -%}
                   <img
                     loading='lazy'
@@ -422,6 +422,11 @@
           "unit": "px",
           "label": "Header font size ",
           "default": 24
+        },{
+          "type": "color",
+          "id":"heading_color",
+          "label":"Heading color",
+          "default": "#fff"
         },        
         {
           "type": "select",
