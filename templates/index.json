@@ -9,6 +9,7 @@
             "color_scheme": "custom-2",
             "desktop_img": "shopify:\/\/shop_images\/banner.png",
             "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
+            "video": "shopify:\/\/files\/videos\/demo video.mp4",
             "desktop_overlay_opacity": 20,
             "mobile_overlay_opacity": 20,
             "caption": "",

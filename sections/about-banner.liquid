@@ -7,7 +7,7 @@ background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }})
 
 {{ 'about.css' | asset_url | stylesheet_tag }}
 <section class="about-banner">
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="abanner_wrp">
             <div class="about_banner_img Desktop">
                 <img class="abt-banner" src="{{section.settings.banner_image| image_url}}" alt="Banner Image" />
@@ -20,7 +20,7 @@ background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }})
                 <h1 class="about-subtext">{{ section.settings.subtext }}</h1>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </section>
 
 {% schema %}
