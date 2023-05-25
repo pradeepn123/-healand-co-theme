@@ -1,0 +1,54 @@
+
+
+ 
+
+<div class="video-section">
+  
+  <div class="video-wrapper">
+    <div class="video-overlay"></div>
+    <a class="video-link" href="{{ section.settings.video_link }}" data-video-type="{{ section.settings.video_link }}">
+      {% if section.settings.video_type == 'youtube' %}
+      <img class="video-thumbnail" src="{{ section.settings.video_id }}"
+        alt="Video Thumbnail">
+      {% elsif section.settings.video_type == 'vimeo' %}
+      <img class="video-thumbnail" src="{{ section.settings.video_thumbnail }}" alt="Video Thumbnail">
+      {% endif %}
+      <span class="play-icon"></span>
+    </a>
+  </div>
+  
+</div>
+
+{% schema %}
+{
+"name": "Video",
+"settings": [
+
+              {
+                  "type": "video_url",
+                  "id": "video_link",
+                  "accept": ["vimeo", "youtube"],
+                  "label": "Video URL",
+                  "default": "https://player.vimeo.com/video/794041269"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "video_id",
+                  "label": " Thumbnail Image"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "video_thumbnail",
+                  "label": " Thumbnail Image"
+              }
+
+            ],
+
+
+"presets": [
+            {
+            "name": "Video"
+           }
+]
+}
+{% endschema %}

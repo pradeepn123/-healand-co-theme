@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "xsmall",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": true
+      }
+    },
+    "ba680ede-7008-4d5d-927e-ad20cfce2c26": {
+      "type": "about-banner",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/image_204.png",
+        "banner_image_mob": "shopify:\/\/shop_images\/about-banner-mob.png",
+        "heading": "Nature's Healing Power",
+        "subtext": "Made Accessible",
+        "banner_bgimage": "shopify:\/\/shop_images\/aboutus-banner-bg.png"
+      }
+    },
+    "440fa401-af0a-409e-a1b4-8d39c7f62293": {
+      "type": "about-story",
+      "settings": {
+        "heading": "OUR STORY",
+        "subtext": "We believe in the power of nature to heal, and our passion for natural health led us to create Heal and Co. We are committed to purity, potency, and sharing the benefits of natural remedies with everyone. Join us on our mission to help people live their healthiest lives."
+      }
+    },
+    "52a343d8-2199-4ffa-aec2-d2faf7bd2465": {
+      "type": "about-creator",
+      "settings": {
+        "cimage": "shopify:\/\/shop_images\/Rectangle_190.png",
+        "creator-heading": "MEET THE CREATOR",
+        "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry."
+      }
+    },
+    "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
+      "type": "about-video",
+      "settings": {
+        "video_link": "https:\/\/player.vimeo.com\/video\/794041269",
+        "video_id": "shopify:\/\/shop_images\/image_193.png"
+      }
+    },
+    "541ff688-47bc-4073-aa8b-1c4e8a75bbd6": {
+      "type": "about-values",
+      "blocks": {
+        "7ed77368-3ad8-4196-99d6-5288319c2193": {
+          "type": "cardType",
+          "settings": {
+            "val-heading": "Empowering Health & Wellness",
+            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "user_color": "#797baa"
+          }
+        },
+        "1c196b6e-ed3c-4fbe-a7cc-f10ba5d627fc": {
+          "type": "cardType",
+          "settings": {
+            "val-heading": "Trusted & Innovative Formulations",
+            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "user_color": "#ad7983"
+          }
+        },
+        "ff24fc94-8352-45e5-b26e-f1ad9fa2872d": {
+          "type": "cardType",
+          "settings": {
+            "val-heading": "Holistic Wellness Advocates",
+            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "user_color": "#82a1c4"
+          }
+        }
+      },
+      "block_order": [
+        "7ed77368-3ad8-4196-99d6-5288319c2193",
+        "1c196b6e-ed3c-4fbe-a7cc-f10ba5d627fc",
+        "ff24fc94-8352-45e5-b26e-f1ad9fa2872d"
+      ],
+      "settings": {
+        "val-main-heading": "OUR VALUES"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "ba680ede-7008-4d5d-927e-ad20cfce2c26",
+    "440fa401-af0a-409e-a1b4-8d39c7f62293",
+    "52a343d8-2199-4ffa-aec2-d2faf7bd2465",
+    "15a07ea5-5f63-4f28-90eb-e350b765cf7e",
+    "541ff688-47bc-4073-aa8b-1c4e8a75bbd6"
+  ]
+}
