@@ -106,6 +106,8 @@
             "points_title": "Signup",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/signup_icon_bd1c91b3-82dc-44d4-8b4c-d10eb9097265.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "200 Points",
             "points_text_color": "#ffffff"
           }
@@ -116,6 +118,8 @@
             "points_title": "Write a review",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/review_icon_7adb5244-8803-4a14-a423-e445923e56d9.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "50 Points",
             "points_text_color": "#ffffff"
           }
@@ -126,6 +130,8 @@
             "points_title": "Like on Facebook",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/fb_icon_051ad8e8-bb60-4d0e-944d-4e1551494a91.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "50 Points",
             "points_text_color": "#ffffff"
           }
@@ -136,6 +142,8 @@
             "points_title": "Follow on Instagram",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "100 Points",
             "points_text_color": "#ffffff"
           }
@@ -146,6 +154,8 @@
             "points_title": "Attach a picture to your review",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/media_icon_ee6916b7-7c8f-47cc-9591-e2833ed0302a.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "100 Points",
             "points_text_color": "#ffffff"
           }
@@ -156,6 +166,8 @@
             "points_title": "Celebrate a Birthday",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/birthday_icon_19b9f0ad-c86b-4e88-8ad2-7e306a1db7dc.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
             "points_text": "250 Points",
             "points_text_color": "#ffffff"
           }
@@ -190,6 +202,8 @@
             "card_title": "$5 off coupon",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "card_svg_icon": "",
+            "card_svg_icon_color": "",
             "card_text": "500 Points",
             "card_text_color": "#ffffff"
           }
@@ -201,6 +215,8 @@
             "card_title": "$15 off coupon",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "card_svg_icon": "",
+            "card_svg_icon_color": "",
             "card_text": "1500 Points",
             "card_text_color": "#ffffff"
           }
@@ -212,6 +228,8 @@
             "card_title": "$25 off coupon",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "card_svg_icon": "",
+            "card_svg_icon_color": "",
             "card_text": "2500 Points",
             "card_text_color": "#ffffff"
           }
@@ -236,6 +254,8 @@
             "refer_title": "They get",
             "refer_title_color": "#ffffff",
             "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "refer_svg_icon": "",
+            "refer_svg_icon_color": "",
             "refer_text": "$10 off coupon",
             "refer_text_color": "#ffffff"
           }
@@ -246,16 +266,21 @@
             "refer_title": "You get",
             "refer_title_color": "#ffffff",
             "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "refer_svg_icon": "",
+            "refer_svg_icon_color": "",
             "refer_text": "$15 off coupon",
             "refer_text_color": "#ffffff"
           }
         },
         "e3294e78-48d1-48fb-bfbd-ea1b7c623e0d": {
           "type": "select",
+          "disabled": true,
           "settings": {
             "refer_title": "You get",
             "refer_title_color": "#ffffff",
             "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "refer_svg_icon": "",
+            "refer_svg_icon_color": "",
             "refer_text": "$15 off coupon",
             "refer_text_color": "#ffffff"
           }
@@ -282,6 +307,9 @@
           "type": "category",
           "settings": {
             "title": "HEAL + CLUB REWARDS",
+            "faq_heading_bg": "",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -289,8 +317,10 @@
           "type": "question",
           "settings": {
             "title": "What is the Heal & Co Club rewards program?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>The Heal & Co club rewards program us our way of thanking our loyal customers. It allows you to earn points that can be redeemed for discounts on our products.<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -299,8 +329,10 @@
           "type": "question",
           "settings": {
             "title": "How do I join the rewards program",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -310,6 +342,9 @@
           "disabled": true,
           "settings": {
             "title": "Category",
+            "faq_heading_bg": "",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -317,8 +352,10 @@
           "type": "question",
           "settings": {
             "title": "How do I earn points?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -327,8 +364,10 @@
           "type": "question",
           "settings": {
             "title": "How do I redeem my points?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -337,8 +376,10 @@
           "type": "question",
           "settings": {
             "title": "Do my points expire?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
