@@ -58,7 +58,7 @@
     assign enable_filtering = false
   endif
 -%}
-
+{{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% capture css %}
     {% style %}
 
@@ -140,7 +140,7 @@
           {%- endif -%}
         {%- endif -%}
       </div>
-      <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+      <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}' style="display: none;">
         {%- if show_product_count -%}
           <div class='shop__product-count' id='ShopProductCount'>
             {{ 'products.shop.results_count' | t: count: collection.products_count }}
@@ -215,11 +215,12 @@
         %}
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
-        {%- paginate collection.products by product_per_page -%}
-          {%- if collection.products.size > 0 -%}
-            <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>
-                {%- for product in collection.products -%}
+        <div class="{{ section.settings.bundles_collection_title | downcase }}-section">
+          <div class="section_seperation"></div>
+          <h4 class="collection_title">{{ section.settings.bundles_collection_title | upcase }}</h4>
+          <div class='shop__products-grid-wrap'>
+            <div class='shop__products-grid' id='ShopProductsGrid'>
+                {%- for product in section.settings.bundles_products -%}
                   <div class='shop__grid-item'>
                     {% render 'product-card',
                       with_bottom_spacing: true,
@@ -233,40 +234,64 @@
                   </div>
                 {%- endfor -%}
               </div>
-              {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
             </div>
-          {%- else -%}
-            {%- if active_filter_count > 0 -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'products.shop.text_for_no_results_found_in_stub' | t }}</span>
-                <span>
-                  {{- 'products.shop.text_for_use_another_filters' | t }}
-                  <filter-remove-btn class='shop__filters-reset' data-url='{{ collection.url }}'>
-                    {{- 'products.shop.text_for_clear_all_in_stub' | t -}}
-                  </filter-remove-btn></span
-                >
+        </div>
+        <div class="{{ collection.title | downcase }}-section">
+          <h4 class="collection_title">{{ collection.title | upcase }}</h4>
+          {%- paginate collection.products by product_per_page -%}
+          <div class="section_seperation"></div>
+            {%- if collection.products.size > 0 -%}
+              <div class='shop__products-grid-wrap'>
+                <div class='shop__products-grid' id='ShopProductsGrid'>
+                  {%- for product in collection.products -%}
+                    <div class='shop__grid-item'>
+                        {% render 'product-card',
+                          with_bottom_spacing: true,
+                          product: product,
+                          show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+                          color_swatch_variables: color_swatch_variables,
+                          img_ratio: img_ratio,
+                          show_mobile_carousel: true,
+                          product_card_align: product_card_align
+                        %}
+                    </div>
+                  {%- endfor -%}
+                </div>
                 {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
               </div>
             {%- else -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'products.shop.text_for_change_query' | t }}</span>
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-              </div>
+              {%- if active_filter_count > 0 -%}
+                <div class='shop__products-stub'>
+                  <span>{{ 'products.shop.text_for_no_results_found_in_stub' | t }}</span>
+                  <span>
+                    {{- 'products.shop.text_for_use_another_filters' | t }}
+                    <filter-remove-btn class='shop__filters-reset' data-url='{{ collection.url }}'>
+                      {{- 'products.shop.text_for_clear_all_in_stub' | t -}}
+                    </filter-remove-btn></span
+                  >
+                  {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
+                </div>
+              {%- else -%}
+                <div class='shop__products-stub'>
+                  <span>{{ 'products.shop.text_for_change_query' | t }}</span>
+                  {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
+                </div>
+              {%- endif -%}
             {%- endif -%}
-          {%- endif -%}
-          {%- liquid
-            if paginate.pages > 1
-              case pagination_type
-                when 'load-button-pagination'
-                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
-                when 'classic-pagination'
-                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
-                when 'infinite-scroll'
-                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
-              endcase
-            endif
-          -%}
-        {%- endpaginate -%}
+            {%- liquid
+              if paginate.pages > 1
+                case pagination_type
+                  when 'load-button-pagination'
+                    render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
+                  when 'classic-pagination'
+                    render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
+                  when 'infinite-scroll'
+                    render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
+                endcase
+              endif
+            -%}
+          {%- endpaginate -%}
+        </div>
       </div>
     </div>
   </div>
@@ -277,6 +302,25 @@
   "name": "t:sections.products.name",
   "tag": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Bundle section"
+    },
+    {
+      "type": "product_list",
+      "id": "bundles_products",
+      "label": "Bundle products"
+    },
+    {
+      "type": "text",
+      "id": "bundles_collection_title",
+      "label": "Bundle section title",
+      "default": "Bundles"
+    },
+    {
+      "type": "header",
+      "content": "Schema settings"
+    },
     {
       "type": "select",
       "id": "color_scheme",

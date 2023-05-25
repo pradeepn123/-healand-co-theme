@@ -85,9 +85,11 @@
     >
       {% render 'icon', icon_name: 'sort', class: 'sort-list__btn-icon' %}
       {{ 'general.sort_list.button_label' | t }}
-      <div class='sort-list-dropdown__active-sort-option'>
-        {{ active_sort_label }}
-      </div>
+      {% if request.path != '/collections/all' %}
+        <div class='sort-list-dropdown__active-sort-option'>
+          {{ active_sort_label }}
+        </div>
+      {% endif %}
     </dropdown-opener>
     <float-element
       class='sort-list-dropdown'

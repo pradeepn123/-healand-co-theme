@@ -80,7 +80,7 @@
   assign key = current_color_scheme | append: '_background_color'
   assign section_background_color = settings[key] | downcase
 -%}
-
+{{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% if product.id != blank %}
   <product-card
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'
@@ -523,29 +523,20 @@
           </div>
         {%- endif -%}
         <div class='product-card__info'>
+          {% assign product_titles = product.title | split: ' | ' %}
           <a
             class='product-card__title unstyled-link'
             href='{{ product.url }}'
             aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
-          >
-            {{- product.title -}}
+          > 
+          <span class="product_type_metafield">{{ product.metafields.custom.product_type }}</span>
+          <div class="product_title_1">{{ product_titles[0] }}</div>
+          <div class="product_title_2">{{ product_titles[1] }}</div>
           </a>
           {%- if show_vendor -%}
             <a class='product-card__vendor unstyled-link' href='/collections/all?filter.p.vendor={{ product.vendor }}'>
               {{- product.vendor -}}
             </a>
-          {%- endif -%}
-
-          {%- if enable_product_review -%}
-            {%- assign rating_value = product.metafields.reviews.rating.value.rating | plus: 0 -%}
-            {%- render 'rating', value: rating_value, class: 'product-card__rating' -%}
-          {%- endif -%}
-
-          {%- if show_color_count and colors.size > 0 -%}
-            <div class='product-card__color-count'>
-              {{ colors.size }}
-              {{ colors.size | pluralize: 'Color', 'Colors' }}
-            </div>
           {%- endif -%}
 
           <div class='product-card__price'>
@@ -583,6 +574,20 @@
               </div>
             {%- endif -%}
           </div>
+
+          {%- if enable_product_review -%}
+            {%- assign rating_value = product.metafields.reviews.rating.value.rating | plus: 0 -%}
+            {%- render 'rating', value: rating_value, class: 'product-card__rating' -%}
+          {%- endif -%}
+
+          {%- if show_color_count and colors.size > 0 -%}
+            <div class='product-card__color-count'>
+              {{ colors.size }}
+              {{ colors.size | pluralize: 'Color', 'Colors' }}
+            </div>
+          {%- endif -%}
+
+          
         </div>
       </div>
     </div>
