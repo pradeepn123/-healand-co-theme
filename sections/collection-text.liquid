@@ -1,3 +1,4 @@
+{{ 'collection-text.css' | asset_url | stylesheet_tag: preload: true }}
 {%- liquid
   assign options = section.settings
 
@@ -21,12 +22,21 @@
   assign body_size = options.body_size
   assign icon = options.icon
   assign custom_icon_image = options.custom_icon_image
+  assign btn_style =  options.btn_style
 
   assign product_card_align = options.product_card_align
   assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
 
   if content_position == 'right'
     assign direction = 'inverse'
+  endif
+
+  assign with_only_links = true
+  assign is_first_link = true
+
+  if link_text != blank and btn_style != 'link'
+    assign with_only_links = false
+    assign is_first_link = false
   endif
 
   assign desktop_columns = options.desktop_columns
@@ -88,8 +98,30 @@
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
+{% style %}
+  .section-{{ section.id }}{
+    background: {{ section.settings.background }};
+  } 
+  .over_right__color_scheme .collection-text__content h5{
+    color: {{ section.settings.heading_color}}
+  }
+  .over_right__color_scheme .collection-text__content .our-bundles__btn-link{
+    color: {{ section.settings.btn_color}};
+  }
+  .over_right__color_scheme .collection-text__content .btn.btn--solid{
+    color: {{ section.settings.btn_color}};
+    background: {{ section.settings.btn_bg_color }};
+  }
+  .over_right__color_scheme .collection-text__content .btn.btn--outline{
+    color: {{ section.settings.btn_color}};
+    border: 1px solid {{ section.settings.btn_bg_color }};
+  }
+  .over_right__color_scheme .collection-text__content .collection-text__text{
+    color: {{ section.settings.subheading_color}};
+  }
+{% endstyle %}
 
-<div class='collection-text section section-{{ section.id }} color-{{ color_scheme }}'>
+<div class='collection-text section section-{{ section.id }} color-{{ color_scheme }} {% if section.settings.color_scheme == "default" %}over_right__color_scheme{%endif%}'>
   <div class='collection-text__container container container--{{ container_size }} section-spacing {% if direction == 'inverse' %}collection-text__container--inverse{% endif %}'>
     {%- if caption != blank
       or title != blank
@@ -130,15 +162,37 @@
             {{ text }}
           </div>
         {%- endif -%}
+        {% comment%}
+          {%- if link_text != blank -%}
+            <a
+              class='link collection-text__link'
+              href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
+              aria-label='{{ link_text }}'
+            >
+              <span class='link__text'>{{ link_text }}</span>
+              {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+            </a>
+          {%- endif -%}
+        {% endcomment %}
         {%- if link_text != blank -%}
-          <a
-            class='link collection-text__link'
-            href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
-            aria-label='{{ link_text }}'
-          >
-            <span class='link__text'>{{ link_text }}</span>
-            {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
-          </a>
+          {% if btn_style == 'link' -%}
+            <a
+              class='link our-bundles__btn-link'
+              href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
+              aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
+            >
+              <span class='link__text'>{{ link_text }}</span>
+              {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+            </a>
+          {%- else -%}
+            <a
+              class='btn btn--{{ btn_style }} our-bundles__btn'
+              href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
+              aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
+            >
+              {{- link_text -}}
+            </a>
+          {%- endif -%}
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -201,6 +255,31 @@
   "name": "t:sections.collection_text.name",
   "tag": "section",
   "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "SubHeading Color"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background Color"
+    },
     {
       "type": "select",
       "id": "color_scheme",
@@ -937,6 +1016,26 @@
       "type": "url",
       "id": "link_url",
       "label": "t:sections.collection_text.link_url_label"
+    },
+    {
+      "type": "select",
+      "id": "btn_style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "t:sections.split_image_banner.label_for_solid_option_in_button_style_setting"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.split_image_banner.label_for_outline_option_in_button_style_setting"
+        },
+        {
+          "value": "link",
+          "label": "t:sections.split_image_banner.label_for_link_option_in_button_style_setting"
+        }
+      ],
+      "default": "solid",
+      "label": "t:sections.split_image_banner.label_for_button_style_setting"
     },
     {
       "type": "header",

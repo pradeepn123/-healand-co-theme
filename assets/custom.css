@@ -16,7 +16,7 @@
         url('https://cdn.shopify.com/s/files/1/0436/8993/5006/files/BrownStd-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
-p, a, li, .rtl p, .caption, .rte, label, input, textarea{
+p, a, li, .rtl p, .caption, .rte, label, input, textarea, .product-card__price-item {
     font-family: "BrownStd-Regular" !important;    
 }
 h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{

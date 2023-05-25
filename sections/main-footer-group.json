@@ -8,9 +8,10 @@
         "footer-1": {
           "type": "logo_with_text",
           "settings": {
-            "logo_width": 140,
-            "title": "Logo with text",
-            "text": "<p>Pair logo with text to tell more about your brand, history, and achievements.<\/p>"
+            "logo_img": "shopify:\/\/shop_images\/footer_logo.png",
+            "logo_width": 90,
+            "title": "",
+            "text": "<p>We are a family-run business from Whistler, Canada, dedicated to promoting health and wellness through the natural healing powers of plants.<\/p>"
           }
         },
         "footer-2": {
@@ -23,14 +24,14 @@
         "018fbce4-9340-47e5-b816-7dd578360ba6": {
           "type": "menu",
           "settings": {
-            "menu": "new-menu",
-            "title": "Menu"
+            "menu": "support",
+            "title": "Support"
           }
         },
         "footer-3": {
           "type": "social_media",
           "settings": {
-            "title": "Social media",
+            "title": "Follow us",
             "text": "<p>Want to learn more about us? Check out our recent posts and join the community<\/p>"
           }
         },
@@ -56,11 +57,11 @@
         "container_size": "page-width",
         "desktop_column_count": "4",
         "enable_border": false,
-        "bottom_bar": "main-menu",
-        "show_payment_icons": true,
-        "copyright_text": "",
-        "show_language_selector": true,
-        "show_currency_selector": true
+        "bottom_bar": "",
+        "show_payment_icons": false,
+        "copyright_text": "© 2023 Heal + Co.",
+        "show_language_selector": false,
+        "show_currency_selector": false
       }
     }
   },
