@@ -27,6 +27,7 @@
 @media(max-width:768px){
     .contact_pg_form .contact__content .contact__title.h5{
         font-size: 24px;
+        color: #000;
     }
 }
 .contact_us_page .contact__methods__main{
@@ -100,11 +101,15 @@
 }
 .contact_pg_form #ContactForm .field-group{
     column-gap: 1.4rem;
+    row-gap: 2.2rem;
 }
 .contact_pg_form #ContactForm .input::placeholder,.textarea::placeholder{
     color: #B4B4B4;
-    font-weight: 400;
     font-family: 'BrownStd-Bold';
+}
+.input, .textarea{
+    font-weight: 400;
+    border: 0.5px solid #B4B4B4;
 }
 /* .contact_pg_form .contact__form .field-group .field.contact__field input{
     border: 0.5px solid var(--gsc-border-color-100);
@@ -112,5 +117,9 @@
 @media(max-width:520px){
 .contact_pg_form #ContactForm .field.contact__field .textarea {
     height: 16rem;
- }
+}
+
+}
+.contact__form>.contact__field+.contact__field, .contact__field-group+.contact__field{
+    margin: 2.2rem 0 0;
 }

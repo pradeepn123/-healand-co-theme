@@ -1,3 +1,4 @@
+
 .faq__blocks .faq__category{
     color: #fff;
     padding:1.6rem 2rem;
@@ -9,6 +10,10 @@
 @media(max-width:520px){
     .faq__accordeon-plus-btn.accordeon-plus__btn{
         font-size: 16px !important;
+    }
+    .faq--main--parent{
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 .faq__blocks .faq__accordeon-plus-btn{
