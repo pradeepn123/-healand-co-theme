@@ -232,33 +232,13 @@
           "disabled": true,
           "settings": {
           }
-        },
-        "9bc6f6c4-2e99-47b3-acf8-1ddf9f8a2270": {
-          "type": "select",
-          "disabled": true,
-          "settings": {
-            "refer_title": "They get",
-            "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "refer_text": "$10 off coupon"
-          }
-        },
-        "db903c7d-0803-4dc4-85ad-f55bed1612fd": {
-          "type": "select",
-          "disabled": true,
-          "settings": {
-            "refer_title": "You get",
-            "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "refer_text": "$15 off coupon"
-          }
         }
       },
       "block_order": [
         "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-0",
         "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-1",
         "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-2",
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-3",
-        "9bc6f6c4-2e99-47b3-acf8-1ddf9f8a2270",
-        "db903c7d-0803-4dc4-85ad-f55bed1612fd"
+        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-3"
       ],
       "settings": {
         "color_scheme": "default",
