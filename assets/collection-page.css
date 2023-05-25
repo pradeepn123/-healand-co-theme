@@ -1,0 +1,90 @@
+.collection-custom__title{
+    font-weight: 700;
+}
+.collection-hero__image{
+    object-position: 0% 50% !important;
+}
+.bundles-section, .products-section{
+    position: relative;
+}
+.section_seperation{
+    position: absolute;
+    border-top: 1px solid #CECECE;
+    top: calc(var(--gsc-heading-4-desktop-font-size)/1.5);
+    left: 20%;
+    width: 100vw;
+    z-index: 0;
+}
+.bundles-section .collection_title, .products-section .collection_title{
+    background: #fff;
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+    padding-right: 56px;
+    padding-bottom: 47px;
+}
+.filters__form .accordeon__content .checkbox__span--outline{
+    border: 1px solid #000;
+}
+.filters__form .accordeon__content .filters__option-count{
+    display: none;
+}
+.filters__form .accordeon__content .checkbox span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+.filters__form accordeon-component .filters__label{
+    justify-content: left;
+    padding: 1em 0 1em;
+}
+.sidebar-filters--mobile .sidebar-filters__content .sidebar-filters__header{
+    justify-content: left;
+    flex-direction: row-reverse;
+    column-gap: calc(100% / 2.5);
+    border-bottom: 1px solid #E2E2E2;
+}
+.sidebar-filters--mobile .sidebar-filters__content .sidebar-filters__header .filters__results-count{
+    display: none;
+}
+@media (max-width: 768px){
+    .filters__form .filters__item.filters__item--bordered{
+        border-top: 0;
+        border-bottom: 1px solid #E2E2E2;
+        border-top: 0 !important;
+    }
+}
+.filters__form .filters__item.filters__item--bordered{
+    border-top: 0;
+    border-top: 1px solid #E2E2E2;
+}
+#ShopSortList .sidebar-sort-list .sort-list-sidebar__body .sort-list-sidebar__header{
+    justify-content: left;
+    flex-direction: row-reverse;
+}
+#ShopSortList .sidebar-sort-list .sort-list-sidebar__body .sort-list-sidebar__header{
+    border-bottom: 1px solid #E2E2E2;
+}
+#ShopSortList .sidebar-sort-list .sort-list-sidebar__body .sort-list-sidebar__header sidebar-button{
+    flex-basis: 43%;
+}
+#ShopSortList .sidebar-sort-list .sort-list-sidebar__body .sort-list-sidebar__form-wrap{
+    align-items: flex-start;
+    padding-top: 13%;
+}
+.product_title_1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+.product_title_2{
+    font-weight: 400;
+    font-size: 14px;
+    color: #ADADAE;
+    text-transform: uppercase;
+}
+.product_type_metafield{
+    font-weight: 700;
+    font-size: 14px;
+    color: #D97059;
+}

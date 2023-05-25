@@ -31,7 +31,7 @@
     assign color_scheme = settings.default_color_scheme
   endif
 -%}
-
+{{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% capture css %}
   {% style %}
     .section-{{section.id}} {
@@ -46,6 +46,10 @@
         {{ mobile_content_position }}
     }
 
+    .collection-custom__title{
+      font-size: {{ section.settings.collection_title_font_size_mobile }}px;
+    }
+
     @media {% render 'media-queries', screen: 'md' %} {
         .section-{{ section.id }} {
             --gsc-section-height: {{ desktop_section_height }}px;
@@ -57,6 +61,9 @@
 
         .section-{{ section.id }} .collection-hero__content-wrap {
             {{ desktop_content_position }}
+        }
+        .collection-custom__title{
+          font-size: {{ section.settings.collection_title_font_size }}px;
         }
     }
   {% endstyle %}
@@ -135,9 +142,13 @@
           {%- if show_collection_title and title != blank -%}
             <h5 class='collection-hero__title'>{{ title }}</h5>
           {%- endif -%}
+          {% if section.settings.collection_title != blank %}
+            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ section.settings.collection_title }}</span>
+          {% endif %}
           {%- if show_collection_description and description != blank -%}
             <div class='collection-hero__description body-font-weight-from-global-settings'>{{ description }}</div>
           {%- endif -%}
+
         </div>
       </div>
     </div>
@@ -284,6 +295,36 @@
       "id": "show_collection_title",
       "default": true,
       "label": "t:sections.collection_hero_banner.show_collection_title_label"
+    },
+    {
+      "type": "text",
+      "id": "collection_title",
+      "default": "SHOP ALL",
+      "label": "Collection Title"
+    },
+    {
+      "type": "color",
+      "id": "collection_title_color",
+      "default": "#FFFFFF",
+      "label": "Collection title - color"
+    },
+    {
+      "type": "range",
+      "id": "collection_title_font_size",
+      "label": "Collection Title - font size",
+      "max": 100,
+      "min": 10,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "collection_title_font_size_mobile",
+      "label": "Collection Title - font size(mobile)",
+      "max": 100,
+      "min": 10,
+      "step": 1,
+      "default": 24
     },
     {
       "type": "checkbox",
