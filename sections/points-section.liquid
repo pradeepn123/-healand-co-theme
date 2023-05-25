@@ -1,0 +1,90 @@
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="points_section_container" style="background:{{section.settings.points_section_bg}}">
+    <h2>{{ section.settings.points_section_header }}</h2>
+    <div class="points_section_content">
+    {% for block in section.blocks %}
+        {%if block.settings.points_icon and block.settings.points_title and block.settings.points_text %}
+            <div class="points_column">
+                <div class="points_icon">
+                    <img src="{{ block.settings.points_icon | img_url: 'master' }}" />
+                </div>
+                <div class="points_text_content">
+                    <div class="points_text_title">
+                        {{ block.settings.points_title }}
+                    </div>
+                    <div class="points_text">
+                        {{ block.settings.points_text }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="button-wrapper">
+        <a class="points_section_btn_link" href="{{ section.settings.points_section_btn_link }}"><button
+            class='btn btn--solid'
+            type='button'>
+            {{ section.settings.points_section_btn }}
+        </button></a>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Points section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "points_section_header",
+            "label": "Heading"
+        },
+        {
+            "type": "color",
+            "id": "points_section_bg",
+            "label": "Background Color"
+        },
+        {
+            "type": "text",
+            "id": "points_section_btn",
+            "label": "Button Label",
+            "default": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "points_section_btn_link",
+            "label": "Button URL"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Points Content",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "points_title",
+                    "label": "Points Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "points_icon",
+                    "label": "Points Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "points_text",
+                    "label": "Points Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Points section"
+        }
+    ]
+}
+{% endschema %}

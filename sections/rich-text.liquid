@@ -11,7 +11,9 @@
     assign color_scheme = settings.default_color_scheme
   endif
 -%}
-
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
 {% capture css %}
   {% style %}
   .section-{{section.id}} {
@@ -76,7 +78,7 @@
               {%- endif -%}
             {%- when 'heading' -%}
               {%- if title != blank -%}
-                <h5 class='rte block-{{block.id}} {{ heading_size }}' {{ block.shopify_attributes }}>
+                <h5 class='rte block-{{block.id}} {{ heading_size }} decorated_heading' {{ block.shopify_attributes }}>
                   {{ title }}
                 </h5>
               {%- endif -%}
