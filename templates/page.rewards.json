@@ -104,48 +104,60 @@
           "type": "select",
           "settings": {
             "points_title": "Signup",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/signup_icon_bd1c91b3-82dc-44d4-8b4c-d10eb9097265.svg",
-            "points_text": "200 Points"
+            "points_text": "200 Points",
+            "points_text_color": "#ffffff"
           }
         },
         "2a7b2c95-7b55-4355-a15a-670ea07a0a8a": {
           "type": "select",
           "settings": {
             "points_title": "Write a review",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/review_icon_7adb5244-8803-4a14-a423-e445923e56d9.svg",
-            "points_text": "50 Points"
+            "points_text": "50 Points",
+            "points_text_color": "#ffffff"
           }
         },
         "f05987cc-a940-4b2c-acad-41127fa6f900": {
           "type": "select",
           "settings": {
             "points_title": "Like on Facebook",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/fb_icon_051ad8e8-bb60-4d0e-944d-4e1551494a91.svg",
-            "points_text": "50 Points"
+            "points_text": "50 Points",
+            "points_text_color": "#ffffff"
           }
         },
         "f29f0d21-8f40-4911-827a-68f113687f4a": {
           "type": "select",
           "settings": {
             "points_title": "Follow on Instagram",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
-            "points_text": "100 Points"
+            "points_text": "100 Points",
+            "points_text_color": "#ffffff"
           }
         },
         "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc": {
           "type": "select",
           "settings": {
             "points_title": "Attach a picture to your review",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/media_icon_ee6916b7-7c8f-47cc-9591-e2833ed0302a.svg",
-            "points_text": "100 Points"
+            "points_text": "100 Points",
+            "points_text_color": "#ffffff"
           }
         },
         "de505b0e-ef05-4555-9463-dc34a6192f76": {
           "type": "select",
           "settings": {
             "points_title": "Celebrate a Birthday",
+            "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/birthday_icon_19b9f0ad-c86b-4e88-8ad2-7e306a1db7dc.svg",
-            "points_text": "250 Points"
+            "points_text": "250 Points",
+            "points_text_color": "#ffffff"
           }
         }
       },
@@ -158,10 +170,14 @@
         "de505b0e-ef05-4555-9463-dc34a6192f76"
       ],
       "settings": {
-        "points_section_header": "WAYS TO EARN POINTS",
         "points_section_bg": "#ea6852",
+        "points_section_header": "WAYS TO EARN POINTS",
+        "points_section_header_color": "#ffffff",
         "points_section_btn": "EARN POINTS",
-        "points_section_btn_link": "#"
+        "points_section_btn_link": "#",
+        "points_section_btn_color": "#f3b563",
+        "points_section_btn_text_color": "#ffffff",
+        "points_section_btn_alignment": "center"
       }
     },
     "b77943b2-746a-4ad9-9fe8-0ae6621883ab": {
@@ -172,8 +188,10 @@
           "settings": {
             "card_bg": "#756cae",
             "card_title": "$5 off coupon",
+            "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "card_text": "500 Points"
+            "card_text": "500 Points",
+            "card_text_color": "#ffffff"
           }
         },
         "bc0e45c0-348c-4b30-92f9-45a6c20eff57": {
@@ -181,8 +199,10 @@
           "settings": {
             "card_bg": "#756cae",
             "card_title": "$15 off coupon",
+            "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "card_text": "1500 Points"
+            "card_text": "1500 Points",
+            "card_text_color": "#ffffff"
           }
         },
         "2553782a-d2a3-42f6-8ab3-14fdd06e14c2": {
@@ -190,8 +210,10 @@
           "settings": {
             "card_bg": "#756cae",
             "card_title": "$25 off coupon",
+            "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "card_text": "2500 Points"
+            "card_text": "2500 Points",
+            "card_text_color": "#ffffff"
           }
         }
       },
@@ -205,66 +227,6 @@
         "cards_section_bg": "#ffffff"
       }
     },
-    "be7df465-cb31-4fb5-b644-474f70ee1df3": {
-      "type": "images-with-text",
-      "disabled": true,
-      "blocks": {
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/refer_and_earn.png"
-          }
-        },
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-1": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-2": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-3": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-0",
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-1",
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-2",
-        "template--16185221906590__be7df465-cb31-4fb5-b644-474f70ee1df3-1684922962f9c63f34-3"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "page-width",
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48,
-        "content_layout": "right",
-        "image_layout": "collage",
-        "img_ratio": 0.7,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "REFER & EARN",
-        "body": "<p>Give your friends a reward and claim your own when they make a purchase<\/p>",
-        "heading_size": "h2",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 360,
-        "first_button_text": "",
-        "first_button_link": "",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid"
-      }
-    },
     "3fc50dca-c0e6-4c93-aba3-182b2cd232a5": {
       "type": "custom-image-with-text",
       "blocks": {
@@ -272,26 +234,43 @@
           "type": "select",
           "settings": {
             "refer_title": "They get",
+            "refer_title_color": "#ffffff",
             "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "refer_text": "$10 off coupon"
+            "refer_text": "$10 off coupon",
+            "refer_text_color": "#ffffff"
           }
         },
         "a8979460-c44b-4569-923d-354fd8459d78": {
           "type": "select",
           "settings": {
             "refer_title": "You get",
+            "refer_title_color": "#ffffff",
             "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
-            "refer_text": "$15 off coupon"
+            "refer_text": "$15 off coupon",
+            "refer_text_color": "#ffffff"
+          }
+        },
+        "e3294e78-48d1-48fb-bfbd-ea1b7c623e0d": {
+          "type": "select",
+          "settings": {
+            "refer_title": "You get",
+            "refer_title_color": "#ffffff",
+            "refer_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
+            "refer_text": "$15 off coupon",
+            "refer_text_color": "#ffffff"
           }
         }
       },
       "block_order": [
         "a5e0e3f6-6d23-4781-a11d-6159944a2b33",
-        "a8979460-c44b-4569-923d-354fd8459d78"
+        "a8979460-c44b-4569-923d-354fd8459d78",
+        "e3294e78-48d1-48fb-bfbd-ea1b7c623e0d"
       ],
       "settings": {
         "custom_image_with_text_heading": "REFER & EARN",
+        "custom_image_with_text_heading_color": "#ffffff",
         "custom_image_with_text_description": "Give your friends a reward and claim your own when they make a purchase",
+        "custom_image_with_text_description_color": "#ffffff",
         "right_content_section_bg": "#7eaad6",
         "left_content_image": "shopify:\/\/shop_images\/refer_and_earn.png"
       }
@@ -396,7 +375,6 @@
     "cc662e22-b40d-40e9-bb2c-d05f3d0174e1",
     "c1365986-7de1-4070-ba30-de7c7c8eb45f",
     "b77943b2-746a-4ad9-9fe8-0ae6621883ab",
-    "be7df465-cb31-4fb5-b644-474f70ee1df3",
     "3fc50dca-c0e6-4c93-aba3-182b2cd232a5",
     "22194aba-6eea-4363-96cc-a0b92b6fda72"
   ]
