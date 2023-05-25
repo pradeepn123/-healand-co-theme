@@ -1,0 +1,91 @@
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="custom_image_with_text_section_container">
+    <div class="left_content_section">
+        <img src="{{ section.settings.left_content_image | img_url: 'master' }}" />
+    </div>
+    <div class="right_content_section"  style="background-color:{{ section.settings.right_content_section_bg }}">
+        <h2>{{ section.settings.custom_image_with_text_heading }}</h2>
+        <p>{{ section.settings.custom_image_with_text_description }}</p>
+        {% if page.handle == 'rewards' %}
+            {% assign select_blocks = section.blocks | where: 'type', 'select' %}
+                <div class="refer_content_container">
+                    {% for block in select_blocks %}
+                        {%if block.settings.refer_icon and block.settings.refer_title and block.settings.refer_text %}
+                            <div class="refer_content">
+                                <div class="refer_icon">
+                                    <img src="{{ block.settings.refer_icon | img_url: 'master' }}" />
+                                </div>
+                                <div class="refer_text_content">
+                                    <div class="refer_text_title">
+                                        {{ block.settings.refer_title }}
+                                    </div>
+                                    <div class="refer_text">
+                                        {{ block.settings.refer_text }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom Image with Text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "custom_image_with_text_heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "custom_image_with_text_description",
+            "label": "Description"
+        },
+        {
+            "type": "color",
+            "id": "right_content_section_bg",
+            "label": "Background Color"
+        },
+        {
+            "type": "image_picker",
+            "id": "left_content_image",
+            "label": "Left Content Image"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Refer and Earn Content",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "refer_title",
+                    "label": "Refer Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "refer_icon",
+                    "label": "Refer Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "refer_text",
+                    "label": "Refer Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Image with Text"
+        }
+    ]
+}
+{% endschema %}

@@ -19,6 +19,11 @@
   endif
 -%}
 <link rel="stylesheet" href="{{ 'faq.css' | asset_url }}">
+
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 {% capture css %}
   {% style %}
     .section-{{ section.id }} {

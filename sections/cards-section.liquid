@@ -1,0 +1,77 @@
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="cards_section_container" style="background-color:{{section.settings.cards_section_bg}}">
+    <h3 class="decorated_heading">{{ section.settings.cards_section_header }}</h3>
+    <div class="cards_section_content">
+    {% for block in section.blocks %}
+        {%if block.settings.card_icon and block.settings.card_title and block.settings.card_text %}
+                <div class="card" style="background-color:{{ block.settings.card_bg }}">
+                    <div class="card_icon">
+                        <img src="{{ block.settings.card_icon | img_url: 'master' }}" />
+                    </div>
+                    <div class="card_text_content">
+                        <div class="card_text_title">
+                            {{ block.settings.card_title }}
+                        </div>
+                        <div class="card_text">
+                            {{ block.settings.card_text }}
+                        </div>
+                    </div>
+                </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Cards section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cards_section_header",
+            "label": "Heading"
+        },
+        {
+            "type": "color",
+            "id": "cards_section_bg",
+            "label": "Background Color"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Redeem Content",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "card_bg",
+                    "label": "Card Background Color"
+                },
+                {
+                    "type": "text",
+                    "id": "card_title",
+                    "label": "Card Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "card_icon",
+                    "label": "Card Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "card_text",
+                    "label": "Card Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Cards section"
+        }
+    ]
+}
+{% endschema %}
