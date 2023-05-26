@@ -39,8 +39,9 @@
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
       "settings": {
-        "video_link": "https:\/\/player.vimeo.com\/video\/794041269",
-        "video_id": "shopify:\/\/shop_images\/image_193.png"
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/68692282b05e442c8a53bc45e99c4937.mp4",
+        "thumbnail": "shopify:\/\/shop_images\/image_193.png",
+        "play-icon": "shopify:\/\/shop_images\/Group_561.png"
       }
     },
     "541ff688-47bc-4073-aa8b-1c4e8a75bbd6": {

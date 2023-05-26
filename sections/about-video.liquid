@@ -1,54 +1,76 @@
+<section class="about-video">
+  <div class="video-section">
+    <div class="contianer">
+      <div class="video-wrapper ">
+        <div class="about-video-thumbnail video-overlay">
+          <img class="vid-image-size" onClick="videoPlayfunction()"
+            src="{{ section.settings.thumbnail | img_url: 'master'}}" alt="Thumbnail">
+        </div>
+        <div class="play-icon">
+          <img class="vid-icon-size" onClick="videoPlayfunction()" id="about-play-icon"
+            src="{{ section.settings.play-icon | img_url: 'master'}}" alt="Thumbnail">
+        </div>
+        <div class="video-container" >
+          <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video_url }}" autoplay="autoplay" controls="controls"  loop playinline></video>
 
-
- 
-
-<div class="video-section">
-  
-  <div class="video-wrapper">
-    <div class="video-overlay"></div>
-    <a class="video-link" href="{{ section.settings.video_link }}" data-video-type="{{ section.settings.video_link }}">
-      {% if section.settings.video_type == 'youtube' %}
-      <img class="video-thumbnail" src="{{ section.settings.video_id }}"
-        alt="Video Thumbnail">
-      {% elsif section.settings.video_type == 'vimeo' %}
-      <img class="video-thumbnail" src="{{ section.settings.video_thumbnail }}" alt="Video Thumbnail">
-      {% endif %}
-      <span class="play-icon"></span>
-    </a>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<script>
+  const customVideo = document.getElementById('about-video-play');
+  function videoPlayfunction() {
+    customVideo.play();
+    document.querySelector('.vid-image-size').style.display = 'none';
+    document.getElementById('about-play-icon').style.display = 'none';
+  }
+
+  document.querySelector(".video-wrapper").addEventListener('click', () => {
+    customVideo.classList.toggle('playpause');
+    if(customVideo.classList.contains('playpause')){
+      customVideo.pause()
+    }
+    else{
+      customVideo.play()
+    }
+  })
   
-</div>
+  function playVid() {
+    x.play();
+  }
+
+  function pauseVid() {
+    x.pause();
+  }
+
+</script>
 
 {% schema %}
 {
-"name": "Video",
+"name": "About Video",
 "settings": [
-
-              {
-                  "type": "video_url",
-                  "id": "video_link",
-                  "accept": ["vimeo", "youtube"],
-                  "label": "Video URL",
-                  "default": "https://player.vimeo.com/video/794041269"
-              },
-              {
-                  "type": "image_picker",
-                  "id": "video_id",
-                  "label": " Thumbnail Image"
-              },
-              {
-                  "type": "image_picker",
-                  "id": "video_thumbnail",
-                  "label": " Thumbnail Image"
-              }
-
-            ],
-
-
+{
+"type": "url",
+"id": "video_url",
+"label": "Video URL"
+},
+{
+"type": "image_picker",
+"id": "thumbnail",
+"label": "Thumbnail"
+},
+{
+"type": "image_picker",
+"id": "play-icon",
+"label": "Play icon"
+}
+],
 "presets": [
-            {
-            "name": "Video"
-           }
+{
+"name": "About Video"
+}
 ]
 }
 {% endschema %}
