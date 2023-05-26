@@ -58,10 +58,10 @@
   .side-textpart .subtext__text{
     color: {{ section.settings.subtitle_color }};
   }
-  .side-textpart .our-bundles__btn{
+  .side-textpart .text--with-image__btn{
     color: {{ section.settings.button_color }};
   }
-  .side-textpart .our-bundles__btn{
+  .side-textpart .text--with-image__btn{
     background: {{ section.settings.buton_bg_color }};
   }
 
@@ -80,8 +80,8 @@
 {% endstyle %}
 
 
-<div class= 'text-with-image-container section section-{{ section.id }} color-{{ color_scheme }} {% if section.settings.color_scheme == "default" %}over__color_scheme{%endif%}'>
-    <div class="collection-text__container  image-text__container flex-container container container--{{ container_size }} section-spacing {% if direction == 'inverse' %}collection-text__container--inverse{% endif %}">
+<div class='text-with-image-container section section-{{ section.id }} color-{{ color_scheme }} {% if section.settings.color_scheme == "default" %}over__color_scheme{%endif%}'>
+    <div class="text-with-image__container  image-text__container flex-container container container--{{ container_size }} section-spacing {% if direction == 'inverse' %}text-with-image__container--inverse{% endif %}">
         {%- if caption != blank
           or title != blank
           or text != blank
@@ -91,7 +91,7 @@
         -%}
 
     <!-- text part -->
-    <div class="collection-text__content side-textpart{% if direction == 'inverse' %}collection-text__content--inverse{% endif %}">
+    <div class="text-with-image__content side-textpart {% if direction == 'inverse' %}text-with-image__container--inverse{% endif %}">
         {%- if custom_icon_image != blank -%}
           <img
             loading='lazy'
@@ -135,7 +135,7 @@
           </a>
         {%- else -%}
           <a
-            class='btn btn--{{ btn_style }} our-bundles__btn'
+            class='btn btn--{{ btn_style }} text--with-image__btn'
             href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
             aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
           >
@@ -152,9 +152,13 @@
         {%- for block in section.blocks -%}
         {%- if block.settings.image_small != blank -%}
           <div class="image-subtext-wrap">
-              <img src="{{ block.settings.image_small | img_url:'master' }}">
-              <p class="heading-for-image">{{block.settings.image_heading}}</p>
-              <p class="subheading-for-image">{{block.settings.image_subheading}}</p>
+              <div class="image-wrapper__info">
+                <img src="{{ block.settings.image_small | img_url:'master' }}">
+              </div>
+              <div class="text-wrapper__info">
+                <p class="heading-for-image">{{block.settings.image_heading}}</p>
+                <p class="subheading-for-image">{{block.settings.image_subheading}}</p>
+              </div>
           </div>
         {%- endif -%}
         {%- endfor -%}
@@ -199,7 +203,7 @@
     },
     {
       "type": "select",
-      "id": "colors_scheme",
+      "id": "color_scheme",
       "options": [
         {
           "value": "default",
@@ -231,7 +235,7 @@
     },
     {
       "type": "select",
-      "id": "container-size",
+      "id": "container_size",
       "options": [
         {
           "value": "page-width",
