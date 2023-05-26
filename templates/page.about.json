@@ -28,14 +28,6 @@
         "subtext": "We believe in the power of nature to heal, and our passion for natural health led us to create Heal and Co. We are committed to purity, potency, and sharing the benefits of natural remedies with everyone. Join us on our mission to help people live their healthiest lives."
       }
     },
-    "52a343d8-2199-4ffa-aec2-d2faf7bd2465": {
-      "type": "about-creator",
-      "settings": {
-        "cimage": "shopify:\/\/shop_images\/Rectangle_190.png",
-        "creator-heading": "MEET THE CREATOR",
-        "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry."
-      }
-    },
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
       "settings": {
@@ -80,14 +72,22 @@
       "settings": {
         "val-main-heading": "OUR VALUES"
       }
+    },
+    "52a343d8-2199-4ffa-aec2-d2faf7bd2465": {
+      "type": "about-creator",
+      "settings": {
+        "cimage": "shopify:\/\/shop_images\/Rectangle_190.png",
+        "creator-heading": "MEET THE CREATOR",
+        "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry."
+      }
     }
   },
   "order": [
     "page",
     "ba680ede-7008-4d5d-927e-ad20cfce2c26",
     "440fa401-af0a-409e-a1b4-8d39c7f62293",
-    "52a343d8-2199-4ffa-aec2-d2faf7bd2465",
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e",
-    "541ff688-47bc-4073-aa8b-1c4e8a75bbd6"
+    "541ff688-47bc-4073-aa8b-1c4e8a75bbd6",
+    "52a343d8-2199-4ffa-aec2-d2faf7bd2465"
   ]
 }
