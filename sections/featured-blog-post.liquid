@@ -16,6 +16,8 @@
   endif
 -%}
 
+{{ 'blog.css' | asset_url | stylesheet_tag }}
+
 {% capture css %}
   {% style %}
     .section-{{section.id}} {
@@ -26,6 +28,15 @@
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
+
+<div class="page_title_container">
+  <h1 class="page_title" style="color: {{ section.settings.page_title_color }}">
+    {{ section.settings.page_title }}
+  </h1>
+  <h2 class="page_subtitle" style="color: {{ section.settings.page_subtitle_color }}">
+    {{ section.settings.page_subtitle }}
+  </h2>
+</div>
 
 <div class='section-{{ section.id }} section-spacing color-{{ color_scheme }} {% if enable_background_around_container %} featured-articles--color-background  {% endif %}'>
   <div class='featured-articles__container container container--{{ container_size }} {% if container_size == 'full-screen' %} featured-articles__container-full-screen{% endif %}'>
@@ -62,7 +73,7 @@
                 block-id='{{ block.id }}'
                 {{ block.shopify_attributes }}
               >
-                <div class='featured-article__details-wrap'>
+                <div class='featured-article__details-wrap' style="background-color: {{section.settings.text_bg}}">
                   <div class='featured-article__details'>
                     {%- if section.blocks.size > 1 -%}
                       <h2 class='featured-article__order-number'>
@@ -85,7 +96,7 @@
                         {%- endif -%}
                       </div>
                       {%- if title != blank -%}
-                        <h4 class='featured-article__title'>
+                        <h4 class='featured-article__title' style="color: {{ block.settings.article_title_color }}">
                           <a
                             class='unstyled-link'
                             href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
@@ -96,13 +107,14 @@
                         </h4>
                       {%- endif -%}
                       {%- if show_subheading and excerpt_or_content != blank -%}
-                        <div class='featured-article__text'>{{ excerpt_or_content }}</div>
+                        <div class='featured-article__text' style="color: {{ block.settings.article_text_color }}">{{ excerpt_or_content }}</div>
                       {%- endif -%}
                       {%- if show_read_more -%}
                         <a
                           class='link'
                           href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
                           aria-label='{{ 'sections.featured_blog_posts.read_more_link_aria_label' | t: blog_post_title: title }}'
+                          style="color: {{ block.settings.read_more_text_color }}"
                         >
                           <span class='link__text'>{{ 'sections.featured_blog_posts.read_more_link' | t }}</span>
                           {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
@@ -148,6 +160,7 @@
                 class='carousel-btn featured-articles__carousel-btn'
                 data-scroll-direction='prev'
                 tabindex='0'
+                style="background-color: {{section.settings.carousel_btn_color}}"
               >
                 {% render 'icon',
                   icon_name: 'chevron',
@@ -158,12 +171,19 @@
                 class='carousel-btn featured-articles__carousel-btn'
                 data-scroll-direction='next'
                 tabindex='0'
+                style="background-color: {{section.settings.carousel_btn_color}}"
               >
                 {% render 'icon',
                   icon_name: 'chevron',
                   class: 'carousel-btn__icon featured-articles__carousel-btn-chevron'
                 %}
               </carousel-btn>
+              {% style %}
+                .carousel-btn[disabled] {
+                  background-color: {{section.settings.carousel_btn_color}};
+                  opacity: 0.7; 
+                }
+              {% endstyle %}
             </div>
           </div>
         {%- endif -%}
@@ -210,6 +230,31 @@
       ],
       "default": "custom-1",
       "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "color",
+      "id": "text_bg",
+      "label": "Text Background Color"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title"
+    },
+    {
+      "type": "color",
+      "id": "page_title_color",
+      "label": "Page Title Color"
+    },
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page Sub Title"
+    },
+    {
+      "type": "color",
+      "id": "page_subtitle_color",
+      "label": "Page Sub Title Color"
     },
     {
       "type": "checkbox",
@@ -287,6 +332,11 @@
       "id": "show_read_more",
       "default": true,
       "label": "t:sections.featured_blog_posts.show_read_more_label"
+    },
+    {
+      "type": "color",
+      "id": "carousel_btn_color",
+      "label": "Carousel Button Color"
     }
   ],
   "blocks": [
@@ -298,6 +348,21 @@
           "type": "article",
           "id": "article",
           "label": "t:sections.featured_blog_posts.featured_post_block_article_label"
+        },
+        {
+          "type": "color",
+          "id": "article_title_color",
+          "label": "Article Title Color"
+        },
+        {
+          "type": "color",
+          "id": "article_text_color",
+          "label": "Article Text Color"
+        },
+        {
+          "type": "color",
+          "id": "read_more_text_color",
+          "label": "Read More Color"
         },
         {
           "type": "image_picker",
