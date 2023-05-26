@@ -31,11 +31,21 @@
     },
     "products": {
       "type": "products",
+      "blocks": {
+        "9139c504-11a2-404a-979f-fad812e54305": {
+          "type": "select",
+          "settings": {
+            "bundles_products": [
+              "immunity-bundle"
+            ],
+            "bundles_collection_title": "Bundles"
+          }
+        }
+      },
+      "block_order": [
+        "9139c504-11a2-404a-979f-fad812e54305"
+      ],
       "settings": {
-        "bundles_products": [
-          "immunity-bundle"
-        ],
-        "bundles_collection_title": "Bundles",
         "color_scheme": "default",
         "container_size": "full-screen",
         "section_spacing_top": 48,
