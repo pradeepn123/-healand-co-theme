@@ -217,27 +217,29 @@
       
       <div class='shop__products' id='ShopProducts'>
         {% for block in section.blocks %}
-          <div class="{{ block.settings.bundles_collection_title | downcase }}-section">
-            <div class="section_seperation"></div>
-            <h4 class="collection_title">{{ block.settings.bundles_collection_title | upcase }}</h4>
-            <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid'>
-                {%- for product in block.settings.bundles_products -%}
-                  <div class='shop__grid-item'>
-                    {% render 'product-card',
-                      with_bottom_spacing: true,
-                      product: product,
-                      show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                      color_swatch_variables: color_swatch_variables,
-                      img_ratio: img_ratio,
-                      show_mobile_carousel: true,
-                      product_card_align: product_card_align
-                    %}
-                  </div>
-                {%- endfor -%}
+          {% if block.settings.bundles_products != blank %}
+            <div class="{{ block.settings.bundles_collection_title | downcase }}-section">
+              <div class="section_seperation"></div>
+              <h4 class="collection_title">{{ block.settings.bundles_collection_title | upcase }}</h4>
+              <div class='shop__products-grid-wrap'>
+                <div class='shop__products-grid'>
+                  {%- for product in block.settings.bundles_products -%}
+                    <div class='shop__grid-item'>
+                      {% render 'product-card',
+                        with_bottom_spacing: true,
+                        product: product,
+                        show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+                        color_swatch_variables: color_swatch_variables,
+                        img_ratio: img_ratio,
+                        show_mobile_carousel: true,
+                        product_card_align: product_card_align
+                      %}
+                    </div>
+                  {%- endfor -%}
+                </div>
               </div>
             </div>
-          </div>
+          {% endif %}
         {% endfor %}
         <div class="{{ collection.title | downcase }}-section">
           <h4 class="collection_title">{{ collection.title | upcase }}</h4>
@@ -662,6 +664,7 @@
     {
       "type": "select",
       "name": "Custom collection block",
+      "limit": 1,
       "settings": [
         {
           "type": "header",
