@@ -80,6 +80,56 @@
         "creator-heading": "MEET THE CREATOR",
         "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry."
       }
+    },
+    "f5eb5833-c5ec-4524-9eec-a4553fdc0dc2": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-1": {
+          "type": "title",
+          "settings": {
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "heading_size": "h4"
+          }
+        },
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-2": {
+          "type": "text",
+          "settings": {
+            "text": "sign up for early access to new products, exclusive deals and more!",
+            "body_size": "body3"
+          }
+        },
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-1",
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-2",
+        "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 640,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "desktop_overlay_opacity": 20,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
     }
   },
   "order": [
@@ -88,6 +138,7 @@
     "440fa401-af0a-409e-a1b4-8d39c7f62293",
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e",
     "541ff688-47bc-4073-aa8b-1c4e8a75bbd6",
-    "52a343d8-2199-4ffa-aec2-d2faf7bd2465"
+    "52a343d8-2199-4ffa-aec2-d2faf7bd2465",
+    "f5eb5833-c5ec-4524-9eec-a4553fdc0dc2"
   ]
 }
