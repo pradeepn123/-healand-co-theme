@@ -43,6 +43,8 @@
 .rich-text__container .rich-text__btns .btn--solid {
     background-color: #F3B563;
     font-size: 20px;
+    width: 183px;
+    padding: 12px;
 }
 
 .points_section_container {
@@ -59,14 +61,16 @@
     margin-bottom: 72px;
 }
 
-.points_section_content, .cards_section_content {
+.points_section_content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 83px;
-    row-gap: 84px;
+    row-gap: 83px;
 }
 
 .cards_section_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 71px;
     justify-content: space-between;
     margin-top: 50px;
 }
@@ -99,10 +103,16 @@
     row-gap: 24px;
 }
 
-.points_column .points_text_content, .card .card_text_content, .refer_content .refer_text_content {
+.points_column .points_text_content, .refer_content .refer_text_content {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+}
+
+.card .card_text_content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
 }
 
 .points_column .points_text_content img, .card.card_icon, .refer_content .refer_icon {
@@ -136,11 +146,15 @@
 
 .points_section_btn_link {
     width: fit-content;
+    text-decoration: none;
 }
 
 .points_section_btn_link button {
-    width: auto;
     font-size: 20px;
+    background-color: #f3b563;
+    color: #ffffff;
+    width: 183px;
+    padding: 12px;
 }
 
 .points_section_btn_link button:not([disabled]):hover {
@@ -411,8 +425,6 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
     }
     .points_section_btn_link button, .rich-text__container .rich-text__btns .btn--solid {
         font-size: 18px;
-        background-color: #f3b563;
-        color: #ffffff;
         width: 183px;
         padding: 12px;
     }
@@ -437,7 +449,7 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
         font-size: 24px;
         line-height: 39px;
         letter-spacing: 0.045em;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
     }
     .right_content_section p {
         font-size: 14px;
@@ -448,7 +460,7 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
     .cards_section_content {
         margin-top: 40px;
     }
-    .card .card_text_content {
+    .card .card_text_content, .refer_content .refer_text_content {
         row-gap: 10.31px;
     }
     .card .card_text_content .card_text_title, .refer_content .refer_text_title, .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
