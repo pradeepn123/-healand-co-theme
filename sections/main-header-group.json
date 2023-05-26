@@ -36,7 +36,7 @@
         "show_navigation_arrows": true,
         "show_language_selector": false,
         "show_currency_selector": false,
-        "show_social_list": true
+        "show_social_list": false
       }
     },
     "header": {
