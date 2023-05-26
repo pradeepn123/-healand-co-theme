@@ -1,6 +1,7 @@
 /* Begin: Image Banner Section */
 .image-banner__container {
     min-height: 100%;
+    max-height: 357px;
 }
 
 .image-banner__content.image-banner__content--desktop .h0 h1 {
@@ -16,12 +17,13 @@
 /* Begin: Heal+ Club, Points, Cards and Refer and Earn Sections */
 .rich-text__container .rich-text__content h5.decorated_heading, .cards_section_container h3.decorated_heading {
     font-family: "BrownStd-Bold";
-    /* font-size: 40px; */
+    font-size: 40px;
     font-weight: 700;
     line-height: 39px;
     letter-spacing: 0.045em;
     text-align: center;
     text-transform: uppercase;
+    color: #000;
 }
 
 .rich-text__container .rich-text__content .rich-text__text-wrapper {
@@ -35,10 +37,12 @@
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: center;
+    color: #000;
 }
 
 .rich-text__container .rich-text__btns .btn--solid {
     background-color: #F3B563;
+    font-size: 20px;
 }
 
 .points_section_container {
@@ -136,6 +140,7 @@
 
 .points_section_btn_link button {
     width: auto;
+    font-size: 20px;
 }
 
 .points_section_btn_link button:not([disabled]):hover {
@@ -389,13 +394,30 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
 }
 
 @media screen and (max-width: 425px) {
+    .image-banner__container {
+        max-height: 300px;
+    }
     .image-banner__content {
-        padding: 5rem 0rem 5rem 7rem;
+        padding: 7rem 0rem 5rem 7rem;
+    }
+    .rich-text__container .rich-text__content h5.decorated_heading, .cards_section_container h3.decorated_heading {
+        font-size: 24px;
+        line-height: 33px;
     }
     .rich-text__container .rich-text__content .rich-text__text-wrapper .rich-text__text p {
         font-size: 16px;
         line-height: 26px;
         letter-spacing: 0.045em;
+    }
+    .points_section_btn_link button, .rich-text__container .rich-text__btns .btn--solid {
+        font-size: 18px;
+        background-color: #f3b563;
+        color: #ffffff;
+        width: 183px;
+        padding: 12px;
+    }
+    .points_section_container {
+        padding: 53px 51px 40px 39px;
     }
     .points_section_container h2 {
         font-size: 24px;
@@ -407,7 +429,7 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
     }
     .points_column .points_text_content .points_text_title {
         font-size: 14px;
-        line-height: 28px;
+        line-height: 16.94px;
         letter-spacing: 0.045em;
         text-align: center;
     }
@@ -422,6 +444,12 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
         line-height: 17px;
         letter-spacing: 0.045em;
         margin-bottom: 28px;
+    }
+    .cards_section_content {
+        margin-top: 40px;
+    }
+    .card .card_text_content {
+        row-gap: 10.31px;
     }
     .card .card_text_content .card_text_title, .refer_content .refer_text_title, .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
         font-size: 20px;
