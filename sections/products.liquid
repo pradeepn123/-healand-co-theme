@@ -216,12 +216,13 @@
       {%- endif -%}
       
       <div class='shop__products' id='ShopProducts'>
-        <div class="{{ section.settings.bundles_collection_title | downcase }}-section">
-          <div class="section_seperation"></div>
-          <h4 class="collection_title">{{ section.settings.bundles_collection_title | upcase }}</h4>
-          <div class='shop__products-grid-wrap'>
-            <div class='shop__products-grid'>
-                {%- for product in section.settings.bundles_products -%}
+        {% for block in section.blocks %}
+          <div class="{{ block.settings.bundles_collection_title | downcase }}-section">
+            <div class="section_seperation"></div>
+            <h4 class="collection_title">{{ block.settings.bundles_collection_title | upcase }}</h4>
+            <div class='shop__products-grid-wrap'>
+              <div class='shop__products-grid'>
+                {%- for product in block.settings.bundles_products -%}
                   <div class='shop__grid-item'>
                     {% render 'product-card',
                       with_bottom_spacing: true,
@@ -236,7 +237,8 @@
                 {%- endfor -%}
               </div>
             </div>
-        </div>
+          </div>
+        {% endfor %}
         <div class="{{ collection.title | downcase }}-section">
           <h4 class="collection_title">{{ collection.title | upcase }}</h4>
           {%- paginate collection.products by product_per_page -%}
@@ -303,21 +305,6 @@
   "name": "t:sections.products.name",
   "tag": "section",
   "settings": [
-    {
-      "type": "header",
-      "content": "Bundle section"
-    },
-    {
-      "type": "product_list",
-      "id": "bundles_products",
-      "label": "Bundle products"
-    },
-    {
-      "type": "text",
-      "id": "bundles_collection_title",
-      "label": "Bundle section title",
-      "default": "Bundles"
-    },
     {
       "type": "header",
       "content": "Schema settings"
@@ -669,6 +656,29 @@
       ],
       "default": "load-button-pagination",
       "label": "t:sections.general_section_settings.pagination_type_label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Custom collection block",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Bundle section"
+        },
+        {
+          "type": "product_list",
+          "id": "bundles_products",
+          "label": "Bundle products"
+        }, 
+        {
+          "type": "text",
+          "id": "bundles_collection_title",
+          "label": "Bundle section title",
+          "default": "Bundles"
+        }
+      ]
     }
   ]
 }
