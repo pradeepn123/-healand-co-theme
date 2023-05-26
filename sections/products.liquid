@@ -214,12 +214,13 @@
           results: collection
         %}
       {%- endif -%}
+      
       <div class='shop__products' id='ShopProducts'>
         <div class="{{ section.settings.bundles_collection_title | downcase }}-section">
           <div class="section_seperation"></div>
           <h4 class="collection_title">{{ section.settings.bundles_collection_title | upcase }}</h4>
           <div class='shop__products-grid-wrap'>
-            <div class='shop__products-grid' id='ShopProductsGrid'>
+            <div class='shop__products-grid'>
                 {%- for product in section.settings.bundles_products -%}
                   <div class='shop__grid-item'>
                     {% render 'product-card',
