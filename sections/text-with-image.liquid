@@ -1,0 +1,1010 @@
+{{ 'text-with-image.css' | asset_url | stylesheet_tag: preload: true }}
+{%- liquid
+    assign options = section.settings
+  
+    assign color_scheme = options.color_scheme
+    assign caption = options.captions
+    assign title = options.heading
+    assign text = options.texts
+    assign link_text = options.text_link
+    assign link_url = options.url_link
+    assign content_position = options.contents_position
+    assign section_spacing_top = options.section_spacing_for_top
+    assign section_spacing_bottom = options.section_spacing_for_bottom
+    assign container_size = options.container_size
+    assign heading_size = options.headings_size
+    assign body_size = options.body_sizes
+    assign icon = options.icons
+    assign custom_icon_image = options.custom_icon_images
+    assign btn_style =  options.button_style
+  
+    if content_position == 'right'
+      assign direction = 'inverse'
+    endif
+  
+    assign with_only_links = true
+    assign is_first_link = true
+  
+    if link_text != blank and btn_style != 'link'
+      assign with_only_links = false
+      assign is_first_link = false
+    endif
+  
+    if color_scheme == 'default'
+      assign color_scheme = settings.default_color_scheme
+    endif
+  
+-%}
+  
+{% capture css %}
+{% style %}
+
+    .section-{{section.id}}{
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+    }
+
+{% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+{% style %}
+  .text-with-image-container {
+    background: {{ section.settings.container-background }};
+  } 
+  .side-textpart h5{
+    color: {{ section.settings.title_color }};
+  }
+  .side-textpart .subtext__text{
+    color: {{ section.settings.subtitle_color }};
+  }
+  .side-textpart .our-bundles__btn{
+    color: {{ section.settings.button_color }};
+  }
+  .side-textpart .our-bundles__btn{
+    background: {{ section.settings.buton_bg_color }};
+  }
+
+
+  {%- for block in section.blocks -%}
+    .image-subtext-wrap .heading-for-image{
+      color:{{block.settings.image_heading-color}};
+      font-size: {{block.settings.image_heading_font}}px;
+    }
+    .image-subtext-wrap .subheading-for-image{
+      color:{{block.settings.image_subheading-color}};
+      font-size: {{block.settings.image_subheading_font}}px;
+    }
+  {%- endfor -%}
+
+{% endstyle %}
+
+
+<div class= 'text-with-image-container section section-{{ section.id }} color-{{ color_scheme }} {% if section.settings.color_scheme == "default" %}over__color_scheme{%endif%}'>
+    <div class="collection-text__container  image-text__container flex-container container container--{{ container_size }} section-spacing {% if direction == 'inverse' %}collection-text__container--inverse{% endif %}">
+        {%- if caption != blank
+          or title != blank
+          or text != blank
+          or link_text != blank
+          or icon != 'none'
+          or custom_icon_image != blank
+        -%}
+
+    <!-- text part -->
+    <div class="collection-text__content side-textpart{% if direction == 'inverse' %}collection-text__content--inverse{% endif %}">
+        {%- if custom_icon_image != blank -%}
+          <img
+            loading='lazy'
+            alt='{{ custom_icon_image.alt }}'
+            class='collection-text__icon lazyload'
+            width='48'
+            height='48'
+            src='{{ custom_icon_image | image_url: width: 48 }}'
+            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
+            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
+            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
+            data-sizes='auto'
+          >
+          {%- elsif icon != 'none' -%}
+          {% render 'icon-pack', icon: icon, class: 'collection-text__icon' %}
+        {%- endif -%}
+        {%- if caption != blank -%}
+          <div class='content-text__caption caption'>
+            {{ caption }}
+          </div>
+        {%- endif -%}
+        {%- if title != blank -%}
+          <h5 class='{{ heading_size }}'>
+            {{ title }}
+          </h5>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class='rte {{ body_size }} text subtext__text body-font-weight-from-global-settings'>
+            {{ text }}
+          </div>
+        {%- endif -%}
+        {%- if link_text != blank -%}
+        {% if btn_style == 'link' -%}
+          <a
+            class='buttonlink link'
+            href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
+            aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
+          >
+            <span class='link__text'>{{ link_text }}</span>
+            {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+          </a>
+        {%- else -%}
+          <a
+            class='btn btn--{{ btn_style }} our-bundles__btn'
+            href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
+            aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
+          >
+            {{- link_text -}}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+    <!-- end text part -->
+
+    <!-- images part -->
+    <div class="side-imagespart">
+        {%- for block in section.blocks -%}
+        {%- if block.settings.image_small != blank -%}
+          <div class="image-subtext-wrap">
+              <img src="{{ block.settings.image_small | img_url:'master' }}">
+              <p class="heading-for-image">{{block.settings.image_heading}}</p>
+              <p class="subheading-for-image">{{block.settings.image_subheading}}</p>
+          </div>
+        {%- endif -%}
+        {%- endfor -%}
+    </div>
+    <!-- end images part -->
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Text with Image",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "container-background",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "SubHeading Color"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color"
+    },
+    {
+      "type": "color",
+      "id": "buton_bg_color",
+      "label": "Button Background Color"
+    },
+    {
+      "type": "select",
+      "id": "colors_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label"
+    },
+    {
+      "type": "select",
+      "id": "container-size",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        }
+      ],
+      "default": "large",
+      "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_for_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 48,
+      "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+      "label": "t:sections.general_section_settings.section_spacing_top.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_for_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 48,
+      "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+      "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+    },
+    {
+      "type": "select",
+      "id": "contents_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image position left"
+        },
+        {
+          "value": "right",
+          "label": "Image position right"
+        }
+      ],
+      "default": "left",
+      "label": "Image position left",
+      "info": "Text with Image content_position_info"
+    },
+
+    {
+      "type": "header",
+      "content": "Icon with Description"
+    },
+    {
+      "type": "select",
+      "id": "icons",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.general_section_settings.icon.none_icon_label"
+        },
+        {
+          "value": "settings",
+          "label": "t:sections.general_section_settings.icon.general_group.settings_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "search",
+          "label": "t:sections.general_section_settings.icon.general_group.search_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "eye",
+          "label": "t:sections.general_section_settings.icon.general_group.eye_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "eye-slash",
+          "label": "t:sections.general_section_settings.icon.general_group.eye_slash_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "user",
+          "label": "t:sections.general_section_settings.icon.general_group.user_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "love-outline",
+          "label": "t:sections.general_section_settings.icon.general_group.love_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "love-solid",
+          "label": "t:sections.general_section_settings.icon.general_group.love_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "like",
+          "label": "t:sections.general_section_settings.icon.general_group.like_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "dislike",
+          "label": "t:sections.general_section_settings.icon.general_group.dislike_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "lamp",
+          "label": "t:sections.general_section_settings.icon.general_group.lamp_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "star-outline",
+          "label": "t:sections.general_section_settings.icon.general_group.star_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "star-solid",
+          "label": "t:sections.general_section_settings.icon.general_group.star_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "trash",
+          "label": "t:sections.general_section_settings.icon.general_group.trash_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "document",
+          "label": "t:sections.general_section_settings.icon.general_group.document_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "copy",
+          "label": "t:sections.general_section_settings.icon.general_group.copy_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "share",
+          "label": "t:sections.general_section_settings.icon.general_group.share_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "plus",
+          "label": "t:sections.general_section_settings.icon.general_group.plus_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "minus",
+          "label": "t:sections.general_section_settings.icon.general_group.minus_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "checkmark",
+          "label": "t:sections.general_section_settings.icon.general_group.checkmark_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "arrow-right",
+          "label": "t:sections.general_section_settings.icon.general_group.arrow_right_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "arrow-left",
+          "label": "t:sections.general_section_settings.icon.general_group.arrow_left_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "undo",
+          "label": "t:sections.general_section_settings.icon.general_group.undo_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "redo",
+          "label": "t:sections.general_section_settings.icon.general_group.redo_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "refresh",
+          "label": "t:sections.general_section_settings.icon.general_group.refresh_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "notification",
+          "label": "t:sections.general_section_settings.icon.general_group.notification_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "clock",
+          "label": "t:sections.general_section_settings.icon.general_group.clock_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "calendar",
+          "label": "t:sections.general_section_settings.icon.general_group.calendar_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "information",
+          "label": "t:sections.general_section_settings.icon.general_group.information_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "bag",
+          "label": "t:sections.general_section_settings.icon.shop_group.bag_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cart",
+          "label": "t:sections.general_section_settings.icon.shop_group.cart_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "barcode",
+          "label": "t:sections.general_section_settings.icon.shop_group.barcode_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "coupon",
+          "label": "t:sections.general_section_settings.icon.shop_group.coupon_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "gift",
+          "label": "t:sections.general_section_settings.icon.shop_group.gift_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "discount-outline",
+          "label": "t:sections.general_section_settings.icon.shop_group.discount_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "discount-solid",
+          "label": "t:sections.general_section_settings.icon.shop_group.discount_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "medal",
+          "label": "t:sections.general_section_settings.icon.shop_group.medal_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "pen-and-ruler",
+          "label": "t:sections.general_section_settings.icon.shop_group.pen_and_ruler_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "color-swatch",
+          "label": "t:sections.general_section_settings.icon.shop_group.color_swatch_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "car",
+          "label": "t:sections.general_section_settings.icon.shop_group.car_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cup",
+          "label": "t:sections.general_section_settings.icon.shop_group.cup_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cake",
+          "label": "t:sections.general_section_settings.icon.shop_group.cake_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "hanger",
+          "label": "t:sections.general_section_settings.icon.shop_group.hanger_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "t-shirt",
+          "label": "t:sections.general_section_settings.icon.shop_group.t_shirt_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "dress",
+          "label": "t:sections.general_section_settings.icon.shop_group.dress_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "jewelry",
+          "label": "t:sections.general_section_settings.icon.shop_group.jewelry_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "furniture",
+          "label": "t:sections.general_section_settings.icon.shop_group.furniture_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "toy",
+          "label": "t:sections.general_section_settings.icon.shop_group.toy_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "shipping-box",
+          "label": "t:sections.general_section_settings.icon.shipping_group.shipping_box_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "address-pin",
+          "label": "t:sections.general_section_settings.icon.shipping_group.address_pin_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "fast-delivery",
+          "label": "t:sections.general_section_settings.icon.shipping_group.fast_delivery_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "delivery-truck",
+          "label": "t:sections.general_section_settings.icon.shipping_group.delivery_truck_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "easy-returns",
+          "label": "t:sections.general_section_settings.icon.shipping_group.easy_returns_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "world",
+          "label": "t:sections.general_section_settings.icon.shipping_group.world_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "plane",
+          "label": "t:sections.general_section_settings.icon.shipping_group.plane_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "search-order",
+          "label": "t:sections.general_section_settings.icon.shipping_group.search_order_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "briefcase",
+          "label": "t:sections.general_section_settings.icon.shipping_group.briefcase_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "store",
+          "label": "t:sections.general_section_settings.icon.shipping_group.store_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "routing",
+          "label": "t:sections.general_section_settings.icon.shipping_group.routing_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+
+        {
+          "value": "credit-card",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.credit_card_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "lock",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.lock_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "shield",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.shield_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "secure-payment",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.secure_payment_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "wallet",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.wallet_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "cash",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.cash_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "receipt",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.receipt_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "tag",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.tag_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "list",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.list_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "scanner",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.scanner_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "phone",
+          "label": "t:sections.general_section_settings.icon.communication_group.phone_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "chat",
+          "label": "t:sections.general_section_settings.icon.communication_group.chat_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "message",
+          "label": "t:sections.general_section_settings.icon.communication_group.message_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "email-outline",
+          "label": "t:sections.general_section_settings.icon.communication_group.email_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "customer-support",
+          "label": "t:sections.general_section_settings.icon.communication_group.customer_support_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "printer-and-fax",
+          "label": "t:sections.general_section_settings.icon.communication_group.printer_and_fax_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "devices",
+          "label": "t:sections.general_section_settings.icon.communication_group.devices_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "mobile",
+          "label": "t:sections.general_section_settings.icon.communication_group.mobile_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "virus",
+          "label": "t:sections.general_section_settings.icon.ecology_group.virus_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "mask",
+          "label": "t:sections.general_section_settings.icon.ecology_group.mask_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "eco",
+          "label": "t:sections.general_section_settings.icon.ecology_group.eco_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "rabbit",
+          "label": "t:sections.general_section_settings.icon.ecology_group.rabbit_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "twitter",
+          "label": "t:sections.general_section_settings.icon.social_group.twitter_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "facebook",
+          "label": "t:sections.general_section_settings.icon.social_group.facebook_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "pinterest",
+          "label": "t:sections.general_section_settings.icon.social_group.pinterest_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "instagram",
+          "label": "t:sections.general_section_settings.icon.social_group.instagram_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "tiktok",
+          "label": "t:sections.general_section_settings.icon.social_group.tiktok_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "tumblr",
+          "label": "t:sections.general_section_settings.icon.social_group.tumblr_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "snapchat",
+          "label": "t:sections.general_section_settings.icon.social_group.snapchat_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "youtube",
+          "label": "t:sections.general_section_settings.icon.social_group.youtube_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "vimeo",
+          "label": "t:sections.general_section_settings.icon.social_group.vimeo_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "linkedin",
+          "label": "t:sections.general_section_settings.icon.social_group.linkedin_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "flickr",
+          "label": "t:sections.general_section_settings.icon.social_group.flickr_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "reddit",
+          "label": "t:sections.general_section_settings.icon.social_group.reddit_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "email-solid",
+          "label": "t:sections.general_section_settings.icon.social_group.email_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "behance",
+          "label": "t:sections.general_section_settings.icon.social_group.behance_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "discord",
+          "label": "t:sections.general_section_settings.icon.social_group.discord_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "dribbble",
+          "label": "t:sections.general_section_settings.icon.social_group.dribbble_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.icon.social_group.medium_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "twitch",
+          "label": "t:sections.general_section_settings.icon.social_group.twitch_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "whatsapp",
+          "label": "t:sections.general_section_settings.icon.social_group.whatsapp_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "viber",
+          "label": "t:sections.general_section_settings.icon.social_group.viber_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "telegram",
+          "label": "t:sections.general_section_settings.icon.social_group.telegram_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.general_section_settings.icon.label",
+      "info": "t:sections.general_section_settings.icon.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon_images",
+      "label": "t:sections.general_section_settings.custom_icon_image.label"
+    },
+    {
+      "type": "header",
+      "content": "Side Text"
+    },
+    {
+      "type": "text",
+      "id": "captions",
+      "default": "IMAGE WITH TEXT",
+      "label": "Caption"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "default": "<p>Text</p>",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "texts",
+      "default": "<p>Tell customers by what your latest collection was inspired.</p>",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "select",
+      "id": "headings_size",
+      "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+      "options": [
+        {
+          "value": "h0",
+          "label": "t:sections.general_section_settings.heading_size_0_option"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.general_section_settings.heading_size_1_option"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.general_section_settings.heading_size_2_option"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.general_section_settings.heading_size_3_option"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.general_section_settings.heading_size_4_option"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.general_section_settings.heading_size_5_option"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.general_section_settings.heading_size_6_option"
+        },
+        {
+          "value": "h7",
+          "label": "t:sections.general_section_settings.heading_size_7_option"
+        }
+      ],
+      "default": "h5"
+    },
+    {
+      "type": "select",
+      "id": "body_sizes",
+      "label": "t:sections.general_section_settings.label_for_body_size_setting",
+      "info": "t:sections.general_section_settings.info_for_body_size_setting",
+      "options": [
+        {
+          "value": "body0",
+          "label": "t:sections.general_section_settings.body_size_0_option"
+        },
+        {
+          "value": "body1",
+          "label": "t:sections.general_section_settings.body_size_1_option"
+        },
+        {
+          "value": "body2",
+          "label": "t:sections.general_section_settings.body_size_2_option"
+        },
+        {
+          "value": "body3",
+          "label": "t:sections.general_section_settings.body_size_3_option"
+        },
+        {
+          "value": "body4",
+          "label": "t:sections.general_section_settings.body_size_4_option"
+        },
+        {
+          "value": "body5",
+          "label": "t:sections.general_section_settings.body_size_5_option"
+        },
+        {
+          "value": "body6",
+          "label": "t:sections.general_section_settings.body_size_6_option"
+        }
+      ],
+      "default": "body3"
+    },
+    {
+      "type": "text",
+      "id": "text_link",
+      "default": "Link label",
+      "label": "Button"
+    },
+    {
+      "type": "url",
+      "id": "url_link",
+      "label": "Button URL"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "t:sections.split_image_banner.label_for_solid_option_in_button_style_setting"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.split_image_banner.label_for_outline_option_in_button_style_setting"
+        },
+        {
+          "value": "link",
+          "label": "t:sections.split_image_banner.label_for_link_option_in_button_style_setting"
+        }
+      ],
+      "default": "solid",
+      "label": "t:sections.split_image_banner.label_for_button_style_setting"
+    }
+  ],
+  "blocks": [
+    {
+        "name":"images",
+        "type":"image",
+        "settings":[
+            {
+                "type": "image_picker",
+                "id":"image_small",
+                "label": "Image"    
+            },
+            {
+              "type": "text",
+              "id": "image_heading",
+              "default": "Heading",
+              "label": "Heading"
+            },
+            {
+              "type": "color",
+              "id": "image_heading-color",
+              "label": "hedaing color"
+            },
+            {
+              "type": "range",
+              "id": "image_heading_font",
+              "min": 10,
+              "max": 100,
+              "step": 1,
+              "default": 14,
+              "unit": "px",
+              "label": "Heading Font Size"
+            },
+            {
+              "type": "richtext",
+              "id": "image_subheading",
+              "default": "<p>Description</p>",
+              "label": "Sub Heading"
+            },
+            {
+              "type": "color",
+              "id": "image_subheading-color",
+              "label": "hedaing color"
+            },
+            {
+              "type": "range",
+              "id": "image_subheading_font",
+              "min": 10,
+              "max": 100,
+              "step": 1,
+              "default": 14,
+              "unit": "px",
+              "label": "Heading Font Size"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with Image"
+    }
+  ]
+}
+{% endschema %}

@@ -112,6 +112,73 @@
         "show_navigation_on_hover": true
       }
     },
+    "bbaa65ad-83bc-4853-b725-020176bf75a9": {
+      "type": "text-with-image",
+      "blocks": {
+        "673288ec-3c58-4732-bd36-9d03095faf79": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_69.png",
+            "image_heading": "VEGAN",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 42,
+            "image_subheading": "<p>100% plant-based ingredients<\/p>",
+            "image_subheading-color": "#ee5c4c",
+            "image_subheading_font": 14
+          }
+        },
+        "5fe57dd7-b50f-4a03-aa15-d269166956b1": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_68.png",
+            "image_heading": "POTENT EXTRACT",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 14,
+            "image_subheading": "<p>Lesser dose, more effect<\/p>",
+            "image_subheading-color": "#000000",
+            "image_subheading_font": 14
+          }
+        },
+        "0e34a640-a99b-428b-823d-14ca848c5ff7": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_67.png",
+            "image_heading": "MADE IN CANADA",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 14,
+            "image_subheading": "<p>High-quality standards<\/p>",
+            "image_subheading-color": "#000000",
+            "image_subheading_font": 14
+          }
+        }
+      },
+      "block_order": [
+        "673288ec-3c58-4732-bd36-9d03095faf79",
+        "5fe57dd7-b50f-4a03-aa15-d269166956b1",
+        "0e34a640-a99b-428b-823d-14ca848c5ff7"
+      ],
+      "settings": {
+        "container-background": "#faf5ef",
+        "title_color": "#3c8771",
+        "subtitle_color": "#000000",
+        "button_color": "#ffffff",
+        "buton_bg_color": "#789f91",
+        "colors_scheme": "default",
+        "container-Size": "large",
+        "section_spacing_for_top": 48,
+        "section_spacing_for_bottom": 48,
+        "contents_position": "left",
+        "icons": "none",
+        "captions": "",
+        "heading": "<p>Potent Plants  <\/p><p>For Healthy Humans<\/p>",
+        "texts": "<p>Our extracts and raw ingredients are formulated to deliver the highest concentration possible, resulting in products that are more effective and require fewer doses.<\/p>",
+        "headings_size": "h2",
+        "body_sizes": "body3",
+        "text_link": "Link label",
+        "url_link": "",
+        "button_style": "solid"
+      }
+    },
     "c13864c3-3f91-44d0-964b-892da9cf2acb": {
       "type": "featured-collection",
       "settings": {
@@ -307,6 +374,7 @@
   "order": [
     "35abde66-b33a-4178-b3ef-5bba319784ba",
     "0aca6547-2879-4883-8a69-56bfce5dfe5c",
+    "bbaa65ad-83bc-4853-b725-020176bf75a9",
     "c13864c3-3f91-44d0-964b-892da9cf2acb",
     "4968e1bd-e75e-4fc8-a27c-63b1409d6a1c",
     "bf9cb432-647e-4d8a-95e9-e0e83242d93a",
