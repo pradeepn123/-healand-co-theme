@@ -29,7 +29,6 @@
     text-align: center;
     justify-content: center;
 }
-
 .text-with-image-container .text-with-image__content{
     flex-flow: column;
     justify-content: center;
@@ -39,7 +38,11 @@
 .image-subtext-wrap .image-wrapper__info{
     margin-bottom: 14px;
 }
-
+.text-with-image__icon{
+    width: 4.4rem;
+    height: 4.4rem;
+    margin-bottom: 10px;
+}
 @media(min-width:768px){
     .text-with-image-container .text-with-image__content{
         flex: 0 0 27.2rem;
@@ -92,6 +95,9 @@
 }
 
 @media(max-width:510px){
+    .text-with-image__icon{
+        margin: 0 auto 20px;
+    }
     .side-textpart .text--with-image__btn{
         align-self: center;
         font-size: 18px;

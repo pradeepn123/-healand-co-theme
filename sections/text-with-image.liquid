@@ -96,7 +96,7 @@
           <img
             loading='lazy'
             alt='{{ custom_icon_image.alt }}'
-            class='collection-text__icon lazyload'
+            class='text-with-image__icon lazyload'
             width='48'
             height='48'
             src='{{ custom_icon_image | image_url: width: 48 }}'
@@ -106,7 +106,7 @@
             data-sizes='auto'
           >
           {%- elsif icon != 'none' -%}
-          {% render 'icon-pack', icon: icon, class: 'collection-text__icon' %}
+          {% render 'icon-pack', icon: icon, class: 'text-with-image__icon' %}
         {%- endif -%}
         {%- if caption != blank -%}
           <div class='content-text__caption caption'>
@@ -838,7 +838,7 @@
     {
       "type": "richtext",
       "id": "texts",
-      "default": "<p>Tell customers by what your latest collection was inspired.</p>",
+      "default": "<p>Tell customers about your ingredients.</p>",
       "label": "Sub Heading"
     },
     {
