@@ -1,0 +1,76 @@
+<section class="about-video">
+  <div class="video-section">
+    <div class="contianer">
+      <div class="video-wrapper ">
+        <div class="about-video-thumbnail video-overlay">
+          <img class="vid-image-size" onClick="videoPlayfunction()"
+            src="{{ section.settings.thumbnail | img_url: 'master'}}" alt="Thumbnail">
+        </div>
+        <div class="play-icon">
+          <img class="vid-icon-size" onClick="videoPlayfunction()" id="about-play-icon"
+            src="{{ section.settings.play-icon | img_url: 'master'}}" alt="Thumbnail">
+        </div>
+        <div class="video-container" >
+          <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video_url }}" autoplay="autoplay" controls="controls"  loop playinline></video>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const customVideo = document.getElementById('about-video-play');
+  function videoPlayfunction() {
+    customVideo.play();
+    document.querySelector('.vid-image-size').style.display = 'none';
+    document.getElementById('about-play-icon').style.display = 'none';
+  }
+
+  document.querySelector(".video-wrapper").addEventListener('click', () => {
+    customVideo.classList.toggle('playpause');
+    if(customVideo.classList.contains('playpause')){
+      customVideo.pause()
+    }
+    else{
+      customVideo.play()
+    }
+  })
+  
+  function playVid() {
+    x.play();
+  }
+
+  function pauseVid() {
+    x.pause();
+  }
+
+</script>
+
+{% schema %}
+{
+"name": "About Video",
+"settings": [
+{
+"type": "url",
+"id": "video_url",
+"label": "Video URL"
+},
+{
+"type": "image_picker",
+"id": "thumbnail",
+"label": "Thumbnail"
+},
+{
+"type": "image_picker",
+"id": "play-icon",
+"label": "Play icon"
+}
+],
+"presets": [
+{
+"name": "About Video"
+}
+]
+}
+{% endschema %}
