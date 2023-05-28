@@ -96,6 +96,9 @@
   {%- if title != blank -%}
     <div class='collection__header {% if alignment == 'center' %}collection__header--center{% endif %}'>
       <h5 class='collection__title {{ heading_size }} decorated_heading'>{{ title }}</h5>
+      <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">
+        <span>{{ section.settings.shop_all_title}}</span>
+      </a>
     </div>
   {%- endif -%}
 {% endcapture %}
@@ -332,6 +335,16 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "shop_all_title",      
+      "label": "Shop all text"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_url",      
+      "label": "Shop all link"
     },
     {
       "type": "collection",
