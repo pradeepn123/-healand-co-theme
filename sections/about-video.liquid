@@ -1,6 +1,6 @@
 <section class="about-video">
   <div class="video-section">
-    <div class="contianer">
+    <div class="container" style="height: auto; padding: 3%;">
       <div class="video-wrapper ">
         <div class="about-video-thumbnail video-overlay">
           <img class="vid-image-size" onClick="videoPlayfunction()"
@@ -49,12 +49,12 @@
 
 {% schema %}
 {
-"name": "About Video",
+"name": "Video Section",
 "settings": [
 {
-"type": "url",
+"type": "video",
 "id": "video_url",
-"label": "Video URL"
+"label": "Video"
 },
 {
 "type": "image_picker",
@@ -69,7 +69,7 @@
 ],
 "presets": [
 {
-"name": "About Video"
+"name": "Video Section"
 }
 ]
 }

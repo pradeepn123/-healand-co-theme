@@ -25,13 +25,15 @@
       "type": "about-story",
       "settings": {
         "heading": "OUR STORY",
-        "subtext": "We believe in the power of nature to heal, and our passion for natural health led us to create Heal and Co. We are committed to purity, potency, and sharing the benefits of natural remedies with everyone. Join us on our mission to help people live their healthiest lives."
+        "subtext": "We believe in the power of nature to heal, and our passion for natural health led us to create Heal and Co. We are committed to purity, potency, and sharing the benefits of natural remedies with everyone. Join us on our mission to help people live their healthiest lives.",
+        "heading_size": "h2",
+        "desktop_content_position": "right-alignment"
       }
     },
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
       "settings": {
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/68692282b05e442c8a53bc45e99c4937.mp4",
+        "video_url": "shopify:\/\/files\/videos\/pexels-pressmaster-3195394-3840x2160-25fps.mp4",
         "thumbnail": "shopify:\/\/shop_images\/image_193.png",
         "play-icon": "shopify:\/\/shop_images\/Group_561.png"
       }
@@ -70,7 +72,8 @@
         "ff24fc94-8352-45e5-b26e-f1ad9fa2872d"
       ],
       "settings": {
-        "val-main-heading": "OUR VALUES"
+        "val-main-heading": "OUR VALUES",
+        "heading_size": "h2"
       }
     },
     "52a343d8-2199-4ffa-aec2-d2faf7bd2465": {
@@ -78,7 +81,8 @@
       "settings": {
         "cimage": "shopify:\/\/shop_images\/Rectangle_190.png",
         "creator-heading": "MEET THE CREATOR",
-        "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry."
+        "creator-desc": "Kylie is the kind of person who believes in a holistic approach to wellness. You know, focusing on nutrition, fitness, mindfulness, and self-care. They wanted to create a brand that would inspire and empower individuals to live their best, healthiest lives.With a mix of expertise, experience, and an unwavering commitment to excellence, our kylie has set the stage for our brand's values and guiding principles. They're the reason why we're a trusted name in the industry.",
+        "heading_size": "h2"
       }
     },
     "f5eb5833-c5ec-4524-9eec-a4553fdc0dc2": {
