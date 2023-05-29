@@ -1,10 +1,11 @@
 /* Begin: Image Banner Section */
 .image-banner__container {
     min-height: 100%;
+    max-height: 357px;
 }
 
 .image-banner__content.image-banner__content--desktop .h0 h1 {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 96px;
     font-weight: 700;
     line-height: 96px;
@@ -15,13 +16,14 @@
 
 /* Begin: Heal+ Club, Points, Cards and Refer and Earn Sections */
 .rich-text__container .rich-text__content h5.decorated_heading, .cards_section_container h3.decorated_heading {
-    /* font-family: BrownStd; */
-    /* font-size: 40px; */
+    font-family: "BrownStd-Bold";
+    font-size: 40px;
     font-weight: 700;
     line-height: 39px;
     letter-spacing: 0.045em;
     text-align: center;
     text-transform: uppercase;
+    color: #000;
 }
 
 .rich-text__container .rich-text__content .rich-text__text-wrapper {
@@ -29,16 +31,20 @@
 }
 
 .rich-text__container .rich-text__content .rich-text__text-wrapper .rich-text__text p {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Regular";
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: center;
+    color: #000;
 }
 
 .rich-text__container .rich-text__btns .btn--solid {
     background-color: #F3B563;
+    font-size: 20px;
+    width: 183px;
+    padding: 12px;
 }
 
 .points_section_container {
@@ -46,25 +52,25 @@
 }
 
 .points_section_container h2 {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 40px;
     font-weight: 700;
     line-height: 39px;
     letter-spacing: 0.045em;
     text-align: center;
-    color: #FFFFFF;
     margin-bottom: 72px;
 }
 
-.points_section_content, .cards_section_content {
+.points_section_content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 83px;
-    row-gap: 84px;
+    row-gap: 83px;
 }
 
 .cards_section_content {
-    /* justify-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 71px;
     justify-content: space-between;
     margin-top: 50px;
 }
@@ -72,7 +78,7 @@
 .points_column, .card, .refer_content {
     display: flex;
     flex-direction: row;
-    column-gap: 43px;
+    column-gap: 32px;
     align-items: center;
 }
 
@@ -91,10 +97,22 @@
     row-gap: 24px;
 }
 
-.points_column .points_text_content, .card .card_text_content, .refer_content .refer_text_content {
+.refer_content_grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+}
+
+.points_column .points_text_content, .refer_content .refer_text_content {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+}
+
+.card .card_text_content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
 }
 
 .points_column .points_text_content img, .card.card_icon, .refer_content .refer_icon {
@@ -103,23 +121,21 @@
 }
 
 .points_column .points_text_content .points_text_title, .card .card_text_content .card_text_title, .refer_content .refer_text_title {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: left;
-    color: #FFFFFF;
 }
 
 .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Regular";
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: left;
-    color: #FFFFFF;
 }
 
 .button-wrapper {
@@ -130,15 +146,18 @@
 
 .points_section_btn_link {
     width: fit-content;
+    text-decoration: none;
 }
 
-.points_section_btn_link button.btn--solid {
-    background-color: #F3B563;
-    width: auto;
+.points_section_btn_link button {
+    font-size: 20px;
+    background-color: #f3b563;
+    color: #ffffff;
+    width: 183px;
+    padding: 12px;
 }
 
-.points_section_btn_link button.btn--solid:not([disabled]):hover {
-    background-color: #F3B563;
+.points_section_btn_link button:not([disabled]):hover {
     opacity: 0.85;
 }
 
@@ -171,24 +190,22 @@
 }
 
 .right_content_section h2 {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 40px;
     font-weight: 700;
     line-height: 39px;
     letter-spacing: 0.045em;
     text-align: left;
-    color: #FFFFFF;
     margin-bottom: 24px;
 }
 
 .right_content_section p {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Regular";
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: left;
-    color: #FFFFFF;
     margin-bottom: 32px;
     max-width: 70%;
 }
@@ -201,7 +218,7 @@
 }
 
 .faq__container .faq__blocks .faq__content h5.h2 {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 40px;
     font-weight: 700;
     line-height: 77px;
@@ -212,7 +229,7 @@
 .faq__container .faq__blocks .faq__category {
     background-color: #F3B563;
     color: #FFFFFF;
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 24px;
     font-weight: 700;
     line-height: 77px;
@@ -224,7 +241,7 @@
 }
 
 accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Bold";
     font-size: 20px;
     font-weight: 700;
     line-height: 19px;
@@ -233,7 +250,7 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
 }
 
 .faq__accordeon-plus-content.accordeon-plus__content.body-font-weight-from-global-settings .rte p {
-    /* font-family: BrownStd; */
+    font-family: "BrownStd-Regular";
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -391,13 +408,28 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
 }
 
 @media screen and (max-width: 425px) {
+    .image-banner__container {
+        max-height: 300px;
+    }
     .image-banner__content {
-        padding: 5rem 0rem 5rem 7rem;
+        padding: 7rem 0rem 5rem 7rem;
+    }
+    .rich-text__container .rich-text__content h5.decorated_heading, .cards_section_container h3.decorated_heading {
+        font-size: 24px;
+        line-height: 33px;
     }
     .rich-text__container .rich-text__content .rich-text__text-wrapper .rich-text__text p {
         font-size: 16px;
         line-height: 26px;
         letter-spacing: 0.045em;
+    }
+    .points_section_btn_link button, .rich-text__container .rich-text__btns .btn--solid {
+        font-size: 18px;
+        width: 183px;
+        padding: 12px;
+    }
+    .points_section_container {
+        padding: 53px 51px 40px 39px;
     }
     .points_section_container h2 {
         font-size: 24px;
@@ -409,7 +441,7 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
     }
     .points_column .points_text_content .points_text_title {
         font-size: 14px;
-        line-height: 28px;
+        line-height: 16.94px;
         letter-spacing: 0.045em;
         text-align: center;
     }
@@ -417,13 +449,19 @@ accordeon-btn.faq__accordeon-plus-btn.accordeon-plus__btn {
         font-size: 24px;
         line-height: 39px;
         letter-spacing: 0.045em;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
     }
     .right_content_section p {
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.045em;
         margin-bottom: 28px;
+    }
+    .cards_section_content {
+        margin-top: 40px;
+    }
+    .card .card_text_content, .refer_content .refer_text_content {
+        row-gap: 10.31px;
     }
     .card .card_text_content .card_text_title, .refer_content .refer_text_title, .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
         font-size: 20px;
