@@ -54,3 +54,21 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .header__dropdown-menu--with-mega-menu .image-block__content-wrap{
     padding: 2.5rem;
 }
+
+/* Best seller css here*/
+.collection__header{
+    position: relative;
+    align-items: center;
+}
+.collection-list .collection-list__header.collection-list__header--center{
+    justify-content: center;
+}
+.collection-list .collection-list__header{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.view-btn.shop_all{
+    position: absolute;
+    right: 0;
+}

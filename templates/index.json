@@ -91,7 +91,7 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel",
         "title": "SHOP BY BENEFIT",
-        "heading_size": "h5",
+        "heading_size": "h2",
         "alignment": "center",
         "collection_list": [
           "products",
@@ -189,8 +189,10 @@
         "section_spacing_bottom": 64,
         "section_layout": "carousel",
         "title": "BEST SELLERS",
-        "heading_size": "h5",
+        "heading_size": "h2",
         "alignment": "center",
+        "shop_all_title": "Shop all",
+        "shop_all_url": "",
         "collection": "products",
         "featured_products": [
 
