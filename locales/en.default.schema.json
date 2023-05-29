@@ -1129,6 +1129,7 @@
       "featured_image_block_img_ratio_label": "Image ratio",
       "featured_image_block_img_ratio_unit": ":1",
       "title_block_name": "Heading",
+      "title_color": "Heading Color",
       "title_block_show_author_label": "Show author",
       "title_block_show_date_label": "Show date",
       "title_block_show_comment_count_label": "Show comment count",
