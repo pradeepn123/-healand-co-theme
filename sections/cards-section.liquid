@@ -1,0 +1,110 @@
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="cards_section_container" style="background-color:{{section.settings.cards_section_bg}}">
+    <h3 class="decorated_heading">{{ section.settings.cards_section_header }}</h3>
+    <div class="cards_section_content">
+    {% for block in section.blocks %}
+        {% if block.settings.card_title != blank and block.settings.card_text != blank %}
+            {% if block.settings.card_svg_icon != blank or block.settings.card_icon != blank %}
+                <div class="card" style="background-color:{{ block.settings.card_bg }}">
+                    <div class="card_icon">
+                        {% if block.settings.card_svg_icon != blank %}
+                            <div class="svg_icon">
+                                {{ block.settings.card_svg_icon }}
+                                {% style %}
+                                    .svg_icon svg rect, .svg_icon svg path {
+                                        stroke: {{ block.settings.card_svg_icon_color }}
+                                    }
+                                {% endstyle %}
+                            </div>
+                        {% else %}
+                            <img src="{{ block.settings.card_icon | img_url: 'master' }}" />
+                        {% endif %}
+                    </div>
+                    <div class="card_text_content">
+                        <div class="card_text_title" style="color:{{ block.settings.card_title_color }}">
+                            {{ block.settings.card_title }}
+                        </div>
+                        <div class="card_text" style="color:{{ block.settings.card_text_color }}">
+                            {{ block.settings.card_text }}
+                        </div>
+                    </div>
+                </div>
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Cards section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cards_section_header",
+            "label": "Heading"
+        },
+        {
+            "type": "color",
+            "id": "cards_section_bg",
+            "label": "Background Color"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Redeem Content",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "card_bg",
+                    "label": "Card Background Color"
+                },
+                {
+                    "type": "text",
+                    "id": "card_title",
+                    "label": "Card Title"
+                },
+                {
+                    "type": "color",
+                    "id": "card_title_color",
+                    "label": "Card Title Color"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "card_icon",
+                    "label": "Card Icon"
+                },
+                {
+                    "type": "html",
+                    "id": "card_svg_icon",
+                    "label": "Card SVG Icon"
+                },
+                {
+                    "type": "color",
+                    "id": "card_svg_icon_color",
+                    "label": "Card SVG Icon Color"
+                },
+                {
+                    "type": "text",
+                    "id": "card_text",
+                    "label": "Card Text"
+                },
+                {
+                    "type": "color",
+                    "id": "card_text_color",
+                    "label": "Card Text Color"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Cards section"
+        }
+    ]
+}
+{% endschema %}

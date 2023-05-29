@@ -1,0 +1,143 @@
+.contact_us_page_main{
+    padding: 64px 0;
+}
+@media(max-width:768px){
+    .contact_us_page_main{
+        padding: 48px 0;
+    }
+}
+.contact_pg_form .btn.btn--solid.btn--lg.contact__btn.form--btn{
+    padding: 1.5rem 9.4rem;
+    text-transform: uppercase;
+    min-height: unset;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+}
+@media(max-width:768px){
+    .contact_pg_form .btn.btn--solid.btn--lg.contact__btn.form--btn{
+        font-size: 18px;
+    }
+}
+.contact_pg_form .contact__content .contact__title.h5{
+    font-weight: 700;
+    color: #000000;
+}
+@media(max-width:768px){
+    .contact_pg_form .contact__content .contact__title.h5{
+        font-size: 24px !important;
+    }
+}
+.contact_us_page .contact__methods__main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 48px;
+}
+.contact.section .contact__methods__main a{
+    text-decoration: none;
+}
+@media(min-width:767px){
+    .contact__methods__main{
+        padding-right: unset;
+        padding-left: unset;
+    }
+}
+.contact__methods__main .Contact_method_links .contact__methods{
+    min-height: 139px;
+    background:#fff;
+    display: flex;
+    justify-content: center;
+}
+.contact__methods__main .Contact_method_links:not(:last-child){
+    padding-right: 16px;
+}
+@media(max-width:662px){
+    .contact__methods__main .Contact_method_links{
+        padding-right: 16px;
+        padding-bottom: 24px;
+    }
+    .contact__methods__main .Contact_method_links:nth-child(2){
+        padding-right: 0;
+    }
+}
+@media(max-width:463px){
+    .contact__methods__main .Contact_method_links{
+        padding-right: 0px !important;
+    }
+    .contact__methods .contact__method{
+        display: flex;
+    }
+}
+@media(max-width:520px){
+    .contact__methods__main .Contact_method_links .contact__methods{
+        min-height: 150px;
+    }
+}
+.Contact_method_links .contact__methods__main .contact__methods a{
+    text-decoration: none;
+}
+.Contact_method_links .contact__methods .contact__methods__heading_main{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    padding-top: 28px;
+}
+@media (max-width:520px){
+    .Contact_method_links .contact__methods .contact__methods__heading_main{
+       display: grid;
+    }
+}
+.Contact_method_links .contact__methods .contact__methods__heading_main .contact__methods_icon{
+    height: 18px;
+    text-align: center;
+}
+.Contact_method_links .contact__methods .contact__methods__heading_main .contact__methods__heading,.contact__methods .contact__method p{
+   color: #000;
+   font-size: 16px;
+   text-align: center;
+   line-height: 22px;
+}
+
+@media(max-width:520px){
+    .Contact_method_links .contact__methods .contact__methods__heading_main .contact__methods__heading{
+       margin-top: 16px;
+    }
+
+}
+.Contact_method_links .contact__methods .contact__method{
+    padding-top: 20px;
+    line-height: 1;
+    text-align: center;
+}
+@media(max-width:520px){
+    .Contact_method_links .contact__methods .contact__method{
+        padding-top: 14px;
+    }
+}
+.Contact_method_links .contact__methods .contact__method.text-decoration {
+    text-decoration: underline;
+}
+.contact_pg_form #ContactForm .field-group{
+    column-gap: 1.4rem;
+    row-gap: 2.2rem;
+}
+.contact_pg_form #ContactForm .input::placeholder,.textarea::placeholder{
+    color: #B4B4B4;
+    font-family: 'BrownStd-Bold';
+}
+.input, .textarea{
+    font-weight: 400;
+    border: 0.5px solid #B4B4B4;
+}
+/* .contact_pg_form .contact__form .field-group .field.contact__field input{
+    border: 0.5px solid var(--gsc-border-color-100);
+} */
+@media(max-width:520px){
+.contact_pg_form #ContactForm .field.contact__field .textarea {
+    height: 16rem;
+}
+
+}
+.contact__form>.contact__field+.contact__field, .contact__field-group+.contact__field{
+    margin: 2.2rem 0 0;
+}

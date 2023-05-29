@@ -1,10 +1,11 @@
 {%- liquid
-  assign img = article.image
+  assign img = block.settings.blog_image | default: article.image
   assign title = article.title
   assign content = article.excerpt_or_content | strip_html | truncatewords: 30
   assign author = article.author
   assign date = article.published_at
   assign comments_count = article.comments_count
+  assign overlay_type = overlay_type | default: 'gradient'
 
   if article.title == blank
     assign title = 'cards.article_card.default_title' | t
@@ -28,7 +29,7 @@
     href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
     aria-label='{{ article.title }}'
   ></a>
-  <div class='shape shape--{{ img_ratio }} article-card__image-wrapper'>
+  <div class='shape shape--{{ img_ratio }} article-card__image-wrapper'>    
     {%- if img != blank -%}
       <img
         class='article-card__image zoom lazyload'
@@ -45,8 +46,12 @@
           {{ img.presentation.focal_point }};
         '
       >
+
     {%- else -%}
       {{ 'image' | placeholder_svg_tag: 'article-card__image placeholder-image zoom' }}
+    {%- endif -%}
+    {%- if text_style == 'over-image' -%}
+      <div class='overlay collection-card__overlay--{{ overlay_type }}'></div>
     {%- endif -%}
     {%- if show_tags and article.tags.size > 0 -%}
       <div class='article-card__tags {% if settings.edge_rounding_degree == 'extra' %} article-card__tags--with-extra-rounded-tags{% endif %}'>
@@ -58,7 +63,7 @@
       </div>
     {%- endif -%}
   </div>
-  <div class='article-card__details {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}'>
+  <div class='article-card__details {% if content_position == "bottom-left" or content_position == "bottom-center" or content_position == "bottom-right" %}hover_on_text{% endif %} {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}'>    
     {%- if show_author or show_date or show_comment_count -%}
       <div class='article-card__meta'>
         {%- if show_author -%}
@@ -76,6 +81,7 @@
     {%- endif -%}
     {%- if title != blank -%}
       <h6 class='article-card__title'>
+        <span class="small_title">{{block.settings.title}}</span>
         {{- title -}}
       </h6>
     {%- endif -%}

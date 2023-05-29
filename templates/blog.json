@@ -6,19 +6,28 @@
         "post-1": {
           "type": "featured_post",
           "settings": {
-            "article": ""
+            "article": "news\/top-8-health-benefits-of-quercetin",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
+            "read_more_text_color": "#ffffff"
           }
         },
         "post-2": {
           "type": "featured_post",
           "settings": {
-            "article": ""
+            "article": "",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": ""
           }
         },
         "post-3": {
           "type": "featured_post",
           "settings": {
-            "article": ""
+            "article": "",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": ""
           }
         }
       },
@@ -29,14 +38,21 @@
       ],
       "settings": {
         "color_scheme": "default",
+        "page_title": "Supplement",
+        "page_title_color": "#769e92",
+        "page_subtitle": "SPOTLIGHT",
+        "page_subtitle_color": "#ea6852",
+        "text_bg": "#ea6852",
+        "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
-        "show_author": true,
-        "show_date": true,
-        "show_comment_count": true,
+        "show_author": false,
+        "show_date": false,
+        "show_comment_count": false,
         "show_subheading": true,
-        "show_read_more": true
+        "show_read_more": true,
+        "carousel_btn_color": "#ffffff"
       }
     },
     "blog": {

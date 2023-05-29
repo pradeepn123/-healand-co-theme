@@ -51,7 +51,9 @@
     assign has_content = true
   endif
 -%}
-
+{% if page.handle == 'rewards' %}
+  {{ 'rewards.css' | asset_url | stylesheet_tag }}
+{% endif %}
 {% capture css %}
   {% style %}
     .section-{{section.id}}{
@@ -297,9 +299,9 @@
       "label": "t:sections.image_banner.label_for_caption_setting"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "title",
-      "default": "Image with text",
+      "default": "<p>Image with text</p>",
       "label": "t:sections.image_banner.label_for_title_setting"
     },
     {

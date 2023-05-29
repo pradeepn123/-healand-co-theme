@@ -1,0 +1,254 @@
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": true
+      }
+    },
+    "c03a296a-c335-4807-95ee-711915117743": {
+      "type": "faq",
+      "blocks": {
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-0": {
+          "type": "category",
+          "settings": {
+            "title": "GENERAL",
+            "faq_heading_bg": "#ee5c4c",
+            "icon": "none"
+          }
+        },
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-1": {
+          "type": "question",
+          "settings": {
+            "title": "Where is Heal+Co based?",
+            "icon": "none",
+            "text": "<p>We're fortunate to be based in beautiful Whistler, BC, Canada. Our environment and surroundings provide us with the inspiration for developing products that positively impact people's health.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-2": {
+          "type": "question",
+          "settings": {
+            "title": "What are your values?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-4": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I purchase your product?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "7ae5b694-876c-4556-8c0b-d18bb07fb698": {
+          "type": "question",
+          "settings": {
+            "title": "Do you provide samples or coupons?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
+          "type": "category",
+          "settings": {
+            "title": "PRODUCTS",
+            "faq_heading_bg": "#797baa",
+            "icon": "none"
+          }
+        },
+        "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7": {
+          "type": "question",
+          "settings": {
+            "title": "What are your products made?",
+            "icon": "none",
+            "text": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Michigan, USA.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "d7769799-5306-4e87-ad5b-19fa26310c13": {
+          "type": "question",
+          "settings": {
+            "title": "What kind of testing do you do on your products?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "9e0ff089-300a-46f8-9060-b770d4841ee2": {
+          "type": "question",
+          "settings": {
+            "title": "When should I take the products? Should I take them with food?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "20803f02-1288-4755-b8f2-e74362154741": {
+          "type": "question",
+          "settings": {
+            "title": "Are your products FDA approved?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "5014e3c0-a283-4be1-a34e-c4de2f4ceb98": {
+          "type": "question",
+          "settings": {
+            "title": "Are your products vegan? Gluten free? Non GMO?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "6293f7ec-49ae-4de4-8e1d-a383e2a2075e": {
+          "type": "question",
+          "settings": {
+            "title": "Where do you source your products from?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "1cf9b1ca-8cdc-42ca-b9e9-734def0346ea": {
+          "type": "question",
+          "settings": {
+            "title": "How and where should I store the product?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "ed0583a8-ab6a-46c4-a4fc-792a1225673c": {
+          "type": "question",
+          "settings": {
+            "title": "What’s the difference between extract and a powder?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8": {
+          "type": "category",
+          "settings": {
+            "title": "SHIPPING & RETURNS",
+            "faq_heading_bg": "#82a1c4",
+            "icon": "none"
+          }
+        },
+        "91e6233a-a2d1-4e49-80dc-b7e3158551fc": {
+          "type": "question",
+          "settings": {
+            "title": "What is a typical order processing time?",
+            "icon": "none",
+            "text": "<p>We're fortunate to be based in beautiful Whistler, BC, Canada. Our environment and surroundings provide us with the inspiration for developing products that positively impact people's health.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "97daede1-b6eb-495f-bcab-a4dae12608b9": {
+          "type": "question",
+          "settings": {
+            "title": "What shipping options are available?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "a6e5fac1-11f2-4ea5-976a-f83d5db6de3f": {
+          "type": "question",
+          "settings": {
+            "title": "Where do you ship?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "3974a862-2679-4cbe-ace0-9dd4886c9bea": {
+          "type": "question",
+          "settings": {
+            "title": "How long will it take to receive my order?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "53bc3991-76b4-4a5e-92cf-888a66576113": {
+          "type": "question",
+          "settings": {
+            "title": "Do accept customer returns?",
+            "icon": "none",
+            "text": "<p>Brief and clear answer<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-0",
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-1",
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-2",
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-4",
+        "7ae5b694-876c-4556-8c0b-d18bb07fb698",
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
+        "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
+        "d7769799-5306-4e87-ad5b-19fa26310c13",
+        "9e0ff089-300a-46f8-9060-b770d4841ee2",
+        "20803f02-1288-4755-b8f2-e74362154741",
+        "5014e3c0-a283-4be1-a34e-c4de2f4ceb98",
+        "6293f7ec-49ae-4de4-8e1d-a383e2a2075e",
+        "1cf9b1ca-8cdc-42ca-b9e9-734def0346ea",
+        "ed0583a8-ab6a-46c4-a4fc-792a1225673c",
+        "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
+        "91e6233a-a2d1-4e49-80dc-b7e3158551fc",
+        "97daede1-b6eb-495f-bcab-a4dae12608b9",
+        "a6e5fac1-11f2-4ea5-976a-f83d5db6de3f",
+        "3974a862-2679-4cbe-ace0-9dd4886c9bea",
+        "53bc3991-76b4-4a5e-92cf-888a66576113"
+      ],
+      "settings": {
+        "color_scheme": "primary",
+        "container_size": "xsmall",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 96,
+        "section_layout": "bottom-tabs",
+        "title": "FAQ'S",
+        "text": "",
+        "heading_size": "h2",
+        "body_size": "body0",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "c03a296a-c335-4807-95ee-711915117743"
+  ]
+}

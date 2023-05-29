@@ -8,13 +8,14 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
-            "text": "<p>Make an announcement<\/p>",
+            "text": "<p>Free Shipping on all orders over $40<\/p>",
             "link": "",
             "icon": "none"
           }
         },
         "announcement_2": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p>Make an announcement<\/p>",
             "link": "",
@@ -28,14 +29,14 @@
       ],
       "settings": {
         "show_only_on_homepage": false,
-        "color_scheme": "secondary",
+        "color_scheme": "custom-2",
         "container_size": "full-screen",
-        "enable_autoplay": false,
+        "enable_autoplay": true,
         "autoplay_interval": 6,
         "show_navigation_arrows": true,
-        "show_language_selector": true,
-        "show_currency_selector": true,
-        "show_social_list": true
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_list": false
       }
     },
     "header": {
@@ -44,9 +45,9 @@
         "ad5b492f-e107-4508-9613-245a05308a86": {
           "type": "menu-1",
           "settings": {
-            "mega_nav_item_name": "Home",
+            "mega_nav_item_name": "shop",
             "color_scheme": "white",
-            "add_spacing": false,
+            "add_spacing": true,
             "desktop_img_ratio": 0.5,
             "mobile_img_ratio": 1.4,
             "columns": 2,
@@ -58,14 +59,16 @@
             "enable_vertical_text": false,
             "overlay_opacity": 20,
             "show_item_1": true,
-            "item_1_title": "Image with text",
-            "item_1_text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "item_1_btn_text": "Link label",
+            "item_1_img": "shopify:\/\/shop_images\/bestsellers.png",
+            "item_1_title": "Bestsellers",
+            "item_1_text": "",
+            "item_1_btn_text": "",
             "item_1_link": "",
             "show_item_2": true,
-            "item_2_title": "Image with text",
-            "item_2_text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "item_2_btn_text": "Link label",
+            "item_2_img": "shopify:\/\/shop_images\/Header-banner.png",
+            "item_2_title": "8 MUSHROOM  IMMUNITY",
+            "item_2_text": "<p>What’s new?<\/p>",
+            "item_2_btn_text": "",
             "item_2_link": "",
             "show_item_3": false,
             "item_3_title": "Image with text",
@@ -152,12 +155,14 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "full-screen",
-        "grid": "1",
+        "grid": "3",
         "enable_border": true,
         "enable_sticky": false,
         "menu_trigger": "hover",
-        "menu": "main-menu",
+        "menu": "new-menu",
+        "desktop_logo_img": "shopify:\/\/shop_images\/logo.png",
         "desktop_logo_width": 140,
+        "mobile_logo_img": "shopify:\/\/shop_images\/logo.png",
         "mobile_logo_width": 120,
         "icon_style": "round-outline",
         "cart_icon": "bag"

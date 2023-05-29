@@ -17,7 +17,6 @@
         endif
     endif
 -%}
- 
 <sidebar-filters-desktop id="SidebarFiltersDesktop" class="sidebar-filters sidebar-filters--desktop {{ sidebar_class }} {% if filter_style contains 'embed' %}sidebar-filters--static{% endif %} {% if filter_style contains 'drawer' %}sidebar-filters--drawer{% endif %}" data-section-id="{{ section.id }}" tabindex="-1"  {% if filter_style contains 'drawer' %}data-overlay-important data-with-close-on-outside data-with-close-on-escape data-open-direction="{% if filters_position == 'left' %}left{% else %}right{% endif %}" data-with-overlay{% endif %} {% if filter_style == 'open-embed' %} data-aria-expanded="true" data-with-open-on-init {% else %} data-aria-expanded="false" {% endif %}>
     <template>
         <div class="sidebar-filters__body" id="FiltersDesktop">
@@ -25,7 +24,7 @@
                 {%- render 'loading-overlay', class: 'filters__form-loading-overlay', id: "SidebarFiltersDesktop-loadingOverlay", attrs: "data-filters-loading-overlay" -%}
                 <div class="sidebar-filters__header" data-filters-header>
                     <div class="sidebar-filters__header-label">
-                        {{- 'general.filters.header' | t -}}
+                        {{- 'general.filters.header' | t | camelcase -}}
                         &nbsp;
                         {% if results.products_count.size > 0 %}
                             <div class="filters__results-count">
@@ -53,7 +52,7 @@
                         {%- if available_filter_value_count > 0 or filter.type == 'price_range' -%}
                             <div class="filters__item {% if show_divider %} filters__item--bordered {% endif %} {% if categories_style == 'static' %}filters__item--bottom-spacing{% endif %}">
                                 {%- if filter.label == 'Availability' -%}
-                                    <div class="filters__label {% if show_divider and forloop.index > 1 %} filters__label--top-spacing {% endif %} {% if enable_uppercase_title %}filters__label--uppercase{% endif %}">
+                                    {% comment %} <div class="filters__label {% if show_divider and forloop.index > 1 %} filters__label--top-spacing {% endif %} {% if enable_uppercase_title %}filters__label--uppercase{% endif %}">
                                         <div>
                                             {{ 'general.filters.in_stock_only_label' | t }}
                                         </div>
@@ -65,7 +64,7 @@
                                                 <div class="slider-switch__toggle"></div>
                                             </div>
                                         </label>
-                                    </div>
+                                    </div> {% endcomment %}
                                 {%- elsif categories_style contains 'tabs' -%}
                                     <accordeon-component class="accordeon filters__accordeon" data-aria-expanded="{% if categories_style contains 'expanded' %}true{% else %}false{% endif %}">
                                         <accordeon-btn class="accordeon__btn filters__label {% if show_divider and forloop.index > 1 %} filters__label--top-spacing {% endif %} {% if enable_uppercase_title %}filters__label--uppercase{% endif %}" tabindex="0">
@@ -639,7 +638,7 @@
                     <filter-remove-btn class="btn btn--outline filters__btn {% if active_filter_count == 0 %}hidden{% endif %}" data-url="{{ results.url }}" tabindex="0">
                         {{- 'general.filters.clear_button_label' | t -}}
                     </filter-remove-btn>
-                    <filters-submit-btn class="btn btn--solid filters__btn">{{- 'general.filters.apply_button_label' | t -}}</filters-submit-btn>
+                    <filters-submit-btn class="btn btn--solid filters__btn" id="filtersSubmitBtn">{{- 'general.filters.apply_button_label' | t -}}</filters-submit-btn>
                 </div>
             </div>
         </div>
