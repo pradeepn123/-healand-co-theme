@@ -71,7 +71,7 @@
 
           {%- case block.type -%}
             {%- when 'category' -%}
-              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};">
+              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background-color:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};">
                 {%- if custom_icon_image != blank -%}
                   <img
                     loading='lazy'
