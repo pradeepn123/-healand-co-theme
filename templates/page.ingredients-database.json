@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "xsmall",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": true
+      }
+    },
+    "ef2b5c4a-6e04-4547-903e-67adf1d482c2": {
+      "type": "image-banner",
+      "settings": {
+        "color_scheme": "white",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 600,
+        "mobile_height": 420,
+        "desktop_img": "shopify:\/\/shop_images\/ingredient_banner.jpg",
+        "mobile_img": "shopify:\/\/shop_images\/ingredients_banner_mobile.jpg",
+        "desktop_overlay_opacity": 8,
+        "mobile_overlay_opacity": 8,
+        "caption": "",
+        "title": "<p>Ingredients Database<\/p>",
+        "text": "<p>Transparent formulations, naturally sourced ingredients. Heal+Co's supplements values the power of nature to create effective and ethical products.<\/p>",
+        "heading_size": "h2",
+        "body_size": "body3",
+        "desktop_content_position": "align-items:center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 528,
+        "content_spacing": 116,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid",
+        "extra_btn_text": "",
+        "extra_btn_url": "",
+        "extra_btn_style": "solid"
+      }
+    },
+    "54d9322e-38bd-473f-9112-1a76ceb04b5f": {
+      "type": "image-content-rounded",
+      "blocks": {
+        "a5adb58a-5021-4c34-b66f-692848e6b6ad": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
+            "page": "ashwagandha",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "India"
+          }
+        },
+        "f8df52cb-b65d-4944-953a-bd9256a7d52c": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_209.jpg",
+            "page": "acai",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "Brazil"
+          }
+        },
+        "41e549b9-e9e5-42d6-bbd8-b60139098bb7": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_210.jpg",
+            "page": "echinacea",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "United States"
+          }
+        },
+        "37200bce-5ec4-4c71-91c8-ef56fe73aece": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
+            "page": "ashwagandha",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "China"
+          }
+        },
+        "94007359-74b9-426b-8712-f5ce4fc2bb5b": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
+            "page": "ashwagandha",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "Canada"
+          }
+        },
+        "cdd6c5cf-7372-411b-814b-72a6600a5813": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_214.jpg",
+            "page": "chaga",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "a5adb58a-5021-4c34-b66f-692848e6b6ad",
+        "f8df52cb-b65d-4944-953a-bd9256a7d52c",
+        "41e549b9-e9e5-42d6-bbd8-b60139098bb7",
+        "37200bce-5ec4-4c71-91c8-ef56fe73aece",
+        "94007359-74b9-426b-8712-f5ce4fc2bb5b",
+        "cdd6c5cf-7372-411b-814b-72a6600a5813"
+      ],
+      "settings": {
+        "section_spacing_top": 64,
+        "section_spacing_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "page",
+    "ef2b5c4a-6e04-4547-903e-67adf1d482c2",
+    "54d9322e-38bd-473f-9112-1a76ceb04b5f"
+  ]
+}

@@ -1,0 +1,156 @@
+{%- liquid
+  assign options = section.settings
+  assign section_spacing_top = options.section_spacing_top
+  assign section_spacing_bottom = options.section_spacing_bottom  
+-%}
+
+{% capture css %}
+  {% style %}
+    .section-{{section.id}}{
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+    }
+  {% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+{{ 'image-content-rounded.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="ingredients-database-section section section-{{ section.id }} section-spacing color-{{ color_scheme }}">
+    <div class="container">
+        <div class="ingredients-database-wrapper">
+            <div class="ingredients-database">
+                {% for block in section.blocks %}
+                    {% assign page =  pages[block.settings.page] %}
+                    <div class="ingredients-database-item">
+                        {% if block.settings.image != blank %}
+                            {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
+                            <div class="ingredients_image_wrap">
+                                <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                            </div>
+                            {% if page != blank %}</a>{% endif %}
+                        {% endif %}
+                        <div class="ingredients_content_info">
+                            {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
+                                <h4 class="{{ block.settings.heading_size }}">{{ block.settings.text | default: page.title }}</h4>
+                                <p class="tag_wrap">
+                                    {{ page.metafields.custom.origin }}
+                                </p>
+                            {% if page != blank %}</a>{% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Image content Rounded",
+  "tag": "section",
+  "settings": [    
+    {
+      "type": "header",
+      "content": "t:sections.image_banner.image_settings_header"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+      "label": "t:sections.general_section_settings.section_spacing_top.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+      "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+    }
+  ],
+  "blocks": [    
+    {
+      "type": "database",
+      "name": "Image & content Info",
+      "settings": [        
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.general_section_settings.heading_size_0_option"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.general_section_settings.heading_size_1_option"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.general_section_settings.heading_size_2_option"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.general_section_settings.heading_size_3_option"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.general_section_settings.heading_size_4_option"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.general_section_settings.heading_size_5_option"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.general_section_settings.heading_size_6_option"
+            },
+            {
+              "value": "h7",
+              "label": "t:sections.general_section_settings.heading_size_7_option"
+            }
+          ],
+          "default": "h6"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rich text"
+        },
+        {
+          "type": "text",
+          "id": "tag_text",
+          "label": "Choose country title"
+        }
+       
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image content Rounded"
+    }
+  ]
+}
+{% endschema %}
