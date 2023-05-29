@@ -1,0 +1,73 @@
+{{ 'images-only.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  
+  assign options = section.settings 
+  assign section_spacing_top = options.section_spacing_top
+  assign section_spacing_bottom = options.section_spacing_bottom
+
+%}
+
+{% style %}
+    .imagesOnly_container.section-spacing{
+        padding-top: {{ section_spacing_top }}px;
+        padding-bottom: {{ section_spacing_bottom }}px;
+    }
+{% endstyle %}
+
+<div class="imagesOnly_container container container--small section-spacing">
+    <div class="imagesOnly_parent">
+        {% for block in section.blocks %}
+            <img src="{{ block.settings.block_image | img_url: 'master' }}">
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Images Only",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Choose an Image"
+            },
+            {
+                "type": "range",
+                "id": "section_spacing_top",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "default": 48,
+                "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+                "label": "t:sections.general_section_settings.section_spacing_top.label"
+            },
+            {
+                "type": "range",
+                "id": "section_spacing_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "default": 48,
+                "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+                "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+            }
+        ],
+        "blocks": [
+            {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "block_image",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Images only Product Page"
+            }
+        ]
+    }
+{% endschema %} 

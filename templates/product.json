@@ -1,5 +1,128 @@
 {
   "sections": {
+    "images-only": {
+      "type": "images-only",
+      "blocks": {
+        "fc06c067-5488-459e-bd30-9a135c677ac0": {
+          "type": "image",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/row-image-1.png"
+          }
+        },
+        "243baf35-2449-4f3f-8d8f-deb65327cc42": {
+          "type": "image",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/row-image-2.png"
+          }
+        },
+        "fa3f4bb0-3ed3-41a0-878a-a4906ed35969": {
+          "type": "image",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/row-image-3.png"
+          }
+        },
+        "d7dffae0-f11b-4b07-aac3-acbda4955112": {
+          "type": "image",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/row-image-4.png"
+          }
+        },
+        "d8a378a7-8be7-45cd-ba62-7ef0b27ba5d6": {
+          "type": "image",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/row-image-5.png"
+          }
+        }
+      },
+      "block_order": [
+        "fc06c067-5488-459e-bd30-9a135c677ac0",
+        "243baf35-2449-4f3f-8d8f-deb65327cc42",
+        "fa3f4bb0-3ed3-41a0-878a-a4906ed35969",
+        "d7dffae0-f11b-4b07-aac3-acbda4955112",
+        "d8a378a7-8be7-45cd-ba62-7ef0b27ba5d6"
+      ],
+      "settings": {
+        "section_spacing_top": 64,
+        "section_spacing_bottom": 38
+      }
+    },
+    "c104c1c4-38cb-49de-952e-a049b6ae8ccf": {
+      "type": "product-tabs-section",
+      "blocks": {
+        "905992ce-366d-4bde-b3e1-e71760d67f0e": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "6fc95389-dcf8-44ec-8c00-31fd1a58877b": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "71f38245-c242-466c-9cee-e0601012f380": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "599c6932-f3eb-4bb9-804f-804c950ecc41": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "905992ce-366d-4bde-b3e1-e71760d67f0e",
+        "6fc95389-dcf8-44ec-8c00-31fd1a58877b",
+        "71f38245-c242-466c-9cee-e0601012f380",
+        "599c6932-f3eb-4bb9-804f-804c950ecc41"
+      ],
+      "settings": {
+        "custom_class": "custom-product-details",
+        "color_scheme": "#faf5ef",
+        "tabs_color": "#ea6852",
+        "colors_fromMetafields": true,
+        "enable_background_around_container": true,
+        "container_size": "large",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "expand_first_collapsible_row": false
+      }
+    },
+    "c494eb49-341f-432a-a30f-8dce72acadf3": {
+      "type": "product-benefits",
+      "settings": {
+        "featured_image": "shopify:\/\/shop_images\/product_image.png",
+        "heading": "",
+        "sub_heading": "",
+        "bg_color": "",
+        "text_color": "",
+        "heading_alignment": "center"
+      }
+    },
     "main": {
       "type": "product",
       "blocks": {
@@ -37,6 +160,7 @@
         },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "title": "",
             "block_style": "static",
@@ -64,7 +188,8 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "enable_pickup_availability": false
+            "enable_pickup_availability": false,
+            "enable_gift_card": false
           }
         },
         "c9188b10-e29c-4c63-b385-a3faa860d64a": {
@@ -135,6 +260,7 @@
       "blocks": {
         "eaea97df-77ab-4b25-ab4d-7127a70f662c": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "title": "Description",
             "icon": "none"
@@ -330,6 +456,9 @@
     }
   },
   "order": [
+    "images-only",
+    "c104c1c4-38cb-49de-952e-a049b6ae8ccf",
+    "c494eb49-341f-432a-a30f-8dce72acadf3",
     "main",
     "product-details",
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",

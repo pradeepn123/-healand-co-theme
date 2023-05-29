@@ -1,0 +1,155 @@
+{{ 'product-benefits.css' | asset_url | stylesheet_tag }}
+{% style %}
+    .pb_container .pb_main_content{
+        background-color: {{ section.settings.bg_color }};
+    }
+    .pb_container .pb_parent .pb_main_content h5,
+    .pb_container .pb_parent .pb_main_content p{
+        color: {{ section.settings.text_color }}
+    }
+{% endstyle %}
+
+{% assign prodAdditionalDetails = product.metafields.custom.product_benefits.value %}
+
+{% for data in prodAdditionalDetails %}
+    {% if forloop.index >2 %}
+        <div class="pb_metaData">
+            <img src="{{ data.images | img_url: 'master' }}" alt="">
+            <div class="pb_metaDataText">
+                <p class="pb_meta_heading">{{ data.heading }}</p>
+                <p class="pb_meta_description">{{ data.description }}</p>
+            </div>
+            {% if data.divider == true %}
+                <div class="pb_metaDivider">This is a Divider</div>
+            {% endif %}
+        </div>
+    <br>
+    {% endif %}
+{% endfor %}
+
+
+<div class="pb_container">
+    <div class="pb_parent">
+        <div class="pb_main_content">
+            <h5>{{ section.settings.heading }}</h5>
+            <p>{{ section.settings.sub_heading }}</p>
+        </div>
+        <div class="pb_text_content_desktop">
+            <div class="pb_left">
+                {% for data in prodAdditionalDetails %}
+                    {% if forloop.index <=2 %}
+                        <div class="pb_metaData">
+                            <img src="{{ data.images | img_url: 'master' }}" alt="">
+                            <div class="pb_metaDataText">
+                                <p class="pb_meta_heading">{{ data.heading }}</p>
+                                <p class="pb_meta_description">{{ data.description }}</p>
+                            </div>
+                        </div>
+                        {% if data.divider == true %}
+                            <div class="pb_metaDivider">This is a Divider</div>
+                        {% endif %}
+                    <br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="pb_center">
+                <img src="{{ section.settings.featured_image | img_url: 'master' }}" alt="">
+            </div>
+            <div class="pb_right">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Product Benefits",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "featured_image",
+                "label": "Center Featured Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading"
+            },
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Background Color"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color"
+            },
+            {
+                "type": "select",
+                "id": "heading_alignment",
+                "label": "Main Text Alignment",
+                "options": [
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }
+                ]
+            }
+        ],
+        "blocks": [
+            {
+                "type": "leftBlockInfo",
+                "name": "Product Left Blocks Info",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "block_image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "text",
+                        "id": "description",
+                        "label": "Product Description"
+                    }
+                ]
+            },
+            {
+                "type": "rightBlockInfo",
+                "name": "Product Right Blocks Info",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "block_image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "text",
+                        "id": "description",
+                        "label": "Product Description"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product Benefits"
+            }
+        ]
+    }
+{% endschema %}

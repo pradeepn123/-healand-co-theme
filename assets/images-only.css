@@ -1,0 +1,4 @@
+.imagesOnly_parent {
+    display: flex;
+    justify-content: space-between;
+}
