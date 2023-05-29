@@ -307,9 +307,9 @@
           "type": "category",
           "settings": {
             "title": "HEAL + CLUB REWARDS",
-            "faq_heading_bg": "",
+            "faq_heading_bg": "#f3b563",
             "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -344,7 +344,7 @@
             "title": "Category",
             "faq_heading_bg": "",
             "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -403,6 +403,7 @@
         "title": "FAQ’S",
         "text": "",
         "heading_size": "h5",
+        "head_color": "#000",
         "body_size": "body3",
         "btn_text": "",
         "btn_url": "",
