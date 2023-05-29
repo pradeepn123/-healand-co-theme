@@ -401,16 +401,14 @@
       "product_count": {
         "one": "{{ count }} product",
         "other": "{{ count }} products"
-      },
-      "aria_label_for_link": "Collection: {{ collection_title }}"
+      }
     },
     "product_card": {
       "quick_view_button_label": "Quick view",
       "add_to_cart_button_label": "Add to cart",
       "default_title": "Your product title",
       "default_vendor": "Vendor",
-      "from_price_html": "From {{ price }}",
-      "aria_label_for_link": "Product: {{ product_title }}"
+      "from_price_html": "From {{ price }}"
     },
     "article_card": {
       "read_more_link": "Read more",
@@ -420,8 +418,7 @@
       "comments_count": {
         "one": "{{ count }} comment",
         "other": "{{ count }} comments"
-      },
-      "aria_label_for_link": "Article: {{ article_title }}"
+      }
     }
   },
   "dialog_elements": {

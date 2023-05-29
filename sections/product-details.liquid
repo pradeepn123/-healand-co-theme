@@ -10,10 +10,6 @@
   assign expand_first_collapsible_row = options.expand_first_collapsible_row
 
   assign first_block = section.blocks | first
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -51,16 +47,8 @@
               >
                 {%- if custom_icon_image != blank -%}
                   <img
-                    loading='lazy'
-                    alt='{{ custom_icon_image.alt }}'
                     class='product-details__tab-name-icon lazyload'
-                    width='24'
-                    height='24'
-                    src='{{ custom_icon_image | image_url: width: 24 }}'
-                    style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                    data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                    data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                    data-sizes='auto'
+                    {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                   >
                 {%- elsif icon != 'none' -%}
                   {% render 'icon-pack', icon: icon, class: 'product-details__tab-name-icon' %}
@@ -93,16 +81,8 @@
                     >
                       {%- if custom_icon_image != blank -%}
                         <img
-                          loading='lazy'
-                          alt='{{ custom_icon_image.alt }}'
                           class='product-details__tab-name-icon lazyload'
-                          width='24'
-                          height='24'
-                          src='{{ custom_icon_image | image_url: width: 24 }}'
-                          style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                          data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                         >
                       {%- elsif icon != 'none' -%}
                         {% render 'icon-pack', icon: icon, class: 'product-details__tab-name-icon' %}
@@ -169,15 +149,7 @@
                         {% elsif image != blank %}
                           <img
                             class='image product-details__image lazyload'
-                            loading='lazy'
-                            src='{{ image | image_url: width: 160 }}'
-                            alt='{{ image.alt }}'
-                            width='{{ image.width }}'
-                            height='{{ image.height }}'
-                            style='object-position: {{ image.presentation.focal_point }};'
-                            data-aspectratio='{{ image.aspect_ratio }}'
-                            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                            data-sizes='auto'
+                            {% render 'image-attributes', image: image %}
                           >
                         {% endif %}
                       </div>
@@ -252,15 +224,7 @@
                       {% elsif image != blank %}
                         <img
                           class='image product-details__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image %}
                         >
                       {% endif %}
                     {%- endif -%}
@@ -303,16 +267,8 @@
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
                       class='accordeon-plus__btn-icon lazyload'
-                      width='24'
-                      height='24'
-                      src='{{ custom_icon_image | image_url: width: 24 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
                     {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -342,16 +298,8 @@
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
                       class='accordeon-plus__btn-icon lazyload'
-                      width='24'
-                      height='24'
-                      src='{{ custom_icon_image | image_url: width: 24 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
                     {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -384,15 +332,7 @@
                       {% elsif image != blank %}
                         <img
                           class='image product-details__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image %}
                         >
                       {% endif %}
                     </div>
@@ -413,16 +353,8 @@
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
                       class='accordeon-plus__btn-icon lazyload'
-                      width='24'
-                      height='24'
-                      src='{{ custom_icon_image | image_url: width: 24 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
                     {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -480,7 +412,8 @@
         }
       ],
       "default": "custom-1",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

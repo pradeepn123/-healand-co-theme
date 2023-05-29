@@ -19,10 +19,6 @@
   assign desktop_columns_float = desktop_columns | times: 1.0
   assign desktop_slide_width = 100 | divided_by: desktop_columns_float
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign some_block_has_image = false
 
   for block in section.blocks
@@ -113,15 +109,7 @@
                   {%- if image != blank -%}
                     <img
                       class='logo-list__image lazyload'
-                      loading='lazy'
-                      src='{{ image | image_url: width: 160 }}'
-                      alt='{{ image.alt }}'
-                      width='{{ image.width }}'
-                      height='{{ image.height }}'
-                      style='object-position: {{ image.presentation.focal_point }};'
-                      data-aspectratio='{{ image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: image %}
                     >
                   {%- else -%}
                     {{
@@ -158,15 +146,7 @@
               {%- if image != blank -%}
                 <img
                   class='logo-list__image lazyload'
-                  loading='lazy'
-                  src='{{ image | image_url: width: 160 }}'
-                  alt='{{ image.alt }}'
-                  width='{{ image.width }}'
-                  height='{{ image.height }}'
-                  style='object-position: {{ image.presentation.focal_point }};'
-                  data-aspectratio='{{ image.aspect_ratio }}'
-                  data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                  data-sizes='auto'
+                  {% render 'image-attributes', image: image %}
                 >
               {%- else -%}
                 {{ 'image' | placeholder_svg_tag: 'logo-list__image logo-list__placeholder-image placeholder-image' }}
@@ -214,7 +194,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

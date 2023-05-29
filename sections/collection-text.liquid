@@ -49,10 +49,6 @@
   assign product_limit = options.cards_to_show
   assign products = options.collection.products | default: (1..product_limit)
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign product_card_with_bottom_spacing = false
   if settings.edge_rounding_degree != 'none'
     assign product_card_with_bottom_spacing = true
@@ -133,16 +129,8 @@
       <div class='collection-text__content {% if direction == 'inverse' %}collection-text__content--inverse{% endif %}'>
         {%- if custom_icon_image != blank -%}
           <img
-            loading='lazy'
-            alt='{{ custom_icon_image.alt }}'
             class='collection-text__icon lazyload'
-            width='48'
-            height='48'
-            src='{{ custom_icon_image | image_url: width: 48 }}'
-            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
           >
         {%- elsif icon != 'none' -%}
           {% render 'icon-pack', icon: icon, class: 'collection-text__icon' %}
@@ -158,7 +146,7 @@
           </h5>
         {%- endif -%}
         {%- if text != blank -%}
-          <div class='rte {{ body_size }} text collection-text__text body-font-weight-from-global-settings'>
+          <div class='rte {{ body_size }} collection-text__text body-font-weight-from-global-settings'>
             {{ text }}
           </div>
         {%- endif -%}
@@ -310,7 +298,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

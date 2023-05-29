@@ -26,10 +26,6 @@
   assign video = options.video
   assign title = collection.title
   assign description = collection.description
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 {{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% capture css %}
@@ -81,15 +77,7 @@
         {%- elsif image != blank -%}
           <img
             class='image collection-hero__image lazyload'
-            loading='lazy'
-            src='{{ image | image_url: width: 160 }}'
-            alt='{{ image.alt }}'
-            width='{{image.width}}'
-            height='{{image.height}}'
-            style='object-position: {{ image.presentation.focal_point }};'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-sizes='auto'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
+            {% render 'image-attributes', image: image %}
           >
         {%- else -%}
           <carousel-component
@@ -104,15 +92,7 @@
                     <div class='carousel__slide'>
                       <img
                         class='image lazyload'
-                        loading='lazy'
-                        src='{{ collection.image | image_url: width: 160 }}'
-                        alt='{{ collection.image.alt }}'
-                        width='{{collection.image.width}}'
-                        height='{{collection.image.height}}'
-                        style='object-position: {{ image.presentation.focal_point }};'
-                        data-aspectratio='{{ collection.image.aspect_ratio }}'
-                        data-srcset='{%- render 'srcset-for-image', image: collection.image -%}'
-                        data-sizes='auto'
+                        {% render 'image-attributes', image: collection.image %}
                       >
                     </div>
                   {%- endif -%}
@@ -198,7 +178,8 @@
         }
       ],
       "default": "white",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

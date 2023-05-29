@@ -22,9 +22,6 @@
   assign drag_position = options.drag
 
   assign color_scheme = options.color_scheme
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -85,16 +82,8 @@
           {%- if img_before != blank -%}
             <img
               class='before-after__image lazyload'
-              loading='lazy'
-              src='{{ img_before | image_url: width: 160 }}'
-              alt='{{ img_before.alt }}'
-              width='{{img_before.width}}'
-              height='{{img_before.height}}'
-              style='object-position: {{ img_before.presentation.focal_point }};'
               data-parent-fit='cover'
-              data-aspectratio='{{ img_before.aspect_ratio }}'
-              data-srcset='{%- render 'srcset-for-image', image: img_before -%}'
-              data-sizes='auto'
+              {% render 'image-attributes', image: img_before %}
             >
           {%- else -%}
             {{ 'image' | placeholder_svg_tag: 'image placeholder-image' }}
@@ -111,16 +100,8 @@
           {%- if img_after != blank -%}
             <img
               class='before-after__image lazyload'
-              loading='lazy'
-              src='{{ img_after | image_url: width: 160 }}'
-              alt='{{ img_after.alt }}'
-              width='{{img_after.width}}'
-              height='{{img_after.height}}'
-              style='object-position: {{ img_after.presentation.focal_point }};'
               data-parent-fit='cover'
-              data-aspectratio='{{ img_after.aspect_ratio }}'
-              data-srcset='{%- render 'srcset-for-image', image: img_after -%}'
-              data-sizes='auto'
+              {% render 'image-attributes', image: img_after %}
             >
           {%- else -%}
             {{ 'image' | placeholder_svg_tag: 'image placeholder-image' }}

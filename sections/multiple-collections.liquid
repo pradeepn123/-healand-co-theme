@@ -44,10 +44,6 @@
 
   assign product_card_align = options.product_card_align
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign prepared_collection_list_placeholder = 'COLLECTION 1,COLLECTION 2,COLLECTION 3' | split: ','
   assign prepared_collection_placeholder = (1..product_limit)
 -%}
@@ -409,7 +405,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

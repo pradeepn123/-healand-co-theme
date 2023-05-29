@@ -34,10 +34,6 @@
   else
     assign quote_text_variant = 'large'
   endif
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -194,6 +190,7 @@
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
+                      data-dot-index='{{ forloop.index0 }}'
                     >
                       <div class='solid-dots-carousel__solid-dot-circle'></div>
                     </carousel-dot>
@@ -253,6 +250,7 @@
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
+                      data-dot-index='{{ forloop.index0 }}'
                     >
                       <div class='solid-dots-carousel__solid-dot-circle'></div>
                     </carousel-dot>
@@ -295,6 +293,7 @@
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
+                      data-dot-index='{{ forloop.index0 }}'
                     >
                       <div class='solid-dots-carousel__solid-dot-circle'></div>
                     </carousel-dot>
@@ -308,15 +307,7 @@
               <div class='testimonials__image'>
                 <img
                   class='image  lazyload zoom'
-                  src='{{ image | image_url: width: 160 }}'
-                  loading='lazy'
-                  alt='{{ image.alt }}'
-                  width='{{image.width}}'
-                  height='{{image.height}}'
-                  data-sizes='auto'
-                  style='object-position: {{ image.presentation.focal_point }};'
-                  data-aspectratio='{{ image.aspect_ratio }}'
-                  data-srcset='{%- render 'srcset-for-image', image: image -%}'
+                  {% render 'image-attributes', image: image %}
                 >
               </div>
             {%- endif -%}
@@ -402,7 +393,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

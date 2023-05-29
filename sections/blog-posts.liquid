@@ -23,10 +23,6 @@
 
   assign enable_carousel_on_mobile = options.enable_carousel_on_mobile
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   if blog == empty
     assign placeholder_count = desktop_columns | times: 2
     assign articles = (1..placeholder_count)
@@ -144,7 +140,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

@@ -21,14 +21,7 @@
         {%- if image != blank -%}
           <img
             class='product-media__image lazyload {{ class }} {% if enable_multiply %}multiply-mode__target{% endif %}'
-            loading='lazy'
-            src='{{ image | image_url: width: 160 }}'
-            alt='{{ image.alt }}'
-            width='320'
-            height='320'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: image %}
           >
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: placeholder_class }}
@@ -38,14 +31,7 @@
       {%- if image != blank -%}
         <img
           class='product-media__image lazyload {{ class }} {% if enable_multiply %}multiply-mode__target{% endif %}'
-          loading='lazy'
-          src='{{ image | image_url: width: 160 }}'
-          alt='{{ image.alt }}'
-          width='320'
-          height='320'
-          data-aspectratio='{{ image.aspect_ratio }}'
-          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-          data-sizes='auto'
+          {% render 'image-attributes', image: image %}
         >
       {%- else -%}
         {{ 'image' | placeholder_svg_tag: placeholder_class }}
@@ -65,14 +51,7 @@
 
           <img
             class='product-media__image lazyload {{ class }} {% if enable_multiply %}multiply-mode__target{% endif %}'
-            loading='lazy'
-            src='{{ image | image_url: width: 160 }}'
-            alt='{{ image.alt }}'
-            width='320'
-            height='320'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: image %}
           >
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: placeholder_class }}
@@ -118,14 +97,7 @@
 
           <img
             class='product-media__image lazyload {{ class }} {% if enable_multiply %}multiply-mode__target{% endif %}'
-            loading='lazy'
-            src='{{ image | image_url: width: 160 }}'
-            alt='{{ image.alt }}'
-            width='320'
-            height='320'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: image %}
           >
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: placeholder_class }}
@@ -148,9 +120,9 @@
               endif
             when 'video'
               if enable_video_autoplay
-                echo media | media_tag: class: video_class, image_size: '2048x', autoplay: true, loop: enable_video_looping, controls: false, preload: 'none'
+                render 'video-with-alt', class: video_class, video: media, autoplay: true, loop: enable_video_looping, controls: false, muted: false
               else
-                echo media | media_tag: class: video_class, image_size: '2048x', autoplay: false, loop: enable_video_looping, controls: true, preload: 'none'
+                render 'video-with-alt', class: video_class, video: media, autoplay: false, loop: enable_video_looping, controls: true, muted: false
               endif
           endcase
         -%}

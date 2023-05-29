@@ -1152,6 +1152,13 @@
         },
         "label": "Desktop column count"
       },
+      "follow_on_shop_settings_header": {
+        "content": "Follow on shop",
+        "info": "Allows customers to follow your store on the [Shop app](https:\/\/help.shopify.com\/en\/manual\/online-sales-channels\/shop)"
+      },
+      "enable_follow_on_shop": {
+        "label": "Enable 'Follow on Shop'"
+      },
       "enable_border_label": "Show separator",
       "language_selector_settings_header": "Language selector",
       "language_selector_settings_paragraph": "To add a language, go to your [language settings](https:\/\/admin.shopify.com\/settings\/languages)",
@@ -1846,6 +1853,56 @@
       "custom_liquid_block_name": "Custom liquid",
       "custom_liquid_block_title_label": "Heading"
     },
+    "recently_viewed": {
+      "name": "Recently viewed",
+      "description": "The list is based on the browsing history saved to cookies. The section will be hidden until visitors view any product",
+      "section_layout": {
+        "grid_label": "Grid",
+        "carousel_label": "Carousel",
+        "carousel_overflow_label": "Carousel overflow",
+        "label": "Layout"
+      },
+      "heading_settings_header": {
+        "content": "Heading"
+      },
+      "title": {
+        "label": "Heading"
+      },
+      "cards_settings_header": {
+        "content": "Cards"
+      },
+      "cards_to_show": {
+        "label": "Cards to show"
+      },
+      "desktop_columns": {
+        "label": "Desktop cards per row"
+      },
+      "desktop_space_between_cards": {
+        "label": "Desktop space between cards",
+        "unit": "px"
+      },
+      "mobile_space_between_cards": {
+        "label": "Mobile space between cards",
+        "unit": "px"
+      },
+      "enable_carousel_on_mobile": {
+        "label": "Swipe on mobile",
+        "info": "For grid layout only. Cards per row are auto-optimized for mobile"
+      },
+      "carousel_settings_header": {
+        "content": "Carousel"
+      },
+      "enable_autoplay": {
+        "label": "Enable autoplay"
+      },
+      "autoplay_interval": {
+        "unit": "s",
+        "label": "Autoplay interval"
+      },
+      "show_navigation_on_hover": {
+        "label": "Show arrows on hover"
+      }
+    },
     "product_recommendations": {
       "name": "Related products",
       "section_layout": {
@@ -2297,7 +2354,7 @@
         "option_2_label": "Swipe",
         "option_3_label": "Seamless",
         "label": "Transition style",
-        "info": "With seamless mode the slides appear as one smooth line when you drag them"
+        "info": "With seamless mode slides appear as one smooth line when you drag them"
       },
       "navigation_settings_header": "Navigation",
       "label_for_enable_circle_navigation_setting": "Show navigation circles",
@@ -2547,6 +2604,12 @@
       "label_for_text_when_many_in_stock_setting_in_inventory_status_block": "High inventory label ",
       "label_for_text_when_few_in_stock_setting_in_inventory_status_block": "Low inventory label",
       "name_for_buy_buttons_block": "Buy buttons",
+      "buy_buttons": {
+        "enable_gift_card": {
+          "label": "Show recipient form for gift cards",
+          "info": "Let customers send gift card products to a different recipient along with a personal message"
+        }
+      },
       "label_for_show_dynamic_checkout_setting_in_buttons_block": "Show dynamic checkout button",
       "tip_for_show_dynamic_checkout_setting_in_buttons_block": "Let customers check out directly using preferred payment method",
       "label_for_in_buttons_block": "Enable pickup availability feature",

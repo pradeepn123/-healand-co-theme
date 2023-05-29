@@ -10,10 +10,7 @@
   assign bottom_bar = options.bottom_bar
   assign container_size = options.container_size
   assign desktop_column_count = options.desktop_column_count
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
+  assign enable_follow_on_shop = options.enable_follow_on_shop
 -%}
 
 {%- capture css -%}
@@ -66,15 +63,7 @@
                       {%- elsif image != blank -%}
                         <img
                           class='image footer__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image %}
                         >
                       {%- else -%}
                         {{ 'image' | placeholder_svg_tag: 'image footer__image placeholder-image' }}
@@ -350,6 +339,13 @@
             {%- for type in shop.enabled_payment_types -%}
               <img src='{{ type | payment_type_img_url }}' alt='Payment: {{ type }}' loading='lazy'>
             {%- endfor -%}
+            {%- if shop.features.follow_on_shop? and enable_follow_on_shop -%}
+              <div>
+                {% # theme-check-disable %}
+                {{ shop | login_button: action: 'follow' }}
+                {% # theme-check-enable %}
+              </div>
+            {%- endif -%}
           </div>
         {%- endif -%}
       </div>
@@ -394,7 +390,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",
@@ -467,6 +464,17 @@
       "type": "inline_richtext",
       "id": "copyright_text",
       "label": "t:sections.footer.copyright_text_label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.follow_on_shop_settings_header.content",
+      "info": "t:sections.footer.follow_on_shop_settings_header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.enable_follow_on_shop.label"
     },
     {
       "type": "header",

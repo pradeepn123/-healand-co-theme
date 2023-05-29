@@ -13,10 +13,6 @@
   assign btn_style = options.btn_style
   assign btn_text = options.btn_text
   assign section_layout = options.section_layout
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 <link rel="stylesheet" href="{{ 'faq.css' | asset_url }}">
@@ -74,16 +70,8 @@
               <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background-color:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};">
                 {%- if custom_icon_image != blank -%}
                   <img
-                    loading='lazy'
-                    alt='{{ custom_icon_image.alt }}'
                     class='faq__category-icon lazyload'
-                    width='24'
-                    height='24'
-                    src='{{ custom_icon_image | image_url: width: 24 }}'
-                    style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                    data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                    data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                    data-sizes='auto'
+                    {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                   >
                 {%- elsif icon != 'none' -%}
                   {% render 'icon-pack', icon: icon, class: 'faq__category-icon' %}
@@ -105,16 +93,8 @@
                 <accordeon-btn class='faq__accordeon-plus-btn accordeon-plus__btn' style="font-size: {{ block.settings.subhead_fontsize }}px;" tabindex='0'>
                   {%- if custom_icon_image != blank -%}
                     <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
                       class='accordeon-plus__btn-icon lazyload'
-                      width='48'
-                      height='48'
-                      src='{{ custom_icon_image | image_url: width: 48 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
                     {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -144,15 +124,7 @@
                     {%- elsif image != blank -%}
                       <img
                         class='faq__question-image lazyload'
-                        loading='lazy'
-                        src='{{ image | image_url: width: 160 }}'
-                        alt='{{ image.alt }}'
-                        width='{{ image.width }}'
-                        height='{{ image.height }}'
-                        style='object-position: {{ image.presentation.focal_point }};'
-                        data-aspectratio='{{ image.aspect_ratio }}'
-                        data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                        data-sizes='auto'
+                        {% render 'image-attributes', image: image %}
                       >
                     {%- endif -%}
                   </div>
@@ -200,7 +172,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

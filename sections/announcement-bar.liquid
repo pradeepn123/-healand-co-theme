@@ -18,14 +18,10 @@
   if show_only_on_homepage == true and request.page_type != 'index'
     assign show_announcement_bar = false
   endif
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {%- if show_announcement_bar == true -%}
-  <div class='announcement-bar section section-{{ section.id }} color-{{color_scheme}}'>
+  <div class='announcement-bar section section-{{ section.id }} color-{{ color_scheme }}'>
     <div class='announcement-bar__outer-container container container--{{ container_size }}'>
       <div class='announcement-bar__inner-container '>
         <div class='announcement-bar__left-panel'>
@@ -76,16 +72,8 @@
 
                         {%- if custom_icon_image != blank -%}
                           <img
-                            loading='lazy'
-                            alt='{{ custom_icon_image.alt }}'
                             class='announcement-bar__text-icon lazyload'
-                            width='48'
-                            height='48'
-                            src='{{ custom_icon_image | image_url: width: 48 }}'
-                            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                            data-sizes='auto'
+                            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                           >
                         {%- elsif icon != 'none' -%}
                           {% render 'icon-pack', icon: icon, class: 'announcement-bar__text-icon' %}
@@ -136,6 +124,7 @@
                     id='AnnouncementBarLanguageSelector'
                     data-placement='bottom-end'
                     data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
+                    data-strategy='fixed'
                   >
                     <template>
                       <div class='localization-dropdown__body'>
@@ -188,6 +177,7 @@
                     id='AnnouncementBarCurrencySelector'
                     data-placement='bottom-end'
                     data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
+                    data-strategy='fixed'
                   >
                     <template>
                       <div class='localization-dropdown__body'>
@@ -270,7 +260,8 @@
         }
       ],
       "default": "secondary",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

@@ -42,10 +42,6 @@
     assign laptop_carousel_percent_width = laptop_carousel_percent_width | minus: half_laptop_slide_width
     assign tablet_carousel_percent_width = tablet_carousel_percent_width | minus: half_tablet_slide_width
   endif
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -227,7 +223,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

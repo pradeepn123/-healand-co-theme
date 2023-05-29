@@ -6,10 +6,6 @@
   assign color_scheme = options.color_scheme
   assign enable_background_around_container = options.enable_background_around_container
   assign container_size = options.container_size
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 {% if page.handle == 'rewards' %}
   {{ 'rewards.css' | asset_url | stylesheet_tag }}
@@ -56,16 +52,8 @@
             {% when 'icon' %}
               {%- if custom_icon_image != blank -%}
                 <img
-                  loading='lazy'
-                  alt='{{ custom_icon_image.alt }}'
                   class='rich-text__icon lazyload'
-                  width='48'
-                  height='48'
-                  src='{{ custom_icon_image | image_url: width: 48 }}'
-                  style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                  data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                  data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                  data-sizes='auto'
+                  {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                 >
               {%- elsif icon != 'none' -%}
                 {% render 'icon-pack', icon: icon, class: 'rich-text__icon' %}
@@ -192,7 +180,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

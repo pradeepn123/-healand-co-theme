@@ -1,7 +1,11 @@
 {%- liquid
   assign enable_video_looping = section.settings.enable_video_looping
   assign featured_media = product.selected_or_first_available_variant.featured_media
-  assign product_media = product.media | default: (1..12)
+  assign product_media = (1..12)
+
+  if product.media != blank
+    assign product_media = product.media | where: 'media_type', 'image'
+  endif
 -%}
 
 <product-modal

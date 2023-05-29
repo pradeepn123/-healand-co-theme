@@ -47,14 +47,7 @@
 
           <img
             class='product-modal__image product-modal__image--video lazyload {{ class }} {% if enable_multiply %}multiply-mode__target{% endif %}'
-            loading='lazy'
-            src='{{ image | image_url: width: image.width, height: image.height }}'
-            alt='{{ image.alt }}'
-            width='{{ image.width }}'
-            height='{{ image.height }}'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: image %}
           >
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: placeholder_class }}

@@ -3,10 +3,6 @@
   assign block_layout = section.settings.layout
   assign enable_image_zoom = section.settings.enable_image_zoom
   assign first_3d_model = product.media | where: 'media_type', 'model' | first
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 <div class='product__content'>
@@ -37,12 +33,17 @@
             }
           {% when 'information_tag' %}
             .block-{{ block.id }} {
-              --gsc-image-width: {{ block.settings.drawer_media_size }}%;
               --gsc-tag-background-color: {{ block.settings.tag_background_color }};
               --gsc-tag-text-color: {{ block.settings.tag_text_color }};
             }
+
+            .block-{{ block.id }}-drawer {
+              --gsc-image-width: {{ block.settings.drawer_media_size }}%;
+            }
           {% when 'variant_picker' %}
-            .block-{{ block.id }} {
+            .block-{{ block.id }} {}
+
+            .block-{{ block.id }}-drawer {
               --gsc-image-width: {{ block.settings.image_width }}%;
             }
           {% when 'price' %}
@@ -66,12 +67,33 @@
               --gsc-product-drawer-tabs-button-background-color: {{ block.settings.button_background_color }};
               --gsc-product-drawer-tabs-button-text-color: {{ block.settings.button_text_color }};
             }
+
+            .block-{{ block.id }}-drawer {}
         {% endcase %}
       {% endfor %}
     {% endstyle %}
   {% endcapture %}
 
   {% render 'inline-css-minifier', css: css %}
+
+  {% if sectionId contains '---MainSection' %}
+    {% capture product_string %}
+    <div class="card-carousel__slide" recently-viewed-item>
+      {% render 'product-card', 
+      product: product,
+      show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+      color_swatch_variables: color_swatch_variables,
+      img_ratio: settings.default_img_ratio,
+      product_card_align: 'left' %}
+    </div>
+  {% endcapture %}
+
+    <script id='RecentViewedProductCardSnippetString'>
+      window.addEventListener('load', () => {
+        window.recentlyViewed.updateProductsInLocalStorage(`{{ product_string | append: '' }}`, `{{ product.handle }}`)
+      })
+    </script>
+  {% endif %}
 </div>
 
 <div>
@@ -93,7 +115,7 @@
           {%- if block_option_name_downcase == option_name_downcase -%}
             <product-information-drawer
               id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-              class='product-information-drawer block-{{ block.id }}'
+              class='product-information-drawer block-{{ block.id }}-drawer'
               data-with-overlay
               data-with-close-on-outside
               data-with-close-on-escape
@@ -139,15 +161,7 @@
                       {%- elsif image != blank -%}
                         <img
                           class='product-information-drawer__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image %}
                         >
                       {%- endif -%}
                     </div>
@@ -200,7 +214,7 @@
 
         <product-information-drawer
           id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-          class='product-information-drawer block-{{ block.id }}'
+          class='product-information-drawer block-{{ block.id }}-drawer'
           data-with-overlay
           data-with-close-on-outside
           data-with-close-on-escape
@@ -413,7 +427,7 @@
 
           <product-information-drawer
             id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-            class='product-information-drawer block-{{ block.id }}'
+            class='product-information-drawer block-{{ block.id }}-drawer'
             data-with-overlay
             data-with-close-on-outside
             data-with-close-on-escape
@@ -459,15 +473,7 @@
                     {%- elsif drawer_image != blank -%}
                       <img
                         class='product-information-drawer__image lazyload'
-                        loading='lazy'
-                        src='{{ drawer_image | image_url: width: 160 }}'
-                        alt='{{ drawer_image.alt }}'
-                        width='{{ drawer_image.width }}'
-                        height='{{ drawer_image.height }}'
-                        style='object-position: {{ drawer_image.presentation.focal_point }};'
-                        data-aspectratio='{{ drawer_image.aspect_ratio }}'
-                        data-srcset='{%- render 'srcset-for-image', image: drawer_image -%}'
-                        data-sizes='auto'
+                        {% render 'image-attributes', image: drawer_image %}
                       >
                     {%- endif -%}
                   </div>

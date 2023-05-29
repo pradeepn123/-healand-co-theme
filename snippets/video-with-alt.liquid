@@ -1,7 +1,14 @@
 {% assign prepared_class = class | append: ' yall-video-lazy' %}
 
+{% liquid
+  assign autoplay = autoplay | default: true
+  assign loop = loop | default: true
+  assign muted = muted | default: true
+  assign controls = controls | default: false
+%}
+
 {% capture prepared_video %}
-  {{ video | video_tag: class: prepared_class, autoplay: true, loop: true, muted: true }}
+  {{ video | video_tag: class: prepared_class, autoplay: autoplay, loop: loop, muted: muted, controls: controls }}
 {% endcapture %}
 
 {%- liquid

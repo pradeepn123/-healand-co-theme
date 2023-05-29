@@ -46,12 +46,8 @@
                         aria-label='{{ item.product.title }}'
                       >
                         <img
-                          class='image cart-item__image {% if enable_multiply %}multiply-mode__target{% endif %}'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 320 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
+                          class='image cart-item__image lazyload {% if enable_multiply %}multiply-mode__target{% endif %}'
+                          {% render 'image-attributes', image: image, size: 'medium' %}
                         >
                       </a>
                       <div class='cart-item-checkmark hidden' data-cart-item-checkmark>

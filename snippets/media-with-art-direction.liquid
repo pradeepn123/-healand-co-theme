@@ -52,16 +52,8 @@
   {%- elsif has_desktop_image -%}
     <img
       class='image media__image media__image--desktop lazyload'
-      loading='lazy'
-      src='{{ desktop_img | image_url: width: 160 }}'
-      alt='{{ desktop_img.alt }}'
-      width='{{desktop_img.width}}'
-      height='{{desktop_img.height}}'
       data-parent-fit='cover'
-      data-aspectratio='{{ desktop_img.aspect_ratio }}'
-      data-sizes='auto'
-      style='object-position: {{ desktop_img.presentation.focal_point }};'
-      data-srcset='{%- render 'srcset-for-image', image: desktop_img -%}'
+      {% render 'image-attributes', image: desktop_img %}
     >
   {%- endif -%}
 
@@ -70,16 +62,8 @@
   {%- elsif has_mobile_image -%}
     <img
       class='image media__image media__image--mobile lazyload'
-      loading='lazy'
-      src='{{ mobile_img | image_url: width: 160 }}'
-      alt='{{ mobile_img.alt }}'
-      width='{{mobile_img.width}}'
-      height='{{mobile_img.height}}'
       data-parent-fit='cover'
-      data-aspectratio='{{ mobile_img.aspect_ratio }}'
-      data-sizes='auto'
-      style='object-position: {{ mobile_img.presentation.focal_point }};'
-      data-srcset='{%- render 'srcset-for-image', image: mobile_img -%}'
+      {% render 'image-attributes', image: mobile_img %}
     >
   {%- endif -%}
 

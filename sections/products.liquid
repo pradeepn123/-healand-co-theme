@@ -50,10 +50,6 @@
     assign active_filter_count = active_filter_count | plus: 1
   endif
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   if collection.filters.size == 0
     assign enable_filtering = false
   endif
@@ -356,7 +352,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

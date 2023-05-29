@@ -4,7 +4,10 @@
   assign container_size = options.container_size
 -%}
 
-<div class='section color-{{ color_scheme }} {% if cart == empty %} is-empty{% endif %}' id='CartPage-SubtotalSection'>
+<div
+  class='section color-{{ color_scheme }} {% if cart == empty %} is-empty{% endif %}'
+  id='CartPage-SubtotalSection'
+>
   <div class='container container--{{ container_size }} subtotal__container'>
     {%- render 'subtotal', inside_sidebar: false -%}
   </div>
@@ -45,7 +48,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

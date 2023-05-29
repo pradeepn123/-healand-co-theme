@@ -1,7 +1,7 @@
 {%- liquid
   assign options = block.settings
   assign text = options.text
-  assign url = options.link.url
+  assign url = options.url
   assign btn_style = options.btn_style
   assign custom_icon_image = options.custom_icon_image
   assign icon = options.icon
@@ -17,16 +17,8 @@
       >
         {%- if custom_icon_image != blank -%}
           <img
-            loading='lazy'
-            alt='{{ custom_icon_image.alt }}'
             class='product-button-block__icon lazyload'
-            width='24'
-            height='24'
-            src='{{ custom_icon_image | image_url: width: 24 }}'
-            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
           >
         {%- elsif icon != 'none' -%}
           {% render 'icon-pack', icon: icon, class: 'product-button-block__icon' %}
@@ -41,16 +33,8 @@
       >
         {%- if custom_icon_image != blank -%}
           <img
-            loading='lazy'
-            alt='{{ custom_icon_image.alt }}'
             class='product-button-block__icon lazyload'
-            width='24'
-            height='24'
-            src='{{ custom_icon_image | image_url: width: 24 }}'
-            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
           >
         {%- elsif icon != 'none' -%}
           {% render 'icon-pack', icon: icon, class: 'product-button-block__icon' %}

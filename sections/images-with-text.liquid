@@ -77,16 +77,8 @@
   <div class='images-with-text__content images-with-text__content--with-{{ content_alignment }}-alignment'>
     {%- if custom_icon_image != blank -%}
     <img
-      loading='lazy'
-      alt='{{ custom_icon_image.alt }}'
       class='images-with-text__icon lazyload'
-      width='48'
-      height='48'
-      src='{{ custom_icon_image | image_url: width: 48 }}'
-      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-      data-sizes='auto'
+      {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
     >
   {%- elsif icon != 'none' -%}
     {% render 'icon-pack', icon: icon, class: 'images-with-text__icon' %}
@@ -167,16 +159,8 @@
         <div class='images-with-text__image-list-item-media-wrapper shape shape--nature'>
             <img
             class='images-with-text__image-list-item-media lazyload'
-            loading='lazy'
-            src='{{ image | image_url: width: 160 }}'
-            alt='{{ image.alt }}'
-            width='{{ image.width }}'
-            height='{{ image.height }}'
             data-parent-fit='cover'
-            style='object-position: {{ image.presentation.focal_point }};'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-sizes='auto'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
+            {% render 'image-attributes', image: image %}
           >
         </div>
       </div>
@@ -244,7 +228,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

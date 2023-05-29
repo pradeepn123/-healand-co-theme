@@ -28,38 +28,13 @@
     </title>
 
     {% render 'css-variables' %}
+    {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'index.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'fonts' %}
     {{ content_for_header }}
-
-    {%- unless settings.body_font_family.system? -%}
-      <link rel='preload' as='font' href='{{ settings.body_font_family | font_url }}' type='font/woff2' crossorigin>
-    {%- endunless -%}
-
-    {%- unless settings.heading_font_family.system? -%}
-      <link rel='preload' as='font' href='{{ settings.heading_font_family | font_url }}' type='font/woff2' crossorigin>
-    {%- endunless -%}
-
-    {%- unless settings.product_card_font_family.system? -%}
-      <link
-        rel='preload'
-        as='font'
-        href='{{ settings.product_card_font_family | font_url }}'
-        type='font/woff2'
-        crossorigin
-      >
-    {%- endunless -%}
-
-    {%- unless settings.menu_font_family.system? -%}
-      <link rel='preload' as='font' href='{{ settings.menu_font_family | font_url }}' type='font/woff2' crossorigin>
-    {%- endunless -%}
-
-    {%- unless settings.button_font_family.system? -%}
-      <link rel='preload' as='font' href='{{ settings.button_font_family | font_url }}' type='font/woff2' crossorigin>
-    {%- endunless -%}
   </head>
-  <body class='color-{{ settings.default_color_scheme }} {% if settings.edge_rounding_degree != 'none' %} theme-with-rounded-style{% endif %}'>
+  <body class='color-{{ settings.default_color_scheme }} theme-with-{{ settings.edge_rounding_degree }}-rounded-style {% if settings.edge_rounding_degree != 'none' %} theme-with-rounded-style{% endif %}'>
     {% if template.name == 'password' %}
       {% sections 'password-header-group' %}
     {% else %}
@@ -87,11 +62,24 @@
 
     {%- render 'inject-routes' -%}
 
+    <div id='Portal'></div>
+
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
 
       if (Shopify.designMode) {
         document.documentElement.className = `${document.documentElement.className} is-editor-mode`
+      }
+
+      window.lazySizesConfig = {
+        loadMode: 1,
+      }
+
+      window.auroraTheme = {
+        version: '1.4.0',
+        id: window.Shopify.theme.id,
+        storeId: window.Shopify.theme.theme_store_id,
+        isLicenseTheme: !!window.Shopify.theme.theme_store_id,
       }
     </script>
 

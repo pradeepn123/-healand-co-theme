@@ -5,12 +5,10 @@
   assign container_size = section.settings.container_size
   assign block_layout = section.settings.layout
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign sectionIdWithQuickViewPrefix = section.id | append: '---QuickView'
   assign sectionIdWithMainSectionPrefix = section.id | append: '---MainSection'
+
+  assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
 -%}
 
 {% capture css %}
@@ -70,7 +68,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",
@@ -540,6 +539,13 @@
           "default": true,
           "label": "t:sections.product.label_for_in_buttons_block",
           "info": "t:sections.product.tip_for_in_buttons_block"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_gift_card",
+          "default": false,
+          "label": "t:sections.product.buy_buttons.enable_gift_card.label",
+          "info": "t:sections.product.buy_buttons.enable_gift_card.info"
         }
       ]
     },

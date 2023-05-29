@@ -12,16 +12,25 @@
   if product_media.size == 1
     assign show_part_of_next_slide = false
   endif
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
+
+{% capture product_string %}
+  <div class="card-carousel__slide" recently-viewed-item>
+    {% render 'product-card', 
+    product: product,
+    show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+    color_swatch_variables: color_swatch_variables,
+    img_ratio: settings.default_img_ratio,
+    product_card_align: 'left' %}
+  </div>
+{% endcapture %}
 
 <div class='quick-view' data-aria-expanded='true'>
   <div
     class='quick-view__body-wrapper color-{{ color_scheme }} set-text-color-from-variable'
     id='QuickViewProduct'
+    data-product-string='{{ product_string | escape }}'
+    data-product-handle='{{ product.handle }}'
   >
     <div>
       {% capture css %}
@@ -34,12 +43,17 @@
                 }
               {% when 'information_tag' %}
                 .block-{{ block.id }} {
-                  --gsc-image-width: {{ block.settings.drawer_media_size }}%;
                   --gsc-tag-background-color: {{ block.settings.tag_background_color }};
                   --gsc-tag-text-color: {{ block.settings.tag_text_color }};
                 }
+
+                .block-{{ block.id }}-drawer {
+                  --gsc-image-width: {{ block.settings.drawer_media_size }}%;
+                }
               {% when 'variant_picker' %}
-                .block-{{ block.id }} {
+                .block-{{ block.id }} {}
+
+                .block-{{ block.id }}-drawer {
                   --gsc-image-width: {{ block.settings.image_width }}%;
                 }
               {% when 'price' %}
@@ -63,6 +77,8 @@
                   --gsc-product-drawer-tabs-button-background-color: {{ block.settings.button_background_color }};
                   --gsc-product-drawer-tabs-button-text-color: {{ block.settings.button_text_color }};
                 }
+
+                .block-{{ block.id }}-drawer {}
             {% endcase %}
           {% endfor %}
         {% endstyle %}
@@ -103,7 +119,7 @@
               {%- if block_option_name_downcase == option_name_downcase -%}
                 <product-information-drawer
                   id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-                  class='product-information-drawer block-{{ block.id }}'
+                  class='product-information-drawer block-{{ block.id }}-drawer'
                   data-with-overlay
                   data-with-close-on-outside
                   data-with-close-on-escape
@@ -149,15 +165,7 @@
                           {%- elsif image != blank -%}
                             <img
                               class='product-information-drawer__image lazyload'
-                              loading='lazy'
-                              src='{{ image | image_url: width: 160 }}'
-                              alt='{{ image.alt }}'
-                              width='{{ image.width }}'
-                              height='{{ image.height }}'
-                              style='object-position: {{ image.presentation.focal_point }};'
-                              data-aspectratio='{{ image.aspect_ratio }}'
-                              data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                              data-sizes='auto'
+                              {% render 'image-attributes', image: image %}
                             >
                           {%- endif -%}
                         </div>
@@ -210,7 +218,7 @@
 
             <product-information-drawer
               id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-              class='product-information-drawer block-{{ block.id }}'
+              class='product-information-drawer block-{{ block.id }}-drawer'
               data-with-overlay
               data-with-close-on-outside
               data-with-close-on-escape
@@ -423,7 +431,7 @@
 
               <product-information-drawer
                 id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-                class='product-information-drawer block-{{ block.id }}'
+                class='product-information-drawer block-{{ block.id }}-drawer'
                 data-with-overlay
                 data-with-close-on-outside
                 data-with-close-on-escape
@@ -469,15 +477,7 @@
                         {%- elsif drawer_image != blank -%}
                           <img
                             class='product-information-drawer__image lazyload'
-                            loading='lazy'
-                            src='{{ drawer_image | image_url: width: 160 }}'
-                            alt='{{ drawer_image.alt }}'
-                            width='{{ drawer_image.width }}'
-                            height='{{ drawer_image.height }}'
-                            style='object-position: {{ drawer_image.presentation.focal_point }};'
-                            data-aspectratio='{{ drawer_image.aspect_ratio }}'
-                            data-srcset='{%- render 'srcset-for-image', image: drawer_image -%}'
-                            data-sizes='auto'
+                            {% render 'image-attributes', image: drawer_image %}
                           >
                         {%- endif -%}
                       </div>
@@ -598,6 +598,7 @@
                             <carousel-dot
                               class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                               tabindex='0'
+                              data-dot-index='{{ forloop.index0 }}'
                             >
                               <div class='dots-carousel__slide-body'>
                                 <div class='dots-carousel__slide-inner-circle'></div>

@@ -19,10 +19,6 @@
   assign body_size = options.body_size
   assign heading_size = options.heading_size
   assign img_ratio = options.img_ratio | times: 100
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -93,15 +89,7 @@
                 {%- elsif image != blank -%}
                   <img
                     class='image instagram__image zoom lazyload'
-                    loading='lazy'
-                    src='{{ image | image_url: width: 160 }}'
-                    alt='{{ image.alt }}'
-                    width='{{ image.width }}'
-                    height='{{ image.height }}'
-                    style='object-position: {{ image.presentation.focal_point }};'
-                    data-aspectratio='{{ image.aspect_ratio }}'
-                    data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                    data-sizes='auto'
+                    {% render 'image-attributes', image: image %}
                   >
                 {%- else -%}
                   {{ 'image' | placeholder_svg_tag: 'instagram__image placeholder-image zoom' }}
@@ -140,15 +128,7 @@
                       {%- elsif image != blank -%}
                         <img
                           class='image instagram__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image %}
                         >
                       {%- else -%}
                         {{ 'image' | placeholder_svg_tag: 'instagram__image placeholder-image' }}
@@ -210,7 +190,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",

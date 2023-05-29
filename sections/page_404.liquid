@@ -42,10 +42,6 @@
   assign content_max_width = options.content_max_width | divided_by: 10.0
   assign content_spacing = options.content_spacing | divided_by: 10.0
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign with_only_links = true
   assign is_first_link = true
   assign is_second_link = true
@@ -200,7 +196,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

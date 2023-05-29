@@ -23,25 +23,30 @@
     assign comments_count = 0
   endif
 -%}
-<div class='article-card link-parent-for-hover zoom-parent-for-hover {{ class }} {% if text_style == 'over-image' %}article-card--over-content{% endif %}'>
+<article-card class='article-card link-parent-for-hover zoom-parent-for-hover {{ class }}'>
   <a
     class='article-card__link'
     href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
-    aria-label='{{- 'cards.article_card.aria_label_for_link' | t: article_title: article.title -}}'
+    aria-label='{{ article.title }}'
   ></a>
   <div class='shape shape--{{ img_ratio }} article-card__image-wrapper'>    
     {%- if img != blank -%}
       <img
         class='article-card__image zoom lazyload'
-        loading='lazy'
-        src='{{ img | image_url: width: 160 }}'
-        alt='{{ img.alt }}'
-        width='{{ img.width }}'
-        height='{{ img.height }}'
+        src='{{ img | image_url: width: 320 }}'
+        data-image-url='{{ img | image_url: width: 1 }}'
         data-aspectratio='{{ img.aspect_ratio }}'
-        data-srcset='{%- render 'srcset-for-image', image: img -%}'
         data-sizes='auto'
-      >      
+        alt='{{ img.alt }}'
+        loading='lazy'
+        width='1'
+        height='1'
+        style='
+          object-position:
+          {{ img.presentation.focal_point }};
+        '
+      >
+
     {%- else -%}
       {{ 'image' | placeholder_svg_tag: 'article-card__image placeholder-image zoom' }}
     {%- endif -%}
@@ -95,4 +100,4 @@
       </a>
     {%- endif -%}
   </div>
-</div>
+</article-card>
