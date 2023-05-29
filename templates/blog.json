@@ -38,11 +38,11 @@
       ],
       "settings": {
         "color_scheme": "default",
+        "text_bg": "#ea6852",
         "page_title": "Supplement",
         "page_title_color": "#769e92",
         "page_subtitle": "SPOTLIGHT",
         "page_subtitle_color": "#ea6852",
-        "text_bg": "#ea6852",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
