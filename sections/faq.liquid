@@ -46,7 +46,7 @@
     {%- if title != blank or text != blank or btn_text != blank -%}
       <div class='faq__content {% if container_size == 'full-screen' and settings.edge_rounding_degree != "none" %}{% if section_layout == 'left-tabs' %} faq__content--with-right-spacing {% elsif section_layout == 'right-tabs' %} faq__content--with-left-spacing {% endif %}{% endif %}'>
         {%- if title != blank -%}
-          <h5 class='{{ heading_size }}'>{{ title }}</h5>
+          <h5 class='{{ heading_size }}' style ="color: {{ section.settings.head_color }}">{{ title }}</h5>
         {%- endif -%}
         {%- if text != blank -%}
           <div class='rte {{ body_size }} faq__text body-font-weight-from-global-settings'>{{ text }}</div>
@@ -87,7 +87,6 @@
                 {%- elsif icon != 'none' -%}
                   {% render 'icon-pack', icon: icon, class: 'faq__category-icon' %}
                 {%- endif -%}
-
                 {{ block.settings.title }}
               </div>
             {%- when 'question' -%}
@@ -330,6 +329,12 @@
         }
       ],
       "default": "h5"
+    },
+    {
+      "type":"color",
+      "id": "head_color",
+      "label":"Heading_color",
+      "default":"#000"
     },
     {
       "type": "select",

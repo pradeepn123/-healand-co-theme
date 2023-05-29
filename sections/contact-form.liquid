@@ -39,6 +39,9 @@
     .btn.btn--solid.btn--lg.contact__btn.form--btn{
       background: {{ section.settings.btn_bg_color }};
     }
+    .contact__title{
+      color: {{ section.settings.title_color }};
+    }
   {% endstyle %}
 {% endcapture %}
 
@@ -302,6 +305,12 @@
       "id": "title",
       "label": "t:sections.contact_form.title_label",
       "default": "Contact us"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading color",
+      "default": "#000"
     },
     {
       "type": "inline_richtext",

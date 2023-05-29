@@ -57,7 +57,7 @@
           "settings": {
             "contact_icon": "shopify:\/\/shop_images\/Vector.svg",
             "contact_heading": "CHAT WITH US",
-            "contact__method": "<p>We’re available<br\/>9AM - 5PM EST<\/p>",
+            "contact__method": "<p>We’re available  <\/p><p> 9AM - 5PM EST<\/p>",
             "text-decoration": false,
             "contact_method_link": "https:\/\/shopify.dev\/docs\/themes\/architecture\/settings\/input-settings#image_picker"
           }
@@ -86,8 +86,9 @@
         "section_spacing_bottom": 48,
         "form_bg_colors": "#ffffff",
         "title": "CONTACT US",
+        "title_color": "#000",
         "text": "",
-        "heading_size": "h5",
+        "heading_size": "h2",
         "body_size": "body6",
         "text_align": "center",
         "input_style": "outline",
