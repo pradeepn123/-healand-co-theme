@@ -9,7 +9,7 @@
                     </div>
                     <div class="creator-content">
                         <div class="creator-heading ">
-                            <h1 class="h1 about-create-heading decorated_heading">{{section.settings.creator-heading}}</h1>
+                            <h1 class=" {{ section.settings.heading_size }} about-create-heading decorated_heading">{{ section.settings.creator-heading }}</h1>
                         </div>
                         <p class="creator-desc">{{section.settings.creator-desc}}</p>
                     </div>
@@ -40,6 +40,46 @@
                         "type": "text",
                         "id": "creator-desc",
                         "label": "Description"
+                    },
+                    {
+                        "type": "select",
+                        "id": "heading_size",
+                        "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+                        "options": [
+                          {
+                            "value": "h0",
+                            "label": "t:sections.general_section_settings.heading_size_0_option"
+                          },
+                          {
+                            "value": "h1",
+                            "label": "t:sections.general_section_settings.heading_size_1_option"
+                          },
+                          {
+                            "value": "h2",
+                            "label": "t:sections.general_section_settings.heading_size_2_option"
+                          },
+                          {
+                            "value": "h3",
+                            "label": "t:sections.general_section_settings.heading_size_3_option"
+                          },
+                          {
+                            "value": "h4",
+                            "label": "t:sections.general_section_settings.heading_size_4_option"
+                          },
+                          {
+                            "value": "h5",
+                            "label": "t:sections.general_section_settings.heading_size_5_option"
+                          },
+                          {
+                            "value": "h6",
+                            "label": "t:sections.general_section_settings.heading_size_6_option"
+                          },
+                          {
+                            "value": "h7",
+                            "label": "t:sections.general_section_settings.heading_size_7_option"
+                          }
+                        ],
+                        "default": "h6"
                     }
                 ],
 "presets": [

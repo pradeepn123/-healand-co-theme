@@ -1,13 +1,28 @@
 <section class="our-story">
     <div class="container">
-        <div class="astory_wrp">  
-                <div class="story-heading">  
-                    <h1 class=" h1 decorated_heading">{{ section.settings.heading }}</h1>
+        <div class="astory_wrp" > 
+                <div class="story-heading {{section.settings.desktop_content_position}}">  
+                    <h1 class=" {{ section.settings.heading_size }} decorated_heading">{{ section.settings.heading }}</h1>
                 </div>
-                <p class="story-subtext">{{ section.settings.subtext }}</p>    
+                <p class="story-subtext {{section.settings.desktop_content_position}}">{{ section.settings.subtext }}</p>    
         </div>
     </div>
 </section>
+
+{% style %}
+.left-alignment{
+  margin:0;
+  text-align:left;
+}
+
+.right-alignment{
+  text-align:center;
+  margin:0 auto;
+
+}
+
+
+{% endstyle %}
 
 {% schema %}
 {
@@ -15,20 +30,75 @@
     "tag": "section",
     "class": "section",
     "settings": [ 
-                   {
-                    "type": "text",
-                    "id": "heading",
-                    "label": "Heading"
-                    },
-                    {
-                    "type": "text",
-                    "id": "subtext",
-                    "label": "Sub text"
-                    }
-                ],
-"presets": [
         {
-        "name": "About Story Block"
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "subtext",
+            "label": "Sub text"
+        },
+        {
+            "type": "select",
+            "id": "heading_size",
+            "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+            "options": [
+              {
+                "value": "h0",
+                "label": "t:sections.general_section_settings.heading_size_0_option"
+              },
+              {
+                "value": "h1",
+                "label": "t:sections.general_section_settings.heading_size_1_option"
+              },
+              {
+                "value": "h2",
+                "label": "t:sections.general_section_settings.heading_size_2_option"
+              },
+              {
+                "value": "h3",
+                "label": "t:sections.general_section_settings.heading_size_3_option"
+              },
+              {
+                "value": "h4",
+                "label": "t:sections.general_section_settings.heading_size_4_option"
+              },
+              {
+                "value": "h5",
+                "label": "t:sections.general_section_settings.heading_size_5_option"
+              },
+              {
+                "value": "h6",
+                "label": "t:sections.general_section_settings.heading_size_6_option"
+              },
+              {
+                "value": "h7",
+                "label": "t:sections.general_section_settings.heading_size_7_option"
+              }
+            ],
+            "default": "h6"
+        },
+        {
+              "type": "select",
+              "id": "desktop_content_position",
+              "label": "t:sections.general_section_settings.desktop_position_label",
+              "options": [
+                          {
+                            "value": "left-alignment",
+                            "label": "t:sections.general_section_settings.position_option_top_left_label"
+                          },
+                          {
+                            "value": "right-alignment",
+                            "label": "t:sections.general_section_settings.position_option_top_center_label"
+                          }
+                        ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "About Story Block"
         }
     ]
 }

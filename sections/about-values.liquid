@@ -2,7 +2,7 @@
     <div class="container">
         <div class="values_wrp">
             <div class="values-main-heading">
-                <h1 class=" h1 decorated_heading">{{ section.settings.val-main-heading }}</h1>
+                <h1 class=" {{ section.settings.heading_size }} decorated_heading">{{ section.settings.val-main-heading }}</h1>
             </div>
 
             <div class="values-main hover-div">
@@ -36,6 +36,46 @@
                     "type": "text",
                     "id": "val-main-heading",
                     "label": "Main Heading"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_size",
+                    "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+                    "options": [
+                    {
+                        "value": "h0",
+                        "label": "t:sections.general_section_settings.heading_size_0_option"
+                    },
+                    {
+                        "value": "h1",
+                        "label": "t:sections.general_section_settings.heading_size_1_option"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "t:sections.general_section_settings.heading_size_2_option"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "t:sections.general_section_settings.heading_size_3_option"
+                    },
+                    {
+                        "value": "h4",
+                        "label": "t:sections.general_section_settings.heading_size_4_option"
+                    },
+                    {
+                        "value": "h5",
+                        "label": "t:sections.general_section_settings.heading_size_5_option"
+                    },
+                    {
+                        "value": "h6",
+                        "label": "t:sections.general_section_settings.heading_size_6_option"
+                    },
+                    {
+                        "value": "h7",
+                        "label": "t:sections.general_section_settings.heading_size_7_option"
+                    }
+                    ],
+                    "default": "h6"
                 }
             ],
 
@@ -59,6 +99,7 @@
                                 "id": "user_color",
                                 "label": "Color"
                             }
+                            
                         ]
             }
         ],
