@@ -48,7 +48,7 @@
             <form class='sort-list-sidebar__form'>
               {% for option in results.sort_options %}
                 <label
-                  for='sort-list-mobile-{{ option.value }}-{{ option.name }}-{{ forloop.index }}'
+                  for='sort-list-mobile-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                   class='sort-list-sidebar__form-label checkbox'
                   data-sort-list-label
                 >
@@ -60,7 +60,7 @@
                     type='radio'
                     name='sort_by'
                     value='{{ option.value }}'
-                    id='sort-list-mobile-{{ option.value }}-{{ option.name }}-{{ forloop.index }}'
+                    id='sort-list-mobile-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                     {% if current_sort_by == option.value %}
                       checked
                     {% endif %}
@@ -102,7 +102,7 @@
             <form class='sort-list-dropdown__form'>
               {% for option in results.sort_options %}
                 <label
-                  for='sort-list-desktop-{{ option.value }}-{{ option.name }}-{{ forloop.index }}'
+                  for='sort-list-desktop-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                   class='sort-list-dropdown__item checkbox {% if current_sort_by == option.value %}active{% endif %}'
                   tabindex='0'
                   data-focus-trap-target
@@ -113,7 +113,7 @@
                     type='radio'
                     name='sort_by'
                     value='{{ option.value }}'
-                    id='sort-list-desktop-{{ option.value }}-{{ option.name }}-{{ forloop.index }}'
+                    id='sort-list-desktop-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                     {% if current_sort_by == option.value %}
                       checked
                     {% endif %}

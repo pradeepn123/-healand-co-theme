@@ -14,10 +14,6 @@
   assign desktop_logo_width = options.desktop_logo_width
   assign mobile_logo_width = options.mobile_logo_width
   assign is_expired = gift_card.expired
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -126,7 +122,7 @@
       {%- if gift_card.pass_url -%}
         <a href='{{ gift_card.pass_url }}' class='gift_card__apple-wallet'>
           <img
-            class=' lazyload'
+            class='lazyload'
             id='apple-wallet-badge'
             src='{{ 'gift-page/add-to-apple-wallet.svg' | shopify_asset_url }}'
             width='120'
@@ -192,7 +188,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "header",

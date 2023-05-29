@@ -19,10 +19,6 @@
   assign enable_circle_navigation = options.enable_circle_navigation
   assign enable_arrows_navigation = options.enable_arrows_navigation
   assign show_arrows_on_hover = options.show_arrows_on_hover
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -121,7 +117,7 @@
                 {%- case block.type -%}
                   {%- when 'split-image-banner' -%}
                     <div
-                      class='carousel__slide block-{{ block.id }} split-image-banner {% if block.settings.image_proportion == 0 or block.settings.image_proportion == 100 %} split-image-banner--with-single-image{% endif %} {% if block.settings.color_scheme == 'parent' %}color-{{section.settings.color_scheme}}{% else %}color-{{block.settings.color_scheme}}{% endif %}'
+                      class='carousel__slide block-{{ block.id }} split-image-banner {% if block.settings.image_proportion == 0 or block.settings.image_proportion == 100 %} split-image-banner--with-single-image{% endif %} {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}'
                       block-id='{{ block.id }}'
                       {{ block.shopify_attributes }}
                     >
@@ -148,7 +144,7 @@
                     </div>
                   {%- when 'image-banner' -%}
                     <div
-                      class='carousel__slide block-{{ block.id }} image-banner {% if block.settings.color_scheme == 'parent' %}color-{{section.settings.color_scheme}}{% else %}color-{{block.settings.color_scheme}}{% endif %}'
+                      class='carousel__slide block-{{ block.id }} image-banner {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}'
                       block-id='{{ block.id }}'
                       {{ block.shopify_attributes }}
                     >
@@ -218,6 +214,7 @@
                     <carousel-dot
                       class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
+                      data-dot-index='{{ forloop.index0 }}'
                     >
                       <div class='dots-carousel__slide-body'>
                         <div class='dots-carousel__slide-inner-circle'></div>
@@ -314,7 +311,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",
@@ -512,7 +510,8 @@
             }
           ],
           "default": "white",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "header",
@@ -944,7 +943,8 @@
             }
           ],
           "default": "default",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "range",

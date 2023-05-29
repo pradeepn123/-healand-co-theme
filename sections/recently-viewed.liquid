@@ -13,14 +13,9 @@
   assign alignment = options.alignment
   assign section_layout = options.section_layout
   assign show_navigation_on_hover = options.show_navigation_on_hover
-  assign featured_collection = options.featured_collection
-  assign featured_products = options.featured_products
-  assign product_recommendations_type = options.product_recommendations_type
   assign enable_carousel_on_mobile = options.enable_carousel_on_mobile
   assign cards_to_show = options.cards_to_show
   assign heading_size = options.heading_size
-
-  assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
 
   assign desktop_columns = options.desktop_columns
   assign laptop_columns = desktop_columns | minus: 1
@@ -90,67 +85,8 @@
 {% render 'inline-css-minifier', css: css %}
 
 {% capture carousel %}
-  {%- if product_recommendations_type == 'auto' -%}
     <carousel-component
-      class='card-carousel product-recommendations__card-carousel {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{% endif %} {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}'
-      data-section-id='{{ section.id }}'
-      {% if enable_autoplay == true %}
-        data-autoplay-interval='{{ autoplay_interval }}'
-      {% endif %}
-      >
-      <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--prev'>
-        <div class='shape shape--{{ img_ratio }}'>
-          <carousel-btn
-            class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
-            data-scroll-direction='prev'
-            tabindex='0'
-          >
-            {% render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' %}
-          </carousel-btn>
-        </div>
-      </div>
-      <div
-        class='card-carousel__viewport embla {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}'
-        data-carousel-viewport
-      >
-        <div class='card-carousel__container' data-carousel-container>
-          {%- for recommendation in recommendations.products -%}
-            <div class='card-carousel__slide'>
-              {% render 'product-card',
-                product: recommendation,
-                show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                color_swatch_variables: color_swatch_variables,
-                img_ratio: img_ratio,
-                product_card_align: product_card_align,
-                with_bottom_spacing: product_card_with_bottom_spacing
-              %}
-            </div>
-          {%- endfor -%}
-        </div>
-      </div>
-      <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--next'>
-        <div class='shape shape--{{ img_ratio }}'>
-          <carousel-btn
-            class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
-            data-scroll-direction='next'
-            tabindex='0'
-          >
-            {% render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' %}
-          </carousel-btn>
-        </div>
-      </div>
-      {%- if section_layout == 'carousel-overflow' -%}
-        <carousel-progress
-          class='progress-bar progress-bar--with-background card-carousel__progress-bar'
-          data-target='scroll'
-        >
-          <div class='progress-bar__indicator' data-carousel-progress-indicator></div>
-        </carousel-progress>
-      {%- endif -%}
-    </carousel-component>
-  {%- else -%}
-    <carousel-component
-      class='card-carousel product-recommendations__card-carousel {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{% endif %} {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}'
+      class='card-carousel recently-viewed__card-carousel {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{% endif %} {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}'
       data-section-id='{{ section.id }}'
       {% if enable_autoplay == true %}
         data-autoplay-interval='{{ autoplay_interval }}'
@@ -171,35 +107,7 @@
         class='card-carousel__viewport embla {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}'
         data-carousel-viewport
       >
-        <div class='card-carousel__container' data-carousel-container>
-          {%- if featured_products != blank -%}
-            {%- for product in featured_products limit: cards_to_show -%}
-              <div class='card-carousel__slide'>
-                {% render 'product-card',
-                  product: product,
-                  show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                  color_swatch_variables: color_swatch_variables,
-                  img_ratio: img_ratio,
-                  product_card_align: product_card_align,
-                  with_bottom_spacing: product_card_with_bottom_spacing
-                %}
-              </div>
-            {%- endfor -%}
-          {%- else -%}
-            {%- for product in featured_collection.products limit: cards_to_show -%}
-              <div class='card-carousel__slide'>
-                {% render 'product-card',
-                  product: product,
-                  show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                  color_swatch_variables: color_swatch_variables,
-                  img_ratio: img_ratio,
-                  product_card_align: product_card_align,
-                  with_bottom_spacing: product_card_with_bottom_spacing
-                %}
-              </div>
-            {%- endfor -%}
-          {%- endif -%}
-        </div>
+        <div class='card-carousel__container' data-carousel-container recently-viewed-container></div>
       </div>
       <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--next'>
         <div class='shape shape--{{ img_ratio }}'>
@@ -221,94 +129,48 @@
         </carousel-progress>
       {%- endif -%}
     </carousel-component>
+{% endcapture %}
+
+{% capture grid %}
+  <div class='card-grid recently-viewed__card-grid' recently-viewed-container></div>
+{% endcapture %}
+
+{% capture title %}
+  {%- if title != blank -%}
+    <div class='recently-viewed__header {% if alignment == 'center' %}recently-viewed__header--center{% endif %}'>
+      <h5 class='recently-viewed__title {{ heading_size }}'>{{ title }}</h5>
+    </div>
   {%- endif -%}
 {% endcapture %}
 
-{%- if product_recommendations_type == 'auto' -%}
-  <product-recommendations
-    class='product-recommendations section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout == 'grid' %} product-recommendations--grid-with-mobile-carousel{% endif %}'
-    data-url='{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ cards_to_show }}'
-  >
-    {%- if recommendations.performed and recommendations.products_count > 0 -%}
-      <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
-        {%- if title != blank -%}
-          <div class='product-recommendations__header {% if alignment == 'center' %}product-recommendations__header--center{% endif %}'>
-            <h5 class='product-recommendations__title {{ heading_size }}'>{{ title }}</h5>
-          </div>
-        {%- endif -%}
-
-        {% if section_layout contains 'carousel' %}
-          {{ carousel }}
-        {% else %}
-          <div class='card-grid product-recommendations__card-grid'>
-            {%- for recommendation in recommendations.products limit: cards_to_show -%}
-              {% render 'product-card',
-                product: recommendation,
-                show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                color_swatch_variables: color_swatch_variables,
-                img_ratio: img_ratio,
-                product_card_align: product_card_align,
-                with_bottom_spacing: product_card_with_bottom_spacing
-              %}
-            {%- endfor -%}
-          </div>
-          {% if enable_carousel_on_mobile %}
-            {{ carousel }}
-          {% endif %}
-        {% endif %}
-      </div>
-    {%- endif -%}
-  </product-recommendations>
-{%- else -%}
-  <div class='product-recommendations section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %} product-recommendations--grid-with-mobile-carousel{% endif %}'>
-    <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
-      {%- if title != blank -%}
-        <div class='product-recommendations__header {% if alignment == 'center' %}product-recommendations__header--center{% endif %}'>
-          <h5 class='product-recommendations__title {{ heading_size }}'>{{ title }}</h5>
-        </div>
-      {%- endif -%}
-
-      {% if section_layout contains 'carousel' %}
+<recently-viewed
+  class='recently-viewed section section-{{ section.id }} color-{{ color_scheme }} hidden {% if enable_carousel_on_mobile %} recently-viewed--grid-with-mobile-carousel{% endif %}'
+  data-card-limit='{{ cards_to_show }}'
+  data-product-handle='{{ product.handle }}'
+  data-section-settings='{{ section.settings | json }}'
+>
+  <div class='recently-viewed__container container container--{{ container_size }} section-spacing'>
+    {{ title }}
+    {% if section_layout contains 'carousel' %}
+      {{ carousel }}
+    {% else %}
+      {{ grid }}
+      {% if enable_carousel_on_mobile %}
         {{ carousel }}
-      {% else %}
-        <div class='card-grid product-recommendations__card-grid'>
-          {%- if featured_products != blank -%}
-            {%- for product in featured_products limit: cards_to_show -%}
-              {% render 'product-card',
-                product: product,
-                show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                color_swatch_variables: color_swatch_variables,
-                img_ratio: img_ratio,
-                product_card_align: product_card_align,
-                with_bottom_spacing: product_card_with_bottom_spacing
-              %}
-            {%- endfor -%}
-          {%- else -%}
-            {%- for product in featured_collection.products limit: cards_to_show -%}
-              {% render 'product-card',
-                product: product,
-                show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                color_swatch_variables: color_swatch_variables,
-                img_ratio: img_ratio,
-                product_card_align: product_card_align,
-                with_bottom_spacing: product_card_with_bottom_spacing
-              %}
-            {%- endfor -%}
-          {%- endif -%}
-        </div>
-        {% if enable_carousel_on_mobile %}
-          {{ carousel }}
-        {% endif %}
       {% endif %}
-    </div>
+    {% endif %}
   </div>
-{%- endif -%}
+</recently-viewed>
 
 {% schema %}
 {
-  "name": "t:sections.product_recommendations.name",
+  "name": "t:sections.recently_viewed.name",
   "tag": "section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.recently_viewed.description"
+    },
     {
       "type": "select",
       "id": "color_scheme",
@@ -392,29 +254,29 @@
       "options": [
         {
           "value": "grid",
-          "label": "t:sections.product_recommendations.section_layout.grid_label"
+          "label": "t:sections.recently_viewed.section_layout.grid_label"
         },
         {
           "value": "carousel",
-          "label": "t:sections.product_recommendations.section_layout.carousel_label"
+          "label": "t:sections.recently_viewed.section_layout.carousel_label"
         },
         {
           "value": "carousel-overflow",
-          "label": "t:sections.product_recommendations.section_layout.carousel_overflow_label"
+          "label": "t:sections.recently_viewed.section_layout.carousel_overflow_label"
         }
       ],
       "default": "carousel",
-      "label": "t:sections.product_recommendations.section_layout.label"
+      "label": "t:sections.recently_viewed.section_layout.label"
     },
     {
       "type": "header",
-      "content": "t:sections.product_recommendations.recommendations_settings_header"
+      "content": "t:sections.recently_viewed.heading_settings_header.content"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "t:sections.product_recommendations.title_label",
-      "default": "You may also like"
+      "label": "t:sections.recently_viewed.title.label",
+      "default": "Recently viewed"
     },
     {
       "type": "select",
@@ -473,36 +335,8 @@
       "default": "center"
     },
     {
-      "type": "radio",
-      "id": "product_recommendations_type",
-      "options": [
-        {
-          "value": "auto",
-          "label": "t:sections.product_recommendations.product_recommendations_type_auto_option_label"
-        },
-        {
-          "value": "manually",
-          "label": "t:sections.product_recommendations.product_recommendations_type_manually_option_label"
-        }
-      ],
-      "default": "auto",
-      "label": "t:sections.product_recommendations.product_recommendations_type_label",
-      "info": "t:sections.product_recommendations.product_recommendations_type_info"
-    },
-    {
-      "type": "collection",
-      "id": "featured_collection",
-      "label": "t:sections.product_recommendations.featured_collection_label"
-    },
-    {
-      "type": "product_list",
-      "id": "featured_products",
-      "label": "t:sections.product_recommendations.featured_products_label",
-      "info": "t:sections.product_recommendations.featured_products_info"
-    },
-    {
       "type": "header",
-      "content": "t:sections.product_recommendations.cards_settings_header"
+      "content": "t:sections.recently_viewed.cards_settings_header.content"
     },
     {
       "type": "select",
@@ -511,10 +345,6 @@
         {
           "value": "default",
           "label": "t:sections.general_section_settings.img_ratio_option_default_label"
-        },
-        {
-          "value": "nature",
-          "label": "t:sections.general_section_settings.img_ratio_option_nature_label"
         },
         {
           "value": "square",
@@ -559,7 +389,7 @@
       "max": 50,
       "step": 1,
       "default": 18,
-      "label": "t:sections.product_recommendations.cards_to_show.label"
+      "label": "t:sections.recently_viewed.cards_to_show.label"
     },
     {
       "type": "range",
@@ -568,7 +398,7 @@
       "max": 5,
       "step": 1,
       "default": 4,
-      "label": "t:sections.product_recommendations.desktop_columns_label"
+      "label": "t:sections.recently_viewed.desktop_columns.label"
     },
     {
       "type": "range",
@@ -577,8 +407,8 @@
       "max": 32,
       "step": 1,
       "default": 12,
-      "unit": "t:sections.product_recommendations.desktop_space_between_cards_unit",
-      "label": "t:sections.product_recommendations.desktop_space_between_cards_label"
+      "unit": "t:sections.recently_viewed.desktop_space_between_cards.unit",
+      "label": "t:sections.recently_viewed.desktop_space_between_cards.label"
     },
     {
       "type": "range",
@@ -587,25 +417,25 @@
       "max": 32,
       "step": 1,
       "default": 16,
-      "unit": "t:sections.product_recommendations.mobile_space_between_cards_unit",
-      "label": "t:sections.product_recommendations.mobile_space_between_cards_label"
+      "unit": "t:sections.recently_viewed.mobile_space_between_cards.unit",
+      "label": "t:sections.recently_viewed.mobile_space_between_cards.label"
     },
     {
       "type": "checkbox",
       "id": "enable_carousel_on_mobile",
       "default": false,
-      "label": "t:sections.product_recommendations.enable_carousel_on_mobile.label",
-      "info": "t:sections.product_recommendations.enable_carousel_on_mobile.info"
+      "label": "t:sections.recently_viewed.enable_carousel_on_mobile.label",
+      "info": "t:sections.recently_viewed.enable_carousel_on_mobile.info"
     },
     {
       "type": "header",
-      "content": "t:sections.product_recommendations.carousel_settings_header"
+      "content": "t:sections.recently_viewed.carousel_settings_header.content"
     },
     {
       "type": "checkbox",
       "id": "enable_autoplay",
       "default": false,
-      "label": "t:sections.product_recommendations.enable_autoplay_label"
+      "label": "t:sections.recently_viewed.enable_autoplay.label"
     },
     {
       "type": "range",
@@ -614,14 +444,19 @@
       "max": 10,
       "step": 1,
       "default": 3,
-      "unit": "t:sections.product_recommendations.autoplay_interval_unit",
-      "label": "t:sections.product_recommendations.autoplay_interval_label"
+      "unit": "t:sections.recently_viewed.autoplay_interval.unit",
+      "label": "t:sections.recently_viewed.autoplay_interval.label"
     },
     {
       "type": "checkbox",
       "id": "show_navigation_on_hover",
       "default": true,
-      "label": "t:sections.product_recommendations.show_navigation_on_hover_label"
+      "label": "t:sections.recently_viewed.show_navigation_on_hover.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.recently_viewed.name"
     }
   ]
 }

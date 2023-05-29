@@ -14,10 +14,6 @@
   assign alignment = options.alignment
   assign heading_size = options.heading_size
   assign columns = options.columns
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -144,6 +140,7 @@
                       <carousel-dot
                         class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                         tabindex='0'
+                        data-dot-index='{{ forloop.index0 }}'
                       >
                         <div class='solid-dots-carousel__solid-dot-circle'></div>
                       </carousel-dot>
@@ -194,7 +191,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",
@@ -405,7 +403,9 @@
             }
           ],
           "default": "primary",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "header",
@@ -626,7 +626,9 @@
             }
           ],
           "default": "white",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "header",
@@ -811,9 +813,10 @@
             }
           ],
           "default": "white",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
-
         {
           "type": "header",
           "content": "t:sections.collage.blocks.image.card_size_setting_header.content",
@@ -1048,7 +1051,9 @@
             }
           ],
           "default": "primary",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "header",
@@ -1126,7 +1131,9 @@
             }
           ],
           "default": "primary",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "header",

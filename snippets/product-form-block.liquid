@@ -2,7 +2,6 @@
   assign options = block.settings
   assign enable_pickup_availability = options.enable_pickup_availability
   assign show_pickup_availability = false
-  assign show_dynamic_checkout = options.show_dynamic_checkout
   assign selected_variant = product.selected_or_first_available_variant
   assign available = selected_variant.available
   assign product_form_id = 'product-form-' | append: product.id | append: '-' | append: sectionId
@@ -16,6 +15,16 @@
       assign pick_up_availabilities = true
     endif
   endfor
+
+  assign enable_gift_card = false
+  if options.enable_gift_card and product.gift_card?
+    assign enable_gift_card = true
+  endif
+
+  assign show_dynamic_checkout = false
+  if options.show_dynamic_checkout and enable_gift_card == false
+    assign show_dynamic_checkout = true
+  endif
 
   if product.template_suffix contains 'pre-order'
     assign show_dynamic_checkout = false
@@ -39,6 +48,10 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
+        {% if enable_gift_card %}
+          {% render 'gift-card-recipient-form', product: product, form: form, section: section, block: block %}
+        {% endif %}
+
         <input
           type='hidden'
           name='id'

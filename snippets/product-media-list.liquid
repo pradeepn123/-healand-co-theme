@@ -86,6 +86,7 @@
                 <carousel-dot
                   class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                   tabindex='0'
+                  data-dot-index='{{ forloop.index0 }}'
                 >
                   <div class='dots-carousel__slide-body'>
                     <div class='dots-carousel__slide-inner-circle'></div>

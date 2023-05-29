@@ -39,10 +39,6 @@
 
   assign content_wrapper_width = options.content_wrapper_width | times: 1.0
   assign content_max_width = options.content_max_width | divided_by: 10.0
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {% capture css %}
@@ -140,7 +136,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

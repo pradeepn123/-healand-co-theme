@@ -18,16 +18,8 @@
     <div class="product-information-tag__heading {% if icon_position == 'inline' %} product-information-tag__heading--inline{% elsif icon_position == 'top' %} product-information-tag__heading--column{% endif %}">
       {%- if custom_icon_image != blank -%}
         <img
-          loading='lazy'
-          alt='{{ custom_icon_image.alt }}'
           class='product-information-tag__heading-icon lazyload'
-          width='24'
-          height='24'
-          src='{{ custom_icon_image | image_url: width: 24 }}'
-          style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-          data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-          data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-          data-sizes='auto'
+          {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
         >
       {%- elsif icon != 'none' -%}
         {% render 'icon-pack', icon: icon, class: 'product-information-tag__heading-icon' %}
@@ -40,11 +32,11 @@
   {% endif %}
 {% endcapture %}
 
-<div class='block-{{ block.id }}' {{ block.shopify_attributes }}>
+<div class='block-{{ block.id }} product-information-tag-block' {{ block.shopify_attributes }}>
   {% if enable_drawer %}
     <sidebar-button>
       <button
-        class='unstyled-button product-information-tag {% if content_alignment == 'center' and icon_position == 'top' %} product-information-tag--icon-centered{% endif %} {% if content_alignment == 'left' %} product-information-tag--left-alignment{% elsif content_alignment == 'center' %} product-information-tag--center-alignment{% endif %} {% if tag_style == 'solid' %} product-information-tag--solid{% elsif tag_style == 'outline' %} product-information-tag--outline{% endif %}'
+        class='unstyled-button product-information-tag product-information-tag--with-border-on-hover {% if content_alignment == 'center' and icon_position == 'top' %} product-information-tag--icon-centered{% endif %} {% if content_alignment == 'left' %} product-information-tag--left-alignment{% elsif content_alignment == 'center' %} product-information-tag--center-alignment{% endif %} {% if tag_style == 'solid' %} product-information-tag--solid{% elsif tag_style == 'outline' %} product-information-tag--outline{% endif %}'
         data-sidebar-id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
         aria-label='{{ btn_text }}'
         data-sidebar-button

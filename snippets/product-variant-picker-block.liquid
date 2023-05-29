@@ -41,7 +41,7 @@
             <div>
               <input
                 type='radio'
-                id='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+                id='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
                 name='{{ option.name }}'
                 value='{{ value }}'
                 form='product-form-{{ product.id }}-{{ sectionId }}'
@@ -92,13 +92,13 @@
             <div class='product-variant-picker__pill-list'>
               {%- for value in option.values -%}
                 <label
-                  for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+                  for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
                   class='pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if picker_type == 'button-outline' %}pill--outline{% endif %} {% if picker_type == 'button-solid' %}pill--solid{% endif %}'
                   {% if option.selected_value == value %}
                     tabindex='0'
                   {% endif %}
                 >
-                  {{ value }}
+                  <span class='pill__label'>{{ value }}</span>
                 </label>
               {%- endfor -%}
             </div>
@@ -123,7 +123,7 @@
             <dropdown-opener
               class='dropdown__toggle dropdown__toggle--large {% if picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}'
               data-aria-expanded='false'
-              data-float-element-id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+              data-float-element-id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
               data-trigger='click'
               tabindex='0'
             >
@@ -135,7 +135,7 @@
             <float-element
               class='dropdown'
               aria-hidden='true'
-              id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+              id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
               data-placement='bottom-start'
               data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
             >
@@ -144,7 +144,7 @@
                   {%- for value in option.values -%}
                     <label
                       class='dropdown__item {% if option.selected_value == value %} selected {% endif %}'
-                      for='{{ sectionId }}-{{ product.id }}-{{ option.name }}-{{ forloop.index0 }}'
+                      for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
                       tabindex='0'
                       data-focus-trap-target
                     >

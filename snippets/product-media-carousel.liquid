@@ -16,14 +16,16 @@
 >
   <carousel-component
     class='carousel product-media-carousel__carousel {% if block_layout == 'thumbnails-bottom' %} product-media-carousel__carousel--with-bottom-thumbnails {% endif %} {% if block_layout == 'thumbnails-right' %} product-media-carousel__carousel--with-right-thumbnails {% endif %} {% if block_layout == 'thumbnails-left' %} product-media-carousel__carousel--with-left-thumbnails {% endif %}'
-    data-axis='vertical'
     data-draggable='false'
     data-section-id='{{ sectionId }}'
     data-product-media-carousel-component
     tabindex='-1'
+    {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %}
+      data-axis='vertical'
+    {% endif %}
   >
     <div
-      class='shape shape--{{ img_ratio }} carousel__viewport carousel__viewport--vertical product-media-carousel__viewport embla'
+      class='shape shape--{{ img_ratio }} product-media-carousel__viewport embla {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %} carousel__viewport carousel__viewport--vertical{% endif %}'
       data-carousel-viewport
     >
       <div class='carousel__container product-media-carousel__container' data-carousel-container>
@@ -125,17 +127,16 @@
             {%- if featured_media != null -%}
               {%- assign image = featured_media | default: featured_media.image -%}
 
-              <carousel-dot class='carousel__slide product-thumbnail-carousel__thumb is-primary' tabindex='0'>
+              <carousel-dot
+                class='carousel__slide product-thumbnail-carousel__thumb is-primary'
+                tabindex='0'
+                data-dot-index='{{ forloop.index0 }}'
+              >
                 <div class='shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content '>
                   <div class='product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}'>
                     <img
                       class='product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}'
-                      loading='lazy'
-                      src='{{ image | image_url: width: 160 }}'
-                      alt='{{ image.alt }}'
-                      data-aspectratio='{{ image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                      data-sizes='auto'
+                      {% render 'image-attributes', image: image, size: 'small' %}
                     >
                   </div>
                 </div>
@@ -146,20 +147,16 @@
                 <carousel-dot
                   class='carousel__slide product-thumbnail-carousel__thumb {% if forloop.index == 1 and featured_media == null %}is-primary{% endif %}'
                   tabindex='0'
+                  data-dot-index='{{ forloop.index0 }}'
                 >
                   <div class='shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content'>
-                    {%- assign image = media | default: media.image -%}
+                    {%- assign image = media.preview_image -%}
 
                     <div class='product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}'>
                       {%- if image != blank and media.id != blank -%}
                         <img
                           class='product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          {% render 'image-attributes', image: image, size: 'small' %}
                         >
                       {%- else -%}
                         {{ 'image' | placeholder_svg_tag: 'placeholder-image product-thumbnail-carousel__thumb-image' }}

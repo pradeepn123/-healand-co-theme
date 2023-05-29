@@ -45,10 +45,6 @@
   assign content_max_width = options.content_max_width | divided_by: 10.0
   assign content_spacing = options.content_spacing | divided_by: 10.0
 
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
-
   assign has_content = false
 
   if caption != blank or title != blank or text != blank or btn_text != blank or extra_btn_text != blank
@@ -173,7 +169,8 @@
         }
       ],
       "default": "white",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "checkbox",

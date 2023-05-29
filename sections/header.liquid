@@ -20,10 +20,6 @@
   if customer
     assign profile_url = routes.account_url
   endif
-
-  if color_scheme == 'default'
-    assign color_scheme = settings.default_color_scheme
-  endif
 -%}
 
 {%- capture css -%}
@@ -667,7 +663,8 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label"
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
     },
     {
       "type": "select",
@@ -869,7 +866,8 @@
             }
           ],
           "default": "white",
-          "label": "t:sections.general_section_settings.color_scheme_label"
+          "label": "t:sections.general_section_settings.color_scheme_label",
+          "info": "t:sections.general_section_settings.color_scheme_tip"
         },
         {
           "type": "checkbox",

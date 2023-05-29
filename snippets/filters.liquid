@@ -126,8 +126,8 @@
                                                             <label for="DesktopFilters-MinPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_max_range_input" | t }}</label>
                                                             <label for="DesktopFilters-MaxPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_min_range_input" | t }}</label>
                                                             <div class="price-range__numbers">
-                                                                <input id="DesktopFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
-                                                                <input id="DesktopFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                                <input id="DesktopFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                                <input id="DesktopFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
                                                             </div>
                                                             <div class="price-range__slider-wrap">
                                                                 <div class="price-range__slider">
@@ -170,7 +170,7 @@
                                                                     <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
                                                                         <input class="checkbox__input" id="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if value.count == 0 and value.active == false %} disabled {% endif %}>
                                                                         <div class="pill pill--small {% if option_style == 'button-outline' %}pill--outline{% endif %} {% if option_style == 'button-solid' %}pill--solid{% endif %} {% if value.active %}selected{% endif %}" {% if value.count == 0 and value.active == false %} disabled {% endif %}>
-                                                                            <span>{{ value.label | escape }} ({{ value.count }})</span>
+                                                                            <span class="pill__label">{{ value.label | escape }} ({{ value.count }})</span>
                                                                         </div>
                                                                     </label>
                                                                 {%- endif -%}
@@ -252,8 +252,8 @@
                                                 <label for="DesktopFilters-MinPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_max_range_input" | t }}</label>
                                                 <label for="DesktopFilters-MaxPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_min_range_input" | t }}</label>
                                                 <div class="price-range__numbers">
-                                                    <input id="DesktopFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
-                                                    <input id="DesktopFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                    <input id="DesktopFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                    <input id="DesktopFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
                                                 </div>
                                                 <div class="price-range__slider-wrap">
                                                     <div class="price-range__slider">
@@ -299,7 +299,7 @@
                                                         <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
                                                             <input class="checkbox__input" id="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if value.count == 0 and value.active == false %} disabled {% endif %}>
                                                             <div class="pill pill--small {% if option_style == 'button-outline' %}pill--outline{% endif %} {% if option_style == 'button-solid' %}pill--solid{% endif %} {% if value.active %}selected{% endif %}" {% if value.count == 0 and value.active == false %} disabled {% endif %}>
-                                                                <span>{{ value.label | escape }} ({{ value.count }})</span>
+                                                                <span class="pill__label">{{ value.label | escape }} ({{ value.count }})</span>
                                                             </div>
                                                         </label>
                                                     {%- endif -%}
@@ -440,8 +440,8 @@
                                                             <label for="MobileFilters-MinPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_max_range_input" | t }}</label>
                                                             <label for="MobileFilters-MaxPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_min_range_input" | t }}</label>
                                                             <div class="price-range__numbers">
-                                                                <input id="MobileFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
-                                                                <input id="MobileFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                                <input id="MobileFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                                <input id="MobileFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
                                                             </div>
                                                             <div class="price-range__slider-wrap">
                                                                 <div class="price-range__slider">
@@ -484,7 +484,7 @@
                                                                     <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Mobile-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
                                                                         <input class="checkbox__input" id="Filter-Mobile-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if value.count == 0 and value.active == false %} disabled {% endif %}>
                                                                         <div class="pill pill--small {% if option_style == 'button-outline' %}pill--outline{% endif %} {% if option_style == 'button-solid' %}pill--solid{% endif %} {% if value.active %}selected{% endif %}" {% if value.count == 0 and value.active == false %} disabled {% endif %}>
-                                                                            <span>{{ value.label | escape }} ({{ value.count }})</span>
+                                                                            <span class="pill__label">{{ value.label | escape }} ({{ value.count }})</span>
                                                                         </div>
                                                                     </label>
                                                                 {%- endif -%}
@@ -566,8 +566,8 @@
                                                 <label for="MobileFilters-MinPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_max_range_input" | t }}</label>
                                                 <label for="MobileFilters-MaxPriceRangeInput" class="visually-hidden">{{ "products.shop.aria_label_for_min_range_input" | t }}</label>
                                                 <div class="price-range__numbers">
-                                                    <input id="MobileFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
-                                                    <input id="MobileFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                    <input id="MobileFilters-MinPriceNumberInput" class="price-range__number" data-price-min-range-number type="number" value="{{ min_value }}" aria-label="{{ "products.shop.aria_label_for_min_number_input" | t }}">
+                                                    <input id="MobileFilters-MaxPriceNumberInput" class="price-range__number" data-price-max-range-number type="number" value="{{ max_value }}" aria-label="{{ "products.shop.aria_label_for_max_number_input" | t }}">
                                                 </div>
                                                 <div class="price-range__slider-wrap">
                                                     <div class="price-range__slider">
@@ -608,7 +608,7 @@
                                                         <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Mobile-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
                                                             <input class="checkbox__input" id="Filter-Mobile-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if value.count == 0 and value.active == false %} disabled {% endif %}>
                                                             <div class="pill pill--small {% if option_style == 'button-outline' %}pill--outline{% endif %} {% if option_style == 'button-solid' %}pill--solid{% endif %} {% if value.active %}selected{% endif %}" {% if value.count == 0 and value.active == false %} disabled {% endif %}>
-                                                                <span>{{ value.label | escape }} ({{ value.count }})</span>
+                                                                <span class="pill__label">{{ value.label | escape }} ({{ value.count }})</span>
                                                             </div>
                                                         </label>
                                                     {%- endif -%}

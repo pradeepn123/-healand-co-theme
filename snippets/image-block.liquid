@@ -6,15 +6,7 @@
     {%- elsif image != blank -%}
       <img
         class='image image-block__image zoom lazyload'
-        loading='lazy'
-        src='{{ image | image_url: width: 160 }}'
-        alt='{{ image.alt }}'
-        width='{{image.width}}'
-        height='{{image.height}}'
-        style='object-position: {{ image.presentation.focal_point }};'
-        data-aspectratio='{{ image.aspect_ratio }}'
-        data-srcset='{%- render 'srcset-for-image', image: image -%}'
-        data-sizes='auto'
+        {% render 'image-attributes', image: image %}
       >
     {%- else -%}
       {{ 'image' | placeholder_svg_tag: 'image placeholder-image image-block__image zoom' }}

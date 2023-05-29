@@ -3,15 +3,7 @@
 {%- elsif image != blank -%}
   <img
     class='images-with-text__image-list-item-media lazyload'
-    loading='lazy'
-    src='{{ image | image_url: width: 160 }}'
-    alt='{{ image.alt }}'
-    width='{{ image.width }}'
-    height='{{ image.height }}'
     data-parent-fit='cover'
-    data-aspectratio='{{ image.aspect_ratio }}'
-    style='object-position: {{ image.presentation.focal_point }};'
-    data-sizes='auto'
-    data-srcset='{%- render 'srcset-for-image', image: image -%}'
+    {% render 'image-attributes', image: image %}
   >
 {%- endif -%}

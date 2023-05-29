@@ -1,0 +1,92 @@
+{%- assign gift_card_recipient_control_flag = 'properties[__shopify_send_gift_card_to_recipient]' -%}
+
+<recipient-form
+  class='recipient-form'
+  data-section-id='{{ section.id }}'
+  data-product-variant-id='{{ product.selected_or_first_available_variant.id }}'
+>
+  <div class='recipient-form__trigger'>
+    <label class='slider-switch' for='Recipient-checkbox-{{ section.id }}'>
+      <input
+        id='Recipient-checkbox-{{ section.id }}'
+        name='{{ gift_card_recipient_control_flag }}'
+        type='checkbox'
+        class='slider-switch__checkbox'
+        data-recipient-form-checkbox
+      >
+      <div class='slider-switch__container'>
+        <div class='slider-switch__toggle'></div>
+      </div>
+    </label>
+
+    <label class='recipient-form__trigger-label' for='Recipient-checkbox-{{ section.id }}'>
+      I want to send this as a gift
+    </label>
+  </div>
+
+  <div class='recipient-form__fields' data-recipient-form-fields>
+    <div class='field  recipient-form__field'>
+      <input
+        class='input input--solid input--large'
+        id='Recipient-email-{{ section.id }}'
+        type='email'
+        placeholder='Recipient email'
+        name='properties[Recipient email]'
+        value='{{ form.email }}'
+        data-recipient-form-input
+      >
+    </div>
+    <div class='field  recipient-form__field'>
+      <input
+        class='input input--solid input--large'
+        autocomplete='name'
+        type='text'
+        id='Recipient-name-{{ section.id }}'
+        name='properties[Recipient name]'
+        placeholder='Recipient name (optional)'
+        value='{{ form.name }}'
+        data-recipient-form-input
+      >
+    </div>
+
+    <div class='field recipient-form__field'>
+      <textarea
+        id='Recipient-message-{{ section.id }}'
+        class='textarea textarea--solid'
+        name='properties[Message]'
+        maxlength='200'
+        placeholder='Message (optional)'
+        aria-label='Message'
+        data-recipient-form-input
+      >{{ form.message }}</textarea>
+    </div>
+
+    <div class='field recipient-form__field'>
+      <input
+        autocomplete='send_on'
+        type='date'
+        id='Recipient-send-on-{{ section.id }}'
+        name='properties[Send on]'
+        placeholder='Date'
+        pattern='\d{4}-\d{2}-\d{2}'
+        value='{% if form.send_on != blank %}{{form.send_on}}{% else %}{{ "now" | date: "%Y-%m-%d" }}{% endif %}'
+        data-recipient-form-input
+      >
+    </div>
+  </div>
+  <input
+    type='hidden'
+    name='{{ gift_card_recipient_control_flag }}'
+    value='if_present'
+    id='Recipient-control-{{ section.id }}'
+    disabled
+  >
+  <input
+    type='hidden'
+    name='properties[__shopify_offset]'
+    value=''
+    id='Recipient-timezone-offset-{{ section.id }}'
+    disabled
+    data-recipient-form-timezone-input
+  >
+</recipient-form>

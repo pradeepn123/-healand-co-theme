@@ -56,34 +56,11 @@
   if is_search_sidebar_result == true
     assign product_color_swatches_style = 'none'
   endif
-
-  assign current_color_scheme = 'default'
-  assign target_color_scheme = section.settings.color_scheme
-
-  if section.settings.color_scheme == 'default'
-    assign target_color_scheme = settings.default_color_scheme
-  endif
-
-  case target_color_scheme
-    when 'primary'
-      assign current_color_scheme = 'primary'
-    when 'secondary'
-      assign current_color_scheme = 'secondary'
-    when 'custom-1'
-      assign current_color_scheme = 'custom_1'
-    when 'custom-2'
-      assign current_color_scheme = 'custom_2'
-    when 'custom-3'
-      assign current_color_scheme = 'custom_3'
-  endcase
-
-  assign key = current_color_scheme | append: '_background_color'
-  assign section_background_color = settings[key] | downcase
 -%}
 
 {% if product.id != blank %}
   <product-card
-    class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'
+    class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %} product-card--center-alignment{% endif %}'
     data-url='{{ product.url }}'
     data-id='{{ product.id }}'
   >
@@ -96,7 +73,7 @@
       <a
         class='product-card__link'
         href='{{ product.url }}'
-        aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+        aria-label='{{ product.title }}'
       ></a>
       {%- if images.size > 0 -%}
         <div
@@ -110,24 +87,25 @@
                   class='carousel__container product-card__carousel-container unstyled-link'
                   href='{{ product.url }}'
                   data-carousel-container
-                  aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+                  aria-label='{{ product.title }}'
                   tabindex='-1'
                 >
                   {%- for img in images limit: 5 -%}
                     <div class='carousel__slide product-card__slide unstyled-link {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'>
                       <img
-                        loading='lazy'
-                        alt='{{ img.alt }}'
                         class='product-card__img product-card__img--visible lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                        width='320'
-                        height='320'
                         {% if forloop.index0 == 0 %}
                           data-product-card-featured-image
                         {% endif %}
-                        src='{{ img | image_url: width: 160 }}'
+                        src='{{ img | image_url: width: 320 }}'
+                        data-image-url='{{ img | image_url: width: 1 }}'
                         data-aspectratio='{{ img.aspect_ratio }}'
-                        data-srcset='{%- render 'srcset-for-image', image: img -%}'
                         data-sizes='auto'
+                        alt='{{ img.alt }}'
+                        loading='lazy'
+                        width='1'
+                        height='1'
+                        style='object-position: {{ img.presentation.focal_point }};'
                       >
                     </div>
                   {%- endfor -%}
@@ -139,6 +117,7 @@
                     {%- for img in images limit: 5 -%}
                       <carousel-dot
                         class='product-card-dots__dot {% if forloop.index == 1 %}is-primary{% endif %}'
+                        data-dot-index='{{ forloop.index0 }}'
                       >
                         <div class='product-card-dots__dot-inner'></div>
                       </carousel-dot>
@@ -150,66 +129,70 @@
           {%- endif -%}
           <div class='product-card__images {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'>
             <img
-              loading='lazy'
-              alt='{{ featured_media.alt }}'
               class='product-card__img product-card__img--visible lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-              width='320'
-              height='320'
               data-main-media
               data-product-card-featured-image
-              src='{{ featured_media | image_url: width: 160 }}'
+              src='{{ featured_media | image_url: width: 320 }}'
+              data-image-url='{{ featured_media | image_url: width: 1 }}'
               data-aspectratio='{{ featured_media.aspect_ratio }}'
-              data-srcset='{%- render 'srcset-for-image', image: featured_media -%}'
               data-sizes='auto'
+              alt='{{ featured_media.alt }}'
+              loading='lazy'
+              width='1'
+              height='1'
+              style='object-position: {{ featured_media.presentation.focal_point }};'
             >
             {%- if settings.img_hover == 'show-secondary-media' and images.size > 1 -%}
-              {%- assign secondary_image = images[1] -%}
               <img
-                loading='lazy'
-                alt='{{ secondary_image.alt }}'
                 class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                width='320'
-                height='320'
                 data-secondary-media
-                src='{{ secondary_image | image_url: width: 160 }}'
-                data-aspectratio='{{ secondary_image.aspect_ratio }}'
-                data-srcset='{%- render 'srcset-for-image', image: secondary_image -%}'
+                src='{{ images[1] | image_url: width: 320 }}'
+                data-image-url='{{ images[1] | image_url: width: 1 }}'
+                data-aspectratio='{{ images[1].aspect_ratio }}'
                 data-sizes='auto'
+                alt='{{ images[1].alt }}'
+                loading='lazy'
+                width='1'
+                height='1'
+                style='object-position: {{ images[1].presentation.focal_point }};'
               >
             {%- endif -%}
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
-              {%- for img in images -%}
+              {%- for img in images limit: 5 -%}
                 {%- if img.id != featured_media.id -%}
                   <img
-                    loading='lazy'
-                    alt='{{ img.alt }}'
                     class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                    width='320'
-                    height='320'
                     data-id='{{ forloop.index }}'
-                    src='{{ img | image_url: width: 160 }}'
+                    src='{{ img | image_url: width: 320 }}'
+                    data-image-url='{{ img | image_url: width: 1 }}'
                     data-aspectratio='{{ img.aspect_ratio }}'
-                    data-srcset='{%- render 'srcset-for-image', image: img -%}'
                     data-sizes='auto'
+                    alt='{{ img.alt }}'
+                    loading='lazy'
+                    width='1'
+                    height='1'
+                    style='object-position: {{ img.presentation.focal_point }};'
                   >
                 {%- endif -%}
               {%- endfor -%}
             {%- endif -%}
+
             {%- for color in colors limit: 6 -%}
               {%- assign variant = product.variants | where: color_option_position, color | first -%}
 
               {%- if variant.image.src != blank -%}
                 <img
-                  loading='lazy'
-                  alt='{{ variant.image.alt }}'
                   class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                  width='320'
-                  height='320'
                   data-variant-id='{{ variant.id }}'
-                  src='{{ variant.image | image_url: width: 160 }}'
+                  src='{{ variant.image | image_url: width: 320 }}'
+                  data-image-url='{{ variant.image | image_url: width: 1 }}'
                   data-aspectratio='{{ variant.image.aspect_ratio }}'
-                  data-srcset='{%- render 'srcset-for-image', image: variant.image -%}'
                   data-sizes='auto'
+                  alt='{{ variant.image.alt }}'
+                  loading='lazy'
+                  width='1'
+                  height='1'
+                  style='object-position: {{ variant.image.presentation.focal_point }};'
                 >
               {%- endif -%}
             {%- endfor -%}
@@ -308,39 +291,40 @@
           </div>
         {%- endif -%}
       </div>
-    </div>
-    <div class='product-card__badges {% if settings.edge_rounding_degree == 'extra' %} product-card__badges--with-extra-rounded-badges{% endif %}'>
-      {%- if product_card_show_sold_out_badge == true -%}
-        <div class='product-card-badge product-card-badge--sold-out'>
-          {{- 'products.product.sold_out' | t -}}
-        </div>
-      {% endif %}
-      {%- if show_sale_badge -%}
-        <div class='product-card-badge product-card-badge--sale'>
-          {% render 'sale-badge-text', price: product.price, old_price: product.compare_at_price %}
-        </div>
-      {%- endif -%}
-      {%- for tag in product.tags -%}
-        {%- assign tag_downcase = tag | downcase -%}
-        {%- assign product_card_custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase -%}
-        {%- assign product_card_custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase -%}
 
-        {%- if tag_downcase == product_card_custom_badge_1_tag_downcase
-          and product_card_custom_badge_1_tag_downcase != blank
-        -%}
-          <div class='product-card-badge product-card-badge--custom-1 '>
-            {{ settings.product_card_custom_badge_1_text }}
+      <div class='product-card__badges {% if settings.edge_rounding_degree == 'extra' %} product-card__badges--with-extra-rounded-badges{% endif %}'>
+        {%- if product_card_show_sold_out_badge == true -%}
+          <div class='product-card-badge product-card-badge--sold-out'>
+            {{- 'products.product.sold_out' | t -}}
+          </div>
+        {% endif %}
+        {%- if show_sale_badge -%}
+          <div class='product-card-badge product-card-badge--sale'>
+            {% render 'sale-badge-text', price: product.price, old_price: product.compare_at_price %}
           </div>
         {%- endif -%}
+        {%- for tag in product.tags -%}
+          {%- assign tag_downcase = tag | downcase -%}
+          {%- assign product_card_custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase -%}
+          {%- assign product_card_custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase -%}
 
-        {%- if tag_downcase == product_card_custom_badge_2_tag_downcase
-          and product_card_custom_badge_2_tag_downcase != blank
-        -%}
-          <div class='product-card-badge product-card-badge--custom-2 '>
-            {{ settings.product_card_custom_badge_2_text }}
-          </div>
-        {%- endif -%}
-      {%- endfor -%}
+          {%- if tag_downcase == product_card_custom_badge_1_tag_downcase
+            and product_card_custom_badge_1_tag_downcase != blank
+          -%}
+            <div class='product-card-badge product-card-badge--custom-1 '>
+              {{ settings.product_card_custom_badge_1_text }}
+            </div>
+          {%- endif -%}
+
+          {%- if tag_downcase == product_card_custom_badge_2_tag_downcase
+            and product_card_custom_badge_2_tag_downcase != blank
+          -%}
+            <div class='product-card-badge product-card-badge--custom-2 '>
+              {{ settings.product_card_custom_badge_2_text }}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
     <div class='product-card__details {% if with_bottom_spacing %}product-card__details--bottom-spacing{% endif %}'>
       <div class='product-card__details-inner'>
@@ -362,19 +346,23 @@
                         <a
                           class='product-card__color-swatches-image-wrapper unstyled-link'
                           href='{{ variant.url }}'
-                          aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: variant.title -}}'
+                          aria-label='{{ variant.title }}'
                           {% if show_color_swatches_on_hover %}
                             tabindex='-1'
                           {% endif %}
                         >
                           <div class='product-card__color-swatches-image-body {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'>
                             <img
-                              class='product-card__color-swatches-image {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                              width='40'
-                              height='40'
-                              alt=''
+                              class='product-card__color-swatches-image lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
+                              src='{{ variant.image | image_url: width: 320 }}'
+                              data-image-url='{{ variant.image | image_url: width: 1 }}'
+                              data-aspectratio='{{ variant.image.aspect_ratio }}'
+                              data-sizes='auto'
+                              alt='{{ variant.image.alt }}'
                               loading='lazy'
-                              srcset='{%- render 'srcset-for-image', image: variant.image.src, size: 'small' -%}'
+                              width='1'
+                              height='1'
+                              style='object-position: {{ variant.image.presentation.focal_point }};'
                             >
                           </div>
                         </a>
@@ -382,7 +370,7 @@
                         <a
                           class='product-card__color-swatches-image-wrapper colors__placeholder-img'
                           href='{{ variant.url }}'
-                          aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: variant.title -}}'
+                          aria-label='{{ variant.title }}'
                         >
                           <div class='product-card__color-swatches-image-body'>
                             {% render 'icon-color-image-placeholder', class: 'product-card__color-swatches-image' %}
@@ -394,7 +382,7 @@
                   <a
                     class='product-card__color-swatches-count product-card__color-swatches-count--imgs'
                     href='{{ product.url }}'
-                    aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+                    aria-label='{{ product.title }}'
                     data-color-swatches-hidden-count
                   ></a>
                 </div>
@@ -403,8 +391,31 @@
                 {% endif %}
               </color-swatches>
             {%- elsif product_color_swatches_style == 'circles' or product_color_swatches_style == 'squares' -%}
-              {%- assign default_colors = 'black,silver,gray,whitesmoke,maroon,red,purple,fuchsia,green,lime,olivedrab,yellow,navy,blue,teal,aquamarine,orange,aliceblue,antiquewhite,aqua,azure,beige,bisque,blanchedalmond,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,darkblue,darkcyan,darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,gainsboro,ghostwhite,goldenrod,gold,greenyellow,grey,honeydew,hotpink,indianred,indigo,ivory,khaki,lavenderblush,lavender,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgreen,lightgrey,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,limegreen,linen,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,oldlace,olive,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,rosybrown,royalblue,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,thistle,tomato,turquoise,violet,wheat,white,yellowgreen,rebeccapurple'
-                | split: ','
+              {%- liquid
+                assign default_colors = 'black,silver,gray,whitesmoke,maroon,red,purple,fuchsia,green,lime,olivedrab,yellow,navy,blue,teal,aquamarine,orange,aliceblue,antiquewhite,aqua,azure,beige,bisque,blanchedalmond,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,darkblue,darkcyan,darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,gainsboro,ghostwhite,goldenrod,gold,greenyellow,grey,honeydew,hotpink,indianred,indigo,ivory,khaki,lavenderblush,lavender,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgreen,lightgrey,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,limegreen,linen,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,oldlace,olive,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,rosybrown,royalblue,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,thistle,tomato,turquoise,violet,wheat,white,yellowgreen,rebeccapurple' | split: ','
+
+                assign current_color_scheme = 'default'
+                assign target_color_scheme = section.settings.color_scheme
+
+                if section.settings.color_scheme == 'default'
+                  assign target_color_scheme = settings.default_color_scheme
+                endif
+
+                case target_color_scheme
+                  when 'primary'
+                    assign current_color_scheme = 'primary'
+                  when 'secondary'
+                    assign current_color_scheme = 'secondary'
+                  when 'custom-1'
+                    assign current_color_scheme = 'custom_1'
+                  when 'custom-2'
+                    assign current_color_scheme = 'custom_2'
+                  when 'custom-3'
+                    assign current_color_scheme = 'custom_3'
+                endcase
+
+                assign key = current_color_scheme | append: '_background_color'
+                assign section_background_color = settings[key] | downcase
               -%}
               <color-swatches
                 class='colors product-card__colors'
@@ -459,7 +470,7 @@
                         <a
                           class='color-swatch color-swatch--product-card color-swatch--circle color-swatch--with-hard-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'
                           href='{{ variant.url }}'
-                          aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: variant.title -}}'
+                          aria-label='{{ variant.title }}'
                           {% if show_color_swatches_on_hover %}
                             tabindex='-1'
                           {% endif %}
@@ -487,7 +498,7 @@
                         <a
                           class='color-swatch color-swatch--product-card color-swatch--square color-swatch--with-hard-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'
                           href='{{ variant.url }}'
-                          aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: variant.title -}}'
+                          aria-label='{{ variant.title }}'
                           {% if show_color_swatches_on_hover %}
                             tabindex='-1'
                           {% endif %}
@@ -511,7 +522,7 @@
                   <a
                     class='product-card__color-swatches-count'
                     href='{{ product.url }}'
-                    aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+                    aria-label='{{ product.title }}'
                     data-color-swatches-hidden-count
                   ></a>
                 </div>
@@ -526,7 +537,7 @@
           <a
             class='product-card__title unstyled-link'
             href='{{ product.url }}'
-            aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+            aria-label='{{ product.title }}'
           >
             {{- product.title -}}
           </a>
@@ -598,7 +609,7 @@
       <a
         class='product-card__link'
         href='#'
-        aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+        aria-label='{{ product.title }}'
       ></a>
 
       {%- assign placeholder_class = 'placeholder-image product-card__img product-card__img--visible' -%}
@@ -667,7 +678,7 @@
           <a
             class='product-card__title unstyled-link'
             href='#'
-            aria-label='{{- 'cards.product_card.aria_label_for_link' | t: product_title: product.title -}}'
+            aria-label='{{ product.title }}'
           >
             {{- 'cards.product_card.default_title' | t -}}
           </a>

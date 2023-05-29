@@ -16,16 +16,8 @@
       <accordeon-btn class='accordeon-plus__btn accordeon-plus__btn--small product-content-tab__btn' tabindex='0'>
         {%- if custom_icon_image != blank -%}
           <img
-            loading='lazy'
-            alt='{{ custom_icon_image.alt }}'
             class='accordeon-plus__btn-icon lazyload'
-            width='24'
-            height='24'
-            src='{{ custom_icon_image | image_url: width: 24 }}'
-            style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-            data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-            data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-            data-sizes='auto'
+            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
           >
         {%- elsif icon != 'none' -%}
           {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -47,16 +39,8 @@
         <div class='product-content-tab__title'>
           {%- if custom_icon_image != blank -%}
             <img
-              loading='lazy'
-              alt='{{ custom_icon_image.alt }}'
               class='accordeon-plus__btn-icon lazyload'
-              width='24'
-              height='24'
-              src='{{ custom_icon_image | image_url: width: 24 }}'
-              style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-              data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-              data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-              data-sizes='auto'
+              {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
             >
           {%- elsif icon != 'none' -%}
             {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
