@@ -6,26 +6,28 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
           "settings": {
-            "color_scheme": "white",
-            "desktop_overlay_opacity": 20,
-            "mobile_overlay_opacity": 20,
-            "caption": "IMAGE SLIDE",
-            "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "heading_size": "h2",
+            "color_scheme": "custom-2",
+            "desktop_img": "shopify:\/\/shop_images\/banner.png",
+            "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
+            "desktop_overlay_opacity": 0,
+            "mobile_overlay_opacity": 0,
+            "caption": "",
+            "title": "Unlock the benefits of nature",
+            "text": "<p>Our supplements are made with pure, potent ingredients to help you feel your best from the inside out.<\/p>",
+            "heading_size": "h3",
             "body_size": "body3",
-            "desktop_content_position": "align-items:center;justify-content:center;",
-            "desktop_content_align": "center",
-            "content_max_width": 560,
-            "content_spacing": 116,
-            "mobile_content_position": "align-items:center;justify-content:center;",
+            "desktop_content_position": "align-items:center;justify-content:flex-start;",
+            "desktop_content_align": "left",
+            "content_max_width": 528,
+            "content_spacing": 0,
+            "mobile_content_position": "align-items:flex-end;justify-content:center;",
             "mobile_content_align": "center",
             "desktop_content_background": "none",
             "mobile_content_background": "none",
-            "btn_text": "Button label",
+            "btn_text": "UNLOCK",
             "btn_url": "",
             "btn_style": "solid",
-            "extra_btn_text": "Button label",
+            "extra_btn_text": "",
             "extra_btn_url": "",
             "extra_btn_style": "solid"
           }
@@ -33,80 +35,31 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
           "settings": {
-            "color_scheme": "default",
-            "image_proportion": 50,
-            "content_wrapper_width": 30,
-            "caption": "SPLIT IMAGE SLIDE",
-            "title": "Two images with text in between",
+            "color_scheme": "custom-3",
+            "image_proportion": 0,
+            "content_wrapper_width": 50,
+            "desktop_right_img": "shopify:\/\/shop_images\/Group_453_1.png",
+            "mobile_right_img": "shopify:\/\/shop_images\/image_71.png",
+            "caption": "",
+            "title": "Wellness",
             "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
             "heading_size": "h2",
             "body_size": "body3",
             "content_max_width": 368,
-            "desktop_content_align": "center",
+            "desktop_content_align": "left",
             "mobile_content_align": "center",
-            "btn_text": "Button label",
+            "btn_text": "SHOP",
             "btn_url": "",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
             "extra_btn_style": "outline"
           }
-        },
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-2": {
-          "type": "image-banner",
-          "settings": {
-            "color_scheme": "white",
-            "desktop_overlay_opacity": 20,
-            "mobile_overlay_opacity": 20,
-            "caption": "IMAGE SLIDE",
-            "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "heading_size": "h2",
-            "body_size": "body3",
-            "desktop_content_position": "align-items:center;justify-content:flex-start;",
-            "desktop_content_align": "left",
-            "content_max_width": 560,
-            "content_spacing": 116,
-            "mobile_content_position": "align-items:flex-end;justify-content:center;",
-            "mobile_content_align": "center",
-            "desktop_content_background": "solid",
-            "mobile_content_background": "solid",
-            "btn_text": "Button label",
-            "btn_url": "",
-            "btn_style": "solid",
-            "extra_btn_text": "Button label",
-            "extra_btn_url": "",
-            "extra_btn_style": "solid"
-          }
-        },
-        "26ebac8c-4c8a-4e8c-bf1f-615a97d2f78b": {
-          "type": "split-image-banner",
-          "settings": {
-            "color_scheme": "default",
-            "image_proportion": 30,
-            "content_wrapper_width": 30,
-            "caption": "SPLIT IMAGE SLIDE",
-            "title": "Two images with text in between",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "heading_size": "h2",
-            "body_size": "body3",
-            "content_max_width": 368,
-            "desktop_content_align": "left",
-            "mobile_content_align": "left",
-            "btn_text": "Button label",
-            "btn_url": "",
-            "btn_style": "outline",
-            "extra_btn_text": "",
-            "extra_btn_url": "",
-            "extra_btn_style": "solid"
-          }
         }
       },
       "block_order": [
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1",
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-2",
-        "26ebac8c-4c8a-4e8c-bf1f-615a97d2f78b"
+        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1"
       ],
       "settings": {
         "color_scheme": "default",
@@ -114,20 +67,311 @@
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 48,
-        "desktop_height": 760,
-        "mobile_height": 640,
+        "desktop_height": 600,
+        "mobile_height": 400,
         "enable_circle_navigation": true,
         "enable_arrows_navigation": true,
         "arrows_style": "corner-buttons",
-        "show_arrows_on_hover": false,
+        "show_arrows_on_hover": true,
         "transition_style": "swipe",
-        "enable_autoplay": true,
+        "enable_autoplay": false,
         "autoplay_interval": 10,
-        "show_button_for_autoplay": true
+        "show_button_for_autoplay": false
+      }
+    },
+    "af64247e-1121-4d64-91e7-f013b0ab11b0": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel",
+        "title": "SHOP BY BENEFIT",
+        "heading_size": "h2",
+        "alignment": "center",
+        "shop_all_title": "Shop all",
+        "shop_all_url": "#",
+        "collection_list": [
+          "products",
+          "quick-order",
+          "nails",
+          "skin",
+          "strength"
+        ],
+        "img_ratio": "square",
+        "text_style": "under-image",
+        "collection_card_content_align": "center",
+        "collection_card_heading_size": "h6",
+        "show_product_count": false,
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 20,
+        "enable_carousel_on_mobile": false,
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_on_hover": true
+      }
+    },
+    "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
+      "type": "text-with-image",
+      "blocks": {
+        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_69.png",
+            "image_heading": "VEGAN",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 42,
+            "image_subheading": "<p>100% plant-based ingredients<\/p>",
+            "image_subheading-color": "#ee5c4c",
+            "image_subheading_font": 14
+          }
+        },
+        "26084782-5faf-444c-ba1f-560d6064cd52": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_68.png",
+            "image_heading": "POTENT EXTRACT",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 14,
+            "image_subheading": "<p>Lesser dose, more effect<\/p>",
+            "image_subheading-color": "#000000",
+            "image_subheading_font": 14
+          }
+        },
+        "871e0f11-8ca1-4c0b-895d-e356416a2950": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/Group_67.png",
+            "image_heading": "MADE IN CANADA",
+            "image_heading-color": "#3c8771",
+            "image_heading_font": 14,
+            "image_subheading": "<p>High-quality standards<\/p>",
+            "image_subheading-color": "#000000",
+            "image_subheading_font": 14
+          }
+        }
+      },
+      "block_order": [
+        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14",
+        "26084782-5faf-444c-ba1f-560d6064cd52",
+        "871e0f11-8ca1-4c0b-895d-e356416a2950"
+      ],
+      "settings": {
+        "container-background": "#faf5ef",
+        "title_color": "#3c8771",
+        "subtitle_color": "#000000",
+        "button_color": "#ffffff",
+        "buton_bg_color": "#789f91",
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_for_top": 65,
+        "section_spacing_for_bottom": 65,
+        "contents_position": "left",
+        "icons": "none",
+        "captions": "",
+        "heading": "<p>Potent Plants <\/p><p>For Healthy Humans<\/p>",
+        "texts": "<p>Our extracts and raw ingredients are formulated to deliver the highest concentration possible, resulting in products that are more effective and require fewer doses.<\/p>",
+        "headings_size": "h2",
+        "body_sizes": "body3",
+        "text_link": "About us",
+        "url_link": "",
+        "button_style": "solid"
+      }
+    },
+    "16f05ee5-8dda-4165-b9a7-b4489c25c3d9": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 65,
+        "section_spacing_bottom": 65,
+        "section_layout": "carousel",
+        "title": "BEST SELLERS",
+        "heading_size": "h2",
+        "alignment": "center",
+        "shop_all_title": "Shop all",
+        "shop_all_url": "",
+        "collection": "products",
+        "featured_products": [
+
+        ],
+        "img_ratio": "nature",
+        "product_card_align": "left",
+        "cards_to_show": 16,
+        "desktop_columns": 5,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": true,
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_on_hover": true
+      }
+    },
+    "3a8446b4-f3d0-4013-84a1-245927640c4e": {
+      "type": "collection-text",
+      "settings": {
+        "background": "#faf5ef",
+        "heading_color": "#ce6a4e",
+        "subheading_color": "#060606",
+        "btn_color": "#ffffff",
+        "btn_bg_color": "#dd8571",
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 65,
+        "section_spacing_bottom": 65,
+        "content_position": "left",
+        "collection": "homepage-ca",
+        "icon": "none",
+        "caption": "",
+        "title": "Subscribe & Save with Our Bundles",
+        "text": "<ul><li>Never run out of your favorite products<\/li><li>Enjoy a 10% discount on all subscription bundles<\/li><li>Flexible delivery options to fit your schedule <\/li><li>Hassle-free cancellation or modification of your subscription<\/li><\/ul>",
+        "heading_size": "h5",
+        "body_size": "body3",
+        "link_text": "SHOP ALL BUNDLES",
+        "link_url": "",
+        "btn_style": "solid",
+        "img_ratio": "square",
+        "product_card_align": "left",
+        "cards_to_show": 6,
+        "desktop_columns": 3,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_on_hover": true
+      }
+    },
+    "8365b2f6-b7d7-4ae2-9d42-07d515c51aa1": {
+      "type": "collage",
+      "blocks": {
+        "84a3e809-dc5d-477f-a9be-3ea131520f2d": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/top-10-foods-high-in-quercetin-that-you-should-eat-daily",
+            "title": "LEARN",
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 2,
+            "heading_size": "h6",
+            "show_product_count": true,
+            "blog_image": "shopify:\/\/shop_images\/blog_img_1.jpg",
+            "overlay_opacity": 10,
+            "link_text": "Link label",
+            "content_position": "bottom-left"
+          }
+        },
+        "ee728319-72f2-4d6e-846c-85979a78983a": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/the-best-natural-remedies-for-anxiety-and-stress",
+            "title": "BLOG",
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 1,
+            "heading_size": "h6",
+            "show_product_count": true,
+            "overlay_opacity": 20,
+            "link_text": "Link label",
+            "content_position": "bottom-left"
+          }
+        },
+        "7fe8b5e4-17be-4c6b-9f42-c162aaa41995": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/top-8-health-benefits-of-quercetin",
+            "title": "BLOG",
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 1,
+            "heading_size": "h6",
+            "show_product_count": true,
+            "overlay_opacity": 20,
+            "link_text": "Link label",
+            "content_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "84a3e809-dc5d-477f-a9be-3ea131520f2d",
+        "ee728319-72f2-4d6e-846c-85979a78983a",
+        "7fe8b5e4-17be-4c6b-9f42-c162aaa41995"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "full-screen",
+        "section_spacing_top": 58,
+        "section_spacing_bottom": 58,
+        "title": "",
+        "heading_size": "h5",
+        "alignment": "left",
+        "columns": 4,
+        "desktop_row_height": 340,
+        "mobile_row_height": 500,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false
+      }
+    },
+    "6bd854d6-6a11-48bc-a56c-aeff798f8299": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-1": {
+          "type": "title",
+          "settings": {
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "heading_size": "h4"
+          }
+        },
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-2": {
+          "type": "text",
+          "settings": {
+            "text": "sign up for early access to new products, exclusive deals and more!",
+            "body_size": "body3"
+          }
+        },
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-1",
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-2",
+        "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-3"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 400,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "desktop_overlay_opacity": 5,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
       }
     }
   },
   "order": [
-    "35abde66-b33a-4178-b3ef-5bba319784ba"
+    "35abde66-b33a-4178-b3ef-5bba319784ba",
+    "af64247e-1121-4d64-91e7-f013b0ab11b0",
+    "3f1076ce-3ef8-4121-b953-17e5b6975dad",
+    "16f05ee5-8dda-4165-b9a7-b4489c25c3d9",
+    "3a8446b4-f3d0-4013-84a1-245927640c4e",
+    "8365b2f6-b7d7-4ae2-9d42-07d515c51aa1",
+    "6bd854d6-6a11-48bc-a56c-aeff798f8299"
   ]
 }
