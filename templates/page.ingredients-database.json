@@ -52,46 +52,61 @@
         "a5adb58a-5021-4c34-b66f-692848e6b6ad": {
           "type": "database",
           "settings": {
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
             "page": "ashwagandha",
-            "image": "shopify:\/\/shop_images\/Group_208.jpg"
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "India"
           }
         },
         "f8df52cb-b65d-4944-953a-bd9256a7d52c": {
           "type": "database",
           "settings": {
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "ashwagandha",
-            "image": "shopify:\/\/shop_images\/Group_209.jpg"
+            "image": "shopify:\/\/shop_images\/Group_209.jpg",
+            "page": "acai",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "Brazil"
           }
         },
         "41e549b9-e9e5-42d6-bbd8-b60139098bb7": {
           "type": "database",
           "settings": {
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "ashwagandha",
-            "image": "shopify:\/\/shop_images\/Group_210.jpg"
+            "image": "shopify:\/\/shop_images\/Group_210.jpg",
+            "page": "echinacea",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "United States"
           }
         },
         "37200bce-5ec4-4c71-91c8-ef56fe73aece": {
           "type": "database",
           "settings": {
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
             "page": "ashwagandha",
-            "image": "shopify:\/\/shop_images\/Mask_group.png"
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "China"
           }
         },
         "94007359-74b9-426b-8712-f5ce4fc2bb5b": {
           "type": "database",
           "settings": {
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
             "page": "ashwagandha",
-            "image": "shopify:\/\/shop_images\/Mask_group.png"
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": "Canada"
+          }
+        },
+        "cdd6c5cf-7372-411b-814b-72a6600a5813": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_214.jpg",
+            "page": "chaga",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
           }
         }
       },
@@ -100,7 +115,8 @@
         "f8df52cb-b65d-4944-953a-bd9256a7d52c",
         "41e549b9-e9e5-42d6-bbd8-b60139098bb7",
         "37200bce-5ec4-4c71-91c8-ef56fe73aece",
-        "94007359-74b9-426b-8712-f5ce4fc2bb5b"
+        "94007359-74b9-426b-8712-f5ce4fc2bb5b",
+        "cdd6c5cf-7372-411b-814b-72a6600a5813"
       ],
       "settings": {
         "section_spacing_top": 64,
