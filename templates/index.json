@@ -90,8 +90,8 @@
         "title": "SHOP BY BENEFIT",
         "heading_size": "h2",
         "alignment": "center",
-        "shop_all_title": "",
-        "shop_all_url": "",
+        "shop_all_title": "Shop all",
+        "shop_all_url": "shopify:\/\/collections",
         "collection_list": [
           "products",
           "quick-order",
