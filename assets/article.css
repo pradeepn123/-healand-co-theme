@@ -118,20 +118,6 @@ h2.article__title {
     border-bottom: 1px solid #D8D8D8;
 }
 
-.article-featured-products-container {
-    padding: 0 33.5rem;
-}
-
-.article-featured-products-container {
-    font-family: "BrownStd-Bold";
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 42px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #000000;
-}
-
 .pt-0 {
     padding-top: 0;
 }
@@ -148,27 +134,6 @@ h2.article__title {
     letter-spacing: 0em;
     text-align: left;
     text-transform: uppercase;
-}
-
-.product-card__title {
-    font-family: "BrownStd-Bold";
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 37px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #000000;
-    text-transform: uppercase;
-}
-
-.product-card__price-item {
-    font-family: "BrownStd-Regular";
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 37px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #000000;
 }
 
 .article-footer-panel {
@@ -223,6 +188,7 @@ h2.article__title {
     letter-spacing: 0em;
     text-align: left;
     color: #737373;
+    margin-top: 22px;
 }
 
 .comment-form__btn {
@@ -236,6 +202,7 @@ h2.article__title {
     line-height: 77px;
     letter-spacing: 0em;
     text-align: center;
+    margin-top: 22px;
 }
 
 .comment-form__btn:not([disabled]):hover {
@@ -284,14 +251,6 @@ h2.article__title {
     .collection__title {
         font-size: 24px;
         line-height: 29px;
-    }
-    .product-card__title {
-        font-size: 20px;
-        line-height: 42.3px;
-    }
-    .product-card__price-item {
-        font-size: 16px;
-        line-height: 42px;
     }
     .article-comments__comment-form, .article-comments {
         margin: 6.4rem 0 6.4rem;
