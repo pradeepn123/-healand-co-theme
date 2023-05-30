@@ -1,16 +1,5 @@
 {
   "sections": {
-    "c494eb49-341f-432a-a30f-8dce72acadf3": {
-      "type": "product-benefits",
-      "settings": {
-        "featured_image": "shopify:\/\/shop_images\/product_image.png",
-        "heading": "",
-        "sub_heading": "",
-        "bg_color": "",
-        "text_color": "",
-        "heading_alignment": "center"
-      }
-    },
     "main": {
       "type": "product",
       "blocks": {
@@ -262,6 +251,17 @@
         "section_spacing_bottom": 38
       }
     },
+    "c494eb49-341f-432a-a30f-8dce72acadf3": {
+      "type": "product-benefits",
+      "settings": {
+        "featured_image": "shopify:\/\/shop_images\/product_image.png",
+        "heading": "",
+        "sub_heading": "",
+        "bg_color": "#faf5ef",
+        "text_color": "",
+        "heading_alignment": "center"
+      }
+    },
     "product-details": {
       "type": "product-details",
       "disabled": true,
@@ -496,10 +496,10 @@
     }
   },
   "order": [
-    "c494eb49-341f-432a-a30f-8dce72acadf3",
     "main",
     "c104c1c4-38cb-49de-952e-a049b6ae8ccf",
     "images-only",
+    "c494eb49-341f-432a-a30f-8dce72acadf3",
     "product-details",
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
     "35a80c75-d4b0-4340-9552-75a9f11586de",
