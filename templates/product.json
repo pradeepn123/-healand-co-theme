@@ -5,6 +5,7 @@
       "blocks": {
         "vendor": {
           "type": "vendor",
+          "disabled": true,
           "settings": {
           }
         },
@@ -14,17 +15,15 @@
             "heading_size": "h2"
           }
         },
-        "price": {
-          "type": "price",
+        "d4e0aa65-39f7-4a2c-ab9e-4062256bf259": {
+          "type": "product_type",
           "settings": {
-            "price_size": "sm",
-            "show_tax_status": false,
-            "show_sale_amount_badge": true,
-            "highlight_sale_price": true
+            "product_type_color": "#ee5c4c"
           }
         },
         "inventory_status": {
           "type": "inventory_status",
+          "disabled": true,
           "settings": {
             "show_inventory_status": "always",
             "inventory_threshhold": 11,
@@ -44,6 +43,11 @@
             "icon": "none"
           }
         },
+        "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
+          "type": "prod_additional_details",
+          "settings": {
+          }
+        },
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183": {
           "type": "variant_picker",
           "settings": {
@@ -56,6 +60,15 @@
             "image_width": 60
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "sm",
+            "show_tax_status": false,
+            "show_sale_amount_badge": true,
+            "highlight_sale_price": true
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -64,13 +77,14 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "enable_pickup_availability": false,
             "enable_gift_card": false
           }
         },
         "c9188b10-e29c-4c63-b385-a3faa860d64a": {
           "type": "information_tag",
+          "disabled": true,
           "settings": {
             "tag_style": "solid",
             "heading": "Information tag",
@@ -88,6 +102,7 @@
         },
         "29040344-ce22-4d9d-aab8-1dcb43bb2ab5": {
           "type": "product_drawer_with_tabs",
+          "disabled": true,
           "settings": {
             "popup_link_text": "Drawer with tabs",
             "btn_style": "text",
@@ -104,27 +119,39 @@
             "tab_3_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
             "tab_3_page": ""
           }
+        },
+        "77b6d2f5-2750-4782-8f34-9c7623e4abb3": {
+          "type": "upsell_products",
+          "settings": {
+            "img_ratio": "square",
+            "upsell_products": [
+              "immunity-bundle-ca"
+            ]
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
-        "price",
+        "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
         "inventory_status",
         "28586830-d855-4547-8946-94914bac9e85",
+        "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
+        "price",
         "quantity_selector",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
-        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5"
+        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5",
+        "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
       "settings": {
         "color_scheme": "default",
         "container_size": "large",
         "section_spacing_top": 32,
         "section_spacing_bottom": 48,
-        "layout": "thumbnails-left",
-        "img_ratio": "portrait",
+        "layout": "thumbnails-bottom",
+        "img_ratio": "square",
         "enable_image_zoom": true,
         "enable_video_looping": true,
         "enable_video_autoplay": true,

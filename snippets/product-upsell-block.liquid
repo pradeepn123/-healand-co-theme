@@ -1,0 +1,14 @@
+<div class="upsell_product_main_wrap">
+    {%- for upsell_product in block.settings.upsell_products -%}
+        <div class='shop__grid-item'>
+            {% render 'product-card',
+                with_bottom_spacing: true,
+                product: upsell_product,
+                show_color_swatches_on_hover: false,
+                img_ratio: block.settings.img_ratio,
+                show_mobile_carousel: true,
+                product_card_align: "left"
+            %}
+        </div>
+    {%- endfor -%}
+</div>

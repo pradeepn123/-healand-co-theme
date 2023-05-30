@@ -2,7 +2,7 @@
   assign options = block.settings
   assign block_style = options.block_style
   assign title = options.title
-  assign text = product.description
+  assign text = product.description | split: '<!-- split -->' | first | default: product.description 
   assign custom_icon_image = options.custom_icon_image
   assign icon = options.icon
 %}

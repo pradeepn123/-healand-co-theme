@@ -1,3 +1,5 @@
+{{ 'product.css' | asset_url | stylesheet_tag }}
+
 {%- liquid
   assign section_spacing_top = section.settings.section_spacing_top
   assign section_spacing_bottom = section.settings.section_spacing_bottom
@@ -257,6 +259,62 @@
           "default": "h6"
         }
       ]
+    },
+    {
+      "type": "upsell_products",
+      "name": "Upsell Products",
+      "settings": [
+        {
+          "type": "select",
+          "id": "img_ratio",
+          "options": [
+            {
+              "value": "default",
+              "label": "t:sections.general_section_settings.img_ratio_option_default_label"
+            },
+            {
+              "value": "square",
+              "label": "t:sections.general_section_settings.img_ratio_option_square_label"
+            },
+            {
+              "value": "portrait",
+              "label": "t:sections.general_section_settings.img_ratio_option_portrait_label"
+            },
+            {
+              "value": "portrait-xl",
+              "label": "t:sections.general_section_settings.img_ratio_option_portrait_xl_label"
+            },
+            {
+              "value": "landscape",
+              "label": "t:sections.general_section_settings.img_ratio_option_landscape_label"
+            }
+          ],
+          "default": "portrait-xl",
+          "label": "t:sections.general_section_settings.img_ratio_label"
+        },
+        {
+          "type": "product_list",
+          "id": "upsell_products",
+          "label": "Upsell Product"
+        }
+      ]
+    },
+    {
+      "type": "product_type",
+      "name": "t:sections.product.name_for_product_type",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color",
+          "id": "product_type_color",
+          "label": "Text color"
+        }
+      ]
+    },
+    {
+      "type": "prod_additional_details",
+      "name": "t:sections.product.name_for_additional_details",
+      "limit": 1
     },
     {
       "type": "vendor",
