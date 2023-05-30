@@ -1125,5 +1125,40 @@
         "info": "t:settings_schema.color_swatch.color_swatch_variables.info"
       }
     ]
+  },
+  {
+    "name": "Article footer",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "default": true,
+        "label": "t:sections.blog_post.footer_block_show_author_label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "default": true,
+        "label": "t:sections.blog_post.footer_block_show_date_label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share",
+        "default": true,
+        "label": "t:sections.blog_post.footer_block_show_share_label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_next_and_previous_posts",
+        "default": true,
+        "label": "t:sections.blog_post.footer_block_show_next_and_previous_posts_label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_comment_count",
+        "default": true,
+        "label": "t:sections.blog_post.footer_block_show_comment_count_label"
+      }
+    ]
   }
 ]

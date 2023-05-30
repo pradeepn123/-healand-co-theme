@@ -45,6 +45,10 @@
   assign product_card_align = options.product_card_align
 -%}
 
+{% if request.path contains "blogs/news" %}
+  {{ 'article.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 {% capture css %}
   {% style %}
     .section-{{section.id}}{
@@ -91,7 +95,7 @@
 {% capture section_header %}
   {%- if title != blank -%}
     <div class='collection__header {% if alignment == 'center' %}collection__header--center{% endif %}'>
-      <h5 class='collection__title {{ heading_size }} decorated_heading'>{{ title }}</h5>
+      <h5 class='collection__title {{ heading_size }} {% unless request.path contains "blogs/news" %} decorated_heading article-featured-products-title {% endunless %}'>{{ title }}</h5>
       <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">
         <span>{{ section.settings.shop_all_title}}</span>
       </a>
@@ -100,9 +104,8 @@
 {% endcapture %}
 
 <div class='collection section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout == 'grid' %} collection--grid-with-mobile-carousel{% endif %}'>
-  <div class='collection__container container container--{{ container_size }} section-spacing'>
+  <div class='collection__container container container--{{ container_size }} section-spacing {% if request.path contains "blogs/news" %} container--xsmall pt-0 {% endif %}'>
     {{ section_header }}
-
     {% if collection != blank or featured_products != blank %}
       {% if section_layout contains 'carousel' %}
         {% render 'featured-collection-carousel',

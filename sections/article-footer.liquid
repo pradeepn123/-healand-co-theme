@@ -1,0 +1,23 @@
+{%liquid
+    if settings.name == 'Article footer'
+        assign block = settings
+    endif 
+%}
+
+{{ 'article.css' | asset_url | stylesheet_tag }}
+
+{% for article in blog.articles %}
+{% assign article = article %}
+    
+{% endfor %}
+{% render 'article-footer', block: block, article: article %}
+{% schema %}
+{
+    "name": "Article Footer Section",
+    "presets": [
+        {
+            "name": "Article Footer Section"
+        }
+    ]
+}
+{% endschema %}

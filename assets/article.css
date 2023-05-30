@@ -1,0 +1,308 @@
+.article {
+    padding-bottom: 4.2rem;
+}
+
+.link__prev__chevron {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    right: 0.8rem;
+    transform: scale(-1, 1);
+}
+
+svg.link__prev__chevron path {
+    stroke: #9A9A9A;
+}
+
+.link__home__text {
+    font-family: "BrownStd-Regular";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: underline;
+    color: #9A9A9A;
+    text-transform: none;
+}
+
+.blogs_home-link {
+    display: flex;
+    justify-content: flex-start;
+    margin: 23px 0 14px 0;
+}
+
+/* .block-featured_image {
+    margin: 0 227px;
+} */
+
+h2.article__title {
+    font-family: "BrownStd-Bold";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.article .section-spacing .article__blocks .container .article__content h2{
+    text-transform: uppercase;
+    font-family: "BrownStd-Bold";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+.article .section-spacing .article__blocks .container .article__content p,
+.article .section-spacing .article__blocks .container .article__content p span {
+    font-family: "BrownStd-Regular";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+.article .section-spacing .article__blocks .container .article__content h4 {
+    margin-top: 26px;
+}
+
+.article .section-spacing .article__blocks .container .article__content h4, 
+.article .section-spacing .article__blocks .container .article__content h4 span strong {
+    font-family: "BrownStd-Bold";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.article-footer-posts__post-link span.link__text {
+    font-family: "BrownStd-Bold";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.article-footer-posts__post-link svg.link__chevron path {
+    stroke: #000000;
+}
+
+.article-footer-posts__post-title {
+    font-family: "BrownStd-Regular";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.045em;
+    text-align: right;
+    text-transform: uppercase;
+    color: #686868;
+}
+
+.article-footer-posts_post--prev {
+    display: none;
+}
+
+.article__blocks div:last-of-type .article__content{
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.article-featured-products-container {
+    padding: 0 33.5rem;
+}
+
+.article-featured-products-container {
+    font-family: "BrownStd-Bold";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.collection__header {
+    align-items: flex-start;
+}
+
+.collection__title {
+    font-family: "BrownStd-Bold";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.product-card__title {
+    font-family: "BrownStd-Bold";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.product-card__price-item {
+    font-family: "BrownStd-Regular";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+.article-footer-panel {
+    background-color: #F5F5F5;
+}
+
+.article-footer-panel .article-meta .article-footer-panel__article-meta span.article-meta__item,
+.article-meta, .share__btn {
+    font-family: "BrownStd-Regular";
+    font-size: 16px;
+    font-weight: 400;
+    /* line-height: 77px; */
+    letter-spacing: 0em;
+    text-align: left;
+    color: #575758;
+}
+
+.share__btn svg path {
+    stroke: #575758;
+}
+
+.article-comments__comment-form, .article-comments {
+    margin: 4.8rem 0 6.4rem 0;
+}
+
+.comment-form__title {
+    font-family: "BrownStd-Bold";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+.comment-form__field input, .comment-form__field textarea {
+    border-color: #C5C5C5;
+    font-family: "BrownStd-Regular";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #7E7E7E;
+}
+
+.comment-form__note {
+    font-family: "BrownStd-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #737373;
+}
+
+.comment-form__btn {
+    background-color: #ea6852;
+    width: 225px;
+    height: 50px;
+    padding: 11px 21px;
+    font-family: "BrownStd-Bold";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.comment-form__btn:not([disabled]):hover {
+    background-color: #ea6852;
+    opacity: 0.95;
+}
+
+@media screen and (max-width: 767px) {
+    .article__image {
+        padding: 0 20px;
+    }
+    .article-footer-posts__post-title {
+        display: block;
+        text-align: center;
+    }
+    .article-footer-posts {
+        display: flex;
+    }
+    .article-footer-posts_post .article-footer-posts_post--next, .article-footer-posts_post--next {
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .comment-form__btn {
+        font-size: 18px;
+    }
+    h2.article__title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .article .section-spacing .article__blocks .container .article__content p,
+    .article .section-spacing .article__blocks .container .article__content p span {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .article .section-spacing .article__blocks .container .article__content h2 {
+        font-size: 24px;
+        line-height: 42.3px;
+    }
+    .article .section-spacing .article__blocks .container .article__content h4 span strong {
+        font-size: 20px;
+        line-height: 76.8px;
+    }
+    .collection__title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .product-card__title {
+        font-size: 20px;
+        line-height: 42.3px;
+    }
+    .product-card__price-item {
+        font-size: 16px;
+        line-height: 42px;
+    }
+    .article-comments__comment-form, .article-comments {
+        margin: 6.4rem 0 6.4rem;
+    }
+    .article-footer-panel {
+        margin-bottom: 20px;
+    }
+    .comment-form__note {
+        margin-top: 12px;
+    }
+    .comment-form__btn {
+        margin-top: 24px;
+    }
+}

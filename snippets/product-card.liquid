@@ -57,6 +57,9 @@
     assign product_color_swatches_style = 'none'
   endif
 -%}
+{% if request.path contains '/blogs/news/' %}
+  {{ 'article.css' | asset_url | stylesheet_tag }}
+{% endif %}
 {{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% if product.id != blank %}
   <product-card

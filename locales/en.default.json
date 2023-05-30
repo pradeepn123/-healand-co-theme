@@ -267,8 +267,8 @@
     "blog_post": {
       "breadcrumb_home_link": "Home",
       "breadcrumb_blog_link": "Blog",
-      "next_post_link": "Newer post",
-      "prev_post_link": "Older post",
+      "next_post_link": "NEXT ARTICLE",
+      "prev_post_link": "PREVIOUS ARTICLE",
       "comments_count": {
         "one": "{{ count }} Comment",
         "other": "{{ count }} Comments"
