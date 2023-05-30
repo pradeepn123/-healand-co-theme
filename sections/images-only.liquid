@@ -5,6 +5,8 @@
   assign section_spacing_top = options.section_spacing_top
   assign section_spacing_bottom = options.section_spacing_bottom
 
+  assign metafieldData = product.metafields.custom.images_only.value
+
 %}
 
 {% style %}
@@ -16,8 +18,8 @@
 
 <div class="imagesOnly_container container container--small section-spacing">
     <div class="imagesOnly_parent">
-        {% for block in section.blocks %}
-            <img src="{{ block.settings.block_image | img_url: 'master' }}">
+        {% for block in metafieldData %}
+            <img src="{{ block.an_image | img_url: 'master' }}">
         {% endfor %}
     </div>
 </div>
