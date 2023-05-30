@@ -74,7 +74,7 @@
           "type": "buttons",
           "settings": {
             "btn_text": "JOIN NOW",
-            "btn_url": "",
+            "btn_url": "https:\/\/healandco.co\/account\/login",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
@@ -403,7 +403,7 @@
         "title": "FAQ’S",
         "text": "",
         "heading_size": "h5",
-        "head_color": "#000",
+        "head_color": "#000000",
         "body_size": "body3",
         "btn_text": "",
         "btn_url": "",
