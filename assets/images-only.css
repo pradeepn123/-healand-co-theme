@@ -1,0 +1,8 @@
+.imagesOnly_parent {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+.imagesOnly_container.section-spacing{
+    overflow: scroll;
+}
