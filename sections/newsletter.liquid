@@ -8,6 +8,7 @@
 
   assign enable_background_around_container = options.enable_background_around_container
 
+  assign newsletter_button = options.newsletter_button
   assign color_scheme = options.color_scheme
   assign mobile_height = options.mobile_height
   assign desktop_height = options.desktop_height
@@ -30,7 +31,7 @@
   assign content_max_width = options.content_max_width | divided_by: 10
   assign content_spacing = options.content_spacing | divided_by: 10
 -%}
-
+{{ 'newsletter.css' | asset_url | stylesheet_tag }}
 {% capture css %}
   {% style %}
     .section-{{section.id}}{
@@ -121,8 +122,14 @@
                         class='btn btn--solid btn--lg newsletter__input-btn'
                         name='commit'
                         aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
+                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; background: #fff;" {% endif %} 
                       >
-                        {{ 'forms.newsletter.subscribe_button_label' | t }}
+                        <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
+                        {%- if section.settings.newsletter_button == "text" -%}
+                          {{ section.settings.newsletter_text }}
+                        {%- elsif section.settings.newsletter_button == "image" -%}
+                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                       {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -181,7 +188,7 @@
                       value='newsletter'
                       id='MobileNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
                     >
-                    <div class='field newsletter__field'>
+                    <div class='field newsletter__field'  {% if section.settings.newsletter_button == 'text' %} style="flex-wrap:wrap" {% endif %} >
                       <label class='visually-hidden' for='MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
@@ -202,8 +209,15 @@
                         class='btn btn--solid btn--lg newsletter__input-btn'
                         name='commit'
                         aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
+                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; background:#fff" {% endif %}
                       >
-                        {{ 'forms.newsletter.subscribe_button_label' | t }}
+                      
+                        <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
+                        {%- if section.settings.newsletter_button == "text" -%}
+                          {{ section.settings.newsletter_text }}
+                        {%- elsif section.settings.newsletter_button == "image" -%}
+                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                       {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -296,6 +310,36 @@
       "label": "t:sections.general_section_settings.color_scheme_label",
       "info": "t:sections.general_section_settings.color_scheme_tip"
     },
+    
+    {
+      "type": "select",
+      "id": "newsletter_button",
+      "options": [
+        {
+          "value": "text",
+          "label": "Newsletter text"
+        },
+        {
+          "value": "image",
+          "label": "Newsletter Image"
+        }
+      ],
+      "default": "image",
+      "label": "Newsletter Button Style"
+    },
+    
+        {
+          "type": "text",
+          "id": "newsletter_text",
+          "label": "Newsletter text"
+        },
+        {
+          "type": "image_picker",
+          "id": "newsletter_image",
+          "label": "Newsletter Image"
+        },
+ 
+ 
     {
       "type": "checkbox",
       "id": "enable_background_around_container",

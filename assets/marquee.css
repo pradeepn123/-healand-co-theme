@@ -1,4 +1,4 @@
-
+/* 
    .marquee{
     position: relative;
   width: 100vw;
@@ -24,12 +24,19 @@
   100% { transform: translate(-100%); }
 }
 
+.desktop{
+    display: none;
+}
+.marquee-only_mobile{
+    display: block;
+}
+
 @media(min-width:768px){
-    .marquee{
-        display: none;
+    .desktop{
+        display: block;
     }
 
-    .Marquee-conten{
+    .marquee-only_mobile {
         display: none;
     }
-} 
+}  */
