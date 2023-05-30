@@ -33,7 +33,6 @@
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
       "settings": {
-        "video_url": "shopify:\/\/files\/videos\/demo video.mp4",
         "thumbnail": "shopify:\/\/shop_images\/image_193.png",
         "play-icon": "shopify:\/\/shop_images\/Group_561.png"
       }

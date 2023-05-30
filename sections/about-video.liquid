@@ -7,11 +7,16 @@
             src="{{ section.settings.thumbnail | img_url: 'master'}}" alt="Thumbnail">
         </div>
         <div class="play-icon">
-          <img class="vid-icon-size" onClick="videoPlayfunction()" id="about-play-icon"
+          <img class="vid-icon-size about-play-icon" onClick="videoPlayfunction()" id=""
             src="{{ section.settings.play-icon | img_url: 'master'}}" alt="Thumbnail">
         </div>
-        <div class="video-container" >
-          <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video_url }}" autoplay="autoplay" controls="controls"  loop playinline></video>
+        <div class="video-container">
+          {% render 'video-with-alt', video: section.settings.video, class: 'video-size playpause about-video-play', controls: true %}
+          <!-- <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video | media_tag }} "></video> -->
+          <!-- <div class="video-size playpause" id="about-video-play">
+            {{ section.settings.video | media_tag }}
+          </div> -->
+
 
         </div>
       </div>
@@ -20,23 +25,23 @@
 </section>
 
 <script>
-  const customVideo = document.getElementById('about-video-play');
+  const customVideo = document.querySelector('.about-video-play');
   function videoPlayfunction() {
     customVideo.play();
     document.querySelector('.vid-image-size').style.display = 'none';
-    document.getElementById('about-play-icon').style.display = 'none';
+    document.querySelector('.about-play-icon').style.display = 'none';
   }
 
   document.querySelector(".video-wrapper").addEventListener('click', () => {
     customVideo.classList.toggle('playpause');
-    if(customVideo.classList.contains('playpause')){
+    if (customVideo.classList.contains('playpause')) {
       customVideo.pause()
     }
-    else{
+    else {
       customVideo.play()
     }
   })
-  
+
   function playVid() {
     x.play();
   }
@@ -53,7 +58,7 @@
 "settings": [
 {
 "type": "video",
-"id": "video_url",
+"id": "video",
 "label": "Video"
 },
 {
