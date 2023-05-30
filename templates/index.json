@@ -90,8 +90,8 @@
         "title": "SHOP BY BENEFIT",
         "heading_size": "h2",
         "alignment": "center",
-        "shop_all_title": "Shop all",
-        "shop_all_url": "#",
+        "shop_all_title": "",
+        "shop_all_url": "",
         "collection_list": [
           "products",
           "quick-order",
@@ -191,13 +191,13 @@
         "title": "BEST SELLERS",
         "heading_size": "h2",
         "alignment": "center",
-        "shop_all_title": "Shop all",
+        "shop_all_title": "",
         "shop_all_url": "",
         "collection": "products",
         "featured_products": [
 
         ],
-        "img_ratio": "nature",
+        "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 16,
         "desktop_columns": 5,
