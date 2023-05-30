@@ -7,3 +7,8 @@
 .news-bg{
     background: none !important;
 }
+
+.email-bar{
+    flex:32.5rem;
+}
+
