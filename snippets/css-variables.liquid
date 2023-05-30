@@ -5,6 +5,7 @@
   assign default_pallete_border_color_key = settings.default_color_scheme | append: '_border_color'
   assign default_pallete_button_background_color_key = settings.default_color_scheme | append: '_button_background_color'
   assign default_pallete_button_text_color_key = settings.default_color_scheme | append: '_button_text_color'
+
 %}
 
 {%- capture css -%}
@@ -15,6 +16,7 @@
       --gsc-cart-drawer-product-title-scale: {{ settings.product_card_font_scale | times: 0.01 }};
 
       /* product card */
+      --meta-background-color: {{product.metafields.custom.color_schema.value.highlighted_background_color}};
 
       --gsc-product-card-title-font-family: {{ settings.product_card_font_family.family }}, {{ settings.product_card_font_family.fallback_families }};
       --gsc-product-card-title-font-style: {{ settings.product_card_font_family.style }};
