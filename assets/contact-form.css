@@ -51,7 +51,7 @@
 .contact__methods__main .Contact_method_links:not(:last-child){
     padding-right: 16px;
 }
-@media(max-width:662px){
+@media(max-width:639px){
     .contact__methods__main .Contact_method_links{
         padding-right: 16px;
         padding-bottom: 24px;
@@ -60,7 +60,7 @@
         padding-right: 0;
     }
 }
-@media(max-width:463px){
+@media(max-width:439px){
     .contact__methods__main .Contact_method_links{
         padding-right: 0px !important;
     }
@@ -69,6 +69,7 @@
     }
 }
 @media(max-width:520px){
+    
     .contact__methods__main .Contact_method_links .contact__methods{
         min-height: 150px;
     }
@@ -96,6 +97,7 @@
    font-size: 16px;
    text-align: center;
    line-height: 22px;
+   padding-right: 4px;
 }
 
 @media(max-width:520px){

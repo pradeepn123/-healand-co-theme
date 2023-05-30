@@ -24,7 +24,10 @@
     color: #000;
     font-weight: 400;
 }
-
+.accordeon-plus__content-wrap .faq__accordeon-plus-content{
+    padding-left: 1.5rem ;
+    padding-right:1.6rem ;
+}
 @media(max-width:520px){
     .faq__content h5{
         font-size: 24px !important;
