@@ -437,6 +437,36 @@
         "second_button_style": "solid"
       }
     },
+    "9cddc487-a63b-451c-978c-ad462e8aad54": {
+      "type": "faq-section",
+      "blocks": {
+        "b14ce9d2-82f1-470f-990a-911482495939": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "b14ce9d2-82f1-470f-990a-911482495939"
+      ],
+      "settings": {
+        "from_metafields": true,
+        "section_heading": "FAQ's",
+        "section_heading_color": "#FFFFFF",
+        "section_bg_heading_color": "#789F91",
+        "color_scheme": "primary",
+        "enable_background_around_container": false,
+        "container_size": "small",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "expand_first_collapsible_row": false
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -474,6 +504,7 @@
     "product-details",
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
     "35a80c75-d4b0-4340-9552-75a9f11586de",
+    "9cddc487-a63b-451c-978c-ad462e8aad54",
     "product-recommendations"
   ]
 }

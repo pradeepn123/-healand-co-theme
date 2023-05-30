@@ -1,0 +1,131 @@
+/* FAQ Section Styles from Product Details Section */
+.faq-section__container {
+    border-radius: var(--gsc-faq-section-border-radius);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow: hidden
+}
+
+.faq-section__container--with-aside-spacing {
+    padding-left: 2rem;
+    padding-right: 2rem
+}
+
+.faq-section__accordeon-btn {
+    padding-left: 0
+}
+
+.faq-section__accordeon-content {
+    padding-top: 1.2rem
+}
+
+.faq-section__image {
+    width: 100%;
+    max-width: 100%
+}
+
+.faq-section__rte {
+    font-size: var(--gsc-fz-11);
+    line-height: var(--gsc-lh-4)
+}
+
+.faq-section__rte ul,
+.faq-section__rte ol {
+    padding: 0 0 0 2.8rem
+}
+
+.faq-section__tab-names {
+    align-items: center;
+    column-gap: 3.2rem;
+    display: none
+}
+
+.faq-section__tab-name-carousel {
+    --gsc-space-between-cards: 3.2rem;
+    padding: 0 0 4rem
+}
+
+.faq-section__tab-name {
+    border-bottom: 1px solid #0000;
+    align-items: center;
+    column-gap: .8rem;
+    padding-bottom: 1.6rem;
+    display: flex
+}
+
+.faq-section__tab-name-icon {
+    width: 2.4rem;
+    height: 2.4rem
+}
+
+.faq-section__tab-name-carousel-slide {
+    min-width: -moz-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content
+}
+
+.faq-section__tab-name.selected {
+    color: var(--gsc-text-color-100);
+    border-color: var(--gsc-text-color-100)
+}
+
+.faq-section__tab {
+    transition-property: max-height, opacity
+}
+
+.faq-section__tab[aria-hidden=true] {
+    transition-property: max-height
+}
+
+.faq-section__content-tab-content {
+    flex-flow: column;
+    row-gap: 2.4rem;
+    display: flex
+}
+
+@media screen and (min-width:768px) {
+    .faq-section__container {
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem
+    }
+
+    .faq-section__container--with-aside-spacing {
+        padding-left: 4.8rem;
+        padding-right: 4.8rem
+    }
+
+    .faq-section__tab-names {
+        column-gap: 5.6rem;
+        padding: 0 0 4.8rem;
+        display: flex
+    }
+
+    .faq-section__tab-name-carousel {
+        display: none
+    }
+
+    .faq-section__tab-name:hover {
+        color: var(--gsc-text-color-100)
+    }
+
+    .faq-section__image {
+        width: var(--gsc-image-width)
+    }
+}
+
+/* New Styles for FAQ Section */
+.faq-section--parent {
+    font-family: "BrownStd-Regular";
+}
+
+.faq-section--parent .section_heading {
+    /* font-family: "BrownStd-Regular"; */
+    padding: 2rem 4.8rem;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .faq-section--parent .section_heading {
+        padding: 2rem;
+    }
+}
