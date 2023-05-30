@@ -4,9 +4,6 @@
 .collection-hero__image{
     object-position: 0% 50% !important;
 }
-.bundles-section, .products-section{
-    position: relative;
-}
 .section_seperation{
     position: absolute;
     border-top: 1px solid #CECECE;
@@ -15,13 +12,22 @@
     width: 100vw;
     z-index: 0;
 }
-.bundles-section .collection_title, .products-section .collection_title{
+.collection_title,.collection_title{
     background: #fff;
     position: relative;
     width: fit-content;
     z-index: 1;
-    padding-right: 56px;
+    padding-right: 35px;
     padding-bottom: 47px;
+}
+@media (max-width: 768px){
+    .section_seperation{
+        left: -20px;
+    }
+    .collection_title{
+        margin: auto;
+        padding: 0 20px 34px 20px;
+    }
 }
 .filters__form .accordeon__content .checkbox__span--outline{
     border: 1px solid #000;
@@ -72,19 +78,28 @@
     align-items: flex-start;
     padding-top: 13%;
 }
-.product_title_1{
+.product-card__title{
     font-size: 20px;
     font-weight: 700;
     color: #000;
+    text-transform: uppercase;
 }
-.product_title_2{
+@media (max-width: 768px){
+    .product-card__title{
+        font-size: 18px;
+    }
+}
+.product_benefits{
     font-weight: 400;
     font-size: 14px;
     color: #ADADAE;
     text-transform: uppercase;
 }
-.product_type_metafield{
+.product_featured_tag{
     font-weight: 700;
     font-size: 14px;
     color: #D97059;
+}
+.product-card__price-item {
+    color: #000;
 }

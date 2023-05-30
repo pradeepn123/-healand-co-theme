@@ -74,10 +74,32 @@
         <div class='overlay'></div>
         {%- if video != blank -%}
           {% render 'video-with-alt', video: video, class: 'image collection-hero__image' %}
+        {% elsif collection.image != blank %}
+          {% assign collection_image = collection.image %}
+          <img
+            class='image collection-hero__image lazyload'
+            loading='lazy'
+            src='{{ collection_image | img_url: 'master' }}'
+            alt='{{ collection_image.alt }}'
+            width='{{collection_image.width}}'
+            height='{{collection_image.height}}'
+            style='object-position: {{ collection_image.presentation.focal_point }};'
+            data-aspectratio='{{ collection_image.aspect_ratio }}'
+            data-sizes='auto'
+            data-srcset='{%- render 'srcset-for-image', image: collection_image -%}'
+          >
         {%- elsif image != blank -%}
           <img
             class='image collection-hero__image lazyload'
-            {% render 'image-attributes', image: image %}
+            loading='lazy'
+            src='{{ image | img_url: 'master' }}'
+            alt='{{ image.alt }}'
+            width='{{image.width}}'
+            height='{{image.height}}'
+            style='object-position: {{ image.presentation.focal_point }};'
+            data-aspectratio='{{ image.aspect_ratio }}'
+            data-sizes='auto'
+            data-srcset='{%- render 'srcset-for-image', image: image -%}'
           >
         {%- else -%}
           <carousel-component
@@ -92,7 +114,15 @@
                     <div class='carousel__slide'>
                       <img
                         class='image lazyload'
-                        {% render 'image-attributes', image: collection.image %}
+                        loading='lazy'
+                        src='{{ image | img_url: 'master' }}'
+                        alt='{{ image.alt }}'
+                        width='{{image.width}}'
+                        height='{{image.height}}'
+                        style='object-position: {{ image.presentation.focal_point }};'
+                        data-aspectratio='{{ image.aspect_ratio }}'
+                        data-sizes='auto'
+                        data-srcset='{%- render 'srcset-for-image', image: image -%}'
                       >
                     </div>
                   {%- endif -%}
@@ -122,7 +152,9 @@
           {%- if show_collection_title and title != blank -%}
             <h5 class='collection-hero__title'>{{ title }}</h5>
           {%- endif -%}
-          {% if section.settings.collection_title != blank %}
+          {% if collection.title != blank %}
+            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ collection.title }}</span>
+          {% elsif section.settings.collection_title != blank %}
             <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ section.settings.collection_title }}</span>
           {% endif %}
           {%- if show_collection_description and description != blank -%}
@@ -178,8 +210,7 @@
         }
       ],
       "default": "white",
-      "label": "t:sections.general_section_settings.color_scheme_label",
-      "info": "t:sections.general_section_settings.color_scheme_tip"
+      "label": "t:sections.general_section_settings.color_scheme_label"
     },
     {
       "type": "checkbox",
