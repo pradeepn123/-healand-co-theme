@@ -212,11 +212,12 @@
       {%- endif -%}
       
       <div class='shop__products' id='ShopProducts'>
+        {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
         {% for block in section.blocks %}
           {% if block.settings.bundles_products != blank %}
-            <div class="{{ block.settings.bundles_collection_title | downcase }}-section" style="position: relative;">
+            <div class="{{ block.settings.bundles_title | downcase }}-section" style="position: relative;">
               <div class="section_seperation"></div>
-              <h4 class="collection_title">{{ block.settings.bundles_collection_title | upcase }}</h4>
+              <h4 class="collection_title">{{ block.settings.bundles_title | upcase }}</h4>
               <div class='shop__products-grid-wrap'>
                 <div class='shop__products-grid'>
                   {%- for product in block.settings.bundles_products -%}
@@ -258,7 +259,6 @@
                     </div>
                   {%- endfor -%}
                 </div>
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
               </div>
             {%- else -%}
               {%- if active_filter_count > 0 -%}
@@ -660,7 +660,7 @@
   "blocks": [
     {
       "type": "select",
-      "name": "Custom collection block",
+      "name": "Bundle block",
       "limit": 1,
       "settings": [
         {
@@ -674,7 +674,7 @@
         }, 
         {
           "type": "text",
-          "id": "bundles_collection_title",
+          "id": "bundles_title",
           "label": "Bundle section title",
           "default": "Bundles"
         }
