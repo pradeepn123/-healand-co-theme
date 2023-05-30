@@ -72,7 +72,7 @@
     font-size: 20px;
     text-transform: uppercase;
     padding: 0;
-    background: var(--meta-background-color);
+    background: #EE5C4C;
 }
 .product_quantity_button .product_main_dynamic_btn{
     width: 100%;
@@ -102,9 +102,30 @@
 .product-card__btns.product-card__btns--overflowed .product-card__btn-icon{
     display: none;
 }
+.upsell_product_main_wrap .product-card .product-card__details .product-card__info .product-card__actions .product-card__btn .product-card__btn-label-text{
+    margin: 0;
+}
+.upsell_product_main_wrap .product-card .product-card__details .product-card__info .product-card__actions .product-card__btn{
+    background: #EE5C4C;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+.product-thumbnail-carousel__btn--under-prev{
+    left: -1.6rem;
+    background: #EE5C4C;
+    color: #ffffff;
+}
+.product-thumbnail-carousel__btn--under-next{
+    right: -1.6rem;
+    background: #EE5C4C;
+    color: #ffffff;
+}
 
 /* Product Tabs and Accordion */
 @media screen and (min-width: 768px) {
+    .carousel-btn:not([disabled]):hover{
+        background: #EE5C4C;
+    }
     .product--with-desktop-media-carousel .product__info-wrapper .product__info .product-general-info-block h1{
         font-size: var(--gsc-heading-5-desktop-font-size);
         line-height: var(--gsc-heading-5-desktop-line-height);

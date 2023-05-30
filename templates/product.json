@@ -3,12 +3,6 @@
     "main": {
       "type": "product",
       "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "disabled": true,
-          "settings": {
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -21,22 +15,8 @@
             "product_type_color": "#ee5c4c"
           }
         },
-        "inventory_status": {
-          "type": "inventory_status",
-          "disabled": true,
-          "settings": {
-            "show_inventory_status": "always",
-            "inventory_threshhold": 11,
-            "text_when_many_in_stock": "Many in stock",
-            "text_when_few_in_stock": "Act now, few in stock!",
-            "show_inventory_counter": false,
-            "high_level_indicator_color": "#00c853",
-            "low_level_indicator_color": "#ff3d3d"
-          }
-        },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "title": "",
             "block_style": "static",
@@ -82,67 +62,26 @@
             "enable_gift_card": false
           }
         },
-        "c9188b10-e29c-4c63-b385-a3faa860d64a": {
-          "type": "information_tag",
-          "disabled": true,
-          "settings": {
-            "tag_style": "solid",
-            "heading": "Information tag",
-            "body": "<p>Tell more about your product, add care instructions, country of origin, or manufacturer information.<\/p>",
-            "content_alignment": "left",
-            "icon": "none",
-            "icon_position": "inline",
-            "tag_background_color": "#e9ffcd",
-            "tag_text_color": "#141416",
-            "enable_drawer": true,
-            "drawer_text": "",
-            "drawer_page": "",
-            "drawer_media_size": 60
-          }
-        },
-        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5": {
-          "type": "product_drawer_with_tabs",
-          "disabled": true,
-          "settings": {
-            "popup_link_text": "Drawer with tabs",
-            "btn_style": "text",
-            "icon": "shipping-box",
-            "button_background_color": "#e9ffcd",
-            "button_text_color": "#141416",
-            "tab_1_title": "Tab 1",
-            "tab_1_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
-            "tab_1_page": "",
-            "tab_2_title": "Tab 2",
-            "tab_2_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
-            "tab_2_page": "",
-            "tab_3_title": "Tab 3",
-            "tab_3_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
-            "tab_3_page": ""
-          }
-        },
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3": {
           "type": "upsell_products",
           "settings": {
             "img_ratio": "square",
             "upsell_products": [
               "immunity-bundle-ca"
-            ]
+            ],
+            "show_add_to_cart": true
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
-        "inventory_status",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
         "price",
         "quantity_selector",
         "buy_buttons",
-        "c9188b10-e29c-4c63-b385-a3faa860d64a",
-        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5",
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
       "settings": {
@@ -221,7 +160,7 @@
         "color_scheme": "#faf5ef",
         "tabs_color": "#ea6852",
         "enable_background_around_container": true,
-        "container_size": "xsmall",
+        "container_size": "small",
         "section_spacing_top": 96,
         "section_spacing_bottom": 96,
         "expand_first_collapsible_row": false
@@ -484,8 +423,8 @@
       "settings": {
         "from_metafields": true,
         "section_heading": "FAQ's",
-        "section_heading_color": "#FFFFFF",
-        "section_bg_heading_color": "#789F91",
+        "section_heading_color": "#ffffff",
+        "section_bg_heading_color": "#789f91",
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",

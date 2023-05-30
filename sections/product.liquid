@@ -11,6 +11,7 @@
   assign sectionIdWithMainSectionPrefix = section.id | append: '---MainSection'
 
   assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
+  assign colorsMetafield = product.metafields.custom.color_schema.value
 -%}
 
 {% capture css %}
@@ -19,6 +20,12 @@
         --gsc-section-spacing-top: {{ section_spacing_top }}px;
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
+    {% if colorsMetafield %}
+      .custom-app-block .spr-form-actions .btn, .btn--solid{
+        background: var(--meta-background-color);
+        color: var(--meta-text-color);
+      }
+    {% endif %}
   {% endstyle %}
 {% endcapture %}
 

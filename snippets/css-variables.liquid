@@ -16,7 +16,9 @@
       --gsc-cart-drawer-product-title-scale: {{ settings.product_card_font_scale | times: 0.01 }};
 
       /* product card */
+      
       --meta-background-color: {{product.metafields.custom.color_schema.value.highlighted_background_color}};
+      --meta-text-color: {{product.metafields.custom.color_schema.value.highlighted_text_color}};
 
       --gsc-product-card-title-font-family: {{ settings.product_card_font_family.family }}, {{ settings.product_card_font_family.fallback_families }};
       --gsc-product-card-title-font-style: {{ settings.product_card_font_family.style }};
