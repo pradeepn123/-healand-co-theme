@@ -91,7 +91,7 @@
         "heading_size": "h2",
         "alignment": "center",
         "shop_all_title": "Shop all",
-        "shop_all_url": "#",
+        "shop_all_url": "shopify:\/\/collections",
         "collection_list": [
           "products",
           "quick-order",
@@ -176,7 +176,7 @@
         "headings_size": "h2",
         "body_sizes": "body3",
         "text_link": "About us",
-        "url_link": "",
+        "url_link": "shopify:\/\/pages\/about",
         "button_style": "solid"
       }
     },
@@ -197,7 +197,7 @@
         "featured_products": [
 
         ],
-        "img_ratio": "nature",
+        "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 16,
         "desktop_columns": 5,

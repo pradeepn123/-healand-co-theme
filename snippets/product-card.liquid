@@ -535,6 +535,7 @@
         {%- endif -%}
         <div class='product-card__info'>
           {% assign product_titles = product.title | split: ' | ' %}
+          <p class="product_featured_tag">{{ product.metafields.custom.featured_tag }}</p>
           <a
             class='product-card__title unstyled-link'
             href='{{ product.url }}'
@@ -548,6 +549,12 @@
             </a>
           {%- endif -%}
 
+          {% assign benefits = product.metafields.custom.benefits.value %}
+          <p class="product_benefits">
+            {% for elem in benefits %}
+              {{ elem }}{% unless forloop.last %} + {% endunless %}
+            {% endfor %}
+          </p>
           <div class='product-card__price'>
             <div class='product-card__price-cost'>
               <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and product.compare_at_price > price %} product-card__price-item--highlight-sale{% endif %}'>
