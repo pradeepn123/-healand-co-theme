@@ -7,6 +7,12 @@
             render 'product-app-block', product: product, section: section, block: block, sectionId: sectionId
           when 'vendor'
             render 'product-vendor-block', product: product, section: section, block: block, sectionId: sectionId
+          when 'product_type'
+            render 'product-type', product: product, section: section, block: block, sectionId: sectionId
+          when 'upsell_products'
+            render 'product-upsell-block', product: product, section: section, block: block, sectionId: sectionId
+          when 'prod_additional_details'
+            render 'product-additional-details', product: product, section: section, block: block, sectionId: sectionId
           when 'title'
             render 'product-title-block', product: product, section: section, block: block, sectionId: sectionId
           when 'sku'
