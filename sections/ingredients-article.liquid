@@ -1,0 +1,81 @@
+{% style %}
+    .articles > .article_list::before{
+        background-image: url('https://cdn.shopify.com/s/files/1/0436/8993/5006/{{ section.settings.list_icon }}');
+    }
+{% endstyle %}
+{% assign container_size = section.settings.container_size %}
+<div class="container container--{{ container_size }} ingredients_articles_section">
+    <div class="ingredients_articles_wrapper">
+        <h2 class="articles_title" style="font-size: {{ section.settings.articles_section_title_font_size }}px;">{{ section.settings.section_title }}</h2>
+        <ul class="articles">
+            {% for ingredient_article in page.metafields.custom.article_list.value %}
+                <li class="article_list">
+                    <div>
+                        <p>{{ ingredient_article.name }}</p>
+                        <p>{{ ingredient_article.source }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Ingredients - Article",
+        "settings": [
+            {
+                "type": "select",
+                "id": "container_size",
+                "options": [
+                  {
+                    "value": "full-screen",
+                    "label": "t:sections.general_section_settings.container_size.screen_width_option"
+                  },
+                  {
+                    "value": "page-width",
+                    "label": "t:sections.general_section_settings.container_size.page_width_option"
+                  },
+                  {
+                    "value": "large",
+                    "label": "t:sections.general_section_settings.container_size.large_width_option"
+                  },
+                  {
+                    "value": "medium",
+                    "label": "t:sections.general_section_settings.container_size.medium_width_option"
+                  },
+                  { 
+                    "value": "small",
+                    "label": "t:sections.general_section_settings.container_size.small_width_option"
+                  }
+                ],
+                "default": "full-screen",
+                "label": "t:sections.general_section_settings.container_size.label"
+            },
+            {
+                "type": "text",
+                "id": "section_title",
+                "label": "Section title"
+            },
+            {
+                "type": "range",
+                "id": "articles_section_title_font_size",
+                "label": "Articles section title font size",
+                "min": 10,
+                "max": 100,
+                "step": 1,
+                "default": 24
+            },
+            {
+                "type": "image_picker",
+                "id": "list_icon",
+                "label": "Custom list icon"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Ingredients - Article"
+            }
+        ]
+    }
+{% endschema %}
