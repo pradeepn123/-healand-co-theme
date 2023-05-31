@@ -6,6 +6,7 @@
         margin-bottom: 4.8rem;
         padding-bottom: 0;
         border-bottom: 1px solid #D9D9D9;
+        column-gap: 0;
     }
 }
 
@@ -40,6 +41,11 @@
         flex: 1 0 45%;
 }
 
+@media screen and (min-width: 767px) {
+    .custom-product-details .product-page-tabs .product-details__tab-names .product-details__tab-name {
+        padding: 5px 35px;
+    }
+}
 @media screen and (max-width: 767px) {
     .custom-product-details .product-page-tabs {
         display: none;

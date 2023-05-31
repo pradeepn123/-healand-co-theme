@@ -9,6 +9,7 @@
             "color_scheme": "custom-2",
             "desktop_img": "shopify:\/\/shop_images\/banner.png",
             "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
+            "video": "shopify:\/\/files\/videos\/pexels-pressmaster-3195394-3840x2160-25fps.mp4",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "caption": "",
@@ -76,7 +77,7 @@
         "transition_style": "swipe",
         "enable_autoplay": false,
         "autoplay_interval": 10,
-        "show_button_for_autoplay": false
+        "show_button_for_autoplay": true
       }
     },
     "af64247e-1121-4d64-91e7-f013b0ab11b0": {
