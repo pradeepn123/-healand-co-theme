@@ -114,7 +114,6 @@
         },
         "6fc95389-dcf8-44ec-8c00-31fd1a58877b": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
             "title": "Content tab",
             "icon": "none",
@@ -159,10 +158,11 @@
         "custom_class": "custom-product-details",
         "color_scheme": "#faf5ef",
         "tabs_color": "#ea6852",
+        "tabs_text_color": "#FFF",
         "enable_background_around_container": true,
         "container_size": "small",
-        "section_spacing_top": 96,
-        "section_spacing_bottom": 96,
+        "section_spacing_top": 40,
+        "section_spacing_bottom": 40,
         "expand_first_collapsible_row": false
       }
     },
