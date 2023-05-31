@@ -1,4 +1,4 @@
-.product--fetaures--main {
+.product--features--main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,25 +6,25 @@
     
 }
  
-.product--fetaures--main .product--fetaures--parent {
+.product--features--main .product--features--parent {
     width: 50%;
 }
 
-.product--fetaures--main .product--fetaures--heading {
+.product--features--main .product--features--heading {
     max-width: 78%;
     padding-bottom: 7.6rem;
 }
 
-.product--fetaures--main .product--fetaures--heading h2 {
+.product--features--main .product--features--heading h2 {
     font-weight: 700;
     line-height: 52px;
 }
 
-.product--fetaures--main .product--fetaures--content .content {
+.product--features--main .product--features--content .content {
     margin-bottom: 5.6rem;
 }
 
-.product--fetaures--main .content span,.contents span {
+.product--features--main .content span,.contents span {
     border: 1px solid #000;
     padding: 7px 7px 7px 10px;
     margin-right: 14px;
@@ -32,44 +32,44 @@
     border-radius: 50%;
 }
 
-.product--fetaures--main .product--fetaures--content:not(:last-child) {
+.product--features--main .product--features--content:not(:last-child) {
     margin-bottom: 0;
 }
 
-.product--fetaures--main .product--fetaures--content p {
+.product--features--main .product--features--content p {
     font-weight: 400;
 }
 
-.product--fetaures--main .product--fetaures--img {
+.product--features--main .product--features--img {
     width: 50%;
     height: fit-content;
 }
 
-.product--fetaures--main .product--fetaures--img img {
+.product--features--main .product--features--img img {
     width: 100%;
     height: 100%;
 }
 
 @media(max-width:991px) {
-    .product--fetaures--main .product--fetaures--heading {
+    .product--features--main .product--features--heading {
         max-width: unset;
     }
 }
 
 @media(max-width:768px) {
-     .product--fetaures--main {
+     .product--features--main {
         flex-direction: column-reverse;
     }
 
-    .product--fetaures--main .product--fetaures--parent {
+    .product--features--main .product--features--parent {
         width: 100%;
         background: #fff;
     }
 
-    .product--fetaures--main .product--fetaures--img {
+    .product--features--main .product--features--img {
         width: 100%;
     }
-    .product--fetaures--main .product--fetaures--heading {
+    .product--features--main .product--features--heading {
         padding: 5rem 0 3.2rem 0;
     }
 }
@@ -77,25 +77,25 @@
 @media(max-width:520px) {
   
 
-    .product--fetaures--main .product--fetaures--heading h2 {
+    .product--features--main .product--features--heading h2 {
         font-size: 24px !important;
         line-height: 32px;
     }
 
-    .product--fetaures--main .product--fetaures--content p {
+    .product--features--main .product--features--content p {
         font-size: 18px !important;
     }
 
-    .product--fetaures--main  .product--fetaures--content .content {
+    .product--features--main  .product--features--content .content {
         margin-bottom: 2.6rem;
     }
 
-    .product--fetaures--main .content span {
+    .product--features--main .content span {
         font-size: 18px;
     }
 }
 @media(min-width:769px){
-    .product--fetaures--main {
+    .product--features--main {
         padding: 10px 0;
     }
 }

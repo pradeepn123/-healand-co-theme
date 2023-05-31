@@ -6,14 +6,14 @@
    margin-top: {{ option.pad_top }}px;
     margin-bottom: {{ option.pad_btm }}px;
   }
-  .product--fetaures--main{
+  .product--features--main{
         background: {{ option.section_bg }};
     }
-    .product--fetaures--information .product--fetaures--heading h2{
+    .product--features--information .product--features--heading h2{
       font-size : {{ option.title_font_size }}px;
       color: {{ option.title_color }};
     }
-    .product--fetaures--content p{
+    .product--features--content p{
       font-size: {{ option.content_font }}px;
       color: {{ option.content_color }};
     }
@@ -23,14 +23,14 @@
 
 {% assign metaData = product.metafields.custom.text_with_image.value %}
 
-<div class="product--fetaures--main section--{{ section.id }}">
-  <div class="container product--fetaures--parent">
-    <div class="product--fetaures">
-      <div class="product--fetaures--information">
-        <div class="product--fetaures--heading">
+<div class="product--features--main section--{{ section.id }}">
+  <div class="container product--features--parent">
+    <div class="product--features">
+      <div class="product--features--information">
+        <div class="product--features--heading">
           <h2>{{ metaData.title }}</h2>
         </div>
-        <div class="product--fetaures--content">
+        <div class="product--features--content">
           <p>{{ metaData.content }}</p>
           <p>{{ metaData.content_2 }}</p>
           <p>{{ metaData.content_3 }}</p>
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-  <div class="container product--fetaures--img">
+  <div class="container product--features--img">
     {% if metaData.image %}
       <img src="{{ metaData.image | img_url: 'master' }}">
     {% endif %}
