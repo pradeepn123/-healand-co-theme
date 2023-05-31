@@ -1,0 +1,13 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{% assign prod_additional_details = product.metafields.custom.product_additional_features_block.value %}
+
+<div class='product-additional-details' {{ block.shopify_attributes }}>
+    <div class="product-additional-details-child">
+        {% for item in prod_additional_details %}
+            <div class="product-additional-details-iandt loop-{{ forloop.index }}">
+                    <img src="{{ item.img.value | img_url: 'master' }}" alt="Top Notes">
+                    <p>{{ item.add_description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

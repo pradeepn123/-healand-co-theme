@@ -38,121 +38,153 @@
   endif
 -%}
 
-{%- if product != blank -%}
-  <div class='' {{ block.shopify_attributes }}>
-    <product-form data-product-id='{{ product.id }}' id='product-form-component-{{ product.id }}-{{ sectionId }}'>
-      {%- form 'product',
-        product,
-        id: product_form_id,
-        class: 'product-form',
-        novalidate: 'novalidate',
-        data-type: 'add-to-cart-form'
-      -%}
-        {% if enable_gift_card %}
-          {% render 'gift-card-recipient-form', product: product, form: form, section: section, block: block %}
-        {% endif %}
-
+<div class="product_quantity_button">
+  {%- if product != blank -%}    
+    <div class='product-quantity__wrap' id='product-quantity-{{ product.id }}-{{ sectionId }}' {{ block.shopify_attributes }}>
+      <label class='product-quantity__label hidden' for='Quantity-{{ product.id }}-{{ sectionId }}'>
+        {{ 'products.product.quantity.label' | t }}
+      </label>
+      <quantity-component
+        class='quantity product-quantity__quantity'
+        data-stock='{% if available == true %}{% if product.selected_or_first_available_variant.inventory_quantity > 0 %}{{ product.selected_or_first_available_variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}'
+      >
+        <quantity-btn class='quantity__btn' name='minus' data-action='minus' type='button' disabled tabindex="0">
+          {%- render 'icon', icon_name: 'minus', class: "quantity__btn-icon" -%}
+        </quantity-btn>
         <input
-          type='hidden'
-          name='id'
-          value='{{ selected_variant.id }}'
-          data-product-form-variant
-          id='{{ product_form_id }}-IdInput-{{ form.id }}'
+          class='quantity__input'
+          form='product-form-{{ product.id }}-{{ sectionId }}'
+          id='Quantity-{{ product.id }}-{{ sectionId }}'
+          min='{% if available %}1{% else %}0{% endif %}'
+          name='quantity'
+          type='number'
+          value='{% if available %}1{% else %}0{% endif %}'
+          data-quantity-input
+          {% if available == false %}disabled{% endif %}
         >
-        {{ form | payment_terms }}
-        <div class='product-form__btns'>
-          {% if template.name == 'product' and sectionId contains '---MainSection' %}
-            <div>
-              <div class='product-form__btn-wrapper'>
-                <button
-                  type='submit'
-                  name='add'
-                  id='product-buy-btn-{{ product.id }}-{{ sectionId }}'
-                  class='product-form__btn btn btn--lg {% if show_dynamic_checkout == true %}btn--outline{% else %}btn--solid{% endif %}'
-                  {% if available == false %}
-                    disabled
-                  {% endif %}
-                  aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
-                >
-                  <span data-button-text>
-                    {%- if available -%}
-                      {{ add_to_cart_label }}
-                    {%- else -%}
-                      {{ sold_out_label }}
-                    {%- endif -%}
-                  </span>
-                  {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
-                </button>
-              </div>
-            </div>
-
-            <product-form-button class='product-form__mobile-sticky-button'>
-              <div
-                class='product-form__btn-wrapper product-form__btn-wrapper--sticky-mobile-button'
-              >
-                <button
-                  type='submit'
-                  name='add'
-                  id='sticky-product-buy-btn-{{ product.id }}-{{ sectionId }}'
-                  class='product-form__btn btn btn--lg btn--solid'
-                  {% if available == false %}
-                    disabled
-                  {% endif %}
-                  data-product-form-button
-                  aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
-                >
-                  <span data-button-text>
-                    {%- if available -%}
-                      {{ add_to_cart_label }}
-                    {%- else -%}
-                      {{ sold_out_label }}
-                    {%- endif -%}
-                  </span>
-                  {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
-                </button>
-              </div>
-            </product-form-button>
-          {%- else -%}
-            <button
-              type='submit'
-              name='add'
-              id='product-buy-btn-{{ product.id }}-{{ sectionId }}'
-              class='product-form__btn btn btn--lg {% if show_dynamic_checkout == true %}btn--outline{% else %}btn--solid{% endif %}'
-              {% if available == false %}
-                disabled
-              {% endif %}
-              aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
-            >
-              <span data-button-text>
-                {%- if available -%}
-                  {{ add_to_cart_label }}
-                {%- else -%}
-                  {{ sold_out_label }}
-                {%- endif -%}
-              </span>
-              {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
-            </button>
+        <quantity-btn class='quantity__btn' name='plus' type='button' data-action='plus' {% if available == false %}disabled{% endif %} tabindex="0">
+          {%- render 'icon', icon_name: 'plus', class: "quantity__btn-icon" -%}
+        </quantity-btn>
+      </quantity-component>
+    </div>    
+  {%- endif -%}
+  
+  {%- if product != blank -%}
+    <div class='product_main_dynamic_btn' {{ block.shopify_attributes }}>
+      <product-form data-product-id='{{ product.id }}' id='product-form-component-{{ product.id }}-{{ sectionId }}'>
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'product-form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          {% if enable_gift_card %}
+            {% render 'gift-card-recipient-form', product: product, form: form, section: section, block: block %}
           {% endif %}
 
-          {%- if show_dynamic_checkout == true -%}
-            <div class='dynamic-checkout-buttons'>
-              {{ form | payment_button }}
-            </div>
-          {%- endif -%}
-        </div>
-      {%- endform -%}
-    </product-form>
+          <input
+            type='hidden'
+            name='id'
+            value='{{ selected_variant.id }}'
+            data-product-form-variant
+            id='{{ product_form_id }}-IdInput-{{ form.id }}'
+          >
+          {{ form | payment_terms }}
+          <div class='product-form__btns'>
+            {% if template.name == 'product' and sectionId contains '---MainSection' %}
+              <div>
+                <div class='product-form__btn-wrapper'>
+                  <button
+                    type='submit'
+                    name='add'
+                    id='product-buy-btn-{{ product.id }}-{{ sectionId }}'
+                    class='product-form__btn btn btn--lg {% if show_dynamic_checkout == true %}btn--outline{% else %}btn--solid{% endif %}'
+                    {% if available == false %}
+                      disabled
+                    {% endif %}
+                    aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
+                  >
+                    <span data-button-text>
+                      {%- if available -%}
+                        {{ add_to_cart_label }}
+                      {%- else -%}
+                        {{ sold_out_label }}
+                      {%- endif -%}
+                    </span>
+                    {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+                  </button>
+                </div>
+              </div>
 
-    {%- if show_pickup_availability == true -%}
-      <pickup-availability
-        class='pickup-availability body-font-weight-from-global-settings'
-        data-base-url='{{ shop.url }}{{ routes.root_url }}'
-        data-variant-id='{{ selected_variant.id }}'
-        data-has-only-default-variant='{{ product.has_only_default_variant }}'
-        id='product-pickup-availability-{{ product.id }}-{{ sectionId }}'
-      >
-        <pickup-availability-content class='pickup-availability-info'> </pickup-availability-content>
-      </pickup-availability>
-    {%- endif -%}
-  </div>
-{%- endif -%}
+              <product-form-button class='product-form__mobile-sticky-button'>
+                <div
+                  class='product-form__btn-wrapper product-form__btn-wrapper--sticky-mobile-button'
+                >
+                  <button
+                    type='submit'
+                    name='add'
+                    id='sticky-product-buy-btn-{{ product.id }}-{{ sectionId }}'
+                    class='product-form__btn btn btn--lg btn--solid'
+                    {% if available == false %}
+                      disabled
+                    {% endif %}
+                    data-product-form-button
+                    aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
+                  >
+                    <span data-button-text>
+                      {%- if available -%}
+                        {{ add_to_cart_label }}
+                      {%- else -%}
+                        {{ sold_out_label }}
+                      {%- endif -%}
+                    </span>
+                    {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+                  </button>
+                </div>
+              </product-form-button>
+            {%- else -%}
+              <button
+                type='submit'
+                name='add'
+                id='product-buy-btn-{{ product.id }}-{{ sectionId }}'
+                class='product-form__btn btn btn--lg {% if show_dynamic_checkout == true %}btn--outline{% else %}btn--solid{% endif %}'
+                {% if available == false %}
+                  disabled
+                {% endif %}
+                aria-label='{%- if available -%}{{ add_to_cart_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}'
+              >
+                <span data-button-text>
+                  {%- if available -%}
+                    {{ add_to_cart_label }}
+                  {%- else -%}
+                    {{ sold_out_label }}
+                  {%- endif -%}
+                </span>
+                {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+              </button>
+            {% endif %}
+
+            {%- if show_dynamic_checkout == true -%}
+              <div class='dynamic-checkout-buttons'>
+                {{ form | payment_button }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </product-form>
+
+      {%- if show_pickup_availability == true -%}
+        <pickup-availability
+          class='pickup-availability body-font-weight-from-global-settings'
+          data-base-url='{{ shop.url }}{{ routes.root_url }}'
+          data-variant-id='{{ selected_variant.id }}'
+          data-has-only-default-variant='{{ product.has_only_default_variant }}'
+          id='product-pickup-availability-{{ product.id }}-{{ sectionId }}'
+        >
+          <pickup-availability-content class='pickup-availability-info'> </pickup-availability-content>
+        </pickup-availability>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

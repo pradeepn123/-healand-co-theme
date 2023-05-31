@@ -22,7 +22,7 @@ p, a, li, .rtl p, .caption, .rte, label, input, textarea, .product-card__price-i
 h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     font-family: 'BrownStd-Bold' !important;
 }
-.btn, a.product-card__title, .footer__title{
+.btn, a.product-card__title, .footer__title, b, strong{
     font-family: 'BrownStd-Bold' !important;
 }
 

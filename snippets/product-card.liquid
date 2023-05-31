@@ -218,79 +218,7 @@
         >
           {{- 'product-4' | placeholder_svg_tag: placeholder_class -}}
         </div>
-      {%- endif -%}
-      <div class='product-card__actions {% if settings.show_button_on_hover %} product-card__actions--visible-on-hover{% endif %}'>
-        {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
-          <product-media-tabs class='product-card__tabs' data-product-card-media-tabs>
-            {%- for img in images limit: 5 -%}
-              {%- if img.id != featured_media.id -%}
-                <product-media-tab class='product-card__tab' data-id='{{ forloop.index }}'></product-media-tab>
-              {%- endif -%}
-            {%- endfor -%}
-          </product-media-tabs>
-        {%- endif -%}
-        {%- if settings.show_quick_view == true or settings.show_add_to_cart == true -%}
-          <div
-            class='product-card__btns {% if desktop_button_style == 'with_labels' %} product-card__btns--with-text-buttons{% else %} product-card__btns--with-icon-buttons{% endif %}'
-            data-product-card-buttons
-          >
-            {%- if settings.show_add_to_cart == true and product.variants.size == 1 and product.available -%}
-              <product-form
-                class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
-                data-product-id='{{ product.id }}'
-                id='product-form-component-{{ product.id }}-{{ sectionId }}'
-              >
-                {%- form 'product', product, data-type: 'add-to-cart-form' -%}
-                  <input
-                    type='hidden'
-                    name='id'
-                    value='{{ product.selected_or_first_available_variant.id }}'
-                    data-product-form-variant
-                    id='{{ product_form_id }}-IdInput-{{ form.id }}'
-                  >
-                  <button
-                    type='submit'
-                    name='add'
-                    class='btn btn--solid product-card__btn '
-                    tabindex='-1'
-                    style='display: flex;'
-                    data-product-card-button
-                    aria-label='{{- 'cards.product_card.add_to_cart_button_label' | t -}}'
-                  >
-                    <span style='display: flex; align-items: center; justify-content: center;'>
-                      {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
-                      <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
-                        {{- 'cards.product_card.add_to_cart_button_label' | t -}}
-                      </span>
-                    </span>
-                    {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
-                  </button>
-                {%- endform -%}
-              </product-form>
-            {%- endif -%}
-            {%- if settings.show_quick_view == true -%}
-              <sidebar-button
-                class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
-                id='product-card-quick-view-btn-{{ product.id }}'
-              >
-                <div
-                  class='btn btn--solid product-card__btn'
-                  data-sidebar-button
-                  data-product-card-quick-view-button
-                  data-product-card-button
-                  data-sidebar-id='Quick-view'
-                  tabindex='-1'
-                >
-                  {%- render 'product-card-icon-eye', class: 'product-card__btn-icon' -%}
-                  <span class='product-card__btn-label-text' data-product-card-button-text>
-                    {{- 'cards.product_card.quick_view_button_label' | t -}}
-                  </span>
-                </div>
-              </sidebar-button>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
-      </div>
+      {%- endif -%}      
 
       <div class='product-card__badges {% if settings.edge_rounding_degree == 'extra' %} product-card__badges--with-extra-rounded-badges{% endif %}'>
         {%- if product_card_show_sold_out_badge == true -%}
@@ -602,7 +530,80 @@
               {{ colors.size | pluralize: 'Color', 'Colors' }}
             </div>
           {%- endif -%}
-
+          
+          <div class='product-card__actions {% if settings.show_button_on_hover %} product-card__actions--visible-on-hover{% endif %}'>
+            {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
+              <product-media-tabs class='product-card__tabs' data-product-card-media-tabs>
+                {%- for img in images limit: 5 -%}
+                  {%- if img.id != featured_media.id -%}
+                    <product-media-tab class='product-card__tab' data-id='{{ forloop.index }}'></product-media-tab>
+                  {%- endif -%}
+                {%- endfor -%}
+              </product-media-tabs>
+            {%- endif -%}
+            
+            {%- if settings.show_quick_view == true or settings.show_add_to_cart == true or addtocartbutton == true -%}
+              <div
+                class='product-card__btns {% if desktop_button_style == 'with_labels' %} product-card__btns--with-text-buttons{% else %} product-card__btns--with-icon-buttons{% endif %}'
+                data-product-card-buttons
+              >
+                {%- if addtocartbutton or settings.show_add_to_cart == true and product.variants.size == 1 and product.available -%}
+                  <product-form
+                    class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
+                    data-product-id='{{ product.id }}'
+                    id='product-form-component-{{ product.id }}-{{ sectionId }}'
+                  >
+                    {%- form 'product', product, data-type: 'add-to-cart-form' -%}
+                      <input
+                        type='hidden'
+                        name='id'
+                        value='{{ product.selected_or_first_available_variant.id }}'
+                        data-product-form-variant
+                        id='{{ product_form_id }}-IdInput-{{ form.id }}'
+                      >
+                      <button
+                        type='submit'
+                        name='add'
+                        class='btn btn--solid product-card__btn '
+                        tabindex='-1'
+                        style='display: flex;'
+                        data-product-card-button
+                        aria-label='{{- 'cards.product_card.add_to_cart_button_label' | t -}}'
+                      >
+                        <span style='display: flex; align-items: center; justify-content: center;'>
+                          {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
+                          <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
+                            {{- 'cards.product_card.add_to_cart_button_label' | t -}}
+                          </span>
+                        </span>
+                        {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                {%- endif -%}
+                {%- if settings.show_quick_view == true -%}
+                  <sidebar-button
+                    class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
+                    id='product-card-quick-view-btn-{{ product.id }}'
+                  >
+                    <div
+                      class='btn btn--solid product-card__btn'
+                      data-sidebar-button
+                      data-product-card-quick-view-button
+                      data-product-card-button
+                      data-sidebar-id='Quick-view'
+                      tabindex='-1'
+                    >
+                      {%- render 'product-card-icon-eye', class: 'product-card__btn-icon' -%}
+                      <span class='product-card__btn-label-text' data-product-card-button-text>
+                        {{- 'cards.product_card.quick_view_button_label' | t -}}
+                      </span>
+                    </div>
+                  </sidebar-button>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
           
         </div>
       </div>

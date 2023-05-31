@@ -36,8 +36,8 @@
 
     {% if colorsMetafield %}
       .product-page-tabs .product-details__tab-names .product-details__tab-name.selected{
-        background-color: {{ colorsMetafield.highlighted_background_color }};
-        color: {{ colorsMetafield.highlighted_text_color }};
+        background: var(--meta-background-color);
+        color: var(--meta-text-color);
       }
     {% else %}
       .product-page-tabs .product-details__tab-names .product-details__tab-name.selected{
@@ -158,7 +158,7 @@
                               {{ block.shopify_attributes }} >
                                 <div class='rte product-details__rte text-container'>
                                   <div class="text-left">
-                                    {{ metafieldsData.content_left_column }} !! No Hello !!
+                                    {{ metafieldsData.content_left_column }}
                                   </div>
                                   <div class="text-right">
                                     {{ metafieldsData.content_right_column }}
