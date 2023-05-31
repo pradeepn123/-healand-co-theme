@@ -1,5 +1,5 @@
 .ingredients_wrapper{
-    padding: 0 40px 40px;
+    padding: 0 15px 20px;
 }
 .ingredients_wrapper .img_wrap_text_info{
     display: flex;
@@ -13,21 +13,73 @@
 .ingredients_wrapper .img_wrap_text_info .img_wrap img{
     border: 10px solid #fff;
     border-radius: 50%;
-    width: 160px;
+    width: 90px;
     height: 100%;
 }
 .ingredients_wrapper .key_ingre_description{
     font-size: 16px;
 }
-@media(min-width:768px){
-    .key_ingredient_section{
-        overflow: visible;
-    }
-    .card-carousel__viewport{
-        overflow: visible;
-    }
+.img_wrap_text_info .key_ingre_title{
+    padding-top: 1em;
 }
-@media(min-width:1200px){
+.img_wrap_text_info .key_ingre_title h4{
+    font-size: 18px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+.main_title_key h4{
+    margin-bottom: 6rem;
+}
+.key-list__header--center{
+    text-align:center;
+}
+
+/*carousel arrows*/
+
+.key_ingredient_section .main_title_key {
+    display: flex;
+    justify-content: center;
+    gap: 0.8em;
+}
+.key_ingredient_section .main_title_key .card-carousel__carousel-btn{
+    transform: none;
+    position: relative;
+    top: -0.6em;
+}
+.key_ingredient_section .main_title_key .card-carousel__carousel-btn--prev{
+    right: unset;
+    left: unset;
+}
+.key_ingredient_section .main_title_key .card-carousel__carousel-btn--next{
+    right: unset;
+    left: unset;
+}
+.key_ingredient_section .main_title_key h4{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+@media(min-width:768px){
+    .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
+        top: -0.4em;
+    }
+    .key_ingredient_section .main_title_key{
+        gap: 2.6em;
+    }
+    .main_title_key h4{
+        margin-bottom: 8rem;
+    }    
+}
+@media(min-width:1200px){    
+    .key_ingredient_section .main_title_key h4{
+        font-size: 40px;
+    }
+    .ingredients_wrapper .img_wrap_text_info .img_wrap img{
+        width: 160px;
+    }
+    .ingredients_wrapper{
+        padding: 0 40px 40px;
+    }
     .ingredients_wrapper .img_wrap_text_info{
         padding-bottom: 30px
     }
@@ -36,8 +88,7 @@
     }
     .img_wrap_text_info .key_ingre_title h4{
         font-size: 20px;
-        line-height: 1.2;
-        color: #ffffff;
+        line-height: 1.2;        
     }
     .ingredients_wrapper .key_ingre_description{
         font-size: 18px;

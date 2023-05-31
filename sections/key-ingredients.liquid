@@ -10,7 +10,8 @@
   assign tablet_carousel_percent_width = 100.0
 
   assign title = options.title
-
+  assign heading_size = options.heading_size
+  assign alignment = options.alignment
   assign section_spacing_top = options.section_spacing_top
   assign section_spacing_bottom = options.section_spacing_bottom
   
@@ -45,7 +46,12 @@
         --gsc-section-spacing-top: {{ section_spacing_top }}px;
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
-
+    @media(max-width:767px){
+        .section-{{ section.id}} .card-carousel__position-btn-wrap, 
+        .section-{{ section.id}} .card-carousel__slide{
+            min-width:100%;
+        }
+    }
     @media {% render 'media-queries', screen: 'md' %} {
         .section-{{ section.id }} {
             --gsc-space-between-cards: {{ desktop_space_between_cards }}px;
@@ -75,10 +81,14 @@
     {% endif %}
 
     {% if colorsMetafield %}
-      .ingredients_wrapper{
-        background: var(--meta-background-color);
-        color: var(--meta-text-color);
-      }
+        .ingredients_wrapper{
+            background: var(--meta-background-color);
+            color: var(--meta-text-color);
+        }
+        .key_ingredient_section .main_title_key .carousel-btn{
+            background: var(--meta-background-color);
+            color: var(--meta-text-color);
+        }
     {% endif %}
 
   {% endstyle %}
@@ -90,20 +100,31 @@
 
 <div class="section-{{ section.id }}">
     <div class="container container--{{ container_size }} section-spacing">
-        <h4 class="">{{title}}</h4>
+        
         <carousel-component class="card-carousel key-ingredients
             {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{%else%}{% endif %}
             {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} 
             {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}"
             data-section-id='{{ section.id }}'>
             
-            <carousel-btn
-                class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
-                data-scroll-direction='prev'
-                tabindex='0'
-            >
-                {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
-            </carousel-btn>
+            
+            <div class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
+                <carousel-btn
+                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
+                    data-scroll-direction='prev'
+                    tabindex='0'
+                >
+                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
+                </carousel-btn>
+                <h4 class="{{ heading_size }}">{{ title }}</h4>
+                <carousel-btn
+                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
+                    data-scroll-direction='next'
+                    tabindex='0'
+                >
+                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+                </carousel-btn>
+            </div>
             <div class="card-carousel__viewport 
             {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
                 <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
@@ -115,13 +136,7 @@
                     {% endfor %}                                 
                 </div>
             </div>
-            <carousel-btn
-                class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
-                data-scroll-direction='next'
-                tabindex='0'
-            >
-                {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
-            </carousel-btn>            
+            
         </carousel-component>
     </div>
 </div>

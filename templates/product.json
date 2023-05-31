@@ -177,13 +177,13 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel-overflow",
         "title": "Key Ingredients",
-        "heading_size": "h5",
+        "heading_size": "h2",
         "alignment": "center",
         "desktop_columns": 2,
         "desktop_space_between_cards": 26,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
-        "show_navigation_on_hover": true
+        "show_navigation_on_hover": false
       }
     },
     "edd01020-fd3e-4a56-bdef-3698127f931d": {
