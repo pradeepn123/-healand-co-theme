@@ -5,11 +5,18 @@
     "cart-drawer": {
       "type": "cart-drawer",
       "settings": {
+        "color_scheme": "default",
+        "img_ratio": "default"
       }
     },
     "search-sidebar": {
       "type": "search-sidebar",
       "settings": {
+        "color_scheme": "default",
+        "img_ratio": "default",
+        "results_per_category": 10,
+        "recommendations_title": "Most searched",
+        "recommendations_queries": "bundle\nsuper mushroom\nantioxident"
       }
     }
   },

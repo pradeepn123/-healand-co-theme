@@ -1,6 +1,7 @@
 *{
     font-family: "BrownStd-Regular" !important; 
 }
+
 .collection-custom__title{
     font-weight: 700;
 }
@@ -112,4 +113,39 @@
 }
 .product-card__price-item {
     color: #000;
+}
+
+.product-card-hover-wrapper {
+    padding: 3.5rem 2.5rem;
+    position: relative;
+}
+
+.product-card-hover-wrapper h6 {
+    border-bottom: 1px solid;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.product-card-hover-wrapper p {
+    font-size: 14px;
+}
+
+.product-card-hover-wrapper .card-icon-wrapper {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.product-card-hover-wrapper .card-icon-wrapper img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
 }
