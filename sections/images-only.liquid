@@ -16,10 +16,16 @@
     }
 {% endstyle %}
 
-<div class="imagesOnly_container container container--small section-spacing">
+<div class="imagesOnly_container container container--xsmall section-spacing">
     <div class="imagesOnly_parent">
         {% for block in metafieldData %}
-            <img src="{{ block.an_image | img_url: 'master' }}">
+            {% if block.svg_image  != blank %}
+                {{ block.svg_image }}
+            {% else %}
+                {% if block.an_image %}
+                    <img src="{{ block.an_image | img_url: 'master' }}">
+                {% endif %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>
@@ -51,19 +57,6 @@
                 "default": 48,
                 "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
                 "label": "t:sections.general_section_settings.section_spacing_bottom.label"
-            }
-        ],
-        "blocks": [
-            {
-            "type": "image",
-            "name": "Image",
-            "settings": [
-                    {
-                        "type": "image_picker",
-                        "id": "block_image",
-                        "label": "Image"
-                    }
-                ]
             }
         ],
         "presets": [
