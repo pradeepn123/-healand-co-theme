@@ -4,7 +4,7 @@
 {% style %}
   .section--{{ section.id }}{
    margin-top: {{ option.pad_top }}px;
-    margin-bottom: {{ option.pad_btm }}px;
+   margin-bottom: {{ option.pad_btm }}px;
   }
   .product--features--main{
         background: {{ option.section_bg }};
@@ -23,27 +23,27 @@
 
 {% assign metaData = product.metafields.custom.text_with_image.value %}
 
-<div class="product--features--main section--{{ section.id }}">
-  <div class="container product--features--parent">
-    <div class="product--features">
-      <div class="product--features--information">
-        <div class="product--features--heading">
-          <h2>{{ metaData.title }}</h2>
-        </div>
-        <div class="product--features--content">
-          <p>{{ metaData.content }}</p>
-          <p>{{ metaData.content_2 }}</p>
-          <p>{{ metaData.content_3 }}</p>
+{% if metaData %}
+  <div class="product--features--main section--{{ section.id }}">
+    <div class="container product--features--parent">
+      <div class="product--features">
+        <div class="product--features--information">
+          <div class="product--features--heading">
+            <h2>{{ metaData.title }}</h2>
+          </div>
+          <div class="product--features--content">
+            {{ metaData.content }}
+          </div>
         </div>
       </div>
     </div>
+    <div class="container product--features--img">
+      {% if metaData.image %}
+        <img src="{{ metaData.image | img_url: 'master' }}">
+      {% endif %}
+    </div>
   </div>
-  <div class="container product--features--img">
-    {% if metaData.image %}
-      <img src="{{ metaData.image | img_url: 'master' }}">
-    {% endif %}
-  </div>
-</div>
+{% endif %}
 
 {% schema %}
 {

@@ -20,11 +20,11 @@
     line-height: 52px;
 }
 
-.product--features--main .product--features--content .content {
+.product--features--main .product--features--content .feature {
     margin-bottom: 5.6rem;
 }
 
-.product--features--main .content span,.contents span {
+.product--features--main .feature span,.product--features--main .features span {
     border: 1px solid #000;
     padding: 7px 7px 7px 10px;
     margin-right: 14px;
@@ -86,11 +86,11 @@
         font-size: 18px !important;
     }
 
-    .product--features--main  .product--features--content .content {
+    .product--features--main  .product--features--content .feature {
         margin-bottom: 2.6rem;
     }
 
-    .product--features--main .content span {
+    .product--features--main .feature span {
         font-size: 18px;
     }
 }
