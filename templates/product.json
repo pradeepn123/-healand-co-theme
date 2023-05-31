@@ -219,12 +219,11 @@
     },
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
       "type": "product-benefits",
-      "disabled": true,
       "settings": {
         "featured_image": "shopify:\/\/shop_images\/product_image.png",
         "heading": "",
         "sub_heading": "",
-        "bg_color": "",
+        "bg_color": "#faf5ef",
         "text_color": "",
         "heading_alignment": "center"
       }
