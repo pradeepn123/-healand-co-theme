@@ -1,0 +1,28 @@
+.login__content .login__title{
+    font-size: 38px;
+}
+
+.login__field .label{
+    font-size: 18px;
+}
+
+.login__field .field__link{
+    font-size: 14px;
+    font-family: "BrownStd-Regular";
+}
+.login__btns .btn{
+    font-size: 16px;
+}
+.login__footer{
+    font-family: "BrownStd-Regular";
+    font-size: 14px;
+}
+#rc_login{
+    font-size: 18px;
+}
+.account-menu .account-menu__title{
+    font-family: "BrownStd-Regular";
+}
+.addresses__address-details .addresses__default-label, .addresses__address-details-item{
+    font-family: "BrownStd-Regular";
+}

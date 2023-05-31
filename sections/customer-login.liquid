@@ -15,6 +15,8 @@
   {% endstyle %}
 {% endcapture %}
 
+{{ 'account.css' | asset_url | stylesheet_tag }}
+
 {% render 'inline-css-minifier', css: css %}
 
 <div class='login section section-{{ section.id }} color-{{ color_scheme }}'>
