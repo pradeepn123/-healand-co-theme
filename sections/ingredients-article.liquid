@@ -4,21 +4,23 @@
     }
 {% endstyle %}
 {% assign container_size = section.settings.container_size %}
-<div class="container container--{{ container_size }} ingredients_articles_section">
-    <div class="ingredients_articles_wrapper">
-        <h2 class="articles_title" style="font-size: {{ section.settings.articles_section_title_font_size }}px;">{{ section.settings.section_title }}</h2>
-        <ul class="articles">
-            {% for ingredient_article in page.metafields.custom.article_list.value %}
-                <li class="article_list">
-                    <div>
-                        <p>{{ ingredient_article.name }}</p>
-                        <p>{{ ingredient_article.source }}</p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+{% if page.metafields.custom.article_list.value != blank %}
+    <div class="container container--{{ container_size }} ingredients_articles_section">
+        <div class="ingredients_articles_wrapper">
+            <h2 class="articles_title" style="font-size: {{ section.settings.articles_section_title_font_size }}px;">{{ section.settings.section_title }}</h2>
+            <ul class="articles">
+                {% for ingredient_article in page.metafields.custom.article_list.value %}
+                    <li class="article_list">
+                        <div>
+                            <p>{{ ingredient_article.name }}</p>
+                            <p>{{ ingredient_article.source }}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-</div>
+{% endif %}
 
 {% schema %}
     {

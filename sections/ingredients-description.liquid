@@ -16,12 +16,14 @@
         }
     }
 {% endstyle %}
-<div class="container container--{{ container_size }} ingredients_description_section">
-    <div class="ingredient_description_container">
-        <h2 class="description_title">{{ section.settings.description_title | upcase }}</h2>
-        <div class="description_content {{ section.settings.description_text_align }}">{{ page.metafields.custom.description }}</div>
+{% if page.metafields.custom.description != blank %}
+    <div class="container container--{{ container_size }} ingredients_description_section">
+        <div class="ingredient_description_container">
+            <h2 class="description_title">{{ section.settings.description_title | upcase }}</h2>
+            <div class="description_content {{ section.settings.description_text_align }}">{{ page.metafields.custom.description }}</div>
+        </div>
     </div>
-</div>
+{% endif %}
 
 {% schema %}
     {
