@@ -9,13 +9,21 @@
   .product--features--main{
         background: {{ option.section_bg }};
     }
-    .product--features--information .product--features--heading h2{
+    .product--features--information .product--features--heading {
       font-size : {{ option.title_font_size }}px;
       color: {{ option.title_color }};
     }
     .product--features--content p{
       font-size: {{ option.content_font }}px;
       color: {{ option.content_color }};
+    }
+    .product--features--main .product--features--img {
+     padding-bottom: {{ option.adj-img }}%;
+    }
+    @media(max-width:768px){
+      .product--features--main .product--features--img {
+     padding-bottom: {{ option.adj-img_mob }}%;
+    }
     }
 {% endstyle %}
 
@@ -29,7 +37,7 @@
       <div class="product--features">
         <div class="product--features--information">
           <div class="product--features--heading">
-            <h2>{{ metaData.title }}</h2>
+            {{ metaData.title }}
           </div>
           <div class="product--features--content">
             {{ metaData.content }}
@@ -39,7 +47,10 @@
     </div>
     <div class="container product--features--img">
       {% if metaData.image %}
-        <img src="{{ metaData.image | img_url: 'master' }}">
+        <img class="Desktop_img" src="{{ metaData.image | img_url: 'master' }}">
+      {% endif %}
+      {% if metaData.mobile_image %}
+        <img class="Mobile_img" src="{{ metaData.mobile_image | img_url: 'master' }}">
       {% endif %}
     </div>
   </div>
@@ -105,7 +116,27 @@
       "id": "content_color",
       "label": "Body text",
       "default": "#000000"
-    }
+    },
+    {
+      "type": "range",
+      "id": "adj-img",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "adj-img_mob",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image size Mobile",
+      "default": 80
+    } 
   ],
   "presets": [
     {
