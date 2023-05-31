@@ -1,0 +1,24 @@
+{% assign prepared_class = class | append: ' yall-video-lazy' %}
+
+{% liquid
+  assign autoplay = autoplay | default: true
+  assign loop = loop | default: true
+  assign muted = muted | default: false
+  assign controls = controls | default: true
+%}
+
+{% capture prepared_video %}
+  {{ video | video_tag: class: prepared_class, autoplay: autoplay, loop: loop, muted: muted, controls: controls }}
+{% endcapture %}
+
+{%- liquid
+  assign image_alt = 'Image'
+
+  if video.alt != blank
+    assign image_alt = video.alt
+  endif
+
+  assign image_tag = '<img' | append: ' alt="' | append: image_alt | append: '"'
+-%}
+
+{{ prepared_video | replace: '<img', image_tag | replace: 'src', 'data-src' }}
