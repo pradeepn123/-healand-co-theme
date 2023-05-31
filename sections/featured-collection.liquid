@@ -45,8 +45,20 @@
   assign product_card_align = options.product_card_align
 -%}
 
+{% if request.path contains "blogs/news" %}
+  {{ 'article.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 {% capture css %}
   {% style %}
+  {% if template contains 'ingredients' %}
+    .collection__container{
+      border-bottom: 1px solid #E2E2E2;
+    }
+    .collection__header{
+      align-items: unset !important;
+    }
+  {% endif %}
     .section-{{section.id}}{
         --gsc-space-between-cards: {{mobile_space_between_cards}}rem;
         --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
@@ -91,18 +103,17 @@
 {% capture section_header %}
   {%- if title != blank -%}
     <div class='collection__header {% if alignment == 'center' %}collection__header--center{% endif %}'>
-      <h5 class='collection__title {{ heading_size }} decorated_heading'>{{ title }}</h5>
+      <h5 class='collection__title {{ heading_size }} {% if section.settings.title_decoration == true %}decorated_heading {% endif %}'>{{ title }}</h5>
       <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">
-        <span>{{ section.settings.shop_all_title}}</span>
+        <span>{{ section.settings.shop_all_title }}</span>
       </a>
     </div>
   {%- endif -%}
 {% endcapture %}
 
 <div class='collection section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout == 'grid' %} collection--grid-with-mobile-carousel{% endif %}'>
-  <div class='collection__container container container--{{ container_size }} section-spacing'>
+  <div class='collection__container container container--{{ container_size }} section-spacing {% if request.path contains "blogs/news" %} container--xsmall pt-0 {% endif %}'>
     {{ section_header }}
-
     {% if collection != blank or featured_products != blank %}
       {% if section_layout contains 'carousel' %}
         {% render 'featured-collection-carousel',
@@ -276,6 +287,12 @@
       "id": "title",
       "default": "Featured collection",
       "label": "t:sections.featured_collection.title_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_decoration",
+      "default": true,
+      "label": "Show title decoration"
     },
     {
       "type": "select",

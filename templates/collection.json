@@ -55,7 +55,7 @@
         "show_column_count_switcher": false,
         "enable_filtering": true,
         "filters_position": "left",
-        "filter_style": "open-embed",
+        "filter_style": "closed-embed",
         "categories_style": "expanded_tabs",
         "option_style": "checkbox-outline",
         "show_color_swatches": true,

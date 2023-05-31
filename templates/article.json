@@ -12,10 +12,11 @@
         "title": {
           "type": "title",
           "settings": {
-            "show_author": true,
-            "show_date": true,
-            "show_comment_count": true,
-            "show_share_link": true
+            "title_color": "#ee5c4c",
+            "show_author": false,
+            "show_date": false,
+            "show_comment_count": false,
+            "show_share_link": false
           }
         },
         "content": {
@@ -25,12 +26,13 @@
         },
         "footer": {
           "type": "footer",
+          "disabled": true,
           "settings": {
-            "show_author": true,
-            "show_date": true,
-            "show_share": true,
-            "show_next_and_previous_posts": true,
-            "show_comment_count": true
+            "show_author": false,
+            "show_date": false,
+            "show_share": false,
+            "show_next_and_previous_posts": false,
+            "show_comment_count": false
           }
         }
       },
@@ -44,12 +46,56 @@
         "color_scheme": "default",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
-        "show_breadcrumbs": true,
-        "show_background": true
+        "show_breadcrumbs": false,
+        "show_background": false
+      }
+    },
+    "f9b3c724-0360-4f88-8126-67b891fcbf15": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel",
+        "title": "Featured Products",
+        "heading_size": "h5",
+        "alignment": "left",
+        "shop_all_title": "",
+        "shop_all_url": "",
+        "collection": "",
+        "featured_products": [
+          "ashwagandha",
+          "immunity-complex-coming-soon",
+          "quercetin"
+        ],
+        "img_ratio": "default",
+        "product_card_align": "left",
+        "cards_to_show": 16,
+        "desktop_columns": 3,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": true,
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_on_hover": true
+      }
+    },
+    "25d43466-8fb6-4a7f-9c25-254d89c4413c": {
+      "type": "article-footer",
+      "settings": {
+      }
+    },
+    "5e6a6d35-76b4-4250-85a9-db42cc0637c2": {
+      "type": "article-comments",
+      "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "f9b3c724-0360-4f88-8126-67b891fcbf15",
+    "25d43466-8fb6-4a7f-9c25-254d89c4413c",
+    "5e6a6d35-76b4-4250-85a9-db42cc0637c2"
   ]
 }

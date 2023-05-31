@@ -13,6 +13,7 @@
     },
     "ef2b5c4a-6e04-4547-903e-67adf1d482c2": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "color_scheme": "white",
         "enable_background_around_container": false,
@@ -32,8 +33,75 @@
         "body_size": "body3",
         "desktop_content_position": "align-items:center;justify-content:center;",
         "desktop_content_align": "center",
-        "content_max_width": 528,
-        "content_spacing": 116,
+        "content_max_width": 672,
+        "content_spacing": 0,
+        "mobile_content_position": "align-items:flex-end;justify-content:center;",
+        "mobile_content_align": "left",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid",
+        "extra_btn_text": "",
+        "extra_btn_url": "",
+        "extra_btn_style": "solid"
+      }
+    },
+    "7270a196-4359-4352-8ef2-2e20217bb495": {
+      "type": "ingredientsdb-banner",
+      "blocks": {
+        "6c6001aa-81cb-4aa1-8ad1-a6dcbf727ddf": {
+          "type": "image",
+          "settings": {
+            "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 68C61.2843 68 68 61.2843 68 53C68 44.7157 61.2843 38 53 38C44.7157 38 38 44.7157 38 53C38 61.2843 44.7157 68 53 68Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 62C57.9706 62 62 57.9706 62 53C62 48.0294 57.9706 44 53 44C48.0294 44 44 48.0294 44 53C44 57.9706 48.0294 62 53 62Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 56C54.6569 56 56 54.6569 56 53C56 51.3431 54.6569 50 53 50C51.3431 50 50 51.3431 50 53C50 54.6569 51.3431 56 53 56Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "icon_heading": "Certification",
+            "icon_heading-color": "#ffffff",
+            "icon_heading_font": 14
+          }
+        },
+        "2ec9e074-fe12-4a79-ae2b-0e99f0a0be90": {
+          "type": "image",
+          "settings": {
+            "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 57.5C58.799 57.5 63.5 52.799 63.5 47C63.5 41.201 58.799 36.5 53 36.5C47.201 36.5 42.5 41.201 42.5 47C42.5 52.799 47.201 57.5 53 57.5Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M47.315 55.8351L45.5 69.5001L53 65.0001L60.5 69.5001L58.685 55.8201\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "icon_heading": "Certification",
+            "icon_heading-color": "#ffffff",
+            "icon_heading_font": 14
+          }
+        },
+        "d56228ca-8515-4d0f-9c62-25221972c261": {
+          "type": "image",
+          "settings": {
+            "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 68C61.2843 68 68 61.2843 68 53C68 44.7157 61.2843 38 53 38C44.7157 38 38 44.7157 38 53C38 61.2843 44.7157 68 53 68Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M38 53H68\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 38C56.7519 42.1075 58.8841 47.4381 59 53C58.8841 58.5619 56.7519 63.8925 53 68C49.2481 63.8925 47.1159 58.5619 47 53C47.1159 47.4381 49.2481 42.1075 53 38Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "icon_heading": "Certification",
+            "icon_heading-color": "#ffffff",
+            "icon_heading_font": 14
+          }
+        }
+      },
+      "block_order": [
+        "6c6001aa-81cb-4aa1-8ad1-a6dcbf727ddf",
+        "2ec9e074-fe12-4a79-ae2b-0e99f0a0be90",
+        "d56228ca-8515-4d0f-9c62-25221972c261"
+      ],
+      "settings": {
+        "color_scheme": "white",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 520,
+        "mobile_height": 225,
+        "desktop_img": "shopify:\/\/shop_images\/ingredient_banner.jpg",
+        "mobile_img": "shopify:\/\/shop_images\/ingredients_banner_mobile.jpg",
+        "caption": "",
+        "title": "<p>Ingredients Databse<\/p>",
+        "text": "<p>Transparent formulations, naturally sourced ingredients. Heal+Co's supplements values the power of nature to create effective and ethical products.<\/p>",
+        "heading_size": "h2",
+        "body_size": "body3",
+        "desktop_content_position": "align-items:center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 648,
+        "content_spacing": 0,
         "mobile_content_position": "align-items:center;justify-content:center;",
         "mobile_content_align": "center",
         "desktop_content_background": "none",
@@ -127,6 +195,7 @@
   "order": [
     "page",
     "ef2b5c4a-6e04-4547-903e-67adf1d482c2",
+    "7270a196-4359-4352-8ef2-2e20217bb495",
     "54d9322e-38bd-473f-9112-1a76ceb04b5f"
   ]
 }

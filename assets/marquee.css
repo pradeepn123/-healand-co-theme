@@ -1,0 +1,42 @@
+/* 
+   .marquee{
+    position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 24px;
+  overflow-x: hidden;
+  display: block;
+
+  }
+
+   .Marquee-content{
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+    min-width:27%;
+  
+
+   }
+
+   @keyframes marquee{
+    0% { transform: translateX(0); }
+  100% { transform: translate(-100%); }
+}
+
+.desktop{
+    display: none;
+}
+.marquee-only_mobile{
+    display: block;
+}
+
+@media(min-width:768px){
+    .desktop{
+        display: block;
+    }
+
+    .marquee-only_mobile {
+        display: none;
+    }
+}  */

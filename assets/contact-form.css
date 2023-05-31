@@ -19,12 +19,12 @@
         font-size: 18px;
     }
 }
-.contact_pg_form .contact__content .contact__title.h5{
+.contact_pg_form .contact__content .contact__title{
     font-weight: 700;
     color: #000000;
 }
 @media(max-width:768px){
-    .contact_pg_form .contact__content .contact__title.h5{
+    .contact_pg_form .contact__content .contact__title{
         font-size: 24px !important;
     }
 }
@@ -127,8 +127,9 @@
     color: #B4B4B4;
     font-family: 'BrownStd-Bold';
 }
-.input, .textarea{
+.contact_us_page_main .input,.contact_us_page_main .textarea{
     font-weight: 400;
+   font-size: 16px;
     border: 0.5px solid #B4B4B4;
 }
 /* .contact_pg_form .contact__form .field-group .field.contact__field input{

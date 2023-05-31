@@ -8,6 +8,7 @@
 
   assign enable_background_around_container = options.enable_background_around_container
 
+  assign newsletter_button = options.newsletter_button
   assign color_scheme = options.color_scheme
   assign mobile_height = options.mobile_height
   assign desktop_height = options.desktop_height
@@ -30,7 +31,7 @@
   assign content_max_width = options.content_max_width | divided_by: 10
   assign content_spacing = options.content_spacing | divided_by: 10
 -%}
-
+{{ 'newsletter.css' | asset_url | stylesheet_tag }}
 {% capture css %}
   {% style %}
     .section-{{section.id}}{
@@ -57,7 +58,7 @@
             --gsc-content-align: {{ desktop_content_align }};
             --gsc-overlay-opacity: {{ desktop_overlay_opacity }};
         }
-    }
+    }    
   {% endstyle %}
 {% endcapture %}
 
@@ -79,7 +80,7 @@
                   {%- endif -%}
                 {%- when 'title' -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }}>
+                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }} style="color: {{block.settings.color}}">
                       {{ block.settings.title }}
                     </h2>
                   {%- endif -%}
@@ -87,7 +88,7 @@
                   {%- if block.settings.text != blank -%}
                     <div
                       class='rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings'
-                      {{ block.shopify_attributes }}
+                      {{ block.shopify_attributes }} style="color: {{block.settings.color}}"
                     >
                       {{ block.settings.text }}
                     </div>
@@ -100,14 +101,14 @@
                       value='newsletter'
                       id='DesktopNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
                     >
-                    <div class='field newsletter__field'>
+                    <div class='field newsletter__field' {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %} >
                       <label class='visually-hidden' for='DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
                       <input
                         type='email'
                         name='contact[email]'
-                        class='input input--large input--{{ block.settings.input_style }} newsletter__input'
+                        class='input input--large input--{{ block.settings.input_style }} newsletter__input email-bar'
                         value='{{ form.email }}'
                         aria-required='true'
                         autocorrect='off'
@@ -118,11 +119,17 @@
                         id='DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}'
                       >
                       <button
-                        class='btn btn--solid btn--lg newsletter__input-btn'
+                        class='btn btn--solid btn--lg newsletter__input-btn news--button'
                         name='commit'
                         aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
+                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; background: #fff; border:0; outline:0" {% endif %} 
                       >
-                        {{ 'forms.newsletter.subscribe_button_label' | t }}
+                        <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
+                        {%- if section.settings.newsletter_button == "text" -%}
+                          {{ section.settings.newsletter_text }}
+                        {%- elsif section.settings.newsletter_button == "image" -%}
+                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                       {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -160,15 +167,15 @@
                   {%- endif -%}
                 {%- when 'title' -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }}>
-                      {{ block.settings.title }}
+                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }} style="color: {{block.settings.color}}">
+                      {{ block.settings.title }} 
                     </h2>
                   {%- endif -%}
                 {%- when 'text' -%}
                   {%- if block.settings.text != blank -%}
                     <div
                       class='rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings'
-                      {{ block.shopify_attributes }}
+                      {{ block.shopify_attributes }} style="color: {{block.settings.color}}"
                     >
                       {{ block.settings.text }}
                     </div>
@@ -181,14 +188,14 @@
                       value='newsletter'
                       id='MobileNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
                     >
-                    <div class='field newsletter__field'>
+                    <div class='field newsletter__field'  {% if section.settings.newsletter_button == 'text' %} style="flex-wrap:wrap" {% endif %} {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %}>
                       <label class='visually-hidden' for='MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
                       <input
                         type='email'
                         name='contact[email]'
-                        class='input input--large input--{{ block.settings.input_style }} newsletter__input'
+                        class='input input--large input--{{ block.settings.input_style }} newsletter__input email-bar'
                         value='{{ form.email }}'
                         aria-required='true'
                         autocorrect='off'
@@ -202,8 +209,15 @@
                         class='btn btn--solid btn--lg newsletter__input-btn'
                         name='commit'
                         aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
+                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; background:#fff; border:0; outline:0" {% endif %}
                       >
-                        {{ 'forms.newsletter.subscribe_button_label' | t }}
+                      
+                        <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
+                        {%- if section.settings.newsletter_button == "text" -%}
+                          {{ section.settings.newsletter_text }}
+                        {%- elsif section.settings.newsletter_button == "image" -%}
+                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                       {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -296,6 +310,36 @@
       "label": "t:sections.general_section_settings.color_scheme_label",
       "info": "t:sections.general_section_settings.color_scheme_tip"
     },
+    
+    {
+      "type": "select",
+      "id": "newsletter_button",
+      "options": [
+        {
+          "value": "text",
+          "label": "Newsletter text"
+        },
+        {
+          "value": "image",
+          "label": "Newsletter Image"
+        }
+      ],
+      "default": "image",
+      "label": "Newsletter Button Style"
+    },
+    
+        {
+          "type": "text",
+          "id": "newsletter_text",
+          "label": "Newsletter text"
+        },
+        {
+          "type": "image_picker",
+          "id": "newsletter_image",
+          "label": "Newsletter Image"
+        },
+ 
+ 
     {
       "type": "checkbox",
       "id": "enable_background_around_container",
@@ -587,6 +631,11 @@
           "label": "t:sections.newsletter.title_block_label"
         },
         {
+          "type":"color",
+          "id":"color",
+          "label":"Heading color"
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "label": "t:sections.general_section_settings.label_for_heading_size_setting",
@@ -637,6 +686,11 @@
           "id": "text",
           "default": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
           "label": "t:sections.newsletter.text_block_text_label"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Sub-text color"
         },
         {
           "type": "select",
