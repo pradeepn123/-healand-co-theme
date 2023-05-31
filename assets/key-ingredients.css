@@ -5,9 +5,10 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
+    padding-bottom: 20px
 }
 .ingredients_wrapper .img_wrap_text_info .img_wrap{
-    margin-top: -8rem;
+    margin-top: -5rem;
 }
 .ingredients_wrapper .img_wrap_text_info .img_wrap img{
     border: 10px solid #fff;
@@ -15,12 +16,30 @@
     width: 160px;
     height: 100%;
 }
-
+.ingredients_wrapper .key_ingre_description{
+    font-size: 16px;
+}
 @media(min-width:768px){
     .key_ingredient_section{
         overflow: visible;
     }
     .card-carousel__viewport{
         overflow: visible;
+    }
+}
+@media(min-width:1200px){
+    .ingredients_wrapper .img_wrap_text_info{
+        padding-bottom: 30px
+    }
+    .ingredients_wrapper .img_wrap_text_info .img_wrap{
+        margin-top: -7rem;
+    }
+    .img_wrap_text_info .key_ingre_title h4{
+        font-size: 20px;
+        line-height: 1.2;
+        color: #ffffff;
+    }
+    .ingredients_wrapper .key_ingre_description{
+        font-size: 18px;
     }
 }

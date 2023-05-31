@@ -1,20 +1,14 @@
-{% assign keymetadata = product.metafields.custom.key_ingredients.value %}                 
-
-{% for item in keymetadata %}
-    <div class='card-carousel__slide'>
-        <div class="ingredients_wrapper">
-            <div class="img_wrap_text_info">
-                <div class="img_wrap">
-                    <img src="{{ item.image | image_url }}" alt="">
-                </div>
-                <div class="key_ingre_title">
-                    <h4>{{ item.heading }}</h4>
-                    <p>{{item.origin.value}}</p>
-                </div>
-            </div>
-            <div class="key_ingre_description">
-                <p>{{item.description}}</p>
-            </div>            
+<div class="ingredients_wrapper">
+    <div class="img_wrap_text_info">
+        <div class="img_wrap">
+            <img src="{{ item.image | image_url }}" alt="">
+        </div>
+        <div class="key_ingre_title">
+            <h4>{{ item.heading }}</h4>
+            <p>{{item.origin.value}}</p>
         </div>
     </div>
-{% endfor %}
+    <div class="key_ingre_description">
+        <p>{{item.description}}</p>
+    </div>            
+</div>
