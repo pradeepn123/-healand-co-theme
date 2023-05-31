@@ -211,7 +211,7 @@ padding-bottom: 11px;
   }
 
   .video-section{
-    padding: 7px 30px 6px 30px;
+    padding: 40px 15px;
     background-color: #F3B563;
 }
 
@@ -439,7 +439,8 @@ padding-bottom: 11px;
 }
 
 .video-section{
-    padding: 3% 7%;
+    padding: 40px 120px;
+   
     
 }
 
@@ -451,6 +452,11 @@ padding-bottom: 11px;
 .video-size{
     height:auto;
     width: 100%;
+}
+
+.video--fit{
+    height: auto;
+    padding: 0;
 }
 
 .video-container{
