@@ -33,7 +33,7 @@
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
       "settings": {
-        "video": "shopify:\/\/files\/videos\/pexels-pressmaster-3195394-3840x2160-25fps.mp4",
+        "video": "shopify:\/\/files\/videos\/sample-5s.mp4",
         "thumbnail": "shopify:\/\/shop_images\/image_193.png",
         "play-icon": "shopify:\/\/shop_images\/Group_561.png"
       }
@@ -92,6 +92,7 @@
           "type": "title",
           "settings": {
             "title": "GET 20% OFF YOUR FIRST ORDER",
+            "color": "",
             "heading_size": "h4"
           }
         },
@@ -99,6 +100,7 @@
           "type": "text",
           "settings": {
             "text": "sign up for early access to new products, exclusive deals and more!",
+            "color": "",
             "body_size": "body3"
           }
         },
@@ -116,6 +118,8 @@
       ],
       "settings": {
         "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
