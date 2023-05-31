@@ -3,6 +3,7 @@
   assign show_author = options.show_author
   assign show_date = options.show_date
   assign show_comment_count = options.show_comment_count
+  assign title_color = options.title_color
 -%}
 
 <div class='container container--xsmall' {{ block.shopify_attributes }}>
@@ -19,7 +20,7 @@
       {% endif %}
     </div>
   {% endif %}
-  <h2 class='article__title'>{{ article.title }}</h2>
+  <h2 class='article__title' style="color: {{ title_color }}">{{ article.title }}</h2>
 
   {% if block.settings.show_share_link %}
     <div class='article__heading-share'>
