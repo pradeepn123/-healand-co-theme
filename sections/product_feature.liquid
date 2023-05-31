@@ -1,0 +1,116 @@
+{% liquid
+  assign option = section.settings
+%}
+{% style %}
+  .section--{{ section.id }}{
+   margin-top: {{ option.pad_top }}px;
+   margin-bottom: {{ option.pad_btm }}px;
+  }
+  .product--features--main{
+        background: {{ option.section_bg }};
+    }
+    .product--features--information .product--features--heading h2{
+      font-size : {{ option.title_font_size }}px;
+      color: {{ option.title_color }};
+    }
+    .product--features--content p{
+      font-size: {{ option.content_font }}px;
+      color: {{ option.content_color }};
+    }
+{% endstyle %}
+
+<link rel="stylesheet" href="{{ 'product_feature.css' | asset_url }}">
+
+{% assign metaData = product.metafields.custom.text_with_image.value %}
+
+{% if metaData %}
+  <div class="product--features--main section--{{ section.id }}">
+    <div class="container product--features--parent">
+      <div class="product--features">
+        <div class="product--features--information">
+          <div class="product--features--heading">
+            <h2>{{ metaData.title }}</h2>
+          </div>
+          <div class="product--features--content">
+            {{ metaData.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container product--features--img">
+      {% if metaData.image %}
+        <img src="{{ metaData.image | img_url: 'master' }}">
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "product feature",
+  "settings": [
+    {
+      "type": "range",
+      "id": "pad_top",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "pad_btm",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "content_font",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Body text",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product feature"
+    }
+  ]
+}
+{% endschema %}
