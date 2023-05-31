@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": true
+      }
+    },
+    "fae1b60a-608f-44ac-99b4-d1deb62e1a64": {
+      "type": "ingredients-hero-banner",
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "hero_banner_background_color": "#f7f7f7",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_section_height": 260,
+        "mobile_section_height": 260,
+        "show_collection_image": true,
+        "show_page_title": true,
+        "custom_page_title": "",
+        "custom_page_title_color": "#ffffff",
+        "custom_page_title_font_size": 40,
+        "custom_page_title_font_size_mobile": 24,
+        "show_page_description": false,
+        "desktop_overlay_opacity": 10,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items:center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 1304,
+        "content_spacing": 48,
+        "mobile_content_position": "align-items:center;",
+        "mobile_content_align": "center"
+      }
+    },
+    "ac1a7540-47a6-4f4e-bdc9-973e3feaeab3": {
+      "type": "ingredients-description",
+      "settings": {
+        "section_max_width": 900,
+        "container_size": "small",
+        "description_title": "About",
+        "description_title_font_size": 24,
+        "description_content_font_size": 20,
+        "description_text_align": "left_aligned"
+      }
+    },
+    "ab3f7364-5240-43f7-b368-f03af192e588": {
+      "type": "ingredients-benefits",
+      "settings": {
+        "container_size": "small",
+        "benefit_title": "Benefits",
+        "benefit_title_font_size": 24
+      }
+    },
+    "26e6c122-c3e8-4690-8f51-067c95684876": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "small",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel",
+        "title": "Found In",
+        "title_decoration": false,
+        "heading_size": "h5",
+        "alignment": "left",
+        "shop_all_title": "",
+        "shop_all_url": "",
+        "collection": "products",
+        "featured_products": [
+
+        ],
+        "img_ratio": "default",
+        "product_card_align": "left",
+        "cards_to_show": 16,
+        "desktop_columns": 3,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_on_hover": false
+      }
+    },
+    "652db47c-20aa-460d-89ea-50fb5e602c22": {
+      "type": "ingredients-article",
+      "settings": {
+        "container_size": "small",
+        "section_title": "THE SCIENCE BEHIND THE BENEFITS",
+        "list_icon": "shopify:\/\/shop_images\/Vector.png"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "fae1b60a-608f-44ac-99b4-d1deb62e1a64",
+    "ac1a7540-47a6-4f4e-bdc9-973e3feaeab3",
+    "ab3f7364-5240-43f7-b368-f03af192e588",
+    "26e6c122-c3e8-4690-8f51-067c95684876",
+    "652db47c-20aa-460d-89ea-50fb5e602c22"
+  ]
+}

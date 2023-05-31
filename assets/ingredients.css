@@ -1,0 +1,125 @@
+*{
+    font-family: "BrownStd-Regular" !important;   
+}
+
+/* Ingredients Description section */
+.ingredients_description_section{
+    border-bottom: 1px solid #E2E2E2;
+}
+.ingredient_description_container{
+    margin: auto;
+    padding: 40px 0;
+}
+.description_content p{
+    line-height: 32px;
+}
+.description_content.left_aligned{
+    text-align: left;
+}
+.description_content.center_aligned{
+    text-align: center;
+}
+.description_content.right_aligned{
+    text-align: right;
+}
+
+
+/* Ingredients benefits section */
+.ingredients_benefits_section{
+    border-bottom: 1px solid #E2E2E2;
+}
+.ingredient_benefits_wrapper{
+    margin: auto;
+    padding: 40px 0;
+}
+.ingredient_benefits_container{
+    display: flex;
+}
+@media (max-width: 768px){
+    .ingredient_benefits_container{
+        flex-direction: column;
+    }
+}
+.ingredient_benefits_container .benefits_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 25px;
+}
+@media (max-width: 768px){
+    .ingredient_benefits_container .benefits_list{
+        margin-top: 30px;
+        margin-left: 0;
+        gap: 24px;
+    }
+}
+.ingredient_benefits_container .benefits_title{
+    text-transform: uppercase;
+}
+.ingredient_benefits_container .benefits_list .benefit{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}
+@media (max-width: 768px){
+    .ingredient_benefits_container .benefits_list .benefit{
+        font-size: 14px;
+    }
+}
+
+.ingredients_articles_section{
+    margin: 40px auto;
+}
+.articles{
+    list-style: none;
+    padding-left: 0;
+}
+.articles .article_list{
+    max-width: 70%;
+}
+@media (max-width: 768px){
+    .articles .article_list{
+        max-width: unset;
+    }
+}
+.articles > .article_list::before{
+    content: "";
+    height: 24px;
+    width: 18px;
+    display: block; 
+    list-style: none;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    position: absolute;
+}
+.articles_title{
+    margin-bottom: 58px;
+}
+.article_list p:first-child{
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.article_list p:nth-child(2){
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+.article_list div{
+    margin-bottom: 64px;
+    padding-left: 44px;
+}
+@media (max-width: 768px){
+    .article_list p:first-child{
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    .article_list p:nth-child(2){
+        font-size: 14px;
+    }
+}
