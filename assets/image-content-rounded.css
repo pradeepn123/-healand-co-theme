@@ -45,11 +45,69 @@
 .ingredients_content_info a{
     text-decoration: none;
 }
+.ingredientdb__hero_image img , .ingredientdb__hero_image-mobile img{
+    width: 100%;
+    object-fit: cover;
+}
+.main-banner__container{
+    position: relative;
+}
+.ingredientdb-banner__content-wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    left: 50%;
+    z-index: 9 !important;
+    display: flex;
+    align-items: center;
+}
+.ingredient-desc{
+    margin-top: 20px;
+}
+.icon-text-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 82px;
+    margin-top: 30px;
+}
+.icon-wrap img{
+    width: 106px;
+    height: 106px;
+}
+.heading-for-icon {
+    margin-top: 20px;
+}
+.heading-for-icon{
+    font-family: "BrownStd-Bold" !important;
+    letter-spacing: 0.7px;
+}
+.ingredient__contents .image-banner__btns--with-second-button-link{
+    margin-top: 30px;
+}
 @media(min-width:768px){
     .ingredients-database-item {
         width: calc((100% - 20px) / 3);
         margin: 20px 0;
         padding: 12px;
+    }
+    .ingredientdb__hero_image , .ingredient-video{
+        display: block;
+    }
+    .ingredientdb__hero_image-mobile , .ingredient-video-mobile{
+        display: none;
+    }
+    .ingredientdb-banner__content-wrap{
+        padding: 109px;
+    }
+    .ingredient-desc{
+        font-size: 20px;
+    }
+    .ingredient-hero-mage-banner{
+        background: transparent;
     }
 }
 @media(min-width:1200px){
@@ -57,5 +115,49 @@
         width: calc((100% - 20px) / 5);
         margin: 20px 0;
         padding: 12px;
+    }
+}
+@media(max-width:767px){
+    .ingredientdb__hero_image , .ingredient-video{
+        display: none;
+    }
+    .ingredientdb__hero_image-mobile , .ingredient-video-mobile{
+        display: block;
+    }
+    .ingredient-hero-mage-banner{
+        background: #FAF5EF;
+    }
+    .icon-heding-color-mobile .h2, .icon-heding-color-mobile .ingredient-desc , .icon-heding-color-mobile .heading-for-icon{
+        color: #000000;
+    }
+    svg path , svg circle{
+        stroke: #000;
+    }
+    .ingredient-video-mobile .image-banner__media{
+        position: relative;
+    }
+    .media__image{
+        position: unset;
+    }
+}
+@media(max-width:520px){
+     .icon-text-wrapper{
+        flex-wrap: wrap;
+    }
+     .icon-wrap img{
+        width: 100px;
+        height: 100px;
+    }
+    .image-banner__content>*+*{
+        margin: 1rem 0 0 0;;
+    }
+    .heading-for-icon {
+        margin-top: 10px;
+    }
+    .icon-heding-color-mobile .h2{
+        font-size: 24px;
+    }
+    .icon-text-wrapper{
+        margin: 40px 0 10px;
     }
 }
