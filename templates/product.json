@@ -414,6 +414,29 @@
         "content_color": "#000000"
       }
     },
+    "62edae1c-9774-49b0-afa0-673d6ebaa258": {
+      "type": "key-ingredients",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 84,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "title",
+        "heading_size": "h5",
+        "alignment": "center",
+        "img_ratio": "portrait",
+        "text_style": "over-image",
+        "collection_card_content_align": "center",
+        "collection_card_heading_size": "h6",
+        "show_product_count": true,
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 26,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
+    },
     "9cddc487-a63b-451c-978c-ad462e8aad54": {
       "type": "faq-section",
       "blocks": {
@@ -482,6 +505,7 @@
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
     "35a80c75-d4b0-4340-9552-75a9f11586de",
     "edd01020-fd3e-4a56-bdef-3698127f931d",
+    "62edae1c-9774-49b0-afa0-673d6ebaa258",
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "product-recommendations"
   ]

@@ -1,0 +1,26 @@
+.ingredients_wrapper{
+    padding: 0 40px 40px;
+}
+.ingredients_wrapper .img_wrap_text_info{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.ingredients_wrapper .img_wrap_text_info .img_wrap{
+    margin-top: -8rem;
+}
+.ingredients_wrapper .img_wrap_text_info .img_wrap img{
+    border: 10px solid #fff;
+    border-radius: 50%;
+    width: 160px;
+    height: 100%;
+}
+
+@media(min-width:768px){
+    .key_ingredient_section{
+        overflow: visible;
+    }
+    .card-carousel__viewport{
+        overflow: visible;
+    }
+}
