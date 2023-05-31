@@ -101,7 +101,7 @@
                       value='newsletter'
                       id='DesktopNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
                     >
-                    <div class='field newsletter__field'>
+                    <div class='field newsletter__field' {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %} >
                       <label class='visually-hidden' for='DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
@@ -188,7 +188,7 @@
                       value='newsletter'
                       id='MobileNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
                     >
-                    <div class='field newsletter__field'  {% if section.settings.newsletter_button == 'text' %} style="flex-wrap:wrap" {% endif %} >
+                    <div class='field newsletter__field'  {% if section.settings.newsletter_button == 'text' %} style="flex-wrap:wrap" {% endif %} {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %}>
                       <label class='visually-hidden' for='MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
