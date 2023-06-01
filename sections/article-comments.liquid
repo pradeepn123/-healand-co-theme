@@ -3,7 +3,9 @@
 {% for article in blog.articles %}
     {% assign article = article %}
 {% endfor %}
-    {%- render 'article-comments', article: article -%}
+
+{%- render 'article-comments' -%}
+
 {% schema %}
 {
     "name": "Article Comments Section",

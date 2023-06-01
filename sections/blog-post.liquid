@@ -6,6 +6,10 @@
   assign show_blogs_home = options.show_blogs_home
   assign section_spacing_top = options.section_spacing_top
   assign section_spacing_bottom = options.section_spacing_bottom
+
+  if color_scheme == 'default'
+    assign color_scheme = settings.default_color_scheme
+  endif
 -%}
 
 {% capture css %}
@@ -18,7 +22,6 @@
 {% endcapture %}
 
 {{ 'article.css' | asset_url | stylesheet_tag }}
-
 {% render 'inline-css-minifier', css: css %}
 
 <article class='article section section-{{ section.id }} color-{{ color_scheme }}'>
@@ -56,8 +59,8 @@
               {{ article.title -}}
             </a>
           </div>
-      </div>
-      {%- elsif show_blogs_home -%}
+        </div>
+        {%- elsif show_blogs_home -%}
         <div class="blogs_home-link">
           <a
             class='link link--reverse'
@@ -68,7 +71,7 @@
             <span class='link__home__text'>Return to blogs</span>
           </a>
         </div>
-      {%- endif -%}
+        {%- endif -%}
     </div>
 
     <div class='article__blocks'>
@@ -127,8 +130,7 @@
         }
       ],
       "default": "default",
-      "label": "t:sections.general_section_settings.color_scheme_label",
-      "info": "t:sections.general_section_settings.color_scheme_tip"
+      "label": "t:sections.general_section_settings.color_scheme_label"
     },
     {
       "type": "range",

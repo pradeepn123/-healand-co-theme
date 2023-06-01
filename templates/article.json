@@ -12,7 +12,6 @@
         "title": {
           "type": "title",
           "settings": {
-            "title_color": "#ee5c4c",
             "show_author": false,
             "show_date": false,
             "show_comment_count": false,
@@ -59,6 +58,7 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel",
         "title": "Featured Products",
+        "title_decoration": false,
         "heading_size": "h5",
         "alignment": "left",
         "shop_all_title": "",
@@ -84,6 +84,11 @@
     "25d43466-8fb6-4a7f-9c25-254d89c4413c": {
       "type": "article-footer",
       "settings": {
+        "show_author": true,
+        "show_date": true,
+        "show_share": true,
+        "show_next_and_previous_posts": true,
+        "show_comment_count": true
       }
     },
     "5e6a6d35-76b4-4250-85a9-db42cc0637c2": {
