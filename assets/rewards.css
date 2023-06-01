@@ -112,7 +112,7 @@
 .card .card_text_content {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 25px;
 }
 
 .points_column .points_text_content img, .card.card_icon, .refer_content .refer_icon {
@@ -338,6 +338,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .faq__content h5.h5 {
+        font-size: 40px;
+        line-height: 76.8px;
+    }
     .faq--bottom-tabs .faq__blocks {
         width: 695px;
     }
@@ -360,6 +364,9 @@
         letter-spacing: 0em;
         text-align: left;
         margin-top: 0;
+    }
+    .faq__container {
+        padding-top: 40px;
     }
 }
 
