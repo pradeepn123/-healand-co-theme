@@ -24,8 +24,12 @@ class SuggestionSearchBar extends HTMLElement {
     _handleInputChange(e) {
         const searchForm = document.querySelector("#SearchSidebarForm")
         const searchInputField = searchForm.q
+        var event = new Event('input', {
+            'bubbles': true,
+            'cancelable': true
+        });
         searchInputField.value = e.target.value
-        searchInputField.dispatchEvent(new CustomEvent("change"))
+        searchInputField.dispatchEvent(event)
     }
 }
 
