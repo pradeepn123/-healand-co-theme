@@ -30,6 +30,10 @@ class SuggestionSearchBar extends HTMLElement {
         });
         searchInputField.value = e.target.value
         searchInputField.dispatchEvent(event)
+
+        if (e.keyCode == 13) {
+            searchForm.submit()
+        }
     }
 }
 

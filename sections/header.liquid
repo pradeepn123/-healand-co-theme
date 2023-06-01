@@ -556,6 +556,61 @@
               {% render 'icon-pack', icon: 'header-search-icon', class: '', icon_style: icon_style %}
             </a>
           {%- else -%}
+            <style>
+              suggestion-search-bar {
+                  display: flex;
+                  align-items: center;
+              }
+
+              @media screen and (min-width: 768px) {
+                  .search-sidebar {
+                      position: absolute;
+                      width: auto;
+                      max-height: 80vh;
+                      top: 125px;
+                      right: 100px;
+                      border-radius: 17px;
+                      height: auto;
+                  }
+
+                  .search-sidebar__body {
+                      width: 48rem;
+                      border-radius: 15px;
+                  }
+
+                  .search-sidebar__form {
+                      padding: 0;
+                  }
+
+                  .search-field {
+                      display: none;
+                  }
+                  .header__icons suggestion-search-bar .search-field__input {
+                      border-bottom: 2px solid black;
+                      padding: 15px 0; 
+                  }
+                  .search-sidebar__header {
+                      height: 2.8rem;
+                      padding-top: 18px;
+                  }
+              }
+
+              @media screen and (max-width: 767px) {
+                  .header__icons suggestion-search-bar .search-field__input {
+                      display: none;
+                  }
+              }
+
+              @media screen and (max-width: 1015px) and (min-width: 768px){
+                  .search-sidebar {
+                      top: 115px;
+                      right: 50px;
+                  }
+                  .search-sidebar__body {
+                      width: 40rem;
+                  }
+              }
+            </style>
             <sidebar-button>
               <suggestion-search-bar>
                 <input
