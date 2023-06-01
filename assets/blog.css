@@ -46,6 +46,10 @@
     align-items: center;
 }
 
+.featured-article__content .link__text::before {
+    background-color: #ffffff;
+}
+
 .featured-article__content svg.link__chevron{
     color: #ffffff;
 }
@@ -78,6 +82,10 @@
     text-align: left;
 }
 
+.article-card__read-more-link span.link__text:before {
+    background: #000;
+}
+
 .articles__header {
     border: 1px solid #B9B9B9;
     padding: 26px 42px;
@@ -107,7 +115,7 @@
 }
 
 .article-card__title {
-    font-family: "BrownStd-Regular";
+    font-family: "BrownStd-Regular" !important;
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
@@ -165,16 +173,43 @@
     width: 263px;
     height: 50px;
 }
+@media screen and (min-width: 1025px) {
+    .articles--page .articles__header {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .article-card__title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .article-card__details>*+.article-card__read-more-link {
+        margin: 1rem 0 0;
+    }
+    .articles--page .articles__header {
+        width: 70%;
+    }
+}
 
 @media screen and (min-width: 768px) {
+    .article-card__read-more-link {
+        margin-top: 32px;
+    }
+    .featured-article__order-number+.featured-article__content {
+        padding: 0 0 1.6rem;
+    }
+    .featured-article__content>*+*:last-child {
+        margin: 3.2rem 0 0;
+    }
     .articles__card-grid-wrap .card-grid {
         grid-row-gap: 79px;
     }
     .articles--page .articles__header {
         margin: 0 auto;
-        width: 50%;
         padding: 0 42px;
         margin-bottom: 32px;
+        border: 1px solid #B9B9B9;
+        border-radius: 40px;
     }
     .articles__tags {
         justify-content: flex-start;
@@ -199,8 +234,15 @@
 }
 
 @media screen and (max-width: 767px) {
+    .section-template--16185140215966__blog .article-card {
+        --gsc-img-ratio: 100%;
+    }
+    .shape--nature {
+        padding-bottom: 100%;
+    }
+
     .page_title_container {
-        padding: 48px 57px 48px 55px;
+        padding: 48px 57px 48px 55px;                                                                                                                                                                            
     }
     .page_title {
         font-size: 44px;
@@ -209,10 +251,6 @@
     .page_subtitle {
         font-size: 24px;
         line-height: 33px;
-    }
-    .featured-articles__container-full-screen {
-        padding-left: 15px;
-        padding-right: 15px;
     }
     .featured-articles__btns-wrap {
         top: 26.3rem;
@@ -277,5 +315,11 @@
         font-size: 16px;
         line-height: 31.2px;
         text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .page_title_container {
+        padding: 48px 23px 48px 23px;
     }
 }
