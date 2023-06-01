@@ -186,22 +186,6 @@
                         </div>
                       {% endif %}
 
-                      {% comment %} {% if video != blank %}
-                        {% render 'video-with-alt', video: video, class: 'image faq-section__image' %}
-                      {% elsif image != blank %}
-                        <img
-                          class='image faq-section__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
-                        >
-                      {% endif %} {% endcomment %}
                     </div>
                   </div>
                 </div>
