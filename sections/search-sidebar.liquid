@@ -73,64 +73,7 @@
                 </button>
               </sidebar-button>
             </div>
-            <search-sidebar-form-wrapper>
-              <form
-                class='search-sidebar__form'
-                id='SearchSidebarForm'
-                action='{{ routes.search_url }}'
-                method='get'
-                role='search'
-                data-sidebar-search-form
-              >
-                <search-field class='search-field' data-sidebar-search-input-component data-with-load-focus>
-                  <label class='visually-hidden' for='SearchSidebarForm-QueryInput-{{ section.id }}'>
-                    {{- 'dialog_elements.search_drawer.label_for_search_input' | t -}}
-                  </label>
-                  <input
-                    class='search-field__input'
-                    type='text'
-                    name='q'
-                    placeholder='{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}'
-                    data-sidebar-search-input
-                    data-search-field-input
-                    id='SearchSidebarForm-QueryInput-{{ section.id }}'
-                  >
-                  <div class='search-field__controls'>
-                    <button
-                      type='button'
-                      class='unstyled-button search-field__controls-item hidden'
-                      aria-label='{{ 'dialog_elements.search_drawer.screen_reader_label_for_search_button' | t }}'
-                      data-search-field-reset-button
-                    >
-                      {% render 'icon',
-                        icon_name: 'close-large',
-                        class: 'search-field__controls-item-icon search-field__controls-item-icon--reset'
-                      %}
-                    </button>
-                    <button
-                      type='button'
-                      form='SearchSidebarForm'
-                      class='unstyled-button search-field__controls-item'
-                      aria-label='{{ 'dialog_elements.search_drawer.screen_reader_label_for_search_button' | t }}'
-                    >
-                      {% render 'icon', icon_name: 'main-search', class: 'search-field__controls-item-icon' %}
-                    </button>
-                  </div>
-                </search-field>
-                <input
-                  name='options[prefix]'
-                  type='hidden'
-                  value='last'
-                  id='SearchSidebarForm-OptionsPrefixInput-{{ section.id }}'
-                >
-                <input
-                  type='hidden'
-                  name='options[unavailable_products]'
-                  value='show'
-                  id='SearchSidebarForm-OptionsUnavailableProductsInput-{{ section.id }}'
-                >
-              </form>
-            </search-sidebar-form-wrapper>
+            {% render 'search-form' %}
           </div>
 
           <div class='search-sidebar__content' data-sidebar-search-content>

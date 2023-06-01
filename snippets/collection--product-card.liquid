@@ -57,7 +57,7 @@
     assign product_color_swatches_style = 'none'
   endif
 -%}
-{{ 'collection-page.css' | asset_url | stylesheet_tag }}
+
 {% if product.id != blank %}
   <product-card
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %} product-card--center-alignment{% endif %}'
@@ -142,20 +142,46 @@
               height='1'
               style='object-position: {{ featured_media.presentation.focal_point }};'
             >
-            {%- if settings.img_hover == 'show-secondary-media' and images.size > 1 -%}
-              <img
-                class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
+            {%- if settings.img_hover == 'show-secondary-media' -%}
+              {%- if product.metafields.custom.color_schema != blank and product.metafields.custom.product_card != blank -%}
+              <div
+                class="product-card__img product-card-hover-wrapper"
                 data-secondary-media
-                src='{{ images[1] | image_url: width: 320 }}'
-                data-image-url='{{ images[1] | image_url: width: 1 }}'
-                data-aspectratio='{{ images[1].aspect_ratio }}'
-                data-sizes='auto'
-                alt='{{ images[1].alt }}'
-                loading='lazy'
-                width='1'
-                height='1'
-                style='object-position: {{ images[1].presentation.focal_point }};'
+                style="background-color: {{ product.metafields.custom.color_schema.value.highlighted_background_color }};color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};"
               >
+                <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
+                  {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
+                  {%- for title_word in title_words -%}
+                    <span>{{- title_word -}}</span>
+                    {%- unless forloop.last -%}
+                      <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="{{ product.metafields.custom.color_schema.value.highlighted_text_color }}"/>
+                      </svg>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                </h6>
+                <p>
+                  {{- product.metafields.custom.product_card.value.description -}}
+                </p>
+                <div class="card-icon-wrapper">
+                  {{ product.metafields.custom.product_card.value.icon | metafield_tag }}
+                </div>
+              </div>
+              {%- else -%}
+                <img
+                  class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
+                  data-secondary-media
+                  src='{{ images[1] | image_url: width: 320 }}'
+                  data-image-url='{{ images[1] | image_url: width: 1 }}'
+                  data-aspectratio='{{ images[1].aspect_ratio }}'
+                  data-sizes='auto'
+                  alt='{{ images[1].alt }}'
+                  loading='lazy'
+                  width='1'
+                  height='1'
+                  style='object-position: {{ images[1].presentation.focal_point }};'
+                >
+              {%- endif -%}
             {%- endif -%}
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               {%- for img in images limit: 5 -%}

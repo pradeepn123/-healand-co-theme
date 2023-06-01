@@ -21,7 +21,7 @@
     {%- endif -%}
   {%- endfor -%}
 
-  {%- if rating_count != blank -%}
+  {%- if rating_count != blank and rating_count > 0 -%}
     <div class='rating__count'>({{- rating_count -}})</div>
   {%- endif -%}
 </div>

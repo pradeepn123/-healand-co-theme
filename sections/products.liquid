@@ -222,7 +222,7 @@
                 <div class='shop__products-grid'>
                   {%- for product in block.settings.bundles_products -%}
                     <div class='shop__grid-item'>
-                      {% render 'product-card',
+                      {% render 'collection--product-card',
                         with_bottom_spacing: true,
                         product: product,
                         show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
@@ -247,7 +247,7 @@
                 <div class='shop__products-grid' id='ShopProductsGrid'>
                   {%- for product in collection.products -%}
                     <div class='shop__grid-item'>
-                        {% render 'product-card',
+                        {% render 'collection--product-card',
                           with_bottom_spacing: true,
                           product: product,
                           show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
