@@ -56,7 +56,7 @@
     object-fit: contain;
 }
 @media(min-width:767px){
-    .Mobile_img{
+    .product--features--main .Mobile_img{
         display: none;
     }
 }
@@ -75,10 +75,10 @@
     .product--features--main .product--features--heading {
         padding: 5rem 0 3.2rem 0;
     }
-    .Desktop_img{
+    .product--features--main .Desktop_img{
         display: none;
     }
-    .Mobile_img{
+    .product--features--main .Mobile_img{
         display: block;
     }
 }
