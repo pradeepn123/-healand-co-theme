@@ -557,14 +557,23 @@
             </a>
           {%- else -%}
             <sidebar-button>
-              <button
-                class='unstyled-button icon header__icon'
-                data-sidebar-button
-                data-sidebar-id='SearchSidebar'
-                aria-label='Search Sidebar'
-              >
-                {% render 'icon-pack', icon: 'header-search-icon', class: '', icon_style: icon_style %}
-              </button>
+              <suggestion-search-bar>
+                <input
+                  class='search-field__input'
+                  type='text'
+                  name='q'
+                  placeholder='{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}'
+                  data-sidebar-search-input
+                >
+                <button
+                  class='unstyled-button icon header__icon'
+                  data-sidebar-button
+                  data-sidebar-id='SearchSidebar'
+                  aria-label='Search Sidebar'
+                >
+                  {% render 'icon-pack', icon: 'header-search-icon', class: '', icon_style: icon_style %}
+                </button>
+              </suggestion-search-bar>
             </sidebar-button>
           {%- endif -%}
         {% endif %}

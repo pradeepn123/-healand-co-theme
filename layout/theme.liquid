@@ -29,6 +29,7 @@
 
     {% render 'css-variables' %}
     {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'search.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'index.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'fonts' %}
@@ -84,5 +85,6 @@
     </script>
 
     <script src='{{ 'index.js' | asset_url }}' defer='defer'></script>
+    <script src='{{ 'search.js' | asset_url }}' defer='defer'></script>
   </body>
 </html>

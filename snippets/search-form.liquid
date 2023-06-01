@@ -1,14 +1,14 @@
 <search-sidebar-form-wrapper>
   <form
     class='search-sidebar__form'
-    id='SearchSidebarForm'
+    id="{{form_id}}"
     action='{{ routes.search_url }}'
     method='get'
     role='search'
     data-sidebar-search-form
   >
     <search-field class='search-field' data-sidebar-search-input-component data-with-load-focus>
-      <label class='visually-hidden' for='SearchSidebarForm-QueryInput-{{ section.id }}'>
+      <label class='visually-hidden' for='{{form_id}}-QueryInput-{{ section.id }}'>
         {{- 'dialog_elements.search_drawer.label_for_search_input' | t -}}
       </label>
       <input
@@ -18,7 +18,7 @@
         placeholder='{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}'
         data-sidebar-search-input
         data-search-field-input
-        id='SearchSidebarForm-QueryInput-{{ section.id }}'
+        id='{{form_id}}-QueryInput-{{ section.id }}'
       >
       <div class='search-field__controls'>
         <button
@@ -34,7 +34,7 @@
         </button>
         <button
           type='button'
-          form='SearchSidebarForm'
+          form='{{form_id}}'
           class='unstyled-button search-field__controls-item'
           aria-label='{{ 'dialog_elements.search_drawer.screen_reader_label_for_search_button' | t }}'
         >
@@ -46,13 +46,13 @@
       name='options[prefix]'
       type='hidden'
       value='last'
-      id='SearchSidebarForm-OptionsPrefixInput-{{ section.id }}'
+      id='{{form_id}}-OptionsPrefixInput-{{ section.id }}'
     >
     <input
       type='hidden'
       name='options[unavailable_products]'
       value='show'
-      id='SearchSidebarForm-OptionsUnavailableProductsInput-{{ section.id }}'
+      id='{{form_id}}-OptionsUnavailableProductsInput-{{ section.id }}'
     >
   </form>
 </search-sidebar-form-wrapper>
