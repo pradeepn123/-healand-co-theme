@@ -116,3 +116,13 @@ suggestion-search-bar {
         display: none;
     }
 }
+
+@media screen and (max-width: 1015px) and (min-width: 768px){
+    .search-sidebar {
+        top: 115px;
+        right: 50px;
+    }
+    .search-sidebar__body {
+        width: 40rem;
+    }
+}
