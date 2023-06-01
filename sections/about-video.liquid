@@ -1,6 +1,6 @@
 <section class="about-video">
   <div class="video-section">
-    <div class="container" style="height: auto; padding: 3%;">
+    <!-- <div class="container video--fit" style="height: auto; "> -->
       <div class="video-wrapper ">
         <div class="about-video-thumbnail video-overlay">
           <img class="vid-image-size" onClick="videoPlayfunction()"
@@ -11,7 +11,7 @@
             src="{{ section.settings.play-icon | img_url: 'master'}}" alt="Thumbnail">
         </div>
         <div class="video-container">
-          {% render 'video-with-alt', video: section.settings.video, class: 'video-size playpause about-video-play', controls: true %}
+          {% render 'video-block', video: section.settings.video, class: 'video-size playpause about-video-play', controls: true %}
           <!-- <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video | media_tag }} "></video> -->
           <!-- <div class="video-size playpause" id="about-video-play">
             {{ section.settings.video | media_tag }}
@@ -20,7 +20,7 @@
 
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </section>
 
