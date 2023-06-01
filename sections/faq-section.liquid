@@ -33,12 +33,15 @@
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
     {% endfor %}
-    {% comment %}
-    {% endcomment %}
-      .faq-section--parent .section_heading{
-        background-color: {{ section.settings.section_bg_heading_color }};
-        color: {{ section.settings.section_heading_color }}
+    .faq-section--parent .section_heading{
+      background-color: {{ section.settings.section_bg_heading_color }};
+      color: {{ section.settings.section_heading_color }}
+    }
+    {% if data_metafields_checkbox == true and data_metafields == blank %}
+      .product_faq_class{
+        display: none;
       }
+    {% endif %}
   {% endstyle %}
 {% endcapture %}
 
@@ -200,6 +203,7 @@
 {
   "name": "FAQ Section",
   "tag": "section",
+  "class": "product_faq_class",
   "settings": [
     {
       "type": "checkbox",

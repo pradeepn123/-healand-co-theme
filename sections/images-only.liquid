@@ -16,19 +16,21 @@
     }
 {% endstyle %}
 
-<div class="imagesOnly_container container container--xsmall section-spacing">
-    <div class="imagesOnly_parent">
-        {% for block in metafieldData %}
-            {% if block.svg_image  != blank %}
-                {{ block.svg_image }}
-            {% else %}
-                {% if block.an_image %}
-                    <img src="{{ block.an_image | img_url: 'master' }}">
+{% if metafieldData != blank %}
+    <div class="imagesOnly_container container container--xsmall section-spacing">
+        <div class="imagesOnly_parent">
+            {% for block in metafieldData %}
+                {% if block.svg_image  != blank %}
+                    {{ block.svg_image }}
+                {% else %}
+                    {% if block.an_image %}
+                        <img src="{{ block.an_image | img_url: 'master' }}">
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
+{% endif %}
 {% schema %}
     {
         "name": "Images Only",
