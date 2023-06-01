@@ -315,6 +315,33 @@
         "expand_first_collapsible_row": false
       }
     },
+    "1685610865f6b57fb5": {
+      "type": "apps",
+      "blocks": {
+        "804a2e25-3c51-45ac-b31f-45e5a77ef5de": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "804a2e25-3c51-45ac-b31f-45e5a77ef5de"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "custom_liquid": ""
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -343,31 +370,59 @@
         "show_navigation_on_hover": true
       }
     },
-    "1685610865f6b57fb5": {
-      "type": "apps",
+    "9c351037-cecc-436a-98df-4d0530b584e8": {
+      "type": "newsletter",
       "blocks": {
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-1": {
+          "type": "title",
           "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": false,
-            "sku_tagtype": "sku"
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "color": "#ffffff",
+            "heading_size": "h4"
+          }
+        },
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-2": {
+          "type": "text",
+          "settings": {
+            "text": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
+            "color": "#ffffff",
+            "body_size": "body3"
+          }
+        },
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
           }
         }
       },
       "block_order": [
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de"
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-1",
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-2",
+        "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-3"
       ],
       "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48,
-        "custom_liquid": ""
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 640,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "desktop_overlay_opacity": 20,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
       }
     }
   },
@@ -380,7 +435,8 @@
     "8397c856-bdf5-43c7-b847-480e2ba12dfa",
     "edd01020-fd3e-4a56-bdef-3698127f931d",
     "9cddc487-a63b-451c-978c-ad462e8aad54",
+    "1685610865f6b57fb5",
     "product-recommendations",
-    "1685610865f6b57fb5"
+    "9c351037-cecc-436a-98df-4d0530b584e8"
   ]
 }

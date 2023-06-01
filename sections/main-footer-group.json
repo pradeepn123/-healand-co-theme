@@ -54,12 +54,13 @@
       ],
       "settings": {
         "color_scheme": "secondary",
-        "container_size": "page-width",
+        "container_size": "full-screen",
         "desktop_column_count": "4",
         "enable_border": false,
         "bottom_bar": "",
         "show_payment_icons": false,
         "copyright_text": "© 2023 Heal + Co.",
+        "enable_follow_on_shop": true,
         "show_language_selector": false,
         "show_currency_selector": false
       }
