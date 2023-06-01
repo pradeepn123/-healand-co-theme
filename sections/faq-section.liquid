@@ -186,7 +186,7 @@
                         </div>
                       {% endif %}
 
-                      {% if video != blank %}
+                      {% comment %} {% if video != blank %}
                         {% render 'video-with-alt', video: video, class: 'image faq-section__image' %}
                       {% elsif image != blank %}
                         <img
@@ -201,7 +201,7 @@
                           data-srcset='{%- render 'srcset-for-image', image: image -%}'
                           data-sizes='auto'
                         >
-                      {% endif %}
+                      {% endif %} {% endcomment %}
                     </div>
                   </div>
                 </div>

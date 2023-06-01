@@ -158,7 +158,7 @@
         "custom_class": "custom-product-details",
         "color_scheme": "#faf5ef",
         "tabs_color": "#ea6852",
-        "tabs_text_color": "#FFF",
+        "tabs_text_color": "#ffffff",
         "enable_background_around_container": true,
         "container_size": "small",
         "section_spacing_top": 40,
@@ -168,53 +168,9 @@
     },
     "images-only": {
       "type": "images-only",
-      "blocks": {
-        "fc06c067-5488-459e-bd30-9a135c677ac0": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "block_image": "shopify:\/\/shop_images\/row-image-1.png"
-          }
-        },
-        "243baf35-2449-4f3f-8d8f-deb65327cc42": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "block_image": "shopify:\/\/shop_images\/row-image-2.png"
-          }
-        },
-        "fa3f4bb0-3ed3-41a0-878a-a4906ed35969": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "block_image": "shopify:\/\/shop_images\/row-image-3.png"
-          }
-        },
-        "d7dffae0-f11b-4b07-aac3-acbda4955112": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "block_image": "shopify:\/\/shop_images\/row-image-4.png"
-          }
-        },
-        "d8a378a7-8be7-45cd-ba62-7ef0b27ba5d6": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "block_image": "shopify:\/\/shop_images\/row-image-5.png"
-          }
-        }
-      },
-      "block_order": [
-        "fc06c067-5488-459e-bd30-9a135c677ac0",
-        "243baf35-2449-4f3f-8d8f-deb65327cc42",
-        "fa3f4bb0-3ed3-41a0-878a-a4906ed35969",
-        "d7dffae0-f11b-4b07-aac3-acbda4955112",
-        "d8a378a7-8be7-45cd-ba62-7ef0b27ba5d6"
-      ],
       "settings": {
         "section_spacing_top": 64,
-        "section_spacing_bottom": 38
+        "section_spacing_bottom": 64
       }
     },
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
