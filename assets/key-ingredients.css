@@ -59,6 +59,14 @@
     font-size: 20px;
 }
 
+.key_ingredient_section .card-carousel__viewport .card-carousel__container{
+    align-items: stretch;
+    height: 100%;
+}
+.key_ingredient_section .card-carousel__viewport .card-carousel__container .card-carousel__slide{
+    display: flex;
+}
+
 @media(min-width:768px){
     .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
         top: -0.4em;

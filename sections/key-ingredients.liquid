@@ -23,6 +23,7 @@
 
   assign section_layout = options.section_layout
   assign show_navigation_on_hover = options.show_navigation_on_hover
+  assign keymetadata = product.metafields.custom.key_ingredients.value 
 
   if section_layout == 'carousel-overflow'
     assign half_desktop_slide_width = desktop_carousel_percent_width | divided_by: desktop_columns | times: 0.33
@@ -98,48 +99,50 @@
 
 {{ 'key-ingredients.css' | asset_url | stylesheet_tag }}
 
-<div class="section-{{ section.id }}">
-    <div class="container container--{{ container_size }} section-spacing">
-        
-        <carousel-component class="card-carousel key-ingredients
-            {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{%else%}{% endif %}
-            {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} 
-            {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}"
-            data-section-id='{{ section.id }}'>
+{% if keymetadata %}
+    <div class="section-{{ section.id }}">
+        <div class="container container--{{ container_size }} section-spacing">
             
-            
-            <div class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
-                <carousel-btn
-                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
-                    data-scroll-direction='prev'
-                    tabindex='0'
-                >
-                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
-                </carousel-btn>
-                <h4 class="{{ heading_size }}">{{ title }}</h4>
-                <carousel-btn
-                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
-                    data-scroll-direction='next'
-                    tabindex='0'
-                >
-                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
-                </carousel-btn>
-            </div>
-            <div class="card-carousel__viewport 
-            {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
-                <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
-                    {% assign keymetadata = product.metafields.custom.key_ingredients.value %}
-                    {% for item in keymetadata %}
-                        <div class='card-carousel__slide'>
-                            {% render 'key-ingredients', item: item %}
-                        </div>
-                    {% endfor %}                                 
+            <carousel-component class="card-carousel key-ingredients
+                {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{%else%}{% endif %}
+                {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} 
+                {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}"
+                data-section-id='{{ section.id }}'>
+                
+                
+                <div class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
+                    <carousel-btn
+                        class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
+                        data-scroll-direction='prev'
+                        tabindex='0'
+                    >
+                        {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
+                    </carousel-btn>
+                    <h4 class="{{ heading_size }}">{{ title }}</h4>
+                    <carousel-btn
+                        class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
+                        data-scroll-direction='next'
+                        tabindex='0'
+                    >
+                        {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+                    </carousel-btn>
                 </div>
-            </div>
-            
-        </carousel-component>
+                <div class="card-carousel__viewport 
+                {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
+                    <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
+                        
+                        {% for item in keymetadata %}
+                            <div class='card-carousel__slide'>
+                                {% render 'key-ingredients', item: item %}
+                            </div>
+                        {% endfor %}                                 
+                    </div>
+                </div>
+                
+            </carousel-component>
+        </div>
     </div>
-</div>
+{% endif %}
 
 
 

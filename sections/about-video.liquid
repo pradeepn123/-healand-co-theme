@@ -1,6 +1,9 @@
+{% liquid 
+  assign option = section.settings
+  assign video = option.video
+%}
 <section class="about-video">
-  <div class="video-section">
-    <!-- <div class="container video--fit" style="height: auto; "> -->
+  <div class="video-section">    
       <div class="video-wrapper ">
         <div class="about-video-thumbnail video-overlay">
           <img class="vid-image-size" onClick="videoPlayfunction()"
@@ -11,23 +14,15 @@
             src="{{ section.settings.play-icon | img_url: 'master'}}" alt="Thumbnail">
         </div>
         <div class="video-container">
-          {% render 'video-block', video: section.settings.video, class: 'video-size playpause about-video-play', controls: true %}
-          <!-- <video class="video-size playpause" id="about-video-play" src="{{ section.settings.video | media_tag }} "></video> -->
-          <!-- <div class="video-size playpause" id="about-video-play">
-            {{ section.settings.video | media_tag }}
-          </div> -->
-
-
+          {% render 'video-block', video: video, class: 'video-size playpause about-video-play' %}
         </div>
       </div>
-    <!-- </div> -->
   </div>
 </section>
 
 <script>
   const customVideo = document.querySelector('.about-video-play');
-  function videoPlayfunction() {
-    customVideo.play();
+  function videoPlayfunction() {    
     document.querySelector('.vid-image-size').style.display = 'none';
     document.querySelector('.about-play-icon').style.display = 'none';
   }
@@ -36,19 +31,13 @@
     customVideo.classList.toggle('playpause');
     if (customVideo.classList.contains('playpause')) {
       customVideo.pause()
+      customVideo.muted = true;
     }
     else {
       customVideo.play()
+      customVideo.muted = false;
     }
   })
-
-  function playVid() {
-    x.play();
-  }
-
-  function pauseVid() {
-    x.pause();
-  }
 
 </script>
 
