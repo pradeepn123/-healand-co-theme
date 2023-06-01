@@ -6,15 +6,6 @@
 .faq__accordeon-plus-btn.accordeon-plus__btn{
     font-family: 'BrownStd-Bold';
 }
-@media(max-width:520px){
-  .faq--main--parent .faq__accordeon-plus-btn.accordeon-plus__btn{
-        font-size: 16px !important;
-    }
-     .faq--main--parent{
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
 .faq__blocks .faq__accordeon-plus-btn{
     padding: 3rem 1.6rem 3.1rem 1.5rem;
     line-height: 20px;
@@ -29,7 +20,26 @@
     padding-right:1.6rem ;
 }
 @media(max-width:520px){
-    .faq__content h5{
+    .faq--main--parent .faq__accordeon-plus-btn.accordeon-plus__btn{
+          font-size: 16px !important;
+      }
+      .faq--main--parent{
+          padding-right: 0;
+          padding-left: 0;
+      }
+      .faq__content h5{
         font-size: 24px !important;
     }
-}
+      .faq__blocks .faq__accordeon-plus-btn{
+          padding: 3rem 0rem;
+      }
+      .accordeon-plus--bottom-bordered{
+          margin-left: 1.5rem ;
+          margin-right:1.6rem ;
+      }
+      .accordeon-plus__content-wrap .faq__accordeon-plus-content{
+              padding-right: 0;
+              padding-left: 0;
+  
+      }
+  }
