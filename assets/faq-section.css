@@ -83,6 +83,14 @@
     display: flex
 }
 
+.faq-section--parent accordeon-component accordeon-btn{
+    font-size: 20px;
+}
+
+.faq-section--parent .faq-section__rte{
+    font-size: 16px;
+}
+
 @media screen and (min-width:768px) {
     .faq-section__container {
         padding-top: 3.2rem;
@@ -140,9 +148,14 @@
     border-left: 0;
     border-right:0 ;
 }
-
 @media screen and (max-width: 767px) {
     .faq-section--parent .section_heading {
         padding: 2rem;
+    }
+    .faq-section--parent accordeon-component accordeon-btn {
+        font-size: 16px;
+    }
+    .faq-section--parent .container {
+        padding: 0;
     }
 }

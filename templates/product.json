@@ -25,7 +25,8 @@
         },
         "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
           "type": "prod_additional_details",
-          "settings": {}
+          "settings": {
+          }
         },
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183": {
           "type": "variant_picker",
@@ -50,7 +51,8 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -64,7 +66,9 @@
           "type": "upsell_products",
           "settings": {
             "img_ratio": "square",
-            "upsell_products": ["immunity-bundle-ca"],
+            "upsell_products": [
+              "immunity-bundle-ca"
+            ],
             "show_add_to_cart": true
           }
         }
@@ -102,7 +106,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>1. Write up some information to display. HTML Format can be used here too.</p>",
+            "text": "<p>1. Write up some information to display. HTML Format can be used here too.<\/p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -113,7 +117,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>2. Write up some information to display. HTML Format can be used here too.</p>",
+            "text": "<p>2. Write up some information to display. HTML Format can be used here too.<\/p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -125,7 +129,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>3. Write up some information to display. HTML Format can be used here too.</p>",
+            "text": "<p>3. Write up some information to display. HTML Format can be used here too.<\/p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -137,7 +141,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>4. Write up some information to display. HTML Format can be used here too.</p>",
+            "text": "<p>4. Write up some information to display. HTML Format can be used here too.<\/p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -172,8 +176,8 @@
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
       "type": "product-benefits",
       "settings": {
-        "featured_image": "shopify://shop_images/product_image.png",
-        "heading": "",
+        "featured_image": "shopify:\/\/shop_images\/product_image.png",
+        "heading": "Powerful Benefits",
         "sub_heading": "",
         "bg_color": "#faf5ef",
         "text_color": "",
@@ -197,7 +201,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
             "page": "",
             "image_width": 100
           }
@@ -207,7 +211,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
             "page": "",
             "image_width": 100
           }
@@ -217,7 +221,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
             "page": "",
             "image_width": 100
           }
@@ -252,7 +256,7 @@
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
             "heading_size": "h6",
             "body_size": "body3",
             "link_text": "Link label",
@@ -269,7 +273,7 @@
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
             "heading_size": "h6",
             "body_size": "body3",
             "link_text": "Link label",
@@ -304,19 +308,23 @@
       "blocks": {
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0": {
           "type": "image",
-          "settings": {}
+          "settings": {
+          }
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1": {
           "type": "image",
-          "settings": {}
+          "settings": {
+          }
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2": {
           "type": "image",
-          "settings": {}
+          "settings": {
+          }
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3": {
           "type": "image",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -337,7 +345,7 @@
         "icon": "none",
         "subheading": "IMAGES WITH TEXT",
         "heading": "Promo with featured images",
-        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>",
         "heading_size": "h2",
         "body_size": "body3",
         "content_alignment": "left",
@@ -348,6 +356,24 @@
         "second_button_text": "",
         "second_button_link": "",
         "second_button_style": "solid"
+      }
+    },
+    "8397c856-bdf5-43c7-b847-480e2ba12dfa": {
+      "type": "key-ingredients",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "Key Ingredients",
+        "heading_size": "h5",
+        "alignment": "center",
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
       }
     },
     "edd01020-fd3e-4a56-bdef-3698127f931d": {
@@ -370,13 +396,15 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
             "page": "",
             "image_width": 100
           }
         }
       },
-      "block_order": ["b14ce9d2-82f1-470f-990a-911482495939"],
+      "block_order": [
+        "b14ce9d2-82f1-470f-990a-911482495939"
+      ],
       "settings": {
         "from_metafields": true,
         "section_heading": "FAQ's",
@@ -385,8 +413,8 @@
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",
-        "section_spacing_top": 0,
-        "section_spacing_bottom": 0,
+        "section_spacing_top": 64,
+        "section_spacing_bottom": 64,
         "expand_first_collapsible_row": false
       }
     },
@@ -403,7 +431,9 @@
         "alignment": "center",
         "product_recommendations_type": "auto",
         "featured_collection": "",
-        "featured_products": [],
+        "featured_products": [
+
+        ],
         "img_ratio": "portrait",
         "product_card_align": "center",
         "cards_to_show": 18,
@@ -425,6 +455,7 @@
     "product-details",
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
     "35a80c75-d4b0-4340-9552-75a9f11586de",
+    "8397c856-bdf5-43c7-b847-480e2ba12dfa",
     "edd01020-fd3e-4a56-bdef-3698127f931d",
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "product-recommendations"
