@@ -25,8 +25,7 @@
         },
         "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
           "type": "prod_additional_details",
-          "settings": {
-          }
+          "settings": {}
         },
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183": {
           "type": "variant_picker",
@@ -51,8 +50,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -66,9 +64,7 @@
           "type": "upsell_products",
           "settings": {
             "img_ratio": "square",
-            "upsell_products": [
-              "immunity-bundle-ca"
-            ],
+            "upsell_products": ["immunity-bundle-ca"],
             "show_add_to_cart": true
           }
         }
@@ -106,7 +102,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>1. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text": "<p>1. Write up some information to display. HTML Format can be used here too.</p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -117,7 +113,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>2. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text": "<p>2. Write up some information to display. HTML Format can be used here too.</p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -129,7 +125,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>3. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text": "<p>3. Write up some information to display. HTML Format can be used here too.</p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -141,7 +137,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>4. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text": "<p>4. Write up some information to display. HTML Format can be used here too.</p>",
             "text_2": "Right Content",
             "page": "",
             "image_width": 100
@@ -176,7 +172,7 @@
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
       "type": "product-benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/product_image.png",
+        "featured_image": "shopify://shop_images/product_image.png",
         "heading": "",
         "sub_heading": "",
         "bg_color": "#faf5ef",
@@ -201,7 +197,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
             "image_width": 100
           }
@@ -211,7 +207,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
             "image_width": 100
           }
@@ -221,7 +217,7 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
             "image_width": 100
           }
@@ -256,7 +252,7 @@
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
             "heading_size": "h6",
             "body_size": "body3",
             "link_text": "Link label",
@@ -273,7 +269,7 @@
             "overlay_opacity": 20,
             "caption": "IMAGE",
             "title": "Image with text",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
             "heading_size": "h6",
             "body_size": "body3",
             "link_text": "Link label",
@@ -308,23 +304,19 @@
       "blocks": {
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         },
         "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3": {
           "type": "image",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -345,7 +337,7 @@
         "icon": "none",
         "subheading": "IMAGES WITH TEXT",
         "heading": "Promo with featured images",
-        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>",
+        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
         "heading_size": "h2",
         "body_size": "body3",
         "content_alignment": "left",
@@ -378,15 +370,13 @@
           "settings": {
             "title": "Content tab",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
             "image_width": 100
           }
         }
       },
-      "block_order": [
-        "b14ce9d2-82f1-470f-990a-911482495939"
-      ],
+      "block_order": ["b14ce9d2-82f1-470f-990a-911482495939"],
       "settings": {
         "from_metafields": true,
         "section_heading": "FAQ's",
@@ -413,9 +403,7 @@
         "alignment": "center",
         "product_recommendations_type": "auto",
         "featured_collection": "",
-        "featured_products": [
-
-        ],
+        "featured_products": [],
         "img_ratio": "portrait",
         "product_card_align": "center",
         "cards_to_show": 18,

@@ -20,7 +20,7 @@
     "primary_background_color": "#FFFFFF",
     "primary_foreground_color": "#f5f5f5",
     "primary_border_color": "#e7e7e7",
-    "primary_button_background_color": "#6c745d",
+    "primary_button_background_color": "#ee5c4c",
     "primary_button_text_color": "#FFFFFF",
     "secondary_text_color": "#34342f",
     "secondary_background_color": "#f5f5f5",
@@ -131,7 +131,23 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "7612553728132747764": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/net-promoter-score-form-modal\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "email": "",
+          "name": "",
+          "title": "",
+          "message": "Enable advanced features and increase your monthly order limit to match your business's needs.",
+          "reason": "",
+          "thank_you": "",
+          "label_name": "",
+          "label_email": ""
+        }
+      }
+    }
   },
   "presets": {
     "Pure": {
