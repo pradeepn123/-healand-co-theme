@@ -3,9 +3,9 @@
 {%- liquid
     assign highlightedBackgroundColor = product.metafields.custom.color_schema.value.highlighted_background_color | default: "#EA6852"
     assign highlightedTextColor = product.metafields.custom.color_schema.value.highlighted_text_color
+    assign powerfulBenefits_ExtraInfo = product.metafields.custom.powerful_benefits_extra_info.value
 -%}
 {% assign prodBenefits = product.metafields.custom.product_benefits.value %}
-
 {% capture imageFromLoop %}
     {% for item in prodBenefits %}
         {% if item.heading == "false" %}
@@ -17,87 +17,90 @@
 {% style %}
     .pb_container .pb_title{
         background-color: {{ highlightedBackgroundColor }};
+    }
+    .pb_container .pb_title .heading,
+    .pb_container .pb_title .subheading{
         color: {{ highlightedTextColor }}
     }
 {% endstyle %}
 
-<div class="pb_container">
-    <div class="pb_title">
-        <p class="heading">Powerful Benefits </p>
-        <p class="subheading">{{ product.title }}</p>
-    </div>
-    <div class="pb_content">
-        <div class="pb_left pb_styling">
-            {% for block in prodBenefits limit: 2 %}
-                {% unless block.heading == "false" %}
-                    <div class="pb_content_continer">
-                        <img src="{{ block.images | img_url: 'master'}}" alt="">
-                        <span class="pb_content_left pb_content_inner">
-                            <h6>{{ block.heading }}</h6>
-                            <p>{{ block.description }}</p>
-                        </span>
-                    </div>
-                {% endunless%}
-            {% endfor %}
+{% if powerfulBenefits_ExtraInfo.show_hide_section %}
+    <div class="pb_container">
+        <div class="pb_title">
+            <p class="heading">{{ section.settings.heading }}</p>
+            <p class="subheading">
+                {{ powerfulBenefits_ExtraInfo.subheading }}
+            </p>
         </div>
-        <div class="pb_center">
-            {% for block in prodBenefits %}
-                {% if block.heading == "false" %}
-                    <img src="{{ block.images | img_url: 'master'}}" alt="">
-                {% endif %}
-            {% endfor %}
+        <div class="pb_content">
+            <div class="pb_left pb_styling">
+                {% for block in prodBenefits limit: 2 %}
+                    {% unless block.heading == "false" %}
+                        <div class="pb_content_continer">
+                            <img src="{{ block.images | img_url: 'master'}}" alt="">
+                            <span class="pb_content_left pb_content_inner">
+                                <h6>{{ block.heading }}</h6>
+                                <p>{{ block.description }}</p>
+                            </span>
+                        </div>
+                    {% endunless%}
+                {% endfor %}
+            </div>
+            <div class="pb_center">
+                <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
+            </div>
+            <div class="pb_right pb_styling">
+                {% for block in prodBenefits offset: 2 %}
+                    {% unless block.heading == "false" %}
+                        <div class="pb_content_continer">
+                            <img src="{{ block.images | img_url: 'master'}}" alt="">
+                            <span class="pb_content_right pb_content_inner">
+                                <h6>{{ block.heading }}</h6>
+                                <p>{{ block.description }}</p>
+                            </span>
+                        </div>
+                    {% endunless %}
+                {% endfor %}
+            </div>
         </div>
-        <div class="pb_right pb_styling">
-            {% for block in prodBenefits offset: 2 %}
-                {% unless block.heading == "false" %}
-                    <div class="pb_content_continer">
-                        <img src="{{ block.images | img_url: 'master'}}" alt="">
-                        <span class="pb_content_right pb_content_inner">
-                            <h6>{{ block.heading }}</h6>
-                            <p>{{ block.description }}</p>
-                        </span>
-                    </div>
-                {% endunless %}
-            {% endfor %}
-        </div>
-    </div>
-    <div class="pb_content_mobile">
-        <div class="pb_content_mobile_image">
-            {{ imageFromLoop }}
-        </div>
-        <div class="pb_content_mobile_accordion container container--page-width section">
-            {% for blockX in prodBenefits %}
-                {% unless blockX.heading == "false" %}
-                    <accordeon-component
-                        class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                        data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                        data-section-id='{{ section.id }}'
-                        data-block-id='{{ block.id }}'
-                        {{ block.shopify_attributes }} >
-                        <accordeon-btn
-                            class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
-                            tabindex='0'
-                        >
-                            <img src="{{ blockX.images | img_url: 'master'}}" alt="">
-                            {{ blockX.heading }}
-                            {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
-                        </accordeon-btn>
-                        <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                            <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
+        <div class="pb_content_mobile">
+            <div class="pb_content_mobile_image">
+                {{ imageFromLoop }}
+            </div>
+            <div class="pb_content_mobile_accordion container container--page-width section">
+                {% for blockX in prodBenefits %}
+                    {% unless blockX.heading == "false" %}
+                        <accordeon-component
+                            class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
+                            data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
+                            data-section-id='{{ section.id }}'
+                            data-block-id='{{ block.id }}'
+                            {{ block.shopify_attributes }} >
+                            <accordeon-btn
+                                class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
+                                tabindex='0'
+                            >
+                                <img src="{{ blockX.images | img_url: 'master'}}" alt="">
+                                <h6>{{ blockX.heading }}</h6>
+                                {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                            </accordeon-btn>
+                            <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+                                <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
-                            <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                <div class='rte faq-section__rte'>
-                                    {{ blockX.description }}
+                                <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
+                                    <div class='rte faq-section__rte'>
+                                        {{ blockX.description }}
+                                    </div>
+                                </div>
                                 </div>
                             </div>
-                            </div>
-                        </div>
-                    </accordeon-component>
-                {% endunless %}
-            {% endfor %}
+                        </accordeon-component>
+                    {% endunless %}
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
+{% endif %}
 
 {% schema %}
     {

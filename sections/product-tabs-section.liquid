@@ -23,9 +23,14 @@
 
 {% capture css %}
   {% style %}
+    {% unless dataFromMetafield%}
+      .show_hide_section {
+        display: none;
+      }
+    {% endunless %}
     .section-{{ section.id }} {
-      --gsc-section-spacing-top: {{ section_spacing_top }}px;
-      --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+      --gsc-section-spacing-top: {{ section.settings.section_spacing_top }}px;
+      --gsc-section-spacing-bottom: {{ section.settings.section_spacing_bottom }}px;
     }
 
     {% for block in section.blocks %}
@@ -42,14 +47,15 @@
     {% else %}
       .product-page-tabs .product-details__tab-names .product-details__tab-name.selected{
         background-color: {{ section.settings.tabs_color }};
+        color: {{ section.settings.tabs_text_color }};
       }
     {% endif %}
  
-  {% endstyle %} 
+  {% endstyle %}
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
-<div class='{{ section.settings.custom_class }} product-details section-{{ section.id }} {% if enable_background_around_container %} section {% endif %}' style="background-color: {{ color_scheme }}">
+<div class='{{ section.settings.custom_class }} product-details section-{{ section.id }} {% if enable_background_around_container %} section {% endif %}' {%if enable_background_around_container%}style="background-color: {{ color_scheme }}"{% endif %}>
   <div class='section-spacing container container--{{ container_size }}'>
     <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
         <div class="product-page-tabs">
@@ -452,6 +458,7 @@
 {
   "name": "Product Tabs Section",
   "tag": "section",
+  "class": "show_hide_section",
   "settings": [
     {
       "type": "text",
@@ -467,8 +474,14 @@
     {
       "type": "color",
       "id": "tabs_color",
-      "label": "Tabs Color",
+      "label": "Tabs Highlighted Color",
       "default": "#EA6852"
+    },
+    {
+      "type": "color",
+      "id": "tabs_text_color",
+      "label": "Tabs Highlighted Text Color",
+      "default": "#FFF"
     },
     {
       "type": "checkbox",

@@ -98,11 +98,86 @@
         "show_part_of_next_slide": false
       }
     },
+    "c104c1c4-38cb-49de-952e-a049b6ae8ccf": {
+      "type": "product-tabs-section",
+      "blocks": {
+        "905992ce-366d-4bde-b3e1-e71760d67f0e": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>1. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "Right Content",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "6fc95389-dcf8-44ec-8c00-31fd1a58877b": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>2. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "Right Content",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "71f38245-c242-466c-9cee-e0601012f380": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>3. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "Right Content",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "599c6932-f3eb-4bb9-804f-804c950ecc41": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "title": "Content tab",
+            "icon": "none",
+            "text": "<p>4. Write up some information to display. HTML Format can be used here too.<\/p>",
+            "text_2": "Right Content",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "905992ce-366d-4bde-b3e1-e71760d67f0e",
+        "6fc95389-dcf8-44ec-8c00-31fd1a58877b",
+        "71f38245-c242-466c-9cee-e0601012f380",
+        "599c6932-f3eb-4bb9-804f-804c950ecc41"
+      ],
+      "settings": {
+        "custom_class": "custom-product-details",
+        "color_scheme": "#faf5ef",
+        "tabs_color": "#ea6852",
+        "tabs_text_color": "#ffffff",
+        "enable_background_around_container": true,
+        "container_size": "small",
+        "section_spacing_top": 40,
+        "section_spacing_bottom": 40,
+        "expand_first_collapsible_row": false
+      }
+    },
+    "images-only": {
+      "type": "images-only",
+      "settings": {
+        "section_spacing_top": 64,
+        "section_spacing_bottom": 64
+      }
+    },
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
       "type": "product-benefits",
       "settings": {
         "featured_image": "shopify:\/\/shop_images\/product_image.png",
-        "heading": "",
+        "heading": "Powerful Benefits",
         "sub_heading": "",
         "bg_color": "#faf5ef",
         "text_color": "",
@@ -168,7 +243,122 @@
         "expand_first_collapsible_row": false
       }
     },
-    "62edae1c-9774-49b0-afa0-673d6ebaa258": {
+    "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be": {
+      "type": "collage",
+      "disabled": true,
+      "blocks": {
+        "534bf55b-7398-4fa0-ac15-dc87ef799863": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 2,
+            "overlay_opacity": 20,
+            "caption": "IMAGE",
+            "title": "Image with text",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "heading_size": "h6",
+            "body_size": "body3",
+            "link_text": "Link label",
+            "link": "",
+            "content_position": "center-center"
+          }
+        },
+        "3e1d9eaf-4579-49c0-9cfd-19c26e8bf3d6": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 2,
+            "overlay_opacity": 20,
+            "caption": "IMAGE",
+            "title": "Image with text",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "heading_size": "h6",
+            "body_size": "body3",
+            "link_text": "Link label",
+            "link": "",
+            "content_position": "center-center"
+          }
+        }
+      },
+      "block_order": [
+        "534bf55b-7398-4fa0-ac15-dc87ef799863",
+        "3e1d9eaf-4579-49c0-9cfd-19c26e8bf3d6"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "full-screen",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "title": "",
+        "heading_size": "h5",
+        "alignment": "center",
+        "columns": 4,
+        "desktop_row_height": 340,
+        "mobile_row_height": 500,
+        "desktop_space_between_cards": 12,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": true
+      }
+    },
+    "35a80c75-d4b0-4340-9552-75a9f11586de": {
+      "type": "images-with-text",
+      "disabled": true,
+      "blocks": {
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 80,
+        "content_layout": "left",
+        "image_layout": "collage",
+        "img_ratio": 1.3,
+        "rotate_images": false,
+        "icon": "none",
+        "subheading": "IMAGES WITH TEXT",
+        "heading": "Promo with featured images",
+        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>",
+        "heading_size": "h2",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "desktop_content_width": 440,
+        "first_button_text": "Button label",
+        "first_button_link": "",
+        "first_button_style": "solid",
+        "second_button_text": "",
+        "second_button_link": "",
+        "second_button_style": "solid"
+      }
+    },
+    "8397c856-bdf5-43c7-b847-480e2ba12dfa": {
       "type": "key-ingredients",
       "settings": {
         "color_scheme": "default",
@@ -223,8 +413,8 @@
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",
-        "section_spacing_top": 0,
-        "section_spacing_bottom": 0,
+        "section_spacing_top": 64,
+        "section_spacing_bottom": 64,
         "expand_first_collapsible_row": false
       }
     },
@@ -236,7 +426,7 @@
         "section_spacing_top": 80,
         "section_spacing_bottom": 80,
         "section_layout": "carousel",
-        "title": "PRODUCTS YOU MIGHT LIKE",
+        "title": "You may also like",
         "heading_size": "h5",
         "alignment": "center",
         "product_recommendations_type": "auto",
@@ -245,9 +435,9 @@
 
         ],
         "img_ratio": "portrait",
-        "product_card_align": "left",
+        "product_card_align": "center",
         "cards_to_show": 18,
-        "desktop_columns": 5,
+        "desktop_columns": 4,
         "desktop_space_between_cards": 12,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
@@ -259,9 +449,13 @@
   },
   "order": [
     "main",
+    "c104c1c4-38cb-49de-952e-a049b6ae8ccf",
+    "images-only",
     "c494eb49-341f-432a-a30f-8dce72acadf3",
     "product-details",
-    "62edae1c-9774-49b0-afa0-673d6ebaa258",
+    "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
+    "35a80c75-d4b0-4340-9552-75a9f11586de",
+    "8397c856-bdf5-43c7-b847-480e2ba12dfa",
     "edd01020-fd3e-4a56-bdef-3698127f931d",
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "product-recommendations"
