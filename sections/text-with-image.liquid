@@ -68,7 +68,7 @@
 
   {%- for block in section.blocks -%}
     .image-subtext-wrap .heading-for-image{
-      color:{{block.settings.image_heading-color}};
+      color:{{block.settings.image_heading-color}} !important;
       font-size: {{block.settings.image_heading_font}}px;
     }
     .image-subtext-wrap .subheading-for-image{
@@ -135,7 +135,7 @@
           </a>
         {%- else -%}
           <a
-            class='btn btn--{{ btn_style }} text--with-image__btn'
+            class='btn btn--{{ btn_style }} text--with-image__btn icon-text-button'
             href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
             aria-label='{% if link_text != blank %}{{ link_text }}{% elsif link_url.title != blank %}{{ link_url.title }}{% else %}#{% endif %}'
           >
@@ -157,7 +157,7 @@
               </div>
               <div class="text-wrapper__info">
                 <p class="heading-for-image">{{block.settings.image_heading}}</p>
-                <p class="subheading-for-image">{{block.settings.image_subheading}}</p>
+                <p class="subheading-for-image">{{block.settings.image_richtext}}</p>
               </div>
           </div>
         {%- endif -%}
@@ -290,7 +290,6 @@
       "label": "Image position left",
       "info": "Text with Image content_position_info"
     },
-
     {
       "type": "header",
       "content": "Icon with Description"
@@ -969,7 +968,7 @@
             {
               "type": "color",
               "id": "image_heading-color",
-              "label": "hedaing color"
+              "label": "heading color"
             },
             {
               "type": "range",
@@ -983,14 +982,14 @@
             },
             {
               "type": "richtext",
-              "id": "image_subheading",
+              "id": "image_richtext",
               "default": "<p>Description</p>",
               "label": "Sub Heading"
             },
             {
               "type": "color",
               "id": "image_subheading-color",
-              "label": "hedaing color"
+              "label": "Sub Heading color"
             },
             {
               "type": "range",
@@ -1000,7 +999,7 @@
               "step": 1,
               "default": 14,
               "unit": "px",
-              "label": "Heading Font Size"
+              "label": "Sub Heading Font Size"
             }
         ]
     }

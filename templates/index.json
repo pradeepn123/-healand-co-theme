@@ -117,47 +117,47 @@
     "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
       "type": "text-with-image",
       "blocks": {
-        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14": {
+        "30c0db77-d122-4859-a060-9d0d4aa76d13": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_69.png",
             "image_heading": "VEGAN",
             "image_heading-color": "#3c8771",
-            "image_heading_font": 42,
-            "image_subheading": "<p>100% plant-based ingredients<\/p>",
-            "image_subheading-color": "#ee5c4c",
+            "image_heading_font": 14,
+            "image_richtext": "<p>100% plant-based ingredients<\/p>",
+            "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         },
-        "26084782-5faf-444c-ba1f-560d6064cd52": {
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_68.png",
             "image_heading": "POTENT EXTRACT",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_subheading": "<p>Lesser dose, more effect<\/p>",
+            "image_richtext": "<p>Lesser dose, more effect<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         },
-        "871e0f11-8ca1-4c0b-895d-e356416a2950": {
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_67.png",
             "image_heading": "MADE IN CANADA",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_subheading": "<p>High-quality standards<\/p>",
+            "image_richtext": "<p>High-quality standards<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         }
       },
       "block_order": [
-        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14",
-        "26084782-5faf-444c-ba1f-560d6064cd52",
-        "871e0f11-8ca1-4c0b-895d-e356416a2950"
+        "30c0db77-d122-4859-a060-9d0d4aa76d13",
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c",
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907"
       ],
       "settings": {
         "container-background": "#faf5ef",
@@ -190,6 +190,7 @@
         "section_spacing_bottom": 65,
         "section_layout": "carousel",
         "title": "BEST SELLERS",
+        "title_decoration": true,
         "heading_size": "h2",
         "alignment": "center",
         "shop_all_title": "Shop all",
@@ -215,7 +216,7 @@
       "settings": {
         "background": "#faf5ef",
         "heading_color": "#ce6a4e",
-        "subheading_color": "#060606",
+        "subheading_color": "#000000",
         "btn_color": "#ffffff",
         "btn_bg_color": "#dd8571",
         "color_scheme": "default",
