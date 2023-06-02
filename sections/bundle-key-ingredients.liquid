@@ -24,6 +24,8 @@
   assign section_layout = options.section_layout
   assign show_navigation_on_hover = options.show_navigation_on_hover
   assign keymetadata = product.metafields.custom.key_ingredients.value 
+  assign bundlekeymetadata = product.metafields.custom.bundle_contained_products.value
+
 
   if section_layout == 'carousel-overflow'
     assign half_desktop_slide_width = desktop_carousel_percent_width | divided_by: desktop_columns | times: 0.33
@@ -95,12 +97,12 @@
   {% endstyle %}
 {% endcapture %}
 
+
 {% render 'inline-css-minifier', css: css %}
 
 {{ 'key-ingredients.css' | asset_url | stylesheet_tag }}
-
-{% if keymetadata %}
-    <div class="section-{{ section.id }} single_key_ingredients_main">
+{% if bundlekeymetadata%}
+    <div class="section-{{ section.id }} bundle_key_ingredients_main">
         <div class="container container--{{ container_size }} section-spacing">
             
             <carousel-component class="card-carousel key-ingredients
@@ -131,10 +133,15 @@
                 {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
                     <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
                         
-                        {% for item in keymetadata %}
-                            <div class='card-carousel__slide'>
-                                {% render 'key-ingredients', item: item %}
-                            </div>
+                        {% for bundle_pro in product.metafields.custom.bundle_contained_products.value %}
+                            {% assign single_colorsMetafield = bundle_pro.metafields.custom.color_schema.value %}
+                            {% for item in bundle_pro.metafields.custom.key_ingredients.value %}
+                                <div class='card-carousel__slide'>
+                                    {% render 'key-ingredients', item: item, title: bundle_pro.title, 
+                                    bg_color: single_colorsMetafield.highlighted_background_color,
+                                    color: single_colorsMetafield.highlighted_text_color %}
+                                </div>
+                            {% endfor %}
                         {% endfor %}
                     </div>
                 </div>
@@ -148,7 +155,7 @@
 
 {% schema %}
 {
-  "name": "Key Ingredients",
+  "name": "Bundle Key Ingredients",
   "tag": "section",
   "class": "key_ingredient_section",
   "settings": [
@@ -360,7 +367,7 @@
   ],
   "presets": [
     {
-      "name": "Key Ingredients"
+      "name": "Bundle Key Ingredients"
     }
   ]
 }
