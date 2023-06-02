@@ -9,7 +9,7 @@
           "type": "announcement",
           "settings": {
             "text": "<p>Free Shipping on all orders over $40<\/p>",
-            "link": "shopify:\/\/pages\/about-us",
+            "link": "",
             "icon": "none"
           }
         },
