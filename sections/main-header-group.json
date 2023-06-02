@@ -160,9 +160,9 @@
         "enable_sticky": false,
         "menu_trigger": "hover",
         "menu": "new-menu",
-        "desktop_logo_img": "shopify:\/\/shop_images\/logo.png",
+        "desktop_logo_img": "shopify:\/\/shop_images\/H_C_Logo.svg",
         "desktop_logo_width": 140,
-        "mobile_logo_img": "shopify:\/\/shop_images\/logo.png",
+        "mobile_logo_img": "shopify:\/\/shop_images\/H_C_Logo.svg",
         "mobile_logo_width": 120,
         "icon_style": "round-outline",
         "cart_icon": "bag"
