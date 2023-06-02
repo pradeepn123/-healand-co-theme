@@ -9,7 +9,7 @@
         "section_spacing_bottom": 64,
         "enable_sorting": true,
         "show_results_count": true,
-        "show_column_count_switcher": true,
+        "show_column_count_switcher": false,
         "enable_filtering": true,
         "filters_position": "left",
         "filter_style": "open-embed",
