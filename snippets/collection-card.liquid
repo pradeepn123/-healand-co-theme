@@ -47,7 +47,7 @@
           {{- 'cards.collection_card.product_count' | t: count: all_products_count -}}
         </div>
       {%- endif -%}
-      <h6 class='collection-card__title {{ heading_size }}'>{{ title }}</h6>
+      <h6 class='collection-card__title benefit-text {{ heading_size }}'>{{ title }}</h6>
       {%- if link_text != blank -%}
         <a
           class='link'
@@ -59,7 +59,7 @@
         </a>
       {%- endif -%}
     {%- else -%}
-      <h6 class='collection-card__title {{ heading_size }}'>{{ title }}</h6>
+      <h6 class='collection-card__title benefit-text {{ heading_size }}'>{{ title }}</h6>
       {%- if show_product_count -%}
         <div class='collection-card__count'>
           {{- 'cards.collection_card.product_count' | t: count: all_products_count -}}

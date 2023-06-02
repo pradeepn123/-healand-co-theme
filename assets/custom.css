@@ -67,8 +67,33 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     display: flex;
     align-items: center;
     position: relative;
+    
 }
 .view-btn.shop_all{
     position: absolute;
     right: 0;
+    display: flex;
+}
+
+@media(max-width:540px){
+    .view-btn.shop_all{
+        top:60px;
+        transform: translate(-150%);
+    }
+}
+
+.benefit-text{
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 20px;
+}
+
+@media (max-width:520px) {
+    .benefit-text{
+        font-size: 18px;
+    }
+}
+
+.card-carousel__slide .product-card {
+    margin:6rem 0 0 0;
 }

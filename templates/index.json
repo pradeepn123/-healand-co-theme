@@ -13,9 +13,9 @@
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "caption": "",
-            "title": "Unlock the benefits of nature",
+            "title": "Unlock the <br>benefits of nature",
             "text": "<p>Our supplements are made with pure, potent ingredients to help you feel your best from the inside out.<\/p>",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "body_size": "body3",
             "desktop_content_position": "align-items:center;justify-content:flex-start;",
             "desktop_content_align": "left",
@@ -36,7 +36,7 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
           "settings": {
-            "color_scheme": "custom-3",
+            "color_scheme": "primary",
             "image_proportion": 0,
             "content_wrapper_width": 50,
             "desktop_right_img": "shopify:\/\/shop_images\/Group_453_1.png",
@@ -62,6 +62,9 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
         "color_scheme": "default",
         "enable_background_around_container": false,
@@ -82,10 +85,13 @@
     },
     "af64247e-1121-4d64-91e7-f013b0ab11b0": {
       "type": "collection-list",
+      "custom_css": [
+        "@media (max-width: 540px) {.collection-list--section .collection-list__header {margin: 0 0 8rem; }}"
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
-        "section_spacing_top": 48,
+        "section_spacing_top": 0,
         "section_spacing_bottom": 48,
         "section_layout": "carousel",
         "title": "SHOP BY BENEFIT",
@@ -186,7 +192,7 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
-        "section_spacing_top": 65,
+        "section_spacing_top": 49,
         "section_spacing_bottom": 65,
         "section_layout": "carousel",
         "title": "BEST SELLERS",
@@ -303,7 +309,7 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "full-screen",
-        "section_spacing_top": 58,
+        "section_spacing_top": 48,
         "section_spacing_bottom": 58,
         "title": "",
         "heading_size": "h5",

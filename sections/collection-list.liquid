@@ -170,8 +170,9 @@
     {%- if title != blank -%}
       <div class='collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %}'>
         <h5 class='{{ heading_size }} decorated_heading'>{{ title }}</h5>
-        <a href="{{ section.settings.shop_all_url }}" class="view-btn shop_all w-full-sp">
+        <a href="{{ section.settings.shop_all_url }}" class="view-btn shop_all w-full-sp">    
           <span>{{ section.settings.shop_all_title}}</span>
+          {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
         </a>
       </div>
     {%- endif -%}
