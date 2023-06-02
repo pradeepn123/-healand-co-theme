@@ -15,7 +15,6 @@
         },
         "announcement_2": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "<p>Make an announcement<\/p>",
             "link": "",
