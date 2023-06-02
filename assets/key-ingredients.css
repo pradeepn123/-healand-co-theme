@@ -7,7 +7,10 @@
     column-gap: 20px;
     padding-bottom: 20px
 }
-.ingredients_wrapper .img_wrap_text_info .img_wrap{
+.single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap{
+    margin-top: -5rem;
+}
+.bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info {
     margin-top: -5rem;
 }
 .ingredients_wrapper .img_wrap_text_info .img_wrap img{
@@ -91,8 +94,19 @@
     .ingredients_wrapper .img_wrap_text_info{
         padding-bottom: 30px
     }
-    .ingredients_wrapper .img_wrap_text_info .img_wrap{
+    .single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap{
         margin-top: -7rem;
+    }
+    .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info {
+        margin-top: -7rem;
+    }
+    .ingredients_wrapper .img_wrap_text_info .key_ingre_title .bundle_pro_title {
+        display: block;        
+        margin-top: -1.4em;
+        margin-bottom: 2em;
+        padding: 5px 16px;
+        border-radius: 2em;
+        background: #194D7C;
     }
     .img_wrap_text_info .key_ingre_title h4{
         font-size: 20px;
