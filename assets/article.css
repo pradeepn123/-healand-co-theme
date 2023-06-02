@@ -234,11 +234,7 @@ h2.article__title {
         margin-top: 2rem;
         margin-bottom: 4.8rem;
     }
-    .block-featured_image {
-        height: 203px;
-    }
     .article__image {
-        max-height: 203px;
         padding: 0 20px;
     }
     .article-footer-posts__post-title {
@@ -300,5 +296,9 @@ h2.article__title {
     }
     .comment-form__btn {
         margin-top: 24px;
+    }
+    .article-footer-panel .article-meta .article-footer-panel__article-meta span.article-meta__item,
+    .article-meta, .share__btn {
+        font-size: 14px;
     }
 }
