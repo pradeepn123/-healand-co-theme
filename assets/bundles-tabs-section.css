@@ -1,5 +1,5 @@
 /* Contianer */
-.bundle-product-details .desktop_only.desktop_tabs tabs-component{
+.bundle-product-details .desktop_tabs tabs-component{
     display: flex;
     flex-direction: column-reverse;
 }
@@ -46,6 +46,74 @@
     border: 3px solid #EA6852;
 }
 
-.bundle-product-details .desktop_only.desktop_tabs .product-details__tab-names .background_image_bundlesProduct {
+.bundle-product-details .desktop_tabs .product-details__tab-names .background_image_bundlesProduct {
     padding: 0;
+}
+
+.bundle-product-details .pb_content_mobile_accordion{
+    background-color: #faf5ef;
+}
+.bundle-product-details .pb_content_mobile_accordion accordeon-component{
+    border: none;
+}
+.bundle-product-details .pb_content_mobile_accordion accordeon-component h6,
+.bundle-product-details .pb_content_mobile_accordion accordeon-component img{
+    margin: 0;
+}
+/* Accordion Styles */
+@media screen and (max-width: 767px) {
+
+    /* Order */
+    .heading_subHeading {
+        order: 2;
+    }
+
+    .bundle-product-details .product-details__container .desktop_only .tabs_only {
+        order: 1;
+    }
+
+    /* Container */
+    .bundle-product-details .desktop_only .product-details__tab-names {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .bundle-product-details .pb_container {
+        display: none;
+    }
+
+    /* Font Sizes */
+    .heading_subHeading .product-details__tab-name .main_heading {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    .heading_subHeading .product-details__tab-name .main_subHeading {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 36px;
+    }
+
+    /* Spacings */
+    .heading_subHeading {
+        padding: 30px 0 !important;
+    }
+    .bundle-product-details .product-details__container .desktop_only .tabs_only{
+        margin-bottom: 30px;
+    }
+    .bundle-product-details .pb_content_mobile_accordion{
+        margin: 0;
+    }
+    /* Widths and Heights */
+    .bundle-product-details .desktop_tabs .product-details__tab-names .background_image_bundlesProduct{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.testing_img{
+    width: 30px;
+    height: 30px;
 }
