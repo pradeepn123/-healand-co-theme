@@ -1,5 +1,67 @@
 {
   "sections": {
+    "a08f7c05-4a53-42e5-b500-006c3425a929": {
+      "type": "bundles-multiple-tabs",
+      "blocks": {
+        "73e51539-bb6c-454b-9d34-00b6fad1f3fe": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "1. Content tab",
+            "icon": "none",
+            "custom_icon_image": "shopify:\/\/shop_images\/quercetin.jpg",
+            "text": "<p>1. Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "08ac4347-f049-4d4f-abc5-b8073b857a16": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "2. Content tab",
+            "icon": "none",
+            "custom_icon_image": "shopify:\/\/shop_images\/product_image.png",
+            "text": "<p>2. Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "901206af-3b33-4db6-bfd6-e1fb03609362": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "3. Content tab",
+            "icon": "none",
+            "text": "<p>3. Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "96761013-fed5-4cf9-adfe-8e2f548b5038": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "4. Content tab",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "73e51539-bb6c-454b-9d34-00b6fad1f3fe",
+        "08ac4347-f049-4d4f-abc5-b8073b857a16",
+        "901206af-3b33-4db6-bfd6-e1fb03609362",
+        "96761013-fed5-4cf9-adfe-8e2f548b5038"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": true,
+        "container_size": "large",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "style": "tabs",
+        "expand_first_collapsible_row": false
+      }
+    },
     "0c9eda11-0959-4a3a-ba92-f5d68cbaf294": {
       "type": "bundles-tabs-section",
       "blocks": {
@@ -491,6 +553,7 @@
     }
   },
   "order": [
+    "a08f7c05-4a53-42e5-b500-006c3425a929",
     "0c9eda11-0959-4a3a-ba92-f5d68cbaf294",
     "main",
     "c104c1c4-38cb-49de-952e-a049b6ae8ccf",
