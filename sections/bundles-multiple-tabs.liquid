@@ -1,3 +1,5 @@
+{{ 'bundles-multiple-tabs.css' | asset_url | stylesheet_tag }}
+
 {%- liquid
   assign options = section.settings
 
@@ -15,18 +17,6 @@
   assign bundleProducts_Size = bundleProducts.count
   assign loopingFixedValues = product.metafields.custom.powerful_benefits_extra_info.value
 -%}
-
-{% for eachProduct in bundleProducts %}
-{% assign ep_generalInfo = eachProduct.metafields.custom.product_general_info.value %}
-Image = <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="" style='width: 100px;'> 
-<br>
-	{% for itemx in ep_generalInfo %}
-		{% comment %} Sahrudh --> {{ itemx.info_heading }} {% endcomment %}
-        {% comment %} <br> {% endcomment %}
-		{% comment %} Sahrudh --> {{ itemx.content_left_column }}
-		Sahrudh --> {{ itemx.content_right_column }} {% endcomment %}
-	{% endfor %}
-{% endfor %}
 
 {% capture css %}
   {% style %}
@@ -96,7 +86,7 @@ Image = <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info
                         {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
                           <tab-component class='tab product-details__tab block-{{block.id}}' aria-hidden='true' data-id='{{ forloop.index | plus: 1 }}' >
                               <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ block.shopify_attributes }} >
-                                  <div class='rte product-details__rte sahrudh2'>
+                                  <div class='rte product-details__rte'>
                                       {% comment %} {{ text }} {% endcomment %}
                                       {% comment %} {% for values in ContenValue %}
                                         {{ values.info_heading }}
@@ -121,7 +111,7 @@ Image = <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info
                                 {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
 
                                 <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ first_block.shopify_attributes }} >
-                                        <div class='rte product-details__rte sahrudh1'>
+                                        <div class='rte product-details__rte'>
                                             {% comment %} {{ eachBlock.metafields.custom.powerful_benefits_extra_info.value.subheading }}  {% endcomment %}
                                             {% render 'product-bundle-tabs', productBlock: eachBlock %}
                                             {% comment %} {% for values in ContenValue %}
@@ -141,116 +131,59 @@ Image = <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info
             </tabs-component>
         </div>
 
-        {% comment %} <div class="pc_tabs_dekstop_child">
-        <template data-tabs-elements-template>
-            {%- for block in section.blocks offset: 1 -%}
+        <div class="pc_tabs_mobile">
+            {% for eachProduct in bundleProducts %}
+                {% assign ep_GeneralInfo = eachProduct.metafields.custom.product_general_info.value %}
                 {% assign custom_icon_image = block.settings.custom_icon_image %}
                 {% assign icon = block.settings.icon %}
 
-                {%- case block.type -%}
-                {%- when 'collapsible_row' -%}
-                    <tab-component class='tab product-details__tab block-{{block.id}}' aria-hidden='true' data-id='{{ forloop.index | plus: 1 }}' >
-                    {%- assign text = block.settings.text -%}
-
-                    <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ block.shopify_attributes }} >
-                        {% if text != blank %}
-                        <div class='rte product-details__rte'>
-                            {{ text }}
-                        </div>
-                        {% endif %}
-
-                    </div>
-                    </tab-component>
-                {%- endcase -%}
-            {%- endfor -%}
-        </template>
-
-            {%- case first_block.type -%}
-                {% assign custom_icon_image = first_block.settings.custom_icon_image %}
-                {% assign icon = first_block.settings.icon %}
-
-            {%- when 'collapsible_row' -%}
-                <tab-component class='tab product-details__tab block-{{first_block.id}}' aria-hidden='false' data-id='1' >
-                {%- assign text = first_block.settings.text -%}
-
-                <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ first_block.shopify_attributes }} >
-                    {% if text != blank %}
-                    <div class='rte product-details__rte'>
-                        {{ text }}
-                    </div>
-                    {% endif %}
-
-                </div>
-                </tab-component>
-            {%- endcase -%}
-            </div>
-        {% endcomment %}
-
-
-        {% comment %} <div class="pc_tabs_mobile">
-            {%- for block in section.blocks -%}
-                {% assign custom_icon_image = block.settings.custom_icon_image %}
-                {% assign icon = block.settings.icon %}
-
-                {%- case block.type -%}
-                    {%- when 'collapsible_row' -%}
-                    <accordeon-component
-                        class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                        data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                        data-section-id='{{ section.id }}'
-                        data-block-id='{{ block.id }}'
-                        {{ block.shopify_attributes }}
-                    >
-                        <accordeon-btn
-                        class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn'
-                        tabindex='0'
-                        >
-                        {%- if custom_icon_image != blank -%}
-                            <img
-                            class='accordeon-plus__btn-icon lazyload'
-                            {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
-                            >
-                        {%- elsif icon != 'none' -%}
-                            {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
-                        {%- endif -%}
-                        {{ block.settings.title }}
-                        {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                    <accordeon-component class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}' data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}' data-section-id='{{ section.id }}' data-block-id='{{ block.id }}' {{ block.shopify_attributes }} >
+                        <accordeon-btn class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
+                            <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="" style='width: 100px;'>
+                          {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }}
+                          {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                         </accordeon-btn>
                         <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                        <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
-                            {%- assign image = block.settings.image -%}
-                            {%- assign video = block.settings.video -%}
-                            {%- assign page = block.settings.page -%}
-                            {%- assign text = block.settings.text -%}
+                          <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
+                              <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
+                                  <div class='rte product-details__rte'>
+                                  {% comment %} Internal Accordion Starts {% endcomment %}
+                                    {%- for block in ep_GeneralInfo -%}
+                                            <accordeon-component
+                                                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
+                                                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
+                                                data-section-id='{{ section.id }}'
+                                                data-block-id='{{ block.id }}'
+                                                {{ block.shopify_attributes }} >
+                                                  <accordeon-btn class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
+                                                    {{ block.info_heading}}
+                                                    {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                                  </accordeon-btn>
+                                                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+                                                <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
+                                                    {%- assign text = block.settings.text -%}
 
-                            <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
-                            {% if text != blank %}
-                                <div class='rte product-details__rte'>
-                                {{ text }}
-                                </div>
-                            {% endif %}
+                                                    <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
+                                                        <div class='rte product-details__rte'>
+                                                          {{ block.content_left_column }}
+                                                          {{ block.content_right_column }}
+                                                        </div>
 
-                            {% if page != blank %}
-                                <div class='rte rte--page product-details__rte'>
-                                {{ page.content }}
-                                </div>
-                            {% endif %}
-
-                            {% if video != blank %}
-                                {% render 'video-with-alt', video: video, class: 'image product-details__image' %}
-                            {% elsif image != blank %}
-                                <img
-                                class='image product-details__image lazyload'
-                                {% render 'image-attributes', image: image %}
-                                >
-                            {% endif %}
-                            </div>
-                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </accordeon-component>
+                                    {%- endfor -%}
+                                  {% comment %} Internal Accordion Ends {% endcomment %}
+                                  </div>
+                              </div>
+                              
+                          </div>
                         </div>
                     </accordeon-component>
-                    {%- endcase -%}
             {%- endfor -%}
-        </div> {% endcomment %}
+
+        </div>
     </div>
   </div>
 </div>
