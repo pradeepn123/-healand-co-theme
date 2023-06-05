@@ -5,7 +5,7 @@
         {% capture benefits_section_image %}
             {% for obj in page.metafields.custom.benefits.value %}
                 {% if obj.section_image %}
-                    <img src="{{ obj.section_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
+                    <img id="benefitsSectionImage" src="{{ obj.section_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
                 {% endif %}
             {% endfor %}
         {% endcapture %}
