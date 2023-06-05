@@ -1,3 +1,4 @@
+{{ 'image-banner-content.css' | asset_url | stylesheet_tag }}
 {%- liquid
   assign with_only_links = true
   assign is_first_link = true
@@ -78,6 +79,7 @@
       {%- endif -%}
     </div>
     <div class='image-banner__content image-banner__content--mobile {% if mobile_content_background != 'none' %} image-banner__content--with-{{ mobile_content_background }}-background{% endif %}'>
+      
       {%- if caption != blank -%}
         <div class='caption image-banner__caption'>{{ caption }}</div>
       {%- endif -%}

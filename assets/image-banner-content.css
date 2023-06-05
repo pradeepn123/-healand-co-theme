@@ -1,0 +1,17 @@
+@media(max-width:520px){
+    .image-banner__container .image-banner__media, .split-image-banner__right-media{
+        height: 230px;
+    }
+    
+    /* .image-banner__content-wrap .image-banner__content--mobile .h3{
+        line-height: 125%;
+    }
+    
+    .image-banner__content-wrap .image-banner__content--mobile .image-banner__text p{
+        line-height: 125%;
+    } */
+
+    .image-banner__content{
+        padding: 0;
+    }
+}
