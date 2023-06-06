@@ -53,9 +53,8 @@
         "96761013-fed5-4cf9-adfe-8e2f548b5038"
       ],
       "settings": {
-        "color_scheme": "default",
-        "enable_background_around_container": true,
-        "container_size": "large",
+        "color_scheme_new": "#faf5ef",
+        "container_size": "page-width",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "style": "tabs",

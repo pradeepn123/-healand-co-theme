@@ -4,7 +4,6 @@
   assign options = section.settings
 
   assign style = options.style
-  assign color_scheme = options.color_scheme
   assign section_spacing_top = options.section_spacing_top
   assign section_spacing_bottom = options.section_spacing_bottom
   assign container_size = options.container_size
@@ -35,23 +34,25 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='product-details section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
+<div class='bundles_page_tabChains product-details section-{{ section.id }}  section ' style="background-color: {{ section.settings.color_scheme_new }}">
   <div class='section-spacing container container--{{ container_size }}'>
-    <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
+    <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section {% endunless %}' style="background-color: {{ section.settings.color_scheme_new }}">
 
         <div class="pc_tabs_dekstop_parent">
             <tabs-component data-selected-tab-id='1'>
-
                 {% comment %} Tabs Title Start {% endcomment %}
                     <div class='product-details__tab-names'>
+                        <p class="product_fixedTitle">Select a product to view details</p>
                         {% for eachProduct in bundleProducts %}
                             {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
                             {% assign custom_icon_image = loopingFixedValues.featured_image %}
-                                <div class="content_parent">
+                                <div class="content_parent content_parent_position_relative">
                                     <img class='product-details__tab-name-icon lazyload' {% render 'image-attributes', image: custom_icon_image, size: 'medium' %} >
-                                    <p>Some Other Content - Use Grids</p>
+                                    <span class="tab_Heading_Content">
+                                      <p class="subheading"> {{ loopingFixedValues.subheading }} </p>
+                                      <p class="featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
+                                    </span>
                                     <div data-tabs-name class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}' data-id='{{ forloop.index }}' tabindex='0' >
-                                        {{ loopingFixedValues.subheading }}
                                     </div>
                                 </div>
                         {% endfor %}
@@ -137,10 +138,13 @@
                 {% assign custom_icon_image = block.settings.custom_icon_image %}
                 {% assign icon = block.settings.icon %}
 
-                    <accordeon-component class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}' data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}' data-section-id='{{ section.id }}' data-block-id='{{ block.id }}' {{ block.shopify_attributes }} >
-                        <accordeon-btn class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
-                            <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="" style='width: 100px;'>
-                          {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }}
+                    <accordeon-component class='top_accordion_component accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}' data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}' data-section-id='{{ section.id }}' data-block-id='{{ block.id }}' {{ block.shopify_attributes }} >
+                        <accordeon-btn class='top_accordion accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
+                            <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="">
+                            <div class="mobile_accordion_headings">
+                              <p class="mobile_accordion_subheading"> {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }} </p>
+                              <p class="mobile_accordion_featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
+                            </div>
                           {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                         </accordeon-btn>
                         <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
@@ -150,12 +154,12 @@
                                   {% comment %} Internal Accordion Starts {% endcomment %}
                                     {%- for block in ep_GeneralInfo -%}
                                             <accordeon-component
-                                                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
+                                                class='inner_accordion_heading_parent accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
                                                 data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
                                                 data-section-id='{{ section.id }}'
                                                 data-block-id='{{ block.id }}'
                                                 {{ block.shopify_attributes }} >
-                                                  <accordeon-btn class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
+                                                  <accordeon-btn class='inner_accordion_heading accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
                                                     {{ block.info_heading}}
                                                     {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                                                   </accordeon-btn>
@@ -194,43 +198,10 @@
   "tag": "section",
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "default",
-          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
-        },
-        {
-          "value": "primary",
-          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
-        },
-        {
-          "value": "secondary",
-          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
-        },
-        {
-          "value": "custom-1",
-          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
-        },
-        {
-          "value": "custom-2",
-          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
-        },
-        {
-          "value": "custom-3",
-          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
-        }
-      ],
-      "default": "custom-1",
-      "label": "t:sections.general_section_settings.color_scheme_label",
-      "info": "t:sections.general_section_settings.color_scheme_tip"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_background_around_container",
-      "default": true,
-      "label": "t:sections.general_section_settings.enable_background_around_container_label"
+      "type": "color",
+      "id": "color_scheme_new",
+      "label": "Background Color",
+      "default": "#FAF5EF"
     },
     {
       "type": "select",
