@@ -47,6 +47,19 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     padding-left: 5px;
     margin-top: 4px;
 }
+.header__item{
+    color: #000000;
+}
+.drawer-menu__menu-item {
+    color: #000000;
+}
+.drawer-menu__list-title-body{
+    border-bottom: 1px solid #EBEBEB;
+    text-transform: capitalize;
+}
+.drawer-menu__mega-menu-wrapper .mega-menu__block--spaced {
+    padding: 15px 32px;
+}
 .header__dropdown-toggle[data-aria-expanded="true"] svg{
     transform: rotate(180deg);
     transition: transform .2s ease-in-out;
@@ -54,6 +67,10 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .header__dropdown-menu--with-mega-menu .image-block__content-wrap{
     padding: 2.5rem;
 }
+@media screen and (min-width: 1016px){
+    .header__menu-item-wrap[data-aria-expanded=true] .header__menu-item, .header__menu-item:hover, .header__menu-item.active {
+        background: #FAF5EF;
+    }}
 
 /* Best seller css here*/
 .collection__header{

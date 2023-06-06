@@ -55,7 +55,7 @@
       <template>
         <div class='search-sidebar__body'>
           <div class='search-sidebar__header-wrapper'>
-            {% comment %} <div class='search-sidebar__header'>
+            <div class='search-sidebar__header'>
               <div class='search-sidebar__header-title'>
               </div>
               <sidebar-button>
@@ -68,7 +68,7 @@
                   <span class='search-sidebar__close-button-with-scale-hover close-button-with-scale-hover'></span>
                 </button>
               </sidebar-button>
-            </div> {% endcomment %}
+            </div>
             {% render 'search-form', form_id: "SearchSidebarForm" %}
           </div>
 
@@ -83,16 +83,6 @@
                       <div class='search-sidebar-section__header-title'>
                         {{- 'sections.predictive_search.queries_tab' | t -}}
                       </div>
-                      <sidebar-button>
-                        <button
-                          data-sidebar-button
-                          data-sidebar-id='SearchSidebar'
-                          class='unstyled-button search-sidebar__close-button-wrapper close-button-with-scale-hover-wrapper'
-                          tabindex='0'
-                        >
-                          <span class='search-sidebar__close-button-with-scale-hover close-button-with-scale-hover'></span>
-                        </button>
-                      </sidebar-button>
                     </h6>
                     <div class='search-sidebar-section__card-grid--queries'>
                       {%- for query in predictive_search.resources.queries limit: results_per_category -%}
@@ -118,16 +108,6 @@
                     <div class='search-sidebar-section__header-title'>
                       {{ recommendations_title }}
                     </div>
-                    <sidebar-button>
-                      <button
-                        data-sidebar-button
-                        data-sidebar-id='SearchSidebar'
-                        class='unstyled-button search-sidebar__close-button-wrapper close-button-with-scale-hover-wrapper'
-                        tabindex='0'
-                      >
-                        <span class='search-sidebar__close-button-with-scale-hover close-button-with-scale-hover'></span>
-                      </button>
-                    </sidebar-button>
                   </h6>
                   <div class='search-sidebar-section__card-grid--queries'>
                     {%- for query in recommendations_queries limit: results_per_category -%}

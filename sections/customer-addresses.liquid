@@ -63,6 +63,7 @@
                 <button
                   class='btn btn--outline btn--sm addresses__address-btn'
                   type='button'
+                  id='DeleteFormButton_{{ address.id }}'
                   aria-label='{{ 'customer.addresses.delete' | t }} {{ forloop.index }}'
                   data-target='{{ address.url }}'
                   data-confirm-message='{{ 'customer.addresses.delete_confirm' | t }}'
@@ -162,7 +163,7 @@
                         >
                       </div>
                       <div class='field'>
-                        <label class='label' for='AddressCity_{{ form.id }}'>{{ 'customer.addresses.city' | t }}</label>
+                        <label class='label' for='AddressCity_{{ form.id }}'>{{ 'customer.addresses.country' | t }} </label>
 
                         <country-selector>
                           <select class='input input--solid input--large hidden'>
@@ -347,7 +348,7 @@
                     >
                   </div>
                   <div class='field'>
-                    <label class='label' for='AddressCity_{{ form.id }}'>{{ 'customer.addresses.city' | t }}</label>
+                    <label class='label' for='AddressCity_{{ form.id }}'>{{ 'customer.addresses.country' | t }}</label>
 
                     <country-selector>
                       <select class='input input--solid input--large hidden'>
