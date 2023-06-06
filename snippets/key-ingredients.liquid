@@ -4,6 +4,9 @@
             <img src="{{ item.image | image_url }}" alt="">
         </div>
         <div class="key_ingre_title">
+            {% if title != blank %}
+                <span class="bundle_pro_title" style="background: {{bg_color}}; color: {{color}}">{{title}}</span>
+            {% endif %}
             <h4>{{ item.heading }}</h4>
             <p>{{item.origin.value}}</p>
         </div>

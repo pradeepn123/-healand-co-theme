@@ -6,17 +6,17 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
           "settings": {
-            "color_scheme": "custom-2",
+            "color_scheme": "primary",
             "desktop_img": "shopify:\/\/shop_images\/banner.png",
             "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
             "video": "shopify:\/\/files\/videos\/pexels-pressmaster-3195394-3840x2160-25fps.mp4",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "caption": "",
-            "title": "Unlock the benefits of nature",
+            "title": "Unlock the <br>benefits of nature",
             "text": "<p>Our supplements are made with pure, potent ingredients to help you feel your best from the inside out.<\/p>",
             "heading_size": "h3",
-            "body_size": "body3",
+            "body_size": "body4",
             "desktop_content_position": "align-items:center;justify-content:flex-start;",
             "desktop_content_align": "left",
             "content_max_width": 528,
@@ -24,7 +24,7 @@
             "mobile_content_position": "align-items:flex-end;justify-content:center;",
             "mobile_content_align": "center",
             "desktop_content_background": "none",
-            "mobile_content_background": "none",
+            "mobile_content_background": "solid",
             "btn_text": "UNLOCK",
             "btn_url": "",
             "btn_style": "solid",
@@ -36,15 +36,15 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
           "settings": {
-            "color_scheme": "custom-3",
+            "color_scheme": "custom-2",
             "image_proportion": 0,
             "content_wrapper_width": 50,
             "desktop_right_img": "shopify:\/\/shop_images\/Group_453_1.png",
             "mobile_right_img": "shopify:\/\/shop_images\/image_71.png",
-            "caption": "",
+            "caption": "Elevate Your",
             "title": "Wellness",
-            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
-            "heading_size": "h2",
+            "text": "<p>Carefully sourced . High Potency.  Quality supplements<\/p>",
+            "heading_size": "h1",
             "body_size": "body3",
             "content_max_width": 368,
             "desktop_content_align": "left",
@@ -62,14 +62,17 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
         "color_scheme": "default",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
-        "section_spacing_bottom": 48,
+        "section_spacing_bottom": 40,
         "desktop_height": 600,
-        "mobile_height": 400,
+        "mobile_height": 380,
         "enable_circle_navigation": true,
         "enable_arrows_navigation": true,
         "arrows_style": "corner-buttons",
@@ -82,14 +85,17 @@
     },
     "af64247e-1121-4d64-91e7-f013b0ab11b0": {
       "type": "collection-list",
+      "custom_css": [
+        "@media (max-width: 540px) {.collection-list--section .collection-list__header {margin: 0 0 8rem; }}"
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
-        "section_spacing_top": 48,
+        "section_spacing_top": 0,
         "section_spacing_bottom": 48,
         "section_layout": "carousel",
         "title": "SHOP BY BENEFIT",
-        "heading_size": "h2",
+        "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
         "shop_all_url": "shopify:\/\/collections",
@@ -117,47 +123,47 @@
     "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
       "type": "text-with-image",
       "blocks": {
-        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14": {
+        "30c0db77-d122-4859-a060-9d0d4aa76d13": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_69.png",
             "image_heading": "VEGAN",
             "image_heading-color": "#3c8771",
-            "image_heading_font": 42,
-            "image_subheading": "<p>100% plant-based ingredients<\/p>",
-            "image_subheading-color": "#ee5c4c",
+            "image_heading_font": 14,
+            "image_richtext": "<p>100% plant-based ingredients<\/p>",
+            "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         },
-        "26084782-5faf-444c-ba1f-560d6064cd52": {
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_68.png",
             "image_heading": "POTENT EXTRACT",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_subheading": "<p>Lesser dose, more effect<\/p>",
+            "image_richtext": "<p>Lesser dose, more effect<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         },
-        "871e0f11-8ca1-4c0b-895d-e356416a2950": {
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907": {
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/Group_67.png",
             "image_heading": "MADE IN CANADA",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_subheading": "<p>High-quality standards<\/p>",
+            "image_richtext": "<p>High-quality standards<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
         }
       },
       "block_order": [
-        "2feaa23a-d2d1-4a2d-a1f4-184170e3ca14",
-        "26084782-5faf-444c-ba1f-560d6064cd52",
-        "871e0f11-8ca1-4c0b-895d-e356416a2950"
+        "30c0db77-d122-4859-a060-9d0d4aa76d13",
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c",
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907"
       ],
       "settings": {
         "container-background": "#faf5ef",
@@ -186,11 +192,12 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
-        "section_spacing_top": 65,
+        "section_spacing_top": 49,
         "section_spacing_bottom": 65,
         "section_layout": "carousel",
         "title": "BEST SELLERS",
-        "heading_size": "h2",
+        "title_decoration": true,
+        "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
         "shop_all_url": "",
@@ -215,7 +222,7 @@
       "settings": {
         "background": "#faf5ef",
         "heading_color": "#ce6a4e",
-        "subheading_color": "#060606",
+        "subheading_color": "#000000",
         "btn_color": "#ffffff",
         "btn_bg_color": "#dd8571",
         "color_scheme": "default",
@@ -302,7 +309,7 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "full-screen",
-        "section_spacing_top": 58,
+        "section_spacing_top": 48,
         "section_spacing_bottom": 58,
         "title": "",
         "heading_size": "h5",

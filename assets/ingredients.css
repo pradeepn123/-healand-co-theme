@@ -1,5 +1,6 @@
 *{
     font-family: "BrownStd-Regular" !important;   
+    color: #000;
 }
 
 /* Ingredients Description section */
@@ -22,11 +23,25 @@
 .description_content.right_aligned{
     text-align: right;
 }
+@media (max-width: 768px){
+    .ingredients_description_section{
+        border: 0;
+    }
+    .ingredient_description_container{
+        border-bottom: 1px solid #E2E2E2;
+    }
+}
 
 
 /* Ingredients benefits section */
 .ingredients_benefits_section{
     border-bottom: 1px solid #E2E2E2;
+    padding-right: var(--gsc-container-padding);
+}
+@media (min-width: 768px){
+    .ingredients_benefits_section{
+        padding-right: 0;
+    }
 }
 .ingredient_benefits_wrapper{
     margin: auto;
@@ -36,8 +51,17 @@
     display: flex;
 }
 @media (max-width: 768px){
+    .ingredients_benefits_section{
+        border: 0;
+    }
+    .ingredient_benefits_wrapper{
+        border-bottom: 1px solid #E2E2E2;
+    }
     .ingredient_benefits_container{
         flex-direction: column;
+    }
+    .ingredient_benefits_container #benefitsSectionImage{
+        height: 288px;
     }
 }
 .ingredient_benefits_container .benefits_list{
@@ -55,6 +79,7 @@
 }
 .ingredient_benefits_container .benefits_title{
     text-transform: uppercase;
+    color: #000000;
 }
 .ingredient_benefits_container .benefits_list .benefit{
     display: flex;
@@ -97,6 +122,7 @@
 }
 .articles_title{
     margin-bottom: 58px;
+    color: #000000;
 }
 .article_list p:first-child{
     margin-bottom: 20px;
@@ -121,5 +147,20 @@
     }
     .article_list p:nth-child(2){
         font-size: 14px;
+    }
+    .article_list div{
+        margin-bottom: 48px;
+    }
+}
+@media (max-width: 767px){
+    .collection__container{
+        border-bottom: 0 !important;
+        padding-bottom: 0;
+    }
+    .collection__card-carousel{
+        border-bottom: 1px solid #E2E2E2;
+    }
+    .card-carousel__viewport{
+        padding-bottom: var(--gsc-section-spacing-bottom,0);
     }
 }

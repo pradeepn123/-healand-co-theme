@@ -424,7 +424,7 @@
   "dialog_elements": {
     "search_drawer": {
       "header_title": "Search",
-      "placeholder_for_search_input": "What are you looking for?",
+      "placeholder_for_search_input": "Search for products...",
       "label_for_search_input": "Search",
       "screen_reader_label_for_close_button": "Close search drawer",
       "screen_reader_label_for_search_button": "Search"
