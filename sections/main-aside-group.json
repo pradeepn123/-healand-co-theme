@@ -6,7 +6,9 @@
       "type": "cart-drawer",
       "settings": {
         "color_scheme": "default",
-        "img_ratio": "default"
+        "img_ratio": "default",
+        "upsell_title": "Don't miss out",
+        "show_add_to_cart": true
       }
     },
     "search-sidebar": {

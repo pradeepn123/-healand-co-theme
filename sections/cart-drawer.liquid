@@ -4,6 +4,8 @@
   assign img_ratio = options.img_ratio
 -%}
 
+{{ 'cart-drawer.css' | asset_url | stylesheet_tag: preload: true }}
+
 {%- if settings.cart_type == 'drawer_and_page' or settings.cart_type == 'drawer_only' -%}
   {%- unless template.name contains 'cart' -%}
     <sidebar-cart
@@ -61,9 +63,33 @@
               <div class='sidebar-cart__cart-items' data-sidebar-cart-items>
                 {%- render 'cart-items', inside_sidebar: true, section: section, img_ratio: img_ratio -%}
               </div>
-            </div>
+            </div>            
           </div>
           <div class='sidebar-cart__footer' data-sidebar-cart-footer>
+            <div class="upsell_product_footer_main_info" data-sidebar-cart-items>
+              {% for item in cart.items limit:1 %}
+                {% if item.product.metafields.custom.upsell_products.value != blank %}
+                  <h4 class="h5">{{ section.settings.upsell_title }}</h4>
+                {% endif %}
+              {% endfor %}
+              <div class="upsell_product_footer">
+                {%- if cart != empty -%}
+                  {% for item in cart.items limit:8 %}
+                    {%- liquid
+                      assign upsell_products = item.product.metafields.custom.upsell_products.value 
+                    -%}
+                    {%- for product_handle in upsell_products -%}
+                      {% render 'cart-product-card',                      
+                        product: product_handle,
+                        addtocartbutton: section.settings.show_add_to_cart,
+                        img_ratio: img_ratio,
+                        show_mobile_carousel: true,
+                        product_card_align: "left" %}
+                    {%- endfor -%}
+                  {% endfor %}
+                {%- endif -%}
+              </div>
+            </div>
             <div class='sidebar-cart__subtotal-wrapper'>
               <notification-component class='notification sidebar-cart__notification' id='SidebarCartNotification'>
                 <div class='notification__overlay'></div>
@@ -169,6 +195,18 @@
       ],
       "default": "default",
       "label": "t:sections.general_section_settings.img_ratio_label"
+    },
+    {
+      "type": "text",
+      "id": "upsell_title",
+      "label": "Upsell Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "default": true,
+      "label": "t:settings_schema.products.show_add_to_cart.label",
+      "info": "t:settings_schema.products.show_add_to_cart.info"
     }
   ]
 }
