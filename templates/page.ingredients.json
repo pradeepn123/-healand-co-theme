@@ -27,7 +27,7 @@
         "show_page_title": true,
         "custom_page_title": "",
         "custom_page_title_color": "#34342f",
-        "custom_page_title_font_size": 100,
+        "custom_page_title_font_size": 40,
         "custom_page_title_font_size_mobile": 24,
         "show_page_description": false,
         "desktop_overlay_opacity": 10,
