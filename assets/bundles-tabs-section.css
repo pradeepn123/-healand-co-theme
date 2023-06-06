@@ -1,0 +1,161 @@
+/* Contianer */
+.bundle-product-details .desktop_tabs tabs-component{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Product Tabs Main Title */
+.heading_subHeading{
+    order: 1;
+    display: block;
+    text-align: center;
+    padding: 20px 0 !important;
+}
+.heading_subHeading .product-details__tab-name .main_heading{
+    font-size: 40px;
+}
+.heading_subHeading .product-details__tab-name .main_subHeading{
+    font-size: 24px;
+}
+.heading_subHeading .product-details__tab-name {
+    display: none;
+    padding: 0;
+    border: none;
+}
+.heading_subHeading .product-details__tab-name.selected{
+    display: block;
+}
+
+/* Product Tab Images */
+.bundle-product-details .product-details__tab-names{
+    border-bottom: none;
+    justify-content: center;
+}
+.bundle-product-details .product-details__tab-names .background_image_bundlesProduct{
+    width: 140px;
+    height: 140px;
+    border-radius: 10rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    border: none;
+}
+
+.bundle-product-details .product-details__tab-names .background_image_bundlesProduct.selected{
+    border: 3px solid #EA6852;
+}
+
+.bundle-product-details .desktop_tabs .product-details__tab-names .background_image_bundlesProduct {
+    padding: 0;
+}
+
+.bundle-product-details .pb_content_mobile_accordion{
+    background-color: #faf5ef;
+}
+.bundle-product-details .pb_content_mobile_accordion accordeon-component{
+    border: none;
+}
+.bundle-product-details .pb_content_mobile_accordion accordeon-component h6,
+.bundle-product-details .pb_content_mobile_accordion accordeon-component img{
+    margin: 0;
+}
+/* Desktop Images and Content Block */
+    .bundle-product-details .pb_container .pb_content_continer .pb_content_inner h6,
+    .bundle-product-details .pb_container .pb_content_continer .pb_content_inner p{
+        color: #000;
+    }
+/* Desktop Images and Content Block Ends */
+/* Accordion Styles */
+.bundle-product-details .pb_content_mobile_accordion{
+    display: none;
+}
+.product-details__tab-names.images_only{
+    display: none;
+}
+.product-details__tab-names.images_only .new_featured_image .tab-name{
+    padding: 0;
+    display: none;
+}
+.product-details__tab-names.images_only .new_featured_image .tab-name.selected{
+    display: block;
+    border-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+
+    /* Images Only Section  */
+    .product-details__tab-names.images_only{
+        display: block;
+    }
+    /* Order */
+    .heading_subHeading {
+        order: 4;
+    }
+    .bundle-product-details .product-details__container .desktop_only .tabs_only {
+        order: 3;
+    }
+    .bundle-product-details .product-details__tab-names.images_only{
+        order: 2;
+    }
+
+    /* Container */
+    .bundle-product-details .desktop_only .product-details__tab-names {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .bundle-product-details .pb_container {
+        display: none;
+    }
+
+    .pb_content_mobile_accordion{
+        padding: 0 16px;
+    }
+
+    .pb_content_mobile_accordion accordeon-component accordeon-btn{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .bundle-product-details .pb_content_mobile_accordion accordeon-component .bundles-tabs__rte{
+        padding-left: 64px;
+        padding-right: 44px;
+    }
+
+    /* Font Sizes */
+    .heading_subHeading .product-details__tab-name .main_heading {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    .heading_subHeading .product-details__tab-name .main_subHeading {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 36px;
+    }
+
+    /* Spacings and Display */
+    .heading_subHeading {
+        padding: 30px 0 !important;
+    }
+    .bundle-product-details .product-details__container .desktop_only .tabs_only{
+        margin-bottom: 30px;
+    }
+    .bundle-product-details .pb_content_mobile_accordion{
+        margin: 0;
+        display: block;
+    }
+    /* Widths and Heights */
+    .bundle-product-details .desktop_tabs .product-details__tab-names .background_image_bundlesProduct{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.testing_img{
+    width: 247px;
+    height: 362px;
+    object-fit: contain;
+}

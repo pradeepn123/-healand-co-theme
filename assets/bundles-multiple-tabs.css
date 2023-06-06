@@ -1,0 +1,155 @@
+/* Parent Tabs */
+.bundles_page_tabChains .product-details__tab-name.selected{
+    border: 2px solid #EA6852;
+}
+.bundles_page_tabChains .pc_tabs_dekstop_parent tabs-component{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 127px;
+}
+.bundles_page_tabChains .pc_tabs_dekstop_parent tabs-component .product-details__tab-names{ 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+}
+.bundles_page_tabChains .content_parent_position_relative{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    background-color: white;
+    padding: 14px;
+}
+.bundles_page_tabChains .content_parent_position_relative:not(:last-child){
+    margin-bottom: 23px;
+}
+.bundles_page_tabChains .content_parent_position_relative img{
+    grid-area: 1/1/3/2;
+    height: 132px;
+    width: 97px;
+    max-width: 100%;
+    object-fit: contain;
+    /* background-color: #f0f0f0; */
+}
+
+/* Tabs Heading Content Start */
+.bundles_page_tabChains .content_parent_position_relative .tab_Heading_Content{
+    grid-area: 1/2/3/3;
+}
+.bundles_page_tabChains .content_parent_position_relative .tab_Heading_Content .subheading{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: 'BrownStd-Regular';
+    color: #252525;
+}
+.bundles_page_tabChains .content_parent_position_relative .tab_Heading_Content .featuredTag{
+    color: #EA6852;
+    font-size: 14px;
+    line-height: 42px;
+}
+/* Tabs Heading Content End */
+.bundles_page_tabChains .tab-name.product-details__tab-name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+    /* Inner Tabs Start  */
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings{
+            border-bottom: 1px solid #DEDEDE;
+        }
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button{
+            background-color: transparent;
+            padding: 15px;
+            border: none;
+            color: #252525;
+        }
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button:hover{
+            cursor: pointer;
+        }
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button.selected{
+            background-color: #EA6852;
+            color: #FFFFFF;
+        }
+    /* Inner Tabs End */
+
+    .product_fixedTitle {
+        margin-bottom: 27px;
+    }
+
+/* Mobile Accordion Styles */
+    /* Accordion Headings Starts */
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion{
+        background-color: white;
+        padding: 12px;
+    }
+
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion_component:not(:last-child){
+        margin-bottom: 20px;
+    }
+
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion img{
+        width: 76px;
+        height: 103px;
+        object-fit: contain;
+        padding: 12px;
+    }
+
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_subheading{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18.87px;
+        color: #252525;
+    }
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_featuredTag{
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 33.26px;
+        color: #D97059;
+    }
+    /* Accordion Headings Ends */
+
+    /* Inner Accordion Headings  */
+    .top_accordion_component{
+        border: none;
+    }
+    .top_accordion_component[data-aria-expanded=true]{
+        margin-bottom: 10px;
+    }
+    .inner_accordion_heading_parent{
+        border-color: #D9D9D9;
+    }
+    .inner_accordion_heading{
+        color: #000000;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    /* Inner Accordion Heainds End */
+/* Container */
+@media screen and (max-width: 1200px){
+    .product_fixedTitle {
+        margin-bottom: 24px;
+    }
+    .bundles_page_tabChains .pc_tabs_dekstop_parent tabs-component{
+        column-gap: 70px;
+    }
+}
+@media screen and (max-width: 767px){
+    .pc_tabs_dekstop_parent{
+        display: none;
+    }
+    .product_fixedTitle {
+        margin-bottom: 24px;
+    }
+}
+@media screen and (min-width: 768px){
+    .pc_tabs_mobile{
+        display: none;  
+    }
+}

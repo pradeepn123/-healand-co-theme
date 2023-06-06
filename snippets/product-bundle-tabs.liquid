@@ -1,0 +1,93 @@
+{% assign newValue = productBlock.metafields.custom.product_general_info.value %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    initialLoadFunction();
+})
+
+initialLoadFunction = () =>{
+    const allNewTabs = document.querySelectorAll('.tabs_parent .tabs_headings button');
+    allNewTabs.forEach((item , index) => {
+        item.addEventListener('click', (e) => {
+            showThisTabData(e.target.id, e);
+            addSelectedClass(e.target.id, e);
+        })
+    })
+}
+showThisTabData = (itemID, item) => {
+    const allNewTabs = document.querySelectorAll('.tabs_parent .tabs_headings button');
+    console.log(" this is a callback function");
+    const theElement = item.srcElement;
+    const closestParentElement = theElement.closest('.tabs_parent');
+
+    const tabParentElement = closestParentElement.children[1].children;
+    
+    const reqKeys = Object.values(tabParentElement);
+    reqKeys.forEach(itemx => {
+        if(itemx.id == itemID){
+            itemx.style.display = 'block';
+        }
+        else{
+            itemx.style.display = 'none';
+        }
+    })
+}
+
+addSelectedClass = (itemID , item) => {
+    const allNewTabs = document.querySelectorAll('.tabs_parent .tabs_headings button');
+
+    const theHeadingElement = item.srcElement;
+    const closestParentElement = theHeadingElement.closest('.tabs_parent');
+    
+    const allHeadings = closestParentElement.children[0].children;
+    const reqKeys = Object.values(allHeadings);
+
+    reqKeys.forEach(itemX => {
+        if(itemX.id == itemID){
+            itemX.classList.add('selected');
+        }
+        else{
+            if(itemX.classList.contains('selected')){
+                itemX.classList.remove('selected')
+            }
+        }
+    })
+}
+
+// On Highest Tab Change
+const loop1_tabs = document.querySelectorAll(".content_parent");
+const loop1_Object_values = Object.values(loop1_tabs);
+
+loop1_Object_values.forEach((items , index) => { 
+    items.addEventListener('click', () => {
+        initialLoadFunction();
+    } )
+})
+</script>
+
+<style>
+.tabs_parent .tabs_hide{
+    display: none;
+}
+.tabs_parent .tabs_active{
+    display: block;
+}
+</style>
+
+<div class="tabs_parent">
+    <div class="tabs_headings">
+    {% for headingValue in newValue %}
+        <button id="heading-tab-{{ forloop.index }}" class="cliableTabs_Button {% if forloop.index == 1 %} selected {% endif %}">
+            {{ headingValue.info_heading }}
+        </button>
+    {% endfor %}
+    </div>
+    <div class="tabs_content">
+        {% for itemContent in newValue %}
+        <div class="tabs_hide" id="heading-tab-{{ forloop.index }}" style="{% if forloop.index == 1 %}display: block;{% endif %}">
+            {{ itemContent.content_left_column }}
+            {{ itemContent.content_right_column }}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
