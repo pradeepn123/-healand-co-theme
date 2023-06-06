@@ -17,6 +17,7 @@
         "color_scheme": "default",
         "enable_background_around_container": false,
         "container_size": "page-width",
+        "container_size_for_mobile": false,
         "hero_banner_background_color": "#f7f7f7",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
@@ -25,8 +26,8 @@
         "show_collection_image": true,
         "show_page_title": true,
         "custom_page_title": "",
-        "custom_page_title_color": "#ffffff",
-        "custom_page_title_font_size": 40,
+        "custom_page_title_color": "#34342f",
+        "custom_page_title_font_size": 100,
         "custom_page_title_font_size_mobile": 24,
         "show_page_description": false,
         "desktop_overlay_opacity": 10,
@@ -46,7 +47,9 @@
         "container_size": "small",
         "description_title": "About",
         "description_title_font_size": 24,
+        "description_title_font_size_mobile": 20,
         "description_content_font_size": 20,
+        "description_content_font_size_for_mobile": 16,
         "description_text_align": "left_aligned"
       }
     },
@@ -93,6 +96,7 @@
       "settings": {
         "container_size": "small",
         "section_title": "THE SCIENCE BEHIND THE BENEFITS",
+        "articles_section_title_font_size": 24,
         "list_icon": "shopify:\/\/shop_images\/Vector.png"
       }
     }
