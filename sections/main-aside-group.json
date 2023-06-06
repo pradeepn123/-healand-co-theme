@@ -13,7 +13,7 @@
       "type": "search-sidebar",
       "settings": {
         "color_scheme": "default",
-        "img_ratio": "default",
+        "img_ratio": "square",
         "results_per_category": 10,
         "recommendations_title": "Most searched",
         "recommendations_queries": "bundle\nsuper mushroom\nantioxident"

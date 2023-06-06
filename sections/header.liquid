@@ -566,16 +566,21 @@
                   .search-sidebar {
                       position: absolute;
                       width: auto;
-                      max-height: 80vh;
                       top: 125px;
                       right: 100px;
                       border-radius: 17px;
                       height: auto;
+                      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
                   }
 
                   .search-sidebar__body {
                       width: 48rem;
                       border-radius: 15px;
+                  }
+                  .search-sidebar__content{
+                    max-height: 585px;
+                    overflow-y: auto;
+                    padding: 1rem 4rem 2.4rem;
                   }
 
                   .search-sidebar__form {
@@ -589,11 +594,30 @@
                       border-bottom: 2px solid black;
                       padding: 15px 0; 
                   }
-                  .search-sidebar__header {
-                      height: 2.8rem;
-                      padding-top: 18px;
+                  .search-sidebar__close-button-wrapper {
+                    padding: 1rem 0rem;
+                    cursor: pointer;
                   }
-              }
+                  
+                  .search-sidebar-section__header--queries {
+                    padding-bottom: 1.5rem;
+                  }
+                  .search-sidebar__content .product-card__details .product-card__title {
+                    font-size: 15px;
+                    line-height: 1.4;
+                  }
+                  .search-sidebar__content .product-card__details .product-card__price-item{
+                    font-size: 14px;
+                  } 
+                  .search-sidebar-section__card-grid {
+                    --gsc-space-between-cards: 4.5rem;
+                  }
+                  .search-sidebar-section+.search-sidebar-section {
+                    margin-top: 2.5rem;
+                  }
+                  .search-sidebar-section__card-grid--queries {
+                    row-gap: 1.2rem;
+                  }
 
               @media screen and (max-width: 767px) {
                   .header__icons suggestion-search-bar .search-field__input {
