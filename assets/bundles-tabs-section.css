@@ -141,6 +141,7 @@
         padding: 30px 0 !important;
     }
     .bundle-product-details .product-details__container .desktop_only .tabs_only{
+        margin-top: 20px;
         margin-bottom: 30px;
     }
     .bundle-product-details .pb_content_mobile_accordion{
