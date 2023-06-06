@@ -40,6 +40,9 @@
     .bundle-product-details .product-details__container .desktop_only{
       background-color: {{ section.settings.section_bg_color }}
     }
+    .bundle-product-details .product-details__container{
+      background-color: {{ section.settings.section_bg_color }};
+    }
   {% endstyle %}
 {% endcapture %}
 
@@ -82,9 +85,11 @@
                         <div class='product-details__tab-names new_featured_image'>
                                 {% assign loopOneValue = itemValue.metafields.custom.powerful_benefits_extra_info.value %}
                                 {% if loopOneValue.featured_image != blank %}
+
                                     <div data-tabs-name class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}' data-id='{{ forloop.index }}' tabindex='0'>
                                         <img src="{{ loopOneValue.featured_image | img_url : 'master'}}" alt="" class="testing_img">
                                     </div>
+
                                 {% endif %}
                         </div>
                       {% endfor %}
@@ -141,7 +146,7 @@
                                                   </div>
                                                 </div>
 
-                                                <div class="pb_content_mobile_accordion container--page-width section">
+                                                <div class="pb_content_mobile_accordion container--page-width section"> 
                                                     {% for blockX in productBeneits %}
                                                         {% unless blockX.heading == "false" %}
                                                             <accordeon-component
@@ -162,7 +167,7 @@
                                                                     <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
                                                                     <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                                                        <div class='rte faq-section__rte'>
+                                                                        <div class='rte faq-section__rte bundles-tabs__rte'>
                                                                             {{ blockX.description }}
                                                                         </div>
                                                                     </div>
@@ -253,7 +258,7 @@
                                                                     <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
                                                                     <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                                                        <div class='rte faq-section__rte'>
+                                                                        <div class='rte faq-section__rte bundles-tabs__rte'>
                                                                             {{ blockX.description }}
                                                                         </div>
                                                                     </div>
