@@ -1,0 +1,22 @@
+<div class="bredcrumbs_section container container--page-width">
+    <div class="breadcrumbs_container">
+        <div class="redirection_link">
+            {% render 'icon', icon_name: 'arrow', class: 'ingredient_page_back_button' %}
+            <a href="/pages/ingredients-database"> Ingredient database</a>
+        </div>
+        <div class="other_ingredients_list_container">
+            {% render 'ingredients-list' %}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Ingredients - Breadcrumbs",
+        "settings": [],
+        "presets": [
+            {
+                "name": "Ingredients - Breadcrumbs"
+            }
+        ]
+    }
+{% endschema %}

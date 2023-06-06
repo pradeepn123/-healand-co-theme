@@ -1,0 +1,38 @@
+
+    {% assign ingredientList = 'ashwagandha,apple,acai,banana,lemon,mango,pineapple,cinnamon,chocolate,mango,pineapple,cinnamon,chocolate,ashwagandha' | split: ','  %}
+    {% assign ingredient_page_name = request.path | split: '/' %}
+    {% for ingredient in ingredientList %}
+        {% if ingredient_page_name[2] == ingredient %}
+            {% assign carousel_index_start = forloop.index %}
+        {% endif %}
+    {% endfor %}
+    <carousel-component
+        class='carousel ingredient_list__carousel'        
+      >
+        <carousel-btn
+            class='carousel-btn carousel__carousel-btn carousel__carousel-btn--prev'
+            data-scroll-direction='prev'
+            tabindex='{{ carousel_index_start }}'
+            style="box-shadow: none;"
+        >
+            {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
+        </carousel-btn>
+        <div class="carousel__viewport" data-carousel-viewport>
+            <div class='carousel__container' data-carousel-container>
+                {% for ingredient in ingredientList %}
+                    <div class="ingredient_list_container carousel__slide">
+                        <a href="/pages/{{ ingredient | downcase }}" class="ingredient {% if ingredient_page_name[2] == ingredient %} active {% endif %}">{{ ingredient | upcase }}</a>
+                    </div>            
+                {% endfor %}
+            </div>
+        </div>
+        <carousel-btn
+            class='carousel-btn carousel__carousel-btn carousel__carousel-btn--next'
+            data-scroll-direction='next'
+            tabindex='0'
+            style="box-shadow: none;"
+        >
+            {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+        </carousel-btn>
+          
+    </carousel-component>

@@ -11,6 +11,11 @@
         "show_heading": true
       }
     },
+    "adeedd80-03c5-4edb-870f-21dd4e983233": {
+      "type": "ingredients-breadcrumbs",
+      "settings": {
+      }
+    },
     "fae1b60a-608f-44ac-99b4-d1deb62e1a64": {
       "type": "ingredients-hero-banner",
       "settings": {
@@ -103,6 +108,7 @@
   },
   "order": [
     "page",
+    "adeedd80-03c5-4edb-870f-21dd4e983233",
     "fae1b60a-608f-44ac-99b4-d1deb62e1a64",
     "ac1a7540-47a6-4f4e-bdc9-973e3feaeab3",
     "ab3f7364-5240-43f7-b368-f03af192e588",
