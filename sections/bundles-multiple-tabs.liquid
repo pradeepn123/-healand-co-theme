@@ -88,12 +88,6 @@
                           <tab-component class='tab product-details__tab block-{{block.id}}' aria-hidden='true' data-id='{{ forloop.index | plus: 1 }}' >
                               <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ block.shopify_attributes }} >
                                   <div class='rte product-details__rte'>
-                                      {% comment %} {{ text }} {% endcomment %}
-                                      {% comment %} {% for values in ContenValue %}
-                                        {{ values.info_heading }}
-                                        {{ values.content_left_column }}
-                                        {{ values.content_right_column }}
-                                      {% endfor %} {% endcomment %}
                                       {% render 'product-bundle-tabs', productBlock: eachBlock %}
                                   </div>
                               </div>
@@ -108,18 +102,11 @@
                     {%- when 'collapsible_row' -%}
                         {% for eachBlock in bundleProducts limit: 1 %}
                             <tab-component class='tab product-details__tab block-{{first_block.id}}' aria-hidden='false' data-id='1' >
-                                {% comment %} {%- assign text = eachBlock.metafields.custom.powerful_benefits_extra_info.value.subheading -%} {% endcomment %}
                                 {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
 
                                 <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ first_block.shopify_attributes }} >
                                         <div class='rte product-details__rte'>
-                                            {% comment %} {{ eachBlock.metafields.custom.powerful_benefits_extra_info.value.subheading }}  {% endcomment %}
                                             {% render 'product-bundle-tabs', productBlock: eachBlock %}
-                                            {% comment %} {% for values in ContenValue %}
-                                              {{ values.info_heading }}
-                                              {{ values.content_left_column }}
-                                              {{ values.content_right_column }}
-                                            {% endfor %} {% endcomment %}
                                             <br>
                                             {{ text }}
                                         </div>
