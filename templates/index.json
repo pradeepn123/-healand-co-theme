@@ -36,7 +36,7 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
           "settings": {
-            "color_scheme": "primary",
+            "color_scheme": "custom-2",
             "image_proportion": 0,
             "content_wrapper_width": 50,
             "desktop_right_img": "shopify:\/\/shop_images\/Group_453_1.png",
