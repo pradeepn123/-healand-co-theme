@@ -16,9 +16,11 @@
 
 {% capture css %}
   {% style %}
-    .section-{{section.id}} {
+    @media(min-width:1200px){
+      .section-{{section.id}} {
         --gsc-section-spacing-top: {{ section_spacing_top }}px;
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+      }
     }
     {% if colorsMetafield %}
       .custom-app-block .spr-form-actions .btn, .btn--solid{
