@@ -29,7 +29,8 @@
           "settings": {
             "title": "",
             "block_style": "static",
-            "icon": "none"
+            "icon": "none",
+            "font_color": "#000000"
           }
         },
         "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
@@ -51,6 +52,7 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "price_size": "sm",
             "show_tax_status": false,
@@ -95,9 +97,10 @@
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
       "settings": {
+        "section_custom_class": "default_product_custom_class",
         "color_scheme": "default",
         "container_size": "large",
-        "section_spacing_top": 32,
+        "section_spacing_top": 28,
         "section_spacing_bottom": 48,
         "layout": "thumbnails-bottom",
         "img_ratio": "square",

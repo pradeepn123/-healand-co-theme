@@ -33,7 +33,7 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='product section section-{{ section.id }} color-{{ color_scheme }} section-spacing product--page {% if block_layout == 'two-column' or block_layout == 'one-column' %} product--with-desktop-media-grid {% endif %} {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' or block_layout == 'thumbnails-bottom' %}  {% if container_size == 'page-width' %} product--with-page-width-container-and-desktop-media-carousel {% else %} product--with-desktop-media-carousel {% endif %}  {% endif %}'>
+<div class='{{ section.settings.section_custom_class }} product section section-{{ section.id }} color-{{ color_scheme }} section-spacing product--page {% if block_layout == 'two-column' or block_layout == 'one-column' %} product--with-desktop-media-grid {% endif %} {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' or block_layout == 'thumbnails-bottom' %}  {% if container_size == 'page-width' %} product--with-page-width-container-and-desktop-media-carousel {% else %} product--with-desktop-media-carousel {% endif %}  {% endif %}'>
   <div class='container container--{{ container_size }} product__container'>
     {%- render 'product', product: product, section: section, sectionId: sectionIdWithMainSectionPrefix -%}
   </div>
@@ -49,6 +49,11 @@
   "tag": "section",
   "class": "section--with-sticky-elements",
   "settings": [
+    {
+      "type": "text",
+      "id": "section_custom_class",
+      "label": "Section Custom Class"
+    },
     {
       "type": "select",
       "id": "color_scheme",
@@ -1177,6 +1182,12 @@
           "type": "image_picker",
           "id": "custom_icon_image",
           "label": "t:sections.general_section_settings.custom_icon_image.label"
+        },
+        {
+          "type": "color",
+          "id": "font_color",
+          "label": "Font Color",
+          "default": "#000"
         }
       ]
     },
