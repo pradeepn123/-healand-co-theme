@@ -147,7 +147,7 @@
       "email": "Email",
       "success": "Your comment was posted successfully! Thank you!",
       "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "text_for_send_comment_button": "Write a comment",
+      "text_for_send_comment_button": "SUBMIT",
       "placeholder_for_comment_message_textarea": "Message"
     }
   },

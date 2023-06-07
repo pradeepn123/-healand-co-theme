@@ -6,16 +6,23 @@
     row-gap: 3.2rem;
 }
 
-.link__prev__chevron {
+.link__prev__chevron, .link__prev_chevron {
     width: 2.4rem;
     height: 2.4rem;
     position: relative;
-    right: 0.8rem;
     transform: scale(-1, 1);
+}
+
+.link__prev__chevron {
+    right: 0.8rem;
 }
 
 svg.link__prev__chevron path {
     stroke: #9A9A9A;
+}
+
+svg.link__prev_chevron path {
+    stroke: #000;
 }
 
 .link__home__text {
@@ -106,13 +113,16 @@ h2.article__title {
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.045em;
-    text-align: right;
     text-transform: uppercase;
     color: #686868;
 }
 
-.article-footer-posts_post--prev {
-    display: none;
+.article-footer-posts_post .article-footer-posts_post--prev {
+    text-align: left;
+}
+
+.article-footer-posts_post .article-footer-posts_post--next {
+    text-align: right;
 }
 
 .article__blocks div:last-of-type .article__content{
