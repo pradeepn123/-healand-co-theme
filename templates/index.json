@@ -15,7 +15,7 @@
             "caption": "",
             "title": "Unlock the <br>benefits of nature",
             "text": "<p>Our supplements are made with pure, potent ingredients to help you feel your best from the inside out.<\/p>",
-            "heading_size": "h3",
+            "heading_size": "h1",
             "body_size": "body4",
             "desktop_content_position": "align-items:center;justify-content:flex-start;",
             "desktop_content_align": "left",
@@ -200,7 +200,7 @@
         "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
-        "shop_all_url": "",
+        "shop_all_url": "shopify:\/\/collections",
         "collection": "products",
         "featured_products": [
 

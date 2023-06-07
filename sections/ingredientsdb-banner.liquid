@@ -54,6 +54,7 @@
   assign desktop_content_position = options.desktop_content_position
 
   assign desktop_content_align = options.desktop_content_align
+  assign mobile_content_align = options.mobile_content_align
 
   assign mobile_content_background = options.mobile_content_background
   assign desktop_content_background = options.desktop_content_background
@@ -72,7 +73,9 @@
 {% endif %}
 {% capture css %}
   {% style %}
-    
+    .section-{{ section.id }} .image-banner__content{
+      --gsc-content-align: {{ mobile_content_align }};
+    }
     .ingredientdb__hero_image img , .ingredient-video{
         min-height: {{desktop_height}}px;
     }
@@ -122,6 +125,8 @@
     }
   {% endfor %}
 {% endstyle %}
+
+{{ 'ingredientsdb-banner.css' | asset_url | stylesheet_tag }}
 
 {% render 'inline-css-minifier', css: css %}
 
