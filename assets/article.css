@@ -1,3 +1,7 @@
+.mt-22 {
+    margin-top: 22px;
+}
+
 .article {
     padding-bottom: 4.2rem;
 }
@@ -6,16 +10,23 @@
     row-gap: 3.2rem;
 }
 
-.link__prev__chevron {
+.link__prev__chevron, .link__prev_chevron {
     width: 2.4rem;
     height: 2.4rem;
     position: relative;
-    right: 0.8rem;
     transform: scale(-1, 1);
+}
+
+.link__prev__chevron {
+    right: 0.8rem;
 }
 
 svg.link__prev__chevron path {
     stroke: #9A9A9A;
+}
+
+svg.link__prev_chevron path {
+    stroke: #000;
 }
 
 .link__home__text {
@@ -106,13 +117,16 @@ h2.article__title {
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.045em;
-    text-align: right;
     text-transform: uppercase;
     color: #686868;
 }
 
-.article-footer-posts_post--prev {
-    display: none;
+.article-footer-posts_post .article-footer-posts_post--prev {
+    text-align: left;
+}
+
+.article-footer-posts_post .article-footer-posts_post--next {
+    text-align: right;
 }
 
 .article__blocks div:last-of-type .article__content{
@@ -161,7 +175,7 @@ h2.article__title {
 }
 
 .article-comments__comment-form, .article-comments {
-    margin: 4.8rem 0 6.4rem 0;
+    margin: 3.8rem 0 6.4rem 0;
 }
 
 .comment-form__title {
@@ -194,25 +208,6 @@ h2.article__title {
     text-align: left;
     color: #737373;
     margin-top: 22px;
-}
-
-.comment-form__btn {
-    background-color: #ea6852;
-    min-width: 225px;
-    height: 50px;
-    padding: 11px 21px;
-    font-family: "BrownStd-Bold";
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 77px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-top: 22px;
-}
-
-.comment-form__btn:not([disabled]):hover {
-    background-color: #ea6852;
-    opacity: 0.95;
 }
 
 @media screen and (min-width: 768px){
@@ -258,12 +253,12 @@ h2.article__title {
     .comment-form__field-group {
         gap: 1.2rem;
     }
+    .image-banner__btn {
+        width: 155px;
+    }
 }
 
 @media screen and (max-width: 540px) {
-    .comment-form__btn {
-        font-size: 18px;
-    }
     h2.article__title {
         font-size: 28px;
         line-height: 34px;
@@ -293,9 +288,6 @@ h2.article__title {
     }
     .comment-form__note {
         margin-top: 12px;
-    }
-    .comment-form__btn {
-        margin-top: 24px;
     }
     .article-footer-panel .article-meta .article-footer-panel__article-meta span.article-meta__item,
     .article-meta, .share__btn {

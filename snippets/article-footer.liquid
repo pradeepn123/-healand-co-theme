@@ -43,7 +43,7 @@
               href='{% if blog.previous_article.url != blank %}{{ blog.previous_article.url }}{% else %}#{% endif %}'
               aria-label='{{ 'sections.blog_post.prev_post_link' | t }}'
             >
-              {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
+              {% render 'icon', icon_name: 'link-chevron', class: 'link__prev_chevron' %}
               <span class='link__text'>{{ 'sections.blog_post.prev_post_link' | t }}</span>
             </a>
             <div class='article-footer-posts__post-title'>{{ blog.previous_article.title }}</div>
