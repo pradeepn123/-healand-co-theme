@@ -16,9 +16,12 @@
 }
 
 .faq-section__accordeon-content {
-    padding-top: 1.2rem
+    /* padding-top: 1.2rem */
 }
 
+.faq-section--parent .accordeon-plus__btn{
+    padding: 3rem .8rem 3rem 0 !important;
+}
 .faq-section__image {
     width: 100%;
     max-width: 100%
@@ -89,6 +92,11 @@
 
 .faq-section--parent .faq-section__rte{
     font-size: 16px;
+    padding-right: 32px;
+}
+
+.product_faq_class .container{
+    max-width: 791px;
 }
 
 @media screen and (min-width:768px) {
