@@ -549,6 +549,24 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "27eb5b7c-f2de-4607-b9a1-ffb53fcbdb7e": {
+      "type": "bundle-key-ingredients",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "Key Ingredients",
+        "heading_size": "h5",
+        "alignment": "center",
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
     }
   },
   "order": [
@@ -564,6 +582,7 @@
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "1685610865f6b57fb5",
     "product-recommendations",
-    "9c351037-cecc-436a-98df-4d0530b584e8"
+    "9c351037-cecc-436a-98df-4d0530b584e8",
+    "27eb5b7c-f2de-4607-b9a1-ffb53fcbdb7e"
   ]
 }
