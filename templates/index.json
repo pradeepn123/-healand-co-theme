@@ -100,11 +100,11 @@
         "shop_all_title": "Shop all",
         "shop_all_url": "shopify:\/\/collections",
         "collection_list": [
-          "products",
-          "quick-order",
-          "nails",
-          "skin",
-          "strength"
+          "beauty",
+          "brain",
+          "digestion",
+          "energy",
+          "immunity"
         ],
         "img_ratio": "square",
         "text_style": "under-image",
