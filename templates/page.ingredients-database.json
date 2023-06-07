@@ -175,6 +175,86 @@
             "text": "",
             "tag_text": ""
           }
+        },
+        "6d7a7c07-18f6-4526-8524-ecac7651cb23": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_209.jpg",
+            "page": "acai",
+            "heading_size": "h6",
+            "text": "<p>ACAI<\/p>",
+            "tag_text": "BRAZIL"
+          }
+        },
+        "af3a8358-e91d-40ad-82e1-abedfa8d40ec": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
+            "page": "ashwagandha",
+            "heading_size": "h6",
+            "text": "<p>ASHWAGANGHA<\/p>",
+            "tag_text": "INDIA"
+          }
+        },
+        "febc9ddb-2032-4580-9a1b-52595a01b07f": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_214.jpg",
+            "page": "chaga",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        },
+        "4585ba85-1d44-49a7-86ca-12d37a3098a0": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_209.jpg",
+            "page": "acai",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        },
+        "8d0e0631-65e6-4ca9-8160-602361dc0ec6": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_210.jpg",
+            "page": "echinacea",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        },
+        "48a4f45e-b0e2-42d0-a1a3-2573baa7550d": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_208.jpg",
+            "page": "ashwagandha",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        },
+        "0f0e2931-5193-4a37-82e0-51837030e094": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_209.jpg",
+            "page": "acai",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
+        },
+        "e980bea9-9899-46b9-a70d-84d1ffa2129e": {
+          "type": "database",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_210.jpg",
+            "page": "echinacea",
+            "heading_size": "h6",
+            "text": "",
+            "tag_text": ""
+          }
         }
       },
       "block_order": [
@@ -183,10 +263,18 @@
         "41e549b9-e9e5-42d6-bbd8-b60139098bb7",
         "37200bce-5ec4-4c71-91c8-ef56fe73aece",
         "94007359-74b9-426b-8712-f5ce4fc2bb5b",
-        "cdd6c5cf-7372-411b-814b-72a6600a5813"
+        "cdd6c5cf-7372-411b-814b-72a6600a5813",
+        "6d7a7c07-18f6-4526-8524-ecac7651cb23",
+        "af3a8358-e91d-40ad-82e1-abedfa8d40ec",
+        "febc9ddb-2032-4580-9a1b-52595a01b07f",
+        "4585ba85-1d44-49a7-86ca-12d37a3098a0",
+        "8d0e0631-65e6-4ca9-8160-602361dc0ec6",
+        "48a4f45e-b0e2-42d0-a1a3-2573baa7550d",
+        "0f0e2931-5193-4a37-82e0-51837030e094",
+        "e980bea9-9899-46b9-a70d-84d1ffa2129e"
       ],
       "settings": {
-        "section_spacing_top": 64,
+        "section_spacing_top": 14,
         "section_spacing_bottom": 64
       }
     }

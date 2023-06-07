@@ -1,0 +1,12 @@
+@media(max-width:520px){
+    .flex-wrap-imageicon{
+        /* height: 6.25rem; */
+        width: 9.50rem;
+    }
+}
+
+@media(max-width:360px){
+   .ingredients-database-item .ingredients_content_info h4{
+       font-size: 14px;
+   }
+}
