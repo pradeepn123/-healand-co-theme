@@ -17,7 +17,7 @@
 {% endstyle %}
 
 {% if metafieldData != blank %}
-    <div class="imagesOnly_container container container--xsmall section-spacing">
+    <div class="imagesOnly_container container container--xsmall section-spacing {{ section.settings.section_custom_class }}">
         <div class="imagesOnly_parent">
             {% for block in metafieldData %}
                 {% if block.svg_image  != blank %}
@@ -35,6 +35,11 @@
     {
         "name": "Images Only",
         "settings": [
+            {
+                "type": "text",
+                "id": "section_custom_class",
+                "label": "Section Custom Class"
+            },
             {
                 "type": "image_picker",
                 "id": "image",
