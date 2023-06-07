@@ -67,11 +67,11 @@
           </div>
           <div class='sidebar-cart__footer' data-sidebar-cart-footer>
             <div class="upsell_product_footer_main_info" data-sidebar-cart-items>
-              {% for item in cart.items limit:1 %}
-                {% if item.product.metafields.custom.upsell_products.value != blank %}
-                  <h4 class="h5">{{ section.settings.upsell_title }}</h4>
-                {% endif %}
-              {% endfor %}
+              
+              {% if item.product.metafields.custom.upsell_products.value != blank or cart != empty %}
+                <h4 class="h5">{{ section.settings.upsell_title }}</h4>
+              {% endif %}
+            
               <div class="upsell_product_footer">
                 {%- if cart != empty -%}
                   {% for item in cart.items limit:8 %}

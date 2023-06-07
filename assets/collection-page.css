@@ -139,15 +139,23 @@
 }
 
 .product-card-hover-wrapper .card-icon-wrapper {
-    height: 100px;
-    width: 100px;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -2em;
+    right: -2em;
+    background: rgb(255, 255, 255, 50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .product-card-hover-wrapper .card-icon-wrapper img {
     height: 100%;
-    object-fit: contain;
     width: 100%;
+    object-fit: contain;
+    position: absolute;
+    bottom: -2em;
+    z-index: 999;
+    right: 0;
 }
