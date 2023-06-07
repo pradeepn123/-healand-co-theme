@@ -453,7 +453,7 @@
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",
-        "section_spacing_top": 64,
+        "section_spacing_top": 28,
         "section_spacing_bottom": 64,
         "expand_first_collapsible_row": false
       }
