@@ -238,7 +238,7 @@
         "heading_size": "h5",
         "body_size": "body3",
         "link_text": "SHOP ALL BUNDLES",
-        "link_url": "",
+        "link_url": "shopify:\/\/collections\/bundles",
         "btn_style": "solid",
         "img_ratio": "square",
         "product_card_align": "left",
