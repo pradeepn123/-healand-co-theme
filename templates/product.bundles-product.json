@@ -495,7 +495,7 @@
         "section_layout": "carousel",
         "title": "PRODUCTS YOU MIGHT LIKE",
         "heading_size": "h5",
-        "alignment": "left",
+        "alignment": "center",
         "product_recommendations_type": "auto",
         "featured_collection": "",
         "featured_products": [
