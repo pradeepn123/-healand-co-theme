@@ -151,7 +151,7 @@
               >
                 <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
                   {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
-                  {%- for title_word in title_words -%}
+                  {%- for title_word in title_words limit: 4 -%}
                     <span>{{- title_word -}}</span>
                     {%- unless forloop.last -%}
                       <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
