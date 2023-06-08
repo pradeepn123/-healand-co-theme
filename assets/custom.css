@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .btn, a.product-card__title, .footer__title, b, strong{
     font-family: 'BrownStd-Bold' !important;
 }
+.dropdown__item{
+    font-family: "BrownStd-Regular" !important; 
+} 
 
 .decorated_heading{
     display: inline-block;
@@ -50,14 +53,20 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .header__item{
     color: #000000;
 }
-.drawer-menu__list-title-body{
+.drawer-menu__list-title{
     border-bottom: 1px solid #EBEBEB;
+}
+.drawer-menu__list-title-body{
     text-transform: capitalize;
 }
 .drawer-menu__list-title-label {
     font-size: 24px;
     font-weight: 400;
 }
+.drawer-menu__list-body{
+    margin: 3.2rem auto 1rem;
+}
+
 .drawer-menu__list-body .drawer-menu__menu-item {
     color: #000000;
     font-size: 20px;
@@ -79,7 +88,20 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 @media screen and (min-width: 1016px){
     .header__menu-item-wrap[data-aria-expanded=true] .header__menu-item, .header__menu-item:hover, .header__menu-item.active {
         background: #FAF5EF;
-    }}
+    }
+}
+@media screen and (min-width: 1016px) and (max-width: 1098px){
+    .header__nav .header__item {
+        padding: 0 1.4rem 2rem;
+    }
+}
+.shopify-section-header[mobile-sticky][aria-hidden=true] {
+    transform: unset;
+}
+.header__menu--inside-full-width-dropdown{
+    height: 260px;
+    overflow-y: scroll;
+}
 
 /* Best seller css here*/
 .collection__header{
