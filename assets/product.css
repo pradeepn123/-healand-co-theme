@@ -256,6 +256,7 @@
     }
     .upsell_product_main_wrap .product-card__details--bottom-spacing{
         flex: 1 0 60%;
+        padding-top: 0;
     }
 }
 @media screen and (min-width: 1350px){
@@ -321,7 +322,7 @@
     }
     .upsell_product_main_wrap .product-card__price{
         order: 4;
-        margin-top: 16px;
+        margin-top: 8px;
     }
     .upsell_product_main_wrap .product-card__price-item{
         font-size: 16px;
@@ -330,7 +331,7 @@
         order: 5;
     }
     .upsell_product_main_wrap .product-card__btns--with-text-buttons{
-        margin-top: 16px;
+        margin-top: 8px;
     }
 
 
