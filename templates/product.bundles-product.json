@@ -413,7 +413,7 @@
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
-        "show_navigation_on_hover": true
+        "show_navigation_on_hover": false
       }
     },
     "edd01020-fd3e-4a56-bdef-3698127f931d": {
