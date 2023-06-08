@@ -18,7 +18,7 @@
 }
 .side-textpart .text--with-image__btn{
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px;
     text-transform: uppercase;    
 }
 .side-imagespart{
@@ -101,7 +101,7 @@
     }
     .side-textpart .text--with-image__btn{
         align-self: center;
-        font-size: 18px;
+        font-size: 14px;
         margin-top: 30px;
         padding: 12px 40px;
     }    
