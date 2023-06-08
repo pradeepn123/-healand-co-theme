@@ -29,7 +29,8 @@
           "settings": {
             "title": "",
             "block_style": "static",
-            "icon": "none"
+            "icon": "none",
+            "font_color": "#000"
           }
         },
         "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
@@ -74,6 +75,7 @@
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3": {
           "type": "upsell_products",
           "settings": {
+            "upsell_headings": "SAVE MORE WITH BUNDLES",
             "img_ratio": "square",
             "upsell_products": [
               "immunity-bundle-ca"
@@ -95,6 +97,7 @@
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
       "settings": {
+        "section_custom_class": "",
         "color_scheme": "default",
         "container_size": "large",
         "section_spacing_top": 32,
@@ -304,6 +307,7 @@
     "images-only": {
       "type": "images-only",
       "settings": {
+        "section_custom_class": "",
         "section_spacing_top": 64,
         "section_spacing_bottom": 64
       }
@@ -311,9 +315,7 @@
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
       "type": "product-benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/product_image.png",
         "heading": "Powerful Benefits",
-        "sub_heading": "",
         "bg_color": "#faf5ef",
         "text_color": "",
         "heading_alignment": "center"
@@ -448,8 +450,6 @@
       "settings": {
         "from_metafields": true,
         "section_heading": "FAQ's",
-        "section_heading_color": "#ffffff",
-        "section_bg_heading_color": "#789f91",
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",
@@ -501,7 +501,7 @@
         "featured_products": [
 
         ],
-        "img_ratio": "portrait",
+        "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 10,
         "desktop_columns": 4,
