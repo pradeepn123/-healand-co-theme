@@ -92,7 +92,7 @@
           "type": "title",
           "settings": {
             "title": "GET 20% OFF YOUR FIRST ORDER",
-            "color": "",
+            "color": "#ffffff",
             "heading_size": "h4"
           }
         },
@@ -100,7 +100,7 @@
           "type": "text",
           "settings": {
             "text": "sign up for early access to new products, exclusive deals and more!",
-            "color": "",
+            "color": "#ffffff",
             "body_size": "body3"
           }
         },
