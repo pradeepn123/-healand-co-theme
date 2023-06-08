@@ -20,7 +20,7 @@
         align-items: flex-start;
     }
 }
-.breadcrumbs_container .redirection_link{
+.breadcrumbs_container .redirection_link a{
     font-size: 24px;
     gap: 20px;
     display: flex;
@@ -28,12 +28,12 @@
     text-transform: uppercase;
 }
 @media (max-width: 374px){
-    .breadcrumbs_container .redirection_link{
-        font-size: 20px;
+    .breadcrumbs_container .redirection_link a{
+        font-size: 20px !important;
     }
 }
-@media (min-width: 768px) and (max-width: 1023px){
-    .breadcrumbs_container .redirection_link{
+@media (min-width: 769px) and (max-width: 1023px){
+    .breadcrumbs_container .redirection_link a{
         font-size: 15px;
     }
 }
@@ -135,7 +135,7 @@
     border-bottom: 1px solid #E2E2E2;
     padding-right: var(--gsc-container-padding);
 }
-@media (min-width: 768px){
+@media (min-width: 769px){
     .ingredients_benefits_section{
         padding-right: 0;
     }
