@@ -437,9 +437,6 @@
     .faq--bottom-tabs .faq__blocks {
         width: 100%;
     }
-    .faq__blocks .faq__accordeon-plus-btn {
-        padding: 2.9rem 1.6rem 2.9rem 1.5rem;
-    }
     .faq__accordeon-plus-content {
         padding-right: 1.5rem;
         padding-left: 1.5rem;
