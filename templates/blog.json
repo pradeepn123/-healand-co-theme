@@ -73,7 +73,7 @@
         "show_subheading": false,
         "show_read_more": true,
         "article_per_page": 4,
-        "article_per_row": 3,
+        "article_per_row": 4,
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "pagination_type": "load-button-pagination"
