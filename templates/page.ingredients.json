@@ -52,7 +52,6 @@
         "container_size": "small",
         "description_title": "About",
         "description_title_font_size": 24,
-        "description_title_font_size_mobile": 15,
         "description_content_font_size": 20,
         "description_content_font_size_for_mobile": 16,
         "description_text_align": "left_aligned"

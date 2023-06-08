@@ -1,6 +1,7 @@
 
 .collage .collage__blocks .collage__card-grid .collage__item .article-card{
     height: 100%;
+    display: block;
 }
 .article-card__details{
     position: inherit;

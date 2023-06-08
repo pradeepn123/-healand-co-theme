@@ -23,7 +23,7 @@
   <div class='image-banner__content-wrap'>
     <div class='image-banner__content image-banner__content--desktop {% if desktop_content_background != 'none' %} image-banner__content--with-{{ desktop_content_background }}-background{% endif %}'>
       {%- if caption != blank -%}
-        <div class='caption image-banner__caption'>{{ caption }}</div>
+        <div class='image-banner__caption {{ sub_heading_size }}'>{{ caption }}</div>
       {%- endif -%}
       {%- if title != blank -%}
         <span class='{{ heading_size }}'>{{ title }}</span>
@@ -81,7 +81,7 @@
     <div class='image-banner__content image-banner__content--mobile {% if mobile_content_background != 'none' %} image-banner__content--with-{{ mobile_content_background }}-background{% endif %}'>
       
       {%- if caption != blank -%}
-        <div class='caption image-banner__caption'>{{ caption }}</div>
+        <div class='image-banner__caption {{ sub_heading_size }}'>{{ caption }}</div>
       {%- endif -%}
       {%- if title != blank -%}
         <h2 class='{{ heading_size }}'>{{ title }}</h2>

@@ -22,7 +22,7 @@
   <div class='split-image-banner__content-wrap'>
     <div class='split-image-banner__content'>
       {%- if caption != blank -%}
-        <div class='caption split-image-banner__caption'>{{ caption }}</div>
+        <div class='split-image-banner__caption {{ sub_heading_size }}'>{{ caption }}</div>
       {%- endif -%}
       {%- if title != blank -%}
         <h2 class='{{ heading_size }}'>{{ title }}</h2>

@@ -19,6 +19,7 @@
   assign enable_circle_navigation = options.enable_circle_navigation
   assign enable_arrows_navigation = options.enable_arrows_navigation
   assign show_arrows_on_hover = options.show_arrows_on_hover
+
 -%}
 
 {% capture css %}
@@ -53,6 +54,19 @@
             {{ options.mobile_content_position }}
           }
 
+          .split-image-banner, .split-image-banner__content{
+            background-color: {{options.background_color}};
+          }
+          .split-image-banner__content .split-image-banner__caption,
+          .split-image-banner__content h2,
+          .split-image-banner__content .split-image-banner__text p {
+            color: {{ options.text_color }};
+          }
+          .split-image-banner__content .split-image-banner__btns .btn{
+            background-color: {{options.button_bg_color}};
+            color: {{ options.button_text_color }};
+          }
+
           @media {% render 'media-queries', screen: 'md' %} {
               .block-{{ block.id }}{
                   --gsc-overlay-opacity: {{ options.desktop_overlay_opacity | times: 0.01 }};
@@ -76,7 +90,24 @@
           }
 
           .block-{{ block.id }} .image-banner__content-wrap {
-              {{ options.mobile_content_position }}
+            {{ options.mobile_content_position }}
+          }
+          
+          @media(min-width:768px){
+            .image-banner__content span.h1, .image-banner__content span.h2, .image-banner__content span.h3, .image-banner__content span.h4, .image-banner__content span.h5,
+            .image-banner__content .image-banner__text p, .image-banner__content .image-banner__text, 
+            .image-banner__content .image-banner__caption{
+              color: {{options.text_color}};
+            }
+          }
+          @media(max-width:767px){
+            .image-banner .image-banner__content-wrap{
+              background-color: {{options.background_color}};
+            }
+          }
+          .image-banner__content .image-banner__btns .btn{
+            background-color: {{options.button_bg_color}};
+            color: {{ options.button_text_color }};
           }
 
           @media {% render 'media-queries', screen: 'md' %} {
@@ -135,7 +166,7 @@
                           if block.settings.image_proportion > 0
                             render 'media-with-art-direction', class: 'split-image-banner__media split-image-banner__left-media', with_placeholder: true, desktop_img: block.settings.desktop_left_img, mobile_img: block.settings.mobile_left_img, desktop_video: block.settings.left_video, mobile_video: block.settings.left_video
                           endif
-                          render 'split-image-banner-content', heading_size: block.settings.heading_size, body_size: block.settings.body_size, title: block.settings.title, caption: block.settings.caption, text: block.settings.text, btn_text: block.settings.btn_text, btn_url: block.settings.btn_url, extra_btn_text: block.settings.extra_btn_text, extra_btn_url: block.settings.extra_btn_url, btn_style: block.settings.btn_style, extra_btn_style: block.settings.extra_btn_style
+                          render 'split-image-banner-content', heading_size: block.settings.heading_size, sub_heading_size: block.settings.sub_heading_size, body_size: block.settings.body_size, title: block.settings.title, caption: block.settings.caption, text: block.settings.text, btn_text: block.settings.btn_text, btn_url: block.settings.btn_url, extra_btn_text: block.settings.extra_btn_text, extra_btn_url: block.settings.extra_btn_url, btn_style: block.settings.btn_style, extra_btn_style: block.settings.extra_btn_style
                           if block.settings.image_proportion < 100
                             render 'media-with-art-direction', class: 'split-image-banner__media split-image-banner__right-media', with_placeholder: true, desktop_img: block.settings.desktop_right_img, mobile_img: block.settings.mobile_right_img, desktop_video: block.settings.right_video, mobile_video: block.settings.right_video
                           endif
@@ -169,6 +200,7 @@
                         -%}
                         {%- render 'image-banner-content',
                           heading_size: block.settings.heading_size,
+                          sub_heading_size: block.settings.sub_heading_size,
                           body_size: block.settings.body_size,
                           title: block.settings.title,
                           caption: block.settings.caption,
@@ -553,6 +585,26 @@
           "label": "t:sections.image_banner.label_for_mobile_overlay_opacity_setting"
         },
         {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background color"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text color"
+        },
+        {
           "type": "header",
           "content": "t:sections.image_banner.content_settings_header"
         },
@@ -573,6 +625,46 @@
           "id": "text",
           "default": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
           "label": "t:sections.image_banner.label_for_text_setting"
+        },
+        {
+          "type": "select",
+          "id": "sub_heading_size",
+          "label": "Subheading Size",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.general_section_settings.heading_size_0_option"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.general_section_settings.heading_size_1_option"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.general_section_settings.heading_size_2_option"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.general_section_settings.heading_size_3_option"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.general_section_settings.heading_size_4_option"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.general_section_settings.heading_size_5_option"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.general_section_settings.heading_size_6_option"
+            },
+            {
+              "value": "h7",
+              "label": "t:sections.general_section_settings.heading_size_7_option"
+            }
+          ],
+          "default": "h2"
         },
         {
           "type": "select",
@@ -1029,6 +1121,46 @@
         },
         {
           "type": "select",
+          "id": "sub_heading_size",
+          "label": "Subheading Size",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.general_section_settings.heading_size_0_option"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.general_section_settings.heading_size_1_option"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.general_section_settings.heading_size_2_option"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.general_section_settings.heading_size_3_option"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.general_section_settings.heading_size_4_option"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.general_section_settings.heading_size_5_option"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.general_section_settings.heading_size_6_option"
+            },
+            {
+              "value": "h7",
+              "label": "t:sections.general_section_settings.heading_size_7_option"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "select",
           "id": "heading_size",
           "label": "t:sections.general_section_settings.label_for_heading_size_setting",
           "options": [
@@ -1145,6 +1277,26 @@
             }
           ],
           "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Split Content Background color"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Split Content Text color"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Split Content Button Background color"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Split Content Button Text color"
         },
         {
           "type": "header",
