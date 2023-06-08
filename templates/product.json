@@ -76,6 +76,7 @@
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3": {
           "type": "upsell_products",
           "settings": {
+            "upsell_headings": "SAVE MORE WITH BUNDLES",
             "img_ratio": "square",
             "upsell_products": "{{ product.metafields.custom.upsell_products.value }}",
             "show_add_to_cart": true
@@ -323,8 +324,6 @@
       "settings": {
         "from_metafields": true,
         "section_heading": "FAQ's",
-        "section_heading_color": "#ffffff",
-        "section_bg_heading_color": "#789f91",
         "color_scheme": "primary",
         "enable_background_around_container": false,
         "container_size": "small",
@@ -376,7 +375,7 @@
         "featured_products": [
 
         ],
-        "img_ratio": "square",
+        "img_ratio": "nature",
         "product_card_align": "left",
         "cards_to_show": 10,
         "desktop_columns": 4,
