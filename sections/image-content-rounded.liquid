@@ -13,43 +13,79 @@ assign section_spacing_bottom = options.section_spacing_bottom
 {% endstyle %}
 {% endcapture %}
 
+{% assign no_of_ingredients_per_page = 3 %}
 {% render 'inline-css-minifier', css: css %}
 {{ 'image-content-rounded.css' | asset_url | stylesheet_tag: preload: true }}
-
 <div class="ingredients-database-section section section-{{ section.id }} section-spacing color-{{ color_scheme }}">
-  <!-- <div class="container"> -->  
-    <div class="ingredients-database-wrapper">
-        <div class="ingredients-database">
-          {% for block in section.blocks %}
-          {% assign page = pages[block.settings.page] %}
-          
-          <div class="ingredients-database-item">
-            {% if block.settings.image != blank %}
-            {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
-              <div class="ingredients_image_wrap">
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-              </div>
-              {% if page != blank %}
-            </a>{% endif %}
-            {% endif %}
-            <div class="ingredients_content_info">
-              {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
-                <h4 class="{{ block.settings.heading_size }}">{{ block.settings.text | default: page.title }}</h4>
-                <p class="tag_wrap">
-                  {{ page.metafields.custom.origin }}
-                </p>
-                {% if page != blank %}
-              </a>{% endif %}
+    <div class="container">
+        <div class="ingredients-database-wrapper">
+            <div class="ingredients-database">
+              {{ no_of_ingredients_per_page }}
+              {% for block in page.metafields.custom.list.value limit: no_of_ingredients_per_page %}
+                {% assign ingredient_heading = block.heading | downcase %}
+                {% assign page =  pages[ingredient_heading] %}
+                <div class="ingredients-database-item">
+                    {% if block.image != blank %}
+                        <a href="{{ page.url }}"> 
+                        <div class="ingredients_image_wrap">
+                            <img src="{{ block.image | img_url: 'master' }}" alt="">
+                        </div>
+                        </a>
+                    {% endif %}
+                    <div class="ingredients_content_info">
+                        <a href="{{ page.url }}">
+                            <h4>{{ block.heading }}</h4>
+                            <p class="tag_wrap">
+                              {{ block.origin.value }}
+                            </p>
+                        </a>
+                    </div>
+                </div>
+              {% endfor %} 
+
+              
+
+                  {% comment %} {% for block in section.blocks %}
+                    {% assign page =  pages[block.settings.page] %}
+                    <div class="ingredients-database-item">
+                        {% if block.settings.image != blank %}
+                            {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
+                            <div class="ingredients_image_wrap">
+                                <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                            </div>
+                            {% if page != blank %}</a>{% endif %}
+                        {% endif %}
+                        <div class="ingredients_content_info">
+                            {% if page != blank %}<a href="{{ page.url }}"> {% endif %}
+                                <h4 class="{{ block.settings.heading_size }}">{{ block.settings.text | default: page.title }}</h4>
+                                <p class="tag_wrap">
+                                    {{ page.metafields.custom.origin }}
+                                </p>
+                            {% if page != blank %}</a>{% endif %}
+                        </div>
+                    </div>
+                  {% endfor %}  {% endcomment %}
             </div>
-          </div>
-          
-          {% endfor %}
+            
+        </div>
+        <div>
+        <button class="pagination_load_btn">Load more</button>
         </div>
     </div>
   <!-- </div> -->
 </div>
 
+<script>
+  
+    document.querySelector('.pagination_load_btn').addEventListener('click', () => {
+      
+      {% assign no_of_ingredients_per_page = no_of_ingredients_per_page | plus: 2 %}
+      var variable = {{ no_of_ingredients_per_page | json }}
+      console.log('///////', variable)
+    })
+    
 
+</script>
 
 
 {% schema %}
