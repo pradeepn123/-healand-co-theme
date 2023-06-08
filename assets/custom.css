@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .btn, a.product-card__title, .footer__title, b, strong{
     font-family: 'BrownStd-Bold' !important;
 }
+.dropdown__item{
+    font-family: "BrownStd-Regular" !important; 
+} 
 
 .decorated_heading{
     display: inline-block;
