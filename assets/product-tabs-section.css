@@ -12,7 +12,6 @@
         margin-bottom: 30px;
     }
 }
-
 /* Custom Class - custom-product-details */
 .custom-product-details .product-details__container{
     padding: 0;
@@ -43,6 +42,7 @@
         display: flex;
         flex-direction: row;
         column-gap: 5%;
+        color: #000;
     }
 
     .product-details .product-details__container .product-details__content-tab-content .product-details__rte.text-container div {

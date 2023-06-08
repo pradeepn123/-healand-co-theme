@@ -188,7 +188,14 @@
     }
     .product-details .product-page-tabs {
         display: none;
-    }   
+    }
+    /* Product Recommendations */
+    .product-recommendations__container {
+        padding-top: 0;
+    }
+    #stamped-main-widget{
+        margin: 1em 15px .8rem 15px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -222,6 +229,9 @@
 }
 
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
+    .default_product_custom_class .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
+        box-shadow: 0 0 0 0.2rem rgba(238, 92, 76, 1) inset;
+    }
 .default_product_custom_class .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn{
     min-height: 50px;
 }
@@ -238,6 +248,14 @@
     }
     .default_product_custom_class .product__content{
         justify-content: space-between;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    .upsell_product_main_wrap .shop__grid-item .product-card .product-card__inner{
+        flex: 1 0 35%;
+    }
+    .upsell_product_main_wrap .product-card__details--bottom-spacing{
+        flex: 1 0 60%;
     }
 }
 @media screen and (min-width: 1350px){
@@ -299,7 +317,7 @@
     }
     .upsell_product_main_wrap .product-card__title{
         order: 3;
-        margin-top: 20px;
+        margin-top: 3px;
     }
     .upsell_product_main_wrap .product-card__price{
         order: 4;
@@ -312,7 +330,7 @@
         order: 5;
     }
     .upsell_product_main_wrap .product-card__btns--with-text-buttons{
-        margin-top: 34px;
+        margin-top: 16px;
     }
 
 
@@ -357,4 +375,21 @@
         padding-left: 63.5px;
         padding-right: 63.5px;
     }
+}
+
+/* Product Sticky Add To Cart Styles */
+.product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .mobile-sticky-button-price {
+    flex: 1 0 30%;
+    text-align: center;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+}
+.product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .product-form__btn.btn {
+    flex: 1 0 70%;
 }

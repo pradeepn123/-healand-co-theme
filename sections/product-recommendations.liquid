@@ -49,6 +49,9 @@
 
 {% capture css %}
   {% style %}
+    {% if request.page_type contains 'product' %}
+      
+    {% endif %}
     .section-{{ section.id }} {
         --gsc-space-between-cards: {{ mobile_space_between_cards }}rem;
         --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
