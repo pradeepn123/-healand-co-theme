@@ -128,7 +128,9 @@
                         {%- if section.settings.newsletter_button == "text" -%}
                           {{ section.settings.newsletter_text }}
                         {%- elsif section.settings.newsletter_button == "image" -%}
-                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                          {% if section.settings.newsletter_image != blank %}
+                            <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                          {% endif %}
                        {%- endif -%}
                       </button>
                     </div>

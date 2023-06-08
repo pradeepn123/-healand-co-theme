@@ -95,6 +95,11 @@
         }
       }
     {% endif %}
+    @media (max-width: 540px){
+      .section-{{ section.id }} .collection__header.mr-8{
+        margin-bottom: 8rem;
+      }
+    }
   {% endstyle %}
 {% endcapture %}
 
@@ -102,9 +107,9 @@
 
 {% capture section_header %}
   {%- if title != blank -%}
-    <div class='collection__header {% if alignment == 'center' %}collection__header--center{% endif %}'>
+    <div class="collection__header {% if alignment == 'center' %}collection__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}">
       <h5 class='collection__title {{ heading_size }} {% if section.settings.title_decoration == true %}decorated_heading {% endif %}'>{{ title }}</h5>
-      {% if section.settings.shop_all_url != blank %}
+      {% if section.settings.shop_all_title != blank %}
         <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">
           <span>{{ section.settings.shop_all_title }}</span>
           {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}

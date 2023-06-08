@@ -47,7 +47,7 @@
         margin-top: 38px;
     }
     .over_right__color_scheme .collection-text__content .btn.btn--solid{
-        font-size: 20px;
+        font-size: 14px;
     }
 }
 @media screen and (min-width: 1200px){
@@ -80,7 +80,7 @@
         font-size: 16px;
     }
     .over_right__color_scheme .collection-text__content .btn.btn--solid{
-        font-size: 18px;
+        font-size: 14px;
     }
     .collection-text__content .our-bundles__btn{
         margin-top: 32px;

@@ -68,7 +68,7 @@
         "desktop_space_between_cards": 10,
         "mobile_columns": "2",
         "mobile_space_between_cards": 12,
-        "pagination_type": "classic-pagination"
+        "pagination_type": "load-button-pagination"
       }
     }
   },
