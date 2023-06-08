@@ -141,7 +141,3 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         font-size: 18px;
     }
 }
-
-.card-carousel__slide .product-card {
-    margin:6rem 0 0 0;
-}
