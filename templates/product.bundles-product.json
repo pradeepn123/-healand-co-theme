@@ -30,7 +30,7 @@
             "title": "",
             "block_style": "static",
             "icon": "none",
-            "font_color": "#000"
+            "font_color": "#000000"
           }
         },
         "a39896fb-3f82-4262-bb94-f2832a73fa7b": {
@@ -74,6 +74,7 @@
         },
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3": {
           "type": "upsell_products",
+          "disabled": true,
           "settings": {
             "upsell_headings": "SAVE MORE WITH BUNDLES",
             "img_ratio": "square",
@@ -97,7 +98,7 @@
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
       "settings": {
-        "section_custom_class": "",
+        "section_custom_class": "default_product_custom_class bundles_procuct_pageMain",
         "color_scheme": "default",
         "container_size": "large",
         "section_spacing_top": 32,

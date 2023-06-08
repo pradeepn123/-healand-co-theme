@@ -394,3 +394,16 @@
 .product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .product-form__btn.btn {
     flex: 1 0 70%;
 }
+
+/* Product Bundles Page - Custom Class - .bundles_procuct_pageMain */
+.bundles_procuct_pageMain .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-image-wrapper{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 2px solid #EA6852;
+}
+
+.bundles_procuct_pageMain .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
+    box-shadow: none;
+}
