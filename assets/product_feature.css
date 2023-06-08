@@ -33,6 +33,9 @@
     text-align: center;
     border-radius: 50%;
 }
+.product--features--main .feature span:first-child{
+    margin-right: 18px;
+}
 
 .product--features--main .product--features--content:not(:last-child) {
     margin-bottom: 0;
