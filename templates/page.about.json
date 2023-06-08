@@ -120,6 +120,7 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
