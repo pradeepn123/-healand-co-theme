@@ -109,7 +109,7 @@
         line-height: 1.2;
     }
     .product_benefits{
-       font-size: 12px;
+       font-size: 12px !important;
        line-height: 1.2; 
     }
     .collection_title{
