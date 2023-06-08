@@ -152,9 +152,9 @@
           {%- if show_collection_title and title != blank -%}
             <h5 class='collection-hero__title'>{{ title }}</h5>
           {%- endif -%}
-          {% if collection.title != blank %}
+          {% if collection.title != blank and request.path != '/collections/all' %}
             <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ collection.title }}</span>
-          {% elsif section.settings.collection_title != blank %}
+          {% elsif section.settings.collection_title != blank and request.path == '/collections/all'%}
             <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ section.settings.collection_title }}</span>
           {% endif %}
           {%- if show_collection_description and description != blank -%}

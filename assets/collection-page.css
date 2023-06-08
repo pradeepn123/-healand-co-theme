@@ -23,6 +23,7 @@
 .filters__label{
     font-size: 20px;
     color: #000;
+    align-items: center;
 }
 .collection_title{
     background: #fff;
@@ -102,6 +103,19 @@
         font-size: 18px;
     }
 }
+@media (min-width: 768px) and (max-width: 1023px){
+    .product-card__title{
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    .product_benefits{
+       font-size: 12px;
+       line-height: 1.2; 
+    }
+    .collection_title{
+        font-size: 28px;
+    }
+}
 .product_benefits{
     font-weight: 400;
     font-size: 14px;
@@ -116,7 +130,11 @@
 .product-card__price-item {
     color: #000;
 }
-
+@media (max-width: 767px){
+    .product-card__price-item {
+        font-size: 16px;
+    }
+}
 .product-card-hover-wrapper {
     padding: 3.5rem 2.5rem;
     position: relative;
