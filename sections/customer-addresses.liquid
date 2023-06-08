@@ -60,15 +60,12 @@
                 >
                   {{ 'customer.addresses.edit' | t }}
                 </accordeon-btn>
-                <button
-                  class='btn btn--outline btn--sm addresses__address-btn'
-                  type='button'
-                  aria-label='{{ 'customer.addresses.delete' | t }} {{ forloop.index }}'
-                  data-target='{{ address.url }}'
-                  data-confirm-message='{{ 'customer.addresses.delete_confirm' | t }}'
-                >
-                  {{ 'customer.addresses.delete' | t }}
-                </button>
+                <form class="inline-block" data-address-delete-form method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+                  <input type="hidden" name="_method" value="delete"/>
+                  <button type="submit" class="btn btn--outline btn--sm addresses__address-btn">
+                    {{ 'customer.addresses.delete' | t }}
+                  </button>
+              </form>
               </div>
             </div>
             <div class='accordeon__content-wrap' data-accordeon-content-wrapper>
