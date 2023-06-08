@@ -9,10 +9,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 0;
 }
 @media (max-width: 768px){
     .breadcrumbs_container{
         padding-top: 30px !important;
+        padding-bottom: 0 !important;
         padding-right: var(--gsc-container-padding);
         padding-left: var(--gsc-container-padding);
         align-items: flex-start;
