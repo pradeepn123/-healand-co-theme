@@ -6,3 +6,10 @@
 .imagesOnly_container.section-spacing{
     overflow: scroll;
 }
+
+/* Custom Class - images_only_custom_class */
+@media screen and (max-width: 767px){
+    .images_only_custom_class{
+        padding-top: 21px !important;
+    }
+}

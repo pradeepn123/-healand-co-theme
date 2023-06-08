@@ -5,6 +5,7 @@
   assign product_description = product.description | strip_html | truncatewords: 30, '...'
   assign custom_icon_image = options.custom_icon_image
   assign icon = options.icon
+  assign fontColor = options.font_color
 %}
 {%- if product != blank and product_description != blank -%}
   {%- if block_style contains 'collapsible' -%}
@@ -51,7 +52,7 @@
 
       {% if product_description != blank %}
         <div class='product-content-tab__content'>
-          <div class='rte product-content-tab__rte product-content-tab__text body-font-weight-from-global-settings'>
+          <div class='rte product-content-tab__rte product-content-tab__text body-font-weight-from-global-settings' style="color: {{ fontColor }}">
             {{ product_description }}
           </div>
         </div>

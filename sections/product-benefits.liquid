@@ -43,6 +43,9 @@
                                 <p>{{ block.description }}</p>
                             </span>
                         </div>
+                        {% if block.show_horizontal_line %}
+                            <hr>
+                        {% endif %}
                     {% endunless%}
                 {% endfor %}
             </div>
@@ -59,6 +62,9 @@
                                 <p>{{ block.description }}</p>
                             </span>
                         </div>
+                        {% if block.show_horizontal_line %}
+                            <hr>
+                        {% endif %}
                     {% endunless %}
                 {% endfor %}
             </div>
@@ -66,6 +72,7 @@
         <div class="pb_content_mobile">
             <div class="pb_content_mobile_image">
                 {{ imageFromLoop }}
+                <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
             </div>
             <div class="pb_content_mobile_accordion container container--page-width section">
                 {% for blockX in prodBenefits %}

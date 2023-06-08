@@ -116,3 +116,13 @@
         font-size: 18px;
     }
 }
+
+@media screen and (max-width: 767px){
+    .img_wrap_text_info .key_ingre_title h4{
+        font-size: 20px;
+    }
+    .single_key_ingredients_main .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
