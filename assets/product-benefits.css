@@ -27,7 +27,7 @@
 .pb_container .pb_content{
     display: grid;
     grid-template-columns: 35% 25% 35%;
-    padding: 100px 24px;
+    padding: 50px 24px;
     background-color: #FAF5EF;
     justify-content: space-between;
 }
@@ -49,7 +49,6 @@
 .pb_container .pb_content_continer{
     display: flex;
     flex-direction: row;
-    max-width: 460px;
     padding: 32px 24px;
     background-color: white;
 }
@@ -68,7 +67,7 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        max-height: 516px;
+        max-height: 425px;
     }
 
     .pb_container .pb_content_continer .pb_content_inner h6{

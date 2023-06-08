@@ -30,6 +30,9 @@
 .custom-product-details .product-page-tabs .product-details__tab-names .product-details__tab-name.selected {
     border-color: transparent;
 }
+.custom-product-details .product-page-tabs .product-details__tab-names .product-details__tab-name:not(.selected):hover{
+    background: rgba(255, 255, 255, 0.68);
+}
 
     /* Tabs Content Styles */
     .product-details .product-details__container .product-details__tab {
