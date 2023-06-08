@@ -14,6 +14,8 @@
   assign data_metafields = product.metafields.custom.faq_section_data.value
   assign data_metafields_checkbox = section.settings.from_metafields
   assign blocks_length = section.blocks | size
+  assign highlighted_background_color = product.metafields.custom.color_schema.value.highlighted_background_color | default: '#EA6852'
+  assign highlighted_text_color = product.metafields.custom.color_schema.value.highlighted_text_color | default: '#FFF'
 
   assign section_heading = options.section_heading
   if color_scheme == 'default'
@@ -34,8 +36,8 @@
         }
     {% endfor %}
     .faq-section--parent .section_heading{
-      background-color: {{ section.settings.section_bg_heading_color }};
-      color: {{ section.settings.section_heading_color }}
+      background-color: {{ highlighted_background_color }};
+      color: {{ highlighted_text_color }};
     }
     {% if data_metafields_checkbox == true and data_metafields == blank %}
       .product_faq_class{
@@ -46,7 +48,6 @@
 {% endcapture %}
 
 {% render 'inline-css-minifier', css: css %}
-
 {% if data_metafields_checkbox == false %}
   <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent'>
     <div class='section-spacing container container--{{ container_size }}'>
@@ -215,18 +216,6 @@
       "type": "text",
       "id": "section_heading",
       "label": "Heading"
-    },
-    {
-      "type": "color",
-      "id" : "section_heading_color",
-      "label": "Section Heading Color",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "section_bg_heading_color",
-      "label": "Section Heading Background Color",
-      "default": "#789F91"
     },
     {
       "type": "select",

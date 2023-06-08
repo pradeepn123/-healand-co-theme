@@ -12,6 +12,14 @@
         </div>
     </div>
     <div class="key_ingre_description">
-        <p>{{item.description | truncatewords: 36, '...'}}</p>
+        <p>{{item.description | truncatewords: 36, '...'}}
+        {% if item.read_more_url != blank %}
+            <span>
+                <a target="_blank" href="{{ item.read_more_url }}">
+                    Read more {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon ' -%}
+                </a>
+            </span>
+        {% endif %}
+        </p>
     </div>            
 </div>

@@ -7,6 +7,12 @@
     column-gap: 20px;
     padding-bottom: 20px
 }
+.single_key_ingredients_main .card-carousel__carousel-btn[disabled]{
+    background-color: rgba(217, 217, 217, 1);
+    color: white;
+    opacity: 1;
+    pointer-events: none;
+}
 .single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap{
     margin-top: -5rem;
 }
@@ -21,6 +27,10 @@
 }
 .ingredients_wrapper .key_ingre_description{
     font-size: 16px;
+}
+.ingredients_wrapper .key_ingre_description svg{
+    display: inline-block;
+    vertical-align: middle;
 }
 .img_wrap_text_info .key_ingre_title{
     padding-top: 1em;

@@ -7,8 +7,8 @@
 }
 
 .faq-section__container--with-aside-spacing {
-    padding-left: 2rem;
-    padding-right: 2rem
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .faq-section__accordeon-btn {
@@ -20,7 +20,7 @@
 }
 
 .faq-section--parent .accordeon-plus__btn{
-    padding: 3rem .8rem 3rem 0 !important;
+    padding: 3rem 1.6rem !important;
 }
 .faq-section__image {
     width: 100%;
@@ -93,6 +93,7 @@
 .faq-section--parent .faq-section__rte{
     font-size: 16px;
     padding-right: 32px;
+    padding-left: 16px;
 }
 
 .product_faq_class .container{
@@ -136,7 +137,7 @@
 
 .faq-section--parent .section_heading {
     /* font-family: "BrownStd-Regular"; */
-    padding: 2rem 4.8rem;
+    padding: 25px 16px;
     font-size: 24px;
 }
 
