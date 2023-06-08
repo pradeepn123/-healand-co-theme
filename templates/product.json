@@ -263,7 +263,7 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel-overflow",
         "title": "Key Ingredients",
-        "heading_size": "h4",
+        "heading_size": "h2",
         "alignment": "center",
         "desktop_columns": 2,
         "desktop_space_between_cards": 16,
