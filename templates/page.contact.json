@@ -159,12 +159,27 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "d51e1123-501e-4bdb-b84f-c01e43d615a9": {
+      "type": "marquee",
+      "settings": {
+        "show_only_on_homepage": false,
+        "color_scheme": "custom-2",
+        "container_size": "full-screen",
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_arrows": false,
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_list": false
+      }
     }
   },
   "order": [
     "split_image_banner",
     "page",
     "contact-form",
-    "9d8b5811-4303-40a0-b5a8-713e9f0ba683"
+    "9d8b5811-4303-40a0-b5a8-713e9f0ba683",
+    "d51e1123-501e-4bdb-b84f-c01e43d615a9"
   ]
 }
