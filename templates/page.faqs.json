@@ -352,6 +352,19 @@
     },
     "4be23f2a-525d-48ce-99ba-0c806d6ee2d2": {
       "type": "marquee",
+      "blocks": {
+        "a95a6cc9-3271-4d7e-a3d9-a13eacd2d43d": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a> our rewards program and collect points to earn exclusive rewards ★<\/p>",
+            "link": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "a95a6cc9-3271-4d7e-a3d9-a13eacd2d43d"
+      ],
       "settings": {
         "show_only_on_homepage": false,
         "color_scheme": "custom-2",
