@@ -226,10 +226,6 @@
     .default_product_custom_class .product__info-wrapper .product__info .product-general-info-block h1{
         font-size: 36px;
     }
-    /* Product Description - Bundles Page Width */
-    .bundles_procuct_pageMain .product-content-tab__content{
-        max-width: 385px;
-    }
 }
 
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
@@ -262,6 +258,12 @@
     .upsell_product_main_wrap .product-card__details--bottom-spacing {
         flex: 1 0 60%;
         padding-top: 0;
+    }
+}
+@media (min-width: 1024px){
+    /* Product Description - Bundles Page Width */
+    .bundles_procuct_pageMain .product-content-tab__content {
+        max-width: 385px;
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1199px){
