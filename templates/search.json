@@ -13,7 +13,7 @@
         "enable_filtering": true,
         "filters_position": "left",
         "filter_style": "open-embed",
-        "categories_style": "static",
+        "categories_style": "collapsed_tabs",
         "option_style": "checkbox-outline",
         "show_color_swatches": true,
         "show_divider": true,
