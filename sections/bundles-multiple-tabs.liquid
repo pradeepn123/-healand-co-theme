@@ -132,7 +132,7 @@
                               <p class="mobile_accordion_subheading"> {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }} </p>
                               <p class="mobile_accordion_featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
                             </div>
-                          {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                          {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
                         </accordeon-btn>
                         <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                           <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
@@ -148,7 +148,7 @@
                                                 {{ block.shopify_attributes }} >
                                                   <accordeon-btn class='inner_accordion_heading accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
                                                     {{ block.info_heading}}
-                                                    {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                                    {% render 'icon', icon_name: 'plus', class: 'accordeon__new__plus arrow-pointing-up' %}
                                                   </accordeon-btn>
                                                 <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                                                 <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
