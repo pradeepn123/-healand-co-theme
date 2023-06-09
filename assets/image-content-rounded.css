@@ -10,6 +10,9 @@
     margin: 5px 0;
     padding: 12px;
 }
+.ingredients-database-item.hidden{
+    display: none;
+}
 .ingredients-database-item:hover .ingredients_image_wrap{
     border: 5px solid #789F91;
     -webkit-transition: 300ms ease-out;
@@ -167,4 +170,8 @@
     .icon-text-wrapper{
         margin: 40px 0 10px;
     }
+}
+.pagination_load_btn{
+    display: flex;
+    margin: 24px auto;
 }
