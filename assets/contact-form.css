@@ -130,7 +130,7 @@
 .contact_us_page_main .input,.contact_us_page_main .textarea{
     font-weight: 400;
    font-size: 16px;
-    border: 0.5px solid #B4B4B4;
+    border: 0.5px solid #000000;
 }
 /* .contact_pg_form .contact__form .field-group .field.contact__field input{
     border: 0.5px solid var(--gsc-border-color-100);

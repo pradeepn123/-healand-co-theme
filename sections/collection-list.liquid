@@ -98,6 +98,7 @@
       data-autoplay-interval='{{ autoplay_interval }}'
     {% endif %}
     data-section-id='{{ section.id }}'
+    data-aos="fade-up"
     >
     <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--prev'>
       <div class='shape shape--{{ img_ratio }}'>
@@ -154,7 +155,7 @@
 {% endcapture %}
 
 {% capture grid %}
-  <div class="card-grid collection-list__card-grid">
+  <div class="card-grid collection-list__card-grid" data-aos="fade-up" data-aos-delay="300">
     {%- for collection in collection_list -%}
       {% render 'collection-card',
         title: collection.title,
@@ -173,7 +174,7 @@
 <div class='collection-list section collection-list--section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout contains 'grid' %} collection-list--grid-with-mobile-carousel{% endif %}'>
   <div class='collection-list__container container container--{{ container_size }} section-spacing'>
     {%- if title != blank -%}
-      <div class="collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}">
+      <div class="collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}" data-aos="fade-up">
         <h5 class='{{ heading_size }} decorated_heading'>{{ title }}</h5>
         {% if section.settings.shop_all_title != blank %}
           <a href="{{ section.settings.shop_all_url }}" class="view-btn shop_all w-full-sp">

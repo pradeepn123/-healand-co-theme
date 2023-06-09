@@ -114,7 +114,7 @@
     {%- endif -%}
     {%- if section.blocks.size > 0 -%}
       <div class='collage__blocks'>
-        <div class='collage__card-grid'>
+        <div class='collage__card-grid' data-aos="fade-up">
           {%- for block in section.blocks -%}
             <div
               class='collage__item collage__card-grid-item block-{{ block.id }} color-{{ block.settings.color_scheme }}'

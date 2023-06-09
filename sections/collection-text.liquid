@@ -129,7 +129,7 @@
       or icon != 'none'
       or custom_icon_image != blank
     -%}
-      <div class='collection-text__content {% if direction == 'inverse' %}collection-text__content--inverse{% endif %}'>
+      <div class='collection-text__content {% if direction == 'inverse' %}collection-text__content--inverse{% endif %}' data-aos="fade-up">
         {%- if custom_icon_image != blank -%}
           <img
             class='collection-text__icon lazyload'
@@ -194,6 +194,8 @@
         data-autoplay-interval='{{ autoplay_interval }}'
       {% endif %}
       data-section-id='{{ section.id }}'
+      data-aos="fade-up"
+      data-aos-delay="200"
     >
       {%- if products.size > 1 -%}
         <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--prev'>
