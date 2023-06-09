@@ -32,10 +32,10 @@
         }
     {% endfor %}
     .heading_subHeading{
-      background-color: {{ section.settings.heading_bg_color }};
+      background-color: {{ product.metafields.custom.color_schema.value.highlighted_background_color }};
     }
     .heading_subHeading .product-details__tab-name.selected{
-      color: {{ section.settings.heading_color }};
+      color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};
     }
     .bundle-product-details .product-details__container .desktop_only{
       background-color: {{ section.settings.section_bg_color }}

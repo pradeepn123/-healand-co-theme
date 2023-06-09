@@ -67,7 +67,8 @@
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px){
-    .custom-product-details{
+    .custom-product-details,
+    .bundles_page_tabChains{
         margin-top: 40px;
     }
 }

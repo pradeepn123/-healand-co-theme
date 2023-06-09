@@ -1,7 +1,9 @@
 <div class="upsell_product_main_wrap">
     <div class="upsell_product_heading">
-        <span class="heading_text">{{ block.settings.upsell_headings }}</span>
-        <span class="discount_percentage"> upto 20% </span>
+        {% if block.settings.upsell_products != blank  %}
+            <span class="heading_text">{{ block.settings.upsell_headings }}</span>
+            <span class="discount_percentage"> upto 20% </span>
+        {% endif %}
     </div>
     {%- for upsell_product in block.settings.upsell_products -%}  
         <div class='shop__grid-item'>        

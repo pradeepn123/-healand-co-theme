@@ -562,23 +562,29 @@
                         data-product-form-variant
                         id='{{ product_form_id }}-IdInput-{{ form.id }}'
                       >
-                      <button
-                        type='submit'
-                        name='add'
-                        class='btn btn--solid product-card__btn '
-                        tabindex='-1'
-                        style='display: flex;'
-                        data-product-card-button
-                        aria-label='{{- 'cards.product_card.add_to_cart_button_label' | t -}}'
-                      >
-                        <span style='display: flex; align-items: center; justify-content: center;'>
-                          {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
-                          <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
-                            {{- 'cards.product_card.add_to_cart_button_label' | t -}}
+                      {% if product.available %}
+                        <button
+                          type='submit'
+                          name='add'
+                          class='btn btn--solid product-card__btn '
+                          tabindex='-1'
+                          style='display: flex;'
+                          data-product-card-button
+                          aria-label='{{- 'cards.product_card.add_to_cart_button_label' | t -}}' >
+                          <span style='display: flex; align-items: center; justify-content: center;'>
+                            {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
+                            <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
+                              {{- 'cards.product_card.add_to_cart_button_label' | t -}}
+                            </span>
                           </span>
-                        </span>
-                        {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
-                      </button>
+                          {% render 'icon', icon_name: 'spinner', class: 'loading-spinner btn__loading-spinner' %}
+                        </button>
+                      {% else %}
+                        <button type="submit" name="add" id="product-buy-btn-5807279964318-template--16197253398686__main---MainSection" class="product-form__btn btn btn--lg btn--solid" disabled="" aria-label="Sold out">
+                          <span data-button-text="">Sold out</span>
+                          <svg class="loading-spinner btn__loading-spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">        <circle stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round" cx="33" cy="33" r="30"></circle>      </svg>
+                        </button>
+                      {% endif %}
                     {%- endform -%}
                   </product-form>
                 {%- endif -%}

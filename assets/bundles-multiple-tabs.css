@@ -76,10 +76,6 @@
         .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button:hover{
             cursor: pointer;
         }
-        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button.selected{
-            background-color: #EA6852;
-            color: #FFFFFF;
-        }
     /* Inner Tabs End */
 
     .product_fixedTitle {
@@ -91,6 +87,9 @@
     .bundles_page_tabChains .pc_tabs_mobile .top_accordion{
         background-color: white;
         padding: 12px;
+        padding-right: 16px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .bundles_page_tabChains .pc_tabs_mobile .top_accordion_component:not(:last-child){
@@ -140,6 +139,8 @@
 /* Arrow Styles on click */
 .arrow-pointing-up{
     transition: transform .25s;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 .bundles_page_tabChains .top_accordion_component[data-aria-expanded=true] .arrow-pointing-up{
     transform: rotate(180deg);
@@ -160,6 +161,11 @@
     transform-origin: 50%;
     transition: -webkit-transform .25s, -webkit-transform .25s, transform .25s;
 }
+@media screen and (min-width: 481px){
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings{
+        margin-right: auto;
+    }
+}
 @media screen and (min-width: 1200px){
     /* .bundles_page_tabChains .content_parent_position_relative {
         max-width: 454px;
@@ -177,6 +183,9 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .pc_tabs_mobile {
+        display: none;
+    }
 }
 /* Container */
 @media screen and (max-width: 1200px){
@@ -187,17 +196,14 @@
         column-gap: 70px;
     }
 }
-@media screen and (max-width: 767px){
-    .pc_tabs_dekstop_parent{
+@media screen and (max-width: 1199px){
+    .pc_tabs_dekstop_parent {
         display: none;
     }
+}
+@media screen and (max-width: 767px){
     .product_fixedTitle {
         margin-bottom: 24px;
-    }
-}
-@media screen and (min-width: 768px){
-    .pc_tabs_mobile{
-        display: none;  
     }
 }
 @media screen and (max-width: 480px){

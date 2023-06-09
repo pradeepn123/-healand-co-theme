@@ -260,6 +260,17 @@
         padding-top: 0;
     }
 }
+@media (min-width: 1024px){
+    /* Product Description - Bundles Page Width */
+    .bundles_procuct_pageMain .product-content-tab__content {
+        max-width: 385px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    .default_product_custom_class{
+        margin-top: 40px;
+    }
+}
 @media screen and (min-width: 1024px) and (max-width: 1199px){
     .upsell_product_main_wrap .shop__grid-item .product-card .product-card__inner {
         flex: 1 0 35%;
@@ -301,6 +312,9 @@
     .default_product_custom_class {
         margin-top: 48px;
     }
+    .default_product_custom_class.bundles_procuct_pageMain{
+        margin-top: 0;
+    }
     .default_product_custom_class .product-general-info-block .h2{
         font-size: 24px;
         line-height: 38px;
@@ -324,6 +338,10 @@
     }
     .bundles_procuct_pageMain .product__info-wrapper{
         margin-top: 64px;
+    }
+    /* Add to cart - Non Sticky Text */
+    .product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .product-form__btn.btn span{
+        font-size: 18px;
     }
 }
 
@@ -395,6 +413,11 @@
     }
     .upsell_product_main_wrap .upsell_product_heading{
         margin-bottom: 36px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .upsell_product_main_wrap .upsell_product_heading .heading_text{
+        font-size: 14px;
     }
 }
 /* End Upsell in Product Page ATF Section */
