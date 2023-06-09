@@ -298,8 +298,8 @@
         "template--16191895371934__54b8fb08-c254-4412-9fe5-412483454abb-16862940429e8061d6-2": {
           "type": "text",
           "settings": {
-            "text": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
-            "color": "",
+            "text": "sign up for early access to new products, exclusive deals and more!",
+            "color": "#ffffff",
             "body_size": "body3"
           }
         },
