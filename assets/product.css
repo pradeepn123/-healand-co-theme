@@ -266,6 +266,11 @@
         max-width: 385px;
     }
 }
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    .default_product_custom_class{
+        margin-top: 40px;
+    }
+}
 @media screen and (min-width: 1024px) and (max-width: 1199px){
     .upsell_product_main_wrap .shop__grid-item .product-card .product-card__inner {
         flex: 1 0 35%;
