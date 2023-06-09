@@ -160,6 +160,20 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "6a7752cd-d110-4db1-8e09-89fdcbefcc36": {
+      "type": "marquee",
+      "settings": {
+        "show_only_on_homepage": false,
+        "color_scheme": "custom-2",
+        "container_size": "full-screen",
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_arrows": false,
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_list": false
+      }
     }
   },
   "order": [
@@ -167,6 +181,7 @@
     "f9b3c724-0360-4f88-8126-67b891fcbf15",
     "25d43466-8fb6-4a7f-9c25-254d89c4413c",
     "5e6a6d35-76b4-4250-85a9-db42cc0637c2",
-    "3778fc27-a373-4e56-a5ef-abfa8c4d8034"
+    "3778fc27-a373-4e56-a5ef-abfa8c4d8034",
+    "6a7752cd-d110-4db1-8e09-89fdcbefcc36"
   ]
 }
