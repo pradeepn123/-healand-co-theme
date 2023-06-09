@@ -64,6 +64,9 @@
         .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings{
             border-bottom: 1px solid #DEDEDE;
         }
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_content p{
+            display: inline-block;
+        }
         .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button{
             background-color: transparent;
             padding: 15px;
