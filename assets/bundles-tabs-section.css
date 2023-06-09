@@ -170,7 +170,12 @@
         height: 100px;
     }
 }
-
+@media screen and (max-width: 480px){
+    .bundle-product-details .desktop_tabs .product-details__tab-names .background_image_bundlesProduct{
+        height: 80px;
+        width: 80px;
+    }
+}
 .testing_img{
     width: 247px;
     height: 362px;

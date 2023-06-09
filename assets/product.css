@@ -317,6 +317,23 @@
     .upsell_product_main_wrap .product-card .product-card__details .product-card__info .product-card__actions .product-card__btn .product-card__btn-label-text{
         font-size: 14px;
     }
+    /* Mobile Styles for ATF Product Featured Image Slick Icons */
+    .bundles_procuct_pageMain .product-mobile-media__dots-carousel{
+        bottom: auto;
+        margin-top: 10px;
+    }
+    .bundles_procuct_pageMain .product__info-wrapper{
+        margin-top: 64px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .bundles_procuct_pageMain .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn data-button-text {
+        font-size: 14px;
+    }
+    .product-additional-details .product-additional-details-child .product-additional-details-iandt{
+        padding: 10px 20px;
+    }
 }
 
 /* Upsell in Product Page ATF Section */

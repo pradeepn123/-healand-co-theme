@@ -7,7 +7,8 @@
     column-gap: 20px;
     padding-bottom: 20px
 }
-.single_key_ingredients_main .card-carousel__carousel-btn[disabled]{
+.single_key_ingredients_main .card-carousel__carousel-btn[disabled],
+.bundle_key_ingredients_main .card-carousel__carousel-btn[disabled]{
     background-color: rgba(217, 217, 217, 1);
     color: white;
     opacity: 1;
@@ -80,6 +81,19 @@
     display: flex;
 }
 
+.ingredients_wrapper .img_wrap_text_info .key_ingre_title .bundle_pro_title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+
+    margin-top: -0.5em;
+    margin-bottom: 1.5em;
+    padding: 5px 16px;
+    border-radius: 2em;
+}
+
 @media(min-width:768px){
     .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
         top: -0.4em;
@@ -117,6 +131,13 @@
         padding: 5px 16px;
         border-radius: 2em;
         background: #194D7C;
+
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
     .img_wrap_text_info .key_ingre_title h4{
         font-size: 20px;
@@ -132,6 +153,20 @@
         font-size: 20px;
     }
     .single_key_ingredients_main .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .bundle_key_ingredients_main .carousel-btn{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    .bundles_procuct_pageMain .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn span{
+        font-size: 14px;
+    }
+    .bundle_key_ingredients_main .section-spacing{
         padding-left: 0;
         padding-right: 0;
     }
