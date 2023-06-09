@@ -2,9 +2,7 @@
   assign options = section.settings
   assign color_scheme = options.color_scheme
   assign img_ratio = options.img_ratio
-  assign upsell_products = ''
 -%}
-
 
 {{ 'cart-drawer.css' | asset_url | stylesheet_tag: preload: true }}
 
@@ -76,6 +74,7 @@
                   -%}         
                     {% if upsell_products %}
                       <h4 class="h5">{{ section.settings.upsell_title }}</h4>
+                      {% break %}
                     {% endif %}
                   {% endfor %}
               {%- endif -%}

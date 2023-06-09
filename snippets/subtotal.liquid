@@ -73,7 +73,7 @@
           {%- endif -%}
         </div>
         <div class='subtotal__cta' {{ block.shopify_attributes }}>
-          {% comment %} {%- if settings.cart_type != 'drawer_only' -%}
+          {%- if settings.cart_type != 'drawer_only' -%}
             <a
               class='btn btn--outline btn--lg subtotal__btn subtotal__cart-link'
               href='{{ routes.cart_url }}'
@@ -81,7 +81,7 @@
             >
               {{- 'general.subtotal.text_for_go_to_cart_button' | t -}}
             </a>
-          {%- endif -%} {% endcomment %}
+          {%- endif -%}
           <button
             type='submit'
             id='checkout'

@@ -132,6 +132,8 @@
 }
 .sidebar-cart[footer-shadow-visible] .sidebar-cart__footer {
     box-shadow: unset;
+}
+.sidebar-cart__body .sidebar-cart__footer{
     border-top: 1px solid #E7E7E7;
 }
 .subtotal__content .subtotal__price{
