@@ -72,6 +72,13 @@ loop1_Object_values.forEach((items , index) => {
 }
 </style>
 
+{% style %}
+    .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button.selected{
+        background-color: {{ product.metafields.custom.color_schema.value.highlighted_background_color }};
+        color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};
+    }
+{% endstyle %}
+
 <div class="tabs_parent">
     <div class="tabs_headings">
     {% for headingValue in newValue %}

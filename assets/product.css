@@ -339,6 +339,10 @@
     .bundles_procuct_pageMain .product__info-wrapper{
         margin-top: 64px;
     }
+    /* Add to cart - Non Sticky Text */
+    .product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .product-form__btn.btn span{
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 425px){
@@ -409,6 +413,11 @@
     }
     .upsell_product_main_wrap .upsell_product_heading{
         margin-bottom: 36px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .upsell_product_main_wrap .upsell_product_heading .heading_text{
+        font-size: 14px;
     }
 }
 /* End Upsell in Product Page ATF Section */
