@@ -64,6 +64,9 @@
         .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings{
             border-bottom: 1px solid #DEDEDE;
         }
+        .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_content p{
+            display: inline-block;
+        }
         .bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button{
             background-color: transparent;
             padding: 15px;
@@ -134,7 +137,29 @@
         font-weight: 700;
         line-height: 24px;
     }
+/* Arrow Styles on click */
+.arrow-pointing-up{
+    transition: transform .25s;
+}
+.bundles_page_tabChains .top_accordion_component[data-aria-expanded=true] .arrow-pointing-up{
+    transform: rotate(180deg);
+}
     /* Inner Accordion Heainds End */
+/* Inner Accordeon Styles */
+.accordeon__new__plus{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: auto;
+}
+.inner_accordion_heading_parent.accordeon-plus[data-aria-expanded=true] .accordeon__new__plus path:nth-child(2) {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.accordeon__new__plus path:nth-child(2) {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    transition: -webkit-transform .25s, -webkit-transform .25s, transform .25s;
+}
 @media screen and (min-width: 1200px){
     /* .bundles_page_tabChains .content_parent_position_relative {
         max-width: 454px;
