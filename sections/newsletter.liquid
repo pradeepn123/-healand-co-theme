@@ -69,7 +69,7 @@
     <div class='newsletter {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
       <div class='newsletter__content-wrap'>
         {%- if section.blocks.size > 0 -%}
-          <div class='newsletter__content newsletter__content--desktop {% if desktop_content_background != 'none' %} newsletter__content--with-{{ desktop_content_background }}-background{% endif %}'>
+          <div class='newsletter__content newsletter__content--desktop {% if desktop_content_background != 'none' %} newsletter__content--with-{{ desktop_content_background }}-background{% endif %}' data-aos="fade-up">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when 'caption' -%}
