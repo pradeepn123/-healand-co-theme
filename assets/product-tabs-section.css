@@ -85,7 +85,7 @@
     /* Accordion Borders Start */
         .custom-product-details .product-accordion-dropdown accordeon-component[data-aria-expanded=true] accordeon-btn{
             border-bottom: 1px solid #D9D9D9;
-            font-size: 16px;
+            font-size: 16px !important;
         }
         .custom-product-details .product-accordion-dropdown accordeon-component accordeon-btn{
             color: #000;
@@ -97,6 +97,12 @@
 
         .custom-product-details .product-accordion-dropdown accordeon-component:last-of-type{
             border-bottom: 1px solid #D9D9D9;
+        }
+        .custom-product-details .product-accordion-dropdown accordeon-component accordeon-btn{
+            font-size: 16px;
+        }
+        .custom-product-details.product-details .product-details__container .product-details__content-tab-content .product-details__rte.text-container{
+            font-size: 14px !important;
         }
     /* Accordion Borders End */
 

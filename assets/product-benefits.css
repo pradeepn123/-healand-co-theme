@@ -167,5 +167,6 @@
         }
         .pb_container .pb_content_continer .pb_content_inner p{
             -webkit-line-clamp: 3;
+            overflow: scroll;
         }
     }

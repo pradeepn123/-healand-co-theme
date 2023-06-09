@@ -30,8 +30,11 @@
     {% render 'css-variables' %}
     {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'search.js' | asset_url | preload_tag: as: 'script' }}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{ 'index.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
+
     {% render 'fonts' %}
     {{ content_for_header }}
   </head>
@@ -86,5 +89,11 @@
 
     <script src='{{ 'index.js' | asset_url }}' defer='defer'></script>
     <script src='{{ 'search.js' | asset_url }}' defer='defer'></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer='defer'></script>
+    <script>
+      AOS.init({
+        duration: 1000        
+      })
+    </script>
   </body>
 </html>

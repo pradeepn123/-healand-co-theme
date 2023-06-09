@@ -107,7 +107,7 @@
 
 {% capture section_header %}
   {%- if title != blank -%}
-    <div class="collection__header {% if alignment == 'center' %}collection__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}">
+    <div class="collection__header {% if alignment == 'center' %}collection__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}" data-aos="fade-up">
       <h5 class='collection__title {{ heading_size }} {% if section.settings.title_decoration == true %}decorated_heading {% endif %}'>{{ title }}</h5>
       {% if section.settings.shop_all_title != blank %}
         <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">

@@ -19,6 +19,8 @@
           "settings": {
             "title": "GENERAL",
             "faq_heading_bg": "#ee5c4c",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -26,8 +28,10 @@
           "type": "question",
           "settings": {
             "title": "Where is Heal+Co based?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>We're fortunate to be based in beautiful Whistler, BC, Canada. Our environment and surroundings provide us with the inspiration for developing products that positively impact people's health.<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -36,8 +40,10 @@
           "type": "question",
           "settings": {
             "title": "What are your values?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -46,8 +52,10 @@
           "type": "question",
           "settings": {
             "title": "Where can I purchase your product?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -56,8 +64,10 @@
           "type": "question",
           "settings": {
             "title": "Do you provide samples or coupons?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -67,6 +77,8 @@
           "settings": {
             "title": "PRODUCTS",
             "faq_heading_bg": "#797baa",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -74,8 +86,10 @@
           "type": "question",
           "settings": {
             "title": "What are your products made?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Michigan, USA.<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -84,8 +98,10 @@
           "type": "question",
           "settings": {
             "title": "What kind of testing do you do on your products?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -94,8 +110,10 @@
           "type": "question",
           "settings": {
             "title": "When should I take the products? Should I take them with food?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -104,8 +122,10 @@
           "type": "question",
           "settings": {
             "title": "Are your products FDA approved?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -114,8 +134,10 @@
           "type": "question",
           "settings": {
             "title": "Are your products vegan? Gluten free? Non GMO?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -124,8 +146,10 @@
           "type": "question",
           "settings": {
             "title": "Where do you source your products from?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -134,8 +158,10 @@
           "type": "question",
           "settings": {
             "title": "How and where should I store the product?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -144,8 +170,10 @@
           "type": "question",
           "settings": {
             "title": "What’s the difference between extract and a powder?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -155,6 +183,8 @@
           "settings": {
             "title": "SHIPPING & RETURNS",
             "faq_heading_bg": "#82a1c4",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -162,8 +192,10 @@
           "type": "question",
           "settings": {
             "title": "What is a typical order processing time?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>We're fortunate to be based in beautiful Whistler, BC, Canada. Our environment and surroundings provide us with the inspiration for developing products that positively impact people's health.<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -172,8 +204,10 @@
           "type": "question",
           "settings": {
             "title": "What shipping options are available?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -182,8 +216,10 @@
           "type": "question",
           "settings": {
             "title": "Where do you ship?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -192,8 +228,10 @@
           "type": "question",
           "settings": {
             "title": "How long will it take to receive my order?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -202,8 +240,10 @@
           "type": "question",
           "settings": {
             "title": "Do accept customer returns?",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -240,15 +280,108 @@
         "title": "FAQ'S",
         "text": "",
         "heading_size": "h2",
+        "head_color": "#000",
         "body_size": "body0",
         "btn_text": "",
         "btn_url": "",
         "btn_style": "solid"
       }
+    },
+    "73ce298f-6ff6-440e-b747-64f6cc749806": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-0": {
+          "type": "caption",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-1": {
+          "type": "title",
+          "settings": {
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "color": "#ffffff",
+            "heading_size": "h4"
+          }
+        },
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-2": {
+          "type": "text",
+          "settings": {
+            "text": "sign up for early access to new products, exclusive deals and more!",
+            "color": "#ffffff",
+            "body_size": "body3"
+          }
+        },
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-0",
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-1",
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-2",
+        "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "Subscribe",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 400,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
+        "desktop_overlay_opacity": 5,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
+    },
+    "4be23f2a-525d-48ce-99ba-0c806d6ee2d2": {
+      "type": "marquee",
+      "blocks": {
+        "a95a6cc9-3271-4d7e-a3d9-a13eacd2d43d": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a> our rewards program and collect points to earn exclusive rewards ★<\/p>",
+            "link": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "a95a6cc9-3271-4d7e-a3d9-a13eacd2d43d"
+      ],
+      "settings": {
+        "show_only_on_homepage": false,
+        "color_scheme": "custom-2",
+        "container_size": "full-screen",
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_arrows": false,
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_list": false
+      }
     }
   },
   "order": [
     "page",
-    "c03a296a-c335-4807-95ee-711915117743"
+    "c03a296a-c335-4807-95ee-711915117743",
+    "73ce298f-6ff6-440e-b747-64f6cc749806",
+    "4be23f2a-525d-48ce-99ba-0c806d6ee2d2"
   ]
 }

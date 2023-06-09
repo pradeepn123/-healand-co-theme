@@ -86,7 +86,7 @@
         "section_spacing_bottom": 48,
         "form_bg_colors": "#ffffff",
         "title": "CONTACT US",
-        "title_color": "#000",
+        "title_color": "#000000",
         "text": "",
         "heading_size": "h2",
         "body_size": "body6",
@@ -96,11 +96,103 @@
         "show_phone": true,
         "show_captcha": false
       }
+    },
+    "9d8b5811-4303-40a0-b5a8-713e9f0ba683": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-0": {
+          "type": "caption",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-1": {
+          "type": "title",
+          "settings": {
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "color": "#ffffff",
+            "heading_size": "h4"
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-2": {
+          "type": "text",
+          "settings": {
+            "text": "sign up for early access to new products, exclusive deals and more!",
+            "color": "#ffffff",
+            "body_size": "body3"
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-0",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-1",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-2",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "Subscribe",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 400,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
+        "desktop_overlay_opacity": 5,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
+    },
+    "d51e1123-501e-4bdb-b84f-c01e43d615a9": {
+      "type": "marquee",
+      "blocks": {
+        "fdc75869-6928-4b3f-a4de-51081a96c2f8": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a> our rewards program and collect points to earn exclusive rewards ★<\/p>",
+            "link": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "fdc75869-6928-4b3f-a4de-51081a96c2f8"
+      ],
+      "settings": {
+        "show_only_on_homepage": false,
+        "color_scheme": "custom-2",
+        "container_size": "full-screen",
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "show_navigation_arrows": false,
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_list": false
+      }
     }
   },
   "order": [
     "split_image_banner",
     "page",
-    "contact-form"
+    "contact-form",
+    "9d8b5811-4303-40a0-b5a8-713e9f0ba683",
+    "d51e1123-501e-4bdb-b84f-c01e43d615a9"
   ]
 }

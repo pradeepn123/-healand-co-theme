@@ -81,7 +81,7 @@
         -%}
 
     <!-- text part -->
-    <div class="text-with-image__content side-textpart {% if direction == 'inverse' %}text-with-image__container--inverse{% endif %}">
+    <div class="text-with-image__content side-textpart {% if direction == 'inverse' %}text-with-image__container--inverse{% endif %}" data-aos="fade-up">
         {%- if custom_icon_image != blank -%}
           <img
             loading='lazy'
@@ -141,7 +141,10 @@
     <div class="side-imagespart">
         {%- for block in section.blocks -%}
           {%- if block.settings.image_small != blank -%}
-            <div class="image-subtext-wrap">
+            <div class="image-subtext-wrap" data-aos="fade-up" 
+              {% if forloop.index == 1 %} data-aos-delay="200" {% endif %}
+              {% if forloop.index == 2 %} data-aos-delay="400" {% endif %}
+              {% if forloop.index == 3 %} data-aos-delay="600" {% endif %}>
                 <div class="image-wrapper__info">
                   <img src="{{ block.settings.image_small | img_url:'master' }}">
                 </div>

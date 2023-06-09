@@ -49,6 +49,12 @@
 
 {% capture css %}
   {% style %}
+  @media screen and (max-width: 480px){
+    .break_text_intoTwoLines_mobile{
+      max-width: 243px;
+      text-align: center;
+    }
+  }
     .section-{{ section.id }} {
         --gsc-space-between-cards: {{ mobile_space_between_cards }}rem;
         --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
@@ -233,7 +239,7 @@
       <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
         {%- if title != blank -%}
           <div class='product-recommendations__header {% if alignment == 'center' %}product-recommendations__header--center{% endif %}'>
-            <h5 class='product-recommendations__title {{ heading_size }}'>{{ title }}</h5>
+            <h5 class='product-recommendations__title {{ heading_size }} break_text_intoTwoLines_mobile'>{{ title }}</h5>
           </div>
         {%- endif -%}
 
