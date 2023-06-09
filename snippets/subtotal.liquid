@@ -56,7 +56,7 @@
           {%- endif -%}
           <h6 class='subtotal__totals {% if cart.cart_level_discount_applications.size > 0 %} subtotal__totals--with-top-spacing{% endif %} {% if settings.show_taxes_and_shipping_costs_label %} subtotal__totals--with-bottom-spacing{% endif %}'>
             <div class='subtotal__label'>{{ 'general.subtotal.label_for_total_price' | t }}</div>
-            <div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div>
+            <div class='subtotal__price'>{{ cart.total_price | money }}</div>
           </h6>
           {%- if settings.show_taxes_and_shipping_costs_label -%}
             <div class='subtotal__tax-note'>
@@ -100,6 +100,19 @@
           </button>
         </div>
       </div>
+      {%- if settings.show_taxes_and_shipping_costs_label -%}
+        <div class='mobile_subtotal__tax-note'>
+          {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+            {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+          {%- elsif cart.taxes_included -%}
+            {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
+          {%- elsif shop.shipping_policy.body != blank -%}
+            {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+          {%- else -%}
+            {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
   </div>
 {%- else -%}
