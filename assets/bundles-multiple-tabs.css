@@ -35,6 +35,7 @@
 
 /* Tabs Heading Content Start */
 .bundles_page_tabChains .content_parent_position_relative .tab_Heading_Content{
+    word-wrap: break-word;
     grid-area: 1/2/3/3;
 }
 .bundles_page_tabChains .content_parent_position_relative .tab_Heading_Content .subheading{
@@ -100,6 +101,9 @@
         padding: 12px;
     }
 
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings{
+        overflow: hidden;
+    }
     .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_subheading{
         font-size: 16px;
         font-weight: 700;
@@ -131,6 +135,24 @@
         line-height: 24px;
     }
     /* Inner Accordion Heainds End */
+@media screen and (min-width: 1200px){
+    /* .bundles_page_tabChains .content_parent_position_relative {
+        max-width: 454px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bundles_page_tabChains .product_fixedTitle{
+        max-width: 454px;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    .bundles_page_tabChains .pc_tabs_dekstop_parent tabs-component .product-details__tab-names{
+        max-width: 454px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 /* Container */
 @media screen and (max-width: 1200px){
     .product_fixedTitle {
@@ -152,4 +174,17 @@
     .pc_tabs_mobile{
         display: none;  
     }
+}
+@media screen and (max-width: 480px){
+    .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_featuredTag{
+        margin-top: 10px;
+        line-height: normal;
+    }
+}
+.bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings{
+    display: flex;
+    justify-content: space-around;
+}
+.bundles_page_tabChains .pc_tabs_dekstop_parent .tabs_parent .tabs_headings .cliableTabs_Button:not(.selected):hover{
+    background-color: rgba(255, 255, 255, 0.68);
 }
