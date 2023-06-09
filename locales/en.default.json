@@ -4,7 +4,7 @@
       "aria_label": "Back to top"
     },
     "free_shipping_bar": {
-      "progress_message": "Only [value] away from free shipping!",
+      "progress_message": "You're <span>[value]</span> away from free shipping!",
       "achieved_message": "Free shipping unlocked!"
     },
     "logo": {
@@ -47,7 +47,7 @@
         "one": "Subtotal <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} item)<\/span>",
         "other": "Subtotal <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} items)<\/span>"
       },
-      "label_for_total_price": "Total",
+      "label_for_total_price": "subtotal",
       "text_for_go_to_cart_button": "Go to cart",
       "text_for_checkout_button": "Check out",
       "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
@@ -99,10 +99,10 @@
       "button_label": "Share"
     },
     "sidebar_cart": {
-      "title": "Cart",
+      "title": "MY CART",
       "title_count": {
-        "one": "({{ count }} item)",
-        "other": "({{ count }} items)"
+        "one": "({{ count }})",
+        "other": "({{ count }})"
       },
       "continue_shopping": "Continue shopping"
     },

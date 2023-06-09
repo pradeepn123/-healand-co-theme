@@ -85,6 +85,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .shopify-section-header[desktop-sticky][scrolled] .header {
     opacity: 0.9;
 }
+.header__cart-icon .cart-count{
+    background-color: #EE5C4C;
+}
 @media screen and (min-width: 1016px){
     .header__menu-item-wrap[data-aria-expanded=true] .header__menu-item, .header__menu-item:hover, .header__menu-item.active {
         background: #FAF5EF;
