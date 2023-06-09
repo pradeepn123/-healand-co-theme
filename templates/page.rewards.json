@@ -398,7 +398,7 @@
         "color_scheme": "default",
         "container_size": "xsmall",
         "section_spacing_top": 96,
-        "section_spacing_bottom": 96,
+        "section_spacing_bottom": 50,
         "section_layout": "bottom-tabs",
         "title": "FAQ’S",
         "text": "",
