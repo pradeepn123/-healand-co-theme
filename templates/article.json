@@ -104,14 +104,14 @@
         "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-0": {
           "type": "caption",
           "settings": {
-            "caption": "NEWSLETTER"
+            "caption": ""
           }
         },
         "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "Subscribe",
-            "color": "",
+            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "color": "#ffffff",
             "heading_size": "h4"
           }
         },
