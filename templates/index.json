@@ -389,6 +389,7 @@
     },
     "e67794d1-b35b-4d67-bc2c-48ee9d1bba11": {
       "type": "marquee",
+      "disabled": true,
       "blocks": {
         "2a51ed77-2a2f-499b-aa9d-fa3030b9c55e": {
           "type": "announcement",
@@ -413,6 +414,24 @@
         "show_currency_selector": false,
         "show_social_list": false
       }
+    },
+    "a439ae74-a95a-4922-bad6-34914c4586e7": {
+      "type": "ticker",
+      "settings": {
+        "top_spacing": "small",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_icon": "svg",
+        "color_text": "#ffffff",
+        "background": "color",
+        "color_background": "#ee5c4c",
+        "gradient": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(238, 92, 76, 1) 1%)",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -423,6 +442,7 @@
     "3a8446b4-f3d0-4013-84a1-245927640c4e",
     "8365b2f6-b7d7-4ae2-9d42-07d515c51aa1",
     "6bd854d6-6a11-48bc-a56c-aeff798f8299",
-    "e67794d1-b35b-4d67-bc2c-48ee9d1bba11"
+    "e67794d1-b35b-4d67-bc2c-48ee9d1bba11",
+    "a439ae74-a95a-4922-bad6-34914c4586e7"
   ]
 }
