@@ -146,7 +146,7 @@
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 640,
-        "desktop_img": "shopify:\/\/shop_images\/rewards_bg.png",
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
         "desktop_overlay_opacity": 20,
         "mobile_overlay_opacity": 20,
         "desktop_content_position": "align-items: center;justify-content:center;",
