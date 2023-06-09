@@ -149,6 +149,9 @@
 }
 .subtotal__content .subtotal__cta button{
     background-color: #EA6852;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:20px;
 }
 
 /* Media queries css here */
@@ -188,6 +191,9 @@
     }
     .subtotal__content .subtotal__cta{
         width:100%
+    }
+    .subtotal__content .subtotal__cta button{
+        font-size:14px;
     }
     .subtotal__tax-note{
         display:none;
