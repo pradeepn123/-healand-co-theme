@@ -145,12 +145,16 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     }
 }
 
-.carousel-btn{
+.collection-list .carousel-btn,
+.collection-text .carousel-btn,
+.collection .carousel-btn{
     background-color: #EE5C4C;
     color: #FFFFFF;
 }
 @media (min-width:768px) {
-    .carousel-btn:not([disabled]):hover{
+    .collection-list .carousel-btn:not([disabled]):hover,
+    .collection-text .carousel-btn:not([disabled]):hover,
+    .collection .carousel-btn:not([disabled]):hover{
         background-color: #EE5C4C;
         opacity: 0.8;
     }
