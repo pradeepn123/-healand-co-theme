@@ -4,8 +4,13 @@
             {% comment %} {% render 'icon', icon_name: 'arrow', class: 'ingredient_page_back_button' %} {% endcomment %}
             <a href="/pages/ingredients-database"> {% render 'icon', icon_name: 'arrow', class: 'ingredient_page_back_button' %} Ingredient database</a>
         </div>
+        {% capture ingredientsList %}
+            {% for block in page.metafields.custom.list.value %}
+                {{ block.heading }}
+            {% endfor %}
+        {% endcapture %}
         <div class="other_ingredients_list_container">
-            {% render 'ingredients-list' %}
+            {% render 'ingredients-list', list: page.metafields.custom.list.value %}
         </div>
     </div>
 </div>

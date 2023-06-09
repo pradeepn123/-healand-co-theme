@@ -94,7 +94,7 @@
         "desktop_img": "shopify:\/\/shop_images\/ingredient_banner.jpg",
         "mobile_img": "shopify:\/\/shop_images\/ingredients_banner_mobile.jpg",
         "caption": "",
-        "title": "<p>Ingredients Databse<\/p>",
+        "title": "<p>Ingredients Database<\/p>",
         "text": "<p>Transparent formulations, naturally sourced ingredients. Heal+Co's supplements values the power of nature to create effective and ethical products.<\/p>",
         "heading_size": "h2",
         "body_size": "body3",
@@ -116,7 +116,7 @@
     "54d9322e-38bd-473f-9112-1a76ceb04b5f": {
       "type": "image-content-rounded",
       "settings": {
-        "section_spacing_top": 28,
+        "section_spacing_top": 33,
         "section_spacing_bottom": 64,
         "no_of_ingredients_per_page": 10,
         "no_of_ingredients_per_page_mobile": 8
