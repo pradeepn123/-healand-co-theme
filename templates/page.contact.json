@@ -86,7 +86,7 @@
         "section_spacing_bottom": 48,
         "form_bg_colors": "#ffffff",
         "title": "CONTACT US",
-        "title_color": "#000",
+        "title_color": "#000000",
         "text": "",
         "heading_size": "h2",
         "body_size": "body6",
@@ -96,11 +96,74 @@
         "show_phone": true,
         "show_captcha": false
       }
+    },
+    "9d8b5811-4303-40a0-b5a8-713e9f0ba683": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-0": {
+          "type": "caption",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-1": {
+          "type": "title",
+          "settings": {
+            "title": "Subscribe",
+            "color": "",
+            "heading_size": "h4"
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-2": {
+          "type": "text",
+          "settings": {
+            "text": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
+            "color": "",
+            "body_size": "body3"
+          }
+        },
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-0",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-1",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-2",
+        "template--16191895666846__9d8b5811-4303-40a0-b5a8-713e9f0ba683-16862940429e8061d6-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "Subscribe",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 640,
+        "desktop_img": "shopify:\/\/shop_images\/rewards_bg.png",
+        "desktop_overlay_opacity": 20,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
     }
   },
   "order": [
     "split_image_banner",
     "page",
-    "contact-form"
+    "contact-form",
+    "9d8b5811-4303-40a0-b5a8-713e9f0ba683"
   ]
 }
