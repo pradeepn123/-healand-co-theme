@@ -226,6 +226,10 @@
     .default_product_custom_class .product__info-wrapper .product__info .product-general-info-block h1{
         font-size: 36px;
     }
+    /* Product Description - Bundles Page Width */
+    .bundles_procuct_pageMain .product-content-tab__content{
+        max-width: 385px;
+    }
 }
 
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
@@ -300,6 +304,9 @@
 @media screen and (max-width: 480px){
     .default_product_custom_class {
         margin-top: 48px;
+    }
+    .default_product_custom_class.bundles_procuct_pageMain{
+        margin-top: 0;
     }
     .default_product_custom_class .product-general-info-block .h2{
         font-size: 24px;
