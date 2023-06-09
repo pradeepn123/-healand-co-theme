@@ -18,6 +18,9 @@
           "type": "category",
           "settings": {
             "title": "Category",
+            "faq_heading_bg": "",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -25,8 +28,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -35,8 +40,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -45,8 +52,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -55,6 +64,9 @@
           "type": "category",
           "settings": {
             "title": "Category",
+            "faq_heading_bg": "",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -62,8 +74,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 50
           }
@@ -72,8 +86,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -82,8 +98,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -92,8 +110,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -102,6 +122,9 @@
           "type": "category",
           "settings": {
             "title": "Category",
+            "faq_heading_bg": "",
+            "head_font_size": 24,
+            "heading_color": "#fff",
             "icon": "none"
           }
         },
@@ -109,8 +132,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -119,8 +144,10 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
+            "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Brief and clear answer<\/p>",
+            "content_font": 16,
             "page": "",
             "image_width": 100
           }
@@ -149,15 +176,80 @@
         "title": "FAQ",
         "text": "Answers to most common questions about products, orders, shipments, and payments.",
         "heading_size": "h5",
+        "head_color": "#000",
         "body_size": "body3",
         "btn_text": "",
         "btn_url": "",
         "btn_style": "solid"
       }
+    },
+    "04978747-f13f-4992-b1bd-dd15752cd905": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-0": {
+          "type": "caption",
+          "settings": {
+            "caption": "NEWSLETTER"
+          }
+        },
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-1": {
+          "type": "title",
+          "settings": {
+            "title": "Subscribe",
+            "color": "",
+            "heading_size": "h4"
+          }
+        },
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-2": {
+          "type": "text",
+          "settings": {
+            "text": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
+            "color": "",
+            "body_size": "body3"
+          }
+        },
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-0",
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-1",
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-2",
+        "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "Subscribe",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 400,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
+        "desktop_overlay_opacity": 5,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
     }
   },
   "order": [
     "page",
-    "questions"
+    "questions",
+    "04978747-f13f-4992-b1bd-dd15752cd905"
   ]
 }
