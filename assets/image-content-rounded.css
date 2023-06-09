@@ -10,6 +10,9 @@
     margin: 5px 0;
     padding: 12px;
 }
+.ingredients-database-item.hidden{
+    display: none;
+}
 .ingredients-database-item:hover .ingredients_image_wrap{
     border: 5px solid #789F91;
     -webkit-transition: 300ms ease-out;
@@ -34,6 +37,12 @@
 }
 .ingredients_content_info h4{
     text-transform: uppercase;
+    font-size: 20px;
+}
+@media (max-width: 767px){
+    .ingredients_content_info h4{
+        font-size: 16px;
+    }
 }
 .ingredients_content_info .tag_wrap{
     font-size: 14px;
@@ -167,4 +176,8 @@
     .icon-text-wrapper{
         margin: 40px 0 10px;
     }
+}
+.pagination_load_btn{
+    display: flex;
+    margin: 24px auto;
 }
