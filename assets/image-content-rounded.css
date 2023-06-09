@@ -37,6 +37,12 @@
 }
 .ingredients_content_info h4{
     text-transform: uppercase;
+    font-size: 20px;
+}
+@media (max-width: 767px){
+    .ingredients_content_info h4{
+        font-size: 16px;
+    }
 }
 .ingredients_content_info .tag_wrap{
     font-size: 14px;

@@ -67,14 +67,10 @@ assign section_spacing_bottom = options.section_spacing_bottom
     var ingredient_block = Array.from(document.querySelectorAll('.ingredients-database-item'));
     if(window.screen.width > 768){
         ingredient_block.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
-    }else{
-        ingredient_block.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
-    }
-    if(window.screen.width > 768){
         var viewed = no_of_ingredients_per_page
         updateRemaingingCount(no_of_ingredients_per_page);
-    }
-    else{
+    }else{
+        ingredient_block.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
         var viewed = no_of_ingredients_per_page_mobile
         updateRemaingingCount(no_of_ingredients_per_page_mobile);
     }
@@ -83,36 +79,27 @@ assign section_spacing_bottom = options.section_spacing_bottom
         var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
         if(window.screen.width > 768){
             ingredient_block_hidden.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
-        }else{
-            ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
-        }
-        console.log('>>>>>>', viewed)
-        if(window.screen.width > 768){
             if(ingredient_block_hidden.length - (no_of_ingredients_per_page + 1) <= 0){
                 document.querySelector('.pagination_load_btn').style.display = 'none';
                 document.querySelector('.load_more_button_update').style.display = 'none';
                 document.querySelector('.load-button-pagination__progress').style.display = 'none';
-                
             }
-        }else{
-            if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
-                document.querySelector('.pagination_load_btn').style.display = 'none';
-                document.querySelector('.load_more_button_update').style.display = 'none';
-                document.querySelector('.load-button-pagination__progress').style.display = 'none';
-            }
-        }
-        if(window.screen.width > 768){
             if(ingredient_block_hidden.length - no_of_ingredients_per_page != 0){
                 viewed += no_of_ingredients_per_page;
                 updateRemaingingCount(viewed)
             }
         }else{
+            ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
+            if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
+                document.querySelector('.pagination_load_btn').style.display = 'none';
+                document.querySelector('.load_more_button_update').style.display = 'none';
+                document.querySelector('.load-button-pagination__progress').style.display = 'none';
+            }
             if(ingredient_block_hidden.length - no_of_ingredients_per_page_mobile != 0){
                 viewed += no_of_ingredients_per_page;
                 updateRemaingingCount(viewed)
             }
         }
-        
     })
     function updateRemaingingCount(viewed){
         var percentprogress = (viewed / ingredient_block.length * 100);
