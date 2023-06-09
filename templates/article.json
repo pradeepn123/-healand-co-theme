@@ -12,6 +12,7 @@
         "title": {
           "type": "title",
           "settings": {
+            "title_color": "",
             "show_author": false,
             "show_date": false,
             "show_comment_count": false,
@@ -46,6 +47,7 @@
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "show_breadcrumbs": false,
+        "show_blogs_home": true,
         "show_background": false
       }
     },
@@ -95,12 +97,76 @@
       "type": "article-comments",
       "settings": {
       }
+    },
+    "3778fc27-a373-4e56-a5ef-abfa8c4d8034": {
+      "type": "newsletter",
+      "blocks": {
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-0": {
+          "type": "caption",
+          "settings": {
+            "caption": "NEWSLETTER"
+          }
+        },
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-1": {
+          "type": "title",
+          "settings": {
+            "title": "Subscribe",
+            "color": "",
+            "heading_size": "h4"
+          }
+        },
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-2": {
+          "type": "text",
+          "settings": {
+            "text": "Invite customers to subscribe for early sale access, new in, promotions, and more.",
+            "color": "",
+            "body_size": "body3"
+          }
+        },
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-3": {
+          "type": "subscribe",
+          "settings": {
+            "input_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-0",
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-1",
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-2",
+        "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-3"
+      ],
+      "settings": {
+        "color_scheme": "secondary",
+        "newsletter_button": "image",
+        "newsletter_text": "Subscribe",
+        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "desktop_height": 280,
+        "mobile_height": 400,
+        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
+        "desktop_overlay_opacity": 5,
+        "mobile_overlay_opacity": 20,
+        "desktop_content_position": "align-items: center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 624,
+        "content_spacing": 16,
+        "mobile_content_position": "align-items:center;justify-content:center;",
+        "mobile_content_align": "center",
+        "desktop_content_background": "none",
+        "mobile_content_background": "none"
+      }
     }
   },
   "order": [
     "main",
     "f9b3c724-0360-4f88-8126-67b891fcbf15",
     "25d43466-8fb6-4a7f-9c25-254d89c4413c",
-    "5e6a6d35-76b4-4250-85a9-db42cc0637c2"
+    "5e6a6d35-76b4-4250-85a9-db42cc0637c2",
+    "3778fc27-a373-4e56-a5ef-abfa8c4d8034"
   ]
 }
