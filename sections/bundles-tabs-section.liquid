@@ -1,6 +1,20 @@
 {{ 'bundles-tabs-section.css' | asset_url | stylesheet_tag }}
 {{ 'product-benefits.css' | asset_url | stylesheet_tag }}
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.background_image_bundlesProduct');
+    const elementsValues = Object.values(elements);
+
+    elementsValues.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+      })
+    })
+
+  })
+</script>
+
 {%- liquid
   assign options = section.settings
 
@@ -53,7 +67,7 @@
     <div class='section-spacing container--{{ container_size }}'>
       <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section {% endunless %}'>
           <div class="desktop_only desktop_tabs">
-              <tabs-component data-selected-tab-id='1'>
+              <tabs-component data-selected-tab-id='1' id="bunldesPage_getData_id">
                     <div class='product-details__tab-names heading_subHeading'>
                         {% for itemValue in bundleProducts %}
                             {% assign loopOneValue = itemValue.metafields.custom.powerful_benefits_extra_info.value %}
