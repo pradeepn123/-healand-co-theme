@@ -63,7 +63,7 @@ h2.article__title {
     font-family: "BrownStd-Bold";
     font-size: 32px;
     font-weight: 700;
-    line-height: 77px;
+    line-height: 1.2;
     letter-spacing: 0em;
     text-align: left;
     color: #000000;
@@ -269,8 +269,7 @@ h2.article__title {
         line-height: 26px;
     }
     .article .section-spacing .article__blocks .container .article__content h2 {
-        font-size: 24px;
-        line-height: 42.3px;
+        font-size: 24px;        
     }
     .article .section-spacing .article__blocks .container .article__content h4 span strong {
         font-size: 20px;
