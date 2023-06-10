@@ -110,11 +110,11 @@
         "shop_all_title": "Shop all",
         "shop_all_url": "https:\/\/healandco.co\/collections\/all",
         "collection_list": [
-          "beauty",
-          "brain",
-          "digestion",
           "energy",
-          "immunity"
+          "immunity",
+          "stress",
+          "digestion",
+          "brain"
         ],
         "img_ratio": "square",
         "text_style": "under-image",
@@ -424,7 +424,7 @@
         "text_size": "ticker-text-5",
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
-        "show_icon": "svg",
+        "show_on_mobile": "mobile_only",
         "color_text": "#ffffff",
         "background": "color",
         "color_background": "#ee5c4c",
