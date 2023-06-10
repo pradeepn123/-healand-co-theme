@@ -455,6 +455,17 @@
     border: 2px solid #EA6852;
 }
 
+.bundles_procuct_pageMain carousel-dots carousel-dot.is-primary .dots-carousel__slide-inner-circle{
+    display: block;
+    backdrop-filter: blur(0px);
+    background: #EE5C4C;
+    box-shadow: 0 0 0 0.6rem #EE5C4C inset;
+    border: 3px solid #EE5C4C;
+}
+.bundles_procuct_pageMain carousel-dots carousel-dot.is-primary .dots-carousel__loader{
+    display: none;
+}
+
 .bundles_procuct_pageMain .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
     box-shadow: none;
 }

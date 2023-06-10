@@ -1,21 +1,21 @@
-<div class="upsell_product_main_wrap">
-    <div class="upsell_product_heading">
-        {% if block.settings.upsell_products != blank  %}
-            <span class="heading_text">{{ block.settings.upsell_headings }}</span>
-            <span class="discount_percentage"> upto 20% </span>
-        {% endif %}
-    </div>
-    {%- for upsell_product in block.settings.upsell_products -%}  
-        <div class='shop__grid-item'>        
-            {% render 'product-card',
-                with_bottom_spacing: true,
-                product: upsell_product,    
-                addtocartbutton: block.settings.show_add_to_cart,        
-                show_color_swatches_on_hover: false,
-                img_ratio: block.settings.img_ratio,
-                show_mobile_carousel: true,
-                product_card_align: "left"
-            %}
+{% if block.settings.upsell_products != blank  %}
+    <div class="upsell_product_main_wrap">
+        <div class="upsell_product_heading">
+                <span class="heading_text">{{ block.settings.upsell_headings }}</span>
+                <span class="discount_percentage"> upto 20% </span>
         </div>
-    {%- endfor -%}
-</div>
+        {%- for upsell_product in block.settings.upsell_products -%}  
+            <div class='shop__grid-item'>        
+                {% render 'product-card',
+                    with_bottom_spacing: true,
+                    product: upsell_product,    
+                    addtocartbutton: block.settings.show_add_to_cart,        
+                    show_color_swatches_on_hover: false,
+                    img_ratio: block.settings.img_ratio,
+                    show_mobile_carousel: true,
+                    product_card_align: "left"
+                %}
+            </div>
+        {%- endfor -%}
+    </div>
+{% endif %}

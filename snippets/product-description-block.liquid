@@ -53,7 +53,7 @@
       {% if product_description != blank %}
         <div class='product-content-tab__content'>
           <div class='rte product-content-tab__rte product-content-tab__text body-font-weight-from-global-settings' style="color: {{ fontColor }}">
-            {{ product_description }}
+            {{ product_description | truncatewords: 18, '...' }}
           </div>
         </div>
       {% endif %}
