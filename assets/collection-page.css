@@ -4,6 +4,7 @@
 
 .collection-custom__title{
     font-weight: 700;
+    text-transform: uppercase;
 }
 .collection-hero__image{
     object-position: 0% 50% !important;

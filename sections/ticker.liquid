@@ -58,7 +58,8 @@
     {% endif %}
 {% endstyle %}
 
-{{ html_tag_open }} id="ticker-{{ section.id }}" class="top-spacing-{{ section.settings.top_spacing }}{% if section.settings.background != 'hide' %} section-background section-background--{{ section.settings.background_spacing }}{% endif %}"
+
+    {{ html_tag_open }} id="ticker-{{ section.id }}" class="top-spacing-{{ section.settings.top_spacing }}{% if section.settings.background != 'hide' %} section-background section-background--{{ section.settings.background_spacing }}{% endif %}"
      data-section-name="ticker">  
     {%- capture content -%}
         {%- if section.settings.show_icon == 'image' and section.settings.image != blank -%}
@@ -84,51 +85,71 @@
         <p>{{- section.settings.text | replace:'<p>', '' | replace:'</p>', '' -}}</p>
     {%- endcapture -%}
     
-    <ticker-section class="ticker {{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
-        <div class="ticker__container {{ section.settings.direction }}">
-            {{ content }}
-        </div>
-    </ticker-section>
+    
+    <div class="{% if section.settings.show_on_mobile == 'mobile_only' %}show-on--mobile{%else%}hidden{% endif %}">
+        <ticker-section class="ticker {{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
+            <div class="ticker__container {{ section.settings.direction }}">
+                {{ content }}
+            </div>
+        </ticker-section>
+        <noscript>
+            <div class="ticker {{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
+                {%- for i in (1..9) -%}
+                    <div class="ticker__container ticker--animation {{ section.settings.direction }}">
+                        {{ content }}
+                    </div>
+                {%- endfor -%}
+            </div>
+        </noscript>
+    </div>
 
-    <noscript>
-        <div class="ticker {{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
-            {%- for i in (1..9) -%}
-                <div class="ticker__container ticker--animation {{ section.settings.direction }}">
-                    {{ content }}
-                </div>
-            {%- endfor -%}
-        </div>
-    </noscript>
-{{ html_tag_close }}
+    <div class="{% if section.settings.show_on_mobile != 'mobile_only' %}{%else%}desktop_mobile{% endif %}">
+        <ticker-section class="{% if section.settings.show_on_mobile != 'mobile_only' %}ticker {%else%}{% endif %}{{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
+            <div class="{% if section.settings.show_on_mobile != 'mobile_only' %}ticker__container {%else%}{% endif %}{{ section.settings.direction }}">
+                {{ content }}
+            </div>
+        </ticker-section>
+        <noscript>
+            <div class="ticker {{ section.settings.text_size }}" style="--ticker-delay:{{ section.settings.ticker_time }}s">
+                {%- for i in (1..9) -%}
+                    <div class="ticker__container ticker--animation {{ section.settings.direction }}">
+                        {{ content }}
+                    </div>
+                {%- endfor -%}
+            </div>
+        </noscript>
+    </div>
+
+    {{ html_tag_close }}
 
 <script>
     class tickerHandler extends HTMLElement {
-    constructor() {
-        super();
-        this.width = 0;
-        this.ticker = this.querySelector('.ticker__container');
-        Shopify.designMode ? setTimeout(this.resizeHandler.bind(this), 100) : this.resizeHandler();
-        window.addEventListener("resize", this.resizeHandler.bind(this), false);
-    }
-    resizeHandler(){
-        if(this.width == window.innerWidth) return;
-            this.width = window.innerWidth;
-            this.ticker.classList.remove('ticker--animation');
-            var boxes = this.querySelectorAll('.ticker--clone');
-        if(boxes.length){
-        boxes.forEach(e => e.remove());
+        constructor() {
+            super();
+            this.width = 0;
+            this.ticker = this.querySelector('.ticker__container');
+            Shopify.designMode ? setTimeout(this.resizeHandler.bind(this), 100) : this.resizeHandler();
+            window.addEventListener("resize", this.resizeHandler.bind(this), false);
         }
-        var length = window.innerWidth / this.ticker.offsetWidth,
-            clone = false;
-        length = length==Infinity?5:length;
-        for(var i=0; i < length; i++){
-        clone = this.ticker.cloneNode(true);
-        clone.classList.add('ticker--clone');
-        clone.classList.add('ticker--animation');
-        this.append(clone);
+        resizeHandler(){
+            if(this.width == window.innerWidth) return;
+                this.width = window.innerWidth;
+                this.ticker.classList.remove('ticker--animation');
+                var boxes = this.querySelectorAll('.ticker--clone');
+                if(boxes.length){
+                    boxes.forEach(e => e.remove());
+                }
+                var length = window.innerWidth / this.ticker.offsetWidth,
+                clone = false;
+                length = length==Infinity?5:length;
+                for(var i=0; i < length; i++){
+                    clone = this.ticker.cloneNode(true);
+                    clone.classList.add('ticker--clone');
+                    clone.classList.add('ticker--animation');
+                    this.append(clone);
+                }
+            this.ticker.classList.add('ticker--animation');
         }
-        this.ticker.classList.add('ticker--animation');
-    }
     }
     customElements.define('ticker-section', tickerHandler);
 </script>
@@ -237,23 +258,19 @@
             },
             {
                 "type": "select",
-                "id": "show_icon",
-                "options": [
+                "id": "show_on_mobile",
+                "options": [                
                 {
-                    "value": "none",
-                    "label": "Hide"
+                    "value": "mobile_only",
+                    "label": "Mobile only"
                 },
                 {
-                    "value": "image",
-                    "label": "Image"
-                },
-                {
-                    "value": "svg",
-                    "label": "Present icon"
+                    "value": "both_device",
+                    "label": "Desktop and mobile"
                 }
                 ],
-                "default": "svg",
-                "label": "Show icon"
+                "default": "mobile_only",
+                "label": "Show ticker on devices"
             },
             {
                 "type": "image_picker",

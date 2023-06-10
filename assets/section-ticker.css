@@ -83,6 +83,26 @@
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.hidden{
+    display: none;
+}
+.show-on--mobile{
+    display: none;
+}
+.desktop_mobile{
+    display: block;
+}
+.desktop_mobile .ticker-to-left {
+    text-align: center;
+}
+@media (max-width:767px){
+    .show-on--mobile{
+        display: block;
+    }
+    .desktop_mobile{
+        display: none;
+    }
+}
 @media (max-width:576px){
     .ticker__icon,
     .ticker__container p{

@@ -167,3 +167,12 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .cart-items__product-count, .subtotal__tax-note{
     font-family: 'BrownStd-Regular';
 }
+
+
+.footer__block .social-list__item-link-icon{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.footer__block .footer__text, .footer__block .footer__menu-item{
+    font-size: var(--gsc-fz-11);
+}
