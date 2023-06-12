@@ -352,6 +352,9 @@
     .product-form__mobile-sticky-button .product-form__btn-wrapper.product-form__btn-wrapper--sticky-mobile-button .product-form__btn.btn span{
         font-size: 18px;
     }
+    .product-description_internal {
+        max-height: 200px;
+    }
 }
 
 @media screen and (max-width: 425px){
