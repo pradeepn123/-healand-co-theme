@@ -202,6 +202,12 @@
     }
 }
 @media screen and (max-width: 767px){
+    /* Container */
+    .product-bundle-parent-class .bundles_page_tabChains .product-details__container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .product_fixedTitle {
         margin-bottom: 24px;
     }
