@@ -159,9 +159,10 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         opacity: 0.8;
     }
 
-    body[scrolled-body] .search-sidebar {
-        position: fixed;
+    .section-search--sidebar {
+        position: sticky;
         top: 80px;
+        z-index: 9;
     }
 }
 

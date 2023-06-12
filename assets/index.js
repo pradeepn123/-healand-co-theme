@@ -613,7 +613,8 @@
             }, {
                 key: "setScrollLock",
                 value: function() {
-                    document.body.style.top = "-".concat(window.scrollY || Math.abs(parseInt(document.body.style.top || "0")), "px"), document.body.setAttribute("scroll-y-off", "")
+                    document.body.setAttribute("scroll-y-offf", "")
+                    // document.body.style.top = "-".concat(window.scrollY || Math.abs(parseInt(document.body.style.top || "0")), "px"), document.body.setAttribute("scroll-y-off", "")
                 }
             }, {
                 key: "unsetScrollLock",
@@ -3662,6 +3663,11 @@
                 key: "hide",
                 value: function(e) {
                     var t = this;
+                    const searchInputBar = document.querySelector("suggestion-search-bar")
+                    if (searchInputBar) {
+                        searchInputBar.inputContainer.blur()
+                    }
+
                     if (this._setOpenState(!1), !e) return V(this._transitionDuration).then((function() {
                         t.unmount()
                     }));
@@ -6039,8 +6045,6 @@
                         var e = Math.abs(parseInt(document.body.style.top || "0")),
                             t = (window.scrollY || e) > this.headerSectionBottom;
                         this._headerSection.toggleAttribute("scrolled", t)
-                        var body = this._headerSection.closest("body")
-                        body.toggleAttribute("scrolled-body", t)
                     }
                 }
             }, {
