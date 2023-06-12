@@ -120,6 +120,18 @@
             "image_width": 100
           }
         },
+        "2e3cd170-bb48-4357-ba30-6506bab2d922": {
+          "type": "question",
+          "settings": {
+            "title": "Can you provide us with the content that will be displayed on the ingredients educational page?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>Yes, we will provide a google document with the info. For the ingredient images a link to a dropbox folder will be shared.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
           "type": "category",
           "settings": {
@@ -144,6 +156,7 @@
         },
         "d7769799-5306-4e87-ad5b-19fa26310c13": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "What kind of testing do you do on your products?",
             "subhead_fontsize": 20,
@@ -156,6 +169,7 @@
         },
         "9e0ff089-300a-46f8-9060-b770d4841ee2": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "When should I take the products? Should I take them with food?",
             "subhead_fontsize": 20,
@@ -168,6 +182,7 @@
         },
         "20803f02-1288-4755-b8f2-e74362154741": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "Are your products FDA approved?",
             "subhead_fontsize": 20,
@@ -180,6 +195,7 @@
         },
         "5014e3c0-a283-4be1-a34e-c4de2f4ceb98": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "Are your products vegan? Gluten free? Non GMO?",
             "subhead_fontsize": 20,
@@ -192,6 +208,7 @@
         },
         "6293f7ec-49ae-4de4-8e1d-a383e2a2075e": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "Where do you source your products from?",
             "subhead_fontsize": 20,
@@ -204,6 +221,7 @@
         },
         "1cf9b1ca-8cdc-42ca-b9e9-734def0346ea": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "How and where should I store the product?",
             "subhead_fontsize": 20,
@@ -216,6 +234,7 @@
         },
         "ed0583a8-ab6a-46c4-a4fc-792a1225673c": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "What’s the difference between extract and a powder?",
             "subhead_fontsize": 20,
@@ -250,6 +269,7 @@
         },
         "97daede1-b6eb-495f-bcab-a4dae12608b9": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "What shipping options are available?",
             "subhead_fontsize": 20,
@@ -262,6 +282,7 @@
         },
         "a6e5fac1-11f2-4ea5-976a-f83d5db6de3f": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "Where do you ship?",
             "subhead_fontsize": 20,
@@ -274,6 +295,7 @@
         },
         "3974a862-2679-4cbe-ace0-9dd4886c9bea": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "How long will it take to receive my order?",
             "subhead_fontsize": 20,
@@ -286,6 +308,7 @@
         },
         "53bc3991-76b4-4a5e-92cf-888a66576113": {
           "type": "question",
+          "disabled": true,
           "settings": {
             "title": "Do accept customer returns?",
             "subhead_fontsize": 20,
@@ -307,6 +330,7 @@
         "935d107a-a00c-44ad-8295-50d732ad3f04",
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
         "e3635dcb-640f-476b-b66c-eb0448fb6fd7",
+        "2e3cd170-bb48-4357-ba30-6506bab2d922",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
         "d7769799-5306-4e87-ad5b-19fa26310c13",
