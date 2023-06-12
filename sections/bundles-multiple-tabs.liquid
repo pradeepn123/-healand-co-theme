@@ -133,11 +133,15 @@
                     <accordeon-component class='top_accordion_component accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}' data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}' data-section-id='{{ section.id }}' data-block-id='{{ block.id }}' {{ block.shopify_attributes }} >
                         <accordeon-btn class='top_accordion accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
                             <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="">
-                            <div class="mobile_accordion_headings">
-                              <p class="mobile_accordion_subheading"> {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }} </p>
-                              <p class="mobile_accordion_featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
-                            </div>
-                          {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
+                              <div class="accordeonBtn_text_andIcon">
+                                <div class="mobile_accordion_headings">
+                                  <p class="mobile_accordion_subheading"> {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }} </p>
+                                  <p class="mobile_accordion_featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
+                                </div>
+                                <div class="accordeon_svg_icon">
+                                  {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
+                                </div>
+                              </div>
                         </accordeon-btn>
                         <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                           <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
