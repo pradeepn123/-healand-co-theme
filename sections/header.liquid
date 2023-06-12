@@ -45,6 +45,7 @@
               assign desktop_img_ratio = options.desktop_img_ratio | times: 100
               assign desktop_space_between_cards = options.desktop_space_between_cards | divided_by: 10.0
               assign content_position = options.content_position
+              assign body_position = options.body_position
           -%}
 
           .mega-menu-{{block.id}}{
@@ -63,6 +64,13 @@
 
           .mega-menu-{{block.id}} .image-block__content-wrap {
               {% render 'position-and-alignment', content_position: content_position %}
+          }
+
+          .mega-menu-{{block.id}} .image-block__content-wrap .rte {
+              position: {{ body_position }};
+              bottom: 2.4rem;
+              font-weight: 700;
+              color: #ffffff;
           }
 
           {% if options.enable_vertical_text == true %}
@@ -1161,6 +1169,22 @@
             }
           ],
           "default": "bottom-left"
+        },
+        {
+          "type": "select",
+          "id": "body_position",
+          "label": "Body Position",
+          "options": [
+            {
+              "value": "absolute",
+              "label": "Bottom"
+            },
+            {
+              "value": "unset",
+              "label": "None"
+            }
+          ],
+          "default": "unset"
         },
         {
           "type": "checkbox",
