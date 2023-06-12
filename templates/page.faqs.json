@@ -84,6 +84,30 @@
             "image_width": 100
           }
         },
+        "935d107a-a00c-44ad-8295-50d732ad3f04": {
+          "type": "question",
+          "settings": {
+            "title": "Who is your typical user? Can you give us basic demographics such as age, occupation, income level, purchasing habits, and how often they are online? What do they generally use the web for? (Please provide as much detail as possible in profiling your target user. Profile more than one type if appropriate.)",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>We are targeting millennials and gen-z. Men and women (gender neutral messaging as much as possible). Online shoppers, able to easily navigate online stores. Primarily on the web to online shop and check social media. Lives in the city. Health conscious and willing to invest in their health. Physically active, but not athletes. Participate in a variety of activities to maintain their health such as workout classes and walks. <\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "798562e6-a1ac-4d3f-b4e5-6d82c6a14797": {
+          "type": "question",
+          "settings": {
+            "title": "What is the primary action you want the user to take when coming to your site?(e.g., purchase product, purchase bundles, Subscription etc.)",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>We want people to place an order on the website. Secondary to that we also want to become a resource for people whether it is to visit our blog, read about ingredients, etc.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
           "type": "category",
           "settings": {
@@ -268,6 +292,8 @@
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-4",
         "7ae5b694-876c-4556-8c0b-d18bb07fb698",
         "5617e5fc-06cb-46e9-9172-ef609056b7ae",
+        "935d107a-a00c-44ad-8295-50d732ad3f04",
+        "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
         "d7769799-5306-4e87-ad5b-19fa26310c13",
