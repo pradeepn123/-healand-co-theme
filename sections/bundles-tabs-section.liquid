@@ -12,6 +12,26 @@
       })
     })
 
+    let selectedTab = document.querySelectorAll('.background_image_bundlesProduct');
+    let selectedTabValues = Object.values(selectedTab);
+
+    selectedTabValues.map(item => {
+      item.addEventListener('click', (e) => {
+        let currentSelectedTabValueParent = document.querySelector('#bunldesPage_getData_id').getAttribute('data-selected-tab-id');
+
+        const imagesTabs = document.querySelectorAll('.new_featured_image .product-details__tab-name');
+        Object.values(imagesTabs).map(item => {
+          if (currentSelectedTabValueParent == Number(item.getAttribute('data-id'))){
+            item.parentNode.style.display = 'block';
+          }
+          else{
+            item.parentNode.style.display = 'none';
+          }
+          // console.log(item.parentNode);
+        });
+      })
+      // let currentSelectedTab = Number(item.getAttribute('data-id'));
+    })
   })
 </script>
 
@@ -97,7 +117,7 @@
                     {% comment %} This is Mobile Image Starts {% endcomment %}
                       <div class="product-details__tab-names images_only">
                         {% for itemValue in bundleProducts %}
-                          <div class='product-details__tab-names new_featured_image'>
+                          <div class='product-details__tab-names new_featured_image' style="{% if forloop.index == 1 %}display: block;{% else %}display: none;{% endif %}">
                                   {% assign loopOneValue = itemValue.metafields.custom.powerful_benefits_extra_info.value %}
                                   {% if loopOneValue.featured_image != blank %}
 
