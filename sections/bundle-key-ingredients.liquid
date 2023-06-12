@@ -93,7 +93,16 @@
             color: {{ colorsMetafield.highlighted_text_color }};
         }
     {% endif %}
-
+    @media screen and (max-width: 480px){
+      .bundle_key_ingredients_main .main_title_key h4{
+        font-size: {{ section.settings.mobile_title_size }}px !important;
+      }
+    }
+    @media screen and (max-width: 375px){
+      .bundle_key_ingredients_main .main_title_key h4{
+        font-size: 20px !important;
+      }
+    }
   {% endstyle %}
 {% endcapture %}
 
@@ -297,6 +306,16 @@
         }
       ],
       "default": "h5"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 24,
+      "unit": "px",
+      "label": "Mobile Heading Font Size"
     },
     {
       "type": "select",

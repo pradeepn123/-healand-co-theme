@@ -25,6 +25,7 @@
     border-radius: 50%;
     width: 90px;
     height: 100%;
+    background: white;
 }
 .ingredients_wrapper .key_ingre_description{
     font-size: 16px;
@@ -160,8 +161,8 @@
 
 @media screen and (max-width: 480px){
     .bundle_key_ingredients_main .carousel-btn{
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 4.1rem;
+        height: 4.1rem;
     }
     .bundles_procuct_pageMain .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn span{
         font-size: 14px;
@@ -169,5 +170,15 @@
     .bundle_key_ingredients_main .section-spacing{
         padding-left: 0;
         padding-right: 0;
+    }
+    /* Key Ingredients Mobile Spaincg with Arrows */
+    .bundle_key_ingredients_main .main_title_key{
+        gap: 2.8rem;
+    }
+    .key_ingredient_section .main_title_key{
+        justify-content: space-around;
+    }
+    .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
+        top: -0.3em;
     }
 }
