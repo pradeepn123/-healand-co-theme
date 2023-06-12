@@ -318,9 +318,6 @@
     }
 }
 @media screen and (max-width: 480px){
-    .default_product_custom_class.bundles_procuct_pageMain{
-        margin-top: 0;
-    }
     .default_product_custom_class .product-general-info-block .h2{
         font-size: 24px;
         line-height: 38px;
