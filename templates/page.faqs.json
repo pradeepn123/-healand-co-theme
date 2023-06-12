@@ -20,17 +20,17 @@
             "title": "GENERAL",
             "faq_heading_bg": "#ee5c4c",
             "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-1": {
           "type": "question",
           "settings": {
-            "title": "Where is Heal+Co based?",
+            "title": "What are the objectives of this project? (e.g., increased sales, increased brand awareness, etc.)",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>We're fortunate to be based in beautiful Whistler, BC, Canada. Our environment and surroundings provide us with the inspiration for developing products that positively impact people's health.<\/p>",
+            "text": "<p>Improved user experience, increased sales and increase brand awareness<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -39,10 +39,10 @@
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-2": {
           "type": "question",
           "settings": {
-            "title": "What are your values?",
+            "title": "What metrics will help us evaluate the success of this project?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
+            "text": "<p>Improved user experience: We have previously used a program called Lucky Orange which is able to collect data from users and create heat maps on our website that we can then analyze and use to make adjustments moving forward. <\/p><p>Increased sales: Sales data available via Shopify analytics <\/p><p>Increased brand awareness: Site visits available via Shopify analytics <\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -78,17 +78,17 @@
             "title": "PRODUCTS",
             "faq_heading_bg": "#797baa",
             "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7": {
           "type": "question",
           "settings": {
-            "title": "What are your products made?",
+            "title": "What are the main selling points of your products?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Michigan, USA.<\/p>",
+            "text": "<p>Benefit from the healing powers of nature with our line of potent herbal supplements. Our medicinal plant extracts are carefully sourced and tested to meet our high standards of efficacy, purity and potency.<br\/><br\/>High potency (primary selling point): All of our ingredients are sourced with purity + potency in mind to ensure maximum efficacy of our products. We use both extracts and raw ingredients to ensure that maximum dosage in the smallest form. Our products are more effective, thus requiring fewer doses. For example, one 500 mg capsule of our 5:1 ashwagandha extract is equivalent to 5 500 mg capsules of standard ashwagandha from other brands. This is because we extract the bioactive components of the plants and use those compounds in our products instead of all of the raw material. <br\/><br\/>Allergen-free: Our products are manufactured without the addition of most common allergens including gluten, dairy and soy. All products are plant-based and vegan friendly. Note - we are working on getting an official vegan certification for our products. <br\/><br\/>Unique packaging: Our packaging was designed to be approachable to people who are not familiar with supplements. Instead of creating packaging that was extremely medicinal, we created something a lot more approachable and friendly. <\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -184,7 +184,7 @@
             "title": "SHIPPING & RETURNS",
             "faq_heading_bg": "#82a1c4",
             "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -280,7 +280,7 @@
         "title": "FAQ'S",
         "text": "",
         "heading_size": "h2",
-        "head_color": "#000",
+        "head_color": "#000000",
         "body_size": "body0",
         "btn_text": "",
         "btn_url": "",
