@@ -154,6 +154,12 @@
     font-size:20px;
 }
 
+.subtotal .subtotal__content{
+    padding: 0 2.4rem 2.4rem;
+}
+.sidebar-cart__cart-free-shipping-bar{
+    margin-bottom: 2.6rem;
+}
 /* Media queries css here */
 @media(min-width:1200px){
     .upsell_product_footer .cart-product__card{
@@ -167,7 +173,16 @@
 @media(min-width:768px){
     .sidebar-cart .sidebar-cart__body .sidebar-cart__content .sidebar-cart__cart-items .cart-items .cart-items-render
     .cart-item__pay-info .cart-item__info .cart-item__name-label{
-        font-size: 20px;
+        font-size: 18px;
+    }
+    .sidebar-cart__header-title {
+        padding: 1.5rem 0 1.5rem 2.4rem;
+    }
+    .sidebar-cart__close-button-wrapper {
+        padding: 1rem 2.4rem;
+    }
+    .subtotal__btn {
+        padding: 1rem;
     }
 }
 
@@ -175,7 +190,7 @@
     .subtotal__content-wrap {
         display: unset;
     }
-    .subtotal__content {
+    .subtotal .subtotal__content {
         flex-flow: row;
         align-items: center;
         padding: 2.4rem 2.4rem 1.2rem;
@@ -201,7 +216,7 @@
     .mobile_subtotal__tax-note{
         display: block;
         text-align: center;
-        margin-bottom: 2.4rem;
+        margin-bottom: 0.4rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid #D9D9D9;
     }
