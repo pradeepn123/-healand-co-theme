@@ -238,58 +238,6 @@
             "image_width": 100
           }
         },
-        "5014e3c0-a283-4be1-a34e-c4de2f4ceb98": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "Are your products vegan? Gluten free? Non GMO?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "6293f7ec-49ae-4de4-8e1d-a383e2a2075e": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "Where do you source your products from?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "1cf9b1ca-8cdc-42ca-b9e9-734def0346ea": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "How and where should I store the product?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "ed0583a8-ab6a-46c4-a4fc-792a1225673c": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "What’s the difference between extract and a powder?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8": {
           "type": "category",
           "settings": {
@@ -307,58 +255,6 @@
             "subhead_fontsize": 20,
             "icon": "none",
             "text": "<p>Free shipping in Canada for orders over $60. Subscribe and save 10% on bundles.<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "97daede1-b6eb-495f-bcab-a4dae12608b9": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "What shipping options are available?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "a6e5fac1-11f2-4ea5-976a-f83d5db6de3f": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "Where do you ship?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "3974a862-2679-4cbe-ace0-9dd4886c9bea": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "How long will it take to receive my order?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "53bc3991-76b4-4a5e-92cf-888a66576113": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "title": "Do accept customer returns?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -385,16 +281,8 @@
         "20803f02-1288-4755-b8f2-e74362154741",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
-        "5014e3c0-a283-4be1-a34e-c4de2f4ceb98",
-        "6293f7ec-49ae-4de4-8e1d-a383e2a2075e",
-        "1cf9b1ca-8cdc-42ca-b9e9-734def0346ea",
-        "ed0583a8-ab6a-46c4-a4fc-792a1225673c",
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
-        "91e6233a-a2d1-4e49-80dc-b7e3158551fc",
-        "97daede1-b6eb-495f-bcab-a4dae12608b9",
-        "a6e5fac1-11f2-4ea5-976a-f83d5db6de3f",
-        "3974a862-2679-4cbe-ace0-9dd4886c9bea",
-        "53bc3991-76b4-4a5e-92cf-888a66576113"
+        "91e6233a-a2d1-4e49-80dc-b7e3158551fc"
       ],
       "settings": {
         "color_scheme": "primary",
