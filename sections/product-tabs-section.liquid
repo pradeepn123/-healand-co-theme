@@ -60,7 +60,7 @@
     <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
         <div class="product-page-tabs">
           <tabs-component data-selected-tab-id='1'>
-            <div class='product-details__tab-names'>
+            <div class='product-details__tab-names' data-aos="fade-up">
               {% if dataFromMetafield != blank %}
                   {% for item in dataFromMetafield %}
                     <div
@@ -150,7 +150,7 @@
             </carousel-component>
 
               {% if dataFromMetafield != blank %}
-                <div class='tabs product-details__tabs' data-tabs-container>
+                <div class='tabs product-details__tabs' data-tabs-container data-aos="fade-up">
                   <template data-tabs-elements-template>
                     {% for metafieldsData in dataFromMetafield offset: 1 %}
                         <tab-component

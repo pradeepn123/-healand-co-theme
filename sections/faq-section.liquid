@@ -49,7 +49,7 @@
 
 {% render 'inline-css-minifier', css: css %}
 {% if data_metafields_checkbox == false %}
-  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent'>
+  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent' data-aos="fade-up">
     <div class='section-spacing container container--{{ container_size }}'>
       <div class="section_heading">
         {% if blocks_length > 0 %}
@@ -140,7 +140,7 @@
     </div>
   </div>
   {% else %}
-  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent'>
+  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent' data-aos="fade-up">
     <div class='section-spacing container container--{{ container_size }}'>
       <div class="section_heading">
         {{ section_heading }}

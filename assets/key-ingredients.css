@@ -23,6 +23,7 @@
 }
 .ingredients_wrapper .img_wrap_text_info .img_wrap img{
     border: 10px solid #fff;
+    background: #ffffff;
     border-radius: 50%;
     width: 90px;
     height: 100%;

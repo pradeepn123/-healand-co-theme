@@ -35,13 +35,13 @@
 
 {% if powerfulBenefits_ExtraInfo.show_hide_section %}
     <div class="pb_container">
-        <div class="pb_title">
+        <div class="pb_title" data-aos="fade-up">
             <p class="heading">{{ section.settings.heading }}</p>
             <p class="subheading">
                 {{ powerfulBenefits_ExtraInfo.subheading }}
             </p>
         </div>
-        <div class="pb_content">
+        <div class="pb_content" data-aos="fade-up">
             <div class="pb_left pb_styling">
                 {% for block in prodBenefits limit: 2 %}
                     {% unless block.heading == "false" %}
@@ -58,7 +58,7 @@
                     {% endunless%}
                 {% endfor %}
             </div>
-            <div class="pb_center">
+            <div class="pb_center" data-aos="fade-up" data-aos-delay="400">
                 <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
             </div>
             <div class="pb_right pb_styling">
