@@ -158,6 +158,12 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         background-color: #EE5C4C;
         opacity: 0.8;
     }
+
+    .section-search--sidebar {
+        position: sticky;
+        top: 80px;
+        z-index: 9;
+    }
 }
 
 .cart-items__params, .cart-item__price-item, .accordeon-plus__btn{

@@ -9,7 +9,7 @@ class SuggestionSearchBar extends HTMLElement {
     }
 
     connectedCallback() {
-        this.inputContainer.addEventListener("focus", () => {
+        this.inputContainer.addEventListener("click", () => {
             if (this.sidebar.getAttribute("data-aria-expanded") != "true") {
                 this.sidebar.open()
                 setTimeout(function () {
@@ -17,7 +17,6 @@ class SuggestionSearchBar extends HTMLElement {
                 }.bind(this), 20)
             }
         })
-
         this.inputContainer.addEventListener("keyup", this._handleInputChange.bind(this))
     }
 
