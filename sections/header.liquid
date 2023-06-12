@@ -566,7 +566,7 @@
                   .search-sidebar {
                       position: absolute;
                       width: auto;
-                      top: 125px;
+                      top: 0;
                       right: 100px;
                       border-radius: 17px;
                       height: auto;
@@ -644,6 +644,7 @@
                   name='q'
                   placeholder='{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}'
                   data-sidebar-search-input
+                  autocomplete="off"
                 >
                 <button
                   class='unstyled-button icon header__icon'
