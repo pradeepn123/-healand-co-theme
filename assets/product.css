@@ -350,7 +350,11 @@
         font-size: 14px;
     }
     .product-additional-details .product-additional-details-child .product-additional-details-iandt{
-        padding: 10px 20px;
+        padding: 10px 20px; 
+    }
+    /* Upsell Sold Out BTN */
+    .upsell_product_main_wrap .sold_out_btn_upsell {
+        padding: 10px !important;
     }
 }
 
@@ -406,7 +410,11 @@
 .upsell_product_main_wrap .product-card__btn-wrapper--with-labels .shopify-product-form .product-card__btn-icon{
     display: none;
 }
-
+@media screen and (max-width: 768px){
+    .upsell_product_main_wrap .sold_out_btn_upsell {
+        padding: 10px 40px;
+    }
+}
 @media screen and (max-width: 767px){
     .upsell_product_main_wrap .upsell_product_heading{
         padding-bottom: 16px;
