@@ -108,6 +108,18 @@
             "image_width": 100
           }
         },
+        "e3635dcb-640f-476b-b66c-eb0448fb6fd7": {
+          "type": "question",
+          "settings": {
+            "title": "For the ingredients page, Would you prefer a more elaborate design, similar to that of Ritual, or a simpler approach, similar to that of Moon Juice?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>Ideally something in between the two. Both have similar landing pages with all of the ingredients listed with circular images. Something like this would be great for the ingredients landing page. For the individual ingredient pages, we really like source, dose, and form prompts as the overview of the product like the Moon Juice website, but also really like the Function of Beauty and Origins ingredient pages (linked below). It would also be great to link the products below that the ingredient is found in. Some other great examples of the ingredient pages are:<br\/><br\/>- Function of Beauty (https:\/\/www.functionofbeauty.com\/ingredient\/beet-root-extract): Really clean design, this would be best to follow this structure with the subheadings for each individual ingredient page. Instead of all of the headings that are used in the example, could we have ABOUT, KEY BENEFITS, FOUND IN.<br\/><br\/>- Origins (https:\/\/www.origins.ca\/ingredient-gallery\/vitamin-c): Similar to Function of Beauty but a bit busier in terms of text\/images. <br\/><br\/>- Joya (https:\/\/www.thejoyalife.com\/en-ca\/blogs\/wellness-lifestyle\/top-health-benefits-of-astragalus, <a href=\"https:\/\/www.thejoyalife.com\/en-ca\/collections\/ingredient-intel):\">https:\/\/www.thejoyalife.com\/en-ca\/collections\/ingredient-intel):<\/a> This one is a lot more text heavy, but still has the callouts at the top that give the reader an overview of the ingredient. <br\/><br\/>- Herbaland (https:\/\/www.herbaland.ca\/pages\/vitamins): This one has a good amount of text for each product. Having the info separated by subheadings would be great as it makes it easier to understand and follow. <\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
           "type": "category",
           "settings": {
@@ -294,6 +306,7 @@
         "5617e5fc-06cb-46e9-9172-ef609056b7ae",
         "935d107a-a00c-44ad-8295-50d732ad3f04",
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
+        "e3635dcb-640f-476b-b66c-eb0448fb6fd7",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
         "d7769799-5306-4e87-ad5b-19fa26310c13",
