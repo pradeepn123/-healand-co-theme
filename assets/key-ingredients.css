@@ -181,4 +181,14 @@
     .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
         top: -0.3em;
     }
+    /* Carousel BTN's in Single Product Page */
+    .single_key_ingredients_main .carousel-btn{
+        width: 4.1rem;
+        height: 4.1rem;
+    }
+}
+@media screen and (max-width: 375px){
+    .key_ingredient_section .main_title_key h4{
+        font-size: 20px !important;
+    }
 }

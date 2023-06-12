@@ -40,6 +40,11 @@
 -%}
 {% capture css %}
   {% style %}
+  @media screen and (max-width: 480px){
+    .single_key_ingredients_main .main_title_key h4{
+      font-size: {{ section.settings.mobile_title_size }}px !important;
+    }
+  }
     .section-{{ section.id }} {
         --gsc-space-between-cards: {{ mobile_space_between_cards }}px;
         --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
@@ -290,6 +295,16 @@
         }
       ],
       "default": "h5"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 24,
+      "unit": "px",
+      "label": "Mobile Heading Font Size"
     },
     {
       "type": "select",
