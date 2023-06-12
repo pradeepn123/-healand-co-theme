@@ -1,14 +1,21 @@
 .ingredients-database {
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-between;
     flex-wrap: wrap;
     /* padding: 10px; */
     align-content: space-between;
 }
+
 .ingredients-database-item {
     width: calc((100% - 20px) / 3);
     margin: 5px 0;
     padding: 12px;
+}
+@media (min-width: 1024px) and (max-width: 1199px){
+    .ingredients-database-item{
+        width: calc((80% - 20px) / 3) !important;
+        margin: 20px auto !important;
+    }
 }
 .ingredients-database-item.hidden{
     display: none;
@@ -42,6 +49,7 @@
 @media (max-width: 767px){
     .ingredients_content_info h4{
         font-size: 16px;
+        line-height: 1.5;
     }
 }
 .ingredients_content_info .tag_wrap{
