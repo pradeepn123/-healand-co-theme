@@ -318,12 +318,6 @@
     }
 }
 @media screen and (max-width: 480px){
-    .default_product_custom_class {
-        margin-top: 48px;
-    }
-    .default_product_custom_class.bundles_procuct_pageMain{
-        margin-top: 0;
-    }
     .default_product_custom_class .product-general-info-block .h2{
         font-size: 24px;
         line-height: 38px;
@@ -341,10 +335,12 @@
         font-size: 14px;
     }
     /* Mobile Styles for ATF Product Featured Image Slick Icons */
+    .default_product_custom_class .product-mobile-media__dots-carousel,
     .bundles_procuct_pageMain .product-mobile-media__dots-carousel{
         bottom: auto;
         margin-top: 10px;
     }
+    .default_product_custom_class .product__info-wrapper,
     .bundles_procuct_pageMain .product__info-wrapper{
         margin-top: 64px;
     }
@@ -434,6 +430,9 @@
     .upsell_product_main_wrap .upsell_product_heading{
         margin-bottom: 36px;
     }
+    .default_product_custom_class {
+        margin-top: 48px;
+    }
 }
 @media screen and (max-width: 370px) {
     .upsell_product_main_wrap .upsell_product_heading .heading_text{
@@ -475,6 +474,7 @@
     border: 2px solid #EA6852;
 }
 
+.default_product_custom_class carousel-dots carousel-dot.is-primary .dots-carousel__slide-inner-circle,
 .bundles_procuct_pageMain carousel-dots carousel-dot.is-primary .dots-carousel__slide-inner-circle{
     display: block;
     backdrop-filter: blur(0px);
@@ -482,6 +482,8 @@
     box-shadow: 0 0 0 0.6rem #EE5C4C inset;
     border: 3px solid #EE5C4C;
 }
+
+.default_product_custom_class carousel-dots carousel-dot.is-primary .dots-carousel__loader,
 .bundles_procuct_pageMain carousel-dots carousel-dot.is-primary .dots-carousel__loader{
     display: none;
 }

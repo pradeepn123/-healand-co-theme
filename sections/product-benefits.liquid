@@ -22,6 +22,15 @@
     .pb_container .pb_title .subheading{
         color: {{ highlightedTextColor }}
     }
+    {% if prodBenefits.count %}
+        .main_productBenefits_class{
+            display: block;
+        }
+    {% else %}
+        .main_productBenefits_class{
+            display: none;
+        }
+    {% endif %}
 {% endstyle %}
 
 {% if powerfulBenefits_ExtraInfo.show_hide_section %}
@@ -112,6 +121,7 @@
 {% schema %}
     {
         "name": "Product Benefits",
+        "class": "main_productBenefits_class",
         "settings": [
             {
                 "type": "text",
