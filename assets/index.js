@@ -619,8 +619,9 @@
             }, {
                 key: "unsetScrollLock",
                 value: function() {
-                    var e = document.body.style.top;
-                    document.body.removeAttribute("scroll-y-off"), document.body.style.top = "", window.scrollTo(0, -1 * parseInt(e || "0"))
+                    document.body.removeAttribute("scroll-y-offf")
+                    // var e = document.body.style.top;
+                    // document.body.removeAttribute("scroll-y-off"), document.body.style.top = "", window.scrollTo(0, -1 * parseInt(e || "0"))
                 }
             }, {
                 key: "setBodyOverlayStyles",
@@ -3666,6 +3667,7 @@
                     const searchInputBar = document.querySelector("suggestion-search-bar")
                     if (searchInputBar) {
                         searchInputBar.inputContainer.blur()
+                        searchInputBar.isSidebarOpen = false;
                     }
 
                     if (this._setOpenState(!1), !e) return V(this._transitionDuration).then((function() {
@@ -8228,7 +8230,6 @@
 
             function n() {
                 var e;
-                // hriks
                 return h(this, n), v(E(e = t.call(this)), "_handleInputChange", (0, pi.debounce)((function() {
                     e._searchQuery ? e._renderResults() : e._resetResults()
                 }), 500)), e._cache = {}, e.sidebar = e.closest("#SearchSidebar"), e.inputComponentSelector = "[data-sidebar-search-input-component]", e.contentResults = "[data-sidebar-search-content-results]", e.footerSelector = "[data-sidebar-search-footer]", e.itemSelector = "[data-sidebar-search-item]", e.sidebar && (e._results = e.sidebar.element.querySelector(e.contentResults)), e._predictiveSearchAPI = new Bo, e
