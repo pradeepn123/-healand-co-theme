@@ -227,7 +227,16 @@
         font-size: 36px;
     }
 }
-
+/* Product Description */
+.product-description_internal{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+#readMore_btn,
+#readLess_btn{
+    cursor: pointer;
+    text-decoration: underline;
+}
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
     .default_product_custom_class .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
         box-shadow: 0 0 0 0.2rem rgba(238, 92, 76, 1) inset;
