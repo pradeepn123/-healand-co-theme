@@ -63,10 +63,10 @@
         "7ae5b694-876c-4556-8c0b-d18bb07fb698": {
           "type": "question",
           "settings": {
-            "title": "Do you provide samples or coupons?",
+            "title": "How does your company differentiate itself from competitors? Please list competitor URLs.",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
+            "text": "<p>Higher potency supplements, so fewer capsules get you the same dose as taking more of a competitors' product. <br\/><br\/>- Organika: <a href=\"https:\/\/organika.com\/\">https:\/\/organika.com\/<\/a> <br\/>- Well Told Health: <a href=\"https:\/\/welltold.ca\/\">https:\/\/welltold.ca\/<\/a> <br\/>- Genuine Health: <a href=\"https:\/\/genuinehealth.ca\/\">https:\/\/genuinehealth.ca\/<\/a> <br\/>- Vitality: <a href=\"https:\/\/www.vitality.ca\/\">https:\/\/www.vitality.ca\/<\/a> <br\/>- Now: <a href=\"https:\/\/nowfoods.ca\/\">https:\/\/nowfoods.ca\/<\/a> <br\/>- AOR: <a href=\"https:\/\/aor.ca\/\">https:\/\/aor.ca\/<\/a> <br\/>- Garden of Life: <a href=\"https:\/\/gardenoflifecanada.com\/collections\/vitamins-minerals\">https:\/\/gardenoflifecanada.com\/collections\/vitamins-minerals<\/a><\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
