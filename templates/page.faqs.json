@@ -132,6 +132,18 @@
             "image_width": 100
           }
         },
+        "d4b57543-77e2-4e89-b159-6b5fda3c7d8a": {
+          "type": "question",
+          "settings": {
+            "title": "Can you explain more about the subscription plan you are going to offer?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>Bundles will be created that customers can subscribe to. It will contain multiple products that last for 1 month, 2 months, etc. depending on the dose of the products. Program used for this feature will be either Recharge or Rebuy.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
           "type": "category",
           "settings": {
@@ -331,6 +343,7 @@
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
         "e3635dcb-640f-476b-b66c-eb0448fb6fd7",
         "2e3cd170-bb48-4357-ba30-6506bab2d922",
+        "d4b57543-77e2-4e89-b159-6b5fda3c7d8a",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
         "d7769799-5306-4e87-ad5b-19fa26310c13",
