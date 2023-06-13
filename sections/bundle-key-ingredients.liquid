@@ -121,7 +121,7 @@
                 data-section-id='{{ section.id }}'>
                 
                 
-                <div class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
+                <div class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %} aos-init aos-animate" data-aos="fade-up">
                     <carousel-btn
                         class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
                         data-scroll-direction='prev'
@@ -139,7 +139,7 @@
                     </carousel-btn>
                 </div>
                 <div class="card-carousel__viewport 
-                {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
+                {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %} aos-init aos-animate" data-carousel-viewport data-aos="fade-up">
                     <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
                         
                         {% for bundle_pro in product.metafields.custom.bundle_contained_products.value %}

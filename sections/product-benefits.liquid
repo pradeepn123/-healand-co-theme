@@ -34,7 +34,7 @@
 {% endstyle %}
 
 {% if powerfulBenefits_ExtraInfo.show_hide_section %}
-    <div class="pb_container">
+    <div class="pb_container aos-init aos-animate" data-aos="fade-up">
         <div class="pb_title" data-aos="fade-up">
             <p class="heading">{{ section.settings.heading }}</p>
             <p class="subheading">
@@ -58,7 +58,7 @@
                     {% endunless%}
                 {% endfor %}
             </div>
-            <div class="pb_center" data-aos="fade-up" data-aos-delay="400">
+            <div class="pb_center aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
                 <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
             </div>
             <div class="pb_right pb_styling">

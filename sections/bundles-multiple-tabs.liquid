@@ -46,7 +46,7 @@
         <div class="pc_tabs_dekstop_parent">
             <tabs-component data-selected-tab-id='1'>
                 {% comment %} Tabs Title Start {% endcomment %}
-                    <div class='product-details__tab-names'>
+                    <div class='product-details__tab-names aos-init aos-animate' data-aos="fade-up">
                         <p class="product_fixedTitle">Select a product to view details</p>
                         {% for eachProduct in bundleProducts %}
                             {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
@@ -110,7 +110,7 @@
                                 {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
 
                                 <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ first_block.shopify_attributes }} >
-                                        <div class='rte product-details__rte'>
+                                        <div class='rte product-details__rte' data-aos="fade-up">
                                             {% render 'product-bundle-tabs', productBlock: eachBlock %}
                                             <br>
                                             {{ text }}
