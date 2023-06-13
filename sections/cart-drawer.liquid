@@ -2,7 +2,26 @@
   assign options = section.settings
   assign color_scheme = options.color_scheme
   assign img_ratio = options.img_ratio
+  assign upsell_product_items = nil
 -%}
+
+{%- capture upsell_product_items -%}
+  {%- if cart != empty -%}
+    {%- for item in cart.items limit: 8 -%}
+      {%- liquid
+        assign upsell_products = item.product.metafields.custom.upsell_products.value
+      -%}
+      {%- for product_handle in upsell_products -%}
+        {% render 'cart-product-card',                      
+          product: product_handle,
+          addtocartbutton: section.settings.show_add_to_cart,
+          img_ratio: img_ratio,
+          show_mobile_carousel: true,
+          product_card_align: "left" %}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
 
 {{ 'cart-drawer.css' | asset_url | stylesheet_tag: preload: true }}
 
@@ -66,37 +85,15 @@
             </div>            
           </div>
           <div class='sidebar-cart__footer' data-sidebar-cart-footer>
-            <div class="upsell_product_footer_main_info" data-sidebar-cart-items>   
-              {%- if cart != empty -%}
-                {% for item in cart.items %}
-                  {%- liquid
-                    assign upsell_products = item.product.metafields.custom.upsell_products.value
-                  -%}         
-                    {% if upsell_products %}
-                      <h4 class="h5">{{ section.settings.upsell_title }}</h4>
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-              {%- endif -%}
-              <div class="upsell_product_footer">
-                {%- if cart != empty -%}
-                  {% for item in cart.items limit: 8 %}
-                    {%- liquid
-                      assign upsell_products = item.product.metafields.custom.upsell_products.value 
-                    -%}
-                    {%- for product_handle in upsell_products -%}
-                      {% render 'cart-product-card',                      
-                        product: product_handle,
-                        addtocartbutton: section.settings.show_add_to_cart,
-                        img_ratio: img_ratio,
-                        show_mobile_carousel: true,
-                        product_card_align: "left" %}
-                    {%- endfor -%}
-                  {% endfor %}
-                {%- endif -%}
+            {% if upsell_product_items != blank %}
+              <div class="upsell_product_footer_main_info" data-sidebar-cart-items>
+                <h4 class="h5">{{ section.settings.upsell_title }}</h4>
+                <div class="upsell_product_footer">
+                  {{ upsell_product_items }}
+                </div>
               </div>
-            </div>
-            <div class='sidebar-cart__subtotal-wrapper'>
+            {% endif %}
+            <div class='sidebar-cart__subtotal-wrapper' {%- if upsell_product_items != blank -%} style="border-top: 1px solid #E7E7E7; padding-top: 12px;" {%- endif -%}>
               <notification-component class='notification sidebar-cart__notification' id='SidebarCartNotification'>
                 <div class='notification__overlay'></div>
                 <div class='notification__body'>
