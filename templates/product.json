@@ -3,15 +3,6 @@
     "main": {
       "type": "product",
       "blocks": {
-        "cd54290c-b767-41e9-a166-abf23cd54c44": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "use_metafields": false,
-            "sku_tagtype": "sku",
-            "is_featured_product": false,
-            "featured_product_handle": ""
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -84,7 +75,6 @@
         }
       },
       "block_order": [
-        "cd54290c-b767-41e9-a166-abf23cd54c44",
         "title",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
         "28586830-d855-4547-8946-94914bac9e85",
@@ -337,21 +327,24 @@
     "1685610865f6b57fb5": {
       "type": "apps",
       "blocks": {
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "927fd8d4-cff4-4c89-a6a4-6cdd5fcc3fa0": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/questions-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": false,
-            "sku_tagtype": "sku"
+            "product": "{{product}}"
+          }
+        },
+        "cd2adab3-5885-43ca-8892-afdb3cc0b9b3": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
           }
         }
       },
       "block_order": [
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de"
+        "927fd8d4-cff4-4c89-a6a4-6cdd5fcc3fa0",
+        "cd2adab3-5885-43ca-8892-afdb3cc0b9b3"
       ],
       "settings": {
         "color_scheme": "default",

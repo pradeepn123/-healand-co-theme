@@ -134,18 +134,11 @@
 
     ],
     "blocks": {
-      "7612553728132747764": {
-        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/net-promoter-score-form-modal\/a103faaf-2125-4b0e-89fa-de5149736723",
-        "disabled": true,
+      "733389323033596483": {
+        "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/theme-settings\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
         "settings": {
-          "email": "",
-          "name": "",
-          "title": "",
-          "message": "Enable advanced features and increase your monthly order limit to match your business's needs.",
-          "reason": "",
-          "thank_you": "",
-          "label_name": "",
-          "label_email": ""
+          "show_preview_data": true
         }
       }
     }
