@@ -46,7 +46,7 @@
         <div class="pc_tabs_dekstop_parent">
             <tabs-component data-selected-tab-id='1' data-aos="fade-up">
                 {% comment %} Tabs Title Start {% endcomment %}
-                    <div class='product-details__tab-names aos-init aos-animate' data-aos="fade-up">
+                    <div class='product-details__tab-names' data-aos="fade-up">
                         <p class="product_fixedTitle">Select a product to view details</p>
                         {% for eachProduct in bundleProducts %}
                             {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
@@ -124,7 +124,7 @@
             </tabs-component>
         </div>
 
-        <div class="pc_tabs_mobile">
+        <div class="pc_tabs_mobile" data-aos="fade-up">
             {% for eachProduct in bundleProducts %}
                 {% assign ep_GeneralInfo = eachProduct.metafields.custom.product_general_info.value %}
                 {% assign custom_icon_image = block.settings.custom_icon_image %}
