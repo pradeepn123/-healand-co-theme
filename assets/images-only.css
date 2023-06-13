@@ -4,7 +4,7 @@
     column-gap: 30px;
 }
 .imagesOnly_container.section-spacing{
-    overflow: scroll;
+    overflow: hidden;
 }
 
 /* Custom Class - images_only_custom_class */

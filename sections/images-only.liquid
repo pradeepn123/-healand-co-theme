@@ -20,13 +20,24 @@
     <div class="imagesOnly_container container container--xsmall section-spacing {{ section.settings.section_custom_class }}">
         <div class="imagesOnly_parent">
             {% for block in metafieldData %}
-                {% if block.svg_image  != blank %}
-                    {{ block.svg_image }}
-                {% else %}
-                    {% if block.an_image %}
-                        <img src="{{ block.an_image | img_url: 'master' }}">
+                <div class="" data-aos="fade-up"
+                    {% if forloop.index == 1 %} data-aos-delay="200" {% endif %}
+                    {% if forloop.index == 2 %} data-aos-delay="400" {% endif %}
+                    {% if forloop.index == 3 %} data-aos-delay="600" {% endif %}
+                    {% if forloop.index == 4 %} data-aos-delay="800" {% endif %}
+                    {% if forloop.index == 5 %} data-aos-delay="1000" {% endif %}
+                    {% if forloop.index == 6 %} data-aos-delay="1200" {% endif %}
+                    {% if forloop.index == 7 %} data-aos-delay="1400" {% endif %}
+                    {% if forloop.index == 8 %} data-aos-delay="1600" {% endif %}
+                >
+                    {% if block.svg_image  != blank %}
+                        {{ block.svg_image }}
+                    {% else %}
+                        {% if block.an_image %}
+                            <img src="{{ block.an_image | img_url: 'master' }}">
+                        {% endif %}
                     {% endif %}
-                {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
