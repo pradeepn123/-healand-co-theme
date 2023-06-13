@@ -148,7 +148,7 @@
                                                 {% assign productBeneits = item.metafields.custom.product_benefits.value %}
                                                 {% assign prodBenefitsExtraData = item.metafields.custom.powerful_benefits_extra_info.value %}
                                                   <div class="pb_container">
-                                                    <div class="pb_content" data-aos="fade-up">
+                                                    <div class="pb_content">
                                                         <div class="pb_left pb_styling">
                                                           {% for block in productBeneits limit: 2 %}
                                                               {% unless block.heading == "false" %}
@@ -165,7 +165,7 @@
                                                               {% endif %}
                                                           {% endfor %}
                                                         </div>
-                                                        <div class="pb_center" data-aos="fade-up" data-aos-delay="400">
+                                                        <div class="pb_center">
                                                             <img src="{{ prodBenefitsExtraData.featured_image | img_url: 'master'}}" alt="">
                                                         </div>
                                                         <div class="pb_right pb_styling">
@@ -244,7 +244,7 @@
                                             {% assign productBeneits = item.metafields.custom.product_benefits.value %}
                                                 {% assign prodBenefitsExtraData = item.metafields.custom.powerful_benefits_extra_info.value %}
                                                   
-                                                  <div class="pb_container" data-aos="fade-up">
+                                                  <div class="pb_container" >
                                                     <div class="pb_content">
                                                         <div class="pb_left pb_styling">
                                                           {% for block in productBeneits limit: 2 %}
