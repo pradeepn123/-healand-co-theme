@@ -3,19 +3,19 @@
     "main": {
       "type": "product",
       "blocks": {
-        "cd54290c-b767-41e9-a166-abf23cd54c44": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "use_metafields": false,
-            "sku_tagtype": "sku",
-            "is_featured_product": false,
-            "featured_product_handle": ""
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "heading_size": "h2"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "sm",
+            "show_tax_status": false,
+            "show_sale_amount_badge": true,
+            "highlight_sale_price": true
           }
         },
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259": {
@@ -50,13 +50,10 @@
             "image_width": 60
           }
         },
-        "price": {
-          "type": "price",
+        "4d2e8846-fdf6-49b6-92be-e8d0304cd2f9": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {
-            "price_size": "sm",
-            "show_tax_status": false,
-            "show_sale_amount_badge": true,
-            "highlight_sale_price": true
+            "product": "{{product}}"
           }
         },
         "quantity_selector": {
@@ -83,13 +80,13 @@
         }
       },
       "block_order": [
-        "cd54290c-b767-41e9-a166-abf23cd54c44",
         "title",
+        "price",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
-        "price",
+        "4d2e8846-fdf6-49b6-92be-e8d0304cd2f9",
         "quantity_selector",
         "buy_buttons",
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
@@ -388,6 +385,7 @@
         "section_layout": "carousel-overflow",
         "title": "Key Ingredients",
         "heading_size": "h5",
+        "mobile_title_size": 24,
         "alignment": "center",
         "desktop_columns": 2,
         "desktop_space_between_cards": 16,
@@ -459,23 +457,6 @@
     },
     "1685610865f6b57fb5": {
       "type": "apps",
-      "blocks": {
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": false,
-            "sku_tagtype": "sku"
-          }
-        }
-      },
-      "block_order": [
-        "804a2e25-3c51-45ac-b31f-45e5a77ef5de"
-      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "large",
