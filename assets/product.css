@@ -86,6 +86,193 @@
     font-size: 16px;
 }
 /*upsell product css here*/
+/* Upsell New Styles */
+    .product_upsell_container .product-card__actions .product-card__btns .product-card__btn{
+        background-color: #EE5C4C;
+        color: #F5F5F5;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .product_upsell_container .card-carousel__viewport{
+        max-width: 100%;
+    }
+    .product_upsell_container{
+        overflow: hidden;
+    }
+    /* @media screen and (min-width: 1200px){
+        .product_upsell_container .product-card__info{
+            min-height: 135px;
+        }
+    } */
+    .product_upsell_container .shop__grid-item{
+        width: 100%;
+        min-width: 100%;
+    }
+    .product_upsell_container .product-card__details{
+        padding: 0;
+    }
+    .product_upsell_container .product-card__info .product-card__actions{
+        position: relative;
+        width: 100%;
+    }
+        /* Upsell New Title , ratings etc order */
+            .product_upsell_container .product-card__info .product-card__rating {
+                order: 1;
+            }
+            .product_upsell_container .product-card__info .product_featured_tag{
+                order: 2;
+            }
+            .product_upsell_container .product-card__title{
+                order: 3;
+            }
+            .product_upsell_container .product_benefits{
+                order: 4;
+            }
+            .product_upsell_container .product-card__price{
+                order: 5;
+            }
+            .product_upsell_container .product-card__actions{
+                order: 6;
+            }
+        /* Upsell New Title , ratings etc order ends */
+    @media screen and (max-width: 767px){
+        .product_upsell_container .shop__grid-item .product-card {
+            flex-direction: row;
+            column-gap: 10%;
+        }
+
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__details {
+            flex: 1 0 40%;
+        }
+
+        /* Height of the Container */
+        .product_upsell_container .shop__grid-item .product-card,
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__link,
+        .product_upsell_container .product-card__images-wrapper {
+            max-height: 250px;
+        }
+
+        .product_upsell_container .product-card__inner {
+            padding-bottom: 250px;
+        }
+
+        .product_upsell_container .product-card__details-inner {
+            height: 100%;
+            justify-content: center;
+        }
+        /* ADD TO Cart */
+        .product_upsell_container .product-card__actions .product-card__btns .product-card__btn{
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+        .product_upsell_container .product-card__btn .product-card__btn-icon{
+            display: none;
+        }
+        .product_upsell_container .product-card__btn .product-card__btn-label-text{
+            display: block;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .product_upsell_container .shop__grid-item .product-card {
+            flex-direction: row;
+            column-gap: 10%;
+        }
+
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__details {
+            flex: 1 0 40%;
+        }
+
+        /* Height of the Container */
+        .product_upsell_container .shop__grid-item .product-card,
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__link,
+        .product_upsell_container .product-card__images-wrapper {
+            max-height: 220px;
+        }
+
+        .product_upsell_container .product-card__inner {
+            padding-bottom: 220px;
+        }
+
+        .product_upsell_container .product-card__details-inner {
+            height: 100%;
+            justify-content: center;
+        }
+    }
+    @media screen and (min-width: 1024px){
+        /* .product_upsell_container .product-card__info {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+        } */
+        /* Flex Flow of Items */
+        .product_upsell_container .shop__grid-item .product-card{
+            flex-direction: row;
+            column-gap: 10%;
+        }
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__details{
+            flex: 1 0 40%;
+        }
+
+        /* Height of the Container */
+        .product_upsell_container .shop__grid-item .product-card,
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__link,
+        .product_upsell_container .product-card__images-wrapper{
+            max-height: 300px;
+        }
+        .product_upsell_container .product-card__inner{ 
+            padding-bottom: 300px;
+        }
+        .product_upsell_container .product-card__details-inner{
+            height: 100%;
+            justify-content: center;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+
+        /* .product_upsell_container .product-card__info {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+        } */
+        /* Flex Flow of Items */
+        .product_upsell_container .shop__grid-item .product-card {
+            flex-direction: row;
+            column-gap: 5%;
+        }
+
+        .product_upsell_container .product-card__inner{
+            flex: 1 0 30%;
+        }
+        .product_upsell_container .product-card__details{
+            flex: 1 0 65%;
+        }
+
+        /* Height of the Container */
+        .product_upsell_container .shop__grid-item .product-card,
+        .product_upsell_container .product-card__inner,
+        .product_upsell_container .product-card__link,
+        .product_upsell_container .product-card__images-wrapper {
+            max-height: 300px;
+        }
+
+        .product_upsell_container .product-card__inner {
+            padding-bottom: 35%;
+        }
+
+        .product_upsell_container .product-card__details-inner {
+            height: 100%;
+            justify-content: center;
+        }
+
+        .product_upsell_container .product-card__info{
+            max-width: 200px;
+        }
+    }
+/* Upsell New Ends */
 .upsell_product_main_wrap .shop__grid-item .product-card{
     flex-flow: row;
     column-gap: 20px;
