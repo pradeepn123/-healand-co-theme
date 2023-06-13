@@ -167,7 +167,7 @@
                   {{ product.metafields.custom.product_card.value.icon | metafield_tag }}
                 </div>
               </div>
-              {%- else -%}
+              {%- elsif images.size > 1 -%}
                 <img
                   class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
                   data-secondary-media
@@ -546,8 +546,8 @@
           </div>
 
           {%- if enable_product_review -%}
-            {%- assign rating_value = product.metafields.stamped.reviews_average | plus: 0 -%}
-            {%- assign rating_count = product.metafields.stamped.reviews_count | plus: 0 -%}
+            {%- assign rating_value = product.metafields.okendo.summaryData.reviewAverageValue | plus: 0 -%}
+            {%- assign rating_count = product.metafields.okendo.summaryData.reviewCount | plus: 0 -%}
             {%- render 'rating', value: rating_value, class: 'product-card__rating', rating_count: rating_count -%}
           {%- endif -%}
 
