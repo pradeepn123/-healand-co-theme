@@ -166,6 +166,10 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     }
 }
 
+body[scroll-y-offf] {
+    overflow: hidden;
+}
+
 .cart-items__params, .cart-item__price-item, .accordeon-plus__btn{
     font-family: 'BrownStd-Bold';
 }

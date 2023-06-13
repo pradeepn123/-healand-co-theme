@@ -25,7 +25,7 @@
             id='CartItem-{{ item.index }}'
             data-index='{{ item.index }}'
             data-variant-id='{{ item.variant.id }}'
-            data-inventory-quantity='{{ item.variant.inventory_quantity }}'
+            data-inventory-quantity='{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}'
             data-quantity='{{ item.quantity }}'
           >
             <div class='cart-item__body' data-cart-item-body>
@@ -169,7 +169,7 @@
 
                     <quantity-component
                       class='cart-item-quantity {% if settings.edge_rounding_degree != "none" %} cart-item-quantity--with-rounded-buttons{% endif %}'
-                      data-stock='{% if item.quantity == 0 %}0{% else %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% endif %}'
+                      data-stock='{% if item.quantity == 0 %}0{% else %}{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}{% endif %}'
                       data-cart-item-quantity
                     >
                       <label class='visually-hidden' for='QuantityInput-CartItem-{{ item.index }}'>

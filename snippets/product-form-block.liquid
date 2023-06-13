@@ -46,7 +46,7 @@
       </label>
       <quantity-component
         class='quantity product-quantity__quantity'
-        data-stock='{% if available == true %}{% if product.selected_or_first_available_variant.inventory_quantity > 0 %}{{ product.selected_or_first_available_variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}'
+        data-stock='{% if selected_variant.inventory_policy == 'deny' and selected_variant.inventory_management != blank %}{% if available == true %}{% if selected_variant.inventory_quantity > 0 %}{{ selected_variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}'
       >
         <quantity-btn class='quantity__btn' name='minus' data-action='minus' type='button' disabled tabindex="0">
           {%- render 'icon', icon_name: 'minus', class: "quantity__btn-icon" -%}

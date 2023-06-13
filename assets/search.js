@@ -13,11 +13,23 @@ class SuggestionSearchBar extends HTMLElement {
             if (this.sidebar.getAttribute("data-aria-expanded") != "true") {
                 this.sidebar.open()
                 setTimeout(function () {
+                    this.isSidebarOpen = true
                     this.inputContainer.focus()
                 }.bind(this), 20)
             }
         })
         this.inputContainer.addEventListener("keyup", this._handleInputChange.bind(this))
+        this.inputContainer.addEventListener("blur", this._handleInputFocusOut.bind(this))
+    }
+
+    _handleInputFocusOut(e) {
+        if (e.relatedTarget?.closest("search-sidebar")) {
+            return false;
+        }
+        if (this.sidebar.getAttribute("data-aria-expanded") == "true" && this.isSidebarOpen == true) {
+            this.sidebar.hide()
+            this.isSidebarOpen = false;
+        }
     }
 
     _handleInputChange(e) {
