@@ -52,7 +52,7 @@
     "show_color_count": false,
     "show_background": false,
     "enable_product_darken_background": true,
-    "enable_product_review": true,
+    "enable_product_review": false,
     "product_card_price_size": "xs",
     "img_hover": "show-secondary-media",
     "product_color_swatches_style": "none",
