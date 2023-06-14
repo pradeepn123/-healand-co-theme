@@ -3,7 +3,8 @@
     {% comment %} {% assign ingredientList = 'ashwagandha,apple,acai,banana,lemon,mango,pineapple,cinnamon,chocolate,mango,pineapple,cinnamon,chocolate,ashwagandha' | split: ','  %} {% endcomment %}
     {% assign ingredient_page_name = request.path | split: '/' %}
     {% for ingredient in ingredientList %}
-        {% if ingredient_page_name[2] == ingredient.heading %}
+        {% assign ingredient_handle = ingredient.heading | handle %}
+        {% if request.path contains ingredient_handle %}
             {% assign carousel_index_start = forloop.index %}
         {% endif %}
     {% endfor %}
@@ -22,8 +23,8 @@
             <div class='carousel__container' data-carousel-container>
                 {% for ingredient in ingredientList %}
                     <div class="ingredient_list_container carousel__slide">
-                        {% assign ingredient_heading = ingredient.heading | downcase%}
-                        <a href="/pages/{{ ingredient_heading | downcase }}" class="ingredient {% if ingredient_page_name[2] == ingredient_heading %} active {% endif %}">{{ ingredient.heading | upcase }}</a>
+                        {% assign ingredient_handle = ingredient.heading | handle %}
+                        <a href="/pages/{{ ingredient_handle }}" class="ingredient {% if request.path contains ingredient_handle %} active {% endif %}">{{ ingredient.heading | upcase }}</a>
                     </div>            
                 {% endfor %}
             </div>

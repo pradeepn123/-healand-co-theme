@@ -37,7 +37,7 @@
 .product-additional-details-child .product-additional-details-iandt p {
     font-size: 14px;
     text-align: center;
-    margin: auto 0;
+    margin: 0;
     color: #000;
 }
 .product--with-desktop-media-carousel .product__info-wrapper .product__info .product_quantity_button,
@@ -175,6 +175,12 @@
         }
     }
     @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .product-additional-details .product-additional-details-child .product-additional-details-iandt{
+            padding: 16px;
+        }
+        .product_main_dynamic_btn .product-form__btns .product-form__btn-wrapper .product-form__btn{
+            font-size: 16px;
+        }
         .product_upsell_container .shop__grid-item .product-card {
             flex-direction: row;
             column-gap: 10%;
