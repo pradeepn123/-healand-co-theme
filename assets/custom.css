@@ -186,3 +186,7 @@ body[scroll-y-offf] {
 .footer__block .footer__text, .footer__block .footer__menu-item{
     font-size: var(--gsc-fz-11);
 }
+
+.shopify-block.shopify-app-block.recharge-subscription-widget .rc-subscription-details {
+    display: none !important;
+}
