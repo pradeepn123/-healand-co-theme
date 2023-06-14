@@ -160,31 +160,22 @@
         "mobile_content_background": "none"
       }
     },
-    "d51e1123-501e-4bdb-b84f-c01e43d615a9": {
-      "type": "marquee",
-      "blocks": {
-        "fdc75869-6928-4b3f-a4de-51081a96c2f8": {
-          "type": "announcement",
-          "settings": {
-            "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a> our rewards program and collect points to earn exclusive rewards ★<\/p>",
-            "link": "",
-            "icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "fdc75869-6928-4b3f-a4de-51081a96c2f8"
-      ],
+    "324d8b8a-9e8a-4933-b9b6-56a1a1891339": {
+      "type": "ticker",
       "settings": {
-        "show_only_on_homepage": false,
-        "color_scheme": "custom-2",
-        "container_size": "full-screen",
-        "enable_autoplay": false,
-        "autoplay_interval": 3,
-        "show_navigation_arrows": false,
-        "show_language_selector": false,
-        "show_currency_selector": false,
-        "show_social_list": false
+        "top_spacing": "normal",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_on_mobile": "mobile_only",
+        "color_text": "#ffffff",
+        "background": "color",
+        "color_background": "#ee5c4c",
+        "gradient": "",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
       }
     }
   },
@@ -193,6 +184,6 @@
     "page",
     "contact-form",
     "9d8b5811-4303-40a0-b5a8-713e9f0ba683",
-    "d51e1123-501e-4bdb-b84f-c01e43d615a9"
+    "324d8b8a-9e8a-4933-b9b6-56a1a1891339"
   ]
 }

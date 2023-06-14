@@ -176,7 +176,7 @@
     width: 90px;
     object-fit: contain;
     position: absolute;
-    bottom: 4em;
+    bottom: 3.8em;
     z-index: 999;
-    right: 4em;
+    right: 3.8em;
 }
