@@ -3,7 +3,7 @@
   assign overlay_type = overlay_type | default: 'gradient'
 
   if img == blank
-    assign img = collection.products[0].featured_image
+    assign img = collection.products[0].featured_image 
   endif
 
   if title == blank
