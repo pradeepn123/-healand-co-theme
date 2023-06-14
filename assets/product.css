@@ -326,6 +326,7 @@
 @media screen and (min-width: 768px) {
     .carousel-btn:not([disabled]):hover{
         background: #EE5C4C;
+        color: #ffffff;
     }
     .product--with-desktop-media-carousel .product__info-wrapper .product__info .product-general-info-block h1{
         font-size: var(--gsc-heading-5-desktop-font-size);

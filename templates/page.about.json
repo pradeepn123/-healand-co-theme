@@ -140,6 +140,24 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "0a125dab-7d7c-4e4d-a4a9-f044321fdb4d": {
+      "type": "ticker",
+      "settings": {
+        "top_spacing": "normal",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_on_mobile": "mobile_only",
+        "color_text": "#ffffff",
+        "background": "color",
+        "color_background": "#ee5c4c",
+        "gradient": "",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -149,6 +167,7 @@
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e",
     "541ff688-47bc-4073-aa8b-1c4e8a75bbd6",
     "52a343d8-2199-4ffa-aec2-d2faf7bd2465",
-    "f5eb5833-c5ec-4524-9eec-a4553fdc0dc2"
+    "f5eb5833-c5ec-4524-9eec-a4553fdc0dc2",
+    "0a125dab-7d7c-4e4d-a4a9-f044321fdb4d"
   ]
 }

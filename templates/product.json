@@ -443,6 +443,24 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "12205b1b-1acc-4698-952a-feabf388bc61": {
+      "type": "ticker",
+      "settings": {
+        "top_spacing": "normal",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_on_mobile": "mobile_only",
+        "color_text": "#ffffff",
+        "background": "color",
+        "color_background": "#ee5c4c",
+        "gradient": "",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -457,6 +475,7 @@
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "1685610865f6b57fb5",
     "product-recommendations",
-    "9c351037-cecc-436a-98df-4d0530b584e8"
+    "9c351037-cecc-436a-98df-4d0530b584e8",
+    "12205b1b-1acc-4698-952a-feabf388bc61"
   ]
 }

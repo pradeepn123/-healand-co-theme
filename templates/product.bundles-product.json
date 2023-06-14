@@ -11,6 +11,7 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "price_size": "sm",
             "show_tax_status": false,
@@ -457,6 +458,18 @@
     },
     "1685610865f6b57fb5": {
       "type": "apps",
+      "blocks": {
+        "99ee184c-3eb8-4a1b-afbf-28165009045b": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "99ee184c-3eb8-4a1b-afbf-28165009045b"
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "large",
@@ -547,6 +560,24 @@
         "desktop_content_background": "none",
         "mobile_content_background": "none"
       }
+    },
+    "c45ff092-c1f2-448c-b439-aabee7f2da3e": {
+      "type": "ticker",
+      "settings": {
+        "top_spacing": "normal",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_on_mobile": "mobile_only",
+        "color_text": "#ffffff",
+        "background": "color",
+        "color_background": "#ee5c4c",
+        "gradient": "",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -563,6 +594,7 @@
     "9cddc487-a63b-451c-978c-ad462e8aad54",
     "1685610865f6b57fb5",
     "product-recommendations",
-    "9c351037-cecc-436a-98df-4d0530b584e8"
+    "9c351037-cecc-436a-98df-4d0530b584e8",
+    "c45ff092-c1f2-448c-b439-aabee7f2da3e"
   ]
 }
