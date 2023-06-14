@@ -43,6 +43,14 @@
     font-size: 18px;
     line-height: 1.2;
     color: #ffffff;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .main_title_key h4{
     margin-bottom: 6rem;
@@ -97,6 +105,11 @@
     padding: 5px 16px;
     border-radius: 2em;
 }
+/* Blank Image Class - blankImage_keyIngredients */
+.bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info.blankImage_keyIngredients ,
+.single_key_ingredients_main .blankImage_keyIngredients{
+    justify-content: center;
+}
 
 @media(min-width:768px){
     .key_ingredient_section .main_title_key .card-carousel__carousel-btn{
@@ -150,8 +163,21 @@
     .ingredients_wrapper .key_ingre_description{
         font-size: 18px;
     }
+    /* Blank Image Class - blankImage_keyIngredients */
+    .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info.blankImage_keyIngredients.blankImage_keyIngredients {
+        margin-top: -2.5em !important;
+    }
+    .single_key_ingredients_main .blankImage_keyIngredients{
+        margin-top: 1em;
+    }
 }
 
+@media screen and (max-width: 1199px){
+    /* Blank Image Class - blankImage_keyIngredients */
+    .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info.blankImage_keyIngredients.blankImage_keyIngredients {
+        margin-top: -3.1em !important;
+    }
+}
 @media screen and (max-width: 767px){
     .img_wrap_text_info .key_ingre_title h4{
         font-size: 20px;
