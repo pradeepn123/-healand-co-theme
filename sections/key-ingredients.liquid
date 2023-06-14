@@ -104,7 +104,7 @@
 
 {{ 'key-ingredients.css' | asset_url | stylesheet_tag }}
 
-{% if keymetadata %}
+{% if keymetadata != blank %}
     <div class="section-{{ section.id }} single_key_ingredients_main">
         <div class="container container--{{ container_size }} section-spacing">
             
