@@ -347,9 +347,9 @@
                     {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                   </accordeon-btn>
                   <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                    <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
+                    <div class='accordeon-plus__content product-details__accordeon-content sahrudh1' data-accordeon-content>
                       <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
-                        {% if item.content_left_column != blank and item.content_right_column != blank %}
+                        {% if item.content_left_column != blank or item.content_right_column != blank %}
                           <div class='rte product-details__rte text-container'>
                             <div class="text-left">
                               {{ item.content_left_column }}
@@ -401,7 +401,7 @@
                         {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                       </accordeon-btn>
                       <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                        <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
+                        <div class='accordeon-plus__content product-details__accordeon-content sahrudh2' data-accordeon-content>
                           {%- assign image = block.settings.image -%}
                           {%- assign video = block.settings.video -%}
                           {%- assign page = block.settings.page -%}
@@ -409,7 +409,7 @@
                           {%- assign text_2 = block.settings.text_2 -%}
 
                           <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
-                            {% if text != blank %}
+                            {% if text != blank or text_2 != blank %}
                               <div class='rte product-details__rte text-container'>
                                 <div class="text-left">
                                   {{ text }}
