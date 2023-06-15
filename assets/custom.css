@@ -392,26 +392,3 @@ body[is-product-form-button-fixed] .product_quantity_button_dummy.dummy_product_
 body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget.product_transformZero{
     transform: translateY(0%) !important;
 }
-
-/* 
-body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget:after {
-    background-color: #EE5C4C;
-    color: #eee;
-    content: url("data:image/svg+xml,%0A%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.16104 6.11612C6.64919 5.62796 7.44065 5.62796 7.9288 6.11612L23.8387 22.026C24.3269 22.5142 24.3269 23.3056 23.8387 23.7938C23.3506 24.2819 22.5591 24.2819 22.0709 23.7938L6.16104 7.88388C5.67288 7.39573 5.67288 6.60427 6.16104 6.11612Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.839 6.11612C23.3508 5.62796 22.5594 5.62796 22.0712 6.11612L6.16129 22.026C5.67314 22.5142 5.67314 23.3056 6.16129 23.7938C6.64945 24.2819 7.4409 24.2819 7.92906 23.7938L23.839 7.88388C24.3271 7.39573 24.3271 6.60427 23.839 6.11612Z' fill='black'/%3E%3C/svg%3E%0A");
-    top: -50px;
-    right: 26px;
-    position: absolute;
-    text-align: center;
-    font-size: 14px;
-    padding: 5px 5px 0 5px;
-    border-radius: 50%;
-    font-family: 'circular';
-}
-
-body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget.showSvg:after{
-    transform: translateY(0%) !important;
-}
-
-.shopify-block.shopify-app-block.recharge-subscription-widget:after{
-    transform: translateY(1000%);
-} */
