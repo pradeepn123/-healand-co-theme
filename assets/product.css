@@ -632,6 +632,16 @@
     .upsell_product_main_wrap .upsell_product_heading .heading_text{
         font-size: 14px;
     }
+    .default_product_custom_class .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn span{
+        font-size: 14px;
+    }
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label,
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans span{
+        font-size: 12px;
+    }
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans span{
+        margin-left: 10px;
+    }
 }
 /* End Upsell in Product Page ATF Section */
 
