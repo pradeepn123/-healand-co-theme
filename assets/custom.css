@@ -341,6 +341,7 @@ body[scroll-y-offf] {
     cursor: pointer;
     text-align: center;
     transition: all 250ms ease;
+    vertical-align: unset;
 }
 .rc-radio input[type=radio]:checked + .rc-radio__label:before {
     background-color: #EE5C4C;
@@ -375,6 +376,7 @@ body[is-product-form-button-fixed] .product_quantity_button_dummy{
     transition: transform .2s ease-in-out;
     transform: translateY(0%);
     background-color: white;
+    cursor: pointer;
 }
 .product_quantity_button_dummy div{
     font-family: "BrownStd-Regular";
