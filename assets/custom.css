@@ -401,7 +401,8 @@ body[is-product-form-button-fixed] .product_quantity_button_dummy.dummy_product_
 body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget.product_transformZero{
     transform: translateY(0%) !important;
 }
-.product-price-wrapper {
+.product-price-wrapper,
+.cart-free-shipping-bar--sidebar-version .cart-free-shipping-bar__title{
     font-family: "BrownStd-Regular";
 }
 
