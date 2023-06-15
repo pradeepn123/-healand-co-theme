@@ -21,6 +21,15 @@
             "product_type_color": "#ee5c4c"
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "sm",
+            "show_tax_status": false,
+            "show_sale_amount_badge": true,
+            "highlight_sale_price": true
+          }
+        },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
           "settings": {
@@ -45,16 +54,6 @@
             "text": "",
             "page": "",
             "image_width": 60
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {
-            "price_size": "sm",
-            "show_tax_status": false,
-            "show_sale_amount_badge": true,
-            "highlight_sale_price": true
           }
         },
         "quantity_selector": {
@@ -90,10 +89,10 @@
         "0bb775af-055b-46a8-bcd3-f5f2b0b8e2e3",
         "title",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
+        "price",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
-        "price",
         "quantity_selector",
         "4ba5dbcb-e928-40ee-948a-b1fb108c11a9",
         "buy_buttons",

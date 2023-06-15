@@ -9,20 +9,19 @@
             "heading_size": "h2"
           }
         },
+        "d4e0aa65-39f7-4a2c-ab9e-4062256bf259": {
+          "type": "product_type",
+          "settings": {
+            "product_type_color": "#ee5c4c"
+          }
+        },
         "price": {
           "type": "price",
-          "disabled": true,
           "settings": {
             "price_size": "sm",
             "show_tax_status": false,
             "show_sale_amount_badge": true,
             "highlight_sale_price": true
-          }
-        },
-        "d4e0aa65-39f7-4a2c-ab9e-4062256bf259": {
-          "type": "product_type",
-          "settings": {
-            "product_type_color": "#ee5c4c"
           }
         },
         "28586830-d855-4547-8946-94914bac9e85": {
@@ -82,8 +81,8 @@
       },
       "block_order": [
         "title",
-        "price",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
+        "price",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",

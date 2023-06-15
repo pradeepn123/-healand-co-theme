@@ -104,6 +104,7 @@
                             data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
                             data-section-id='{{ section.id }}'
                             data-block-id='{{ block.id }}'
+                            style="{% if blockX.description == blank %}pointer-events: none;{% endif %}"
                             {{ block.shopify_attributes }} >
                             <accordeon-btn
                                 class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
@@ -113,7 +114,9 @@
                                     <img src="{{ blockX.images | img_url: 'master'}}" alt="">
                                 {% endif %}
                                 <h6>{{ blockX.heading }}</h6>
-                                {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                    {% if blockX.description != blank %}
+                                        {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                    {% endif %}
                             </accordeon-btn>
                             <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                                 <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>

@@ -72,6 +72,9 @@
     .bundle-product-details .pb_container .pb_content_continer .pb_content_inner p{
         color: #000;
     }
+    .bundle-product-details .pb_container .pb_content_continer .pb_content_inner h6{
+        margin-bottom: 0;
+    }
 /* Desktop Images and Content Block Ends */
 /* Accordion Styles */
 .bundle-product-details .pb_content_mobile_accordion{
