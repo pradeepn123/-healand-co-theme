@@ -15,8 +15,10 @@
                 <h2 class="benefits_title" style="font-size: {{ section.settings.benefit_title_font_size}}px;">{{ section.settings.benefit_title }}</h2>
                 {% for obj in page.metafields.custom.benefits.value %}
                     <div class="benefit">
-                    <img src="{{ obj.icon | img_url: 'master' }}" alt="{{ obj.text }}"/>
-                    {{ obj.text }}
+                        {% if obj.icon != blank %}
+                            <img src="{{ obj.icon | img_url: 'master' }}" alt="{{ obj.text }}"/>
+                        {% endif %}
+                        {{ obj.text }}
                     </div>
                 {% endfor %}
             </div>
