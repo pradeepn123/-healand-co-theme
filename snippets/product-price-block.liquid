@@ -10,6 +10,7 @@
   <product-block
     class='product-price-wrapper'
     id='product-price-{{ product.id }}-{{ sectionId }}'
+    style="{%if product.selling_plan_groups.size < 1 %} display: block;{% endif %}"
   >
     {%- for variant in product.variants -%}
       <template data-product-block-template='{{ variant.id }}'>
