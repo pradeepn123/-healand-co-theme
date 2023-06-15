@@ -1,3 +1,24 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('#dummy_product_button')){
+      document.querySelector('#dummy_product_button').addEventListener('click', () => {
+        document.querySelector('#dummy_product_button').classList.add('dummy_product_button');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('product_transformZero');
+        document.querySelector('.product_quantity_button').classList.add('transitionButton');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('showSvg');
+        // document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').style.transform = 'translateY(0%)';
+
+        document.querySelector('.recharge-subscription-widget').closest('.custom_app_backdrop').classList.add('customApp_Styles');
+
+        document.querySelector('body').style.overflow = 'hidden';
+      })
+    }
+  })
+
+
+
+</script>
+
 {%- liquid
   assign options = block.settings
   assign enable_pickup_availability = options.enable_pickup_availability
@@ -38,7 +59,7 @@
   endif
 -%}
 
-<div class="product_quantity_button">
+<div class="product_quantity_button original_product_button" id="original_product_button">
   {%- if product != blank -%}    
     <div class='product-quantity__wrap' id='product-quantity-{{ product.id }}-{{ sectionId }}' {{ block.shopify_attributes }}>
       <label class='product-quantity__label hidden' for='Quantity-{{ product.id }}-{{ sectionId }}'>
@@ -188,4 +209,11 @@
       {%- endif -%}
     </div>
   {%- endif -%}
+</div>
+
+{% comment %} Add this class on click - dummy_product_button {% endcomment %}
+<div class="product_quantity_button_dummy" id="dummy_product_button">
+  <div>
+    ADD TO CART
+  </div>
 </div>
