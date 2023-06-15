@@ -1,3 +1,21 @@
-<div class='custom-app-block custom-app-block--inside-product-section' {{ block.shopify_attributes }}>
-  {%- render block -%}
+<script>
+  function callbackFunction(e){
+    e.addEventListener('click', (event) => {
+      if(event.target.classList[1] == 'customApp_Styles'){
+        event.target.classList.remove('customApp_Styles');
+        document.querySelector('#dummy_product_button').classList.remove('dummy_product_button');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.remove('product_transformZero');
+        document.querySelector('.product_quantity_button').classList.remove('transitionButton');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.remove('showSvg');
+
+        document.querySelector('body').style.overflow = 'scroll';
+      }
+    })
+  }
+</script>
+
+<div class="custom_app_backdrop" onclick='callbackFunction(this)'>
+  <div class='custom-app-block custom-app-block--inside-product-section' {{ block.shopify_attributes }}>
+    {%- render block -%}
+  </div>
 </div>

@@ -164,6 +164,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         top: 80px;
         z-index: 9;
     }
+    .product_quantity_button_dummy{
+        display: none;
+    }
 }
 
 body[scroll-y-offf] {
@@ -264,11 +267,12 @@ body[scroll-y-offf] {
     }
 }
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget{        
-        -webkit-transform: translateY(0%);
-        transform: translateY(0%);
+        /* -webkit-transform: translateY(0%);
+        transform: translateY(0%); */
         bottom: 8%;
+        transition: all .15s;
     }
     .shopify-block.shopify-app-block.recharge-subscription-widget{
         z-index: 10;
@@ -282,8 +286,9 @@ body[scroll-y-offf] {
         left: 0;
         -webkit-transform: translateY(120%);
         transform: translateY(120%);
+        margin-bottom: 1.6rem;
     }
-    body[is-product-form-button-fixed] .product_quantity_button{        
+    body[is-product-form-button-fixed] .product_quantity_button.transitionButton{        
         -webkit-transform: translateY(0%);
         transform: translateY(0%);
     }
@@ -303,7 +308,20 @@ body[scroll-y-offf] {
     .product-form__mobile-sticky-button[visible]{
         display: none;
     }
-} */
+    /* Custom App Backdrop Styles */
+    body[is-product-form-button-fixed] .custom_app_backdrop.customApp_Styles {
+        height: 100%;
+        position: fixed;
+        bottom: 0;
+        top: 68px;
+        width: 100%;
+        z-index: 9;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
 
 .rc-radio input[type=radio] {
     position: absolute;
@@ -339,4 +357,39 @@ body[scroll-y-offf] {
 }
 .rc-radio input[type=radio] + .rc-radio__label:empty:before {
     margin-right: 0;
+}
+
+/* Product Dummy Button */
+.product_quantity_button_dummy{
+    transform: translateY(100%);
+}
+body[is-product-form-button-fixed] .product_quantity_button_dummy{
+    width: 100%;
+    padding: 1.6rem 2.4rem;
+    height: 82px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    transition: transform .2s ease-in-out;
+    transform: translateY(0%);
+    background-color: white;
+}
+.product_quantity_button_dummy div{
+    font-family: "BrownStd-Regular";
+    background: #EE5C4C;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+body[is-product-form-button-fixed] .product_quantity_button_dummy.dummy_product_button {
+    transform: translate(0 , 100%);
+}
+
+body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget.product_transformZero{
+    transform: translateY(0%) !important;
 }
