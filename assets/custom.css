@@ -309,7 +309,7 @@ body[scroll-y-offf] {
         display: none;
     }
     /* Custom App Backdrop Styles */
-    .custom_app_backdrop.customApp_Styles {
+    body[is-product-form-button-fixed] .custom_app_backdrop.customApp_Styles {
         height: 100%;
         position: fixed;
         bottom: 0;
@@ -319,6 +319,7 @@ body[scroll-y-offf] {
         left: 0;
         padding: 0;
         margin: 0;
+        background-color: rgba(0, 0, 0, .5);
     }
 }
 
