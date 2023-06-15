@@ -26,7 +26,7 @@ assign section_spacing_bottom = options.section_spacing_bottom
         <div class="ingredients-database-wrapper">
             <div class="ingredients-database">
               {% for block in page.metafields.custom.list.value %}
-                {% assign ingredient_heading = block.heading | downcase %}
+                {% assign ingredient_heading = block.heading | handle %}
                 {% assign page =  pages[ingredient_heading] %}
                 <div class="ingredients-database-item hidden">
                     {% if block.image != blank %}
