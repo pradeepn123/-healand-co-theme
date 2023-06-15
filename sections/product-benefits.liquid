@@ -14,6 +14,9 @@
     {% endfor %}
 {% endcapture %}
 
+{% assign leftCounter = prodBenefits.count | divided_by: 2 %}
+{% assign rightCounter = prodBenefits.count | minus: leftCounter %}
+
 {% style %}
     .pb_container .pb_title{
         background-color: {{ highlightedBackgroundColor }};
@@ -43,10 +46,12 @@
         </div>
         <div class="pb_content" data-aos="fade-up">
             <div class="pb_left pb_styling">
-                {% for block in prodBenefits limit: 2 %}
+                {% for block in prodBenefits limit: leftCounter %}
                     {% unless block.heading == "false" %}
-                        <div class="pb_content_continer">
-                            <img src="{{ block.images | img_url: 'master'}}" alt="">
+                        <div class="pb_content_continer" style="{% if block.description == blank %} min-height: fit-content; {% endif %}">
+                                {% if block.images != blank %}
+                                    <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                {% endif %}
                             <span class="pb_content_left pb_content_inner">
                                 <h6>{{ block.heading }}</h6>
                                 <p>{{ block.description }}</p>
@@ -62,10 +67,12 @@
                 <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
             </div>
             <div class="pb_right pb_styling">
-                {% for block in prodBenefits offset: 2 %}
+                {% for block in prodBenefits offset: rightCounter %}
                     {% unless block.heading == "false" %}
-                        <div class="pb_content_continer">
-                            <img src="{{ block.images | img_url: 'master'}}" alt="">
+                        <div class="pb_content_continer" style="{% if block.description == blank %} min-height: fit-content; {% endif %}">
+                                {% if block.images != blank %}
+                                    <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                {% endif %}
                             <span class="pb_content_right pb_content_inner">
                                 <h6>{{ block.heading }}</h6>
                                 <p>{{ block.description }}</p>
@@ -96,7 +103,9 @@
                                 class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
                                 tabindex='0'
                             >
-                                <img src="{{ blockX.images | img_url: 'master'}}" alt="">
+                                {% if blockX.images != blank%}
+                                    <img src="{{ blockX.images | img_url: 'master'}}" alt="">
+                                {% endif %}
                                 <h6>{{ blockX.heading }}</h6>
                                 {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                             </accordeon-btn>
@@ -104,7 +113,7 @@
                                 <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
                                 <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                    <div class='rte faq-section__rte'>
+                                    <div class='rte faq-section__rte' style="{% if blockX.images == blank %}padding-left: 2rem{% endif %}">
                                         {{ blockX.description }}
                                     </div>
                                 </div>
