@@ -5,6 +5,7 @@
 }
 .sidebar-cart .sidebar-cart__body .sidebar-cart__header .sidebar-cart__header-title{
     font-size: 16px;
+    font-family: BrownStd-Bold !important;
 }
 
 .sidebar-cart .sidebar-cart__body .sidebar-cart__content .sidebar-cart__cart-items .cart-items .cart-items-render

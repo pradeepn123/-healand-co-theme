@@ -152,8 +152,10 @@
                                                         <div class="pb_left pb_styling">
                                                           {% for block in productBeneits limit: 2 %}
                                                               {% unless block.heading == "false" %}
-                                                                  <div class="pb_content_continer">
-                                                                      <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                  <div class="pb_content_continer" style="{% if block.description == blank %}min-height: fit-content;{% endif %}"> 
+                                                                        {% if block.images != blank %}
+                                                                          <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                        {% endif %}
                                                                       <span class="pb_content_left pb_content_inner">
                                                                           <h6>{{ block.heading }}</h6>
                                                                           <p>{{ block.description }}</p>
@@ -171,8 +173,10 @@
                                                         <div class="pb_right pb_styling">
                                                             {% for block in productBeneits offset: 2 %}
                                                                 {% unless block.heading == "false" %}
-                                                                    <div class="pb_content_continer">
-                                                                        <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                    <div class="pb_content_continer" style="{% if block.description == blank %}min-height: fit-content;{% endif %}">
+                                                                          {% if block.images != blank %}
+                                                                            <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                          {% endif %}
                                                                         <span class="pb_content_right pb_content_inner">
                                                                             <h6>{{ block.heading }}</h6>
                                                                             <p>{{ block.description }}</p>
@@ -197,6 +201,7 @@
                                                                   data-block-id='{{ block.id }}'
                                                                   {{ block.shopify_attributes }} >
                                                                   <accordeon-btn
+                                                                      style="{% if blockX.description == blank %}pointer-events: none{% endif %}"
                                                                       class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
                                                                       tabindex='0'
                                                                   >
@@ -204,18 +209,22 @@
                                                                       <img src="{{ blockX.images | img_url: 'master'}}" alt="">
                                                                     {% endif %}
                                                                       <h6>{{ blockX.heading }}</h6>
-                                                                      {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                                                      {% if blockX.description != blank %}
+                                                                        {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                                                      {% endif %}
                                                                   </accordeon-btn>
-                                                                  <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                                                                      <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
+                                                                  {% if blockX.description != blank %}
+                                                                    <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+                                                                        <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
-                                                                      <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                                                          <div class='rte faq-section__rte bundles-tabs__rte'>
-                                                                              {{ blockX.description }}
-                                                                          </div>
-                                                                      </div>
-                                                                      </div>
-                                                                  </div>
+                                                                        <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
+                                                                            <div class='rte faq-section__rte bundles-tabs__rte' style="{% if blockX.images == blank %}padding-left: 2rem{% endif %}">
+                                                                                {{ blockX.description }}
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                  {% endif %}
                                                               </accordeon-component>
                                                           {% endunless %}
                                                       {% endfor %}
@@ -252,7 +261,9 @@
                                                           {% for block in productBeneits limit: 2 %}
                                                               {% unless block.heading == "false" %}
                                                                   <div class="pb_content_continer">
-                                                                      <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                      {% if block.images != blank %}
+                                                                        <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                      {% endif %}
                                                                       <span class="pb_content_left pb_content_inner">
                                                                           <h6>{{ block.heading }}</h6>
                                                                           <p>{{ block.description }}</p>
@@ -271,7 +282,9 @@
                                                             {% for block in productBeneits offset: 2 %}
                                                                 {% unless block.heading == "false" %}
                                                                     <div class="pb_content_continer">
-                                                                        <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                        {% if block.images != blank %}
+                                                                          <img src="{{ block.images | img_url: 'master'}}" alt="">
+                                                                        {% endif %}
                                                                         <span class="pb_content_right pb_content_inner">
                                                                             <h6>{{ block.heading }}</h6>
                                                                             <p>{{ block.description }}</p>
@@ -309,7 +322,7 @@
                                                                       <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
 
                                                                       <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                                                                          <div class='rte faq-section__rte bundles-tabs__rte'>
+                                                                          <div class='rte faq-section__rte bundles-tabs__rte' style="{% if blockX.images == blank %}padding-left: 2rem{% endif %}">
                                                                               {{ blockX.description }}
                                                                           </div>
                                                                       </div>
