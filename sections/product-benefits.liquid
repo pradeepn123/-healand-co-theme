@@ -14,8 +14,14 @@
     {% endfor %}
 {% endcapture %}
 
-{% assign leftCounter = prodBenefits.count | divided_by: 2 %}
-{% assign rightCounter = prodBenefits.count | minus: leftCounter %}
+{% assign dividedByNumber = prodBenefits.count | modulo: 2 %}
+{% if  dividedByNumber == 0 %}
+    {% assign leftCounter = prodBenefits.count | divided_by: 2 %}
+    {% assign rightCounter = prodBenefits.count | minus: leftCounter %}
+{% else %}
+    {% assign leftCounter = prodBenefits.count | divided_by: 2  | plus: 1 %}
+    {% assign rightCounter = prodBenefits.count | minus: leftCounter | plus: 1 %}
+{% endif %}
 
 {% style %}
     .pb_container .pb_title{
