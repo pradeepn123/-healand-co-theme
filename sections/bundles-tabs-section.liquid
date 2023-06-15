@@ -200,7 +200,9 @@
                                                                       class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
                                                                       tabindex='0'
                                                                   >
+                                                                    {% if blockX.images != blank %}
                                                                       <img src="{{ blockX.images | img_url: 'master'}}" alt="">
+                                                                    {% endif %}
                                                                       <h6>{{ blockX.heading }}</h6>
                                                                       {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                                                                   </accordeon-btn>
@@ -297,7 +299,9 @@
                                                                       class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
                                                                       tabindex='0'
                                                                   >
+                                                                    {% if blockX.images != blank %}
                                                                       <img src="{{ blockX.images | img_url: 'master'}}" alt="">
+                                                                    {% endif %}
                                                                       <h6>{{ blockX.heading }}</h6>
                                                                       {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                                                                   </accordeon-btn>
