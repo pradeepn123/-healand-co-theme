@@ -308,6 +308,18 @@ body[scroll-y-offf] {
     .product-form__mobile-sticky-button[visible]{
         display: none;
     }
+    /* Custom App Backdrop Styles */
+    .custom_app_backdrop.customApp_Styles {
+        height: 100%;
+        position: fixed;
+        bottom: 0;
+        top: 68px;
+        width: 100%;
+        z-index: 9;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .rc-radio input[type=radio] {
@@ -380,6 +392,7 @@ body[is-product-form-button-fixed] .product_quantity_button_dummy.dummy_product_
 body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget.product_transformZero{
     transform: translateY(0%) !important;
 }
+
 /* 
 body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-subscription-widget:after {
     background-color: #EE5C4C;

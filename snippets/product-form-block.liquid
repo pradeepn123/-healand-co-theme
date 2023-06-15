@@ -1,11 +1,18 @@
 <script>
-  document.querySelector('#dummy_product_button').addEventListener('click', () => {
-    document.querySelector('#dummy_product_button').classList.add('dummy_product_button');
-    document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('product_transformZero');
-    document.querySelector('.product_quantity_button').classList.add('transitionButton');
-    document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('showSvg');
-    // document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').style.transform = 'translateY(0%)';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('#dummy_product_button')){
+      document.querySelector('#dummy_product_button').addEventListener('click', () => {
+        document.querySelector('#dummy_product_button').classList.add('dummy_product_button');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('product_transformZero');
+        document.querySelector('.product_quantity_button').classList.add('transitionButton');
+        document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('showSvg');
+        // document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').style.transform = 'translateY(0%)';
+
+        document.querySelector('.recharge-subscription-widget').closest('.custom_app_backdrop').classList.add('customApp_Styles');
+      })
+    }
   })
+
 
 
 </script>
