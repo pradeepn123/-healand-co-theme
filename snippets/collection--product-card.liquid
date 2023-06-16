@@ -60,7 +60,7 @@
 
 {% if product.id != blank %}
   <product-card
-    class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %} product-card--center-alignment{% endif %}'
+    class='{% if images.size > 0 and images.size < 2%}no_opactiyOnHover{% endif %} product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if show_color_swatches_on_hover %} product-card--with-color-swatches-on-hover{% endif  %} {% if product_card_align == 'center' %} product-card--center-alignment{% endif %}'
     data-url='{{ product.url }}'
     data-id='{{ product.id }}'
   >

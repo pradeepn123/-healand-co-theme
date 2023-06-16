@@ -442,3 +442,6 @@ div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover{
 div.okeReviews .oke-w-writeReview:hover:before{
     color: white !important;
 }
+.no_opactiyOnHover:hover .product-card__img[data-main-media]{
+    opacity: 1 !important;
+}
