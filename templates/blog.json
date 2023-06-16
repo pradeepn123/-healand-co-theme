@@ -20,21 +20,11 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
-        },
-        "post-3": {
-          "type": "featured_post",
-          "settings": {
-            "article": "",
-            "article_title_color": "",
-            "article_text_color": "",
-            "read_more_text_color": ""
-          }
         }
       },
       "block_order": [
         "post-1",
-        "post-2",
-        "post-3"
+        "post-2"
       ],
       "settings": {
         "color_scheme": "default",
