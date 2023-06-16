@@ -173,6 +173,13 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         font-family: "BrownStd-Regular";
         font-size: 16px;
     }
+    /* Recharge Price */
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label{
+        width: 100%;
+    }
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label .rc-radio__price{
+        float: right;
+    }
 }
 
 body[scroll-y-offf] {
@@ -242,6 +249,7 @@ body[scroll-y-offf] {
 .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-dropdown__select{
     border: 0 !important;
     width: fit-content;
+    padding-right: 0;
 }
 .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-dropdown__select:focus{
     outline: none;
@@ -413,4 +421,13 @@ button.btn.btn--lg.btn--solid.sidebar-cart__warning-button{
 
 .sidebar-cart__warning-button-wrapper a{
     width: 100%;
+}
+.newsletter__input-btn{
+    background-color: #EE5C4C !important;
+}
+
+/* Predictive Search */
+.search-sidebar__footer-button,
+.sidebar-cart__warning-button{
+    background-color: #EE5C4C !important;
 }
