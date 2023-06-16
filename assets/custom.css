@@ -431,3 +431,14 @@ button.btn.btn--lg.btn--solid.sidebar-cart__warning-button{
 .sidebar-cart__warning-button{
     background-color: #EE5C4C !important;
 }
+
+.okeReviews[data-oke-container] .oke-button:not(.oke-is-loading):not(.oke-is-active):hover,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover{
+    background-color:rgba(238, 92, 76, .8) !important;
+    color: white !important;
+    box-shadow:0 0 0 1px rgba(238, 92, 76, 1) !important;
+}
+.okeReviews[data-oke-container] .oke-w-writeReview:hover:before,
+div.okeReviews .oke-w-writeReview:hover:before{
+    color: white !important;
+}
