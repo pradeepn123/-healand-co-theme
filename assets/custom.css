@@ -296,6 +296,7 @@ body[scroll-y-offf] {
         width: 100%;
         background: var(--gsc-white-color-100);
         padding: 1.6rem 2.4rem;
+        padding-top: 40px !important ;
         transition: -webkit-transform .2s ease-in-out,-webkit-transform .2s ease-in-out,transform .2s ease-in-out;
         display: block;
         position: fixed;
