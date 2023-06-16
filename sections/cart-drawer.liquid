@@ -1,3 +1,12 @@
+<script>
+  function changePageURL(){
+    if(window.location.pathname != '/collections/all'){
+      window.location = '/collections/all';
+    }
+    
+  }
+</script>
+
 {%- liquid
   assign options = section.settings
   assign color_scheme = options.color_scheme
@@ -118,6 +127,7 @@
                 data-sidebar-id='sidebar-component-for-cart'
                 class='btn btn--lg btn--solid sidebar-cart__warning-button'
                 aria-label='{{ 'general.sidebar_cart.continue_shopping' | t }}'
+                onclick = 'changePageURL()'
               >
                 {{ 'general.sidebar_cart.continue_shopping' | t }}
               </button>

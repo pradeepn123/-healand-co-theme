@@ -408,6 +408,7 @@ body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-sub
 
 button.btn.btn--lg.btn--solid.sidebar-cart__warning-button{
     text-transform: uppercase;
+    pointer-events: all;
 }
 
 .sidebar-cart__warning-button-wrapper a{
