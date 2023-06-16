@@ -83,9 +83,13 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .header__dropdown-menu--with-mega-menu .image-block__content-wrap{
     padding: 2.5rem;
 }
-/* .shopify-section-header[desktop-sticky][scrolled] .header {
-    opacity: 0.9;
-} */
+.shopify-section-header[desktop-sticky][scrolled] .header {
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.7);
+}
+.shopify-section-header[desktop-sticky][scrolled] .header__inner-background {
+    background-color: transparent;
+}
 .header__cart-icon .cart-count{
     background-color: #EE5C4C;
 }
