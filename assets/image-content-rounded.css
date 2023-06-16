@@ -50,6 +50,7 @@
     .ingredients_content_info h4{
         font-size: 16px;
         line-height: 1.5;
+        word-wrap: break-word;
     }
 }
 .ingredients_content_info .tag_wrap{
