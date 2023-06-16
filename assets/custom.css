@@ -46,9 +46,7 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     transform: translate(-50%);
     content: "";
 }
-.shopify-section-header{
-    z-index: 15;
-}
+
 .header__dropdown-toggle .header__item div {
     padding-left: 5px;
     margin-top: 4px;
@@ -341,6 +339,9 @@ body[scroll-y-offf] {
         padding: 0;
         margin: 0;
         background-color: rgba(0, 0, 0, .5);
+    }
+    .shopify-section-header {
+        z-index: 15;
     }
 }
 
