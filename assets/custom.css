@@ -46,6 +46,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     transform: translate(-50%);
     content: "";
 }
+.shopify-section-header{
+    z-index: 15;
+}
 .header__dropdown-toggle .header__item div {
     padding-left: 5px;
     margin-top: 4px;
@@ -82,9 +85,9 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 .header__dropdown-menu--with-mega-menu .image-block__content-wrap{
     padding: 2.5rem;
 }
-.shopify-section-header[desktop-sticky][scrolled] .header {
+/* .shopify-section-header[desktop-sticky][scrolled] .header {
     opacity: 0.9;
-}
+} */
 .header__cart-icon .cart-count{
     background-color: #EE5C4C;
 }
@@ -173,6 +176,13 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         font-family: "BrownStd-Regular";
         font-size: 16px;
     }
+    /* Recharge Price */
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label{
+        width: 100%;
+    }
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label .rc-radio__price{
+        float: right;
+    }
 }
 
 body[scroll-y-offf] {
@@ -242,6 +252,7 @@ body[scroll-y-offf] {
 .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-dropdown__select{
     border: 0 !important;
     width: fit-content;
+    padding-right: 0;
 }
 .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-dropdown__select:focus{
     outline: none;
@@ -267,6 +278,9 @@ body[scroll-y-offf] {
         font-size: 14px;
     }
 }
+.shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single{
+    font-family: "BrownStd-Regular";
+}
 @media screen and (min-width:1200px){
     .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single{
         padding-left: 22px;
@@ -285,6 +299,7 @@ body[scroll-y-offf] {
         width: 100%;
         background: var(--gsc-white-color-100);
         padding: 1.6rem 2.4rem;
+        padding-top: 40px !important ;
         transition: -webkit-transform .2s ease-in-out,-webkit-transform .2s ease-in-out,transform .2s ease-in-out;
         display: block;
         position: fixed;
@@ -408,8 +423,35 @@ body[is-product-form-button-fixed] .shopify-block.shopify-app-block.recharge-sub
 
 button.btn.btn--lg.btn--solid.sidebar-cart__warning-button{
     text-transform: uppercase;
+    pointer-events: all;
 }
 
 .sidebar-cart__warning-button-wrapper a{
     width: 100%;
+}
+.newsletter__input-btn{
+    background-color: #EE5C4C !important;
+}
+
+/* Predictive Search */
+.search-sidebar__footer-button,
+.sidebar-cart__warning-button{
+    background-color: #EE5C4C !important;
+}
+
+.okeReviews[data-oke-container] .oke-button:not(.oke-is-loading):not(.oke-is-active):hover,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover{
+    background-color:rgba(238, 92, 76, .8) !important;
+    color: white !important;
+    box-shadow:0 0 0 1px rgba(238, 92, 76, 1) !important;
+}
+.okeReviews[data-oke-container] .oke-w-writeReview:hover:before,
+div.okeReviews .oke-w-writeReview:hover:before{
+    color: white !important;
+}
+.no_opactiyOnHover:hover .product-card__img[data-main-media]{
+    opacity: 1 !important;
+}
+.drawer-menu__settings{
+    font-family: "BrownStd-Regular";
 }

@@ -263,7 +263,11 @@ padding-bottom: 11px;
   
   
 
-  
+  @media screen and (min-width: 768px) and (max-width: 1199px){
+    .cimage{
+        padding-left: 47px !important;
+    }
+  }
 @media(max-width:320px){
     .about-heading{
         font-size: 20px;
