@@ -174,13 +174,6 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         font-family: "BrownStd-Regular";
         font-size: 16px;
     }
-    /* Recharge Price */
-    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label{
-        width: 100%;
-    }
-    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label .rc-radio__price{
-        float: right;
-    }
 }
 
 body[scroll-y-offf] {
