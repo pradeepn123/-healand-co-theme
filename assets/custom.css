@@ -453,3 +453,29 @@ div.okeReviews .oke-w-writeReview:hover:before{
 .drawer-menu__settings{
     font-family: "BrownStd-Regular";
 }
+
+.selling_plan_label-small {
+    color: #ADADAE;
+    text-transform: uppercase;
+    font-family: "BrownStd-Regular";
+    letter-spacing: 1px;
+}
+
+.selling_plan_label-action subscription-btn {
+    color: #EA6852;
+    font-family: "BrownStd-Regular";
+    background-color: #FFF;
+    border: 0;
+    padding: 0;
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cart-item__details {
+    align-self: stretch;
+}
+
+.cart-item__details .cart-item__link, .cart-item__details .cart-item__link > a {
+    height: 100%;
+}

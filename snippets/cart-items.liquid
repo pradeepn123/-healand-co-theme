@@ -139,7 +139,35 @@
                           </div>
                         {%- endif -%}
                       {%- endfor -%}
-                      <div class='cart-item__option'>{{ item.selling_plan_allocation.selling_plan.name }}</div>
+                      {%- if item.product.selling_plan_groups.size > 0 -%}
+                        {%- if item.selling_plan_allocation -%}
+                          <div class='cart-item__option selling_plan_label-small'>
+                            SUBSCRIPTION
+                          </div>
+                        {%- else -%}
+                          <div class='cart-item__option selling_plan_label-small'>
+                            ONE-TIME PURCHASE
+                          </div>
+                          <div class='cart-item__option selling_plan_label-action'>
+                            {%- capture product_selling_plan_id -%}
+                              {%- for selling_plan_group in item.product.selling_plan_groups -%}{%- for selling_plan in selling_plan_group.selling_plans -%}{{ selling_plan.id }}{%- endfor -%}{%- endfor -%}
+                            {%- endcapture -%}
+                            <subscription-btn
+                              type="button"
+                              is="subscription-btn"
+                              data-index='{{ item.index }}'
+                              tabindex='0'
+                              data-selling_plan_id="{{- product_selling_plan_id -}}"
+                              data-quantity="{{ item.quantity }}"
+                            >
+                              UPGRADE & SAVE 10%
+                            </subscription-btn>
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                      <div class='cart-item__option'>
+                        {{ item.selling_plan_allocation.selling_plan.name }}
+                      </div>
                     {%- endif -%}
                     {%- if item.discounts.size > 0 -%}
                       <div class='cart-item__discounts'>
