@@ -363,8 +363,6 @@
     .imagesOnly_parent{
         justify-content: space-between;
         justify-content: flex-start;
-        overflow-x: auto;
-        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
