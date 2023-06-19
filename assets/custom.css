@@ -479,3 +479,54 @@ div.okeReviews .oke-w-writeReview:hover:before{
 .cart-item__details .cart-item__link, .cart-item__details .cart-item__link > a {
     height: 100%;
 }
+
+/* Cart Subscription */
+.cart-item__parentElement{
+    position: relative;
+}
+
+.subscriptiomButton_update{
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    background: white;
+    border: 1px solid #d9d9d9;
+    top: 130%;
+}
+
+.subscriptiomButton_update subscription-btn{
+    padding: 0 10px;
+    margin: 0;
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.subscriptiomButton_update subscription-btn:not(:last-of-type){
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.cartDropdownParent{
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+}
+
+.cartDropdownParent.staticState svg{
+    transform: rotate(180deg);
+    transition: all .25s;
+}
+.cartDropdownParent svg{
+    display: inline;
+    vertical-align: bottom;
+    width: 20px;
+    height: 23px;
+    transition: all .25s;
+}
+.showDropdown {
+    visibility: hidden;
+    height: 0;
+}
+.cart-item{
+    overflow: visible !important;
+}
