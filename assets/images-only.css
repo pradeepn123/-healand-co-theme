@@ -1,4 +1,5 @@
 .imagesOnly_parent {
+    overflow-x: auto;
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
@@ -6,7 +7,15 @@
 .imagesOnly_container.section-spacing{
     overflow: hidden;
 }
-
+.imagesOnly_parent .imageText_child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagesOnly_parent .imageText_child span{
+    white-space: normal;
+    color: #000;
+}
 /* Custom Class - images_only_custom_class */
 @media screen and (max-width: 767px){
     .images_only_custom_class{
