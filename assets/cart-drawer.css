@@ -156,10 +156,13 @@
 }
 
 .subtotal .subtotal__content{
-    padding: 0 2.4rem 2.4rem;
+    padding: 2rem 2.4rem 2.4rem;
 }
 .sidebar-cart__cart-free-shipping-bar{
     margin-bottom: 2.6rem;
+}
+.subtotal__totals--with-bottom-spacing .subtotal__label {
+    text-transform: capitalize;
 }
 /* Media queries css here */
 @media(min-width:1200px){
