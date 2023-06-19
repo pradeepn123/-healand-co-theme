@@ -1,5 +1,6 @@
 .imagesOnly_parent {
     overflow-x: auto;
+    overflow-y: auto;
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
@@ -11,10 +12,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 .imagesOnly_parent .imageText_child span{
     white-space: normal;
     color: #000;
+    text-align: center;
+    margin-top: 15px;
+    font-family: "BrownStd-Regular";
+    font-size: 16px;
 }
 /* Custom Class - images_only_custom_class */
 @media screen and (max-width: 767px){
