@@ -1,3 +1,10 @@
+<script>
+  function runCartDropdownParent(e){
+    e.classList.toggle('staticState');
+    e.parentElement.nextElementSibling.classList.toggle('showDropdown');
+  }
+</script>
+
 {%- liquid
   assign enable_multiply = settings.enable_product_darken_background
 -%}
@@ -143,6 +150,35 @@
                         {%- if item.selling_plan_allocation -%}
                           <div class='cart-item__option selling_plan_label-small'>
                             SUBSCRIPTION
+                            {% if item.product.selling_plan_groups.first.selling_plans.size > 1 %}
+                              <div class='cart-item__option cart-item__parentElement'>
+                                {% if item.selling_plan_allocation %} 
+                                  <div style="">Delivery every
+                                    <span class="cartDropdownParent staticState" id="cartDropdownParent" onclick="runCartDropdownParent(this)">
+                                      {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}
+                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </span>
+                                  </div>
+                                  <div class="subscriptiomButton_update showDropdown" id="subscriptiomButton_update" >
+                                    {%- for selling_plan_group in item.product.selling_plan_groups -%}
+                                      {%- for selling_plan in selling_plan_group.selling_plans -%}
+                                        <subscription-btn
+                                          value="{{ selling_plan.id }}" {% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}selected {% endif %} 
+                                          tabindex='0'
+                                          data-index='{{ item.index }}'
+                                          data-selling_plan_id="{{- selling_plan.id -}}"
+                                          data-quantity="{{ item.quantity }}">
+                                          {{ selling_plan.name | replace : 'Delivery every ', '' }}
+                                        </subscription-btn>
+                                        <br>
+                                      {%- endfor -%}
+                                    {%- endfor -%}
+                                  </div>
+                                {% endif %}
+                              </div>
+                            {% endif %}
                           </div>
                         {%- else -%}
                           <div class='cart-item__option selling_plan_label-small'>
@@ -169,9 +205,11 @@
                           </div>
                         {%- endif -%}
                       {%- endif -%}
-                      <div class='cart-item__option'>
-                        {{ item.selling_plan_allocation.selling_plan.name }}
-                      </div>
+                      {% if item.product.selling_plan_groups.first.selling_plans.size <= 1 %}
+                        <div class='cart-item__option'>
+                          {{ item.selling_plan_allocation.selling_plan.name }}
+                        </div>
+                      {% endif %}
                     {%- endif -%}
                     {%- if item.discounts.size > 0 -%}
                       <div class='cart-item__discounts'>
