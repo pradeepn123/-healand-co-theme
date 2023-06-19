@@ -155,7 +155,9 @@
                                 {% if item.selling_plan_allocation %} 
                                   <div style="">Delivery every
                                     <span class="cartDropdownParent staticState" id="cartDropdownParent" onclick="runCartDropdownParent(this)">
-                                      {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}
+                                      <span class="cartDropwdownText">
+                                        {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}
+                                      </span>
                                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
