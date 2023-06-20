@@ -503,6 +503,12 @@ div.okeReviews .oke-w-writeReview:hover:before{
     cursor: pointer;
 }
 
+.subscriptiomButton_update subscription-btn svg{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
 .subscriptiomButton_update subscription-btn:not(:last-of-type){
     border-bottom: 1px solid #d9d9d9;
 }
@@ -531,4 +537,22 @@ div.okeReviews .oke-w-writeReview:hover:before{
 }
 .cart-item{
     overflow: visible !important;
+}
+
+.subscriptiomButton_update.showDropdown .subscription-btn_icon{
+    visibility: hidden;
+    display: none;
+}
+.subscriptiomButton_update.showDropdown .selected .subscription-btn_icon {
+    display: none;
+    visibility: hidden;
+}
+
+.subscriptiomButton_update .subscription-btn_icon{
+    visibility: hidden;
+    display: inline-block;
+}
+.subscriptiomButton_update .selected .subscription-btn_icon{
+    visibility: visible;
+    display: inline-block;
 }
