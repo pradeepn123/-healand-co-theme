@@ -103,6 +103,11 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         padding: 0 1.4rem 2rem;
     }
 }
+@media screen and (max-width: 360px){
+    .cartDropdownParent{
+        display: block;
+    }
+}
 .shopify-section-header[mobile-sticky][aria-hidden=true] {
     transform: unset;
 }
@@ -459,6 +464,7 @@ div.okeReviews .oke-w-writeReview:hover:before{
     text-transform: uppercase;
     font-family: "BrownStd-Regular";
     letter-spacing: 1px;
+    flex-direction: column;
 }
 
 .selling_plan_label-action subscription-btn {

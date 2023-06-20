@@ -237,7 +237,8 @@
 }
 
 .deliveryTime_cartDrawer{
-    text-transform: capitalize;
+    text-transform: initial;
+    letter-spacing: normal;
 }
 
 .subtotal__tax-note{
