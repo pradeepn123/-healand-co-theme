@@ -10,6 +10,9 @@
 %}
 
 {% style %}
+    .imagesOnly_parent{
+        grid-template-columns: repeat( {{metafieldData.count}}, 1fr ); 
+    }
     .imagesOnly_container.section-spacing{
         padding-top: {{ section_spacing_top }}px;
         padding-bottom: {{ section_spacing_bottom }}px;
@@ -83,23 +86,23 @@
                 "options": [
                     {
                     "value": "page-width",
-                    "label": "t:sections.general_section_settings.container_size.page_width_option"
+                    "label": "Page Width"
                     },
                     {
                     "value": "large",
-                    "label": "t:sections.general_section_settings.container_size.large_width_option"
+                    "label": "Large"
                     },
                     {
                     "value": "medium",
-                    "label": "t:sections.general_section_settings.container_size.medium_width_option"
+                    "label": "Medium"
                     },
                     {
                     "value": "small",
-                    "label": "t:sections.general_section_settings.container_size.small_width_option"
+                    "label": "Small"
                     },
                     {
                     "value": "xsmall",
-                    "label": "t:sections.general_section_settings.container_size.extra_small_width_option"
+                    "label": "Extra Small"
                     }
                 ],
                 "default": "large",
