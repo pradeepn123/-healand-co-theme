@@ -153,7 +153,7 @@
                             {% if item.product.selling_plan_groups.first.selling_plans.size > 1 %}
                               <div class='cart-item__option cart-item__parentElement'>
                                 {% if item.selling_plan_allocation %} 
-                                  <div style="">Delivery every
+                                  <div class="deliveryTime_cartDrawer">Delivery every
                                     <span class="cartDropdownParent staticState" id="cartDropdownParent" onclick="runCartDropdownParent(this)">
                                       <span class="cartDropwdownText">
                                         {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}

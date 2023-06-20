@@ -236,12 +236,9 @@
     }
 }
 
-/* @media screen and (max-width: 417px) {
-    .cartDropdownParent {
-        display: block;
-        width: fit-content;
-    }
-} */
+.deliveryTime_cartDrawer{
+    text-transform: capitalize;
+}
 
 .subtotal__tax-note{
     margin-top: 0;
