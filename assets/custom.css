@@ -283,7 +283,7 @@ body[scroll-y-offf] {
 }
 @media screen and (min-width:1200px){
     .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single{
-        padding-left: 22px;
+        padding-left: 15px;
     }
 }
 
@@ -347,6 +347,12 @@ body[scroll-y-offf] {
     }
 }
 
+@media screen and (max-width: 1199px){
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single {
+        padding-left: 15px;
+        font-size: 14px;
+    }
+}
 .rc-radio input[type=radio] {
     position: absolute;
     opacity: 0;
