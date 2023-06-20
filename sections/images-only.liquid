@@ -17,7 +17,7 @@
 {% endstyle %}
 
 {% if metafieldData != blank %}
-    <div class="imagesOnly_container container container--xsmall section-spacing {{ section.settings.section_custom_class }}">
+    <div class="imagesOnly_container container container--{{ section.settings.container_size }} section-spacing {{ section.settings.section_custom_class }}">
         <div class="imagesOnly_parent">
             {% for block in metafieldData %}
                 <div class="imageText_child" data-aos="fade-up" data-aos-delay="{{ 200 | times: forloop.index }}" >
@@ -76,6 +76,34 @@
                 "default": 48,
                 "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
                 "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+            },
+            {
+                "type": "select",
+                "id": "container_size",
+                "options": [
+                    {
+                    "value": "page-width",
+                    "label": "t:sections.general_section_settings.container_size.page_width_option"
+                    },
+                    {
+                    "value": "large",
+                    "label": "t:sections.general_section_settings.container_size.large_width_option"
+                    },
+                    {
+                    "value": "medium",
+                    "label": "t:sections.general_section_settings.container_size.medium_width_option"
+                    },
+                    {
+                    "value": "small",
+                    "label": "t:sections.general_section_settings.container_size.small_width_option"
+                    },
+                    {
+                    "value": "xsmall",
+                    "label": "t:sections.general_section_settings.container_size.extra_small_width_option"
+                    }
+                ],
+                "default": "large",
+                "label": "Container Size"
             }
         ],
         "presets": [
