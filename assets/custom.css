@@ -103,6 +103,11 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
         padding: 0 1.4rem 2rem;
     }
 }
+@media screen and (max-width: 360px){
+    .cartDropdownParent{
+        display: block;
+    }
+}
 .shopify-section-header[mobile-sticky][aria-hidden=true] {
     transform: unset;
 }
@@ -278,7 +283,7 @@ body[scroll-y-offf] {
 }
 @media screen and (min-width:1200px){
     .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single{
-        padding-left: 22px;
+        padding-left: 15px;
     }
 }
 
@@ -342,6 +347,12 @@ body[scroll-y-offf] {
     }
 }
 
+@media screen and (max-width: 1199px){
+    .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single {
+        padding-left: 15px;
+        font-size: 14px;
+    }
+}
 .rc-radio input[type=radio] {
     position: absolute;
     opacity: 0;
@@ -459,6 +470,7 @@ div.okeReviews .oke-w-writeReview:hover:before{
     text-transform: uppercase;
     font-family: "BrownStd-Regular";
     letter-spacing: 1px;
+    flex-direction: column;
 }
 
 .selling_plan_label-action subscription-btn {
@@ -503,6 +515,12 @@ div.okeReviews .oke-w-writeReview:hover:before{
     cursor: pointer;
 }
 
+.subscriptiomButton_update subscription-btn svg{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
 .subscriptiomButton_update subscription-btn:not(:last-of-type){
     border-bottom: 1px solid #d9d9d9;
 }
@@ -531,4 +549,22 @@ div.okeReviews .oke-w-writeReview:hover:before{
 }
 .cart-item{
     overflow: visible !important;
+}
+
+.subscriptiomButton_update.showDropdown .subscription-btn_icon{
+    visibility: hidden;
+    display: none;
+}
+.subscriptiomButton_update.showDropdown .selected .subscription-btn_icon {
+    display: none;
+    visibility: hidden;
+}
+
+.subscriptiomButton_update .subscription-btn_icon{
+    visibility: hidden;
+    display: inline-block;
+}
+.subscriptiomButton_update .selected .subscription-btn_icon{
+    visibility: visible;
+    display: inline-block;
 }

@@ -638,7 +638,8 @@
         font-size: 12px;
     }
     .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans span{
-        margin-left: 10px;
+        padding-left: 10px !important;
+        font-size: 12px !important;
     }
 }
 /* End Upsell in Product Page ATF Section */
