@@ -3,14 +3,10 @@
     {% comment %} {% assign ingredientList = 'ashwagandha,apple,acai,banana,lemon,mango,pineapple,cinnamon,chocolate,mango,pineapple,cinnamon,chocolate,ashwagandha' | split: ','  %} {% endcomment %}
     {% assign ingredient_page_name = request.path | split: '/' %}
     {% for ingredient in ingredientList %}
-        {% unless ingredient_page_name[2] == 'l-theanine' or ingredient_page_name[2] == 'l-tyrosine' or ingredient_page_name[2] == '5-hydroxytryptophan-5-htp'  or ingredient_page_name[2] == 'vitamin-b5-pantothenic-acid' %}
-            {% assign path_name = ingredient_page_name[2] | replace: '-', ' ' %}
-            {% if ingredient_page_name[2] == ingredient.heading %}
-                {% assign carousel_index_start = forloop.index %}
-            {% endif %}
-        {% else %}
-            {% assign path_name = ingredient_page_name[2] %}
-        {% endunless %}
+        {% assign ingredient_handle = ingredient.heading | handle %}
+        {% if request.path contains ingredient_handle %}
+            {% assign carousel_index_start = forloop.index %}
+        {% endif %}
     {% endfor %}
     <carousel-component
         class='carousel ingredient_list__carousel'        
@@ -27,8 +23,8 @@
             <div class='carousel__container' data-carousel-container>
                 {% for ingredient in ingredientList %}
                     <div class="ingredient_list_container carousel__slide">
-                        {% assign ingredient_heading = ingredient.heading | downcase %}
-                        <a href="/pages/{{ ingredient_heading | replace: ' ', '-' | replace: '(', '-' | replace: ')', '' }}" class="ingredient {% if path_name == ingredient_heading %} active {% endif %}">{{ ingredient.heading | upcase }}</a>
+                        {% assign ingredient_handle = ingredient.heading | handle %}
+                        <a href="/pages/{{ ingredient_handle }}" class="ingredient {% if request.path contains ingredient_handle %} active {% endif %}">{{ ingredient.heading | upcase }}</a>
                     </div>            
                 {% endfor %}
             </div>
