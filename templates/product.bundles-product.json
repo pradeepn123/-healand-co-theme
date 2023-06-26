@@ -304,7 +304,8 @@
       "settings": {
         "section_custom_class": "",
         "section_spacing_top": 64,
-        "section_spacing_bottom": 64
+        "section_spacing_bottom": 64,
+        "container_size": "large"
       }
     },
     "c494eb49-341f-432a-a30f-8dce72acadf3": {
@@ -546,7 +547,7 @@
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
-        "mobile_height": 640,
+        "mobile_height": 300,
         "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
         "desktop_overlay_opacity": 20,
         "mobile_overlay_opacity": 20,
