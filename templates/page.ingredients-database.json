@@ -170,7 +170,7 @@
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
-        "mobile_height": 400,
+        "mobile_height": 300,
         "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
         "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
         "desktop_overlay_opacity": 5,
