@@ -78,7 +78,7 @@
     }
 
     .pb_container .pb_content_continer .pb_content_inner p{
-        overflow: scroll;
+        overflow: auto;
         max-height: 70px;
     }
 
@@ -157,12 +157,12 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 1;
+            /* -webkit-line-clamp: 1; */
             -webkit-box-orient: vertical;
             line-height: 1.2;
         }
         .pb_container .pb_content_continer .pb_content_inner p{
-            overflow: scroll;
+            overflow: auto;
             max-height: 50px;
             color: #000;
         }
