@@ -111,11 +111,13 @@
         "shop_all_title": "Shop all",
         "shop_all_url": "https:\/\/healandco.co\/collections\/all",
         "collection_list": [
-          "digestion",
+          "antioxidants",
+          "beauty",
+          "brain",
           "energy",
           "immunity",
-          "stress",
-          "frontpage"
+          "gut-health",
+          "stress"
         ],
         "img_ratio": "square",
         "text_style": "under-image",
