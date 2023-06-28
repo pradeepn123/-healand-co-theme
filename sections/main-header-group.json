@@ -51,7 +51,7 @@
             "desktop_img_ratio": 0.4,
             "mobile_img_ratio": 0.6,
             "columns": 2,
-            "desktop_space_between_cards": 12,
+            "desktop_space_between_cards": 15,
             "mobile_space_between_cards": 24,
             "heading_size": "h5",
             "body_size": "body0",
