@@ -68,6 +68,9 @@
     },
     "26e6c122-c3e8-4690-8f51-067c95684876": {
       "type": "featured-collection",
+      "custom_css": [
+        ".collection__title.h6 {font-size: 24px;}"
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "small",
