@@ -214,7 +214,14 @@
         "shop_all_url": "",
         "collection": "",
         "featured_products": [
-
+          "quercetin-ca",
+          "biotin-complex-hair-skin-nails",
+          "lions-mane-focus-immunity",
+          "ashwagandha",
+          "energy-complex-energy-support",
+          "super-mushroom-complex-ca",
+          "echinacea-ca",
+          "sleep-complex-sleep-support"
         ],
         "img_ratio": "square",
         "product_card_align": "left",
