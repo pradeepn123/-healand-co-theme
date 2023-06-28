@@ -78,7 +78,7 @@
     }
 
     .pb_container .pb_content_continer .pb_content_inner p{
-        overflow: scroll;
+        overflow: auto;
         max-height: 70px;
     }
 
@@ -162,7 +162,7 @@
             line-height: 1.2;
         }
         .pb_container .pb_content_continer .pb_content_inner p{
-            overflow: scroll;
+            overflow: auto;
             max-height: 50px;
             color: #000;
         }

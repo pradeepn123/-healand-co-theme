@@ -112,8 +112,20 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     transform: unset;
 }
 .header__menu--inside-full-width-dropdown{
-    height: 260px;
+    height: 100%;
     overflow-y: scroll;
+}
+.header__menu--inside-full-width-dropdown::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px #555555;
+	background-color: #F5F5F5;
+}
+.header__menu--inside-full-width-dropdown::-webkit-scrollbar{
+        width: 4px;
+}
+.header__menu--inside-full-width-dropdown::-webkit-scrollbar-thumb{
+	background-color: #555555;
+	border: 0.5px solid #555555;
 }
 
 /* Best seller css here*/
@@ -567,4 +579,9 @@ div.okeReviews .oke-w-writeReview:hover:before{
 .subscriptiomButton_update .selected .subscription-btn_icon{
     visibility: visible;
     display: inline-block;
+}
+
+/* the below code is for header non-transperent when click on hamburger on mobile*/
+.drawer-menu[data-aria-expanded="true"] + .header {
+    background: #fff !important;
 }
