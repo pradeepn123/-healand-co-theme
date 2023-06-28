@@ -118,7 +118,7 @@
     </div>
   {%- endif -%}
 {% endcapture %}
-
+{% if collection != blank or featured_products != blank %}
 <div class='collection section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout == 'grid' %} collection--grid-with-mobile-carousel{% endif %}'>
   <div class='collection__container container container--{{ container_size }} section-spacing {% if request.path contains "blogs/news" %} container--xsmall pt-0 {% endif %}'>
     {{ section_header }}
@@ -183,6 +183,7 @@
     {% endif %}
   </div>
 </div>
+{% endif %}
 
 {% schema %}
 {
