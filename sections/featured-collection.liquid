@@ -75,13 +75,13 @@
     }
 
     
-    {% if desktop_columns == 3 %}
+    /* {% if desktop_columns == 3 %}
       @media screen and (min-width: 768px) and (max-width: 1016px) {
         .section-{{ section.id }}{
           --gsc-slide-width: {{ laptop_carousel_percent_width | times: 1.00 | divided_by: laptop_columns }}%;
         }
       }
-    {% endif %}
+    {% endif %} */
 
     {% if desktop_columns > 3 %}
       @media screen and (min-width: 880px) and (max-width: 1016px) {
