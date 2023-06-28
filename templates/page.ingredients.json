@@ -68,22 +68,23 @@
     },
     "26e6c122-c3e8-4690-8f51-067c95684876": {
       "type": "featured-collection",
+      "custom_css": [
+        ".collection__title.h6 {font-size: 24px;}"
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "small",
         "section_spacing_top": 48,
         "section_spacing_bottom": 48,
-        "section_layout": "carousel",
+        "section_layout": "grid",
         "title": "FOUND IN",
         "title_decoration": false,
-        "heading_size": "h5",
+        "heading_size": "h6",
         "alignment": "left",
         "shop_all_title": "",
         "shop_all_url": "",
-        "collection": "products",
-        "featured_products": [
-
-        ],
+        "collection": "",
+        "featured_products": "{{ page.metafields.custom.ingredient_products.value }}",
         "img_ratio": "default",
         "product_card_align": "left",
         "cards_to_show": 16,

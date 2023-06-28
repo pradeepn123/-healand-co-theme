@@ -1,8 +1,10 @@
 {% if block.settings.upsell_products != blank  %}
     <div class="upsell_product_main_wrap">
         <div class="upsell_product_heading">
-                <span class="heading_text">{{ block.settings.upsell_headings }}</span>
-                {% comment %} <span class="discount_percentage"> upto 20% </span> {% endcomment %}
+            <span class="heading_text">{{ block.settings.upsell_headings }}</span>
+            {% if product.metafields.custom.upsell_discount != blank %}
+                <span class="discount_percentage">upto {{ product.metafields.custom.upsell_discount }}%</span>
+            {% endif %}
         </div>
     </div>
 

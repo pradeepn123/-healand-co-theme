@@ -83,7 +83,7 @@
         "section_spacing_top": 0,
         "section_spacing_bottom": 40,
         "desktop_height": 600,
-        "mobile_height": 260,
+        "mobile_height": 224,
         "enable_circle_navigation": true,
         "enable_arrows_navigation": true,
         "arrows_style": "corner-buttons",
