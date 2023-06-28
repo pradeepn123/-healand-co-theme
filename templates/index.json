@@ -40,6 +40,7 @@
         },
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
+          "disabled": true,
           "settings": {
             "color_scheme": "custom-2",
             "image_proportion": 0,
@@ -110,11 +111,13 @@
         "shop_all_title": "Shop all",
         "shop_all_url": "https:\/\/healandco.co\/collections\/all",
         "collection_list": [
-          "digestion",
+          "antioxidants",
+          "beauty",
+          "brain",
           "energy",
           "immunity",
-          "stress",
-          "frontpage"
+          "gut-health",
+          "stress"
         ],
         "img_ratio": "square",
         "text_style": "under-image",
@@ -152,7 +155,7 @@
             "image_heading": "POTENT EXTRACT",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_richtext": "<p>Lesser dose, more effect<\/p>",
+            "image_richtext": "<p>High efficacy, fewer doses<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
@@ -164,7 +167,7 @@
             "image_heading": "MADE IN CANADA",
             "image_heading-color": "#3c8771",
             "image_heading_font": 14,
-            "image_richtext": "<p>High-quality standards<\/p>",
+            "image_richtext": "<p>Health Canada approved, GMP-certified<\/p>",
             "image_subheading-color": "#000000",
             "image_subheading_font": 14
           }
@@ -189,7 +192,7 @@
         "icons": "none",
         "captions": "",
         "heading": "<p>Potent Plants <\/p><p>For Healthy Humans<\/p>",
-        "texts": "<p>Our extracts and raw ingredients are formulated to deliver the highest concentration possible, resulting in products that are more effective and require fewer doses.<\/p>",
+        "texts": "<p>Benefit from the healing powers of nature with our line of potent herbal supplements. Our medicinal plant extracts are carefully sourced and tested to meet our high standards of efficacy, purity and potency. <\/p>",
         "headings_size": "h2",
         "body_sizes": "body3",
         "text_link": "About us",
@@ -211,9 +214,16 @@
         "alignment": "center",
         "shop_all_title": "Shop all",
         "shop_all_url": "",
-        "collection": "products",
+        "collection": "",
         "featured_products": [
-
+          "quercetin-ca",
+          "biotin-complex-hair-skin-nails",
+          "lions-mane-focus-immunity",
+          "ashwagandha",
+          "energy-complex-energy-support",
+          "super-mushroom-complex-ca",
+          "echinacea-ca",
+          "sleep-complex-sleep-support"
         ],
         "img_ratio": "square",
         "product_card_align": "left",
@@ -240,11 +250,11 @@
         "section_spacing_top": 65,
         "section_spacing_bottom": 65,
         "content_position": "left",
-        "collection": "homepage-ca",
+        "collection": "bundles",
         "icon": "none",
         "caption": "",
         "title": "Subscribe & Save with Our Bundles",
-        "text": "<ul><li>Never run out of your favorite products<\/li><li>Enjoy a 10% discount on all subscription bundles<\/li><li>Flexible delivery options to fit your schedule <\/li><li>Hassle-free cancellation or modification of your subscription<\/li><\/ul>",
+        "text": "<ul><li> Stay on top of your health routine, never run out of your favourite products<\/li><li>Save 10% when you subscribe to any of our bundles<\/li><li>Automatically billed and shipped to you as frequently as you would like<\/li><li>Shipping always on us<\/li><\/ul><p><\/p>",
         "heading_size": "h5",
         "body_size": "body3",
         "link_text": "SHOP ALL BUNDLES",
