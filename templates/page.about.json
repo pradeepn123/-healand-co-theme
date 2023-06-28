@@ -32,6 +32,7 @@
     },
     "15a07ea5-5f63-4f28-90eb-e350b765cf7e": {
       "type": "about-video",
+      "disabled": true,
       "settings": {
         "video": "shopify:\/\/files\/videos\/pexels-ambientnature-atmosphere-3343679-1920x1080-30fps.mp4",
         "thumbnail": "shopify:\/\/shop_images\/image_193.png",
