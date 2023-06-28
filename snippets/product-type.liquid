@@ -1,7 +1,13 @@
-{% if product.metafields.custom.benefits.value %}
+{% if product.metafields.custom.addition_benefit.value %}
   <div class='product-general-info-block' {{ block.shopify_attributes }}>
+    {% capture heading %}
+     {% for block in product.metafields.custom.addition_benefit.value %}
+         {{block.heading}}{% unless forloop.last %}+ {% endunless %}
+     {% endfor %}
+    {%endcapture%}
+    
     <div class="product-type">
-      <p style="color: {{ block.settings.product_type_color }}">{{ product.metafields.custom.benefits.value | join: ' + ' }}</p>
+      <p style="color: {{ block.settings.product_type_color }}">{{heading}}</p>
     </div>
   </div>
 {% endif %}
