@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
 }
 .header__menu--inside-full-width-dropdown{
     height: 100%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .header__menu--inside-full-width-dropdown::-webkit-scrollbar-track
 {
@@ -584,4 +584,13 @@ div.okeReviews .oke-w-writeReview:hover:before{
 /* the below code is for header non-transperent when click on hamburger on mobile*/
 .drawer-menu[data-aria-expanded="true"] + .header {
     background: #fff !important;
+}
+
+.mega-menu .mega-menu__inner-container {
+    column-gap: 168px;
+}
+
+.childrenmenu-border{
+    border: 1px solid #efefef;
+    padding: 0;
 }
