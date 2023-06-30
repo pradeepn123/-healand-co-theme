@@ -602,3 +602,7 @@ div.okeReviews .oke-w-writeReview:hover:before{
 .product-card__img{
     object-fit: contain;
 }
+
+.header__container:has(.header__dropdown-toggle[data-aria-expanded="true"]){
+    background: #fff !important;
+}
