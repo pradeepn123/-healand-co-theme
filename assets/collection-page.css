@@ -58,6 +58,7 @@
 .filters__form accordeon-component .filters__label{
     justify-content: left;
     padding: 1em 0 1em;
+    text-transform: capitalize;
 }
 .sidebar-filters--mobile .sidebar-filters__content .sidebar-filters__header{
     justify-content: left;
@@ -94,7 +95,7 @@
     padding-top: 13%;
 }
 .product-card__title{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
@@ -102,7 +103,7 @@
 }
 @media (max-width: 768px){
     .product-card__title{
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 @media (min-width: 768px) and (max-width: 1023px){

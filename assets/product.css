@@ -445,10 +445,11 @@
     }
 
     .default_product_custom_class .product__info-wrapper {
-        max-width: 560px;
+        max-width: 50%;
     }
     .default_product_custom_class .product__content{
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){

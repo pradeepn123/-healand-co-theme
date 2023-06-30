@@ -23,7 +23,7 @@
         "product_per_page": 16,
         "desktop_columns": "4",
         "desktop_space_between_cards": 12,
-        "mobile_columns": "1",
+        "mobile_columns": "2",
         "mobile_space_between_cards": 20,
         "pagination_type": "load-button-pagination"
       }
