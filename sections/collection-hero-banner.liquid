@@ -22,7 +22,7 @@
 
   assign enable_background_around_container = options.enable_background_around_container
 
-  assign image = options.image | default: collection.image
+  assign image = collection.metafields.custom.collection_heroimage 
   assign video = options.video
   assign title = collection.title
   assign description = collection.description
@@ -74,33 +74,37 @@
         <div class='overlay'></div>
         {%- if video != blank -%}
           {% render 'video-with-alt', video: video, class: 'image collection-hero__image' %}
+        {%- elsif collection.metafields.custom.collection_heroimage != blank -%}
+          {% comment %} <img class='image collection-hero__image lazyload'
+            src='{{ collection.metafields.custom.collection_heroimage | img_url: 'master' }}'> {% endcomment %}
+            <img
+              class='image collection-hero__image lazyload'
+              loading='lazy'
+              src='{{ image | img_url: 'master' }}'
+              alt='{{ image.alt }}'
+              width='{{image.width}}'
+              height='{{image.height}}'
+              style='object-position: {{ image.presentation.focal_point }};'
+              data-aspectratio='{{ image.aspect_ratio }}'
+              data-sizes='auto'
+              data-srcset='{%- render 'srcset-for-image', image: image -%}'
+            >
+
         {% elsif collection.image != blank %}
-          {% assign collection_image = collection.image %}
-          <img
-            class='image collection-hero__image lazyload'
-            loading='lazy'
-            src='{{ collection_image | img_url: 'master' }}'
-            alt='{{ collection_image.alt }}'
-            width='{{collection_image.width}}'
-            height='{{collection_image.height}}'
-            style='object-position: {{ collection_image.presentation.focal_point }};'
-            data-aspectratio='{{ collection_image.aspect_ratio }}'
-            data-sizes='auto'
-            data-srcset='{%- render 'srcset-for-image', image: collection_image -%}'
-          >
-        {%- elsif image != blank -%}
-          <img
-            class='image collection-hero__image lazyload'
-            loading='lazy'
-            src='{{ image | img_url: 'master' }}'
-            alt='{{ image.alt }}'
-            width='{{image.width}}'
-            height='{{image.height}}'
-            style='object-position: {{ image.presentation.focal_point }};'
-            data-aspectratio='{{ image.aspect_ratio }}'
-            data-sizes='auto'
-            data-srcset='{%- render 'srcset-for-image', image: image -%}'
-          >
+        {% assign collection_image = collection.image %}
+        <img
+          class='image collection-hero__image lazyload'
+          loading='lazy'
+          src='{{ collection_image | img_url: 'master' }}'
+          alt='{{ collection_image.alt }}'
+          width='{{collection_image.width}}'
+          height='{{collection_image.height}}'
+          style='object-position: {{ collection_image.presentation.focal_point }};'
+          data-aspectratio='{{ collection_image.aspect_ratio }}'
+          data-sizes='auto'
+          data-srcset='{%- render 'srcset-for-image', image: collection_image -%}'
+        >
+          
         {%- else -%}
           <carousel-component
             class='carousel collection-hero__carousel'

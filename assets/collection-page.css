@@ -22,7 +22,7 @@
     font-weight: var(--gsc-font-weight-normal);
 }
 .filters__label{
-    font-size: 20px;
+    font-size: 18px;
     color: #000;
     align-items: center;
 }
@@ -41,6 +41,9 @@
     .collection_title{
         margin: auto;
         padding: 0 20px 34px 20px;
+    }
+    .filters__label{
+        font-size: 18px;
     }
 }
 .filters__form .accordeon__content .checkbox__span--outline{
@@ -95,7 +98,7 @@
     padding-top: 13%;
 }
 .product-card__title{
-    font-size: 16px;
+    font-size: 14px; 
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
@@ -124,11 +127,13 @@
     font-size: 14px;
     color: #ADADAE;
     text-transform: uppercase;
+    padding-top: 7px;
 }
 .product_featured_tag{
     font-weight: 700;
     font-size: 14px;
     color: #D97059;
+    padding-bottom: 7px;
 }
 .product-card__price-item {
     color: #000;
@@ -182,3 +187,4 @@
     z-index: 999;
     right: 3.8em;
 }
+
