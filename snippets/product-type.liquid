@@ -1,4 +1,4 @@
-{% if product.metafields.custom.addition_benefit.value %}
+{% comment %} {% if product.metafields.custom.addition_benefit.value %}
   <div class='product-general-info-block' {{ block.shopify_attributes }}>
     {% capture heading %}
      {% for block in product.metafields.custom.addition_benefit.value %}
@@ -10,4 +10,11 @@
       <p style="color: {{ block.settings.product_type_color }}">{{heading}}</p>
     </div>
   </div>
-{% endif %}
+{% endif %} {% endcomment %}
+
+{% assign benefits = product.metafields.custom.addition_benefits.value %}
+  <p class="product_benefits">
+    {% for elem in benefits %}
+      <span style="color: {{ block.settings.product_type_color }}">{{ elem }}{% unless forloop.last %} + {% endunless %}</span>
+    {% endfor %}
+  </p>

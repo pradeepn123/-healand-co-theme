@@ -168,3 +168,12 @@
             color: #000;
         }
     }
+
+    @media(max-width:768px){
+        .pb_container .pb_content_continer .pb_content_inner h6{
+            font-size: 14px;
+        }
+        .pb_container .pb_content_continer .pb_content_inner p{
+            font-size: 13px;
+        }
+    }
