@@ -85,7 +85,7 @@
         "shop_all_url": "",
         "collection": "",
         "featured_products": "{{ page.metafields.custom.ingredient_products.value }}",
-        "img_ratio": "default",
+        "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 16,
         "desktop_columns": 3,
