@@ -53,7 +53,7 @@
             "columns": 2,
             "desktop_space_between_cards": 32,
             "mobile_space_between_cards": 24,
-            "heading_size": "h5",
+            "heading_size": "h6",
             "body_size": "body0",
             "content_position": "top-left",
             "body_position": "absolute",
