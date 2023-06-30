@@ -80,9 +80,9 @@
       {% if product_description != blank %}
         <div class='product-content-tab__content'>
           <div class='rte product-content-tab__rte product-content-tab__text body-font-weight-from-global-settings' style="color: {{ fontColor }}" id="show_more_prodDescription">
-              {{ product_description | truncatewords: 21 }}
+              {{ product_description | truncate: 120}}
 
-            {% if truncatewords > 21  %}
+            {% if product_description.size >= 120 %}
               <span id="readMore_btn">
                 Read More
               </span>
