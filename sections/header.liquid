@@ -748,6 +748,13 @@
   </div>
 </header-component>
 
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var targetSection = document.getElementById('header-component');
+  window.scrollTo(0, targetSection.offsetTop);
+});
+</script>
+
 {% schema %}
 {
   "name": "t:sections.header.name",
