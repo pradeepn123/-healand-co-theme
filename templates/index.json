@@ -213,7 +213,7 @@
         "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
-        "shop_all_url": "",
+        "shop_all_url": "#",
         "collection": "",
         "featured_products": [
           "quercetin-ca",
