@@ -29,7 +29,7 @@
   assign options = block.settings
   assign block_style = options.block_style
   assign title = options.title  
-  assign product_description = product.description | strip_html | truncatewords: 18, '...'
+  assign product_description = product.description | strip_html 
   assign custom_icon_image = options.custom_icon_image
   assign icon = options.icon
   assign fontColor = options.font_color

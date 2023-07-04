@@ -48,7 +48,7 @@
             "mega_nav_item_name": "shop",
             "color_scheme": "white",
             "add_spacing": true,
-            "desktop_img_ratio": 0.4,
+            "desktop_img_ratio": 200,
             "mobile_img_ratio": 0.6,
             "columns": 2,
             "desktop_space_between_cards": 32,

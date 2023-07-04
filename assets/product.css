@@ -422,7 +422,7 @@
 /* Product Description */
 .product-description_internal{
     max-height: 300px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 #readMore_btn,
 #readLess_btn{
@@ -507,7 +507,10 @@
     }
     /* Product Description */
     .default_product_custom_class .product-content-tab{
-        margin-top: 24px !important;
+        margin-top: 8px !important;
+    }
+    .default_product_custom_class .product_benefits{
+        margin-top: 15px;
     }
 }
 @media screen and (max-width: 480px){
