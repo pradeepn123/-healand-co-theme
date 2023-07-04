@@ -3656,6 +3656,11 @@
                 key: "open",
                 value: function() {
                     var e = this;
+                    if (this.element.id == "FiltersDesktop") {
+                        return this.mount(), this.setAttribute("tabindex", "-1"), setTimeout((function() {
+                            e._setOpenState(!0)
+                        }), 0), V(this._transitionDuration)                        
+                    }
                     return this.mount(), this.setAttribute("tabindex", "-1"), this.focus(), setTimeout((function() {
                         e._setOpenState(!0)
                     }), 0), V(this._transitionDuration)
