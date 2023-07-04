@@ -7,9 +7,8 @@
           "type": "image-banner",
           "settings": {
             "color_scheme": "primary",
-            "desktop_img": "shopify:\/\/shop_images\/banner.png",
-            "mobile_img": "shopify:\/\/shop_images\/Rectangle_101.png",
-            "video": "shopify:\/\/files\/videos\/pexels-pressmaster-3195394-3840x2160-25fps.mp4",
+            "desktop_img": "shopify:\/\/shop_images\/Sproos_Oct_22-206-Edit_994785ff-bb98-40a8-8fef-5104879caf41.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Sproos_Oct_22-206-Edit_994785ff-bb98-40a8-8fef-5104879caf41.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
