@@ -21,7 +21,7 @@
 
 {% if metafieldData != blank %}
     <div class="imagesOnly_container container container--{{ section.settings.container_size }} section-spacing {{ section.settings.section_custom_class }}">
-        <div class="imagesOnly_parent">
+        <div id="remove-class" class="imagesOnly_parent scroll-styling">
             {% for block in metafieldData %}
                 <div class="imageText_child" data-aos="fade-up" data-aos-delay="{{ 200 | times: forloop.index }}" >
                     {% if block.svg_image  != blank %}
@@ -46,6 +46,15 @@
         </div>
     </div>
 {% endif %}
+
+<script>
+    var platform = navigator.platform.toLowerCase();
+    var element= document.getElementById('remove-class')
+    if (platform.indexOf('mac') !== -1) {
+      element.classList.remove('scroll-styling');
+    }
+</script>
+
 {% schema %}
     {
         "name": "Images Only",

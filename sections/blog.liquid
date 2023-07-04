@@ -62,7 +62,7 @@
           </h5>
         {%- endif -%}
         {%- if show_tag_navigation -%}
-          <div class='articles__tags'>
+          <div id="remove-class" class='articles__tags scroll-styling' >
             <a
               class='articles__tag {% if current_tags == blank %}selected{% endif %}'
               href='{{ blog.url }}'
@@ -129,6 +129,14 @@
     {%- endpaginate -%}
   </div>
 </div>
+
+<script>
+    var platform = navigator.platform.toLowerCase();
+    var element= document.getElementById('remove-class')
+    if (platform.indexOf('mac') !== -1) {
+      element.classList.remove('scroll-styling');
+    }
+</script>
 
 {% schema %}
 {
