@@ -37,6 +37,40 @@
             "extra_btn_style": "solid"
           }
         },
+        "9cd66c69-6020-4d07-80ad-6c6bdd73ef26": {
+          "type": "image-banner",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
+            "desktop_overlay_opacity": 20,
+            "mobile_overlay_opacity": 20,
+            "background_color": "",
+            "text_color": "",
+            "button_bg_color": "",
+            "button_text_color": "",
+            "caption": "IMAGE SLIDE",
+            "title": "Image with text",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.<\/p>",
+            "sub_heading_size": "h2",
+            "heading_size": "h2",
+            "body_size": "body3",
+            "desktop_content_position": "align-items:center;justify-content:flex-start;",
+            "desktop_content_align": "left",
+            "content_max_width": 528,
+            "content_spacing": 116,
+            "mobile_content_position": "align-items:flex-end;justify-content:center;",
+            "mobile_content_align": "center",
+            "desktop_content_background": "none",
+            "mobile_content_background": "none",
+            "btn_text": "Button label",
+            "btn_url": "",
+            "btn_style": "solid",
+            "extra_btn_text": "Button label",
+            "extra_btn_url": "",
+            "extra_btn_style": "solid"
+          }
+        },
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1": {
           "type": "split-image-banner",
           "disabled": true,
@@ -70,6 +104,7 @@
       },
       "block_order": [
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
+        "9cd66c69-6020-4d07-80ad-6c6bdd73ef26",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1"
       ],
       "custom_css": [
