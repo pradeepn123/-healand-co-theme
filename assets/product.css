@@ -429,6 +429,9 @@
     cursor: pointer;
     text-decoration: underline;
 }
+#readLess_btn{
+    margin-top: 3rem;
+}
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
     .default_product_custom_class .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
         box-shadow: 0 0 0 0.2rem rgba(238, 92, 76, 1) inset;
