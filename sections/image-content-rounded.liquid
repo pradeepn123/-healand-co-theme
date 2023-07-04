@@ -24,7 +24,7 @@ assign section_spacing_bottom = options.section_spacing_bottom
 <div class="ingredients-database-section section section-{{ section.id }} section-spacing color-{{ color_scheme }}">
     <div class="container">
         <div class="ingredients-database-wrapper">
-            <div class="ingredients-database">
+            <div class="ingredients-database" initial-load="true">
               {% for block in page.metafields.custom.list.value %}
                 {% assign ingredient_heading = block.heading | handle %}
                 {% assign page =  pages[ingredient_heading] %}
@@ -48,65 +48,77 @@ assign section_spacing_bottom = options.section_spacing_bottom
               {% endfor %} 
             </div>
         </div>
-        <div class="progress_update load-button-pagination">
-            <div class="load_more_button_update load-button-pagination__count"></div>
-            <div class='load-button-pagination__progress'></div>
-        </div>
-        
-        <div class="btn btn--outline load-button-pagination__btn pagination_load_btn">
-            <span>Load more</span>
+        <div class="load-button-pagination__btn pagination_load_btn" style="display: none;">
+            {%- render 'icon', icon_name: 'spinner', class: "loading-spinner", stroke_width: 5 -%}
         </div>
     </div>
   <!-- </div> -->
 </div>
 
 <script>
-    var no_of_ingredients_per_page = {{ no_of_ingredients_per_page | json }}
-    var no_of_ingredients_per_page_mobile = {{ no_of_ingredients_per_page_mobile | json }}
+    const handleLoadMoreItems = (e) => {
+        var no_of_ingredients_per_page = {{ no_of_ingredients_per_page | json }}
+        var no_of_ingredients_per_page_mobile = {{ no_of_ingredients_per_page_mobile | json }}
 
-    var ingredient_block = Array.from(document.querySelectorAll('.ingredients-database-item'));
-    if(window.screen.width > 768){
-        ingredient_block.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
-        var viewed = no_of_ingredients_per_page
-        updateRemaingingCount(no_of_ingredients_per_page);
-    }else{
-        ingredient_block.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
-        var viewed = no_of_ingredients_per_page_mobile
-        updateRemaingingCount(no_of_ingredients_per_page_mobile);
-    }
-    
-    document.querySelector('.pagination_load_btn').addEventListener('click', () => {
-        var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
-        if(window.screen.width > 768){
-            ingredient_block_hidden.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
-            if(ingredient_block_hidden.length - (no_of_ingredients_per_page + 1) <= 0){
-                document.querySelector('.pagination_load_btn').style.display = 'none';
-                document.querySelector('.load_more_button_update').style.display = 'none';
-                document.querySelector('.load-button-pagination__progress').style.display = 'none';
+        const element = document.querySelector(".ingredients-database")
+        const rect = element.getBoundingClientRect();
+
+        if(rect.bottom <= window.innerHeight && !element.getAttribute("is-loading")){
+            var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
+
+            if (!ingredient_block_hidden.length) {
+                document.querySelector(".pagination_load_btn").remove()
+                window.removeEventListener("scroll", handleLoadMoreItems)
+                return false;
             }
-            if(ingredient_block_hidden.length - no_of_ingredients_per_page != 0){
-                viewed += no_of_ingredients_per_page;
-                updateRemaingingCount(viewed)
-            }
-        }else{
-            ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
-            if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
-                document.querySelector('.pagination_load_btn').style.display = 'none';
-                document.querySelector('.load_more_button_update').style.display = 'none';
-                document.querySelector('.load-button-pagination__progress').style.display = 'none';
-            }
-            if(ingredient_block_hidden.length - no_of_ingredients_per_page_mobile != 0){
-                viewed += no_of_ingredients_per_page;
-                updateRemaingingCount(viewed)
-            }
+
+            element.setAttribute("is-loading", true)
+            document.querySelector(".pagination_load_btn").style.display = ""
+
+            setTimeout(function () {
+                var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
+                if(window.screen.width > 768){
+                    ingredient_block_hidden.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
+                    if(ingredient_block_hidden.length - (no_of_ingredients_per_page + 1) <= 0){
+                        document.querySelector('.pagination_load_btn').style.display = 'none';
+                        document.querySelector('.load_more_button_update').style.display = 'none';
+                        document.querySelector('.load-button-pagination__progress').style.display = 'none';
+                    }
+                } else {
+                    ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
+                    if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
+                        document.querySelector('.pagination_load_btn').style.display = 'none';
+                        document.querySelector('.load_more_button_update').style.display = 'none';
+                        document.querySelector('.load-button-pagination__progress').style.display = 'none';
+                    }
+                }
+                document.querySelector(".pagination_load_btn").style.display = 'none';
+                if (element.getAttribute("initial-load")) {
+                    element.removeAttribute("initial-load")
+                    window.addEventListener("scroll", handleLoadMoreItems)
+                }
+                element.removeAttribute("is-loading")
+            }, element.getAttribute("initial-load") ? 0 : 1500)
         }
-    })
-    function updateRemaingingCount(viewed){
-        var percentprogress = (viewed / ingredient_block.length * 100);
-        document.querySelector('.load_more_button_update').innerHTML = `You've viewed ${viewed} of  ${ingredient_block.length} results`;
-        document.querySelector('.load-button-pagination__progress').style.setProperty('--gsc-pagination-progress', percentprogress + '%');
-    }
+    };
+
+    addEventListener("DOMContentLoaded", handleLoadMoreItems);
+
 </script>
+<style>
+    .pagination_load_btn {
+        color: var(--gsc-button-background-color-100);
+        justify-content: center;
+        margin: 0;
+        border: 0;
+        box-shadow:  unset !important;
+        width: 100%;
+    }
+
+    .pagination_load_btn svg > circle{
+        stroke: var(--gsc-button-background-color-100);
+    }
+</style>
 {% schema %}
 {
     "name": "Image content Rounded",
