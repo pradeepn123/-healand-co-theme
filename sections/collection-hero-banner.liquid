@@ -105,7 +105,7 @@
           data-srcset='{%- render 'srcset-for-image', image: collection_image -%}'
         >
           
-        {%- else -%}
+        {% comment %} {%- else -%}
           <carousel-component
             class='carousel collection-hero__carousel'
             data-animation='fade'
@@ -133,7 +133,7 @@
                 {%- endfor -%}
               </div>
             </div>
-          </carousel-component>
+          </carousel-component> {% endcomment %}
         {%- endif -%}
       {%- endif -%}
       <div class='collection-hero__content-wrap'>

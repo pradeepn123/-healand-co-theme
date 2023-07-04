@@ -42,7 +42,7 @@
               assign mobile_space_between_cards = options.mobile_space_between_cards | divided_by: 10.0
               assign overlay_opacity = options.overlay_opacity | times: 0.01
               assign mobile_img_ratio = options.mobile_img_ratio | times: 100
-              assign desktop_img_ratio = options.desktop_img_ratio | times: 100
+              assign desktop_img_ratio = options.desktop_img_ratio 
               assign desktop_space_between_cards = options.desktop_space_between_cards | divided_by: 10.0
               assign content_position = options.content_position
               assign body_position = options.body_position
@@ -57,7 +57,7 @@
           @media {% render 'media-queries', screen: 'md' %} {
               .mega-menu-{{block.id}}{
                   --gsc-columns: {{options.columns}};
-                  --gsc-img-ratio: {{ desktop_img_ratio }}%;
+                  --gsc-img-ratio: {{ desktop_img_ratio }}px;
                   --gsc-space-between-cards: {{ desktop_space_between_cards }}rem;
               }
           }
@@ -1007,11 +1007,11 @@
         {
           "type": "range",
           "id": "desktop_img_ratio",
-          "min": 0.1,
-          "max": 3,
-          "step": 0.1,
-          "default": 0.5,
-          "unit": "t:sections.header.images_block_desktop_img_ratio_unit",
+          "min": 50,
+          "max": 400,
+          "step": 10,
+          "default": 100,
+          "unit": "px",
           "label": "t:sections.header.images_block_desktop_img_ratio_label"
         },
         {
