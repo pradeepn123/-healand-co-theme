@@ -68,7 +68,7 @@
         "desktop_space_between_cards": 15,
         "mobile_columns": "2",
         "mobile_space_between_cards": 12,
-        "pagination_type": "load-button-pagination"
+        "pagination_type": "infinite-scroll"
       }
     },
     "615331d9-9848-4b08-8f5f-95c5e674808c": {
