@@ -72,6 +72,7 @@
 @media(min-width:1200px){
     .side-imagespart .image-subtext-wrap .image-wrapper__info img{
         width: 140px;
+        height: 140px;
     }
     .text-with-image__content h5{
         margin-bottom: 24px;
@@ -92,6 +93,7 @@
     }
     .image-subtext-wrap img{
         width: 100px;
+        height: 100px;
     }
 }
 
