@@ -1,0 +1,33 @@
+<div class="custom_app_tolstoy">
+    <div class='custom-block' id="wrapper-tolstoy">
+        <div class="app-heading">{{section.settings.section_heading}} </div>
+      {%- render block -%}
+    </div>
+</div>
+
+
+<style>
+    #AppInfoWrapper{
+        background: {{section.settings.section_bg_color}};
+        margin-bottom:44px;
+        padding-bottom:10px;
+    }
+    .app-heading{
+        color: #FFF;
+        text-align: center;
+        font-size: 40px;
+        font-family: BrownStd;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 52px;
+        padding-top: 36px;
+    }
+    .qMWqRG_dot {
+        background: #FFF;
+    }
+    @media(max-width:520px){
+        .app-heading{
+            font-size:24px
+        }
+    }
+</style>
