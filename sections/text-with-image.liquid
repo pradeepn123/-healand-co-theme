@@ -146,7 +146,7 @@
               {% if forloop.index == 2 %} data-aos-delay="400" {% endif %}
               {% if forloop.index == 3 %} data-aos-delay="600" {% endif %}>
                 <div class="image-wrapper__info">
-                  <img src="{{ block.settings.image_small | img_url:'master' }}">
+                  <img src="{{ block.settings.image_small | img_url:'master' }}" alt="flag-image"/>
                 </div>
                 <div class="text-wrapper__info">
                   <p class="heading-for-image" style="color:{{block.settings.image_heading-color}};font-size:{{block.settings.image_heading_font}}px;">
