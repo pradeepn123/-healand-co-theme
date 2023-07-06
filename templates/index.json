@@ -376,6 +376,25 @@
         "enable_carousel_on_mobile": false
       }
     },
+    "f5533591-0b28-41cc-91e3-9e843615e37b": {
+      "type": "tolstoy",
+      "blocks": {
+        "0cfe1d8f-7060-4322-8f4a-7c8d6fbcd7f3": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "twlm7c9nmp92h"
+          }
+        }
+      },
+      "block_order": [
+        "0cfe1d8f-7060-4322-8f4a-7c8d6fbcd7f3"
+      ],
+      "settings": {
+        "container_size": "large",
+        "section_bg_color": "#e6af32",
+        "section_heading": "Follow us @ healcohealth"
+      }
+    },
     "6bd854d6-6a11-48bc-a56c-aeff798f8299": {
       "type": "newsletter",
       "blocks": {
@@ -507,6 +526,7 @@
     "16f05ee5-8dda-4165-b9a7-b4489c25c3d9",
     "3a8446b4-f3d0-4013-84a1-245927640c4e",
     "8365b2f6-b7d7-4ae2-9d42-07d515c51aa1",
+    "f5533591-0b28-41cc-91e3-9e843615e37b",
     "6bd854d6-6a11-48bc-a56c-aeff798f8299",
     "e67794d1-b35b-4d67-bc2c-48ee9d1bba11",
     "a439ae74-a95a-4922-bad6-34914c4586e7",

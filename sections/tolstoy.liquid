@@ -1,0 +1,33 @@
+{%- liquid
+    render 'tolstoy-app' , section: section,  product: product, sectionId: sectionId
+-%}
+
+{% schema %}
+{
+  "name": "app tolstoy",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "color",
+        "id": "section_bg_color",
+        "label": "Background color"
+    },
+    {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+    }
+   
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "app tolstoy"
+    }
+  ]
+}
+{% endschema %}

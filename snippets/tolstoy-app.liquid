@@ -1,0 +1,12 @@
+<div class='tolstoy-wrapper aos-animate'data-aos="fade-up" id='AppInfoWrapper'>
+    <div class='tolstoy__info'>
+      {%- liquid
+        for block in section.blocks
+          case block.type
+            when '@app'
+              render 'tolstoy-app-block', product: product, section: section, block: block, sectionId: sectionId            
+          endcase
+        endfor
+      -%}
+    </div>
+  </div>
