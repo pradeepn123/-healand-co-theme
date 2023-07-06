@@ -98,24 +98,18 @@
     padding-top: 13%;
 }
 .product-card__title{
-    font-size: 14px; 
+    font-size: 18px; 
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
     line-height: 1.2;
 }
-@media (max-width: 768px){
-    .product-card__title{
-        font-size: 14px;
-    }
-}
 @media (min-width: 768px) and (max-width: 1023px){
     .product-card__title{
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.2;
     }
     .product_benefits{
-       font-size: 12px !important;
        line-height: 1.2; 
     }
     .collection_title{
@@ -137,6 +131,7 @@
 }
 .product-card__price-item {
     color: #000;
+    font-size: 16px
 }
 @media (max-width: 767px){
     .product-card__price-item {
