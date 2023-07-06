@@ -6514,11 +6514,10 @@
             }, {
                 key: "_updateFromHTML",
                 value: function(e) {
-                    var t = e.querySelector("pagination-infinite-scroll");
-                    if (t) {
-                        var n = t.dataset.url;
-                        n ? this._setPaginationUrl(n) : this._intersectionObserver.unobserve(this)
-                    }
+                    var t = e.querySelector("pagination-infinite-scroll")
+                      , n = null == t ? void 0 : t.dataset.url;
+                    t && n ? (this._setPaginationUrl(n),
+                    this._intersectionObserver.observe(this)) : this.removeAttribute("data-url")
                 }
             }, {
                 key: "_setPaginationUrl",
