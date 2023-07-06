@@ -61,7 +61,7 @@
         "show_color_swatches": true,
         "show_divider": true,
         "enable_uppercase_title": false,
-        "img_ratio": "square",
+        "img_ratio": "landscape",
         "product_card_align": "left",
         "product_per_page": 12,
         "desktop_columns": "3",

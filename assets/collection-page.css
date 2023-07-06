@@ -163,6 +163,11 @@
 
 .product-card-hover-wrapper p {
     font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .product-card-hover-wrapper .card-icon-wrapper {
@@ -170,8 +175,8 @@
     bottom: -2em;
     right: -2em;
     background: rgb(255, 255, 255, 50%);
-    width: 200px;
-    height: 200px;
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
@@ -179,12 +184,62 @@
 }
 
 .product-card-hover-wrapper .card-icon-wrapper img {
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
     object-fit: contain;
     position: absolute;
-    bottom: 3.8em;
+    bottom: 3.5em;
     z-index: 999;
-    right: 3.8em;
+    right: 3.5em;
 }
 
+@media screen and (max-width: 1023px){
+    .product-card__carousel {
+        opacity: 1;
+    }
+    .product-card--show-secondary-media:hover .product-card__img[data-secondary-media] {
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 1095px){
+    .product-card-hover-wrapper h6 {
+        font-size: 15px       
+    }
+}
+
+@media screen and (max-width: 1439px){
+    .product-card-hover-wrapper {
+        padding: 1rem 1rem;
+    }
+
+    .product-card-hover-wrapper h6 {
+        margin-bottom: 5px;
+    }
+    .product-card-hover-wrapper .card-icon-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .product-card-hover-wrapper .card-icon-wrapper img {
+        height: 40px;
+        width: 40px;
+        bottom: 3.5rem;
+        right: 3.5rem;
+    }
+}
+
+@media screen and (min-width: 1439px) and (max-width: 1650px){
+    .product-card-hover-wrapper .card-icon-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .product-card-hover-wrapper .card-icon-wrapper img {
+        height: 60px;
+        width: 60px;
+        bottom: 2.5em;
+        right: 2.5em;
+    }
+}
