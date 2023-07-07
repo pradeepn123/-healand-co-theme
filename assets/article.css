@@ -291,4 +291,18 @@ h2.article__title {
     .article-meta, .share__btn {
         font-size: 14px;
     }
+    .article-footer-posts__post-title{
+        display: none;
+    }
+    .article-footer-posts__post-link span.link__text {
+        line-height: 17px;
+        border-bottom: 1px solid black;
+    }
+    .article-footer-posts{
+        padding: 0 1.2rem;
+    }
+    .article-footer-posts_post .article-footer-posts_post--next, .article-footer-posts_post--next {
+        margin: 0;
+    
+    }
 }

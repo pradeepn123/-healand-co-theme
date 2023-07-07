@@ -1,6 +1,6 @@
-<div class='tolstoy-wrapper aos-animate'data-aos="fade-up" id='AppInfoWrapper'>
+<div class='tolstoy-wrapper aos-animate {% if request.page_type == 'product' %} product-page-color {% else %} other-page-background {% endif %}'data-aos="fade-up" id='AppInfoWrapper'>
     <div class='tolstoy__info'>
-      {%- liquid
+      {%- liquid 
         for block in section.blocks
           case block.type
             when '@app'

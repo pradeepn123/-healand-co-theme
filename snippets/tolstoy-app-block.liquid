@@ -1,3 +1,7 @@
+
+{%- liquid
+    assign colorsMetafield = product.metafields.custom.color_schema.value 
+-%}
 <div class="custom_app_tolstoy">
     <div class='custom-block' id="wrapper-tolstoy">
         <div class="app-heading">{{section.settings.section_heading}} </div>
@@ -7,11 +11,19 @@
 
 
 <style>
+    {% if colorsMetafield %}
+        .product-page-color{
+            background: var(--meta-background-color);
+        }
+    {% endif %}
     #AppInfoWrapper{
-        background: {{section.settings.section_bg_color}};
         margin-bottom:44px;
         padding-bottom:10px;
     }
+    .other-page-background{
+        background: {{section.settings.section_bg_color}};
+    }
+    
     .app-heading{
         color: #FFF;
         text-align: center;
