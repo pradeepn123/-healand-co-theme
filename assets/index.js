@@ -1297,9 +1297,10 @@
                 key: "hideCurrentTab",
                 value: function(e) {
                     var t = this;
-                    e.hide().then((function() {
-                        t._unmountTab(e)
-                    }))
+                    t._unmountTab(e)
+//                    e.hide().then((function() {
+//                        t._unmountTab(e)
+//                    }))
                 }
             }]), n
         }(ee),
