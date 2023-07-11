@@ -621,6 +621,10 @@ body::-webkit-scrollbar-thumb{
     background-color: grey;
 }
 
+ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
+    overflow: hidden;
+ }
+
 @media screen and (min-width: 768px){
     .scroll-styling::-webkit-scrollbar-track{
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

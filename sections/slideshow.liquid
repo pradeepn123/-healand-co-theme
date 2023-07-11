@@ -19,7 +19,7 @@
   assign enable_circle_navigation = options.enable_circle_navigation
   assign enable_arrows_navigation = options.enable_arrows_navigation
   assign show_arrows_on_hover = options.show_arrows_on_hover
-
+ 
 -%}
 
 {% capture css %}
@@ -99,12 +99,23 @@
             .image-banner__content .image-banner__caption{
               color: {{blocks.text_color}};
             }
+            .image-banner__content .image-banner__caption,
+            .image-banner__content .h2,
+            .image-banner__content .image-banner__text p{
+              color: {{ block.settings.texts_colors }} !important;
+            }
           }
           @media(max-width:767px){
             .image-banner .image-banner__content-wrap{
               background-color: {{options.background_color}};
             }
+            .image-banner__content .image-banner__caption,
+            .image-banner__content .h2,
+            .image-banner__content .image-banner__text p{
+              color: {{ block.settings.text_colors }} !important;
+            }
           }
+         
           .image-banner__content .image-banner__btns .btn{
             background-color: {{options.button_bg_color}};
             color: {{ options.button_text_color }};
@@ -504,47 +515,7 @@
       "type": "image-banner",
       "name": "t:sections.slideshow.name_for_image_slide_block",
       "settings": [
-        {
-          "type": "select",
-          "id": "color_scheme",
-          "options": [
-            {
-              "value": "default",
-              "label": "t:sections.general_section_settings.color_scheme_option_default_label"
-            },
-            {
-              "value": "primary",
-              "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
-            },
-            {
-              "value": "custom-1",
-              "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
-            },
-            {
-              "value": "custom-2",
-              "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
-            },
-            {
-              "value": "custom-3",
-              "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
-            },
-            {
-              "value": "white",
-              "label": "t:sections.general_section_settings.color_scheme_option_white_text_label"
-            },
-            {
-              "value": "black",
-              "label": "t:sections.general_section_settings.color_scheme_option_black_text_label"
-            }
-          ],
-          "default": "white",
-          "label": "t:sections.general_section_settings.color_scheme_label",
-          "info": "t:sections.general_section_settings.color_scheme_tip"
-        },
+        
         {
           "type": "header",
           "content": "t:sections.image_banner.image_settings_header"
@@ -591,8 +562,13 @@
         },
         {
           "type": "color",
-          "id": "text_color",
-          "label": "Text color"
+          "id": "text_colors",
+          "label": "Mobile Text color"
+        },
+        {
+          "type": "color",
+          "id": "texts_colors",
+          "label": "Desktop Text color"
         },
         {
           "type": "color",
