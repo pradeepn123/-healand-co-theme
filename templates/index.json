@@ -164,7 +164,7 @@
         "enable_carousel_on_mobile": false,
         "enable_autoplay": false,
         "autoplay_interval": 3,
-        "show_navigation_on_hover": false
+        "show_navigation_on_hover": true
       }
     },
     "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
