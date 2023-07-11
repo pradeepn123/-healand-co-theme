@@ -154,6 +154,7 @@
     align-items: center;
     column-gap: 5px;
     text-transform: uppercase;
+    flex-wrap: wrap;
 }
 
 .product-card-hover-wrapper p {
@@ -197,12 +198,6 @@
     }
 }
 
-
-@media screen and (max-width: 1095px){
-    .product-card-hover-wrapper h6 {
-        font-size: 15px       
-    }
-}
 
 @media screen and (max-width: 1439px){
     .product-card-hover-wrapper {
