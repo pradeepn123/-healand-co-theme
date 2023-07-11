@@ -621,9 +621,13 @@ body::-webkit-scrollbar-thumb{
     background-color: grey;
 }
 
- body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
+body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
     overflow: hidden;
- }
+}
+
+.collection-hero{
+    background-color: rgba(238, 92, 76, 1) ;
+}
 
 @media screen and (min-width: 768px){
     .scroll-styling::-webkit-scrollbar-track{
