@@ -138,6 +138,11 @@
         font-size: 16px;
     }
 }
+@media (max-width: 425px){
+    .product-card__price-item {
+        font-size: 12px;
+    }
+}
 .product-card-hover-wrapper {
     padding: 3.5rem 2.5rem;
     position: relative;
