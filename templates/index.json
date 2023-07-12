@@ -6,13 +6,13 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
           "settings": {
-            "color_scheme": "white",
             "desktop_img": "shopify:\/\/shop_images\/Sproos_Oct_22-206-Edit_994785ff-bb98-40a8-8fef-5104879caf41.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Sproos_Oct_22-206-Edit_994785ff-bb98-40a8-8fef-5104879caf41.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
-            "text_color": "#ffffff",
+            "text_colors": "",
+            "texts_colors": "#ffffff",
             "button_bg_color": "#ee5c4c",
             "button_text_color": "#ffffff",
             "caption": "Unlock the",
@@ -40,13 +40,13 @@
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26": {
           "type": "image-banner",
           "settings": {
-            "color_scheme": "primary",
             "desktop_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
-            "text_color": "#000000",
+            "text_colors": "",
+            "texts_colors": "",
             "button_bg_color": "#ee5c4c",
             "button_text_color": "#ffffff",
             "caption": "Elevate Your",
@@ -164,7 +164,7 @@
         "enable_carousel_on_mobile": false,
         "enable_autoplay": false,
         "autoplay_interval": 3,
-        "show_navigation_on_hover": false
+        "show_navigation_on_hover": true
       }
     },
     "3f1076ce-3ef8-4121-b953-17e5b6975dad": {

@@ -106,7 +106,7 @@
 }
 @media (min-width: 768px) and (max-width: 1023px){
     .product-card__title{
-        font-size: 18px;
+        font-size: 15px;
         line-height: 1.2;
     }
     .product_benefits{
@@ -136,6 +136,11 @@
 @media (max-width: 767px){
     .product-card__price-item {
         font-size: 16px;
+    }
+}
+@media (max-width: 425px){
+    .product-card__price-item {
+        font-size: 12px;
     }
 }
 .product-card-hover-wrapper {

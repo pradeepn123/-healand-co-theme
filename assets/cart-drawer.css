@@ -66,6 +66,7 @@
     width: 10.8rem;
     flex-shrink: 0;
 }
+
 .upsell_product_footer .cart-product__card .product-card__details{
     flex: 1;
     width: 50%;
@@ -207,7 +208,7 @@
     .subtotal .subtotal__content {
         flex-flow: row;
         align-items: center;
-        padding: 2.4rem 2.4rem 1.2rem;
+        padding: 1.4rem 2.4rem 1.2rem;
     }
     .subtotal__content div:first-child{
         width: 40%
@@ -233,6 +234,28 @@
         margin-bottom: 0.4rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid #D9D9D9;
+    }
+    .upsell_product_footer .cart-product__card{
+        align-self: normal;
+    }
+    .upsell_product_footer .cart-product__card .product-card__inner{
+        height: 7rem;
+        width: 7.8rem;
+    }
+    .product-card__rating , .product_benefits{
+        display: none;
+    }
+    .upsell_product_footer_main_info h4{
+        padding: 12px 0;
+    }
+    .upsell_product_footer{
+        padding: 0rem 0rem 1.5rem;
+    }
+    .subtotal__label{
+        font-size: 14px;
+    }
+    .sidebar-cart__content-results{
+        padding: 0.82rem 2rem 2rem;
     }
 }
 

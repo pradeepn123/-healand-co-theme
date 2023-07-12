@@ -501,7 +501,7 @@
           {% assign product_titles = product.title | split: ' | ' %}
           <p class="product_featured_tag">{{ product.metafields.custom.featured_tag }}</p>
           <a
-            class='product-card__title unstyled-link  {% if product.metafields.custom.featured_tag == blank%}pro-heading-padding{%endif%}'
+            class='product-card__title unstyled-link {% if product.metafields.custom.featured_tag == blank %} pro-heading-padding {% endif %}'
             href='{{ product.url }}'
             aria-label='{{ product.title }}'
           >
