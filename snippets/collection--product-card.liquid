@@ -64,6 +64,17 @@
   .product-card-hover-wrapper .card-icon-wrapper {
     display: none;
   }
+  .product-card-hover-wrapper h6 {
+    font-size: 14px;
+  } 
+  @media screen and (max-width: 1399px){
+    .product-card__carousel {
+        opacity: 1;
+    }
+    .product-card--show-secondary-media:hover .product-card__img[data-secondary-media] {
+        opacity: 0;
+    }
+}
 {% endif %}
 
 {% endstyle %}
