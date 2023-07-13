@@ -11,7 +11,7 @@
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
-            "text_colors": "#6c745d",
+            "text_colors": "#000000",
             "texts_colors": "",
             "button_bg_color": "#ee5c4c",
             "button_text_color": "#ffffff",
