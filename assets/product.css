@@ -357,6 +357,9 @@
     .product--with-desktop-media-carousel .product__info{
         margin: unset;
     }
+    .product-card__btns--overflowed .product-card__btn-label-text {
+        visibility: unset;
+    }
 }
 
 @media screen and (max-width: 767px) {
