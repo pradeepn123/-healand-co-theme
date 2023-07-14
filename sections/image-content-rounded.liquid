@@ -62,8 +62,8 @@ assign section_spacing_bottom = options.section_spacing_bottom
 
         const element = document.querySelector(".ingredients-database")
         const rect = element.getBoundingClientRect();
-
-        if(rect.bottom <= window.innerHeight && !element.getAttribute("is-loading")){
+        if((rect.bottom <= window.innerHeight || element.getAttribute("initial-load")) && !element.getAttribute("is-loading")){
+//        if(rect.bottom <= window.innerHeight && !element.getAttribute("is-loading")){
             var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
 
             if (!ingredient_block_hidden.length) {
