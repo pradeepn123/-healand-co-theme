@@ -578,7 +578,7 @@
                           data-product-card-button
                           aria-label='{{- 'cards.product_card.add_to_cart_button_label' | t -}}' >
                           <span style='display: flex; align-items: center; justify-content: center;'>
-                            {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
+                            {% comment %} {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%} {% endcomment %}
                             <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
                               {{- 'cards.product_card.add_to_cart_button_label' | t -}}
                             </span>

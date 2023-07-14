@@ -211,7 +211,7 @@
         </div>
       {%- endif -%}
       <div class='embla card-carousel__viewport' data-carousel-viewport>
-        <div class='card-carousel__container' data-carousel-container>
+        <div class='card-carousel__container' id="mobile-bundle" data-carousel-container>
           {%- for product in products limit: product_limit -%}
             <div class='card-carousel__slide'>
               {% render 'product-card',
@@ -226,6 +226,17 @@
           {%- endfor -%}
         </div>
       </div>
+      
+      {%- if products.size == 1 -%}
+        {% style %}
+          @media(max-width:520px){
+            #mobile-bundle{
+            justify-content:center;
+          }
+        }
+        {% endstyle %}
+      {% endif %}
+     
       {%- if products.size > 1 -%}
         <div class='card-carousel__position-btn-wrap card-carousel__position-btn-wrap--next'>
           <div class='shape shape--{{ img_ratio }}'>

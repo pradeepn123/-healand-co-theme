@@ -316,7 +316,9 @@
                                                                       <img src="{{ blockX.images | img_url: 'master'}}" alt="">
                                                                     {% endif %}
                                                                       <h6>{{ blockX.heading }}</h6>
+                                                                    {% if blockX.description != blank %}
                                                                       {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+                                                                    {% endif %}
                                                                   </accordeon-btn>
                                                                   <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
                                                                       <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
