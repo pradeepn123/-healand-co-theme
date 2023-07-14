@@ -12,7 +12,7 @@
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
             "text_colors": "#000000",
-            "texts_colors": "",
+            "texts_colors": "#ffffff",
             "button_bg_color": "#ee5c4c",
             "button_text_color": "#ffffff",
             "caption": "Unlock the",
