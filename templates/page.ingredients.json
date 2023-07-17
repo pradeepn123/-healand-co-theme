@@ -99,6 +99,7 @@
     },
     "652db47c-20aa-460d-89ea-50fb5e602c22": {
       "type": "ingredients-article",
+      "disabled": true,
       "settings": {
         "container_size": "small",
         "section_title": "THE SCIENCE BEHIND THE BENEFITS",
