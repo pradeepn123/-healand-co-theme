@@ -47,7 +47,7 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='articles section articles--page section-{{ section.id }} color-{{ color_scheme }}'>
+<div class='articles section articles--page section-{{ section.id }} color-{{ color_scheme }}' id="tag-section">
   <div class='articles__container container container--{{ container_size }} section-spacing'>
     {%- if show_title or show_tag_navigation -%}
       <div class='articles__header'>
@@ -136,6 +136,11 @@
     if (platform.indexOf('mac') !== -1) {
       element.classList.remove('scroll-styling');
     }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      var targetSection = document.getElementById('tag-section');
+      window.scrollTo(0, targetSection.offsetTop - 80);
+    });
 </script>
 
 {% schema %}
