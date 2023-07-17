@@ -114,6 +114,7 @@
         },
         "2a7b2c95-7b55-4355-a15a-670ea07a0a8a": {
           "type": "select",
+          "disabled": true,
           "settings": {
             "points_title": "Write a review",
             "points_title_color": "#ffffff",
@@ -144,7 +145,7 @@
             "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
-            "points_text": "100 Points",
+            "points_text": "50 Points",
             "points_text_color": "#ffffff"
           }
         },
