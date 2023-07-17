@@ -19,6 +19,26 @@
   endif
 -%}
 
+{% style %}
+  @media(min-width:768px){
+    .block-{{ block.id }} .image-banner__content.image-banner__content--desktop .image-banner__caption,
+    .block-{{ block.id }} .image-banner__content .h2,
+    .block-{{ block.id }} .image-banner__content .image-banner__text p{
+      color: {{desktop_text_color}};
+    }
+  }
+  @media(max-width:767px){
+    .block-{{ block.id }} .image-banner__content .image-banner__caption,
+    .block-{{ block.id }} .image-banner__content .h2,
+    .block-{{ block.id }} .image-banner__content .image-banner__text p{
+      color: {{ mobile_text_color }} !important;
+    }
+    .slideshow__dots-carousel{
+      bottom: 0;
+    }
+  }
+{% endstyle %}
+
 {%- if caption != blank or title != blank or text != blank or btn_text != blank or extra_btn_text != blank -%}
   <div class='image-banner__content-wrap'>
     <div class='image-banner__content image-banner__content--desktop {% if desktop_content_background != 'none' %} image-banner__content--with-{{ desktop_content_background }}-background{% endif %}'>

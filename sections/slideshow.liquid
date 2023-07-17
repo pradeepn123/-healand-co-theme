@@ -92,44 +92,27 @@
           .block-{{ block.id }} .image-banner__content-wrap {
             {{ options.mobile_content_position }}
           }
-          
-          @media(min-width:768px){
-            .image-banner__content span.h1, .image-banner__content span.h2, .image-banner__content span.h3, .image-banner__content span.h4, .image-banner__content span.h5,
-            .image-banner__content .image-banner__text p, .image-banner__content .image-banner__text, 
-            .image-banner__content .image-banner__caption{
-              color: {{blocks.text_color}};
-            }
-            .image-banner__content .image-banner__caption,
-            .image-banner__content .h2,
-            .image-banner__content .image-banner__text p{
-              color: {{ block.settings.texts_colors }} !important;
-            }
-          }
+                 
           @media(max-width:767px){
             .image-banner .image-banner__content-wrap{
               background-color: {{options.background_color}};
-            }
-            .image-banner__content .image-banner__caption,
-            .image-banner__content .h2,
-            .image-banner__content .image-banner__text p{
-              color: {{ block.settings.text_colors }} !important;
-            }
+            }            
           }
          
-          .image-banner__content .image-banner__btns .btn{
+          .block-{{ block.id }} .image-banner__content .image-banner__btns .btn{
             background-color: {{options.button_bg_color}};
             color: {{ options.button_text_color }};
           }
 
           @media {% render 'media-queries', screen: 'md' %} {
-              .block-{{ block.id }}{
-                  --gsc-overlay-opacity: {{ options.desktop_overlay_opacity | times: 0.01 }};
-                  --gsc-content-align: {{ options.desktop_content_align }};
-              }
+            .block-{{ block.id }}{
+                --gsc-overlay-opacity: {{ options.desktop_overlay_opacity | times: 0.01 }};
+                --gsc-content-align: {{ options.desktop_content_align }};
+            }
 
-              .block-{{ block.id }} .image-banner__content-wrap {
-                {{ options.desktop_content_position }}
-              }
+            .block-{{ block.id }} .image-banner__content-wrap {
+              {{ options.desktop_content_position }}
+            }
           }
         {% endif %}
     {% endfor %}
@@ -216,6 +199,9 @@
                           title: block.settings.title,
                           caption: block.settings.caption,
                           text: block.settings.text,
+                          block: block,
+                          desktop_text_color: block.settings.desktop_text_color,
+                          mobile_text_color: block.settings.text_colors,
                           btn_text: block.settings.btn_text,
                           btn_url: block.settings.btn_url,
                           extra_btn_text: block.settings.extra_btn_text,
@@ -567,7 +553,7 @@
         },
         {
           "type": "color",
-          "id": "texts_colors",
+          "id": "desktop_text_color",
           "label": "Desktop Text color"
         },
         {
