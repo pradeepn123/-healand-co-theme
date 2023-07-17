@@ -152,12 +152,12 @@
         "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc": {
           "type": "select",
           "settings": {
-            "points_title": "Attach a picture to your review",
+            "points_title": "Place an Order",
             "points_title_color": "#ffffff",
             "points_icon": "shopify:\/\/shop_images\/media_icon_ee6916b7-7c8f-47cc-9591-e2833ed0302a.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
-            "points_text": "100 Points",
+            "points_text": "2 points for every $1 spent",
             "points_text_color": "#ffffff"
           }
         },
