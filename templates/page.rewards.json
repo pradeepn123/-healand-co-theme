@@ -112,6 +112,42 @@
             "points_text_color": "#ffffff"
           }
         },
+        "de505b0e-ef05-4555-9463-dc34a6192f76": {
+          "type": "select",
+          "settings": {
+            "points_title": "Celebrate a Birthday",
+            "points_title_color": "#ffffff",
+            "points_icon": "shopify:\/\/shop_images\/birthday_icon_19b9f0ad-c86b-4e88-8ad2-7e306a1db7dc.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
+            "points_text": "100 Points",
+            "points_text_color": "#ffffff"
+          }
+        },
+        "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc": {
+          "type": "select",
+          "settings": {
+            "points_title": "Place an Order",
+            "points_title_color": "#ffffff",
+            "points_icon": "shopify:\/\/shop_images\/media_icon_ee6916b7-7c8f-47cc-9591-e2833ed0302a.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
+            "points_text": "2 points for every $1 spent",
+            "points_text_color": "#ffffff"
+          }
+        },
+        "f29f0d21-8f40-4911-827a-68f113687f4a": {
+          "type": "select",
+          "settings": {
+            "points_title": "Like Us on Instagram",
+            "points_title_color": "#ffffff",
+            "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
+            "points_svg_icon": "",
+            "points_svg_icon_color": "",
+            "points_text": "50 Points",
+            "points_text_color": "#ffffff"
+          }
+        },
         "2a7b2c95-7b55-4355-a15a-670ea07a0a8a": {
           "type": "select",
           "disabled": true,
@@ -136,51 +172,15 @@
             "points_text": "50 Points",
             "points_text_color": "#ffffff"
           }
-        },
-        "f29f0d21-8f40-4911-827a-68f113687f4a": {
-          "type": "select",
-          "settings": {
-            "points_title": "Follow on Instagram",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
-            "points_svg_icon": "",
-            "points_svg_icon_color": "",
-            "points_text": "50 Points",
-            "points_text_color": "#ffffff"
-          }
-        },
-        "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc": {
-          "type": "select",
-          "settings": {
-            "points_title": "Place an Order",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/media_icon_ee6916b7-7c8f-47cc-9591-e2833ed0302a.svg",
-            "points_svg_icon": "",
-            "points_svg_icon_color": "",
-            "points_text": "2 points for every $1 spent",
-            "points_text_color": "#ffffff"
-          }
-        },
-        "de505b0e-ef05-4555-9463-dc34a6192f76": {
-          "type": "select",
-          "settings": {
-            "points_title": "Celebrate a Birthday",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/birthday_icon_19b9f0ad-c86b-4e88-8ad2-7e306a1db7dc.svg",
-            "points_svg_icon": "",
-            "points_svg_icon_color": "",
-            "points_text": "100 Points",
-            "points_text_color": "#ffffff"
-          }
         }
       },
       "block_order": [
         "bd4d52aa-6eb8-43d5-9be3-9ba573d37fd4",
-        "2a7b2c95-7b55-4355-a15a-670ea07a0a8a",
-        "f05987cc-a940-4b2c-acad-41127fa6f900",
-        "f29f0d21-8f40-4911-827a-68f113687f4a",
+        "de505b0e-ef05-4555-9463-dc34a6192f76",
         "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc",
-        "de505b0e-ef05-4555-9463-dc34a6192f76"
+        "f29f0d21-8f40-4911-827a-68f113687f4a",
+        "2a7b2c95-7b55-4355-a15a-670ea07a0a8a",
+        "f05987cc-a940-4b2c-acad-41127fa6f900"
       ],
       "settings": {
         "points_section_bg": "#ea6852",
