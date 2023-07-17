@@ -211,6 +211,7 @@
         },
         "bc0e45c0-348c-4b30-92f9-45a6c20eff57": {
           "type": "select",
+          "disabled": true,
           "settings": {
             "card_bg": "#756cae",
             "card_title": "$15 off coupon",
@@ -224,6 +225,7 @@
         },
         "2553782a-d2a3-42f6-8ab3-14fdd06e14c2": {
           "type": "select",
+          "disabled": true,
           "settings": {
             "card_bg": "#756cae",
             "card_title": "$25 off coupon",
