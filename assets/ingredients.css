@@ -140,7 +140,7 @@
     }
     .ingredient_benefits_wrapper #benefitsSectionImage{
         min-height: 362px;
-        width: 453px;
+        width: 47%;
     }
 }
 .ingredient_benefits_wrapper{
