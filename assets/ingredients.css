@@ -146,6 +146,9 @@
 .ingredient_benefits_container{
     display: flex;
 }
+.ingredient_benefits_wrapper .ingredient_benefits_container img{
+    object-fit: cover;
+}
 @media (max-width: 768px){
     .ingredients_benefits_section{
         border: 0;
@@ -160,7 +163,7 @@
 .ingredient_benefits_container .benefits_list{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 25px;
 }
 @media (max-width: 768px){
