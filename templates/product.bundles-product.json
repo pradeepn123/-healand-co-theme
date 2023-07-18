@@ -442,7 +442,7 @@
     "edd01020-fd3e-4a56-bdef-3698127f931d": {
       "type": "product_feature",
       "settings": {
-        "pad_top": 1,
+        "pad_top": 0,
         "pad_btm": 20,
         "section_bg": "#faf5ef",
         "title_font_size": 40,
