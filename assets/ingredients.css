@@ -138,15 +138,19 @@
     .ingredients_benefits_section{
         padding-right: 0;
     }
+    .ingredient_benefits_wrapper #benefitsSectionImage{
+        min-height: 362px;
+        width: 47%;
+    }
 }
 .ingredient_benefits_wrapper{
     margin: auto;
     padding: 40px 0;
 }
-.ingredient_benefits_container{
+.ingredient_benefits_container , .ingredient_benefits_wrapper{
     display: flex;
 }
-.ingredient_benefits_wrapper .ingredient_benefits_container img{
+.ingredient_benefits_wrapper img{
     object-fit: cover;
 }
 @media (max-width: 768px){
@@ -156,7 +160,7 @@
     .ingredient_benefits_wrapper{
         border-bottom: 1px solid #E2E2E2;
     }
-    .ingredient_benefits_container{
+    .ingredient_benefits_container , .ingredient_benefits_wrapper {
         flex-direction: column;
     }
 }
