@@ -9,7 +9,9 @@
                 {% endif %}
             {% endfor %}
         {% endcapture %} {% endcomment %}
-        <img id="benefitsSectionImage" src="{{ page.metafields.custom.benefit_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
+        {% if page.metafields.custom.benefit_image != blank %}
+            <img id="benefitsSectionImage" src="{{ page.metafields.custom.benefit_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
+        {% endif %}
         <div class="ingredient_benefits_container">
             {{ benefits_section_image }}
             <div class="benefits_list">
