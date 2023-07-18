@@ -200,40 +200,38 @@
           "type": "select",
           "settings": {
             "card_bg": "#756cae",
-            "card_title": "$5 off coupon",
+            "card_title": "$5 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
             "card_svg_icon": "",
             "card_svg_icon_color": "",
-            "card_text": "500 Points",
+            "card_text": "500 points",
             "card_text_color": "#ffffff"
           }
         },
         "bc0e45c0-348c-4b30-92f9-45a6c20eff57": {
           "type": "select",
-          "disabled": true,
           "settings": {
             "card_bg": "#756cae",
-            "card_title": "$15 off coupon",
+            "card_title": "$10 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
             "card_svg_icon": "",
             "card_svg_icon_color": "",
-            "card_text": "1500 Points",
+            "card_text": "1000 points",
             "card_text_color": "#ffffff"
           }
         },
         "2553782a-d2a3-42f6-8ab3-14fdd06e14c2": {
           "type": "select",
-          "disabled": true,
           "settings": {
             "card_bg": "#756cae",
-            "card_title": "$25 off coupon",
+            "card_title": "$15 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
             "card_svg_icon": "",
             "card_svg_icon_color": "",
-            "card_text": "2500 Points",
+            "card_text": "1500 points",
             "card_text_color": "#ffffff"
           }
         }
