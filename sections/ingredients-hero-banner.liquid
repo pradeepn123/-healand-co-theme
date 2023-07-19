@@ -102,7 +102,7 @@
               <h5 class='collection-hero__title'>{{ title | upcase }}</h5>
             {%- endif -%}
             {% if section.settings.custom_page_title != blank %}
-               <span class="collection-custom__title" style="color: {{section.settings.custom_page_title_color}};">{{ section.settings.custom_page_title | upcase }}</span>
+               <span class="collection-custom__title">{{ section.settings.custom_page_title | upcase }}</span>
             {% endif %}
             {%- if show_page_description and description != blank -%}
               <div class='collection-hero__description body-font-weight-from-global-settings'>{{ description }}</div>
