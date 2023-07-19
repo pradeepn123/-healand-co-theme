@@ -396,6 +396,18 @@
             "page": "",
             "image_width": 100
           }
+        },
+        "5b501445-a2a5-4b06-90ca-b031adc585c6": {
+          "type": "question",
+          "settings": {
+            "title": "Who can I contact if I have issues with my account?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>You can send us an email at hello@healandco.co, or use our chat function on the website. We are available from Monday to Friday between 9 am and 5 pm EST.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
         }
       },
       "block_order": [
@@ -406,7 +418,8 @@
         "template--16185221906590__22194aba-6eea-4363-96cc-a0b92b6fda72-168493413083263352-4",
         "03926942-9eda-47ed-ba42-fcd9fc77c75d",
         "ae5d1867-1f72-41ab-bbd0-c5f7f08872b6",
-        "9408b8f4-7f97-4aa4-8464-0631af3cf54d"
+        "9408b8f4-7f97-4aa4-8464-0631af3cf54d",
+        "5b501445-a2a5-4b06-90ca-b031adc585c6"
       ],
       "settings": {
         "color_scheme": "default",
