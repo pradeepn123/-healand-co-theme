@@ -352,7 +352,7 @@ padding-bottom: 11px;
         padding-top: 0;
     }
     .about-subtext{
-        font-size: 96px;
+        font-size: 80px;
         line-height: 80px;
     }
 
@@ -483,6 +483,21 @@ padding-bottom: 11px;
    .values-heading-hover{
        width: 100%;
    }
+}
+
+@media(max-width:425px){
+    .about-heading {
+        font-size: 19px;
+    }
+    .about-subtext{
+        font-size: 27px;
+        line-height: normal;
+    }
+}
+@media(min-width:1200px) and (max-width:1355px){
+    .about-subtext{
+        font-size: 70px;
+    }
 }
 
 

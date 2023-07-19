@@ -82,6 +82,14 @@
     align-items: center;
 }
 
+.points_column{
+    flex-basis: 33.33%;
+}
+
+.points_column:last-child{
+    padding-left: 40px;
+}
+
 .card {
     row-gap: 32px;
     padding: 42px 36px;
@@ -208,6 +216,13 @@
     text-align: left;
     margin-bottom: 32px;
     max-width: 70%;
+}
+
+.points_section_content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 /* End: Heal+ Club, Points, Cards and Refer and Earn Sections */
 
