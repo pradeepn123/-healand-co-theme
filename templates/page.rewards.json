@@ -376,10 +376,10 @@
         "ae5d1867-1f72-41ab-bbd0-c5f7f08872b6": {
           "type": "question",
           "settings": {
-            "title": "Do my points expire?",
+            "title": "Can I use multiple discounts on my order?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
+            "text": "<p>Unfortunately only one discount can be applied at checkout. Make sure to copy and paste your discount code at checkout. The discount is not automatically applied at checkout.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
