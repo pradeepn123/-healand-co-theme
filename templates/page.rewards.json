@@ -384,6 +384,18 @@
             "page": "",
             "image_width": 100
           }
+        },
+        "9408b8f4-7f97-4aa4-8464-0631af3cf54d": {
+          "type": "question",
+          "settings": {
+            "title": "Do my points expire?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>No! Your points never expire. <\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
         }
       },
       "block_order": [
@@ -393,7 +405,8 @@
         "template--16185221906590__22194aba-6eea-4363-96cc-a0b92b6fda72-168493413083263352-3",
         "template--16185221906590__22194aba-6eea-4363-96cc-a0b92b6fda72-168493413083263352-4",
         "03926942-9eda-47ed-ba42-fcd9fc77c75d",
-        "ae5d1867-1f72-41ab-bbd0-c5f7f08872b6"
+        "ae5d1867-1f72-41ab-bbd0-c5f7f08872b6",
+        "9408b8f4-7f97-4aa4-8464-0631af3cf54d"
       ],
       "settings": {
         "color_scheme": "default",
