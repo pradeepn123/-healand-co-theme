@@ -45,7 +45,7 @@
         "7ed77368-3ad8-4196-99d6-5288319c2193": {
           "type": "cardType",
           "settings": {
-            "val-heading": "Empowering Health & Wellness",
+            "val-heading": "Efficacy",
             "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
             "user_color": "#797baa"
           }
@@ -53,7 +53,7 @@
         "1c196b6e-ed3c-4fbe-a7cc-f10ba5d627fc": {
           "type": "cardType",
           "settings": {
-            "val-heading": "Trusted & Innovative Formulations",
+            "val-heading": "Purity",
             "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
             "user_color": "#ad7983"
           }
@@ -61,7 +61,7 @@
         "ff24fc94-8352-45e5-b26e-f1ad9fa2872d": {
           "type": "cardType",
           "settings": {
-            "val-heading": "Holistic Wellness Advocates",
+            "val-heading": "Potency",
             "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
             "user_color": "#82a1c4"
           }
