@@ -35,6 +35,7 @@
         "custom_page_title_font_size": 40,
         "custom_page_title_font_size_mobile": 24,
         "show_page_description": false,
+        "image": "{{ page.metafields.custom.ingredient_detail_banner.value }}",
         "desktop_overlay_opacity": 10,
         "mobile_overlay_opacity": 20,
         "desktop_content_position": "align-items:center;justify-content:center;",
