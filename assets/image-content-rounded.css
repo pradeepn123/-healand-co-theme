@@ -94,7 +94,8 @@
 }
 .icon-text-wrapper{
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    /* align-items: center; */
     justify-content: center;
     row-gap: 20px;
     column-gap: 82px;

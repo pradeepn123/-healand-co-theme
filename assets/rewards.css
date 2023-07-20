@@ -86,10 +86,6 @@
     flex-basis: 33.33%;
 }
 
-.points_column:last-child{
-    padding-left: 40px;
-}
-
 .card {
     row-gap: 32px;
     padding: 42px 36px;
@@ -227,6 +223,11 @@
 /* End: Heal+ Club, Points, Cards and Refer and Earn Sections */
 
 /* Begin: Media Query */
+@media(min-width:820px){
+    .points_column:last-child{
+        padding-left: 40px;
+    }
+}
 
 @media screen and (max-width: 1280px) {
     .right_content_section p {

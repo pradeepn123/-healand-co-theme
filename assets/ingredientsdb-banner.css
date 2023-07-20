@@ -10,3 +10,11 @@
        font-size: 14px;
    }
 }
+
+.flex-wrap-imageicon .icon-wrap svg{
+    display: inline-block;
+}
+
+.flex-wrap-imageicon{
+    flex-basis: 20.33%;
+}
