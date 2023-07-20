@@ -46,7 +46,7 @@
           "type": "cardType",
           "settings": {
             "val-heading": "Efficacy",
-            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "val-desc": "Our dedication to efficacy means that every formulation is crafted with the highest quality ingredients, resulting in supplements that truly deliver on their claims and support your health.",
             "user_color": "#797baa"
           }
         },
@@ -54,7 +54,7 @@
           "type": "cardType",
           "settings": {
             "val-heading": "Purity",
-            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "val-desc": "All of our products are produced in a GMP-certified facility and third party tested for contaminants. All products have been approved by Health Canada for their safety and efficacy.",
             "user_color": "#ad7983"
           }
         },
@@ -62,7 +62,7 @@
           "type": "cardType",
           "settings": {
             "val-heading": "Potency",
-            "val-desc": "We inspire and educate individuals on nutrition, fitness, mindfulness, and self-care for overall well-being. With tools, resources, and guidance, we empower informed decisions and a healthier lifestyle.",
+            "val-desc": "We strive to deliver products formulated with ingredients that are as potent as possible. Each ingredient contains the highest level of bioactives possible to get the most out of each capsule.",
             "user_color": "#82a1c4"
           }
         }
