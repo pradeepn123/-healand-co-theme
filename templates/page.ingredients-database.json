@@ -72,7 +72,7 @@
           "type": "image",
           "settings": {
             "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 68C61.2843 68 68 61.2843 68 53C68 44.7157 61.2843 38 53 38C44.7157 38 38 44.7157 38 53C38 61.2843 44.7157 68 53 68Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M38 53H68\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 38C56.7519 42.1075 58.8841 47.4381 59 53C58.8841 58.5619 56.7519 63.8925 53 68C49.2481 63.8925 47.1159 58.5619 47 53C47.1159 47.4381 49.2481 42.1075 53 38Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
-            "icon_heading": "Certification",
+            "icon_heading": "GOOD <br> MANUFACTURING  <br> PRACTISES",
             "icon_heading-color": "#ffffff",
             "icon_heading_font": 14
           }
