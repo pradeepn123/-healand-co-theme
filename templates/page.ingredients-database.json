@@ -54,7 +54,7 @@
           "type": "image",
           "settings": {
             "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 68C61.2843 68 68 61.2843 68 53C68 44.7157 61.2843 38 53 38C44.7157 38 38 44.7157 38 53C38 61.2843 44.7157 68 53 68Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 62C57.9706 62 62 57.9706 62 53C62 48.0294 57.9706 44 53 44C48.0294 44 44 48.0294 44 53C44 57.9706 48.0294 62 53 62Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M53 56C54.6569 56 56 54.6569 56 53C56 51.3431 54.6569 50 53 50C51.3431 50 50 51.3431 50 53C50 54.6569 51.3431 56 53 56Z\" stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
-            "icon_heading": "Certification",
+            "icon_heading": "VEGAN",
             "icon_heading-color": "#ffffff",
             "icon_heading_font": 14
           }
@@ -63,7 +63,7 @@
           "type": "image",
           "settings": {
             "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 57.5C58.799 57.5 63.5 52.799 63.5 47C63.5 41.201 58.799 36.5 53 36.5C47.201 36.5 42.5 41.201 42.5 47C42.5 52.799 47.201 57.5 53 57.5Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M47.315 55.8351L45.5 69.5001L53 65.0001L60.5 69.5001L58.685 55.8201\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
-            "icon_heading": "Certification",
+            "icon_heading": "GLUTEN-FREE",
             "icon_heading-color": "#ffffff",
             "icon_heading_font": 14
           }
