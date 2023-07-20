@@ -45,7 +45,7 @@ font-size: 43px;
 line-height: 47px;
 text-align: center;
 color: #FFFFFF;
-padding: 0 7px 36px;
+padding: 12px 7px 5px;
 }
 
 .about-heading{
@@ -56,12 +56,13 @@ line-height: 1.4;
 text-align: center;
 color: #FFFFFF;
 padding-top: 29px;
-padding-bottom: 11px;
+/* padding-bottom: 11px; */
 
 }
 
 .banner_text_wrp{
-    height: 140px;
+    min-height: 140px;
+    padding: 15px;
 }
 .astory_wrp{
     padding:50px 0;
@@ -375,7 +376,7 @@ padding-bottom: 11px;
 .banner_text_wrp{
     background-repeat: no-repeat;
     background-size: cover;
-    height: 200px;
+    min-height: 120px;
 }
 .creator-content{
     padding: 11em 3em 4em 0;
