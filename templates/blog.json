@@ -15,7 +15,16 @@
         "post-2": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/top-10-foods-high-in-quercetin-that-you-should-eat-daily",
+            "article": "news\/which-mushrooms-are-best-for-my-immune-system",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
+            "read_more_text_color": "#ffffff"
+          }
+        },
+        "3f1187ff-97df-4002-a83e-d7c1f0c6eec1": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/echinacea-101-6-science-backed-benefits-of-echinacea",
             "article_title_color": "#ffffff",
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
@@ -24,7 +33,8 @@
       },
       "block_order": [
         "post-1",
-        "post-2"
+        "post-2",
+        "3f1187ff-97df-4002-a83e-d7c1f0c6eec1"
       ],
       "settings": {
         "color_scheme": "default",
