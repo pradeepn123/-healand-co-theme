@@ -642,10 +642,10 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
 }
 
 .back-to-top-button{
-    bottom: 79px;
+    bottom: 79px !important;
 }
 
-#smile-ui-lite-launcher-frame-container{
+#smile-ui-lite-launcher-frame-container , .smile-launcher-frame-container , .smile-panel-frame-container{
     right: 0;
     left: 16px;
 }

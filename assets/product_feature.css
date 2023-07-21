@@ -12,6 +12,7 @@
 
 .product--features--main .product--features--heading {
     padding-bottom: 7.6rem;  
+    padding-top: 120px;
 }
 
 .product--features--main .product--features--heading  {
@@ -19,12 +20,15 @@
     line-height: 52px;
 }
 
-.product--features--main .product--features--content .feature,.product--features--main .product--features--content .features {
+/* .product--features--main .product--features--content .feature,.product--features--main .product--features--content .features {
     padding-bottom: 55px;
+} */
+
+.flex-wrap-info{
+    display: flex;
 }
 
-
-.product--features--main .feature span,.product--features--main .features span {
+.product--features--main .flex-wrap-info span,.product--features--main .features span {
     border: 1px solid #000;
     padding: 2.5px 0;
     display: inline-block;
@@ -32,6 +36,7 @@
     margin-right: 14px;
     text-align: center;
     border-radius: 50%;
+    font-size: 24px;
 }
 .product--features--main .feature span:first-child{
     margin-right: 18px;
@@ -61,9 +66,22 @@
     bottom: 0;
     object-fit: contain;
 }
+
+.sub-feature{
+    padding-bottom: 50px;
+    font-size: 18px !important;
+    /* padding-left: 61px; */
+    padding-bottom: 55px;
+}
+
 @media(min-width:767px){
     .product--features--main .Mobile_img{
         display: none;
+    }
+}
+@media(min-width:769px){
+    .product--features--main{
+        padding-bottom: 65px;
     }
 }
 @media(max-width:1024px){
@@ -72,7 +90,7 @@
         line-height: 40px;
         padding-bottom: 5rem;
     }
-    .product--features--main .product--features--content .feature,.product--features--main .product--features--content .features {
+    .product--features--main .product--features--content .sub-feature {
         padding-bottom: 35px;
     }
 }
@@ -110,17 +128,18 @@
         font-size: 18px !important;
     }
 
-    .product--features--main .feature span {
+    .product--features--main .flex-wrap-info span {
         font-size: 18px;
     }
-    .product--features--main .feature span, .product--features--main .features span{
+    .product--features--main .flex-wrap-info span, .product--features--main .features span{
         display: inline-block;
       width: 32px;
       padding: 2px 0;
     }
-    .product--features--main .product--features--content .feature,.product--features--main .product--features--content .features {
+    .product--features--main .product--features--content .sub-feature {
         padding-bottom: 26px;
-    }
+        font-size: 15px !important;
+    }   
 }
 
 @media(min-width:769px) and (max-width:1024px){

@@ -195,6 +195,13 @@
     .icon-text-wrapper{
         margin: 40px 0 10px;
     }
+    .flex-wrap-imageicon .icon-wrap circle{
+        stroke: #000000;
+    }
+    
+    .flex-wrap-imageicon .icon-wrap path{
+        fill: #000000;
+    }
 }
 .pagination_load_btn{
     display: flex;
