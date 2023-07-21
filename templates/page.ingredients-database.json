@@ -56,7 +56,7 @@
             "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M51.924 62.6L44 43H47.892L53.24 56.384L58.616 43H62.508L54.584 62.6H51.924Z\" fill=\"white\"><\/path>\n<\/svg>",
             "icon_heading": "VEGAN",
             "icon_heading-color": "#ffffff",
-            "icon_heading_font": 14
+            "icon_heading_font": 25
           }
         },
         "2ec9e074-fe12-4a79-ae2b-0e99f0a0be90": {
