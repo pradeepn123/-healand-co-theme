@@ -61,7 +61,6 @@ padding-top: 29px;
 }
 
 .banner_text_wrp{
-    min-height: 140px;
     padding: 25px;
 }
 .astory_wrp{
@@ -355,6 +354,7 @@ padding-top: 29px;
     .about-subtext{
         font-size: 80px;
         line-height: 80px;
+        line-height: 65px;
     }
 
     .story-heading{

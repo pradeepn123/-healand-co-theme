@@ -16,8 +16,12 @@ background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }})
                 <img class="abt-banner-mob" src="{{section.settings.banner_image_mob| image_url}}" alt="Banner Image" />
             </div>
             <div class="banner_text_wrp">
-                <p class="about-heading">{{ section.settings.heading }}</p>
-                <h1 class="about-subtext">{{ section.settings.subtext }}</h1>
+                {% if section.settings.heading != blank %}
+                    <p class="about-heading">{{ section.settings.heading }}</p>
+                {% endif %}
+                {% if section.settings.subtext != blank %}
+                    <h1 class="about-subtext">{{ section.settings.subtext }}</h1>
+                {% endif %}
             </div>
         </div>
     <!-- </div> -->
