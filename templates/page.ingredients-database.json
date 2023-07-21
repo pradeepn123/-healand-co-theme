@@ -62,7 +62,7 @@
         "2ec9e074-fe12-4a79-ae2b-0e99f0a0be90": {
           "type": "image",
           "settings": {
-            "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M53 57.5C58.799 57.5 63.5 52.799 63.5 47C63.5 41.201 58.799 36.5 53 36.5C47.201 36.5 42.5 41.201 42.5 47C42.5 52.799 47.201 57.5 53 57.5Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M47.315 55.8351L45.5 69.5001L53 65.0001L60.5 69.5001L58.685 55.8201\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "svg_image_icon": "<svg width=\"106\" height=\"106\" viewbox=\"0 0 106 106\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<circle cx=\"53\" cy=\"53\" r=\"51.5\" stroke=\"white\" stroke-width=\"3\"><\/circle>\n<path d=\"M46.304 46.36C42.58 46.36 39.78 49.356 39.78 53.08C39.78 56.888 42.692 59.8 46.472 59.8C48.264 59.8 49.72 59.184 50.84 58.288V54.06H45.8V50.7H54.62V59.408C52.884 61.62 49.972 63.16 46.388 63.16C40.284 63.16 36 58.708 36 53.08C36 47.452 40.228 43 46.332 43C49.244 43 51.736 44.092 53.5 45.8L51.064 48.376C49.888 47.2 48.236 46.36 46.304 46.36Z\" fill=\"white\"><\/path>\n<path d=\"M70.2967 46.64H62.3167V50.7H68.3367V54.06H62.3167V62.88H58.5367V43.28H70.2967V46.64Z\" fill=\"white\"><\/path>\n<\/svg>",
             "icon_heading": "GLUTEN-FREE",
             "icon_heading-color": "#ffffff",
             "icon_heading_font": 14
