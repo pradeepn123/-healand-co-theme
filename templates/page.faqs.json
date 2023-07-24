@@ -235,6 +235,18 @@
             "page": "",
             "image_width": 100
           }
+        },
+        "ede3bff7-4103-4275-8785-57524adadc1f": {
+          "type": "question",
+          "settings": {
+            "title": "Do you accept customer returns?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>In some circumstances we do. Please refer to our return policy here.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
         }
       },
       "block_order": [
@@ -256,7 +268,8 @@
         "91e6233a-a2d1-4e49-80dc-b7e3158551fc",
         "ed27d34f-9bd5-4fa1-8391-55f090a577d4",
         "3e2e907e-a924-47f2-9391-0b74f9ce6ab0",
-        "7c238f03-e275-490a-99b0-5490f475c2f4"
+        "7c238f03-e275-490a-99b0-5490f475c2f4",
+        "ede3bff7-4103-4275-8785-57524adadc1f"
       ],
       "settings": {
         "color_scheme": "primary",
