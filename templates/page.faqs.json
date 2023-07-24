@@ -72,73 +72,35 @@
             "image_width": 100
           }
         },
-        "d4b57543-77e2-4e89-b159-6b5fda3c7d8a": {
+        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
+          "type": "category",
+          "settings": {
+            "title": "PRODUCTS",
+            "faq_heading_bg": "#797baa",
+            "head_font_size": 24,
+            "heading_color": "#ffffff",
+            "icon": "none"
+          }
+        },
+        "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7": {
           "type": "question",
           "settings": {
-            "title": "Can you explain more about the subscription plan you are going to offer?",
+            "title": "What are your Products made?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Bundles will be created that customers can subscribe to. It will contain multiple products that last for 1 month, 2 months, etc. depending on the dose of the products. Program used for this feature will be either Recharge or Rebuy.<\/p>",
+            "text": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Michigan, USA.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
           }
         },
-        "e3174c8f-432e-48de-a6fd-24315a08965a": {
+        "3a1f1d87-49d1-4a12-aa7e-8aa7fc807abd": {
           "type": "question",
           "settings": {
-            "title": "What are the benefits of your subscription plan?",
+            "title": "Frequently asked question",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Products will be bundled to contain the right amount of capsules of each product depending on the customers health goal\/area of interest. We will be able to recommend a schedule of recurrence, however the shipments will be able to be customized as well depending on someone's preference. Customers can also choose to add or remove products to their subscription. For example, if someone was interested in an Immunity Bundle, they could also choose to add a bottle of Energy Complex to their recurring order. All subscriptions will be 10% off regular price.<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "30524323-ab55-4052-aaf6-cfe7b833655d": {
-          "type": "question",
-          "settings": {
-            "title": "Can you explain more about the loyalty program you are going to offer?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>The loyalty program will be set up via Stamped. The purpose is for customers to collect points that can then be redeemed to receive discounts on products. Customers will be able to collect points by leaving a review, leaving a review with a picture, leaving a review with a video, and by following us on our various social media platforms. <\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "ee0273ce-8b55-4b4b-b824-dbc8d147453b": {
-          "type": "question",
-          "settings": {
-            "title": "Can you provide us with a drive link to access your brand assets? This could include branding, images, fonts, color codes, etc.",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Website assets: <a href=\"https:\/\/www.dropbox.com\/sh\/dlfj6ao3zfygeiy\/AABAie_IlMUwoXFO8NQfOZl4a?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/dlfj6ao3zfygeiy\/AABAie_IlMUwoXFO8NQfOZl4a?dl=0\"><span style=\"text-decoration:underline\">https:\/\/www.dropbox.com\/sh\/dlfj6ao3zfygeiy\/AABAie_IlMUwoXFO8NQfOZl4a?dl=0<\/span><\/a><\/p><p>Logos: <a href=\"https:\/\/www.dropbox.com\/sh\/qai9y1oal3ulolj\/AAAFoSoOzbdEn9Q3M1OM_Xexa?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/qai9y1oal3ulolj\/AAAFoSoOzbdEn9Q3M1OM_Xexa?dl=0\"><span style=\"text-decoration:underline\">https:\/\/www.dropbox.com\/sh\/qai9y1oal3ulolj\/AAAFoSoOzbdEn9Q3M1OM_Xexa?dl=0<\/span><\/a><\/p><p>Ingredient images: working on this, will provide link ASAP<\/p><p>Brand colours: All of the product colours, please refer to the brand document. The colours are listed with their Pantone colours, if you need the hex codes please let me know.<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "d7769799-5306-4e87-ad5b-19fa26310c13": {
-          "type": "question",
-          "settings": {
-            "title": "Do you have any existing website content that you would like to migrate to the new website? If so, what types of content (e.g. product descriptions) and can you provide us with a catalogue to access those informations?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>The following items should be transferred to the new website: blog posts with images, privacy policy, shipping policy (this will likely need to be updated), FAQ (needs to be updated), product images (we likely will not be able to get new ones for all products within the timeframe of this project)<\/p>",
-            "content_font": 16,
-            "page": "",
-            "image_width": 100
-          }
-        },
-        "9e0ff089-300a-46f8-9060-b770d4841ee2": {
-          "type": "question",
-          "settings": {
-            "title": "Can you confirm if you have the capability to provide additional images if needed during the design phase of the project?",
-            "subhead_fontsize": 20,
-            "icon": "none",
-            "text": "<p>Yes, we have a photographer that we use to take product shots specifically. She requires about 3-4 weeks to take new product images. Lifestyle images would have to be taken a bit later down the line, so we wouldn't be able to have those right away. We also have a graphic designer and she is usually pretty fast with her turn around time, but still needs about 2 weeks.  <\/p>",
+            "text": "<p>Brief and clear answer<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -156,23 +118,13 @@
             "image_width": 100
           }
         },
-        "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
-          "type": "category",
-          "settings": {
-            "title": "PRODUCTS",
-            "faq_heading_bg": "#797baa",
-            "head_font_size": 24,
-            "heading_color": "#ffffff",
-            "icon": "none"
-          }
-        },
-        "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7": {
+        "9e0ff089-300a-46f8-9060-b770d4841ee2": {
           "type": "question",
           "settings": {
-            "title": "What are the main selling points of your products?",
+            "title": "Can you confirm if you have the capability to provide additional images if needed during the design phase of the project?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Benefit from the healing powers of nature with our line of potent herbal supplements. Our medicinal plant extracts are carefully sourced and tested to meet our high standards of efficacy, purity and potency.<br\/><br\/>High potency (primary selling point): All of our ingredients are sourced with purity + potency in mind to ensure maximum efficacy of our products. We use both extracts and raw ingredients to ensure that maximum dosage in the smallest form. Our products are more effective, thus requiring fewer doses. For example, one 500 mg capsule of our 5:1 ashwagandha extract is equivalent to 5 500 mg capsules of standard ashwagandha from other brands. This is because we extract the bioactive components of the plants and use those compounds in our products instead of all of the raw material. <br\/><br\/>Allergen-free: Our products are manufactured without the addition of most common allergens including gluten, dairy and soy. All products are plant-based and vegan friendly. Note - we are working on getting an official vegan certification for our products. <br\/><br\/>Unique packaging: Our packaging was designed to be approachable to people who are not familiar with supplements. Instead of creating packaging that was extremely medicinal, we created something a lot more approachable and friendly. <\/p>",
+            "text": "<p>Yes, we have a photographer that we use to take product shots specifically. She requires about 3-4 weeks to take new product images. Lifestyle images would have to be taken a bit later down the line, so we wouldn't be able to have those right away. We also have a graphic designer and she is usually pretty fast with her turn around time, but still needs about 2 weeks.  <\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -207,15 +159,11 @@
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
         "e3635dcb-640f-476b-b66c-eb0448fb6fd7",
         "2e3cd170-bb48-4357-ba30-6506bab2d922",
-        "d4b57543-77e2-4e89-b159-6b5fda3c7d8a",
-        "e3174c8f-432e-48de-a6fd-24315a08965a",
-        "30524323-ab55-4052-aaf6-cfe7b833655d",
-        "ee0273ce-8b55-4b4b-b824-dbc8d147453b",
-        "d7769799-5306-4e87-ad5b-19fa26310c13",
-        "9e0ff089-300a-46f8-9060-b770d4841ee2",
-        "20803f02-1288-4755-b8f2-e74362154741",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
+        "3a1f1d87-49d1-4a12-aa7e-8aa7fc807abd",
+        "20803f02-1288-4755-b8f2-e74362154741",
+        "9e0ff089-300a-46f8-9060-b770d4841ee2",
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
         "91e6233a-a2d1-4e49-80dc-b7e3158551fc"
       ],
