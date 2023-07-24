@@ -121,10 +121,10 @@
         "9e0ff089-300a-46f8-9060-b770d4841ee2": {
           "type": "question",
           "settings": {
-            "title": "Can you confirm if you have the capability to provide additional images if needed during the design phase of the project?",
+            "title": "Are your products FDA approved?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Yes, we have a photographer that we use to take product shots specifically. She requires about 3-4 weeks to take new product images. Lifestyle images would have to be taken a bit later down the line, so we wouldn't be able to have those right away. We also have a graphic designer and she is usually pretty fast with her turn around time, but still needs about 2 weeks.  <\/p>",
+            "text": "<p>By law, the FDA does not approve dietary supplements. However, all of our products are manufactured in accordance to the FDA's current Good Manufacturing Practices to help ensure quality and safety.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
