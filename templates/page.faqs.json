@@ -39,10 +39,10 @@
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797": {
           "type": "question",
           "settings": {
-            "title": "What is the primary action you want the user to take when coming to your site?(e.g., purchase product, purchase bundles, Subscription etc.)",
+            "title": "What are your values?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>We want people to place an order on the website. Secondary to that we also want to become a resource for people whether it is to visit our blog, read about ingredients, etc.<\/p>",
+            "text": "<p>Our mission is to help people benefit from the amazing healing powers of nature's apothecary. All of our products are carefully sourced to meet our values of efficacy, purity and potency.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
