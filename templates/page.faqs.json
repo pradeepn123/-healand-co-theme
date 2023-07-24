@@ -166,6 +166,18 @@
             "image_width": 100
           }
         },
+        "489e1b33-c5dd-445a-b8d3-35fb92de0795": {
+          "type": "question",
+          "settings": {
+            "title": "What's the difference between an extract and a powder?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>An extract is a supplement in which the key compound of the plant has been extracted to provide a high-potency supplement. A powder is a supplement in which the entire plant is used.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8": {
           "type": "category",
           "settings": {
@@ -203,6 +215,7 @@
         "0abe7e3f-33bc-45cd-8bb2-796febb3fae6",
         "27187150-5358-4d4d-b041-ede4291908ba",
         "198b6ec9-e0f3-4daf-8a87-47299d75914e",
+        "489e1b33-c5dd-445a-b8d3-35fb92de0795",
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
         "91e6233a-a2d1-4e49-80dc-b7e3158551fc"
       ],
