@@ -97,10 +97,10 @@
         "3a1f1d87-49d1-4a12-aa7e-8aa7fc807abd": {
           "type": "question",
           "settings": {
-            "title": "Frequently asked question",
+            "title": "What kind of testing do you do on your products?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Brief and clear answer<\/p>",
+            "text": "<p>Each batch of Heal + Co products are rigorously tested for heavy metals and contaminants to ensure quality and safety.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
