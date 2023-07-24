@@ -223,6 +223,18 @@
             "page": "",
             "image_width": 100
           }
+        },
+        "7c238f03-e275-490a-99b0-5490f475c2f4": {
+          "type": "question",
+          "settings": {
+            "title": "How long will it take to receive my order?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>Most orders within the United States are typically received within 3-5 business days after the order is processed. Shipments outside of the United States may take longer to receive.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
         }
       },
       "block_order": [
@@ -243,7 +255,8 @@
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
         "91e6233a-a2d1-4e49-80dc-b7e3158551fc",
         "ed27d34f-9bd5-4fa1-8391-55f090a577d4",
-        "3e2e907e-a924-47f2-9391-0b74f9ce6ab0"
+        "3e2e907e-a924-47f2-9391-0b74f9ce6ab0",
+        "7c238f03-e275-490a-99b0-5490f475c2f4"
       ],
       "settings": {
         "color_scheme": "primary",
