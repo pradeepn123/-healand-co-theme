@@ -98,7 +98,7 @@ assign section_spacing_bottom = options.section_spacing_bottom
                     window.addEventListener("scroll", handleLoadMoreItems)
                 }
                 element.removeAttribute("is-loading")
-            }, element.getAttribute("initial-load") ? 0 : 1500)
+            }, element.getAttribute("initial-load") ? 0 : 500)
         }
     };
 
