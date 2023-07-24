@@ -63,10 +63,10 @@
         "2e3cd170-bb48-4357-ba30-6506bab2d922": {
           "type": "question",
           "settings": {
-            "title": "Can you provide us with the content that will be displayed on the ingredients educational page?",
+            "title": "Do you provide samples or coupons?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Yes, we will provide a google document with the info. For the ingredient images a link to a dropbox folder will be shared.<\/p>",
+            "text": "<p>We don't currently have a sampling or coupon program in place, but if you sign up for our newsletter then you will receive 10% off your first order online. Also be sure to follow us on social media where we host giveaways and promotions.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
