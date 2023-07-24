@@ -109,10 +109,10 @@
         "20803f02-1288-4755-b8f2-e74362154741": {
           "type": "question",
           "settings": {
-            "title": "Is there anything else you want to add? Please share?",
+            "title": "When should I take the products? Should I take them with food?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Could we have a sticky header on our pages? For example leaving the top bar that has the different menus or if we have a free shipping bar, leaving that. Without that the pages feel very much like a template.  <br\/>Other notes: Chat function through Gorgias, where to find us in stores (store locator)<\/p>",
+            "text": "<p>It is recommended to take with food a few hours before or after taking other medication.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
