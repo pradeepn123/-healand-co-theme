@@ -142,6 +142,18 @@
             "image_width": 100
           }
         },
+        "27187150-5358-4d4d-b041-ede4291908ba": {
+          "type": "question",
+          "settings": {
+            "title": "Where do you source your products from?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>All of our products are derived from natural plants that are well renowned for their natural health benefits.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8": {
           "type": "category",
           "settings": {
@@ -177,6 +189,7 @@
         "20803f02-1288-4755-b8f2-e74362154741",
         "9e0ff089-300a-46f8-9060-b770d4841ee2",
         "0abe7e3f-33bc-45cd-8bb2-796febb3fae6",
+        "27187150-5358-4d4d-b041-ede4291908ba",
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8",
         "91e6233a-a2d1-4e49-80dc-b7e3158551fc"
       ],
