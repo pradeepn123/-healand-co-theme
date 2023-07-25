@@ -41,6 +41,7 @@
             render 'product-variant-picker-block', product: product, section: section, block: block, sectionId: sectionId
           when 'buy_buttons'
             render 'product-form-block', product: product, section: section, block: block, sectionId: sectionId
+            render 'sticky-add-to-cart', product: product, section: section, block: block, sectionId: block.id
           when 'button'
             render 'product-button-block', product: product, section: section, block: block, sectionId: sectionId
         endcase
