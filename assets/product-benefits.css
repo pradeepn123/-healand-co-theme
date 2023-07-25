@@ -79,7 +79,7 @@
     }
 
     .pb_container .pb_content_continer .pb_content_inner p{
-        /* overflow: auto; */
+        overflow: auto;
         max-height: 70px;
     }
 

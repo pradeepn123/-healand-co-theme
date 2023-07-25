@@ -201,6 +201,9 @@
     .product-card--show-secondary-media:hover .product-card__img[data-secondary-media] {
         opacity: 0;
     }
+    .product-card--show-secondary-media:hover .product-card__img[data-main-media]{
+        opacity: 1 !important;
+    }
 }
 
 

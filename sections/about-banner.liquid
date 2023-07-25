@@ -1,6 +1,13 @@
 {% style %}
-.banner_text_wrp{
-background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }});
+.about-heading{
+    color:{{ section.settings.heading-color }};
+}
+@media(max-width:767px){
+    .banner_text_wrp{
+        background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }});
+    }
+
+    
 }
 {% endstyle %}
 
@@ -15,14 +22,15 @@ background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }})
             <div class="about_banner_imgmob Mobile">
                 <img class="abt-banner-mob" src="{{section.settings.banner_image_mob| image_url}}" alt="Banner Image" />
             </div>
+            {% if section.settings.banner_bgimage != blank %}
             <div class="banner_text_wrp">
-                {% if section.settings.heading != blank %}
-                    <p class="about-heading">{{ section.settings.heading }}</p>
-                {% endif %}
-                {% if section.settings.subtext != blank %}
-                    <h1 class="about-subtext">{{ section.settings.subtext }}</h1>
-                {% endif %}
+                    <h1 class="about-heading">{{ section.settings.heading }}</h1>
             </div>
+            {% else %}
+            <div class="banner-text-nobg">
+                <h1 class="about-heading">{{ section.settings.heading }}</h1>
+            </div>
+            {% endif %}
         </div>
     <!-- </div> -->
 </section>
@@ -43,15 +51,16 @@ background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }})
                     "label":"Banner Image Mobile",
                     "id":"banner_image_mob"
                 },
+                        
                 {
                     "type": "text",
                     "id": "heading",
                     "label": "Heading"
                 },
                 {
-                    "type": "text",
-                    "id": "subtext",
-                    "label": "Sub text"
+                    "type": "color",
+                    "id": "heading-color",
+                    "label": "Heading color"
                 },
                 {
                     "type":"image_picker",
