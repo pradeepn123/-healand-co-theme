@@ -16,8 +16,8 @@
       "settings": {
         "banner_image": "shopify:\/\/shop_images\/AU-banner-desk.jpg",
         "banner_image_mob": "shopify:\/\/shop_images\/AU_banner-mob.png",
-        "heading": "",
-        "subtext": "Potent Plants For Healthy Humans",
+        "heading": "Potent Plants For Healthy Humans",
+        "heading-color": "#ffffff",
         "banner_bgimage": "shopify:\/\/shop_images\/aboutus-banner-bg.png"
       }
     },
