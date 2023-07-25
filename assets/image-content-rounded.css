@@ -171,6 +171,10 @@
     .media__image{
         position: unset;
     }
+
+    .flex-wrap-imageicon .icon-wrap path{
+        fill: #000000;
+    }
 }
 @media(max-width:520px){
     .ingredients-database-item {
@@ -199,9 +203,6 @@
         stroke: #000000;
     }
     
-    .flex-wrap-imageicon .icon-wrap path{
-        fill: #000000;
-    }
 }
 .pagination_load_btn{
     display: flex;

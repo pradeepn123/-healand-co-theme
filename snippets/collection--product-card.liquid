@@ -184,9 +184,11 @@
                 <p>
                   {{- product.metafields.custom.product_card.value.description -}}
                 </p>
+                {% if product.metafields.custom.product_card.value.icon != blank %}
                 <div class="card-icon-wrapper">
                   {{ product.metafields.custom.product_card.value.icon | metafield_tag }}
                 </div>
+                {% endif %}
               </div>
               {%- elsif images.size > 1 -%}
                 <img
