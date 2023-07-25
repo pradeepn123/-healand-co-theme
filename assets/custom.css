@@ -615,7 +615,18 @@ div.okeReviews .oke-w-writeReview:hover:before{
 }
 
 .mega-menu .mega-menu__inner-container {
-    column-gap: 151px;
+    column-gap: 50px;
+}
+@media(min-width:1440px){
+    .mega-menu .mega-menu__inner-container {
+        column-gap: 151px;
+    }    
+}
+@media(min-width: 1024px) and (max-width: 1439px){
+    .mega-menu .mega-menu__inner-container .image-block__content-wrap .image-block__content .image-block__title{
+        font-size: 24px;
+        line-height: 1.2;
+    }
 }
 
 .childrenmenu-border{
