@@ -301,6 +301,11 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-radio .rc-radio__label{
         font-size: 14px;
     }
+
+    .shape--nature .image-block__content-wrap{
+        padding: 2rem;
+    }
+
 }
 .shopify-block.shopify-app-block.recharge-subscription-widget .rc-widget .rc-template__radio .rc-selling-plans .rc-selling-plans-single{
     font-family: "BrownStd-Regular";
@@ -368,6 +373,17 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     }
     .shopify-section-header {
         z-index: 15;
+    }
+}
+
+@media(min-width:320px) and (max-width:520px){
+    .drawer-menu__mega-menu-wrapper .drawer-menu__mega-menu .image-block .shape--nature{
+        padding-bottom: 50%;
+    }
+}
+@media(min-width:521px) and (max-width:767px){
+    .drawer-menu__mega-menu-wrapper .drawer-menu__mega-menu .image-block .shape--nature{
+        padding-bottom: 30%;
     }
 }
 
