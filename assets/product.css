@@ -467,6 +467,28 @@
         flex: 1 0 60%;
         padding-top: 0;
     }
+
+    .default_product_custom_class .product_main_dynamic_btn .product-form__btn-wrapper .product-form__btn{
+        min-height:35px !important;
+    }
+
+    .product_main_dynamic_btn .product-form__btns .product-form__btn-wrapper .product-form__btn{
+        font-size:12px !important;
+    }
+
+    .sticky-container{
+        padding: 0 20px !important;
+    }
+
+    .sticky-cart-modal-inner-wrap .product_main_dynamic_btn .product-form__btns .product-form__btn-wrapper .product-form__btn{
+        padding:10px !important;
+    }
+
+  
+
+    .sticky-cart-modal-inner-wrap{
+        justify-content: flex-end !important;
+    }
 }
 @media (min-width: 1024px){
     /* Product Description - Bundles Page Width */
