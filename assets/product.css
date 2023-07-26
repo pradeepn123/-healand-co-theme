@@ -484,11 +484,6 @@
         padding:10px !important;
     }
 
-  
-
-    .sticky-cart-modal-inner-wrap{
-        justify-content: flex-end !important;
-    }
 }
 @media (min-width: 1024px){
     /* Product Description - Bundles Page Width */
