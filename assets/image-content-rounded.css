@@ -162,9 +162,9 @@
     .icon-heding-color-mobile .h2, .icon-heding-color-mobile .ingredient-desc , .icon-heding-color-mobile .heading-for-icon{
         color: #000000;
     }
-    svg path , svg circle{
+    /* svg path , svg circle{
         stroke: #000;
-    }
+    } */
     .ingredient-video-mobile .image-banner__media{
         position: relative;
     }

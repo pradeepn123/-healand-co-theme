@@ -2,6 +2,21 @@
     sticky-add-to-cart.sticky-cart-modal{
         display: none;
     }
+    @media(min-width:768px) and (max-width:1023px){
+        sticky-add-to-cart.sticky-cart-modal .product_sticky__info h2{
+            font-size: 14px !important;
+            
+        }
+    
+        sticky-add-to-cart.sticky-cart-modal .product_sticky__info{
+            column-gap: 10px !important;    
+        }
+
+        .sticky-cart-modal-inner-wrap{
+            column-gap:10px;
+        }       
+
+    }
     @media(min-width:768px){
         sticky-add-to-cart.sticky-cart-modal.show-modal{    
             transform: translateY(0);
@@ -25,7 +40,7 @@
         sticky-add-to-cart.sticky-cart-modal .product_sticky__info{
             display: flex;
             align-items: center;
-            column-gap: 20px;
+           
         }
         sticky-add-to-cart.sticky-cart-modal .product_sticky__info img{
             width: 80px;
@@ -39,13 +54,25 @@
         .sticky-cart-modal-inner-wrap{
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             padding: 12px 0;
         }
         .sticky-cart-modal-inner-wrap .product_main_dynamic_btn .product-form__btns .product-form__btn-wrapper .product-form__btn{
             padding: 12px 34px;
         }
+
+        .sticky-container{
+            padding: 0 70px;
+        }
     }
+
+    @media(min-width:1200px){
+        sticky-add-to-cart.sticky-cart-modal .product_sticky__info{
+            column-gap: 20px;
+        }
+    }
+
+    
 {% endstyle %}
 
 {%- liquid
@@ -64,7 +91,7 @@
 -%}
 <div class="sticky_add_to_cart">
     <sticky-add-to-cart class="sticky-cart-modal">
-        <div class="container container--page-width">
+        <div class="container sticky-container">
             <div class="sticky-cart-modal-inner-wrap">
                 <div class="product_sticky__info">
                     {% assign featured_image = product.selected_variant.featured_image | default: product.featured_image %}

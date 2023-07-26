@@ -374,6 +374,14 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     .shopify-section-header {
         z-index: 15;
     }
+
+    back-to-top-button .back-to-top-button{
+        display: none;
+    }
+
+    #smile-ui-lite-launcher-frame-container , .smile-launcher-frame-container , .smile-panel-frame-container{
+        bottom: 80px !important;
+    }
 }
 
 @media(min-width:320px) and (max-width:520px){

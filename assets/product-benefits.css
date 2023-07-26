@@ -177,3 +177,11 @@
             font-size: 13px;
         }
     }
+
+    @media(max-width:350px){
+        .pb_container .pb_content_mobile .pb_content_mobile_accordion accordeon-btn h6{
+            font-size: 15px;
+        }
+    }
+
+  
