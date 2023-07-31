@@ -93,6 +93,12 @@
         }
       {% endif %}
     }
+
+    {% if  keymetadata.count == 1 %}
+      .key_ingredient_section .card-carousel__viewport .card-carousel__container{
+        justify-content: center;
+      }
+    {% endif %}
     
     {% if colorsMetafield %}
         .ingredients_wrapper{

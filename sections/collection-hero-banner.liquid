@@ -22,7 +22,8 @@
 
   assign enable_background_around_container = options.enable_background_around_container
 
-  assign image = collection.metafields.custom.collection_heroimage 
+  assign image = collection.metafields.custom.collection_heroimage
+  assign mobile_image = collection.metafields.custom.collection_heroimage_mobile
   assign video = options.video
   assign title = collection.title
   assign description = collection.description
@@ -78,7 +79,7 @@
           {% comment %} <img class='image collection-hero__image lazyload'
             src='{{ collection.metafields.custom.collection_heroimage | img_url: 'master' }}'> {% endcomment %}
             <img
-              class='image collection-hero__image lazyload'
+              class='image collection-hero__image lazyload desktop-collection-img'
               loading='lazy'
               src='{{ image | img_url: 'master' }}'
               alt='{{ image.alt }}'
@@ -89,6 +90,20 @@
               data-sizes='auto'
               data-srcset='{%- render 'srcset-for-image', image: image -%}'
             >
+              {% if collection.metafields.custom.collection_heroimage_mobile != blank %}
+            <img
+              class='image collection-hero__image lazyload mobile-collection-img'
+              loading='lazy'
+              src='{{ mobile_image | img_url: 'master' }}'
+              alt='{{ mobile_image.alt }}'
+              width='{{image.width}}'
+              height='{{image.height}}'
+              style='object-position: {{ mobile_image.presentation.focal_point }};'
+              data-aspectratio='{{ mobile_image.aspect_ratio }}'
+              data-sizes='auto'
+              data-srcset='{%- render 'srcset-for-image', image: image -%}'
+            >
+            {% endif %}
 
         {% elsif collection.image != blank %}
         {% assign collection_image = collection.image %}
