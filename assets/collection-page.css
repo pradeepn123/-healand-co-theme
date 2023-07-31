@@ -5,9 +5,10 @@
 .collection-custom__title{
     font-weight: 700;
     text-transform: uppercase;
+    text-shadow: 4px 4px 5px #000000;
 }
 .collection-hero__image{
-    object-position: 0% 50% !important;
+    object-position: 0% 50%;
 }
 .section_seperation{
     position: absolute;
@@ -133,6 +134,11 @@
     color: #000;
     font-size: 16px
 }
+
+.mobile-collection-img{
+    display: none;
+}  
+
 @media (max-width: 767px){
     .product-card__price-item {
         font-size: 16px;
@@ -141,6 +147,12 @@
 @media (max-width: 425px){
     .product-card__price-item {
         font-size: 12px;
+    }
+    .desktop-collection-img{
+        display: none;
+    }
+    .mobile-collection-img{
+        display: block;
     }
 }
 .product-card-hover-wrapper {
@@ -244,4 +256,10 @@
 
 .pro-heading-padding{
     padding-top: 21px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1016px){
+    .collection__card-grid {
+        grid-template-columns: repeat(var(--gsc-columns),1fr);
+    }
 }
