@@ -35,9 +35,7 @@
         "9139c504-11a2-404a-979f-fad812e54305": {
           "type": "select",
           "settings": {
-            "bundles_products": [
-              "immunity-bundle"
-            ],
+            "bundles_products": "{{ collection.metafields.custom.bundle_product.value }}",
             "bundles_title": "Bundles"
           }
         }
