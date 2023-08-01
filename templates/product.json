@@ -397,7 +397,7 @@
         "img_ratio": "landscape",
         "product_card_align": "left",
         "cards_to_show": 10,
-        "desktop_columns": 4,
+        "desktop_columns": 5,
         "desktop_space_between_cards": 12,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
