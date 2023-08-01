@@ -60,6 +60,9 @@
         line-height: 1.5;
         word-wrap: break-word;
     }
+    .flex-wrap-imageicon .icon-wrap circle{
+        stroke: #000000;
+    }
 }
 .ingredients_content_info .tag_wrap{
     font-size: 14px;
@@ -198,9 +201,6 @@
     }
     .icon-text-wrapper{
         margin: 40px 0 10px;
-    }
-    .flex-wrap-imageicon .icon-wrap circle{
-        stroke: #000000;
     }
     
 }
