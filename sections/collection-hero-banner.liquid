@@ -63,6 +63,9 @@
           font-size: {{ section.settings.collection_title_font_size }}px;
         }
     }
+    .banner-object-position {
+      object-position: 80% !important;
+    }
   {% endstyle %}
 {% endcapture %}
 
@@ -79,7 +82,7 @@
           {% comment %} <img class='image collection-hero__image lazyload'
             src='{{ collection.metafields.custom.collection_heroimage | img_url: 'master' }}'> {% endcomment %}
             <img
-              class='image collection-hero__image lazyload desktop-collection-img'
+              class='image collection-hero__image lazyload desktop-collection-img {% if collection.title == 'Beauty' %} banner-object-position {% endif %}'
               loading='lazy'
               src='{{ image | img_url: 'master' }}'
               alt='{{ image.alt }}'
