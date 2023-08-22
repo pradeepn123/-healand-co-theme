@@ -1,4 +1,5 @@
 {% assign publishId = section.settings.publishId %}
+
 {% assign linkNamespace = "tolstoy-hero-link" %}
 {% assign isLiveNamespace = "tolstoy-hero-is-live" %}
 {% assign desktopNamespace = "tolstoy-hero-desktop" %}
@@ -36,10 +37,6 @@
       height: auto;
   }
 
-  .tolstoy-hero-video::-webkit-media-controls {
-      display: none !important;
-  }
-
   @media (min-width: 575px) {
       .tolstoy-hero-video {
           aspect-ratio: {{ desktopAspectRatio }};
@@ -72,7 +69,7 @@
     disableRemotePlayback
     muted
     autoplay
-    preload='auto'
+    preload="auto"
   ></video>
 </div>
 
@@ -85,7 +82,7 @@
       return;
     }
 
-      const startVideo =()=>{
+    const startVideo =()=>{
         const videoTag = document.getElementById("tolstoy-hero-video-{{ publishId }}");
 
         if (isMobile){
