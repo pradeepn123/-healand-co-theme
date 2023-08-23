@@ -201,7 +201,6 @@
     },
     "product-details": {
       "type": "product-details",
-      "disabled": true,
       "blocks": {
         "eaea97df-77ab-4b25-ab4d-7127a70f662c": {
           "type": "description",
@@ -248,6 +247,7 @@
         "5594cd3a-1c1c-436c-82e1-5acc9d0e8bcf",
         "4987e3cf-fed0-4e1b-921a-99aaa4edfc74"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "enable_background_around_container": true,
@@ -302,7 +302,7 @@
         "ea75c8ac-1c66-464d-a024-2c4da6175d25": {
           "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
-            "publishId": "twlm7c9nmp92h"
+            "publishId": "6d5l6kt75mcwd"
           }
         }
       },
