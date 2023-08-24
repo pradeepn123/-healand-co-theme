@@ -8605,7 +8605,7 @@
                 return h(this, n), v(E(e = t.call(this)), "handleMouseEnter", (function() {
                     var t = e.dataset.url,
                         n = e.dataset.id;
-                    t && n && oo.requestProductFromUrl(t, n)``
+                    t && n && oo.requestProductFromUrl(t, n)
                 })), v(E(e), "handleQuickViewBtnClick", (function() {
                     var t = e.dataset.url;
                     t && oo.openAndRenderProductByUrl(t)
