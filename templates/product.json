@@ -394,7 +394,7 @@
         "featured_products": [
 
         ],
-        "img_ratio": "landscape",
+        "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 10,
         "desktop_columns": 4,
