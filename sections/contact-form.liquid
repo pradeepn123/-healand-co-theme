@@ -170,8 +170,8 @@
     </div>
     <div class="contact__methods__main container container--{{ container_size }}">
       {% for block in section.blocks %}
-        <div class="Contact_method_links">
-        <a href="{{ block.settings.contact_method_link }}" target="_blank">
+        <div class="Contact_method_links" {% if block.settings.contact_heading == "CHAT WITH US" %} id="chatWithUs" {% endif %}>
+        <a href="{{ block.settings.contact_method_link }}" target="">
           <div class="contact__methods">
             <div class="align_contact_methods">
               <div class="contact__methods__heading_main">
@@ -195,6 +195,26 @@
     </div>
   </div>
 </div>
+
+<script>
+
+  window.onload = function newFunction() {
+    var chatWithUs = document.getElementById("chatWithUs");
+    var chatBot = document.querySelectorAll("mountHere");
+
+    chatWithUs.addEventListener("click", function(){ GorgiasChat.open(); });
+
+    var initGorgiasChatPromise = (window.GorgiasChat) ? window.GorgiasChat.init() : new Promise(function (resolve) { window.addEventListener('gorgias-widget-loaded', function () { resolve();})});
+
+    initGorgiasChatPromise.then(async () => {
+      GorgiasChat.hidePoweredBy(true)
+    })
+}
+
+
+
+
+</script>
 
 {% schema %}
 {
