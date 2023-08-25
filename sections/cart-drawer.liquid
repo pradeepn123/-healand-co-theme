@@ -20,12 +20,13 @@
         assign upsell_products = item.product.metafields.custom.upsell_products.value
       -%}
       {%- for product_handle in upsell_products -%}
-        {% render 'cart-product-card',                      
-          product: product_handle,
-          addtocartbutton: section.settings.show_add_to_cart,
-          img_ratio: img_ratio,
-          show_mobile_carousel: true,
-          product_card_align: "left" %}
+          {% render 'cart-product-card',                      
+            product: product_handle,
+            addtocartbutton: section.settings.show_add_to_cart,
+            img_ratio: img_ratio,
+            show_mobile_carousel: true,
+            product_available: product_handle.available,
+            product_card_align: "left" %}
       {%- endfor -%}
     {%- endfor -%}
   {%- endif -%}

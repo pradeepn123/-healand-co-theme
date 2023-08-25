@@ -3625,7 +3625,7 @@
                 })), v(E(e), "_handleTouchStart", (function(t) {
                     e._touchStartX = t.targetTouches[0].clientX, e._touchStartY = t.targetTouches[0].clientY
                 })), v(E(e), "_handleTouchMove", (function(t) {
-                    e._touchEndX = t.targetTouches[0].clientX, e._touchEndY = t.targetTouches[0].clientY
+                    // e._touchEndX = t.targetTouches[0].clientX, e._touchEndY = t.targetTouches[0].clientY
                 })), v(E(e), "_handleTouchEnd", (function(t) {
                     var n = Math.abs(e._touchStartX - e._touchEndX),
                         i = Math.abs(e._touchStartY - e._touchEndY);

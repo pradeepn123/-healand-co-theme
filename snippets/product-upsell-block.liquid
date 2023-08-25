@@ -32,21 +32,23 @@
                     {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
                 </carousel-btn>
             </div>
-            <div class="card-carousel__viewport 
+            <div class="card-carousel__viewport
             {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
                 <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
                     {%- for upsell_product in block.settings.upsell_products -%}
-                        <div class='shop__grid-item'>        
-                            {% render 'product-card',
-                                with_bottom_spacing: true,
-                                product: upsell_product,    
-                                addtocartbutton: block.settings.show_add_to_cart,        
-                                show_color_swatches_on_hover: false,
-                                img_ratio: block.settings.img_ratio,
-                                show_mobile_carousel: true,
-                                product_card_align: "left"
-                            %}
-                        </div>
+                        {% unless upsell_product.available == false %}
+                            <div class='shop__grid-item'>        
+                                {% render 'product-card',
+                                    with_bottom_spacing: true,
+                                    product: upsell_product,    
+                                    addtocartbutton: block.settings.show_add_to_cart,        
+                                    show_color_swatches_on_hover: false,
+                                    img_ratio: block.settings.img_ratio,
+                                    show_mobile_carousel: true,
+                                    product_card_align: "left"
+                                %}
+                            </div>
+                        {% endunless %}
                     {% endfor %}
                 </div>
             </div>
