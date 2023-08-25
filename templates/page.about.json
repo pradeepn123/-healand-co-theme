@@ -74,7 +74,8 @@
       ],
       "settings": {
         "val-main-heading": "OUR VALUES",
-        "heading_size": "h2"
+        "heading_size": "h2",
+        "card_effects": "normal"
       }
     },
     "52a343d8-2199-4ffa-aec2-d2faf7bd2465": {

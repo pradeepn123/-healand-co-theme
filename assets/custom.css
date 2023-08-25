@@ -714,3 +714,16 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
 .shop__container .filters__active-options .filters__active-option {
     text-transform: uppercase;
 }
+
+.sw-instagram-container .sw-instagram-header-title {
+    margin-top: 8px;
+}
+
+.collection-hero .collection-hero__content .collection-hero__title{
+    color: white;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+.articles__container .articles__header .articles__tags {
+    justify-content: center;
+}
