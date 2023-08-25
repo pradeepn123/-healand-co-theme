@@ -58,6 +58,7 @@
     font-weight: 400;
     color: #000;
     line-height: 31px;
+    text-transform: capitalize;
 }
 .filters__form accordeon-component .filters__label{
     justify-content: left;

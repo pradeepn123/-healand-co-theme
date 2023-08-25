@@ -99,7 +99,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 1; 
     -webkit-box-orient: vertical;
-
+    font-family: BrownStd-Regular;
     margin-top: -0.5em;
     margin-bottom: 1.5em;
     padding: 5px 16px;
