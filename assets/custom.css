@@ -710,3 +710,7 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
         justify-content: unset !important;
     }
 }
+
+.shop__container .filters__active-options .filters__active-option {
+    text-transform: uppercase;
+}
