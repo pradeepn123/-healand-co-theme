@@ -370,7 +370,7 @@
         "alignment": "left",
         "columns": 4,
         "desktop_row_height": 340,
-        "mobile_row_height": 500,
+        "mobile_row_height": 460,
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false
