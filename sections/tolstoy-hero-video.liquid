@@ -1,5 +1,4 @@
 {% assign publishId = section.settings.publishId %}
-
 {% assign linkNamespace = "tolstoy-hero-link" %}
 {% assign isLiveNamespace = "tolstoy-hero-is-live" %}
 {% assign desktopNamespace = "tolstoy-hero-desktop" %}
@@ -35,6 +34,10 @@
       cursor: pointer;
        {% endif %}
       height: auto;
+  }
+
+  .tolstoy-hero-video::-webkit-media-controls {
+      display: none !important;
   }
 
   @media (min-width: 575px) {
