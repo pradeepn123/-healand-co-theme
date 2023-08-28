@@ -711,10 +711,6 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
     }
 }
 
-.shop__container .filters__active-options .filters__active-option {
-    text-transform: uppercase;
-}
-
 .sw-instagram-container .sw-instagram-header-title {
     margin-top: 8px;
 }
@@ -727,3 +723,22 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
 .articles__container .articles__header .articles__tags {
     justify-content: center;
 }
+
+.bundles_page_tabChains .content_parent_position_relative {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1350px) {
+    .default_product_custom_class .product-content-tab {
+        margin-bottom: 40px;
+    }
+}
+
+.bundles_procuct_pageMain .product-content-tab__content {
+    position: relative;
+}
+
+.product-content-tab__text .product-description_internal {
+    overflow-y: scroll;
+}
+
