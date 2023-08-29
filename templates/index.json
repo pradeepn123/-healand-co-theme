@@ -316,7 +316,7 @@
             "color_scheme": "white",
             "desktop_columns": 2,
             "desktop_rows": 2,
-            "heading_size": "h4",
+            "heading_size": "h1",
             "show_product_count": true,
             "blog_image": "shopify:\/\/shop_images\/blog_img_1.jpg",
             "overlay_opacity": 10,
