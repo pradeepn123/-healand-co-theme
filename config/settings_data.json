@@ -75,7 +75,7 @@
     "product_card_custom_badge_1_bg": "#ffffff",
     "product_card_custom_badge_1_color": "#000000",
     "product_card_custom_badge_2_bg": "#5d54a3",
-    "cart_type": "drawer_only",
+    "cart_type": "page_only",
     "show_sticky_cart": true,
     "show_cart_order_note": false,
     "cart_status_background_color": "#6c745d",
