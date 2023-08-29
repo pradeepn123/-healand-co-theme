@@ -369,7 +369,7 @@
         "heading_size": "h5",
         "alignment": "left",
         "columns": 4,
-        "desktop_row_height": 340,
+        "desktop_row_height": 270,
         "mobile_row_height": 340,
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
