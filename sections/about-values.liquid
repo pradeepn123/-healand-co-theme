@@ -5,8 +5,7 @@
                 <h1 class=" {{ section.settings.heading_size }} decorated_heading font--color">{{ section.settings.val-main-heading }}</h1>
             </div>
 
-            {% if section.settings.card_effects == "hover" %}
-            <div class="values-main hover-div">
+            <div class="values-main hover-div desktop">
                 {% for block in section.blocks %}
                     <div class="values-block" style="background:{{block.settings.user_color}}">
                         <h3 class="values-heading">{{block.settings.val-heading}}</h3>
@@ -18,8 +17,7 @@
                 {% endfor %} 
             </div>
 
-            {% else %}
-            <div class="values-main hover-div">
+            <div class="values-main hover-div mobile">
                 {% for block in section.blocks %}
                     <div class="values-block" style="background:{{block.settings.user_color}}">
                         <h3 class="values-heading-hover">{{block.settings.val-heading}}</h3>
@@ -27,7 +25,7 @@
                     </div>
                 {% endfor %} 
             </div>
-            {% endif %}
+
         </div>
     </div>
 </section>
@@ -35,9 +33,16 @@
 
 {% style %}
 
-{% if section.settings.card_effects == "normal" %}
+.mobile {
+    display: none;
+}
+
+.desktop {
+    display: grid;
+}
+
 @media (min-width: 1200px){
-    .values-main .values-block {
+    .mobile .values-block {
         display: flex;
         top: 0px;
         left: 0;
@@ -50,17 +55,22 @@
 }
 
 @media (min-width: 768px)  and (max-width: 1199px){
-    .values-main .values-block {
+    .mobile .values-block {
         padding: 3em 3em;
     }
 }
 
 @media(min-width:320px) and (max-width: 767px){
-    .values-main .values-block {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: grid;
+    }
+    .mobile .values-block {
         padding: 2em 2em;
     }
 }
-{% endif %}
 
 {% endstyle %}
 
@@ -115,22 +125,6 @@
                     }
                     ],
                     "default": "h6"
-                },
-                {
-                    "type": "select",
-                    "id": "card_effects",
-                    "label": "Card Effects",
-                    "options": [
-                      {
-                        "value": "normal",
-                        "label": "Normal"
-                      },
-                      {
-                        "value": "hover",
-                        "label": "Hover"
-                      }
-                    ],
-                    "default": "normal"
                 }
             ],
 
