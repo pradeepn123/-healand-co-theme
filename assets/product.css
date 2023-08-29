@@ -364,12 +364,6 @@
 
 @media screen and (max-width: 767px) {
     .imagesOnly_parent{
-        justify-content: space-between;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch;
-        -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
-        white-space: nowrap;
         column-gap: 40px;
     }
     .imagesOnly_parent img {
@@ -618,7 +612,7 @@
     margin-bottom: 24px;
 }
 .upsell_product_main_wrap .upsell_product_heading .heading_text{
-    font-size: 20px;
+    font-size: 18px;
     color: #000;
     font-weight: 700;
     margin-right: 9px;
@@ -645,6 +639,7 @@
 @media screen and (max-width: 767px){
     .upsell_product_main_wrap .upsell_product_heading{
         padding-bottom: 16px;
+        display: grid;
     }
     .upsell_product_main_wrap .upsell_product_heading{
         margin-bottom: 36px;

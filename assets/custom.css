@@ -742,3 +742,17 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
     overflow-y: scroll;
 }
 
+@media screen and (max-width: 480px) {
+    .product_upsell_container .card-carousel__dots-carousel {
+        bottom: -10px;
+        margin-top: 0;
+        max-width: 18rem;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+
+.card-carousel__dots-carousel .dots-carousel__container {
+    justify-content: center;
+}

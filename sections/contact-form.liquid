@@ -171,7 +171,11 @@
     <div class="contact__methods__main container container--{{ container_size }}">
       {% for block in section.blocks %}
         <div class="Contact_method_links" {% if block.settings.contact_heading == "CHAT WITH US" %} id="chatWithUs" {% endif %}>
-        <a href="{{ block.settings.contact_method_link }}" target="">
+          {% if block.settings.contact_heading == "CHAT WITH US" %}
+            <a href="{{ block.settings.contact_method_link }}" target="">
+          {% else %}
+            <a href="{{ block.settings.contact_method_link }}" target="_blank">
+          {% endif %}
           <div class="contact__methods">
             <div class="align_contact_methods">
               <div class="contact__methods__heading_main">
