@@ -364,7 +364,7 @@
 
 @media screen and (max-width: 767px) {
     .imagesOnly_parent{
-        column-gap: 40px;
+        column-gap: 40px !important;
     }
     .imagesOnly_parent img {
         flex: 0 0 auto;
