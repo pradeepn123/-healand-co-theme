@@ -76,7 +76,7 @@
 }
 @media(min-width: 768px) and (max-width: 1281px){
     .collage__card-grid {
-        --gsc-collage-grid-calculated-row-height: 250px;
+        --gsc-collage-grid-calculated-row-height: 275px;
     }
     .article-card.link-parent-for-hover .article-card__details .article-card__title{
         padding: 2rem;

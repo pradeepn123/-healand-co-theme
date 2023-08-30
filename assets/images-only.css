@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 320px){
     .imagesOnly_parent {
-        column-gap: 30px;
+        column-gap: 20px;
     }
 }
 
