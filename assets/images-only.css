@@ -1,12 +1,11 @@
 .imagesOnly_parent {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 30px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    column-gap: 52px;
 }
 .imagesOnly_container.section-spacing{
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .imagesOnly_parent .imageText_child{
     display: flex;
@@ -30,4 +29,14 @@
     .images_only_custom_class{
         padding-top: 21px !important;
     }
+}
+
+@media screen and (max-width: 320px){
+    .imagesOnly_parent {
+        column-gap: 20px;
+    }
+}
+
+.mobile_container {
+    padding-right: 0;
 }

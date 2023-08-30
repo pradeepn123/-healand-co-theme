@@ -121,6 +121,7 @@
       >
         <div class='card-carousel__container' data-carousel-container>
           {%- for recommendation in recommendations.products -%}
+            {% if recommendation.vendor != "Sproos" %}
             <div class='card-carousel__slide'>
               {% render 'product-card',
                 product: recommendation,
@@ -131,6 +132,7 @@
                 with_bottom_spacing: product_card_with_bottom_spacing
               %}
             </div>
+          {% endif %}
           {%- endfor -%}
         </div>
       </div>
