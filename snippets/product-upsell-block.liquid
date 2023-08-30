@@ -63,28 +63,30 @@
                   <div class='dots-carousel__container' data-carousel-container>
                     {%- for upsell_product in block.settings.upsell_products -%}
                         {% unless upsell_product.available == false %}
-                        <carousel-dot
-                            class='dots-carousel__slide {% if forloop.index0 == 0 or forloop.index0 == 1 %}is-primary{% endif %}'
-                            tabindex='0'
-                            data-dot-index='{{ forloop.index0 | minus: 1 }}'
-                          >
-                            <div class='dots-carousel__slide-body'>
-                              <div class='dots-carousel__slide-inner-circle'></div>
-                              <div
-                                class='dots-carousel__loader'
-                                size='medium'
-                                variant='dark'
-                                data-autoplay-indicator
-                              >
-                                {% render 'icon',
-                                  icon_name: 'circle',
-                                  background_class: 'dots-carousel__loader-background',
-                                  border_class: 'dots-carousel__loader-border',
-                                  circle_class: 'dots-carousel__loader-circle'
-                                %}
-                              </div>
-                            </div>
-                          </carousel-dot>
+                            {% if forloop.index0 > 0 %}
+                                <carousel-dot
+                                    class='dots-carousel__slide {% if forloop.index0 == 0 or forloop.index0 == 1 %}is-primary{% endif %}'
+                                    tabindex='0'
+                                    data-dot-index='{{ forloop.index0 | minus: 1 }}'
+                                >
+                                    <div class='dots-carousel__slide-body'>
+                                    <div class='dots-carousel__slide-inner-circle'></div>
+                                    <div
+                                        class='dots-carousel__loader'
+                                        size='medium'
+                                        variant='dark'
+                                        data-autoplay-indicator
+                                    >
+                                        {% render 'icon',
+                                        icon_name: 'circle',
+                                        background_class: 'dots-carousel__loader-background',
+                                        border_class: 'dots-carousel__loader-border',
+                                        circle_class: 'dots-carousel__loader-circle'
+                                        %}
+                                    </div>
+                                    </div>
+                                </carousel-dot>
+                            {% endif %}
                         {% endunless %}
                     {%- endfor -%}
                 </div>

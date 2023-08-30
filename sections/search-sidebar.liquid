@@ -86,7 +86,8 @@
                     </h6>
                     <div class='search-sidebar-section__card-grid--queries'>
                       {%- for query in predictive_search.resources.queries limit: results_per_category -%}
-                        {% if query.text != predictive_search.terms %}
+                        {% if query.text != predictive_search.terms %} 
+                          {% if predictive_search.resources.query.text != sproos %}
                           <button
                             class='unstyled-button search-sidebar-section__query'
                             data-sidebar-search-item
@@ -95,6 +96,7 @@
                           >
                             {{ query.styled_text }}
                           </button>
+                          {%endif%}
                         {% endif %}
                       {%- endfor -%}
                     </div>
