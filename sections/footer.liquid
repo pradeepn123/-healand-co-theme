@@ -33,6 +33,13 @@
     {% endif %}
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         .block-{{ block.id }}{
             --gsc-logo-width: {{ block.settings.logo_width | divided_by: 10 }}rem;
             --gsc-image-width: {{ block.settings.image_width }}%;
@@ -50,6 +57,13 @@
       {%- if section.blocks.size > 0 -%}
         <div class='card-grid footer__card-grid'>
           {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- case block.type -%}
               {%- when 'image' -%}
                 {%- assign image = block.settings.image -%}
@@ -189,6 +203,13 @@
                   {%- endif -%}
                   <div class='footer__menu'>
                     {%- for link in block.settings.menu.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                       <a
                         class='footer__menu-item underline-text footer__underline-text body-font-weight-from-global-settings'
                         href='{{ link.url }}'
@@ -236,6 +257,13 @@
                       <localization-selector class='footer__selector'>
                         {%- form 'localization', id: 'FooterLanguageForm' -%}
                           {%- for language in localization.available_languages -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                             <button
                               class='localization-dropdown__item {% if localization.language == language %} selected{% endif %}'
                               data-localization-item
@@ -289,6 +317,13 @@
                       <localization-selector class='footer__selector'>
                         {%- form 'localization', id: 'FooterCurrencyForm' -%}
                           {%- for country in localization.available_countries -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                             <button
                               data-localization-item
                               class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'
@@ -319,6 +354,13 @@
         {%- if bottom_bar.links.size > 0 -%}
           <div class='footer__bottom-bar'>
             {%- for link in bottom_bar.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               <a
                 class='footer__bottom-bar-item underline-text footer__underline-text'
                 href='{{ link.url }}'
@@ -337,6 +379,13 @@
         {%- if show_payment_icons -%}
           <div class='footer__payment-icons'>
             {%- for type in shop.enabled_payment_types -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: type %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               <img src='{{ type | payment_type_img_url }}' alt='Payment: {{ type }}' loading='lazy'>
             {%- endfor -%}
             {%- if shop.features.follow_on_shop? and enable_follow_on_shop -%}

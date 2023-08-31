@@ -117,6 +117,13 @@
     >
       <div class='card-carousel__container' data-carousel-container>
         {%- for collection in collection_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           <div class='card-carousel__slide'>
             {% render 'collection-card',
               title: collection.title,
@@ -157,6 +164,13 @@
 {% capture grid %}
   <div class="card-grid collection-list__card-grid" data-aos="fade-up" data-aos-delay="300">
     {%- for collection in collection_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       {% render 'collection-card',
         title: collection.title,
         img: collection.image,

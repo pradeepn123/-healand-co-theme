@@ -23,6 +23,13 @@
     {{ block.shopify_attributes }}
   >
     {%- for collection in collection_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       {%- render 'collection-card', class: "card-grid__item", with_bottom_spacing: true, title: collection.title, text_style: text_style, heading_size: heading_size, img: collection.image, img_ratio: img_ratio, content_align: collection_card_content_align, collection: collection, show_product_count: show_product_count, link_url: collection.url -%}
     {%- endfor -%}
   </div>
@@ -56,6 +63,13 @@
       <div class='card-carousel__viewport embla' data-carousel-viewport>
         <div class='card-carousel__container' data-carousel-container>
           {%- for collection in collection_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             <div class='card-carousel__slide'>
               {%- render 'collection-card',
                 title: collection.title,

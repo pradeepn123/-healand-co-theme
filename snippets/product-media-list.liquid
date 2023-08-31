@@ -34,6 +34,13 @@
         <div class='carousel__container' data-carousel-container>
           {%- if product.media != blank -%}
             {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               {%- if forloop.index0 == 0 -%}
                 {% assign is_first_media = true %}
               {%- else -%}
@@ -57,6 +64,13 @@
             {%- endfor -%}
           {%- else -%}
             {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               <div class='carousel__slide product-mobile-media__carousel-slide' data-media-id='{{ forloop.index }}'>
                 <div class='shape shape--{{ img_ratio }}'>
                   {%- render 'product-media',
@@ -83,6 +97,13 @@
           <div class='dots-carousel__viewport embla' data-carousel-viewport>
             <div class='dots-carousel__container' data-carousel-container>
               {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 <carousel-dot
                   class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                   tabindex='0'

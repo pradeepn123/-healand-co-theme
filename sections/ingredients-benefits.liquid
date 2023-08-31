@@ -4,6 +4,13 @@
     <div class="ingredient_benefits_wrapper">
         {% comment %} {% capture benefits_section_image %}
             {% for obj in page.metafields.custom.benefits.value %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: obj %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 {% if obj.section_image %}
                     <img id="benefitsSectionImage" src="{{ obj.section_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
                 {% endif %}
@@ -17,6 +24,13 @@
             <div class="benefits_list">
                 <h2 class="benefits_title" style="font-size: {{ section.settings.benefit_title_font_size}}px;">{{ section.settings.benefit_title }}</h2>
                 {% for obj in page.metafields.custom.benefits.value %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: obj %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <div class="benefit">
                         {% if obj.icon != blank %}
                             <img src="{{ obj.icon | img_url: 'master' }}" alt="{{ obj.text }}"/>

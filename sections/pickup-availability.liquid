@@ -87,6 +87,13 @@
             <h6>{{ product_variant.product.title | escape }}</h6>
 
             {%- for product_option in product_variant.product.options_with_values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: product_option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               <span class='pickup-availability-sidebar__variant-option'>
                 {{- product_option.name | escape }} - {{ product_option.selected_value -}}
               </span>
@@ -96,6 +103,13 @@
 
         <div class='pickup-availability-sidebar__list'>
           {%- for availability in pick_up_locations -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: availability %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- assign address = availability.location.address -%}
 
             <div class='pickup-availability-sidebar__list-item'>

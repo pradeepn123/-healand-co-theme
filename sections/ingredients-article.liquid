@@ -10,6 +10,13 @@
             <h2 class="articles_title" style="font-size: {{ section.settings.articles_section_title_font_size }}px;">{{ section.settings.section_title }}</h2>
             <ul class="articles">
                 {% for ingredient_article in page.metafields.custom.article_list.value %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: ingredient_article %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <li class="article_list">
                         <div>
                             <p>{{ ingredient_article.name }}</p>

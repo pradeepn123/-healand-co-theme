@@ -3,6 +3,13 @@
     {% comment %} {% assign ingredientList = 'ashwagandha,apple,acai,banana,lemon,mango,pineapple,cinnamon,chocolate,mango,pineapple,cinnamon,chocolate,ashwagandha' | split: ','  %} {% endcomment %}
     {% assign ingredient_page_name = request.path | split: '/' %}
     {% for ingredient in ingredientList %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: ingredient %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {% assign ingredient_handle = ingredient.heading | handle %}
         {% if request.path contains ingredient_handle %}
             {% assign carousel_index_start = forloop.index %}
@@ -22,6 +29,13 @@
         <div class="carousel__viewport" data-carousel-viewport>
             <div class='carousel__container' data-carousel-container>
                 {% for ingredient in ingredientList %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: ingredient %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <div class="ingredient_list_container carousel__slide">
                         {% assign ingredient_handle = ingredient.heading | handle %}
                         <a href="/pages/{{ ingredient_handle }}" class="ingredient {% if request.path contains ingredient_handle %} active {% endif %}">{{ ingredient.heading | upcase }}</a>

@@ -30,6 +30,13 @@
             <div class='drawer-menu__list drawer-menu__list--without-mega-menu'>
               <div class='drawer-menu__list-body drawer-menu__list-body--additional-top-spacing'>
                 {%- for link in menu.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   {%- liquid
                     assign link_title_downcase = link.title | downcase
                     assign has_menu = false
@@ -106,6 +113,13 @@
                     <localization-selector>
                       {%- form 'localization', id: 'HeaderDrawerLanguageForm' -%}
                         {%- for language in localization.available_languages -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           <button
                             class='localization-dropdown__item {% if localization.language == language %} selected{% endif %}'
                             data-localization-item
@@ -155,6 +169,13 @@
                     <localization-selector>
                       {%- form 'localization', id: 'HeaderDrawerCurrencyForm' -%}
                         {%- for country in localization.available_countries -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           <button
                             data-localization-item
                             class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'
@@ -183,6 +204,13 @@
         </div>
       </drawer-menu-page>
       {%- for link in menu.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {%- liquid
           assign link_title_downcase = link.title | downcase
           assign has_mega_menu = false
@@ -255,6 +283,13 @@
                 {%- if link.links.size > 0 -%}
                   <div class='drawer-menu__list-body'>
                     {%- for childlink in link.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                       {%- if childlink.links.size > 0 -%}
                         <drawer-menu-page-link
                           class='drawer-menu__menu-item drawer-menu__menu-item--medium'
@@ -288,6 +323,13 @@
             </div>
           </drawer-menu-page>
           {%- for childlink in link.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- if childlink.links.size > 0 -%}
               <drawer-menu-page
                 class='drawer-menu__page {% if has_mega_menu %} drawer-menu__page--with-mega-menu {% endif %}'
@@ -339,6 +381,13 @@
                     {%- if childlink.links.size > 0 -%}
                       <div class='drawer-menu__list-body'>
                         {%- for grandchildlink in childlink.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           <a
                             class='drawer-menu__menu-item drawer-menu__menu-item--small {% if grandchildlink.active %} active{% endif %}'
                             href='{{ grandchildlink.url }}'
@@ -570,6 +619,13 @@
 
       <template id='drawer-menu-blocks-template'>
         {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           {%- liquid
             case block.type
               when 'menu-1'

@@ -56,6 +56,13 @@
                 </div>
               {%- endif -%}
               {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 {%- if media.id != featured_media.id -%}
                   <div
                     class='carousel__slide product-modal__slide'
@@ -68,6 +75,13 @@
               {%- endfor -%}
             {%- else -%}
               {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 <div
                   class='carousel__slide product-modal__slide'
                   data-media-id='{{ forloop.index }}'

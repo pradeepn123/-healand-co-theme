@@ -1,3 +1,8 @@
+{%- comment -%} Wholesale_Club_Product_Visibility_Resource_Page Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility" %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% render "wc_page_replacement" %}
+{%- else -%}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -43,6 +48,9 @@
   {%- render 'quick-view', product: product, section: section, sectionId: sectionIdWithQuickViewPrefix -%}
 </div>
 
+
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_Resource_Page End {%- endcomment -%}
 {% schema %}
 {
   "name": "t:sections.product.name",

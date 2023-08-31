@@ -212,7 +212,7 @@ text-align: center;
     left: 0;
     width: 100%;
     padding: 7em 2em;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
   }

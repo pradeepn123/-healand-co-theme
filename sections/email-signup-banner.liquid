@@ -65,6 +65,13 @@
       <div class='signup__content-wrap'>
         <div class='signup__content signup__content--desktop {% if desktop_content_background != 'none' %} signup__content--with-{{ desktop_content_background }}-background{% endif %}'>
           {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- case block.type -%}
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
@@ -150,6 +157,13 @@
         </div>
         <div class='signup__content signup__content--mobile {% if mobile_content_background != 'none' %} signup__content--with-{{ mobile_content_background }}-background{% endif %}'>
           {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- case block.type -%}
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}

@@ -13,6 +13,13 @@
             {% assign select_blocks = section.blocks | where: 'type', 'select' %}
                 <div class="{% if select_blocks.size > 2 %} refer_content_grid_container {% else %} refer_content_container {% endif %}">
                     {% for block in select_blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                         {% if block.settings.refer_title != blank and block.settings.refer_text != blank %}
                             {% if block.settings.refer_svg_icon != blank or block.settings.refer_icon != blank %}
                                 <div class="refer_content">

@@ -54,6 +54,13 @@
               <div class='carousel__viewport embla' data-carousel-viewport>
                 <div class='carousel__container announcement__carousel-container' data-carousel-container>
                   {%- for block in blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <div
                       class='carousel__slide announcement-bar__slide block-{{ block.id }}'
                       block-id='{{ block.id }}'
@@ -131,6 +138,13 @@
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarLanguageForm' -%}
                             {%- for language in localization.available_languages -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                               <button
                                 class='localization-dropdown__item {% if localization.language == language %} selected{% endif %}'
                                 data-localization-item
@@ -184,6 +198,13 @@
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarCurrencyForm' -%}
                             {%- for country in localization.available_countries -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                               <button
                                 data-localization-item
                                 class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'

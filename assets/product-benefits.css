@@ -80,7 +80,7 @@
 
     .pb_container .pb_content_continer .pb_content_inner p{
         overflow: auto;
-        max-height: 72px;
+        max-height: 70px;
     }
 
 /* Mobile Content */

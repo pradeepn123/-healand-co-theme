@@ -1,4 +1,11 @@
-<tolstoy-stories data-tags="{% for tag in product.tags -%}{{ tag }},{%- endfor %}" class="tolstoy-stories" id="{{ section.settings.publishId }}_story" data-publish-id="{{ section.settings.publishId }}" data-product-id="{{ product.id }}">
+<tolstoy-stories data-tags="{% for tag in product.tags -%}{{ tag }},{%- endfor %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: tag %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+" class="tolstoy-stories" id="{{ section.settings.publishId }}_story" data-publish-id="{{ section.settings.publishId }}" data-product-id="{{ product.id }}">
 </tolstoy-stories>
 
 {% schema %}

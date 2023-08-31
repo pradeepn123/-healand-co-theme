@@ -47,6 +47,13 @@
           <sort-list class='sort-list-sidebar__form-wrap'>
             <form class='sort-list-sidebar__form'>
               {% for option in results.sort_options %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 <label
                   for='sort-list-mobile-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                   class='sort-list-sidebar__form-label checkbox'
@@ -101,6 +108,13 @@
           <sort-list>
             <form class='sort-list-dropdown__form'>
               {% for option in results.sort_options %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 <label
                   for='sort-list-desktop-{{ option.value }}-{{ option.position }}-{{ forloop.index }}'
                   class='sort-list-dropdown__item checkbox {% if current_sort_by == option.value %}active{% endif %}'

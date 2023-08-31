@@ -40,6 +40,13 @@
                 </div>
                 <form class="filters__form" data-filters-form>
                     {%- for filter in results.filters -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: filter %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                         {%- liquid
                             assign available_filter_value_count = 0
     
@@ -143,6 +150,13 @@
                                                         {%- assign showed_filter_value_count = 0 -%}
     
                                                         {%- for value in filter.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                                             {%- if value.count > 0 -%}
                                                                 {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
     
@@ -269,6 +283,13 @@
                                             {%- assign showed_filter_value_count = 0 -%}
     
                                             {%- for value in filter.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
     
                                                 {%- if value.count > 0 -%}
                                                     {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
@@ -354,6 +375,13 @@
                 </div>
                 <form class="filters__form" data-filters-form>
                     {%- for filter in results.filters -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: filter %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                         {%- liquid
                             assign available_filter_value_count = 0
     
@@ -457,6 +485,13 @@
                                                         {%- assign showed_filter_value_count = 0 -%}
     
                                                         {%- for value in filter.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                                             {%- if value.count > 0 -%}
                                                                 {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
     
@@ -583,6 +618,13 @@
                                             {%- assign showed_filter_value_count = 0 -%}
     
                                             {%- for value in filter.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                                 {%- if value.count > 0 -%}
                                                     {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
     

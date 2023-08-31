@@ -6,6 +6,13 @@
     <h2 style="color:{{ section.settings.points_section_header_color }}">{{ section.settings.points_section_header }}</h2>
     <div class="points_section_content">
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {% if block.settings.points_title != blank and block.settings.points_text != blank %}
             {% if block.settings.points_svg_icon != blank or block.settings.points_icon != blank %}
             <div class="points_column">

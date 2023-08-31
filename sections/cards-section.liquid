@@ -6,6 +6,13 @@
     <h3 class="decorated_heading">{{ section.settings.cards_section_header }}</h3>
     <div class="cards_section_content">
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {% if block.settings.card_title != blank and block.settings.card_text != blank %}
             {% if block.settings.card_svg_icon != blank or block.settings.card_icon != blank %}
                 <div class="card" style="background-color:{{ block.settings.card_bg }}">

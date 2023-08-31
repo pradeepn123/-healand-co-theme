@@ -34,6 +34,13 @@
     }
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         .block-{{ block.id }} {
             --gsc-image-width: {{ block.settings.mobile_image_width }}%;
             --gsc-img-ratio: {{ block.settings.image_ratio | times: 100 }}%;
@@ -48,6 +55,13 @@
         }
 
         {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             .block-{{ block.id }} {
                 --gsc-image-width: {{ block.settings.desktop_image_width }}%;
             }
@@ -77,6 +91,13 @@
     {%- if section.blocks.size > 0 -%}
       <div class='card-grid multicolumn__card-grid {% if show_column_background == false %} multicolumn__card-grid--with-additional-between-row-space {% endif %}'>
         {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           {%- liquid
             assign image = block.settings.image
             assign video = block.settings.video
@@ -154,6 +175,13 @@
         >
           <div class='carousel__container' data-carousel-container>
             {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               {%- liquid
                 assign image = block.settings.image
                 assign video = block.settings.video
@@ -231,6 +259,13 @@
             <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
               <div class='solid-dots-carousel__container' data-carousel-container>
                 {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   <carousel-dot
                     class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                     tabindex='0'

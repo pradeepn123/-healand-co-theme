@@ -82,6 +82,13 @@ loop1_Object_values.forEach((items , index) => {
 <div class="tabs_parent">
     <div class="tabs_headings">
     {% for headingValue in newValue %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: headingValue %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         <button id="heading-tab-{{ forloop.index }}" class="cliableTabs_Button {% if forloop.index == 1 %} selected {% endif %}">
             {{ headingValue.info_heading }}
         </button>
@@ -89,6 +96,13 @@ loop1_Object_values.forEach((items , index) => {
     </div>
     <div class="tabs_content">
         {% for itemContent in newValue %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: itemContent %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         <div class="tabs_hide" id="heading-tab-{{ forloop.index }}" style="{% if forloop.index == 1 %}display: block;{% endif %}">
             {{ itemContent.content_left_column }}
             {{ itemContent.content_right_column }}

@@ -20,6 +20,13 @@
     }
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         .block-{{block.id}}{
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
@@ -36,6 +43,13 @@
         <tabs-component data-selected-tab-id='1'>
           <div class='product-details__tab-names'>
             {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               {% assign custom_icon_image = block.settings.custom_icon_image %}
               {% assign icon = block.settings.icon %}
 
@@ -69,6 +83,13 @@
             >
               <div class='carousel__container' data-carousel-container>
                 {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   {% assign custom_icon_image = block.settings.custom_icon_image %}
                   {% assign icon = block.settings.icon %}
 
@@ -98,6 +119,13 @@
           <div class='tabs product-details__tabs' data-tabs-container>
             <template data-tabs-elements-template>
               {%- for block in section.blocks offset: 1 -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 {% assign custom_icon_image = block.settings.custom_icon_image %}
                 {% assign icon = block.settings.icon %}
 
@@ -249,6 +277,13 @@
         </tabs-component>
       {%- else -%}
         {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           {% assign custom_icon_image = block.settings.custom_icon_image %}
           {% assign icon = block.settings.icon %}
 

@@ -26,6 +26,13 @@ assign section_spacing_bottom = options.section_spacing_bottom
         <div class="ingredients-database-wrapper">
             <div class="ingredients-database" initial-load="true">
               {% for block in page.metafields.custom.list.value %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 {% assign ingredient_heading = block.heading | handle %}
                 {% assign page =  pages[ingredient_heading] %}
                 <div class="ingredients-database-item hidden">

@@ -34,10 +34,24 @@
   >
     <div class='product-variant-picker__form'>
       {%- for option in product.options_with_values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         <div data-variant-picker-option-inputs>
           {{ option.name }}
 
           {%- for value in option.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             <div>
               <input
                 type='radio'
@@ -57,6 +71,13 @@
     </div>
     <div class='product-variant-picker__list'>
       {%- for option in product.options_with_values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {%- assign option_name_downcase = option.name | downcase -%}
 
         <div data-variant-picker-option-labels>
@@ -91,6 +112,13 @@
             </div>
             <div class='product-variant-picker__pill-list'>
               {%- for value in option.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 <label
                   for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
                   class='pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if picker_type == 'button-outline' %}pill--outline{% endif %} {% if picker_type == 'button-solid' %}pill--solid{% endif %}'
@@ -142,6 +170,13 @@
               <template>
                 <div>
                   {%- for value in option.values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <label
                       class='dropdown__item {% if option.selected_value == value %} selected {% endif %}'
                       for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'

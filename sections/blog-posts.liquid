@@ -65,6 +65,13 @@
     {%- if articles.size > 0 -%}
       <div class='card-grid articles__card-grid'>
         {%- for article in articles limit: desktop_columns -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           {%- render 'article-card',
             class: 'card-grid__item',
             with_bottom_spacing: true,
@@ -85,6 +92,13 @@
         <div class='card-carousel__viewport embla' data-carousel-viewport>
           <div class='card-carousel__container' data-carousel-container>
             {%- for article in articles limit: desktop_columns -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               <div class='card-carousel__slide'>
                 {%- render 'article-card',
                   article: article,

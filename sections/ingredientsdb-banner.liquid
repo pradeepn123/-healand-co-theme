@@ -119,6 +119,13 @@
 
 {% style %}
   {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
     .heading-for-icon{
       font-size: {{block.settings.icon_heading_font}}px;
       color: {{block.settings.icon_heading-color}};
@@ -173,6 +180,13 @@
                         {%- endif -%}
                         <div class="icon-text-wrapper">
                             {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                               <div class="flex-wrap-imageicon">
                                 {% if block.settings.svg_image_icon != blank%}
                                     <div class="icon-wrap">
@@ -263,6 +277,13 @@
                         {%- endif -%}
                         <div class="icon-text-wrapper">
                             {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                               <div class="flex-wrap-imageicon">
                                 {% if block.settings.svg_image_icon != blank%}
                                     <div class="icon-wrap">

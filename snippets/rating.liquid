@@ -5,6 +5,13 @@
 
 <div class='rating {{ class }}'>
   {%- for i in (1..5) -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
     {%- if forloop.index <= value -%}
       <svg class='rating__star' viewbox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path d="M9 0L11.3276 5.79629L17.5595 6.21885L12.7662 10.2237L14.2901 16.2812L9 12.96L3.70993 16.2812L5.23382 10.2237L0.440492 6.21885L6.67237 5.79629L9 0Z" fill="#F3AF57"/>

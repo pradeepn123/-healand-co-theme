@@ -37,6 +37,13 @@
     }
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {% assign options = block.settings %}
 
         {% if block.type == 'split-image-banner' %}
@@ -139,6 +146,13 @@
           <div class='carousel__viewport embla slideshow__carousel-viewport' data-carousel-viewport>
             <div class='carousel__container slideshow__carousel-container' data-carousel-container>
               {%- for block in blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                 {%- case block.type -%}
                   {%- when 'split-image-banner' -%}
                     <div
@@ -240,6 +254,13 @@
               <div class='dots-carousel__viewport embla' data-carousel-viewport>
                 <div class='dots-carousel__container' data-carousel-container>
                   {%- for block in blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <carousel-dot
                       class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'

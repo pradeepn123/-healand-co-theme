@@ -5,8 +5,15 @@
                 <h1 class=" {{ section.settings.heading_size }} decorated_heading font--color">{{ section.settings.val-main-heading }}</h1>
             </div>
 
-            <div class="values-main hover-div desktop">
+            <div class="values-main hover-div">
                 {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <div class="values-block" style="background:{{block.settings.user_color}}">
                         <h3 class="values-heading">{{block.settings.val-heading}}</h3>
                         <div class="values-block-hover values-grid new-div" style="background:{{block.settings.user_color}}">
@@ -14,67 +21,16 @@
                             <p class="values-desc">{{block.settings.val-desc}}</p>
                         </div>
                     </div>
-                {% endfor %} 
-            </div>
+                {% endfor %}
 
-            <div class="values-main hover-div mobile">
-                {% for block in section.blocks %}
-                    <div class="values-block" style="background:{{block.settings.user_color}}">
-                        <h3 class="values-heading-hover">{{block.settings.val-heading}}</h3>
-                        <p class="values-desc">{{block.settings.val-desc}}</p>
-                    </div>
-                {% endfor %} 
+                
             </div>
-
         </div>
     </div>
 </section>
 
 
-{% style %}
 
-.mobile {
-    display: none;
-}
-
-.desktop {
-    display: grid;
-}
-
-@media (min-width: 1200px){
-    .mobile .values-block {
-        display: flex;
-        top: 0px;
-        left: 0;
-        width: 100%;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1280px){
-    .mobile .values-block {
-        padding: 3em 3em;
-    }
-}
-
-@media(min-width:320px) and (max-width: 768px) {
-    .mobile .values-block {
-        padding: 2em 2em;
-    }
-}
-
-@media(min-width:320px) and (max-width: 1280px){
-    .desktop {
-        display: none;
-    }
-    .mobile {
-        display: grid;
-    }
-}
-
-{% endstyle %}
 
 
 

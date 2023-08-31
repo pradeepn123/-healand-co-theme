@@ -34,6 +34,13 @@
     }
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         .block-{{ block.id }} {
           --gsc-collage-grid-item-row-span: {{ block.settings.desktop_rows }};
           --gsc-collage-grid-item-column-span: {{ block.settings.desktop_columns }};
@@ -78,6 +85,13 @@
 
 <div class='collage section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}collage--with-carousel{% endif %}'>
   {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
     {%- if block.settings.link == blank and block.type == 'quote' -%}
       <sidebar-component
         class='sidebar quote-sidebar'
@@ -116,6 +130,13 @@
       <div class='collage__blocks'>
         <div class='collage__card-grid' data-aos="fade-up">
           {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             <div
               class='collage__item collage__card-grid-item block-{{ block.id }} color-{{ block.settings.color_scheme }}'
               {{ block.shopify_attributes }}
@@ -129,6 +150,13 @@
             <div class='carousel__viewport collage__carousel-viewport embla' data-carousel-viewport>
               <div class='carousel__container' data-carousel-container>
                 {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   <div
                     class='collage__item carousel__slide collage__carousel-slide block-{{ block.id }} color-{{ block.settings.color_scheme }}'
                     {{ block.shopify_attributes }}
@@ -147,6 +175,13 @@
                 <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
                   <div class='solid-dots-carousel__container' data-carousel-container>
                     {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                       <carousel-dot
                         class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                         tabindex='0'

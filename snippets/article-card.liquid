@@ -56,6 +56,13 @@
     {%- if show_tags and article.tags.size > 0 -%}
       <div class='article-card__tags {% if settings.edge_rounding_degree == 'extra' %} article-card__tags--with-extra-rounded-tags{% endif %}'>
         {%- for tag in article.tags -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: tag %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           <div class='article-card__tag'>
             {{- tag -}}
           </div>

@@ -132,6 +132,13 @@
             <div class='carousel__viewport collection-hero__carousel-viewport embla' data-carousel-viewport>
               <div class='carousel__container collection-hero__carousel-container' data-carousel-container>
                 {%- for collection in collections -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   {%- if collection.image != blank -%}
                     <div class='carousel__slide'>
                       <img

@@ -54,6 +54,13 @@
         <div class='collection-list__card-grid-wrap'>
           <div class='card-grid collection-list__card-grid' id='CollectionListGrid'>
             {%- for collection in collections -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               {% render 'collection-card',
                 class: 'card-grid__item',
                 with_bottom_spacing: true,
@@ -100,6 +107,13 @@
     {%- else -%}
       <div class='card-grid collection-list__card-grid'>
         {%- for collection in collection_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
           <div class='card-grid__item'>
             {% render 'collection-card',
               with_bottom_spacing: true,

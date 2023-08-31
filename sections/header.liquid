@@ -35,6 +35,13 @@
     }
 
     {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       {% case block.type %}
         {% when 'menu-1' %}
             {%- liquid
@@ -228,6 +235,13 @@
       {%- if menu != blank and menu.links != blank and grid != '6' -%}
         <div class='header__nav' data-desktop-nav>
           {%- for link in menu.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {%- liquid
               assign link_title_downcase = link.title | downcase
               assign has_menu = false
@@ -318,6 +332,13 @@
                               <div class='mega-menu__nav'>
                                 <div class='mega-menu__list'>
                                   {%- for childlink in link.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                     {%- if childlink.links.size > 0 -%}
                                       <float-element-btn
                                         class='header__menu-item-wrap'
@@ -346,6 +367,13 @@
                                         <template>
                                           <div>
                                             {%- for grandchildlink in childlink.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                               <a
                                                 href='{{ grandchildlink.url }}'
                                                 class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'
@@ -401,6 +429,13 @@
                     {%- elsif link.levels == 2 -%}
                       <div class='header__wide-menu'>
                         {%- for childlink in link.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           {%- if childlink.links.size > 0 -%}
                             <float-element-btn
                               class='header__menu-item-wrap'
@@ -432,6 +467,13 @@
                               <template>
                                 <div>
                                   {%- for grandchildlink in childlink.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                     <a
                                       href='{{ grandchildlink.url }}'
                                       class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'
@@ -463,6 +505,13 @@
                     {%- else -%}
                       <div class='header__wide-menu'>
                         {%- for childlink in link.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           {%- if childlink.links.size > 0 -%}
                             <float-element-btn
                               class='header__menu-item-wrap'
@@ -494,6 +543,13 @@
                               <template>
                                 <div>
                                   {%- for grandchildlink in childlink.links -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                                     <a
                                       href='{{ grandchildlink.url }}'
                                       class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'

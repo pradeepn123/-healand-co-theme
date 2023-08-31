@@ -33,6 +33,13 @@
       {%- if customer.orders.size > 0 -%}
         <div class='order__items'>
           {%- for order in customer.orders -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: order %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             <div class='order__item'>
               <div class='order__item-field'>
                 <div class='order__item-field-label'>{{ 'customer.orders.order_number' | t }}</div>
@@ -82,6 +89,13 @@
             <div class='table__heading order__table-heading'>{{ 'customer.orders.total' | t }}</div>
           </div>
           {%- for order in customer.orders -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: order %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             <div class='table__row order__table-row'>
               <div class='table__column order__table-column'>
                 <a

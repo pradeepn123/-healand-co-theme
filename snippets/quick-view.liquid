@@ -36,6 +36,13 @@
       {% capture css %}
         {% style %}
           {% for block in section.blocks %}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
             {% case block.type %}
               {% when 'collapsible_row' %}
                 .block-{{ block.id }} {
@@ -102,6 +109,13 @@
 
     <div>
       {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
         {% case block.type %}
           {% when 'variant_picker' %}
             {%- liquid
@@ -114,6 +128,13 @@
             -%}
 
             {%- for option in product.options_with_values -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
               {%- assign option_name_downcase = option.name | downcase -%}
 
               {%- if block_option_name_downcase == option_name_downcase -%}
@@ -540,6 +561,13 @@
                     <div class='carousel__container' data-carousel-container>
                       {%- if product.media != blank -%}
                         {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           {%- if forloop.index0 == 0 -%}
                             {% assign is_first_media = true %}
                           {%- else -%}
@@ -566,6 +594,13 @@
                         {%- endfor -%}
                       {%- else -%}
                         {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                           <div
                             class='carousel__slide product-mobile-media__carousel-slide'
                             data-media-id='{{ forloop.index }}'
@@ -595,6 +630,13 @@
                       <div class='dots-carousel__viewport embla' data-carousel-viewport>
                         <div class='dots-carousel__container' data-carousel-container>
                           {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                             <carousel-dot
                               class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
                               tabindex='0'

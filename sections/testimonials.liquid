@@ -67,6 +67,13 @@
 <div>
   {%- if section.blocks.size > 0 -%}
     {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       {%- if block.settings.link == blank -%}
         <sidebar-component
           class='sidebar quote-sidebar color-{{ color_scheme }}'
@@ -156,6 +163,13 @@
                 -%}
 
                 {%- for slide_index in (1..slide_count) -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide_index %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   <div class='carousel__slide'>
                     <div class='testimonials__slide-quotes'>
                       {%- liquid
@@ -187,6 +201,13 @@
                   data-carousel-container
                 >
                   {%- for slide in (1..slide_count) -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
@@ -219,6 +240,13 @@
                 -%}
 
                 {%- for slide_index in (1..slide_count) -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide_index %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   <div class='carousel__slide'>
                     <div class='testimonials__slide-quotes'>
                       {%- liquid
@@ -247,6 +275,13 @@
                   data-carousel-container
                 >
                   {%- for slide in (1..slide_count) -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'
@@ -270,6 +305,13 @@
             <div class='carousel__viewport embla testimonials__carousel-viewport' data-carousel-viewport>
               <div class='carousel__container' data-carousel-container>
                 {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                   <div
                     class='carousel__slide block-{{ block.id }}'
                     block-id='{{ block.id }}'
@@ -290,6 +332,13 @@
                   data-carousel-container
                 >
                   {%- for block in section.blocks -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
                     <carousel-dot
                       class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
                       tabindex='0'

@@ -14,6 +14,13 @@
 
 {%- capture srcset -%}
   {%- for width in width_list -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: width %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
     {%- assign width_number = width | plus: 0 -%}
     {%- if image.width < width_number -%}
       {%- break -%}

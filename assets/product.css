@@ -364,7 +364,13 @@
 
 @media screen and (max-width: 767px) {
     .imagesOnly_parent{
-        column-gap: 40px !important;
+        justify-content: space-between;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+        white-space: nowrap;
+        column-gap: 40px;
     }
     .imagesOnly_parent img {
         flex: 0 0 auto;
@@ -427,7 +433,7 @@
     text-decoration: underline;
 }
 #readLess_btn{
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 /* Custom Class - Non Bundles Product Page - default_product_custom_class */
     .default_product_custom_class .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content{
@@ -612,7 +618,7 @@
     margin-bottom: 24px;
 }
 .upsell_product_main_wrap .upsell_product_heading .heading_text{
-    font-size: 18px;
+    font-size: 20px;
     color: #000;
     font-weight: 700;
     margin-right: 9px;
@@ -639,7 +645,6 @@
 @media screen and (max-width: 767px){
     .upsell_product_main_wrap .upsell_product_heading{
         padding-bottom: 16px;
-        display: grid;
     }
     .upsell_product_main_wrap .upsell_product_heading{
         margin-bottom: 36px;

@@ -29,6 +29,13 @@
       </div>
     {%- endif -%}
     {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       {%- if media.id != featured_media.id or media.id == blank -%}
         <div
           class='shape shape--{{ img_ratio }} product-media-grid__item'
@@ -51,6 +58,13 @@
     {%- endfor -%}
   {%- else -%}
     {%- for media in product_media -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
+{%- if hide_resource == "true" -%}
+  {% continue %}
+{%- endif -%}
+{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
       <div
         class='shape shape--{{ img_ratio }} product-media-grid__item'
         data-media-id='{{ forloop.index }}'
