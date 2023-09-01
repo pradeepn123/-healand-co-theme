@@ -1,0 +1,34 @@
+{% assign pagename = request.page_type | handle %}
+
+{% comment %} Hidding rewards button {% endcomment %}
+
+{% if pagename == 'collection' %}
+
+{% style %}  
+    @media screen and (max-width: 768px) {
+        #smile-ui-lite-launcher-frame-container {
+            display: none;
+        }
+    }
+{% endstyle %}
+
+{% endif %}
+
+{% comment %} Hidding rewards button and moving chat button up {% endcomment %}
+
+{% if pagename == 'product' %}
+
+{% style %}
+    @media screen and (max-width: 760px) {
+        #chat-button {
+            bottom: 80px !important;
+        }
+
+        #smile-ui-lite-launcher-frame-container, .smile-launcher-frame-container, .smile-panel-frame-container {
+            bottom: 90px !important;
+        }
+    }
+
+{% endstyle %}
+
+{% endif %}

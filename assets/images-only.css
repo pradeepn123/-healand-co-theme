@@ -31,3 +31,13 @@
         padding-top: 21px !important;
     }
 }
+
+@media screen and (max-width: 320px){
+    .imagesOnly_parent {
+        column-gap: 20px;
+    }
+}
+
+.mobile_container {
+    padding-right: 0;
+}
