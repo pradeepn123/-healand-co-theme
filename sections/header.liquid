@@ -592,17 +592,15 @@
                   <span class='underline-text__label'>{{ link.title }}</span>
                 </a>
               {% else %}
-                {% for tag in customer.tags %}
-                  {% if tag == "WS_Wholesale" and customer %}
-                    <a
-                      href='{{ link.url }}'
-                      class='underline-text header__item {% if link.active %}active{% endif %}'
-                      aria-label='{{ link.title }}'
-                    >
-                      <span class='underline-text__label'>{{ link.title }}</span>
-                    </a>
-                  {% endif %}
-                {% endfor %}
+                {% if customer.tags contains 'WS_Wholesale' and customer %}
+                  <a
+                    href='{{ link.url }}'
+                    class='underline-text header__item {% if link.active %}active{% endif %}'
+                    aria-label='{{ link.title }}'
+                  >
+                    <span class='underline-text__label'>{{ link.title }}</span>
+                  </a>
+                {% endif %}
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}

@@ -364,18 +364,56 @@
       padding-right: 22px;
     }
   }
+
+  .mobileTh {
+    display: none;
+  }
+  .desktopTh {
+    display: revert;
+  }
+
+  @media (max-width: 520px) {
+    table.who-qof-table td.img {
+      display: none;
+    }
+    .quantity {
+      width: 75px;
+    }
+    .quantity__button {
+      width: 30px;
+    }
+    .desktopTh {
+      display: none;
+    }
+    .mobileTh {
+      display: block;
+    }
+    .quantity__button {
+      display: none;
+    }
+  }
+
+  @media (max-width: 321px){
+    table {
+      font-size: 12px;
+    }
+    table.who-qof-table td + td, table.who-qof-table th + th {
+      padding-left: 0;
+  }
+  }
+
   {% endif %}
 </style>
 
 <div id="collection" class="rte wrapper main content main-wrapper page-width">
-<div style="max-width: 1100px; margin: auto;">
+<div style="max-width: 1100px; margin: 5rem auto;">
 
 {% paginate collection.products by 100 %}
 
 {% if collection.products_count > 0 %}
   <div class="action-bar top">
     <h1>{% if template contains 'page' %}{{ page.title }}{% else %}{{ collection.title }}{% endif %}</h1>
-    <button class=" add-to-cart-order-form button button--primary btn btn-primary btn-lg  btn_c action-button action_button submit solid cart-checkout-button ProductForm__AddToCart Button Button--primary"
+    <button class="btn--solid add-to-cart-order-form button button--primary btn btn-primary btn-lg  btn_c action-button action_button submit solid cart-checkout-button ProductForm__AddToCart Button Button--primary"
            type="submit"
             value="Add to cart">Add to Cart</button>
   </div>
@@ -393,7 +431,6 @@
   </div>
 {% endif %}
 
-
 <div id="collection-filters-container" class="cf-select-wrapper"></div>
 
 {% if collection.products_count > 0 %}
@@ -402,7 +439,8 @@
   <table class="who-qof-table">
   <thead>
     <tr>
-      <th colspan="2">Product</th>
+      <th colspan="2" class="desktopTh">Product</th>
+      <th colspan="1" class="mobileTh">Product</th>
       <th>SKU</th>
       <th class="price-header">Price</th>
       <th style="text-align: right;">Quantity</th>
@@ -667,7 +705,7 @@ jQuery("tr").removeClass("v-hidden")
 </div>
 </div>
 <div class="action-bar">
-<button class="add-to-cart-order-form button button--primary btn btn-primary btn-lg btn_c action-button action_button submit solid cart-checkout-button cart__checkout ProductForm__AddToCart Button Button--primary" type="submit"
+<button class="btn--solid add-to-cart-order-form button button--primary btn btn-primary btn-lg btn_c action-button action_button submit solid cart-checkout-button cart__checkout ProductForm__AddToCart Button Button--primary" type="submit"
         value="Add to cart">Add to cart</button>
 </div>
 {% else %}

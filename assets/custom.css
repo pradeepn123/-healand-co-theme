@@ -851,3 +851,12 @@ body.hamburger--open[scroll-y-offf] {
     text-align: left !important;
     width: 100% !important;
 }
+
+@media (max-width: 425px) {
+    .subtotal .subtotal__content {
+        flex-flow: column !important;
+    }
+    .subtotal__content div:first-child {
+        width: 100% !important;
+    }
+}
