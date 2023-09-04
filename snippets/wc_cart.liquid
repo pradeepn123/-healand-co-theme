@@ -13,7 +13,7 @@
   var discountCodeTemplate =
     '<div class="saso-use-discount-code-cart-container">' +
     '<input type="text" class="saso-use-discount-code-cart-code" placeholder="Discount code">' +
-    '<button type="button" class="saso-use-discount-code-cart-apply btn btn--secondary button">' +
+    '<button type="button" class="btn--solid saso-use-discount-code-cart-apply btn btn--secondary button">' +
     "Apply" +
     "</button>" +
     "</div>";
@@ -471,17 +471,64 @@ for (var i = 0; i < inputElements.length; i++) {
   color: #ff0000;
 }
 .saso-use-discount-code-cart-container{
-  text-align: right !important;
+  text-align: center !important;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
 .saso-use-discount-code-cart-code {
   display: inline !important;
-  width: 10em !important;
+  width: 50%;
+  height: 3.7em;
+  margin-right: 35px;
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
 }
 .saso-use-discount-code-cart-apply {
   display: inline !important;
+  width: 45%;
+  padding: 10px;
+  margin-left: 5%;
 }
 .saw-cart-original-total * {
     margin: 0;
 }
+.subtotal__content .subtotal__tax-note {
+    text-align: center;
+}
+.subtotal__content .saw-cart-total {
+  font-family: "BrownStd-Regular";
+}
+
+@media screen and (max-width: 425px) {
+  .subtotal__container .subtotal__content {
+    flex-flow: column;
+  }
+  .subtotal__container .subtotal__content div:first-child {
+    width: 100%;
+  }
+  .subtotal__content .saw-cart-total {
+    text-align: left;
+    display: inline;
+    width: 25%;
+  }
+  .saso-use-discount-code-cart-container .saso-use-discount-code-cart-code{
+    margin-right: 0;
+  }
+  .subtotal__totals {
+    display: inline-block;
+    width: 75%;
+  }
+}
+
+{% if customer.tags contains 'WS_Wholesale' and customer %}
+  .cart-item__pay-info .selling_plan_label-action {
+      display: none;
+  }
+  .cart-item__pay-info .selling_plan_label-small {
+      display: none;
+  }
+{% endif %}
 </style>
 {% endif %}
