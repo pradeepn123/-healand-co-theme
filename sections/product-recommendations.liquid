@@ -96,6 +96,7 @@
 {% render 'inline-css-minifier', css: css %}
 
 {% capture carousel %}
+{% if recommendation != null %}
   {%- if product_recommendations_type == 'auto' -%}
     <carousel-component
       class='card-carousel product-recommendations__card-carousel {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{% endif %} {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}'
@@ -387,9 +388,11 @@
       {%- endif -%}
     </carousel-component>
   {%- endif -%}
+{% endif %}
 {% endcapture %}
 
 {%- if product_recommendations_type == 'auto' -%}
+  {% if recommendation != null %}
   <product-recommendations
     class='product-recommendations section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout == 'grid' %} product-recommendations--grid-with-mobile-carousel{% endif %}'
     data-url='{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ cards_to_show }}'
@@ -431,6 +434,7 @@
       </div>
     {%- endif -%}
   </product-recommendations>
+{% endif %}
 {%- else -%}
   <div class='product-recommendations section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %} product-recommendations--grid-with-mobile-carousel{% endif %}'>
     <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
