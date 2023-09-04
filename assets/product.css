@@ -173,6 +173,9 @@
         .product_upsell_container .product-card__btn .product-card__btn-label-text{
             display: block;
         }
+        .product_upsell_container .product-card__details-inner .product-card-sale-amount-badge{
+            margin-bottom: 10px;
+        }
     }
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         .product-additional-details .product-additional-details-child .product-additional-details-iandt{

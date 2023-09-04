@@ -539,6 +539,11 @@ div.okeReviews .oke-w-writeReview:hover:before{
 .cart-item__details .cart-item__link, .cart-item__details .cart-item__link > a {
     height: 100%;
 }
+@media(max-width:320px){
+    .cart-item__details .cart-item__link, .cart-item__details .cart-item__link > a {
+        height: auto;
+    }
+}
 
 /* Cart Subscription */
 .cart-item__parentElement{

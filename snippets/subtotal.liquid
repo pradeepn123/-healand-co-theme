@@ -192,7 +192,7 @@
                     {%- endfor -%}
                   </div>
                 {%- endif -%}
-            <span style="display: block; text-align: right;" class="saw-extra-note"></span>
+            <span style="display: block; text-align: center;" class="saw-extra-note"></span>
                 <h6 class='subtotal__totals {% if cart.cart_level_discount_applications.size > 0 %} subtotal__totals--with-top-spacing{% endif %} {% if settings.show_taxes_and_shipping_costs_label %} subtotal__totals--with-bottom-spacing{% endif %}'>
                   <div class='subtotal__label'>{{ 'general.subtotal.label_for_total_price' | t }}</div>
                   <span class="saw-cart-original-total"><div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div></span>
