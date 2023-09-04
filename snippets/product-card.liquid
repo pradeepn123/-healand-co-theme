@@ -620,7 +620,7 @@
               {% endfor %}
             </p>
           <div class='product-card__price'>
-            <div class='product-card__price-cost'>
+            <div class='product-card__price-cost'>              
               <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and WCProduct_ComparePrice > price %} product-card__price-item--highlight-sale{% endif %}'>
                 {%- if product.price_varies -%}
                   {{ 'cards.product_card.from_price_html' | t: price: money_price }}
@@ -639,8 +639,7 @@
 
                   {{ variant.unit_price_measurement.reference_unit }})
                 {% endif %}
-              </div>
-
+              </div>              
               {%- if WCProduct_ComparePrice > price -%}
                 <div class='product-card__price-item-old {% if settings.product_card_highlight_sale_price and WCProduct_ComparePrice > price %} product-card__price-item-old--highlight-sale{% endif %}'>
                   {{- WCProduct_ComparePrice | money -}}

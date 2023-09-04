@@ -151,7 +151,9 @@
               </div>
               {%- if settings.cart_free_shipping_bar_visible -%}
                 <div class='sidebar-cart__cart-free-shipping-bar' data-sidebar-cart-free-shipping-bar>
-                  {% render 'cart-free-shipping-bar', inside_sidebar: true %}
+                  {% unless customer and customer.tags contains 'WS_Wholesale'%}
+                    {% render 'cart-free-shipping-bar', inside_sidebar: true %}
+                  {% endunless %}
                 </div>
               {%- endif -%}
               <div class='sidebar-cart__cart-items' data-sidebar-cart-items>

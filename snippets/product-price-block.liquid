@@ -174,11 +174,10 @@
                 {{ WCProduct_VariantComparePrice | money }}
               </div>
             {%- endif -%}
-          </div>
-
+          </div>          
           {%- if WCProduct_VariantComparePrice > price and variant.available and block.settings.show_sale_amount_badge -%}
             <div class="product-sale-amount-badge">
-              {% render 'sale-amount-badge-text', price: variant.price, old_price: WCProduct_VariantComparePrice %}  
+              {% render 'sale-amount-badge-text', price: price, old_price: WCProduct_VariantComparePrice %}  
             </div>
           {%- endif -%}
         </div>
@@ -206,7 +205,7 @@
         </div>
         {%- if WCProduct_VariantComparePrice > price and variant.available and block.settings.show_sale_amount_badge -%}
           <div class="product-sale-amount-badge">
-            {% render 'sale-amount-badge-text', price: variant.price, old_price: WCProduct_VariantComparePrice %}  
+            {% render 'sale-amount-badge-text', price: price, old_price: WCProduct_VariantComparePrice %}
           </div>
         {%- endif -%}
       </div>

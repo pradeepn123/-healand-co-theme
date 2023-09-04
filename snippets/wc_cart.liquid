@@ -448,6 +448,7 @@ for (var i = 0; i < inputElements.length; i++) {
   margin: 10px 0px 10px 0px;
   background-color: #ffd400;
   color: #000000;
+  font-family: 'BrownStd-Bold';  
 }
 .saw-extra-note:empty {
   display: none;
@@ -523,11 +524,13 @@ for (var i = 0; i < inputElements.length; i++) {
 }
 
 {% if customer.tags contains 'WS_Wholesale' and customer %}
-  .cart-item__pay-info .selling_plan_label-action {
-      display: none;
+  .cart-item__pay-info .selling_plan_label-action,
+  .cart-item__info .selling_plan_label-action {
+    display: none;
   }
-  .cart-item__pay-info .selling_plan_label-small {
-      display: none;
+  .cart-item__pay-info .selling_plan_label-small, 
+  .cart-item__info .selling_plan_label-small{
+    display: none;
   }
 {% endif %}
 

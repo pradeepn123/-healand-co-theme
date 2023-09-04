@@ -1,3 +1,14 @@
+{% style %}
+  cart-component h1, .h1, 
+  cart-component h2, .h2, 
+  cart-component h3, .h3,
+  cart-component h4, .h4,
+  cart-component h5, .h5,
+  cart-component h6, .h6 {
+    font-weight: 500;
+  }
+{% endstyle %}
+
 {%- liquid
   assign options = section.settings
   assign color_scheme = options.color_scheme
@@ -9,8 +20,10 @@
   <div class='container container--{{ container_size }}'>
     <cart-component class='cart {% if cart == empty %} is-empty{% endif %}' id='cart-page-component'>
       {%- if settings.cart_free_shipping_bar_visible -%}
-        <div class='cart__cart-free-shipping-bar' data-cart-page-free-shipping-bar>
-          {% render 'cart-free-shipping-bar', inside_sidebar: false %}
+        <div class='cart__cart-free-shipping-bar' data-cart-page-free-shipping-bar>         
+          {% unless customer and customer.tags contains 'WS_Wholesale'%}
+            {% render 'cart-free-shipping-bar', inside_sidebar: false %}
+          {% endunless %}
         </div>
       {%- endif -%}
 
