@@ -11,6 +11,9 @@
         document.querySelector('.recharge-subscription-widget').closest('.custom_app_backdrop').classList.add('customApp_Styles');
 
         document.querySelector('body').style.overflow = 'hidden';
+        if(!(document.body.classList.contains("hamburger--open"))) {
+          document.body.classList.add("hamburger--open");
+        }
       })
     }
   })

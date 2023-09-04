@@ -9,6 +9,9 @@
         document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.remove('showSvg');
 
         document.querySelector('body').style.overflow = 'scroll';
+        if(document.body.classList.contains("hamburger--open")) {
+          document.body.classList.remove("hamburger--open");
+        }
       }
     })
   }

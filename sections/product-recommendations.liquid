@@ -121,6 +121,7 @@
       >
         <div class='card-carousel__container' data-carousel-container>
           {%- for recommendation in recommendations.products -%}
+            {% if recommendation.vendor != "Sproos" %}
 {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
 {%- capture hide_resource -%}{% render "wc_product_visibility", resource: recommendation %}{%- endcapture -%}
 {%- if hide_resource == "true" -%}
@@ -138,6 +139,7 @@
                 with_bottom_spacing: product_card_with_bottom_spacing
               %}
             </div>
+          {% endif %}
           {%- endfor -%}
         </div>
       </div>
@@ -187,6 +189,7 @@
         <div class='card-carousel__container' data-carousel-container>
           {%- if featured_products != blank -%}
             {%- for product in featured_products limit: cards_to_show -%}
+              {% if product.vendor != "Sproos" %}
 {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
 {%- capture hide_resource -%}{% render "wc_product_visibility", resource: product %}{%- endcapture -%}
 {%- if hide_resource == "true" -%}
@@ -261,16 +264,17 @@
 {% endif %}
 {% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
 
-              <div class='card-carousel__slide'>
-                {% render 'product-card',
-                  product: product,
-                  show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                  color_swatch_variables: color_swatch_variables,
-                  img_ratio: img_ratio,
-                  product_card_align: product_card_align,
-                  with_bottom_spacing: product_card_with_bottom_spacing
-                %}
-              </div>
+                <div class='card-carousel__slide'>
+                  {% render 'product-card',
+                    product: product,
+                    show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+                    color_swatch_variables: color_swatch_variables,
+                    img_ratio: img_ratio,
+                    product_card_align: product_card_align,
+                    with_bottom_spacing: product_card_with_bottom_spacing
+                  %}
+                </div>
+              {% endif %}
             {%- endfor -%}
           {%- else -%}
             {%- for product in featured_collection.products limit: cards_to_show -%}

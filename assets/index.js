@@ -614,12 +614,16 @@
                 key: "setScrollLock",
                 value: function() {
                     document.body.setAttribute("scroll-y-offf", "")
+                    document.body.classList.add('hamburger--open')
                     // document.body.style.top = "-".concat(window.scrollY || Math.abs(parseInt(document.body.style.top || "0")), "px"), document.body.setAttribute("scroll-y-off", "")
                 }
             }, {
                 key: "unsetScrollLock",
                 value: function() {
                     document.body.removeAttribute("scroll-y-offf")
+                    if(document.body.classList.contains('hamburger--open')){
+                        document.body.classList.remove('hamburger--open')
+                    }
                     // var e = document.body.style.top;
                     // document.body.removeAttribute("scroll-y-off"), document.body.style.top = "", window.scrollTo(0, -1 * parseInt(e || "0"))
                 }

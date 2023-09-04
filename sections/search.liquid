@@ -192,36 +192,49 @@
     <div class='search__results-container container container--{{ container_size }}'>
       <tabs-component data-selected-tab-id='{{ default_tab }}'>
         <div class='search__tab-name-list'>
-          {%- if show_products == true -%}
-            <div
-              data-tabs-name
-              class='tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}'
-              data-id='products'
-              tabindex='0'
-            >
-              {{ 'general.search_page.products_tab' | t: count: product_count }}
-            </div>
-          {%- endif -%}
-          {%- if show_articles == true -%}
-            <div
-              data-tabs-name
-              class='tab-name search__tab-name {% if default_tab == 'articles' %}selected{% endif %}'
-              data-id='articles'
-              tabindex='0'
-            >
-              {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
-            </div>
-          {%- endif -%}
-          {%- if show_pages == true -%}
-            <div
-              data-tabs-name
-              class='tab-name search__tab-name {% if default_tab == 'pages' %}selected{% endif %}'
-              data-id='pages'
-              tabindex='0'
-            >
-              {{ 'general.search_page.pages_tab' | t: count: page_count }}
-            </div>
-          {%- endif -%}
+          {%- if section.settings.show_products_only == true -%}
+            {%- if show_products == true -%}
+              <div
+                data-tabs-name
+                class='tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}'
+                data-id='products'
+                tabindex='0'
+              >
+                {{ 'general.search_page.products_tab' | t: count: product_count }}
+              </div>
+            {%- endif -%}
+          {% else %}
+            {%- if show_products == true -%}
+              <div
+                data-tabs-name
+                class='tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}'
+                data-id='products'
+                tabindex='0'
+              >
+                {{ 'general.search_page.products_tab' | t: count: product_count }}
+              </div>
+            {%- endif -%}
+            {%- if show_articles == true -%}
+              <div
+                data-tabs-name
+                class='tab-name search__tab-name {% if default_tab == 'articles' %}selected{% endif %}'
+                data-id='articles'
+                tabindex='0'
+              >
+                {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
+              </div>
+            {%- endif -%}
+            {%- if show_pages == true -%}
+              <div
+                data-tabs-name
+                class='tab-name search__tab-name {% if default_tab == 'pages' %}selected{% endif %}'
+                data-id='pages'
+                tabindex='0'
+              >
+                {{ 'general.search_page.pages_tab' | t: count: page_count }}
+              </div>
+            {%- endif -%}
+          {% endif %}
         </div>
         <carousel-component
           class='carousel search__carousel-tab-names'
@@ -230,35 +243,48 @@
         >
           <div class='carousel__viewport carousel__viewport--overflow embla' data-carousel-viewport>
             <div class='carousel__container' data-carousel-container>
-              {%- if show_products == true -%}
-                <div
-                  data-tabs-name
-                  class='carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}'
-                  data-id='products'
-                  tabindex='0'
-                >
-                  {{ 'general.search_page.products_tab' | t: count: product_count }}
-                </div>
-              {%- endif -%}
-              {%- if show_articles == true -%}
-                <div
-                  data-tabs-name
-                  class='carousel__slide search__tab-name tab-name {% if default_tab == 'articles' %}selected{% endif %}'
-                  data-id='articles'
-                  tabindex='0'
-                >
-                  {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
-                </div>
-              {%- endif -%}
-              {%- if show_pages == true -%}
-                <div
-                  data-tabs-name
-                  class='carousel__slide search__tab-name tab-name {% if default_tab == 'pages' %}selected{% endif %}'
-                  data-id='pages'
-                  tabindex='0'
-                >
-                  {{ 'general.search_page.pages_tab' | t: count: page_count }}
-                </div>
+              {%- if section.settings.show_products_only == true -%}
+                {%- if show_products == true -%}
+                  <div
+                    data-tabs-name
+                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}'
+                    data-id='products'
+                    tabindex='0'
+                  >
+                    {{ 'general.search_page.products_tab' | t: count: product_count }}
+                  </div>
+                {%- endif -%}
+              {% else %}
+                {%- if show_products == true -%}
+                  <div
+                    data-tabs-name
+                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}'
+                    data-id='products'
+                    tabindex='0'
+                  >
+                    {{ 'general.search_page.products_tab' | t: count: product_count }}
+                  </div>
+                {%- endif -%}
+                {%- if show_articles == true -%}
+                  <div
+                    data-tabs-name
+                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'articles' %}selected{% endif %}'
+                    data-id='articles'
+                    tabindex='0'
+                  >
+                    {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
+                  </div>
+                {%- endif -%}
+                {%- if show_pages == true -%}
+                  <div
+                    data-tabs-name
+                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'pages' %}selected{% endif %}'
+                    data-id='pages'
+                    tabindex='0'
+                  >
+                    {{ 'general.search_page.pages_tab' | t: count: page_count }}
+                  </div>
+                {%- endif -%}
               {%- endif -%}
             </div>
           </div>
@@ -1425,6 +1451,12 @@
       ],
       "default": "large",
       "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_products_only",
+      "label": "Show Products Only",
+      "default": true
     },
     {
       "type": "range",
