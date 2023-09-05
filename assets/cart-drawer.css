@@ -217,7 +217,11 @@
         justify-content: unset;
         align-items: unset;
         display: flex;
-        flex-flow: column;
+        flex-flow: row;
+    }
+    span.saw-cart-original-total {
+        flex: 1 0 50%;
+        text-align: right;
     }
     .subtotal__content .subtotal__cta{
         width:100%
