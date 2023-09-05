@@ -251,9 +251,11 @@
                 </button>
 
                 {%- if additional_checkout_buttons -%}
-                  <div class='dynamic-checkout-buttons dynamic-checkout-buttons--cart-page'>
-                    {{ content_for_additional_checkout_buttons }}
-                  </div>
+                  {%- unless customer and customer.tags contains 'WS_Wholesale' -%}
+                    <div class='dynamic-checkout-buttons dynamic-checkout-buttons--cart-page'>
+                      {{ content_for_additional_checkout_buttons }}
+                    </div>
+                  {%- endunless -%}
                 {%- endif -%}
               </div>
             {% when '@app' %}
