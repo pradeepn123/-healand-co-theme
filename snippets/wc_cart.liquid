@@ -519,17 +519,15 @@ for (var i = 0; i < inputElements.length; i++) {
   }
   .subtotal__totals {
     display: inline-block;
-    width: 75%;
+    width: 72%;
   }
 }
 
 {% if customer.tags contains 'WS_Wholesale' and customer %}
-  .cart-item__pay-info .selling_plan_label-action,
-  .cart-item__info .selling_plan_label-action {
+  .cart-item__option {
     display: none;
   }
-  .cart-item__pay-info .selling_plan_label-small, 
-  .cart-item__info .selling_plan_label-small{
+  .selling_plan_label-small {
     display: none;
   }
 {% endif %}

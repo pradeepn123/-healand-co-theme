@@ -865,3 +865,33 @@ body.hamburger--open[scroll-y-offf] {
         width: 100% !important;
     }
 }
+
+.cart-count {
+    font-size: 1rem;
+    line-height: 0rem;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 768px){
+    .cart {
+        padding: 2rem 0 0;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .cart {
+        padding: 1rem 0 2.4rem;
+    }
+}
+
+.saw-extra-note br {
+    display: none;
+}
+
+.saw-extra-note {
+    line-height: 7rem;
+}
+
+.product-card-sale-amount-badge {
+    font-weight: 100!important;
+}

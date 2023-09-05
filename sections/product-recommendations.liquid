@@ -399,8 +399,7 @@
   >
     {%- if recommendations.performed and recommendations.products_count > 0 -%}
       <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
-        {% assign recommendation_length = recommendations | size %}
-        {%- if title != blank and recommendation_length > 0 -%}
+        {%- if title != blank and recommendations.products_count > 0-%}
           <div class='product-recommendations__header {% if alignment == 'center' %}product-recommendations__header--center{% endif %}'>
             <h5 class='product-recommendations__title {{ heading_size }} break_text_intoTwoLines_mobile'>{{ title }}</h5>
           </div>
@@ -435,11 +434,10 @@
       </div>
     {%- endif -%}
   </product-recommendations>
-
 {%- else -%}
   <div class='product-recommendations section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %} product-recommendations--grid-with-mobile-carousel{% endif %}'>
     <div class='product-recommendations__container container container--{{ container_size }} section-spacing'>
-      {%- if title != blank -%}
+      {%- if title != blank and product.all_products_count > 0 -%}
         <div class='product-recommendations__header {% if alignment == 'center' %}product-recommendations__header--center{% endif %}'>
           <h5 class='product-recommendations__title {{ heading_size }}'>{{ title }}</h5>
         </div>
