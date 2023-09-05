@@ -7136,6 +7136,24 @@
                     }
                 }
             }, {
+                key: "updateCustomItem",
+                value: function(e, t, selling_plan) {
+                    var n = this,
+                        i = this.getConfigByItemIndexAndQuantity(e, t),
+                        o = this.querySelector("#CartItem-".concat(e));
+                        console.log(o,'kiii')                        
+                    if (o) {                        
+                        var a = this._getCustomQueryConfig(e, t, selling_plan),
+                            r = new $i(o),
+                            s = +t; true ? (r.setLoading(!0), r.setDisable(!0), o.setQuantityDisabled(!0), 0 === s && (this.updateEmptyStatus(1 === this._cartItemCount), o.removeFromCart()), this._cartApi.change(a).then((function(e) {
+                            var t = JSON.parse(e);
+                            r.setLoading(!1), r.setDisable(!1), i.setLoading(!1), o.setQuantityDisabled(!1), n.updateByParsedState(t)
+                        })).catch((function() {
+                            n._showError()
+                        }))) : o.setLoading(!1)
+                    }
+                }
+            }, {
                 key: "_showError",
                 value: function() {
                     if (C.notification) {
@@ -7188,6 +7206,22 @@
                         var n = t.querySelector("[data-cart-page-checkout-button]");
                         n && (n.toggleAttribute("disabled", e), n.classList.toggle("loading", e))
                     }
+                }
+            }, {
+                key: "_getCustomQueryConfig",
+                value: function(e, t, selling_plan) {
+                    const data = {
+                        line: e + 1,
+                        quantity: t,
+                        sections: this._sections,
+                        sections_url: window.location.pathname
+                    }
+                    if (selling_plan) {
+                        data.selling_plan = selling_plan
+                    }
+                    return ce(m({}, no()), {
+                        body: JSON.stringify(data)
+                    })
                 }
             }, {
                 key: "_cartItemCount",
@@ -8405,7 +8439,7 @@
             }
             return p(n, [{
                 key: "connectedCallback",
-                value: function() {
+                value: function() {                    
                     this.addEventListener("keydown", this._handleKeyDown), this.addEventListener("click", this._handleButtonClick)
                 }
             }, {
