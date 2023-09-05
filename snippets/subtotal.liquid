@@ -68,11 +68,11 @@
           {%- if settings.show_taxes_and_shipping_costs_label -%}
             <div class='subtotal__tax-note'>
               {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: '/pages/shipping-and-returns' }}
               {%- elsif cart.taxes_included -%}
                 {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
               {%- elsif shop.shipping_policy.body != blank -%}
-                {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: '/pages/shipping-and-returns' }}
               {%- else -%}
                 {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
               {%- endif -%}
@@ -110,11 +110,11 @@
       {%- if settings.show_taxes_and_shipping_costs_label -%}
         <div class='mobile_subtotal__tax-note'>
           {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-            {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            {{ 'general.subtotal.taxes_included_and_shipping_policy_html' | t: link: '/pages/shipping-and-returns' }}
           {%- elsif cart.taxes_included -%}
             {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
           {%- elsif shop.shipping_policy.body != blank -%}
-            {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+            {{ 'general.subtotal.taxes_and_shipping_policy_at_checkout_html' | t: link: '/pages/shipping-and-returns' }}
           {%- else -%}
             {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
           {%- endif -%}
@@ -207,14 +207,14 @@
                     {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
                       {{
                         'general.subtotal.taxes_included_and_shipping_policy_html'
-                        | t: link: shop.shipping_policy.url
+                        | t: link: '/pages/shipping-and-returns'
                       }}
                     {%- elsif cart.taxes_included -%}
                       {{ 'general.subtotal.taxes_included_but_shipping_at_checkout' | t }}
                     {%- elsif shop.shipping_policy.body != blank -%}
                       {{
                         'general.subtotal.taxes_and_shipping_policy_at_checkout_html'
-                        | t: link: shop.shipping_policy.url
+                        | t: link: '/pages/shipping-and-returns'
                       }}
                     {%- else -%}
                       {{ 'general.subtotal.taxes_and_shipping_at_checkout' | t }}
