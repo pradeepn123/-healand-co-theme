@@ -195,7 +195,11 @@
             <span style="display: block; text-align: center;" class="saw-extra-note"></span>
                 <h6 class='subtotal__totals {% if cart.cart_level_discount_applications.size > 0 %} subtotal__totals--with-top-spacing{% endif %} {% if settings.show_taxes_and_shipping_costs_label %} subtotal__totals--with-bottom-spacing{% endif %}'>
                   <div class='subtotal__label'>{{ 'general.subtotal.label_for_total_price' | t }}</div>
-                  <span class="saw-cart-original-total"><div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div></span>
+                  {% if customer.tags contains 'WS_Wholesale' and customer %}
+                    <span class="saw-cart-original-total"><div class='subtotal__price'>{{ cart.total_price | money }}</div></span>
+                  {% else %}
+                    <span class="saw-cart-original-total"><div class='subtotal__price'>{{ cart.total_price | money_with_currency }}</div></span>
+                  {% endif %}
                 </h6>
             <span class="saw-cart-total"></span>
                 {%- if settings.show_taxes_and_shipping_costs_label -%}
