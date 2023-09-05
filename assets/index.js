@@ -7119,6 +7119,20 @@
                     })
                 }
             }, {
+                key: "getCustomConfigByItemIndexAndQuantity",
+                value: function(e, t, selling_plan) {
+                    const payload = {
+                        line: e + 1,
+                        quantity: t
+                    }
+                    if (selling_plan) {
+                        payload.selling_plan = selling_plan
+                    }
+                    return ce(m({}, no()), {
+                        body: JSON.stringify(payload)
+                    })
+                }
+            }, {
                 key: "updateItem",
                 value: function(e, t) {
                     var n = this,
@@ -7126,6 +7140,24 @@
                         o = this.querySelector("#CartItem-".concat(e));
                     if (o) {
                         var a = +t; + (o.dataset.quantity || 0) !== a ? (0 === a && (this.updateEmptyStatus(1 === this._cartItemCount), o.removeFromCart()), this.setButtonLoading(!0), o.setQuantityDisabled(!0), this._cartApi.change(i).then((function() {
+                            return n._cartApi.get()
+                        })).then((function(e) {
+                            var t = me(e);
+                            n.setButtonLoading(!1), o.setQuantityDisabled(!1), o.setLoading(!1), n.updateByHTML(t)
+                        })).catch((function() {
+                            n._showError()
+                        }))) : o.setLoading(!1)
+                    }
+                }
+            }, {
+                key: "updateCustomItem",
+                value: function(e, t, selling_plan) {
+                    var n = this,
+                        i = this.getCustomConfigByItemIndexAndQuantity(e, t, selling_plan),
+                        o = this.querySelector("#CartItem-".concat(e));
+                    if (o) {
+                        o.setLoading(1)
+                        var a = +t; true ? (0 === a && (this.updateEmptyStatus(1 === this._cartItemCount), o.removeFromCart()), this.setButtonLoading(!0), o.setQuantityDisabled(!0), this._cartApi.change(i).then((function() {
                             return n._cartApi.get()
                         })).then((function(e) {
                             var t = me(e);
@@ -7188,6 +7220,22 @@
                         var n = t.querySelector("[data-cart-page-checkout-button]");
                         n && (n.toggleAttribute("disabled", e), n.classList.toggle("loading", e))
                     }
+                }
+            }, {
+                key: "_getCustomQueryConfig",
+                value: function(e, t, selling_plan) {
+                    const data = {
+                        line: e + 1,
+                        quantity: t,
+                        sections: this._sections,
+                        sections_url: window.location.pathname
+                    }
+                    if (selling_plan) {
+                        data.selling_plan = selling_plan
+                    }
+                    return ce(m({}, no()), {
+                        body: JSON.stringify(data)
+                    })
                 }
             }, {
                 key: "_cartItemCount",
@@ -8405,7 +8453,7 @@
             }
             return p(n, [{
                 key: "connectedCallback",
-                value: function() {
+                value: function() {                    
                     this.addEventListener("keydown", this._handleKeyDown), this.addEventListener("click", this._handleButtonClick)
                 }
             }, {
