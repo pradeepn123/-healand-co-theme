@@ -209,7 +209,7 @@
   </sticky-cart-button>
 {%- endif -%}
 
-{% render 'drawer-menu', menu: menu, section: section, profile_url: profile_url %}
+{% render 'drawer-menu', menu: menu, section: section, profile_url: profile_url, enable_language_in_mobile: section.settings.enable_language_in_mobile %}
 
 <header-component
   class='header section-{{ section.id }} color-{{ color_scheme }} header--desktop {% if enable_border == true %}header--bordered{% endif %}'
@@ -925,6 +925,12 @@
       "id": "enable_sticky",
       "default": false,
       "label": "t:sections.header.enable_sticky_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_in_mobile",
+      "default": false,
+      "label": "Show Language Selector in Mobile"
     },
     {
       "type": "header",

@@ -62,7 +62,7 @@
         "copyright_text": "© 2023 Heal + Co.",
         "enable_follow_on_shop": true,
         "show_language_selector": false,
-        "show_currency_selector": false
+        "show_currency_selector": true
       }
     }
   },

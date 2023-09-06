@@ -159,6 +159,7 @@
         "grid": "3",
         "enable_border": true,
         "enable_sticky": true,
+        "enable_language_in_mobile": false,
         "menu_trigger": "hover",
         "menu": "new-menu",
         "desktop_logo_img": "shopify:\/\/shop_images\/H_C_Logo.svg",

@@ -101,6 +101,7 @@
             </drawer-menu-page-link>
           {%- endif -%}
           <div class='drawer-menu__localization-settings'>
+            {% if enable_language_in_mobile %}
             <div class='localization-dropdown-wrapper'>
               <dropdown-opener
                 class='localization-dropdown-toggle drawer-menu__localization-dropdown-toggle'
@@ -157,6 +158,7 @@
                 </template>
               </float-element>
             </div>
+            {% endif %}
             <div class='localization-dropdown-wrapper'>
               <dropdown-opener
                 class='localization-dropdown-toggle drawer-menu__localization-dropdown-toggle'
