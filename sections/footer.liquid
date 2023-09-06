@@ -195,6 +195,67 @@
                     </div>
                   {%- endif -%}
                   {%- render 'social-list', class: 'footer__social-list' -%}
+                  {%- if show_currency_selector == true -%}
+                    <div class='localization-dropdown-wrapper'>
+                      <dropdown-opener
+                        class='localization-dropdown-toggle'
+                        data-aria-expanded='false'
+                        data-float-element-id='FooterCurrencySelector'
+                        data-trigger='click'
+                        tabindex='0'
+                      >
+                        {{ localization.country.currency.iso_code }}
+                        {% render 'icon',
+                          icon_name: 'chevron',
+                          class: 'localization-dropdown-toggle__chevron',
+                          stroke_width: 1
+                        %}
+                      </dropdown-opener>
+                      <float-element
+                        class='localization-dropdown footer__localization-dropdown'
+                        aria-hidden='true'
+                        id='FooterCurrencySelector'
+                        data-placement='top-end'
+                        data-main-axis-offset='12'
+                        data-strategy='fixed'
+                      >
+                        <template>
+                          <div class='localization-dropdown__body'>
+                            <localization-selector class='footer__selector'>
+                              {%- form 'localization', id: 'FooterCurrencyForm' -%}
+                                {%- for country in localization.available_countries -%}
+      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+      {%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
+      {%- if hide_resource == "true" -%}
+        {% continue %}
+      {%- endif -%}
+      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+      
+                                  <button
+                                    data-localization-item
+                                    class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'
+                                    data-value='{{ country.iso_code }}'
+                                    data-focus-trap-target
+                                    aria-label='{{ country.name }} {{ country.currency.iso_code }}'
+                                  >
+                                    {{ country.name }},
+                                    {{ country.currency.iso_code }}
+                                  </button>
+                                {%- endfor -%}
+                                <input
+                                  type='hidden'
+                                  name='country_code'
+                                  data-localization-input
+                                  value='{{ localization.country.iso_code }}'
+                                  id='FooterLanguageForm-CountryCodeInput-{{ form.id }}'
+                                >
+                              {%- endform -%}
+                            </localization-selector>
+                          </div>
+                        </template>
+                      </float-element>
+                    </div>
+                  {%- endif -%}
                 </div>
               {%- when 'menu' -%}
                 <div class='footer__block block-{{ block.id }}' {{ block.shopify_attributes }}>
@@ -280,67 +341,6 @@
                             data-localization-input
                             value='{{ localization.language.iso_code }}'
                             id='FooterLanguageForm-LocaleCodeInput-{{ form.id }}'
-                          >
-                        {%- endform -%}
-                      </localization-selector>
-                    </div>
-                  </template>
-                </float-element>
-              </div>
-            {%- endif -%}
-            {%- if show_currency_selector == true -%}
-              <div class='localization-dropdown-wrapper'>
-                <dropdown-opener
-                  class='localization-dropdown-toggle'
-                  data-aria-expanded='false'
-                  data-float-element-id='FooterCurrencySelector'
-                  data-trigger='click'
-                  tabindex='0'
-                >
-                  {{ localization.country.currency.iso_code }}
-                  {% render 'icon',
-                    icon_name: 'chevron',
-                    class: 'localization-dropdown-toggle__chevron',
-                    stroke_width: 1
-                  %}
-                </dropdown-opener>
-                <float-element
-                  class='localization-dropdown footer__localization-dropdown'
-                  aria-hidden='true'
-                  id='FooterCurrencySelector'
-                  data-placement='top-end'
-                  data-main-axis-offset='12'
-                  data-strategy='fixed'
-                >
-                  <template>
-                    <div class='localization-dropdown__body'>
-                      <localization-selector class='footer__selector'>
-                        {%- form 'localization', id: 'FooterCurrencyForm' -%}
-                          {%- for country in localization.available_countries -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                            <button
-                              data-localization-item
-                              class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'
-                              data-value='{{ country.iso_code }}'
-                              data-focus-trap-target
-                              aria-label='{{ country.name }} {{ country.currency.iso_code }}'
-                            >
-                              {{ country.name }},
-                              {{ country.currency.iso_code }}
-                            </button>
-                          {%- endfor -%}
-                          <input
-                            type='hidden'
-                            name='country_code'
-                            data-localization-input
-                            value='{{ localization.country.iso_code }}'
-                            id='FooterLanguageForm-CountryCodeInput-{{ form.id }}'
                           >
                         {%- endform -%}
                       </localization-selector>
