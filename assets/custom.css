@@ -895,3 +895,12 @@ body.hamburger--open[scroll-y-offf] {
 .product-card-sale-amount-badge {
     font-weight: 100!important;
 }
+
+/* Hidding country selector popup */
+.cozy-crd__modal {
+    display: none !important;
+}
+
+.footer__block .localization-dropdown-wrapper {
+    margin-top: 2rem; 
+}
