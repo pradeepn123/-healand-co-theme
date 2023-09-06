@@ -161,9 +161,9 @@
                         <div class='product-price__content' data-product-block-item>
                             <div class="product-price__cost">
                             <div class='product-price__current-price {% if block.settings.highlight_sale_price and WCProduct_VariantComparePrice > price %} product-price__current-price--highlight-sale{% endif %}'>
-                                {{ price | money }}
+                                {{ price | money_with_currency }}
                                 {%- if variant.unit_price_measurement -%}
-                                ({{ variant.unit_price | money }}
+                                ({{ variant.unit_price | money_with_currency }}
                                 <span aria-hidden='true'>/</span>
                                 {%- if variant.unit_price_measurement.reference_value != 1 -%}
                                     {{- variant.unit_price_measurement.reference_value -}}
@@ -173,7 +173,7 @@
                             </div>
                             {%- if compare_at_price > price -%}
                                 <div class='product-price__old-price {% if block.settings.highlight_sale_price %} product-price__old-price--highlight-sale{% endif %}'>
-                                {{ compare_at_price | money }}
+                                {{ compare_at_price | money_with_currency }}
                                 </div>
                             {%- endif -%}
                             </div>
@@ -268,7 +268,7 @@
                                         <div
                                         class='product-form__btn-wrapper product-form__btn-wrapper--sticky-mobile-button'
                                         >
-                                        <span class="mobile-sticky-button-price"> {{product.price | money}} </span>
+                                        <span class="mobile-sticky-button-price"> {{product.price | money_with_currency}} </span>
                                         <button
                                             type='submit'
                                             name="add"
