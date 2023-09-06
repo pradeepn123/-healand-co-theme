@@ -140,16 +140,16 @@
 
         <div class='cart-notification-popup-item__price'>
           <div class='cart-notification-popup-item__price-item'>
-            {{ WCItem_FinalLinePrice | money }}
+            {{ WCItem_FinalLinePrice | money_with_currency }}
           </div>
           {%- if WCItem_OriginalLinePrice != WCItem_FinalLinePrice -%}
             <div class='cart-notification-popup-item__price-item--small cart-notification-popup-item__price-item--old'>
-              {{ WCItem_OriginalLinePrice | money }}
+              {{ WCItem_OriginalLinePrice | money_with_currency }}
             </div>
           {%- endif -%}
           {%- if item.variant.available and item.unit_price_measurement -%}
             <div class='cart-notification-popup-item__price-item--small'>
-              ({{ item.variant.unit_price | money }}
+              ({{ item.variant.unit_price | money_with_currency }}
               <span aria-hidden='true'>/</span>
               {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                 {{- item.variant.unit_price_measurement.reference_value -}}
