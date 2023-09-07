@@ -939,3 +939,15 @@ body.hamburger--open[scroll-y-offf] {
 .localization-dropdown {
     width: auto;
 }
+
+.cart-notification-popup-item__price {
+    gap: 1rem;
+}
+
+.oke-sr-count {
+    font-family: BrownStd-Regular !important;
+}
+
+.rating__star--transparent path {
+    fill: rgb(255 165 29 / 0%);
+}
