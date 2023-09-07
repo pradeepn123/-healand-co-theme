@@ -92,13 +92,17 @@
         </div>
         <div class='drawer-menu__settings'>
           {%- if profile_url != blank -%}
-            <drawer-menu-page-link
-              class='drawer-menu__account-link'
-              data-page-id='login-sidebar'
-            >
-              {% render 'icon-pack', icon: 'header-account-icon', class: 'drawer-menu__icon' %}
-              {{ 'sections.header.go_to_login_in_drawer_on_mobile' | t }}
-            </drawer-menu-page-link>
+            
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="drawer-menu__account-link">
+              {%- liquid
+                if customer
+                  echo 'Account'
+                else
+                  echo 'sections.header.go_to_login_in_drawer_on_mobile' | t
+                endif
+              -%}
+            </a>
+
           {%- endif -%}
           <div class='drawer-menu__localization-settings'>
             {% if enable_language_in_mobile %}

@@ -902,7 +902,7 @@ body.hamburger--open[scroll-y-offf] {
 }
 
 .footer__block .localization-dropdown-wrapper {
-    margin-top: 2rem; 
+    margin-top: 1rem; 
 }
 
 .product-price__current-price {
@@ -911,4 +911,43 @@ body.hamburger--open[scroll-y-offf] {
 
 .cart-notification-popup__body {
     font-family: BrownStd-Regular!important;
+}
+.float-element{
+    top: 100px;
+    left: 100px;
+}
+
+.footer__block .localization-dropdown-toggle {
+    margin: 1rem 0;
+    border: 1px solid rgb(52 52 47 / 70%);
+    padding: 1rem 1.5rem;
+    font-family: BrownStd-Regular;
+}
+
+.localization-dropdown__body {
+    padding: 0;
+    width: auto;
+    border: 1px solid rgba(18, 18, 18, 0.1);
+    font-family: BrownStd-Regular;
+}
+
+.localization-dropdown__item {
+    padding: 1.3rem 2.8rem;
+    text-align: center;
+}
+
+.localization-dropdown {
+    width: auto;
+}
+
+.cart-notification-popup-item__price {
+    gap: 1rem;
+}
+
+.oke-sr-count {
+    font-family: BrownStd-Regular !important;
+}
+
+.rating__star--transparent path {
+    fill: rgb(255 165 29 / 0%);
 }
