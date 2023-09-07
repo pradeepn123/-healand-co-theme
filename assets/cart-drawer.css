@@ -246,9 +246,6 @@
         height: 7rem;
         width: 7.8rem;
     }
-    .product-card__rating , .product_benefits{
-        display: none;
-    }
     .upsell_product_footer_main_info h4{
         padding: 12px 0;
     }
