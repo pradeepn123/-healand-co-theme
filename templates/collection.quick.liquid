@@ -137,7 +137,7 @@
   }
 
   table.who-qof-table td.img img {
-    vertical-align: middle;
+    margin: 0 auto;
   }
 
   table.who-qof-table th.price-header {
@@ -278,6 +278,7 @@
     min-height: 36px;
     opacity: .85;
     border-right: 1px solid transparent;
+    margin: 0 auto;
   }
 
   .quantity:before {
@@ -377,7 +378,7 @@
       display: none;
     }
     .quantity {
-      width: 75px;
+      width: 60px;
     }
     .quantity__button {
       width: 30px;
@@ -391,22 +392,31 @@
     .quantity__button {
       display: none;
     }
+    .action-bar.top button{
+      padding: 1rem 3rem;
+    }
   }
 
-  @media (max-width: 321px){
+  @media (max-width: 420px){
     table {
       font-size: 12px;
     }
     table.who-qof-table td + td, table.who-qof-table th + th {
       padding-left: 0;
-  }
+    }
+    .action-bar.top {
+      justify-content: center;
+    }
+    .action-bar.top .button {
+      margin: 0;
+    }
   }
 
   {% endif %}
 </style>
 
 <div id="collection" class="rte wrapper main content main-wrapper page-width">
-<div style="max-width: 1100px; margin: 5rem auto;">
+<div style="max-width: 1200px; margin: 5rem auto;">
 
 {% paginate collection.products by 100 %}
 
@@ -442,8 +452,8 @@
       <th colspan="2" class="desktopTh">Product</th>
       <th colspan="1" class="mobileTh">Product</th>
       <th>SKU</th>
-      <th class="price-header">Price</th>
-      <th style="text-align: right;">Quantity</th>
+      <th class="price-header" style="text-align: center;">Price</th>
+      <th style="text-align: center;">Quantity</th>
     </tr>
   </thead>
 
@@ -533,10 +543,10 @@
           {% if product.price_varies %}from {% endif %}
           {% if saw_has_discount == false or saw_product_price >= saw_product_compare_at_price %}
             <!-- original prices here -->
-            {{ product.price | money }}
+            {{ product.price | money_with_currency }}
           {% else %}
-            {{ saw_product_price | money }}
-            <del>{{ saw_product_compare_at_price | money }}</del>
+            {{ saw_product_price | money_with_currency }}
+            <del>{{ saw_product_compare_at_price | money_with_currency }}</del>
           {% endif %}
         </td>
 
@@ -626,11 +636,11 @@
 
           {% if saw_discount == 1 and variant.metafields.sawholesale[price_key] == blank %}
             <!-- original prices here -->
-            {{ variant.price | money }}
+            {{ variant.price | money_with_currency }}
           {% else %}
-            {{ saw_variant_price | money }}
+            {{ saw_variant_price | money_with_currency }}
             {% comment %}
-            <del>{{ saw_variant_compare_at_price | money }}</del>
+            <del>{{ saw_variant_compare_at_price | money_with_currency }}</del>
             {% endcomment %}
           {% endif %}
         </td>
