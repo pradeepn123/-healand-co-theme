@@ -204,7 +204,7 @@
                         data-trigger='click'
                         tabindex='0'
                       >
-                        {{ localization.country.currency.iso_code }}
+                        {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
                         {% render 'icon',
                           icon_name: 'chevron',
                           class: 'localization-dropdown-toggle__chevron',
@@ -238,8 +238,7 @@
                                     data-focus-trap-target
                                     aria-label='{{ country.name }} {{ country.currency.iso_code }}'
                                   >
-                                    {{ country.name }},
-                                    {{ country.currency.iso_code }}
+                                    {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
                                   </button>
                                 {%- endfor -%}
                                 <input
