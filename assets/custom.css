@@ -904,3 +904,11 @@ body.hamburger--open[scroll-y-offf] {
 .footer__block .localization-dropdown-wrapper {
     margin-top: 2rem; 
 }
+
+.product-price__current-price {
+    font-family: BrownStd-Regular!important;
+}
+
+.cart-notification-popup__body {
+    font-family: BrownStd-Regular!important;
+}
