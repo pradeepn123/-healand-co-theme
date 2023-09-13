@@ -725,8 +725,10 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
     text-shadow: 4px 4px 5px #000000;
 }
 
-.articles__container .articles__header .articles__tags {
-    justify-content: center;
+@media(max-width:767px) {
+    .articles__container .articles__header .articles__tags {
+        justify-content: center;
+    }
 }
 
 .bundles_page_tabChains .content_parent_position_relative {
@@ -775,6 +777,10 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
     .image-banner__content--mobile .image-banner__btns .btn {
         padding: 1.2rem 3.8rem;
     }
+}
+
+#chat-button {
+    bottom: 15px!important;
 }
 
 .hamburger--open #smile-ui-lite-container {
