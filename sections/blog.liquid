@@ -62,7 +62,7 @@
           </h5>
         {%- endif -%}
         {%- if show_tag_navigation -%}
-          <div id="remove-class" class='articles__tags scroll-styling' >
+          <div id="remove-class" class='articles__tags scroll-styling{% if blog.all_tags.size > 7 %}articles_justify_flex{% endif %}' >
             <a
               class='articles__tag {% if current_tags == blank %}selected{% endif %}'
               href='{{ blog.url }}'
