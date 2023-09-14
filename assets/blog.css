@@ -231,8 +231,8 @@
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
+        /* -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory; */
         white-space: nowrap;
         width: 100%;
         flex-wrap: nowrap;

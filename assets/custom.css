@@ -957,3 +957,15 @@ body.hamburger--open[scroll-y-offf] {
 .rating__star--transparent path {
     fill: rgb(255 165 29 / 0%);
 }
+
+@media screen and (min-width: 1380px) {
+    .articles__tags {
+        justify-content: center !important;
+    }
+    .articles_justify_flex {
+        justify-content: flex-start !important;
+    }
+    .articles--page .articles__header {
+        padding: 0 33px !important;
+    }
+}
