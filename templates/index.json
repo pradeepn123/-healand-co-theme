@@ -7,7 +7,6 @@
           "type": "image-banner",
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/NEW_2.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Sproos_Oct_22-206-Edit_994785ff-bb98-40a8-8fef-5104879caf41.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
