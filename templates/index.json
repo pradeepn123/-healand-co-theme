@@ -38,6 +38,7 @@
         },
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
