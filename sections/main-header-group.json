@@ -8,7 +8,7 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
-            "text": "<p>Free Shipping on all orders over $40<\/p>",
+            "text": "<p>Free Shipping on all orders over $50<\/p>",
             "link": "",
             "icon": "none"
           }
