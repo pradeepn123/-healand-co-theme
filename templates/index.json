@@ -106,8 +106,8 @@
           "type": "image-banner",
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Frame_8353.webp",
-            "desktop_overlay_opacity": 20,
-            "mobile_overlay_opacity": 20,
+            "desktop_overlay_opacity": 0,
+            "mobile_overlay_opacity": 0,
             "background_color": "",
             "text_colors": "",
             "desktop_text_color": "",
