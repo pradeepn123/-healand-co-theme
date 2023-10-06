@@ -5,6 +5,7 @@
       "blocks": {
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/New_Product_Banner_Beet.jpg",
             "desktop_overlay_opacity": 0,
@@ -100,12 +101,46 @@
             "extra_btn_url": "",
             "extra_btn_style": "outline"
           }
+        },
+        "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf": {
+          "type": "image-banner",
+          "settings": {
+            "desktop_img": "shopify:\/\/shop_images\/Frame_8353.webp",
+            "desktop_overlay_opacity": 20,
+            "mobile_overlay_opacity": 20,
+            "background_color": "",
+            "text_colors": "",
+            "desktop_text_color": "",
+            "button_bg_color": "",
+            "button_text_color": "",
+            "caption": "",
+            "title": "",
+            "text": "",
+            "sub_heading_size": "h2",
+            "heading_size": "h2",
+            "body_size": "body3",
+            "desktop_content_position": "align-items:center;justify-content:center;",
+            "desktop_content_align": "center",
+            "content_max_width": 528,
+            "content_spacing": 116,
+            "mobile_content_position": "align-items:flex-end;justify-content:center;",
+            "mobile_content_align": "center",
+            "desktop_content_background": "none",
+            "mobile_content_background": "none",
+            "btn_text": "",
+            "btn_url": "shopify:\/\/products\/berberine",
+            "btn_style": "solid",
+            "extra_btn_text": "",
+            "extra_btn_url": "shopify:\/\/products\/antioxidant-bundle",
+            "extra_btn_style": "solid"
+          }
         }
       },
       "block_order": [
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26",
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1"
+        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1",
+        "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf"
       ],
       "custom_css": [
 
