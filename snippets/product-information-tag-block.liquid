@@ -13,6 +13,7 @@
   assign enable_drawer = options.enable_drawer
 -%}
 
+<div id="inforamtionBlockProduct">
 {% capture tag_content %}
   {% if heading != blank %}
     <div class="product-information-tag__heading {% if icon_position == 'inline' %} product-information-tag__heading--inline{% elsif icon_position == 'top' %} product-information-tag__heading--column{% endif %}">
@@ -49,4 +50,5 @@
       {{ tag_content }}
     </div>
   {% endif %}
+</div>
 </div>

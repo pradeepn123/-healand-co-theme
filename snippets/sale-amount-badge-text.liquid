@@ -11,13 +11,13 @@
     {% when 'variant_1' %}
       {{ 'general.badges.product_sale_amount_badge.variant_1' | t }}
     {% when 'variant_2' %}
-      {{ 'general.badges.product_sale_amount_badge.variant_2' | t: amount: sale_amount_left_in_percent }}
+      {{ 'general.badges.product_sale_amount_badge.variant_2' | t: amount: sale_amount_left_in_percent | append: ' off '   | replace: '-', ''  }}
     {% when 'variant_3' %}
-      {{ 'general.badges.product_sale_amount_badge.variant_3' | t: amount: sale_amount_left_in_percent }}
+      {{ 'general.badges.product_sale_amount_badge.variant_3' | t: amount: sale_amount_left_in_percent | append: ' off '   | replace: '-', '' }}
     {% when 'variant_4' %}
-      {{ 'general.badges.product_sale_amount_badge.variant_4' | t: amount: sale_amount_left_money }}
+      {{ 'general.badges.product_sale_amount_badge.variant_4' | t: amount: sale_amount_left_money | append: ' off '  | replace: '-', ''  }}
     {% when 'variant_5' %}
-      {{ 'general.badges.product_sale_amount_badge.variant_5' | t: amount: sale_amount_left_money }}
+      {{ 'general.badges.product_sale_amount_badge.variant_5' | t: amount: sale_amount_left_money | append: ' off '  | replace: '-', ''  }}
   {% endcase %}
 {%- endcapture -%}
 {{ text }}

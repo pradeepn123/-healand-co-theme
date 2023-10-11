@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6, .h7{
     }
     /* Product Price */
     .product-price-wrapper {
-        display: none;
+        /* display: none; */
         font-family: "BrownStd-Regular";
         font-size: 16px;
     }
@@ -914,7 +914,13 @@ body.hamburger--open[scroll-y-offf] {
 .product-price__current-price {
     font-family: BrownStd-Regular!important;
 }
+.product-price__current-price--highlight-sale{
+    color: #000;
+}
+.product-price__old-price--highlight-sale{
+    text-decoration-color:  #6E6B86;
 
+}
 .cart-notification-popup__body {
     font-family: BrownStd-Regular!important;
 }
@@ -968,4 +974,23 @@ body.hamburger--open[scroll-y-offf] {
     .articles--page .articles__header {
         padding: 0 33px !important;
     }
+}
+#inforamtionBlockProduct{
+    display: none;
+    margin-top: 28px;
+    margin-bottom: 24px;
+}
+@media(max-width: 520px){
+    #inforamtionBlockProduct{
+        margin-top: 20px;
+    }
+}
+.product-information-tag--solid{
+    max-width: fit-content;
+    padding: 11px 14px;
+}
+
+.cart-item__info_sale_badge{
+    height: 100%;
+    justify-content: space-around;
 }
