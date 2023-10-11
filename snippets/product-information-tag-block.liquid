@@ -13,6 +13,7 @@
   assign enable_drawer = options.enable_drawer
 -%}
 
+{% if product.compare_at_price %}
 <div id="inforamtionBlockProduct">
 {% capture tag_content %}
   {% if heading != blank %}
@@ -52,3 +53,4 @@
   {% endif %}
 </div>
 </div>
+{% endif %}

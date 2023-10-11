@@ -42,7 +42,7 @@
             "icon_position": "inline",
             "tag_background_color": "#f6c9c5",
             "tag_text_color": "#141416",
-            "enable_drawer": true,
+            "enable_drawer": false,
             "drawer_text": "",
             "drawer_page": "",
             "drawer_media_size": 60
