@@ -30,6 +30,24 @@
             "highlight_sale_price": true
           }
         },
+        "158a4565-cbe2-4930-abcf-6a67725b1c77": {
+          "type": "information_tag",
+          "settings": {
+            "tag_style": "solid",
+            "heading": "Additional 10% off on subscriptions",
+            "body": "",
+            "content_alignment": "left",
+            "icon": "none",
+            "custom_icon_image": "shopify:\/\/shop_images\/Vector_9a2d79e8-660f-4504-9a89-d9ce8bc5b109.svg",
+            "icon_position": "inline",
+            "tag_background_color": "#f6c9c5",
+            "tag_text_color": "#141416",
+            "enable_drawer": false,
+            "drawer_text": "",
+            "drawer_page": "",
+            "drawer_media_size": 60
+          }
+        },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
           "settings": {
@@ -90,6 +108,7 @@
         "title",
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
         "price",
+        "158a4565-cbe2-4930-abcf-6a67725b1c77",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",

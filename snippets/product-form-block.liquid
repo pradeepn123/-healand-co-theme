@@ -1,6 +1,8 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    let InfomationBlock = document.querySelector("#inforamtionBlockProduct");
     if (document.querySelector('#dummy_product_button')){
+      InfomationBlock.style.display = "block";
       document.querySelector('#dummy_product_button').addEventListener('click', () => {
         document.querySelector('#dummy_product_button').classList.add('dummy_product_button');
         document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('product_transformZero');

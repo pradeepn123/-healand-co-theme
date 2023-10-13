@@ -132,7 +132,15 @@
                     </div>
                   {% endif %}
 
-                  <div class='cart-item__info cart-item__info--hide-mobile'>
+                  <div class='cart-item__info cart-item__info--hide-mobile cart-item__info_sale_badge'>
+                    {% assign CMPR_PRICE = item.variant.compare_at_price  %}
+                    {% assign discount_percentage  =  CMPR_PRICE | minus: WCItem_FinalPrice| times: 100.0 | divided_by: CMPR_PRICE | money_without_currency | times: 100 | remove: '.0' %}
+                    {% if discount_percentage != '0' %}
+                    <div class="product-sale-amount-badge cart_page_sale_badge">
+                      {{ discount_percentage }}% off                
+                    </div>
+                   {% endif %}
+                    <div>
                     <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
                       <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
                     </a>
@@ -242,10 +250,19 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  </div>
                 </div>
 
                 <div class='cart-item__pay-info'>
-                  <div class='cart-item__info cart-item__info--desktop-hide'>
+                  <div class='cart-item__info cart-item__info--desktop-hide cart-item__info_sale_badge'>
+                    {% assign CMPR_PRICE = item.variant.compare_at_price  %}
+                    {% assign discount_percentage  =  CMPR_PRICE | minus: WCItem_FinalPrice| times: 100.0 | divided_by: CMPR_PRICE | money_without_currency | times: 100 | remove: '.0' %}
+                    {% if discount_percentage != '0' %}
+                      <div class="product-sale-amount-badge cart_page_sale_badge">
+                        {{ discount_percentage }}% off                
+                      </div>
+                    {% endif %}
+                    <div>
                     <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
                       <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
                     </a>
@@ -359,12 +376,18 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  </div>
 
                   <div class='cart-item__cost-wrap {% if WCItem_OriginalPrice != WCItem_FinalPrice %}cart-item__cost-wrap--medium{% endif%} {% if item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--medium{% endif %} {% if WCItem_OriginalPrice != WCItem_FinalPrice and item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--large{% endif%}'>
                     <div class='cart-item__price-wrap'>
                       <div class='cart-item__price'>
                         <div class='cart-item__price-item'>
                           {{ WCItem_FinalPrice | money }}
+                        </div>
+                        <div class='cart-item__price-item--small cart-item__price-item--old'>
+                          {% if CMPR_PRICE > item.variant.price %}
+                            <s>{{ CMPR_PRICE | money }}</s>
+                          {% endif %}
                         </div>
                         {% if WCItem_OriginalPrice != WCItem_FinalPrice %}
                           <div class='cart-item__price-item--small cart-item__price-item--old'>
@@ -419,6 +442,11 @@
                         <div class='cart-item__price {% if WCItem_OriginalPrice != WCItem_FinalPrice %}cart-item__price--column{% elsif item.variant.available and item.unit_price_measurement %}cart-item__price--column{% endif %}'>
                           <div class='cart-item__price-item'>
                             {{ WCItem_FinalLinePrice | money }}
+                          </div>
+                          <div class='cart-item__price-item--small cart-item__price-item--old'>
+                            {% if CMPR_PRICE > item.variant.price %}
+                              <s>{{ CMPR_PRICE | money }}</s>
+                            {% endif %}
                           </div>
                           {%- if WCItem_OriginalLinePrice != WCItem_FinalLinePrice -%}
                             <div class='cart-item__price-item--small cart-item__price-item--old'>
