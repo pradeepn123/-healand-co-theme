@@ -989,6 +989,9 @@ body.hamburger--open[scroll-y-offf] {
     #inforamtionBlockProduct{
         margin-top: 20px;
     }
+    .product__info-wrapper_custom_pr{
+        margin-top: 32px !important;
+    }
 }
 .product-information-tag--solid{
     max-width: fit-content;
