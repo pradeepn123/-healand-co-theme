@@ -443,11 +443,6 @@
                           <div class='cart-item__price-item'>
                             {{ WCItem_FinalLinePrice | money }}
                           </div>
-                          <div class='cart-item__price-item--small cart-item__price-item--old'>
-                            {% if CMPR_PRICE > item.variant.price %}
-                              <s>{{ CMPR_PRICE | money }}</s>
-                            {% endif %}
-                          </div>
                           {%- if WCItem_OriginalLinePrice != WCItem_FinalLinePrice -%}
                             <div class='cart-item__price-item--small cart-item__price-item--old'>
                               {{ WCItem_OriginalLinePrice | money }}
