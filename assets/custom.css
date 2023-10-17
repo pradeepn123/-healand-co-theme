@@ -743,6 +743,8 @@ body:has(#sidebar-component-for-cart[data-aria-expanded="true"]) {
 
 .bundles_procuct_pageMain .product-content-tab__content {
     position: relative;
+    max-width: fit-content !important;
+    font-weight: 400;
 }
 
 .product-content-tab__text .product-description_internal {
@@ -983,6 +985,7 @@ body.hamburger--open[scroll-y-offf] {
 #inforamtionBlockProduct{
     display: none;
     margin-top: 20px;
+    margin-bottom: 24px;
 }
 @media(max-width: 520px){
     .product__info-wrapper_custom_pr{
@@ -999,6 +1002,13 @@ body.hamburger--open[scroll-y-offf] {
 }
 .product-sale-amount-badge{
     font-size: 16px;
+    font-weight: 400; 
+    border-radius: 20px;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+.cart-item__info .product-sale-amount-badge{
+    padding: 0.13rem 1.52rem;
 }
 .product-information-tag__heading--inline{
     font-family: 'BrownStd';
@@ -1007,6 +1017,9 @@ body.hamburger--open[scroll-y-offf] {
 .product_info_cart{
     margin-top: auto;
     margin-bottom: auto;
+}
+.product-content-tab .product-content-tab__content .rte.product-content-tab__text{
+    font-weight: 400;
 }
 @media(max-width: 374px){
     .product-information-tag--solid{
