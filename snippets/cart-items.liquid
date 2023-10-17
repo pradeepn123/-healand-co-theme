@@ -140,7 +140,7 @@
                       {{ discount_percentage }}% off                
                     </div>
                    {% endif %}
-                    <div>
+                    <div class="product_info_cart">
                     <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
                       <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
                     </a>
@@ -262,7 +262,7 @@
                         {{ discount_percentage }}% off                
                       </div>
                     {% endif %}
-                    <div>
+                    <div class="product_info_cart">
                     <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
                       <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
                     </a>
