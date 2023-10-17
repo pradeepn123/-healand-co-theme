@@ -996,7 +996,6 @@ body.hamburger--open[scroll-y-offf] {
 
 .cart-item__info_sale_badge{
     height: 100%;
-    justify-content: space-around;
 }
 .product-sale-amount-badge{
     font-size: 16px;
@@ -1004,6 +1003,10 @@ body.hamburger--open[scroll-y-offf] {
 .product-information-tag__heading--inline{
     font-family: 'BrownStd';
     font-weight: 700;
+}
+.product_info_cart{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 @media(max-width: 374px){
     .product-information-tag--solid{
