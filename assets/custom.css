@@ -1011,8 +1011,9 @@ body.hamburger--open[scroll-y-offf] {
     padding: 0.13rem 1.52rem;
 }
 .product-information-tag__heading--inline{
-    font-family: 'BrownStd';
+    font-family: "BrownStd-Regular";
     font-weight: 700;
+    letter-spacing: 0.63px;
 }
 .product_info_cart{
     margin-top: auto;
@@ -1020,6 +1021,9 @@ body.hamburger--open[scroll-y-offf] {
 }
 .product-content-tab .product-content-tab__content .rte.product-content-tab__text{
     font-weight: 400;
+}
+.cart-item__info .product-sale-amount-badge{
+    font-family: "BrownStd-Regular";
 }
 @media(max-width: 374px){
     .product-information-tag--solid{
