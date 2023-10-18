@@ -1,8 +1,11 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     let InfomationBlock = document.querySelector("#inforamtionBlockProduct");
-    if (document.querySelector('#dummy_product_button')){
+    if(InfomationBlock != null)
+    { 
       InfomationBlock.style.display = "block";
+    }
+    if (document.querySelector('#dummy_product_button')){
       document.querySelector('#dummy_product_button').addEventListener('click', () => {
         document.querySelector('#dummy_product_button').classList.add('dummy_product_button');
         document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').classList.add('product_transformZero');
@@ -11,7 +14,6 @@
         // document.querySelector('.shopify-block.shopify-app-block.recharge-subscription-widget').style.transform = 'translateY(0%)';
 
         document.querySelector('.recharge-subscription-widget').closest('.custom_app_backdrop').classList.add('customApp_Styles');
-
         document.querySelector('body').style.overflow = 'hidden';
         if(!(document.body.classList.contains("hamburger--open"))) {
           document.body.classList.add("hamburger--open");
