@@ -32,6 +32,7 @@
         },
         "158a4565-cbe2-4930-abcf-6a67725b1c77": {
           "type": "information_tag",
+          "disabled": true,
           "settings": {
             "tag_style": "solid",
             "heading": "Additional 10% off on subscriptions",
