@@ -32,6 +32,7 @@
         },
         "2cd6427c-9cb1-41c7-849e-0569caa53c83": {
           "type": "information_tag",
+          "disabled": true,
           "settings": {
             "tag_style": "solid",
             "heading": "Additional 10% off on subscriptions",
@@ -117,7 +118,6 @@
         "buy_buttons",
         "77b6d2f5-2750-4782-8f34-9c7623e4abb3"
       ],
-      "disabled": true,
       "settings": {
         "section_custom_class": "default_product_custom_class bundles_procuct_pageMain",
         "color_scheme": "default",
