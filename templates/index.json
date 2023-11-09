@@ -30,7 +30,7 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/products\/antioxidant-bundle",
+            "btn_url": "shopify:\/\/products\/antioxidant-bundle-old",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
@@ -131,7 +131,7 @@
             "btn_url": "shopify:\/\/products\/berberine-500mg",
             "btn_style": "solid",
             "extra_btn_text": "",
-            "extra_btn_url": "shopify:\/\/products\/antioxidant-bundle",
+            "extra_btn_url": "shopify:\/\/products\/antioxidant-bundle-old",
             "extra_btn_style": "solid"
           }
         }
