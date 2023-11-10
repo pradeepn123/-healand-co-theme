@@ -189,12 +189,12 @@
                 <div class='product-card-dots__viewport embla' data-carousel-viewport>
                   <div class='product-card-dots__container' data-carousel-container>
                     {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                      {%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
+                      {%- if hide_resource == "true" -%}
+                        {% continue %}
+                      {%- endif -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                       <carousel-dot
                         class='product-card-dots__dot {% if forloop.index == 1 %}is-primary{% endif %}'
@@ -222,30 +222,66 @@
               width='1'
               height='1'
               style='object-position: {{ featured_media.presentation.focal_point }};'
-            >
-            {%- if settings.img_hover == 'show-secondary-media' and images.size > 1 -%}
-              <img
-                class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
-                data-secondary-media
-                src='{{ images[1] | image_url: width: 320 }}'
-                data-image-url='{{ images[1] | image_url: width: 1 }}'
-                data-aspectratio='{{ images[1].aspect_ratio }}'
-                data-sizes='auto'
-                alt='{{ images[1].alt }}'
-                loading='lazy'
-                width='1'
-                height='1'
-                style='object-position: {{ images[1].presentation.focal_point }};'
-              >
+            >            
+            {%- if settings.img_hover == 'show-secondary-media' -%}
+              {%- if product.metafields.custom.color_schema != blank and product.metafields.custom.product_card != blank and pro_handle.handle == 'bundles'  -%}
+                <div
+                  class="product-card__img product-card-hover-wrapper"
+                  data-secondary-media
+                  style="background-color: {{ product.metafields.custom.color_schema.value.highlighted_background_color }};color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};"
+                >
+                  <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
+                    {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
+                    {%- for title_word in title_words limit: 4 -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                      {%- capture hide_resource -%}{% render "wc_product_visibility", resource: title_word %}{%- endcapture -%}
+                      {%- if hide_resource == "true" -%}
+                        {% continue %}
+                      {%- endif -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+
+                      <span>{{- title_word -}}</span>
+                      {%- unless forloop.last -%}
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="2" cy="2" r="2" fill="{{ product.metafields.custom.color_schema.value.highlighted_text_color }}"/>
+                        </svg>
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  </h6>
+                  <p>
+                    {{- product.metafields.custom.product_card.value.description -}}
+                  </p>
+                  {% if product.metafields.custom.product_card.value.icon != blank %}
+                  <div class="card-icon-wrapper">
+                    {{ product.metafields.custom.product_card.value.icon | metafield_tag }}
+                  </div>
+                  {% endif %}
+                </div>
+              {%- elsif images.size > 1 -%}
+                <img
+                  class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
+                  data-secondary-media
+                  src='{{ images[1] | image_url: width: 320 }}'
+                  data-image-url='{{ images[1] | image_url: width: 1 }}'
+                  data-aspectratio='{{ images[1].aspect_ratio }}'
+                  data-sizes='auto'
+                  alt='{{ images[1].alt }}'
+                  loading='lazy'
+                  width='1'
+                  height='1'
+                  style='object-position: {{ images[1].presentation.focal_point }};'
+                >
+              {%- endif -%}
             {%- endif -%}
+              
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                {%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
+                {%- if hide_resource == "true" -%}
+                  {% continue %}
+                {%- endif -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                 {%- if img.id != featured_media.id -%}
                   <img
@@ -266,12 +302,12 @@
             {%- endif -%}
 
             {%- for color in colors limit: 6 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: color %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: color %}{%- endcapture -%}
+              {%- if hide_resource == "true" -%}
+                {% continue %}
+              {%- endif -%}
+              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
               {%- assign variant = product.variants | where: color_option_position, color | first -%}
 

@@ -254,12 +254,12 @@
                 <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
                   {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
                   {%- for title_word in title_words limit: 4 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: title_word %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                    {%- capture hide_resource -%}{% render "wc_product_visibility", resource: title_word %}{%- endcapture -%}
+                    {%- if hide_resource == "true" -%}
+                      {% continue %}
+                    {%- endif -%}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                     <span>{{- title_word -}}</span>
                     {%- unless forloop.last -%}
@@ -296,12 +296,12 @@
             {%- endif -%}
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                {%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
+                {%- if hide_resource == "true" -%}
+                  {% continue %}
+                {%- endif -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                 {%- if img.id != featured_media.id -%}
                   <img
