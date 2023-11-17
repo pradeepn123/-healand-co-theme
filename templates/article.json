@@ -26,13 +26,12 @@
         },
         "footer": {
           "type": "footer",
-          "disabled": true,
           "settings": {
-            "show_author": false,
-            "show_date": false,
-            "show_share": false,
-            "show_next_and_previous_posts": false,
-            "show_comment_count": false
+            "show_author": true,
+            "show_date": true,
+            "show_share": true,
+            "show_next_and_previous_posts": true,
+            "show_comment_count": true
           }
         }
       },
