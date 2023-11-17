@@ -105,7 +105,7 @@
         "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Frame_8353.webp",
+            "desktop_img": "shopify:\/\/shop_images\/heal_banner.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "",
@@ -128,10 +128,10 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/products\/berberine-500mg",
+            "btn_url": "shopify:\/\/collections\/shop-all",
             "btn_style": "solid",
             "extra_btn_text": "",
-            "extra_btn_url": "shopify:\/\/products\/antioxidant-bundle-old",
+            "extra_btn_url": "",
             "extra_btn_style": "solid"
           }
         }
