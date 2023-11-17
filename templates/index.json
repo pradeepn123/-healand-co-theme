@@ -105,7 +105,8 @@
         "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/heal_banner.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/heal_desk_copy.webp",
+            "mobile_img": "shopify:\/\/shop_images\/heal_mob_copy.webp",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "",
