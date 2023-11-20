@@ -84,6 +84,7 @@
     },
     "25d43466-8fb6-4a7f-9c25-254d89c4413c": {
       "type": "article-footer",
+      "disabled": true,
       "settings": {
         "show_author": true,
         "show_date": true,
