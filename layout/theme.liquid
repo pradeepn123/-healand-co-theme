@@ -100,6 +100,13 @@
         duration: 1000        
       })
     </script>
+    {%- if template == 'article' -%}
+      <script>
+        const div2 = document.querySelector("#article--footer");
+        const div1 = document.querySelector("#featured--collection");
+        div1.after(div2);
+      </script>
+    {%- endif -%}
    {% include 'smile-initializer' %}
 
     {%- render 'layouthub_footer' -%} 

@@ -1,5 +1,5 @@
 {%- liquid
-  assign options = block
+  assign options = block.settings
   assign show_author = options.show_author
   assign show_date = options.show_date
   assign show_share = options.show_share
@@ -8,7 +8,7 @@
 -%}
 
 {% if show_author or show_date or show_share or show_next_and_previous_posts %}
-  <div class='container container--xsmall article-footer' {{ block.shopify_attributes }}>
+  <div class='container container--xsmall article-footer' id="article--footer" {{ block.shopify_attributes }}>
     {% if show_author or show_date or show_share %}
       <div class='article-footer-panel'>
         <div class='article-meta article-footer-panel__article-meta'>
