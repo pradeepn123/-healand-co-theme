@@ -104,6 +104,7 @@
         },
         "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/heal_desk_copy.webp",
             "mobile_img": "shopify:\/\/shop_images\/heal_mob_copy_4.webp",
@@ -138,7 +139,6 @@
         },
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b": {
           "type": "image-banner",
-          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Heal_black_friday_-_Desk.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Heal_black_friday_-_Mob.jpg",
