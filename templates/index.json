@@ -140,8 +140,8 @@
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Heal_black_friday_-_Desk.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Heal_black_friday_-_Mob.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/Heal_cyber_monday_desk.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Heal_cyber_monday_mob.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "",
