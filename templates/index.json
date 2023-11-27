@@ -141,8 +141,8 @@
           "type": "image-banner",
           "disabled": true,
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Heal_cyber_monday_desk.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Heal_cyber_monday_mob.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/Frame_8366_c1.webp",
+            "mobile_img": "shopify:\/\/shop_images\/Frame_8367_mobile.webp",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "",
