@@ -101,7 +101,7 @@
               alt='{{ mobile_image.alt }}'
               width='{{image.width}}'
               height='{{image.height}}'
-              style='object-position: {{ mobile_image.presentation.focal_point }};'
+              style='object-position: center'
               data-aspectratio='{{ mobile_image.aspect_ratio }}'
               data-sizes='auto'
               data-srcset='{%- render 'srcset-for-image', image: image -%}'
