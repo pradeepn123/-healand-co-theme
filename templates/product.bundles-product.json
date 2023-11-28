@@ -454,6 +454,7 @@
       "block_order": [
         "ee38d187-04fe-40ad-8c85-15c92bdc3c28"
       ],
+      "disabled": true,
       "settings": {
         "section_bg_color": "#ec7662",
         "section_heading": ""
