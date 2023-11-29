@@ -219,8 +219,6 @@
     }
   },
   "sections": {
-    "product_details": {
-    },
     "predictive_search": {
       "products_tab": "Products",
       "blog_posts_tab": "Blog posts",
@@ -282,7 +280,48 @@
       "aria_label_for_account_icon": "Account page",
       "aria_label_for_cart_icon": "Cart"
     },
-    "blog_posts": {
+    "layouthub-5f24b95d2b970452b235c7b2": {
+      "xy3v26vh3e": {
+        "lh_xqy13w_title": "GENERAL",
+        "lh_xqxy1n_title": "PRODUCTS",
+        "lh_xqxuze_title": "SHIPPING & RETURNS",
+        "lh_gfjji9_title": "Where is Heal + Co based?",
+        "lh_gfjji9_content_html": "<p>We're based in Toronto, Canada!<\/p><!--lh-live-editor-->",
+        "lh_gfjgg0_title": "What are your values?",
+        "lh_gfjgg0_content_html": "<p>Our mission is to help people benefit from the amazing healing powers of nature's apothecary. All of our products are carefully sourced to meet our values of efficacy, purity and potency.<\/p><!--lh-live-editor-->",
+        "lh_gfjddr_title": "Where can I purchase your products?",
+        "lh_gfjddr_content_html": "<p>All of our products are available to purchase on our website and Amazon.com.<\/p><!--lh-live-editor-->",
+        "lh_gfjabi_title": "Do you provide samples or coupons?",
+        "lh_gfjabi_content_html": "<p>We don't currently have a sampling or coupon program in place, but if you sign up for our newsletter then you will receive 10% off your first order online. Also be sure to follow us on social media where we host giveaways and promotions.<\/p><!--lh-live-editor-->",
+        "lh_i8yywy_title": "Where are your products made?",
+        "lh_i8yywy_content_html": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Ontario, Canada.<\/p><!--lh-live-editor-->",
+        "lh_i8yvup_title": "What kind of testing do you do on your products?",
+        "lh_i8yvup_content_html": "<p>Each batch of Heal + Co products are rigorously tested for heavy metals and contaminants to ensure quality and safety.<\/p><!--lh-live-editor-->",
+        "lh_i8yssg_title": "When should I take the products? Should I take them with food?",
+        "lh_i8yssg_content_html": "<p>It is recommended to take with food a few hours before or after taking other medication.<\/p><!--lh-live-editor-->",
+        "lh_i8ypq7_title": "Are your products FDA approved?",
+        "lh_i8ypq7_content_html": "<p>By law, the FDA does not approve dietary supplements. However, all of our products are manufactured in accordance to the FDA's current Good Manufacturing Practices to help ensure quality and safety.<\/p><!--lh-live-editor-->",
+        "lh_i8ymny_title": "Are your products vegan? Gluten-free? Non-GMO?",
+        "lh_i8ymny_content_html": "<p>Yes! All of our products are vegan, gluten-free and non-GMO. They are also free of all major allergens.<\/p><!--lh-live-editor-->",
+        "lh_i8yjlp_title": "Where do you source your products from?",
+        "lh_i8yjlp_content_html": "<p>All of our products are derived from natural plants that are well renowned for their natural health benefits.<\/p><!--lh-live-editor-->",
+        "lh_i8ygjg_title": "How and where should I store the products?",
+        "lh_i8ygjg_content_html": "<p>It's recommended to store our products in a cool, dry location.<\/p><!--lh-live-editor-->",
+        "lh_i8ydh7_title": "What's the difference between an extract and a powder?",
+        "lh_i8ydh7_content_html": "<p>An extract is a supplement in which the key compound of the plant has been extracted to provide a high-potency supplement. A powder is a supplement in which the entire plant is used.<\/p><!--lh-live-editor-->",
+        "lh_k2eebn_title": "What is the typical order processing time?",
+        "lh_k2eebn_content_html": "<p>We try to ensure that all orders placed on our website are processed within a 24-hour window. Orders received over the weekend or on public holidays will be processed the following business day. You will receive a confirmation email once your order is placed.<\/p><!--lh-live-editor-->",
+        "lh_k2eb9e_title": "What shipping options are available?",
+        "lh_k2eb9e_content_html": "<p>All orders worldwide qualify for free shipping on orders over $40 USD before tax. Orders below $40 qualify for $10 flat-rate shipping.<\/p><!--lh-live-editor-->",
+        "lh_k2e875_title": "Where do you ship?",
+        "lh_k2e875_content_html": "<p>We ship worldwide out of Canada! All orders over $50 ship for free.<\/p><!--lh-live-editor-->",
+        "lh_k2e54w_title": "How long will it take to receive my order?",
+        "lh_k2e54w_content_html": "<p>Most orders within the United States are typically received within 3-5 business days after the order is processed. Shipments outside of the United States may take longer to receive.<\/p><!--lh-live-editor-->",
+        "lh_k2e22n_title": "Do you accept customer returns?",
+        "lh_k2e22n_content_html": "<p>In some circumstances we do. Please refer to our return policy here.<\/p><!--lh-live-editor-->",
+        "lh_2u_title": "Didn't find what you were looking for?",
+        "lh_2u_des_html": "Head on over to our contact page!<!--lh-live-editor-->"
+      }
     }
   },
   "customer": {
@@ -440,6 +479,15 @@
     "separator": {
       "line": "line between images",
       "button": "drag the border between images"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "one": "Your order contains a product which will not be shipped to your location. Check and remove"
+        }
+      }
     }
   }
 }
