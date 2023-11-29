@@ -485,7 +485,7 @@
     "checkout": {
       "shipping_errors": {
         "shipping_method_not_available_generic": {
-          "one": "Your order contains a product which will not be shipped to your location. Check and remove"
+          "one": "Your order contains a Nubu product which will not be shipped to your location."
         }
       }
     }
