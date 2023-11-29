@@ -39,13 +39,12 @@
         },
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26": {
           "type": "image-banner",
-          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
-            "background_color": "#faf5ef",
+            "background_color": "#ffffff",
             "text_colors": "#000000",
             "desktop_text_color": "#000000",
             "button_bg_color": "#ee5c4c",
@@ -54,11 +53,11 @@
             "title": "Your Wellness",
             "text": "<p>Carefully Sourced. High Potency. Quality Supplements<\/p>",
             "sub_heading_size": "h0",
-            "heading_size": "h2",
-            "body_size": "body4",
+            "heading_size": "h0",
+            "body_size": "body1",
             "desktop_content_position": "align-items:center;justify-content:flex-start;",
             "desktop_content_align": "left",
-            "content_max_width": 528,
+            "content_max_width": 680,
             "content_spacing": 0,
             "mobile_content_position": "align-items:flex-start;justify-content:center;",
             "mobile_content_align": "center",
@@ -139,6 +138,7 @@
         },
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Frame_8366_c1.webp",
             "mobile_img": "shopify:\/\/shop_images\/Frame_8367_mobile.webp",
