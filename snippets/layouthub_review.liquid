@@ -142,15 +142,19 @@
         {%- endif -%}
     {% when 'smart-aliexpress-reviews'%}
         {%- if review_type == 'single' -%}
-            <a href="#scm-reviews-importer">
-                <div id="scm-product-detail-rate" class="scm-reviews-rate" data-rate-version2= {{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json}}>
-                </div>
-            </a>
+           <div class="scm-reviews-rate" data-rate-version2="{{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json | escape }}" data-product-id="{{ product.id }}"></div>
         {% elsif review_type == 'form'%}
-            {% render "reviews-importer", product: product %}
+           {% assign smaTemplatePageBuilderCurrent = template | split: '.' | first %}
+		   {% if smaTemplatePageBuilderCurrent != 'product' %}
+		   <div class="scm-container custom" style="display: none;">
+			   <div id="scm-reviews-importer" class="scm-reviews-importer">
+				   <iframe id="scm-reviews-importer-iframe" width="100%"></iframe>
+			   </div>
+		   </div>
+		   {% endif %}
+			{% capture laisnippet %}{% render "reviews-importer",product : product %}{% endcapture %}{% unless laisnippet contains "Liquid error" %}{{ laisnippet }}{% endunless %}
         {% else%}
-            <div class="scm-reviews-rate" data-rate-version2= {{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json}}>
-            </div>
+            <div class="scm-reviews-rate" data-rate-version2="{{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json | escape }}" data-product-id="{{ product.id }}"></div>
         {% endif %}
     {%- when 'photo-reviews'-%}
         {%- if review_type == 'single' -%}
