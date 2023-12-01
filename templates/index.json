@@ -39,6 +39,7 @@
         },
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
             "mobile_img": "shopify:\/\/shop_images\/Pills-Banner-Reflected-01-01.jpg",
@@ -138,11 +139,10 @@
         },
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b": {
           "type": "image-banner",
-          "disabled": true,
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Frame_8366_c1.webp",
-            "mobile_img": "shopify:\/\/shop_images\/Frame_8367_mobile.webp",
-            "desktop_overlay_opacity": 0,
+            "desktop_img": "shopify:\/\/shop_images\/banner_desktop.webp",
+            "mobile_img": "shopify:\/\/shop_images\/banner_mob.webp",
+            "desktop_overlay_opacity": 30,
             "mobile_overlay_opacity": 0,
             "background_color": "",
             "text_colors": "",
@@ -164,7 +164,7 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/collections\/shop-all",
+            "btn_url": "shopify:\/\/products\/immunity-bundle",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
