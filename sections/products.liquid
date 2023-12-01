@@ -27,6 +27,8 @@
   assign container_size = options.container_size
   assign pagination_type = options.pagination_type
 
+  assign custom_collection_title = section.settings.custom_collection_title
+
   assign product_card_align = options.product_card_align
   assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
 
@@ -352,7 +354,7 @@
         {% endif %}
         <div class="{{ collection.title | downcase }}-section" style="position: relative;">
           <div class="section_seperation"></div>
-          <h4 class="collection_title">{{ collection.title | upcase }}</h4>
+          <h4 class="collection_title">{% if custom_collection_title != blank %}{{ custom_collection_title | upcase }}{% else %}{{ collection.title | upcase }}{% endif %}</h4>
           {%- paginate collection.products by product_per_page -%}
             {%- if collection.products.size > 0 -%}
               <div class='shop__products-grid-wrap'>
@@ -493,6 +495,11 @@
     {
       "type": "header",
       "content": "Schema settings"
+    },
+    {
+      "type": "text",
+      "id": "custom_collection_title",
+      "label": "Bundle Section Title"
     },
     {
       "type": "select",

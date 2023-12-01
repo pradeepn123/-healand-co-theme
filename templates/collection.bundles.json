@@ -13,7 +13,7 @@
         "show_collection_image": true,
         "show_breadcrumbs": false,
         "show_collection_title": false,
-        "collection_title": "SHOP ALL",
+        "collection_title": "",
         "collection_title_color": "#ffffff",
         "collection_title_font_size": 40,
         "collection_title_font_size_mobile": 24,
@@ -36,7 +36,7 @@
           "type": "select",
           "settings": {
             "bundles_products": "{{ collection.metafields.custom.bundle_product.value }}",
-            "bundles_title": "Bundles"
+            "bundles_title": "Single Product Bundles"
           }
         }
       },
@@ -44,6 +44,7 @@
         "9139c504-11a2-404a-979f-fad812e54305"
       ],
       "settings": {
+        "custom_collection_title": "Mix Matched Bundles",
         "color_scheme": "default",
         "container_size": "full-screen",
         "section_spacing_top": 48,
@@ -158,3 +159,4 @@
     "1c47952b-0483-41f1-b071-86329eb309ca"
   ]
 }
+
