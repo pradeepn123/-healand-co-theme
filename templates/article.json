@@ -14,9 +14,9 @@
           "settings": {
             "title_color": "",
             "show_author": false,
-            "show_date": false,
+            "show_date": true,
             "show_comment_count": false,
-            "show_share_link": false
+            "show_share_link": true
           }
         },
         "content": {
