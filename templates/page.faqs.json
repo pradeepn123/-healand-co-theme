@@ -154,6 +154,18 @@
             "image_width": 100
           }
         },
+        "8dde8b16-c941-46fb-a0e2-649bdc5870fe": {
+          "type": "question",
+          "settings": {
+            "title": "Are your products safe for everyone to take?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>Though all our products are safe, we always recommend consulting a healthcare practitioner before use, especially if you are pregnant, breastfeeding, or have prior medical conditions.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "27187150-5358-4d4d-b041-ede4291908ba": {
           "type": "question",
           "settings": {
@@ -274,6 +286,7 @@
         "20803f02-1288-4755-b8f2-e74362154741",
         "9e0ff089-300a-46f8-9060-b770d4841ee2",
         "0abe7e3f-33bc-45cd-8bb2-796febb3fae6",
+        "8dde8b16-c941-46fb-a0e2-649bdc5870fe",
         "27187150-5358-4d4d-b041-ede4291908ba",
         "198b6ec9-e0f3-4daf-8a87-47299d75914e",
         "489e1b33-c5dd-445a-b8d3-35fb92de0795",
