@@ -51,10 +51,10 @@
         "e3635dcb-640f-476b-b66c-eb0448fb6fd7": {
           "type": "question",
           "settings": {
-            "title": "Where can I purchase your products?",
+            "title": "Where are your products available for purchase?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>All of our products are available to purchase on our website and Amazon.com.<\/p>",
+            "text": "<p>You can purchase our products on our website, Heal + Co. and Amazon. Additionally, our products are stocked in over 350 retail locations, including Whole Foods<br\/>Market, Sobeys, Mountain Goodness Natural Food, and other outlets across different provinces throughout Canada.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
