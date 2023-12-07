@@ -85,10 +85,10 @@
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7": {
           "type": "question",
           "settings": {
-            "title": "What are your Products made?",
+            "title": "Where are Heal + Co. products manufactured?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Our products are manufactured in a state-of-the-art, FDA-compliant and GMP-certified facility in Michigan, USA.<\/p>",
+            "text": "<p>All Heal + Co. products are manufactured in state-of-the-art, GMP-certified facilities in Canada. Each product undergoes rigorous testing for heavy metals and contaminants to ensure compliance with Health Canada standards.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
