@@ -133,10 +133,10 @@
         "0abe7e3f-33bc-45cd-8bb2-796febb3fae6": {
           "type": "question",
           "settings": {
-            "title": "Are your products vegan? Gluten -free? Non-GMO?",
+            "title": "Are all products vegan, non-GMO, and gluten-free?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Yes! All of our products are vegan, gluten-free and non-GMO. They are also free of all major allergens.<\/p>",
+            "text": "<p>Yes! All our products are vegan, gluten-free, and non-GMO. They are also free of all major allergens.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
