@@ -227,10 +227,10 @@
         "ed27d34f-9bd5-4fa1-8391-55f090a577d4": {
           "type": "question",
           "settings": {
-            "title": "What shipping options are available?",
+            "title": "Is there a shipping fee charged on orders?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>All orders worldwide qualify for free shipping on orders over $40 USD before tax. Orders below $40 qualify for $10 flat-rate shipping.<\/p>",
+            "text": "<p>Orders above CAD $50, US $40, €65, or £60 before tax are eligible for free shipping. However, for orders below the mentioned amount, shipping charges (depending on the country) may apply.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
