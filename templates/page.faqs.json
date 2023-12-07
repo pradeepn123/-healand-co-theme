@@ -60,6 +60,18 @@
             "image_width": 100
           }
         },
+        "aa961b88-857d-4b02-a638-2e67f05bac37": {
+          "type": "question",
+          "settings": {
+            "title": " What countries do you ship your products to?",
+            "subhead_fontsize": 20,
+            "icon": "none",
+            "text": "<p>We currently ship to Canada, United States, United Kingdom, European Union-Germany, Austria, Belgium, France, Germany, Ireland, Italy, the Netherlands, Portugal, and Spain.<\/p>",
+            "content_font": 16,
+            "page": "",
+            "image_width": 100
+          }
+        },
         "2e3cd170-bb48-4357-ba30-6506bab2d922": {
           "type": "question",
           "settings": {
@@ -160,7 +172,7 @@
             "title": "How and where should I store the products?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>It's recommended to store our products in a cool, dry location.<\/p>",
+            "text": "<p>It's recommended to store the products in a cool, dry location.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
@@ -254,6 +266,7 @@
         "935d107a-a00c-44ad-8295-50d732ad3f04",
         "798562e6-a1ac-4d3f-b4e5-6d82c6a14797",
         "e3635dcb-640f-476b-b66c-eb0448fb6fd7",
+        "aa961b88-857d-4b02-a638-2e67f05bac37",
         "2e3cd170-bb48-4357-ba30-6506bab2d922",
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3",
         "9a75e5d3-41b3-4f3b-b123-6bdffca7d9a7",
