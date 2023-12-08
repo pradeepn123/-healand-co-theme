@@ -254,7 +254,7 @@
             "title": "Do you accept customer returns?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>In some circumstances we do. Please refer to our return policy here.<\/p>",
+            "text": "<p>In some circumstances, we do. Please refer to our <a href=\"https:\/\/healco.com\/pages\/shipping-and-returns\" target=\"_blank\" title=\"https:\/\/healco.com\/pages\/shipping-and-returns\">return policy<\/a> here.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
