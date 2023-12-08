@@ -218,7 +218,7 @@
             "title": "Is there a shipping fee charged on orders?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Orders above CAD $50, US $40, €65, or £60 before tax are eligible for free shipping. However, for orders below the mentioned amount, shipping charges (depending on the country) may apply.<\/p>",
+            "text": "<p>Orders above $50 CAD, $40 US, €65 Euro, and £60 Pound before tax are eligible for free shipping. However, for orders below the mentioned amount, shipping charges (depending on the country) may apply.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
