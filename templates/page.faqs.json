@@ -254,7 +254,7 @@
             "title": "How long will it take to receive my order?",
             "subhead_fontsize": 20,
             "icon": "none",
-            "text": "<p>Most orders within Canada and the United States are typically delivered within 3-5 business days once processed. Shipments outside Canada\/United States may take longer.<\/p>",
+            "text": "<p>Most orders within Canada and the United States are typically delivered within 3-5 business days once processed. Shipments outside Canada and the United States may take longer.<\/p>",
             "content_font": 16,
             "page": "",
             "image_width": 100
