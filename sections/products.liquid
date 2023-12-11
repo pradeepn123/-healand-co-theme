@@ -32,6 +32,8 @@
   assign product_card_align = options.product_card_align
   assign color_swatch_variables = settings.color_swatch_variables | newline_to_br | split: '<br />'
 
+  assign showTabbedsection = collection.metafields.custom.show_tabbed_section
+
   for filter in collection.filters
     assign active_filter_count = active_filter_count | plus: filter.active_values.size
   endfor
@@ -152,12 +154,12 @@
             data-section-id='{{ section.id }}'
           >
             {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                {%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
+                {%- if hide_resource == "true" -%}
+                  {% continue %}
+                {%- endif -%}
+              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
               {%- assign column_switch_string = column_switch | append: '' -%}
               <div
@@ -167,12 +169,12 @@
                 data-value='{{ column_switch }}'
               >
                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                  {%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
+                  {%- if hide_resource == "true" -%}
+                    {% continue %}
+                  {%- endif -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                   <span></span>
                 {%- endfor -%}
@@ -188,12 +190,12 @@
             data-section-id='{{ section.id }}'
           >
             {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+            {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
+              {%- if hide_resource == "true" -%}
+                {% continue %}
+              {%- endif -%}
+            {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
               {%- assign column_switch_string = column_switch | append: '' -%}
               <div
@@ -203,12 +205,12 @@
                 data-value='{{ column_switch }}'
               >
                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                  {%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
+                  {%- if hide_resource == "true" -%}
+                    {% continue %}
+                  {%- endif -%}
+                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                   <span></span>
                 {%- endfor -%}
@@ -245,12 +247,12 @@
         {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
         {% if request.path != '/collections/bundles' %}
           {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+            {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+              {%- if hide_resource == "true" -%}
+                {% continue %}
+              {%- endif -%}
+            {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
             {% if block.settings.bundles_products != blank %}
               <div class="{{ block.settings.bundles_title | downcase }}-section" style="position: relative;">
@@ -259,79 +261,79 @@
                 <div class='shop__products-grid-wrap'>
                   <div class='shop__products-grid'>
                     {%- for product in block.settings.bundles_products -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: product %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                        {%- capture hide_resource -%}{% render "wc_product_visibility", resource: product %}{%- endcapture -%}
+                        {%- if hide_resource == "true" -%}
+                          {% continue %}
+                        {%- endif -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
-{% comment %} Wholesale_Club_Product_Prices Start {% endcomment %}
-{% assign base_product = product %}
-{% assign base_variant = product.selected_or_first_available_variant %}
+                      {% comment %} Wholesale_Club_Product_Prices Start {% endcomment %}
+                        {% assign base_product = product %}
+                        {% assign base_variant = product.selected_or_first_available_variant %}
 
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
+                        {% if shop.metafields.sawholesale['base_price'] == blank %}
+                          {% assign base_price = 'compare_at_price' %}
+                        {% else %}
+                          {% assign base_price = shop.metafields.sawholesale['base_price'] %}
+                        {% endif %}
 
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
+                        {% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
 
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                        {% if customer.tags != blank %}
+                          {% for mf in base_product.metafields.sawholesale %}
+                        {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                          {%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
+                          {%- if hide_resource == "true" -%}
+                            {% continue %}
+                          {%- endif -%}
+                        {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
+                            {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
+                            {% if customer.tags contains product_customer_tag %}
+                              {% assign saw_has_discount = true %}
+                              {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
+                              {% assign price_key = product_customer_tag | prepend: 'price_' %}
+                              {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
 
-{% assign saw_discount = 1 | minus: saw_discount %}
+                        {% assign saw_discount = 1 | minus: saw_discount %}
 
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
+                        {% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
+                          {% assign saw_variant_compare_at_price = base_variant.price %}
+                        {% else %}
+                          {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
+                        {% endif %}
 
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
+                        {% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
+                        {% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
+                          {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
+                        {% else %}
+                          {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
+                        {% endif %}
 
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCProduct_Price = base_product.price %}
-  {% assign WCProduct_ComparePrice = base_product.compare_at_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min %}
-  {% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}
-  {% assign WCProduct_PriceMax = base_product.price_max %}
-  {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
-  {% assign WCProduct_VariantPrice = base_variant.price %}
-  {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
-{% else %}   
-  {% assign WCProduct_Price = saw_variant_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
-  {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
-  {% assign WCProduct_ComparePrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCProduct_ComparePriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCProduct_ComparePriceMax = base_product.price_max %}{% endif %}
-  {% assign WCProduct_VariantPrice = saw_variant_price %}
-  {% assign WCProduct_VariantComparePrice = saw_variant_compare_at_price %}
-{% endif %}
-{% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
+                        {% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
+                          {% assign WCProduct_Price = base_product.price %}
+                          {% assign WCProduct_ComparePrice = base_product.compare_at_price %}
+                          {% assign WCProduct_PriceMin = base_product.price_min %}
+                          {% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}
+                          {% assign WCProduct_PriceMax = base_product.price_max %}
+                          {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
+                          {% assign WCProduct_VariantPrice = base_variant.price %}
+                          {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
+                        {% else %}   
+                          {% assign WCProduct_Price = saw_variant_price %}
+                          {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
+                          {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
+                          {% assign WCProduct_ComparePrice = saw_variant_compare_at_price %}
+                          {% if base_product.compare_at_price_min != 0 %}{% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCProduct_ComparePriceMin = base_product.price_min %}{% endif %}
+                          {% if base_product.compare_at_price_max != 0 %}{% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCProduct_ComparePriceMax = base_product.price_max %}{% endif %}
+                          {% assign WCProduct_VariantPrice = saw_variant_price %}
+                          {% assign WCProduct_VariantComparePrice = saw_variant_compare_at_price %}
+                        {% endif %}
+                      {% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
 
                       <div class='shop__grid-item'>
                         {% render 'collection--product-card',
@@ -358,94 +360,108 @@
           {%- paginate collection.products by product_per_page -%}
             {%- if collection.products.size > 0 -%}
               <div class='shop__products-grid-wrap'>
+                {% if showTabbedsection == true %}
+                  <div class="tab_header">
+                    <div class="filters_card_child">
+                      <a class="filters_switch is_active" id="all_bundle">
+                        All
+                      </a>
+                      {% assign unique_tags = collection.metafields.custom.collection_tabbed_section.value %}
+                      {% for tag in unique_tags %}
+                          <a class="filters_switch " id="{{ tag.collection_tag.value }}">
+                            {{ tag.tabbed_collection_title.value }}
+                          </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
                 <div class='shop__products-grid' id='ShopProductsGrid'>
                   {%- for product in collection.products -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: product %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                      {%- capture hide_resource -%}{% render "wc_product_visibility", resource: product %}{%- endcapture -%}
+                      {%- if hide_resource == "true" -%}
+                        {% continue %}
+                      {%- endif -%}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
-{% comment %} Wholesale_Club_Product_Prices Start {% endcomment %}
-{% assign base_product = product %}
-{% assign base_variant = product.selected_or_first_available_variant %}
+                    {% comment %} Wholesale_Club_Product_Prices Start {% endcomment %}
+                      {% assign base_product = product %}
+                      {% assign base_variant = product.selected_or_first_available_variant %}
 
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
+                      {% if shop.metafields.sawholesale['base_price'] == blank %}
+                        {% assign base_price = 'compare_at_price' %}
+                      {% else %}
+                        {% assign base_price = shop.metafields.sawholesale['base_price'] %}
+                      {% endif %}
 
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
+                      {% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
 
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                      {% if customer.tags != blank %}
+                        {% for mf in base_product.metafields.sawholesale %}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                        {%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
+                        {%- if hide_resource == "true" -%}
+                          {% continue %}
+                        {%- endif -%}
+                      {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
+                          {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
+                          {% if customer.tags contains product_customer_tag %}
+                            {% assign saw_has_discount = true %}
+                            {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
+                            {% assign price_key = product_customer_tag | prepend: 'price_' %}
+                            {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
 
-{% assign saw_discount = 1 | minus: saw_discount %}
+                      {% assign saw_discount = 1 | minus: saw_discount %}
 
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
+                      {% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
+                        {% assign saw_variant_compare_at_price = base_variant.price %}
+                      {% else %}
+                        {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
+                      {% endif %}
 
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
+                      {% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
+                      {% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
+                        {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
+                      {% else %}
+                        {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
+                      {% endif %}
 
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCProduct_Price = base_product.price %}
-  {% assign WCProduct_ComparePrice = base_product.compare_at_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min %}
-  {% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}
-  {% assign WCProduct_PriceMax = base_product.price_max %}
-  {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
-  {% assign WCProduct_VariantPrice = base_variant.price %}
-  {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
-{% else %}   
-  {% assign WCProduct_Price = saw_variant_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
-  {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
-  {% assign WCProduct_ComparePrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCProduct_ComparePriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCProduct_ComparePriceMax = base_product.price_max %}{% endif %}
-  {% assign WCProduct_VariantPrice = saw_variant_price %}
-  {% assign WCProduct_VariantComparePrice = saw_variant_compare_at_price %}
-{% endif %}
-{% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
-
-                    <div class='shop__grid-item'>
-                        {% render 'collection--product-card',
-                          with_bottom_spacing: true,
-                          product: product,
-                          show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
-                          color_swatch_variables: color_swatch_variables,
-                          img_ratio: img_ratio,
-                          show_mobile_carousel: true,
-                          product_card_align: product_card_align,
-                          desktop_columns: desktop_columns
-                        %}
-                    </div>
+                      {% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
+                        {% assign WCProduct_Price = base_product.price %}
+                        {% assign WCProduct_ComparePrice = base_product.compare_at_price %}
+                        {% assign WCProduct_PriceMin = base_product.price_min %}
+                        {% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}
+                        {% assign WCProduct_PriceMax = base_product.price_max %}
+                        {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
+                        {% assign WCProduct_VariantPrice = base_variant.price %}
+                        {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
+                      {% else %}   
+                        {% assign WCProduct_Price = saw_variant_price %}
+                        {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
+                        {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
+                        {% assign WCProduct_ComparePrice = saw_variant_compare_at_price %}
+                        {% if base_product.compare_at_price_min != 0 %}{% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCProduct_ComparePriceMin = base_product.price_min %}{% endif %}
+                        {% if base_product.compare_at_price_max != 0 %}{% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCProduct_ComparePriceMax = base_product.price_max %}{% endif %}
+                        {% assign WCProduct_VariantPrice = saw_variant_price %}
+                        {% assign WCProduct_VariantComparePrice = saw_variant_compare_at_price %}
+                      {% endif %}
+                    {% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
+                      <div class='shop__grid-item all_bundle {{ product.tags | join }}'>
+                          {% render 'collection--product-card',
+                            with_bottom_spacing: true,
+                            product: product,
+                            show_color_swatches_on_hover: settings.show_product_color_swatches_on_hover,
+                            color_swatch_variables: color_swatch_variables,
+                            img_ratio: img_ratio,
+                            show_mobile_carousel: true,
+                            product_card_align: product_card_align,
+                            desktop_columns: desktop_columns
+                          %}
+                      </div>
                   {%- endfor -%}
                 </div>
               </div>
@@ -486,6 +502,33 @@
     </div>
   </div>
 </shop-component>
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+
+    const tabs= document.querySelectorAll('.filters_switch');
+    const all_content= document.querySelectorAll('.all_bundle');
+    tabs.forEach((tab, index)=>{
+            tab.addEventListener('click', (e)=>{
+                tabs.forEach(tab=>{tab.classList.remove('is_active')});
+                tab.classList.add('is_active');
+                switchTab(tab.id);
+            })
+        });
+
+    function switchTab(tabname) {
+        let showwork = document.querySelectorAll("." + tabname);
+        all_content.forEach((c) => {
+            c.style.display = "none";
+        });
+    
+        showwork.forEach((c) => {
+            c.style.display = "block";
+        });
+    } 
+
+});
+</script>
 
 {% schema %}
 {
