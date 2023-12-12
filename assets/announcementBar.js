@@ -6,33 +6,15 @@
 /*!****************************************!*\
   !*** ./js/sections/announcementBar.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
 /* harmony import */ var SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/AnnouncementBar.svelte */ "./js/components/svelte/AnnouncementBar.svelte");
  //wrapper that inject svelte into DOM
  //svelte component to load
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
   (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'announcement-bar', '#announcement-bar-data');
-});
-
-/***/ }),
-
-/***/ "./js/sections/global.js":
-/*!*******************************!*\
-  !*** ./js/sections/global.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
-
-/* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
-//global imports here
-
-document.addEventListener('DOMContentLoaded', () => {
-  (0,_announcementBar__WEBPACK_IMPORTED_MODULE_0__["default"])();
 });
 
 /***/ })
@@ -148,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"global": 0
+/******/ 			"announcementBar": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -198,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/global.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/announcementBar.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

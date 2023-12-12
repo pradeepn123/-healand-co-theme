@@ -27,6 +27,7 @@
     }
   </script>
 </announcement-bar>
+{% assign disable_carousel = true %}
 
 {%- if show_announcement_bar == true -%}
   <div class="announcement-bar section section-{{ section.id }} color-{{ color_scheme }}">
@@ -38,7 +39,7 @@
           {%- endif -%}
         </div>
         <div class="announcement-bar__center-panel">
-          {%- if blocks.size > 0 -%}
+          {%- if blocks.size > 1 -%}
             <carousel-component
               class="carousel announcement-bar__carousel {% if container_size == 'full-screen' %}announcement-bar__carousel--extended{% else %}announcement-bar__carousel--base{% endif %}"
               {% if enable_autoplay == true %}
@@ -46,7 +47,7 @@
               {% endif %}
               data-section-id="{{ section.id }}"
             >
-              {%- if blocks.size > 1 and show_navigation_arrows == true -%}
+              {%- if blocks.size > 1 and show_navigation_arrows == true and disable_carousel == false -%}
                 <carousel-btn
                   class="carousel__btn announcement-bar__carousel-btn"
                   data-scroll-direction="prev"
@@ -62,7 +63,7 @@
               <div class="carousel__viewport embla" data-carousel-viewport>
                 <div class="carousel__container announcement__carousel-container" data-carousel-container>
                   {%- for block in blocks -%}
-                    {% if forloop.first %}
+                  
                     {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
                     {%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
                     {%- if hide_resource == 'true' -%}
@@ -103,11 +104,13 @@
                         </div>
                       </div>
                     </div>
-                  {% endif %}
+                    {% if disable_carousel %} {% break %} {% endif %}
+            
                   {%- endfor -%}
                 </div>
               </div>
-              {%- if blocks.size > 1 and show_navigation_arrows == true -%}
+
+              {%- if blocks.size > 1 and show_navigation_arrows == true and disable_carousel == false -%}
                 <carousel-btn
                   class="carousel__btn announcement-bar__carousel-btn"
                   data-scroll-direction="next"

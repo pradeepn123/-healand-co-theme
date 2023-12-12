@@ -8,17 +8,35 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
-            "country_iso": "IN",
+            "country_iso": "CA, IN",
             "text": "<p>Free shipping on all orders over $50<\/p>",
-            "link": "",
+            "link": "shopify:\/\/policies\/shipping-policy",
             "icon": "none"
           }
         },
         "announcement_2": {
           "type": "announcement",
           "settings": {
-            "country_iso": "FR",
-            "text": "<p>This is France Announcement<\/p>",
+            "country_iso": "UK",
+            "text": "<p>This is Announcementbar for UK<\/p>",
+            "link": "",
+            "icon": "none"
+          }
+        },
+        "announcement_3": {
+          "type": "announcement",
+          "settings": {
+            "country_iso": "US",
+            "text": "<p>This is Announcementbar for US<\/p>",
+            "link": "",
+            "icon": "none"
+          }
+        },
+        "announcement_4": {
+          "type": "announcement",
+          "settings": {
+            "country_iso": "AU, BE, FR, DE, IE, IT, NL, PT, SI, ES",
+            "text": "<p>This is Announcementbar for other than US,UK,CAD,IN<\/p>",
             "link": "",
             "icon": "none"
           }
@@ -26,7 +44,9 @@
       },
       "block_order": [
         "announcement_1",
-        "announcement_2"
+        "announcement_2",
+        "announcement_3",
+        "announcement_4"
       ],
       "settings": {
         "text": "<p>Make an announcement<\/p>",
