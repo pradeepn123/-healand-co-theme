@@ -973,7 +973,7 @@ body.hamburger--open[scroll-y-offf] {
 
 @media screen and (min-width: 1380px) {
     .articles__tags {
-        justify-content: center !important;
+        justify-content: flex-start !important;
     }
     .articles_justify_flex {
         justify-content: flex-start !important;
