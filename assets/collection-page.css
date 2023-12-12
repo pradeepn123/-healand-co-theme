@@ -324,3 +324,9 @@
         justify-content: space-around;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .shop__products {
+        margin-top: -5rem;
+    }
+}
