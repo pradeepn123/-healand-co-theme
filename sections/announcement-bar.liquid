@@ -20,29 +20,37 @@
   endif
 -%}
 
+<announcement-bar>
+  <script id="announcement-bar-data" type="text/json">
+    {
+     "data": {% render 'JSON-announcement-bar' | json %}
+    }
+  </script>
+</announcement-bar>
+
 {%- if show_announcement_bar == true -%}
-  <div class='announcement-bar section section-{{ section.id }} color-{{ color_scheme }}'>
-    <div class='announcement-bar__outer-container container container--{{ container_size }}'>
-      <div class='announcement-bar__inner-container '>
-        <div class='announcement-bar__left-panel'>
+  <div class="announcement-bar section section-{{ section.id }} color-{{ color_scheme }}">
+    <div class="announcement-bar__outer-container container container--{{ container_size }}">
+      <div class="announcement-bar__inner-container ">
+        <div class="announcement-bar__left-panel">
           {%- if show_social_list == true -%}
             {%- render 'social-list', class: 'announcement-bar__social-list' -%}
           {%- endif -%}
         </div>
-        <div class='announcement-bar__center-panel'>
+        <div class="announcement-bar__center-panel">
           {%- if blocks.size > 0 -%}
             <carousel-component
-              class='carousel announcement-bar__carousel {% if container_size == 'full-screen' %}announcement-bar__carousel--extended{% else %}announcement-bar__carousel--base{% endif %}'
+              class="carousel announcement-bar__carousel {% if container_size == 'full-screen' %}announcement-bar__carousel--extended{% else %}announcement-bar__carousel--base{% endif %}"
               {% if enable_autoplay == true %}
-                data-autoplay-interval='{{ autoplay_interval }}' data-loop='infinite'
+                data-autoplay-interval="{{ autoplay_interval }}" data-loop="infinite"
               {% endif %}
-              data-section-id='{{ section.id }}'
+              data-section-id="{{ section.id }}"
             >
               {%- if blocks.size > 1 and show_navigation_arrows == true -%}
                 <carousel-btn
-                  class='carousel__btn announcement-bar__carousel-btn'
-                  data-scroll-direction='prev'
-                  tabindex='0'
+                  class="carousel__btn announcement-bar__carousel-btn"
+                  data-scroll-direction="prev"
+                  tabindex="0"
                 >
                   {%- render 'icon',
                     icon_name: 'chevron',
@@ -51,72 +59,108 @@
                   -%}
                 </carousel-btn>
               {%- endif -%}
-              <div class='carousel__viewport embla' data-carousel-viewport>
-                <div class='carousel__container announcement__carousel-container' data-carousel-container>
+              <div class="carousel__viewport embla" data-carousel-viewport>
+                <div class="carousel__container announcement__carousel-container" data-carousel-container>
                   {%- for block in blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                    {% if forloop.first %}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                    {%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
+                    {%- if hide_resource == 'true' -%}
+                      {% continue %}
+                    {%- endif -%}
+                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                     <div
-                      class='carousel__slide announcement-bar__slide block-{{ block.id }}'
-                      block-id='{{ block.id }}'
+                      class="carousel__slide announcement-bar__slide block-{{ block.id }}"
+                      block-id="{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
                       {%- if block.settings.link != blank -%}
                         <a
-                          href='{{ block.settings.link.url }}'
-                          class='announcement-bar__link'
-                          aria-label='{{ block.settings.text }}'
+                          href="{{ block.settings.link.url }}"
+                          class="announcement-bar__link"
+                          aria-label="{{ block.settings.text }}"
                         ></a>
                       {%- endif -%}
-                      <div class=' announcement-bar__text'>
+                      <div
+                        class=" announcement-bar__text announcement-bar {% if section.blocks.size > 0 %} hidden {% endif %}"
+                        data-announcement-bar
+                      >
                         {% assign custom_icon_image = block.settings.custom_icon_image %}
                         {% assign icon = block.settings.icon %}
 
                         {%- if custom_icon_image != blank -%}
                           <img
-                            class='announcement-bar__text-icon lazyload'
+                            class="announcement-bar__text-icon lazyload"
                             {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                           >
                         {%- elsif icon != 'none' -%}
                           {% render 'icon-pack', icon: icon, class: 'announcement-bar__text-icon' %}
                         {%- endif -%}
 
-                        <div class='rte'>
+                        <div class="rte" data-announcement-text>
                           {{ block.settings.text }}
                         </div>
                       </div>
                     </div>
+                  {% endif %}
                   {%- endfor -%}
                 </div>
               </div>
               {%- if blocks.size > 1 and show_navigation_arrows == true -%}
                 <carousel-btn
-                  class='carousel__btn announcement-bar__carousel-btn'
-                  data-scroll-direction='next'
-                  tabindex='0'
+                  class="carousel__btn announcement-bar__carousel-btn"
+                  data-scroll-direction="next"
+                  tabindex="0"
                 >
                   {%- render 'icon', icon_name: 'chevron', class: 'announcement-bar__chevron', stroke_width: 1 -%}
                 </carousel-btn>
               {%- endif -%}
             </carousel-component>
           {%- endif -%}
+          {% if blocks.size <= 0 %}
+            <div
+              class='carousel__slide announcement-bar__slide block-{{ section.id }}'
+              block-id='{{ section.id }}'
+              {{ section.shopify_attributes }}
+            >
+              {%- if section.settings.link != blank -%}
+                <a
+                  href='{{ section.settings.link.url }}'
+                  class='announcement-bar__link'
+                  aria-label='{{ section.settings.text }}'
+                ></a>
+              {%- endif -%}
+              <div class=' announcement-bar__text announcement-bar {% if section.blocks.size > 0 %} hidden {% endif %}'  data-announcement-bar >
+                {% assign custom_icon_image = section.settings.custom_icon_image %}
+                {% assign icon = section.settings.icon %}
+
+                {%- if custom_icon_image != blank -%}
+                  <img
+                    class='announcement-bar__text-icon lazyload'
+                    {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
+                  >
+                {%- elsif icon != 'none' -%}
+                  {% render 'icon-pack', icon: icon, class: 'announcement-bar__text-icon' %}
+                {%- endif -%}
+
+                <div class='rte' data-announcement-text>
+                  {{ section.settings.text }}
+                </div>
+              </div>
+          {% endif %}
         </div>
-        <div class='announcement-bar__right-panel'>
+        <div class="announcement-bar__right-panel">
           {%- if show_currency_selector == true or show_language_selector == true -%}
-            <div class='announcement-bar__settings'>
+            <div class="announcement-bar__settings">
               {%- if show_language_selector == true -%}
-                <div class='localization-dropdown-wrapper'>
+                <div class="localization-dropdown-wrapper">
                   <dropdown-opener
-                    class='localization-dropdown-toggle'
-                    data-aria-expanded='false'
-                    data-float-element-id='AnnouncementBarLanguageSelector'
-                    data-trigger='click'
-                    tabindex='0'
+                    class="localization-dropdown-toggle"
+                    data-aria-expanded="false"
+                    data-float-element-id="AnnouncementBarLanguageSelector"
+                    data-trigger="click"
+                    tabindex="0"
                   >
                     {{ localization.language.name }}
                     {% render 'icon',
@@ -126,41 +170,41 @@
                     %}
                   </dropdown-opener>
                   <float-element
-                    class='localization-dropdown'
-                    aria-hidden='true'
-                    id='AnnouncementBarLanguageSelector'
-                    data-placement='bottom-end'
-                    data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
-                    data-strategy='fixed'
+                    class="localization-dropdown"
+                    aria-hidden="true"
+                    id="AnnouncementBarLanguageSelector"
+                    data-placement="bottom-end"
+                    data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}"
+                    data-strategy="fixed"
                   >
                     <template>
-                      <div class='localization-dropdown__body'>
+                      <div class="localization-dropdown__body">
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarLanguageForm' -%}
                             {%- for language in localization.available_languages -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
+                              {%- if hide_resource == 'true' -%}
+                                {% continue %}
+                              {%- endif -%}
+                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                               <button
-                                class='localization-dropdown__item {% if localization.language == language %} selected{% endif %}'
+                                class="localization-dropdown__item {% if localization.language == language %} selected{% endif %}"
                                 data-localization-item
-                                data-value='{{ language.iso_code }}'
+                                data-value="{{ language.iso_code }}"
                                 data-focus-trap-target
-                                aria-label='{{ language.name }}'
+                                aria-label="{{ language.name }}"
                               >
                                 {{ language.name }}
                               </button>
                             {%- endfor -%}
                             <input
-                              type='hidden'
-                              name='locale_code'
+                              type="hidden"
+                              name="locale_code"
                               data-localization-input
-                              value='{{ localization.language.iso_code }}'
-                              id='AnnouncementBarLanguageForm-LocaleCodeInput'
+                              value="{{ localization.language.iso_code }}"
+                              id="AnnouncementBarLanguageForm-LocaleCodeInput"
                             >
                           {%- endform -%}
                         </localization-selector>
@@ -170,13 +214,13 @@
                 </div>
               {%- endif -%}
               {%- if show_currency_selector == true -%}
-                <div class='localization-dropdown-wrapper'>
+                <div class="localization-dropdown-wrapper">
                   <dropdown-opener
-                    class='localization-dropdown-toggle'
-                    data-aria-expanded='false'
-                    data-float-element-id='AnnouncementBarCurrencySelector'
-                    data-trigger='click'
-                    tabindex='0'
+                    class="localization-dropdown-toggle"
+                    data-aria-expanded="false"
+                    data-float-element-id="AnnouncementBarCurrencySelector"
+                    data-trigger="click"
+                    tabindex="0"
                   >
                     {{ localization.country.currency.iso_code }}
                     {% render 'icon',
@@ -186,42 +230,42 @@
                     %}
                   </dropdown-opener>
                   <float-element
-                    class='localization-dropdown'
-                    aria-hidden='true'
-                    id='AnnouncementBarCurrencySelector'
-                    data-placement='bottom-end'
-                    data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
-                    data-strategy='fixed'
+                    class="localization-dropdown"
+                    aria-hidden="true"
+                    id="AnnouncementBarCurrencySelector"
+                    data-placement="bottom-end"
+                    data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}"
+                    data-strategy="fixed"
                   >
                     <template>
-                      <div class='localization-dropdown__body'>
+                      <div class="localization-dropdown__body">
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarCurrencyForm' -%}
                             {%- for country in localization.available_countries -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
+                              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
+                              {%- if hide_resource == 'true' -%}
+                                {% continue %}
+                              {%- endif -%}
+                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
                               <button
                                 data-localization-item
-                                class='localization-dropdown__item {% if localization.country == country %} selected{% endif %}'
-                                data-value='{{ country.iso_code }}'
+                                class="localization-dropdown__item {% if localization.country == country %} selected{% endif %}"
+                                data-value="{{ country.iso_code }}"
                                 data-focus-trap-target
-                                aria-label='{{ country.name }} {{ country.currency.iso_code }}'
+                                aria-label="{{ country.name }} {{ country.currency.iso_code }}"
                               >
                                 {{ country.name }},
                                 {{ country.currency.iso_code }}
                               </button>
                             {%- endfor -%}
                             <input
-                              type='hidden'
-                              name='country_code'
+                              type="hidden"
+                              name="country_code"
                               data-localization-input
-                              value='{{ localization.country.iso_code }}'
-                              id='AnnouncementBarCurrencyForm-CountryCodeInput'
+                              value="{{ localization.country.iso_code }}"
+                              id="AnnouncementBarCurrencyForm-CountryCodeInput"
                             >
                           {%- endform -%}
                         </localization-selector>
@@ -245,6 +289,545 @@
   "class": "shopify-section-announcement-bar",
   "tag": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Global Announcement Bar Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.announcement_bar.announcement_block_text_label",
+      "default": "<p>Make an announcement</p>"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.announcement_bar.announcement_block_link_label"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.general_section_settings.icon.none_icon_label"
+        },
+        {
+          "value": "settings",
+          "label": "t:sections.general_section_settings.icon.general_group.settings_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "search",
+          "label": "t:sections.general_section_settings.icon.general_group.search_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "eye",
+          "label": "t:sections.general_section_settings.icon.general_group.eye_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "eye-slash",
+          "label": "t:sections.general_section_settings.icon.general_group.eye_slash_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "user",
+          "label": "t:sections.general_section_settings.icon.general_group.user_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "love-outline",
+          "label": "t:sections.general_section_settings.icon.general_group.love_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "love-solid",
+          "label": "t:sections.general_section_settings.icon.general_group.love_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "like",
+          "label": "t:sections.general_section_settings.icon.general_group.like_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "dislike",
+          "label": "t:sections.general_section_settings.icon.general_group.dislike_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "lamp",
+          "label": "t:sections.general_section_settings.icon.general_group.lamp_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "star-outline",
+          "label": "t:sections.general_section_settings.icon.general_group.star_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "star-solid",
+          "label": "t:sections.general_section_settings.icon.general_group.star_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "trash",
+          "label": "t:sections.general_section_settings.icon.general_group.trash_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "document",
+          "label": "t:sections.general_section_settings.icon.general_group.document_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "copy",
+          "label": "t:sections.general_section_settings.icon.general_group.copy_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "share",
+          "label": "t:sections.general_section_settings.icon.general_group.share_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "plus",
+          "label": "t:sections.general_section_settings.icon.general_group.plus_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "minus",
+          "label": "t:sections.general_section_settings.icon.general_group.minus_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "checkmark",
+          "label": "t:sections.general_section_settings.icon.general_group.checkmark_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "arrow-right",
+          "label": "t:sections.general_section_settings.icon.general_group.arrow_right_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "arrow-left",
+          "label": "t:sections.general_section_settings.icon.general_group.arrow_left_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "undo",
+          "label": "t:sections.general_section_settings.icon.general_group.undo_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "redo",
+          "label": "t:sections.general_section_settings.icon.general_group.redo_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "refresh",
+          "label": "t:sections.general_section_settings.icon.general_group.refresh_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "notification",
+          "label": "t:sections.general_section_settings.icon.general_group.notification_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "clock",
+          "label": "t:sections.general_section_settings.icon.general_group.clock_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "calendar",
+          "label": "t:sections.general_section_settings.icon.general_group.calendar_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "information",
+          "label": "t:sections.general_section_settings.icon.general_group.information_icon_label",
+          "group": "t:sections.general_section_settings.icon.general_group.label"
+        },
+        {
+          "value": "bag",
+          "label": "t:sections.general_section_settings.icon.shop_group.bag_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cart",
+          "label": "t:sections.general_section_settings.icon.shop_group.cart_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "barcode",
+          "label": "t:sections.general_section_settings.icon.shop_group.barcode_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "coupon",
+          "label": "t:sections.general_section_settings.icon.shop_group.coupon_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "gift",
+          "label": "t:sections.general_section_settings.icon.shop_group.gift_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "discount-outline",
+          "label": "t:sections.general_section_settings.icon.shop_group.discount_outline_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "discount-solid",
+          "label": "t:sections.general_section_settings.icon.shop_group.discount_solid_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "medal",
+          "label": "t:sections.general_section_settings.icon.shop_group.medal_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "pen-and-ruler",
+          "label": "t:sections.general_section_settings.icon.shop_group.pen_and_ruler_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "color-swatch",
+          "label": "t:sections.general_section_settings.icon.shop_group.color_swatch_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "car",
+          "label": "t:sections.general_section_settings.icon.shop_group.car_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cup",
+          "label": "t:sections.general_section_settings.icon.shop_group.cup_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "cake",
+          "label": "t:sections.general_section_settings.icon.shop_group.cake_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "hanger",
+          "label": "t:sections.general_section_settings.icon.shop_group.hanger_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "t-shirt",
+          "label": "t:sections.general_section_settings.icon.shop_group.t_shirt_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "dress",
+          "label": "t:sections.general_section_settings.icon.shop_group.dress_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "jewelry",
+          "label": "t:sections.general_section_settings.icon.shop_group.jewelry_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "furniture",
+          "label": "t:sections.general_section_settings.icon.shop_group.furniture_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "toy",
+          "label": "t:sections.general_section_settings.icon.shop_group.toy_icon_label",
+          "group": "t:sections.general_section_settings.icon.shop_group.label"
+        },
+        {
+          "value": "shipping-box",
+          "label": "t:sections.general_section_settings.icon.shipping_group.shipping_box_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "address-pin",
+          "label": "t:sections.general_section_settings.icon.shipping_group.address_pin_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "fast-delivery",
+          "label": "t:sections.general_section_settings.icon.shipping_group.fast_delivery_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "delivery-truck",
+          "label": "t:sections.general_section_settings.icon.shipping_group.delivery_truck_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "easy-returns",
+          "label": "t:sections.general_section_settings.icon.shipping_group.easy_returns_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "world",
+          "label": "t:sections.general_section_settings.icon.shipping_group.world_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "plane",
+          "label": "t:sections.general_section_settings.icon.shipping_group.plane_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "search-order",
+          "label": "t:sections.general_section_settings.icon.shipping_group.search_order_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "briefcase",
+          "label": "t:sections.general_section_settings.icon.shipping_group.briefcase_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "store",
+          "label": "t:sections.general_section_settings.icon.shipping_group.store_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+        {
+          "value": "routing",
+          "label": "t:sections.general_section_settings.icon.shipping_group.routing_icon_label",
+          "group": "t:sections.general_section_settings.icon.shipping_group.label"
+        },
+
+        {
+          "value": "credit-card",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.credit_card_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "lock",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.lock_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "shield",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.shield_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "secure-payment",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.secure_payment_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "wallet",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.wallet_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "cash",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.cash_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "receipt",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.receipt_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "tag",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.tag_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "list",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.list_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "scanner",
+          "label": "t:sections.general_section_settings.icon.payment_security_group.scanner_icon_label",
+          "group": "t:sections.general_section_settings.icon.payment_security_group.label"
+        },
+        {
+          "value": "phone",
+          "label": "t:sections.general_section_settings.icon.communication_group.phone_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "chat",
+          "label": "t:sections.general_section_settings.icon.communication_group.chat_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "message",
+          "label": "t:sections.general_section_settings.icon.communication_group.message_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "email-outline",
+          "label": "t:sections.general_section_settings.icon.communication_group.email_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "customer-support",
+          "label": "t:sections.general_section_settings.icon.communication_group.customer_support_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "printer-and-fax",
+          "label": "t:sections.general_section_settings.icon.communication_group.printer_and_fax_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "devices",
+          "label": "t:sections.general_section_settings.icon.communication_group.devices_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "mobile",
+          "label": "t:sections.general_section_settings.icon.communication_group.mobile_icon_label",
+          "group": "t:sections.general_section_settings.icon.communication_group.label"
+        },
+        {
+          "value": "virus",
+          "label": "t:sections.general_section_settings.icon.ecology_group.virus_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "mask",
+          "label": "t:sections.general_section_settings.icon.ecology_group.mask_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "eco",
+          "label": "t:sections.general_section_settings.icon.ecology_group.eco_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "rabbit",
+          "label": "t:sections.general_section_settings.icon.ecology_group.rabbit_icon_label",
+          "group": "t:sections.general_section_settings.icon.ecology_group.label"
+        },
+        {
+          "value": "twitter",
+          "label": "t:sections.general_section_settings.icon.social_group.twitter_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "facebook",
+          "label": "t:sections.general_section_settings.icon.social_group.facebook_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "pinterest",
+          "label": "t:sections.general_section_settings.icon.social_group.pinterest_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "instagram",
+          "label": "t:sections.general_section_settings.icon.social_group.instagram_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "tiktok",
+          "label": "t:sections.general_section_settings.icon.social_group.tiktok_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "tumblr",
+          "label": "t:sections.general_section_settings.icon.social_group.tumblr_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "snapchat",
+          "label": "t:sections.general_section_settings.icon.social_group.snapchat_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "youtube",
+          "label": "t:sections.general_section_settings.icon.social_group.youtube_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "vimeo",
+          "label": "t:sections.general_section_settings.icon.social_group.vimeo_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "linkedin",
+          "label": "t:sections.general_section_settings.icon.social_group.linkedin_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "flickr",
+          "label": "t:sections.general_section_settings.icon.social_group.flickr_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "reddit",
+          "label": "t:sections.general_section_settings.icon.social_group.reddit_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "email-solid",
+          "label": "t:sections.general_section_settings.icon.social_group.email_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "behance",
+          "label": "t:sections.general_section_settings.icon.social_group.behance_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "discord",
+          "label": "t:sections.general_section_settings.icon.social_group.discord_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "dribbble",
+          "label": "t:sections.general_section_settings.icon.social_group.dribbble_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.icon.social_group.medium_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "twitch",
+          "label": "t:sections.general_section_settings.icon.social_group.twitch_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "whatsapp",
+          "label": "t:sections.general_section_settings.icon.social_group.whatsapp_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "viber",
+          "label": "t:sections.general_section_settings.icon.social_group.viber_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        },
+        {
+          "value": "telegram",
+          "label": "t:sections.general_section_settings.icon.social_group.telegram_label",
+          "group": "t:sections.general_section_settings.icon.social_group.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.general_section_settings.icon.label",
+      "info": "t:sections.general_section_settings.icon.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon_image",
+      "label": "t:sections.general_section_settings.custom_icon_image.label"
+    },
     {
       "type": "checkbox",
       "id": "show_only_on_homepage",
@@ -382,6 +965,11 @@
       "type": "announcement",
       "name": "t:sections.announcement_bar.announcement_block_name",
       "settings": [
+        {
+          "type": "text",
+          "id": "country_iso",
+          "label": "Enter country ISO in 2 digits"
+        },
         {
           "type": "richtext",
           "id": "text",

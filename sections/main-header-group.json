@@ -8,6 +8,7 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
+            "country_iso": "IN",
             "text": "<p>Free shipping on all orders over $50<\/p>",
             "link": "",
             "icon": "none"
@@ -15,9 +16,9 @@
         },
         "announcement_2": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "<p>Make an announcement<\/p>",
+            "country_iso": "FR",
+            "text": "<p>This is France Announcement<\/p>",
             "link": "",
             "icon": "none"
           }
@@ -28,6 +29,9 @@
         "announcement_2"
       ],
       "settings": {
+        "text": "<p>Make an announcement<\/p>",
+        "link": "",
+        "icon": "none",
         "show_only_on_homepage": false,
         "color_scheme": "custom-2",
         "container_size": "full-screen",

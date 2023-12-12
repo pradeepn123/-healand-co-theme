@@ -110,5 +110,10 @@
    {% include 'smile-initializer' %}
 
     {%- render 'layouthub_footer' -%} 
+
+    <script src="{{ 'vendors.js' | asset_url }}" defer></script>
+    <script src="{{ 'shared.js' | asset_url }}" defer></script>
+    <script src="{{ 'global.js' | asset_url }}" defer></script> 
+
      </body>
 </html>
