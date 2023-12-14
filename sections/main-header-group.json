@@ -8,8 +8,8 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
+            "country_iso": "CA, IN",
             "text": "<p>Free shipping on all orders over $50<\/p>",
-            "link": "",
             "icon": "none"
           }
         },
@@ -17,17 +17,40 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "<p>Make an announcement<\/p>",
-            "link": "",
+            "country_iso": "UK",
+            "text": "<p>This is Announcementbar for UK<\/p>",
+            "icon": "none"
+          }
+        },
+        "announcement_3": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "country_iso": "US",
+            "text": "<p>This is Announcementbar for US<\/p>",
+            "icon": "none"
+          }
+        },
+        "announcement_4": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "country_iso": "AU, BE, FR, DE, IE, IT, NL, PT, SI, ES",
+            "text": "<p>This is Announcementbar for other than US,UK,CAD,IN<\/p>",
             "icon": "none"
           }
         }
       },
       "block_order": [
         "announcement_1",
-        "announcement_2"
+        "announcement_2",
+        "announcement_3",
+        "announcement_4"
       ],
       "settings": {
+        "text": "<p>Make an announcement<\/p>",
+        "link": "",
+        "icon": "none",
         "show_only_on_homepage": false,
         "color_scheme": "custom-2",
         "container_size": "full-screen",

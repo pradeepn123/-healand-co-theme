@@ -1,0 +1,8 @@
+[
+    {% for block in section.blocks %}
+      {
+        "handle": "{{ block.settings.country_iso}}",
+        "text": "{{ block.settings.text}}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ]
