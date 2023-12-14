@@ -15,7 +15,6 @@
         },
         "announcement_2": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "country_iso": "UK",
             "text": "<p>This is Announcementbar for UK<\/p>",
@@ -49,7 +48,7 @@
       ],
       "settings": {
         "text": "<p>Make an announcement<\/p>",
-        "link": "",
+        "link": "shopify:\/\/policies\/shipping-policy",
         "icon": "none",
         "show_only_on_homepage": false,
         "color_scheme": "custom-2",

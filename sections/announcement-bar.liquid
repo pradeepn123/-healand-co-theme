@@ -40,7 +40,7 @@
           {%- endif -%}
         </div>
         <div class="announcement-bar__center-panel">
-          {%- if blocks.size > 1 -%}
+          {%- if blocks.size >= 1 -%}
             <carousel-component
               class="carousel announcement-bar__carousel {% if container_size == 'full-screen' %}announcement-bar__carousel--extended{% else %}announcement-bar__carousel--base{% endif %}"
               {% if enable_autoplay == true %}
