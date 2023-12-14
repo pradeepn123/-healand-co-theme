@@ -363,15 +363,21 @@
                 {% if showTabbedsection == true %}
                   <div class="tab_header">
                     <div class="filters_card_child">
-                      <a class="filters_switch is_active" id="all_bundle">
+                      <a href="/collections/bundles" class="filters_switch {% if collection.url == '/collections/bundles' %}is_active{% endif %}" id="all_bundle">
                         All
                       </a>
-                      {% assign unique_tags = collection.metafields.custom.collection_tabbed_section.value %}
+                      <a href="/collections/single-product-bundle" class="filters_switch {% if collection.url == '/collections/single-product-bundle' %}is_active{% endif %}" id="single-product-bundle">
+                        The Essentials
+                      </a>
+                      <a href="/collections/mix-match-bundle" class="filters_switch {% if collection.url == '/collections/mix-match-bundle' %}is_active{% endif %}" id="mix-match-bundle">
+                        Wellness kit
+                      </a>
+                      {% comment %} {% assign unique_tags = collection.metafields.custom.collection_tabbed_section.value %}
                       {% for tag in unique_tags %}
                           <a class="filters_switch " id="{{ tag.collection_tag.value }}">
                             {{ tag.tabbed_collection_title.value }}
                           </a>
-                      {% endfor %}
+                      {% endfor %} {% endcomment %}
                     </div>
                   </div>
                 {% endif %}
@@ -503,7 +509,7 @@
   </div>
 </shop-component>
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', ()=>{
 
     const tabs= document.querySelectorAll('.filters_switch');
@@ -527,8 +533,26 @@
         });
     } 
 
-});
-</script>
+    // reloading page after selecting filters and sorts
+    const labelsWithDataAttr = document.querySelectorAll('label[data-list-item]');
+    const labelsWithDataAttr2 = document.querySelectorAll('label[data-sort-list-label]');
+
+    function reloadPageAfterDelay() {
+      setTimeout(() => {
+        location.reload();
+      }, 1000); // 5 seconds (5000 milliseconds)
+    }
+
+    labelsWithDataAttr.forEach(label => {
+      label.addEventListener('click', reloadPageAfterDelay);
+    });
+
+    labelsWithDataAttr2.forEach(label => {
+      label.addEventListener('click', reloadPageAfterDelay);
+    });
+
+  });
+</script> {% endcomment %}
 
 {% schema %}
 {
