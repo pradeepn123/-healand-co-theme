@@ -15,6 +15,7 @@
         },
         "announcement_2": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "country_iso": "UK",
             "text": "<p>This is Announcementbar for UK<\/p>",
