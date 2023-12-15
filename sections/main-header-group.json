@@ -15,10 +15,9 @@
         },
         "announcement_2": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "country_iso": "UK",
-            "text": "<p>This is Announcementbar for UK<\/p>",
+            "text": "<p>Free shipping on orders £60+<\/p>",
             "icon": "none"
           }
         },
