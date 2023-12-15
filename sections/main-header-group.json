@@ -31,7 +31,6 @@
         },
         "announcement_4": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "country_iso": "FR, BE, DE, IE, IT, NL, PT, SI, ES, AT",
             "text": "<p>Free shipping on orders €65+<\/p>",
