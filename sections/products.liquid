@@ -510,7 +510,7 @@
 </shop-component>
 
 <script>
-  if(window.location.href != 'https://healco.com/collections/bundles'){
+  if(window.location.href == 'https://healco.com/collections/the-essentials' || window.location.href == 'https://healco.com/collections/wellness-kit'){
     window.addEventListener('DOMContentLoaded', function(){
       var targetSection = document.querySelector('.shop__container');
       window.scrollTo(0, targetSection.offsetTop - 80);
