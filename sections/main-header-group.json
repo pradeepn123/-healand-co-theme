@@ -9,7 +9,7 @@
           "type": "announcement",
           "settings": {
             "country_iso": "CA, IN",
-            "text": "<p>Free shipping on all orders over $50<\/p>",
+            "text": "<p>Free shipping on orders $50+<\/p>",
             "icon": "none"
           }
         },
