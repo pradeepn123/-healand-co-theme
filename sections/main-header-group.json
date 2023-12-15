@@ -23,10 +23,9 @@
         },
         "announcement_3": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "country_iso": "US",
-            "text": "<p>This is Announcementbar for US<\/p>",
+            "text": "<p>Free shipping on orders $40+<\/p>",
             "icon": "none"
           }
         },
