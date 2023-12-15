@@ -33,8 +33,8 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "country_iso": "AU, BE, FR, DE, IE, IT, NL, PT, SI, ES",
-            "text": "<p>This is Announcementbar for other than US,UK,CAD,IN<\/p>",
+            "country_iso": "FR, BE, DE, IE, IT, NL, PT, SI, ES, AT",
+            "text": "<p>Free shipping on orders €65+<\/p>",
             "icon": "none"
           }
         }
