@@ -1,70 +1,4 @@
 
-{% comment %} Wholesale_Club_Product_Prices Start {% endcomment %}
-{% assign base_product = product %}
-{% assign base_variant = product.selected_or_first_available_variant %}
-
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
-
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
-
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% assign saw_discount = 1 | minus: saw_discount %}
-
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
-
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
-
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCProduct_Price = base_product.price %}
-  {% assign WCProduct_ComparePrice = base_product.compare_at_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min %}
-  {% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}
-  {% assign WCProduct_PriceMax = base_product.price_max %}
-  {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
-  {% assign WCProduct_VariantPrice = base_variant.price %}
-  {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
-{% else %}   
-  {% assign WCProduct_Price = saw_variant_price %}
-  {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
-  {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
-  {% assign WCProduct_ComparePrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCProduct_ComparePriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCProduct_ComparePriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCProduct_ComparePriceMax = base_product.price_max %}{% endif %}
-  {% assign WCProduct_VariantPrice = saw_variant_price %}
-  {% assign WCProduct_VariantComparePrice = saw_variant_compare_at_price %}
-{% endif %}
-{% comment %} Wholesale_Club_Product_Prices End {% endcomment %}
 {%- liquid
   assign variant = product.first_available_variant
 
@@ -84,7 +18,7 @@
 
   assign featured_media = product.featured_media
   assign images = product.images
-  assign price = WCProduct_Price | default: 0
+  assign price = product.price | default: 0
 
   if settings.show_background
     assign card_style = 'solid'
@@ -98,7 +32,7 @@
 
   assign show_sale_amount_badge = false
   assign show_sale_badge = false
-  if WCProduct_ComparePrice > price and product.available
+  if product.compare_at_price > price and product.available
     if settings.product_card_show_sale_badge
       assign show_sale_badge = true
     endif
@@ -179,13 +113,6 @@
                   tabindex='-1'
                 >
                   {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <div class='carousel__slide product-card__slide unstyled-link {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'>
                       <img
                         class='product-card__img product-card__img--visible lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
@@ -210,13 +137,6 @@
                 <div class='product-card-dots__viewport embla' data-carousel-viewport>
                   <div class='product-card-dots__container' data-carousel-container>
                     {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                       <carousel-dot
                         class='product-card-dots__dot {% if forloop.index == 1 %}is-primary{% endif %}'
                         data-dot-index='{{ forloop.index0 }}'
@@ -253,15 +173,7 @@
               >
                 <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
                   {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
-                  {%- for title_word in title_words limit: 4 -%}
-                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-                    {%- capture hide_resource -%}{% render "wc_product_visibility", resource: title_word %}{%- endcapture -%}
-                    {%- if hide_resource == "true" -%}
-                      {% continue %}
-                    {%- endif -%}
-                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                    <span>{{- title_word -}}</span>
+                  {%- for title_word in title_words limit: 4 -%}-}}</span>
                     {%- unless forloop.last -%}
                       <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="2" cy="2" r="2" fill="{{ product.metafields.custom.color_schema.value.highlighted_text_color }}"/>
@@ -296,13 +208,6 @@
             {%- endif -%}
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               {%- for img in images limit: 5 -%}
-                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-                {%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-                {%- if hide_resource == "true" -%}
-                  {% continue %}
-                {%- endif -%}
-                {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 {%- if img.id != featured_media.id -%}
                   <img
                     class='product-card__img lazyload {% if settings.enable_product_darken_background %}multiply-mode__target{% endif %}'
@@ -322,13 +227,6 @@
             {%- endif -%}
 
             {%- for color in colors limit: 6 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: color %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- assign variant = product.variants | where: color_option_position, color | first -%}
 
               {%- if variant.image.src != blank -%}
@@ -379,17 +277,10 @@
         {% endif %}
         {%- if show_sale_badge -%}
           <div class='product-card-badge product-card-badge--sale'>
-            {% render 'sale-badge-text', price: WCProduct_Price, old_price: WCProduct_ComparePrice %}
+            {% render 'sale-badge-text', price: product.price, old_price: product.compare_at_price %}
           </div>
         {%- endif -%}
         {%- for tag in product.tags -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: tag %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- assign tag_downcase = tag | downcase -%}
           {%- assign product_card_custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase -%}
           {%- assign product_card_custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase -%}
@@ -425,13 +316,6 @@
               >
                 <div class='product-card__color-swatches product-card__color-swatches--{{ product_color_swatches_style }}'>
                   {%- for color in colors limit: 6 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: color %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     {%- assign variant = product.variants | where: color_option_position, color | first -%}
 
                     <div data-color='{{ color }}' data-color-swatches-item data-variant-id='{{ variant.id }}'>
@@ -518,13 +402,6 @@
               >
                 <div class='product-card__color-swatches product-card__color-swatches--{{ product_color_swatches_style }}'>
                   {%- for color in colors limit: 6 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: color %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     {%- liquid
                       assign variant = product.variants | where: color_option_position, color | first
                       assign color_downcase = color | downcase | strip
@@ -652,32 +529,18 @@
           {% assign benefits = product.metafields.custom.benefits.value %}
           <p class="product_benefits">
             {% for elem in benefits %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: elem %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {{ elem }}{% unless forloop.last %} + {% endunless %}
             {% endfor %}
           </p> {% endcomment %}
           {% assign benefits = product.metafields.custom.addition_benefits.value %}
             <p class="product_benefits">
               {% for elem in benefits %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: elem %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 <span style="color: {{ block.settings.product_type_color }}">{{ elem }}{% unless forloop.last %} + {% endunless %}</span>
               {% endfor %}
             </p>        
           <div class='product-card__price'>
             <div class='product-card__price-cost'>
-              <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and WCProduct_ComparePrice > price %} product-card__price-item--highlight-sale{% endif %}'>
+              <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and product.compare_at_price > price %} product-card__price-item--highlight-sale{% endif %}'>
                 {%- if product.price_varies -%}
                   {{ 'cards.product_card.from_price_html' | t: price: money_price }}
                 {%- else -%}
@@ -697,16 +560,16 @@
                 {% endif %}
               </div>
 
-              {%- if WCProduct_ComparePrice > price -%}
-                <div class='product-card__price-item-old {% if settings.product_card_highlight_sale_price and WCProduct_ComparePrice > price %} product-card__price-item-old--highlight-sale{% endif %}'>
-                  {{- WCProduct_ComparePrice | money -}}
+              {%- if product.compare_at_price > price -%}
+                <div class='product-card__price-item-old {% if settings.product_card_highlight_sale_price and product.compare_at_price > price %} product-card__price-item-old--highlight-sale{% endif %}'>
+                  {{- product.compare_at_price | money -}}
                 </div>
               {%- endif -%}
             </div>
 
             {%- if show_sale_amount_badge -%}
               <div class='product-card-sale-amount-badge product__product-card-sale-amount-badge'>
-                {% render 'sale-amount-badge-text', price: WCProduct_Price, old_price: WCProduct_ComparePrice %}
+                {% render 'sale-amount-badge-text', price: product.price, old_price: product.compare_at_price %}
               </div>
             {%- endif -%}
           </div>
@@ -728,13 +591,6 @@
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               <product-media-tabs class='product-card__tabs' data-product-card-media-tabs>
                 {%- for img in images limit: 5 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: img %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   {%- if img.id != featured_media.id -%}
                     <product-media-tab class='product-card__tab' data-id='{{ forloop.index }}'></product-media-tab>
                   {%- endif -%}

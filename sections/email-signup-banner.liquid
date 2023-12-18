@@ -59,67 +59,60 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='signup__outer-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
-  <div class='section-spacing container container--{{ container_size }} signup__container {% if container_size == 'full-screen' %} signup__container--full-screen{% endif %}'>
-    <div class='signup {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
-      <div class='signup__content-wrap'>
-        <div class='signup__content signup__content--desktop {% if desktop_content_background != 'none' %} signup__content--with-{{ desktop_content_background }}-background{% endif %}'>
+<div class="signup__outer-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+  <div class="section-spacing container container--{{ container_size }} signup__container {% if container_size == 'full-screen' %} signup__container--full-screen{% endif %}">
+    <div class="signup {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}">
+      <div class="signup__content-wrap">
+        <div class="signup__content signup__content--desktop {% if desktop_content_background != 'none' %} signup__content--with-{{ desktop_content_background }}-background{% endif %}">
           {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- case block.type -%}
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
-                  <h5 class='signup__title {{ block.settings.heading_size }}' {{ block.shopify_attributes }}>
+                  <h5 class="signup__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                     {{ block.settings.title }}
                   </h5>
                 {%- endif -%}
               {%- when 'text' -%}
                 {%- if block.settings.text != blank -%}
                   <div
-                    class='rte signup__text {{ block.settings.body_size }} body-font-weight-from-global-settings'
+                    class="rte signup__text {{ block.settings.body_size }} body-font-weight-from-global-settings"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.text }}
                   </div>
                 {%- endif -%}
               {%- when 'email_form' -%}
-                <div class='signup-newsletter-form' {{ block.shopify_attributes }}>
+                <div class="signup-newsletter-form" {{ block.shopify_attributes }}>
                   {%- form 'customer', id: 'DesktopPasswordSignUp' -%}
                     <input
-                      name='contact[tags]'
-                      type='hidden'
-                      value='newsletter'
-                      id='DesktopPasswordSignUp-ContactTagsInput-{{ form.id }}'
+                      name="contact[tags]"
+                      type="hidden"
+                      value="newsletter"
+                      id="DesktopPasswordSignUp-ContactTagsInput-{{ form.id }}"
                     >
 
-                    <div class='field signup-newsletter-form__field'>
-                      <label class='visually-hidden' for='DesktopPasswordSignUp-EmailInput-{{ form.id }}'>
+                    <div class="field signup-newsletter-form__field">
+                      <label class="visually-hidden" for="DesktopPasswordSignUp-EmailInput-{{ form.id }}">
                         {{- 'general.password_page.label_for_email_input' | t -}}
                       </label>
                       <input
-                        id='DesktopPasswordSignUp-EmailInput-{{ form.id }}'
-                        type='email'
-                        name='contact[email]'
-                        class='input input--{{ block.settings.input_style }} input--large signup-newsletter-form__input'
-                        value='{{ form.email }}'
-                        aria-required='true'
-                        autocorrect='off'
-                        autocapitalize='off'
-                        autocomplete='email'
-                        placeholder='{{ 'general.password_page.placeholder_for_email_input' | t }}'
+                        id="DesktopPasswordSignUp-EmailInput-{{ form.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="input input--{{ block.settings.input_style }} input--large signup-newsletter-form__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        placeholder="{{ 'general.password_page.placeholder_for_email_input' | t }}"
                         required
                       >
                       <button
-                        class='btn btn--solid btn--lg signup-newsletter-form__input-btn'
-                        type='submit'
-                        name='commit'
-                        aria-label='{{ 'general.password_page.subscribe_button_label' | t }}'
+                        class="btn btn--solid btn--lg signup-newsletter-form__input-btn"
+                        type="submit"
+                        name="commit"
+                        aria-label="{{ 'general.password_page.subscribe_button_label' | t }}"
                       >
                         {% render 'icon', icon_name: 'arrow', class: 'signup-newsletter-form__input-btn-arrow-icon' %}
                       </button>
@@ -134,8 +127,8 @@
 
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ error }}', 'warning')
-                        })
+                          window.bodyElement.notification.show('{{ error }}', 'warning');
+                        });
                       </script>
                     {%- endif -%}
 
@@ -143,8 +136,8 @@
                       {%- assign success_message = 'forms.newsletter.success' | t -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ success_message }}', 'success')
-                        })
+                          window.bodyElement.notification.show('{{ success_message }}', 'success');
+                        });
                       </script>
                     {%- endif -%}
                   {%- endform -%}
@@ -155,63 +148,56 @@
             {%- render 'social-list', class: 'signup__social-list' -%}
           {%- endif -%}
         </div>
-        <div class='signup__content signup__content--mobile {% if mobile_content_background != 'none' %} signup__content--with-{{ mobile_content_background }}-background{% endif %}'>
+        <div class="signup__content signup__content--mobile {% if mobile_content_background != 'none' %} signup__content--with-{{ mobile_content_background }}-background{% endif %}">
           {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- case block.type -%}
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
-                  <h5 class='signup__title {{ block.settings.heading_size }}' {{ block.shopify_attributes }}>
+                  <h5 class="signup__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                     {{ block.settings.title }}
                   </h5>
                 {%- endif -%}
               {%- when 'text' -%}
                 {%- if block.settings.text != blank -%}
                   <div
-                    class='rte signup__text {{ block.settings.body_size }} body-font-weight-from-global-settings'
+                    class="rte signup__text {{ block.settings.body_size }} body-font-weight-from-global-settings"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.text }}
                   </div>
                 {%- endif -%}
               {%- when 'email_form' -%}
-                <div class='signup-newsletter-form' {{ block.shopify_attributes }}>
+                <div class="signup-newsletter-form" {{ block.shopify_attributes }}>
                   {%- form 'customer', id: 'MobilePasswordSignUp' -%}
                     <input
-                      name='contact[tags]'
-                      type='hidden'
-                      value='newsletter'
-                      id='MobilePasswordSignUp-ContactTagsInput-{{ form.id }}'
+                      name="contact[tags]"
+                      type="hidden"
+                      value="newsletter"
+                      id="MobilePasswordSignUp-ContactTagsInput-{{ form.id }}"
                     >
 
-                    <div class='field signup-newsletter-form__field'>
-                      <label class='visually-hidden' for='MobilePasswordSignUp-EmailInput-{{ form.id }}'>
+                    <div class="field signup-newsletter-form__field">
+                      <label class="visually-hidden" for="MobilePasswordSignUp-EmailInput-{{ form.id }}">
                         {{- 'general.password_page.label_for_email_input' | t -}}
                       </label>
                       <input
-                        id='MobilePasswordSignUp-EmailInput-{{ form.id }}'
-                        type='email'
-                        name='contact[email]'
-                        class='input input--{{ block.settings.input_style }} input--large signup-newsletter-form__input'
-                        value='{{ form.email }}'
-                        aria-required='true'
-                        autocorrect='off'
-                        autocapitalize='off'
-                        autocomplete='email'
-                        placeholder='{{ 'general.password_page.placeholder_for_email_input' | t }}'
+                        id="MobilePasswordSignUp-EmailInput-{{ form.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="input input--{{ block.settings.input_style }} input--large signup-newsletter-form__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        placeholder="{{ 'general.password_page.placeholder_for_email_input' | t }}"
                         required
                       >
                       <button
-                        class='btn btn--solid btn--lg signup-newsletter-form__input-btn'
-                        type='submit'
-                        name='commit'
-                        aria-label='{{ 'general.password_page.subscribe_button_label' | t }}'
+                        class="btn btn--solid btn--lg signup-newsletter-form__input-btn"
+                        type="submit"
+                        name="commit"
+                        aria-label="{{ 'general.password_page.subscribe_button_label' | t }}"
                       >
                         {% render 'icon', icon_name: 'arrow', class: 'signup-newsletter-form__input-btn-arrow-icon' %}
                       </button>
@@ -226,8 +212,8 @@
 
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ error }}', 'warning')
-                        })
+                          window.bodyElement.notification.show('{{ error }}', 'warning');
+                        });
                       </script>
                     {%- endif -%}
 
@@ -235,8 +221,8 @@
                       {%- assign success_message = 'forms.newsletter.success' | t -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ success_message }}', 'success')
-                        })
+                          window.bodyElement.notification.show('{{ success_message }}', 'success');
+                        });
                       </script>
                     {%- endif -%}
                   {%- endform -%}

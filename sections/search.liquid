@@ -139,35 +139,35 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='search section section-{{ section.id }} color-{{ color_scheme }} section-spacing'>
-  <div class='search__container container container--small'>
+<div class="search section section-{{ section.id }} color-{{ color_scheme }} section-spacing">
+  <div class="search__container container container--small">
     <form
-      class='search__form'
-      action='{{ routes.search_url }}'
-      method='get'
-      role='search'
-      class='search'
-      id='SearchPageForm'
+      class="search__form"
+      action="{{ routes.search_url }}"
+      method="get"
+      role="search"
+      class="search"
+      id="SearchPageForm"
     >
-      <search-field class='search-field' data-sidebar-search-input-component data-with-load-focus>
-        <label class='visually-hidden' for='SearchPageForm-QueryInput-{{ section.id }}'>
+      <search-field class="search-field" data-sidebar-search-input-component data-with-load-focus>
+        <label class="visually-hidden" for="SearchPageForm-QueryInput-{{ section.id }}">
           {{- 'general.search_page.label_for_search_input' | t -}}
         </label>
         <input
-          class='search-field__input'
-          type='text'
-          name='q'
-          placeholder='{{ 'general.search_page.placeholder_for_search_input' | t }}'
-          value='{{ search.terms | escape }}'
+          class="search-field__input"
+          type="text"
+          name="q"
+          placeholder="{{ 'general.search_page.placeholder_for_search_input' | t }}"
+          value="{{ search.terms | escape }}"
           data-sidebar-search-input
           data-search-field-input
-          id='SearchPageForm-QueryInput-{{ section.id }}'
+          id="SearchPageForm-QueryInput-{{ section.id }}"
         >
-        <div class='search-field__controls'>
+        <div class="search-field__controls">
           <button
-            type='button'
-            class='unstyled-button search-field__controls-item hidden'
-            aria-label='{{ 'general.search_page.screen_reader_label_for_search_button' | t }}'
+            type="button"
+            class="unstyled-button search-field__controls-item hidden"
+            aria-label="{{ 'general.search_page.screen_reader_label_for_search_button' | t }}"
             data-search-field-reset-button
           >
             {% render 'icon',
@@ -176,29 +176,29 @@
             %}
           </button>
           <button
-            type='submit'
-            form='SearchPageForm'
-            class='unstyled-button search-field__controls-item'
-            aria-label='{{ 'general.search_page.screen_reader_label_for_search_button' | t }}'
+            type="submit"
+            form="SearchPageForm"
+            class="unstyled-button search-field__controls-item"
+            aria-label="{{ 'general.search_page.screen_reader_label_for_search_button' | t }}"
           >
             {% render 'icon', icon_name: 'main-search', class: 'search-field__controls-item-icon' %}
           </button>
         </div>
       </search-field>
-      <input name='options[prefix]' type='hidden' value='last' id='SearchPageForm-OptionsPrefixInput-{{ section.id }}'>
+      <input name="options[prefix]" type="hidden" value="last" id="SearchPageForm-OptionsPrefixInput-{{ section.id }}">
     </form>
   </div>
   {%- if search.filters.size > 0 or search.results.size > 0 -%}
-    <div class='search__results-container container container--{{ container_size }}'>
-      <tabs-component data-selected-tab-id='{{ default_tab }}'>
-        <div class='search__tab-name-list'>
+    <div class="search__results-container container container--{{ container_size }}">
+      <tabs-component data-selected-tab-id="{{ default_tab }}">
+        <div class="search__tab-name-list">
           {%- if section.settings.show_products_only == true -%}
             {%- if show_products == true -%}
               <div
                 data-tabs-name
-                class='tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}'
-                data-id='products'
-                tabindex='0'
+                class="tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}"
+                data-id="products"
+                tabindex="0"
               >
                 {{ 'general.search_page.products_tab' | t: count: product_count }}
               </div>
@@ -207,9 +207,9 @@
             {%- if show_products == true -%}
               <div
                 data-tabs-name
-                class='tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}'
-                data-id='products'
-                tabindex='0'
+                class="tab-name search__tab-name {% if default_tab == 'products' %}selected{% endif %}"
+                data-id="products"
+                tabindex="0"
               >
                 {{ 'general.search_page.products_tab' | t: count: product_count }}
               </div>
@@ -217,9 +217,9 @@
             {%- if show_articles == true -%}
               <div
                 data-tabs-name
-                class='tab-name search__tab-name {% if default_tab == 'articles' %}selected{% endif %}'
-                data-id='articles'
-                tabindex='0'
+                class="tab-name search__tab-name {% if default_tab == 'articles' %}selected{% endif %}"
+                data-id="articles"
+                tabindex="0"
               >
                 {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
               </div>
@@ -227,9 +227,9 @@
             {%- if show_pages == true -%}
               <div
                 data-tabs-name
-                class='tab-name search__tab-name {% if default_tab == 'pages' %}selected{% endif %}'
-                data-id='pages'
-                tabindex='0'
+                class="tab-name search__tab-name {% if default_tab == 'pages' %}selected{% endif %}"
+                data-id="pages"
+                tabindex="0"
               >
                 {{ 'general.search_page.pages_tab' | t: count: page_count }}
               </div>
@@ -237,19 +237,19 @@
           {% endif %}
         </div>
         <carousel-component
-          class='carousel search__carousel-tab-names'
-          data-contain-scroll='trimSnaps'
-          data-section-id='{{ section.id }}'
+          class="carousel search__carousel-tab-names"
+          data-contain-scroll="trimSnaps"
+          data-section-id="{{ section.id }}"
         >
-          <div class='carousel__viewport carousel__viewport--overflow embla' data-carousel-viewport>
-            <div class='carousel__container' data-carousel-container>
+          <div class="carousel__viewport carousel__viewport--overflow embla" data-carousel-viewport>
+            <div class="carousel__container" data-carousel-container>
               {%- if section.settings.show_products_only == true -%}
                 {%- if show_products == true -%}
                   <div
                     data-tabs-name
-                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}'
-                    data-id='products'
-                    tabindex='0'
+                    class="carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}"
+                    data-id="products"
+                    tabindex="0"
                   >
                     {{ 'general.search_page.products_tab' | t: count: product_count }}
                   </div>
@@ -258,9 +258,9 @@
                 {%- if show_products == true -%}
                   <div
                     data-tabs-name
-                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}'
-                    data-id='products'
-                    tabindex='0'
+                    class="carousel__slide search__tab-name tab-name {% if default_tab == 'products' %}selected{% endif %}"
+                    data-id="products"
+                    tabindex="0"
                   >
                     {{ 'general.search_page.products_tab' | t: count: product_count }}
                   </div>
@@ -268,9 +268,9 @@
                 {%- if show_articles == true -%}
                   <div
                     data-tabs-name
-                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'articles' %}selected{% endif %}'
-                    data-id='articles'
-                    tabindex='0'
+                    class="carousel__slide search__tab-name tab-name {% if default_tab == 'articles' %}selected{% endif %}"
+                    data-id="articles"
+                    tabindex="0"
                   >
                     {{ 'general.search_page.blog_posts_tab' | t: count: article_count }}
                   </div>
@@ -278,9 +278,9 @@
                 {%- if show_pages == true -%}
                   <div
                     data-tabs-name
-                    class='carousel__slide search__tab-name tab-name {% if default_tab == 'pages' %}selected{% endif %}'
-                    data-id='pages'
-                    tabindex='0'
+                    class="carousel__slide search__tab-name tab-name {% if default_tab == 'pages' %}selected{% endif %}"
+                    data-id="pages"
+                    tabindex="0"
                   >
                     {{ 'general.search_page.pages_tab' | t: count: page_count }}
                   </div>
@@ -289,60 +289,60 @@
             </div>
           </div>
         </carousel-component>
-        <div class='tabs' data-tabs-container>
+        <div class="tabs" data-tabs-container>
           <template data-tabs-elements-template>
             {%- if show_products == true and default_tab != 'products' -%}
-              <tab-component class='tab' aria-hidden='true' data-id='products'>
-                <sidebar-filters-sticky-mobile-button class='shop-mobile-filters-button'>
+              <tab-component class="tab" aria-hidden="true" data-id="products">
+                <sidebar-filters-sticky-mobile-button class="shop-mobile-filters-button">
                   <button
                     data-sidebar-button
-                    class='unstyled-button shop-mobile-filters-button__btn'
-                    aria-label='{{ 'products.shop.label_for_filters_toggler' | t }}'
-                    data-sidebar-id='SidebarFiltersMobile'
-                    data-aria-expanded='false'
+                    class="unstyled-button shop-mobile-filters-button__btn"
+                    aria-label="{{ 'products.shop.label_for_filters_toggler' | t }}"
+                    data-sidebar-id="SidebarFiltersMobile"
+                    data-aria-expanded="false"
                   >
                     {% render 'icon', icon_name: 'filter-toggle' %}
-                    <span class='shop-mobile-filters-button__btn-label'>
+                    <span class="shop-mobile-filters-button__btn-label">
                       {{ 'products.shop.label_for_filters_toggler' | t }}
                     </span>
                   </button>
                 </sidebar-filters-sticky-mobile-button>
 
                 <shop-component
-                  class='shop'
-                  data-base-params='{{ base_params }}'
-                  data-section-id='{{ section.id }}'
+                  class="shop"
+                  data-base-params="{{ base_params }}"
+                  data-section-id="{{ section.id }}"
                   data-column-switcher-target
                 >
-                  <div class='shop__container'>
-                    <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                      <div class='shop__header-left-panel {% if filters_position == 'right' %} shop__header-left-panel--reverse {% endif %}'>
+                  <div class="shop__container">
+                    <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                      <div class="shop__header-left-panel {% if filters_position == 'right' %} shop__header-left-panel--reverse {% endif %}">
                         {%- if enable_filtering or enable_sorting -%}
                           {%- if enable_filtering -%}
-                            <sidebar-button class='shop__filters-btn-wrapper shop__filters-btn-wrapper--desktop'>
+                            <sidebar-button class="shop__filters-btn-wrapper shop__filters-btn-wrapper--desktop">
                               <button
                                 data-sidebar-button
-                                class='unstyled-button shop__icon-btn shop__filters-btn '
-                                aria-label='{{ 'general.search_page.label_for_filters_toggler' | t }}'
-                                data-sidebar-id='SidebarFiltersDesktop'
-                                data-aria-expanded='{% if filter_style == 'open-embed' %}true{% else %}false{% endif %}'
+                                class="unstyled-button shop__icon-btn shop__filters-btn "
+                                aria-label="{{ 'general.search_page.label_for_filters_toggler' | t }}"
+                                data-sidebar-id="SidebarFiltersDesktop"
+                                data-aria-expanded="{% if filter_style == 'open-embed' %}true{% else %}false{% endif %}"
                               >
                                 {% render 'icon', icon_name: 'filter-toggle' %}
-                                <span class='shop__filters-btn-label'>
+                                <span class="shop__filters-btn-label">
                                   {{ 'general.search_page.label_for_filters_toggler' | t }}
                                 </span>
                               </button>
                             </sidebar-button>
-                            <sidebar-button class='shop__filters-btn-wrapper shop__filters-btn-wrapper--mobile'>
+                            <sidebar-button class="shop__filters-btn-wrapper shop__filters-btn-wrapper--mobile">
                               <button
                                 data-sidebar-button
-                                class='unstyled-button shop__icon-btn shop__filters-btn '
-                                aria-label='{{ 'general.search_page.label_for_filters_toggler' | t }}'
-                                data-sidebar-id='SidebarFiltersMobile'
-                                data-aria-expanded='false'
+                                class="unstyled-button shop__icon-btn shop__filters-btn "
+                                aria-label="{{ 'general.search_page.label_for_filters_toggler' | t }}"
+                                data-sidebar-id="SidebarFiltersMobile"
+                                data-aria-expanded="false"
                               >
                                 {% render 'icon', icon_name: 'filter-toggle' %}
-                                <span class='shop__filters-btn-label'>
+                                <span class="shop__filters-btn-label">
                                   {{ 'general.search_page.label_for_filters_toggler' | t }}
                                 </span>
                               </button>
@@ -353,42 +353,28 @@
                           {%- endif -%}
                         {% endif %}
                       </div>
-                      <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+                      <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                         {%- if show_results_count -%}
-                          <div class='shop__product-count' id='ShopProductCount'>
+                          <div class="shop__product-count" id="ShopProductCount">
                             {{ 'general.search_page.results_count' | t: count: product_count }}
                           </div>
                         {%- endif -%}
                         {%- if show_column_count_switcher %}
                           <column-switcher
-                            class='shop__column-switcher--mobile column-switcher'
-                            data-default='{{ mobile_columns }}'
-                            data-column-switcher-css-variable='mobile-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--mobile column-switcher"
+                            data-default="{{ mobile_columns }}"
+                            data-column-switcher-css-variable="mobile-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -397,34 +383,20 @@
                         {%- endif -%}
                         {%- if show_column_count_switcher -%}
                           <column-switcher
-                            class='shop__column-switcher--desktop column-switcher'
-                            data-default='{{ desktop_columns }}'
-                            data-column-switcher-css-variable='desktop-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--desktop column-switcher"
+                            data-default="{{ desktop_columns }}"
+                            data-column-switcher-css-variable="desktop-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -440,7 +412,7 @@
                         active_filter_count: active_filter_count
                       %}
                     {%- endif -%}
-                    <div class='shop__content'>
+                    <div class="shop__content">
                       {%- if enable_filtering -%}
                         {% render 'filters',
                           active_filter_count: active_filter_count,
@@ -455,94 +427,14 @@
                           results: search
                         %}
                       {%- endif -%}
-                      <div class='shop__products' id='ShopProducts'>
+                      <div class="shop__products" id="ShopProducts">
                         {% paginate search.results by product_per_page %}
                           {%- if search.results.size > 0 -%}
-                            <div class='shop__products-grid-wrap'>
-                              <div class='shop__products-grid' id='ShopProductsGrid'>
+                            <div class="shop__products-grid-wrap">
+                              <div class="shop__products-grid" id="ShopProductsGrid">
                                 {%- for item in search.results -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: item %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-{% comment %} Wholesale_Club_Item_Prices Start {% endcomment %}
-{% if item.product %}{% assign base_product = item.product %}{% else %}{% assign base_product = item %}{% endif %}
-{% if item.variant %}{% assign base_variant = item.variant %}{% else %}{% assign base_variant = item.selected_or_first_available_variant %}{% endif %}
-
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
-
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
-
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% assign saw_discount = 1 | minus: saw_discount %}
-
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
-
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
-
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCItem_OriginalPrice = item.original_price %}
-  {% assign WCItem_FinalPrice = item.final_price %}
-  {% assign WCItem_Price = item.price %}
-  {% assign WCItem_PriceMin = item.price_min %}
-  {% assign WCItem_PriceMax = item.price_max %}
-  {% assign WCItem_CompareAtPrice = item.compare_at_price %}
-  {% assign WCItem_CompareAtPriceMin = item.compare_at_price_min %}
-  {% assign WCItem_CompareAtPriceMax = item.compare_at_price_max %}
-  {% assign WCItem_OriginalLinePrice = item.original_line_price %}
-  {% assign WCItem_FinalLinePrice = item.final_line_price %}
-  {% assign WCItem_LinePrice = item.line_price %}
-{% else %}
-  {% assign WCItem_OriginalPrice = saw_variant_compare_at_price %}
-  {% assign WCItem_FinalPrice = saw_variant_price %}
-  {% assign WCItem_Price = saw_variant_price %}
-  {% assign WCItem_PriceMin = item.price_min | times: saw_discount %}
-  {% assign WCItem_PriceMax = item.price_max | times: saw_discount %}
-  {% assign WCItem_CompareAtPrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCItem_CompareAtPriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCItem_CompareAtPriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCItem_CompareAtPriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCItem_CompareAtPriceMax = base_product.price_max %}{% endif %}
-  {% assign WCItem_OriginalLinePrice = WCItem_OriginalPrice | round | times: item.quantity %}
-  {% assign WCItem_FinalLinePrice = WCItem_FinalPrice | round | times: item.quantity %}
-  {% assign WCItem_LinePrice = WCItem_Price | round | times: item.quantity %}
-{% endif %}
-{% comment %} Wholesale_Club_Item_Prices End {% endcomment %}
-
                                   {%- if item.object_type == 'product' -%}
-                                    <div class='main-search__item shop__grid-item'>
+                                    <div class="main-search__item shop__grid-item">
                                       {% render 'product-card',
                                         with_bottom_spacing: true,
                                         product: item,
@@ -560,11 +452,11 @@
                             </div>
                           {%- else -%}
                             {%- if active_filter_count > 0 -%}
-                              <div class='shop__products-stub'>
+                              <div class="shop__products-stub">
                                 <span>{{ 'general.search_page.text_for_no_results_found_in_stub' | t }}</span>
                                 <span>
                                   {{- 'general.search_page.text_for_use_another_filters' | t }}
-                                  <filter-remove-btn class='shop__filters-reset' data-url='{{ routes.search_url }}'>
+                                  <filter-remove-btn class="shop__filters-reset" data-url="{{ routes.search_url }}">
                                     {{- 'general.search_page.text_for_clear_all_in_stub' | t -}}
                                   </filter-remove-btn></span
                                 >
@@ -574,7 +466,7 @@
                                 %}
                               </div>
                             {%- else -%}
-                              <div class='shop__products-stub'>
+                              <div class="shop__products-stub">
                                 <span>{{ 'general.search_page.text_for_change_query' | t }}</span>
                                 {% render 'loading-overlay',
                                   class: 'shop__loading-overlay',
@@ -604,46 +496,32 @@
               </tab-component>
             {%- endif -%}
             {%- if show_pages == true and default_tab != 'pages' -%}
-              <tab-component class='tab' aria-hidden='true' data-id='pages'>
-                <div class='shop' data-column-switcher-target>
-                  <div class='shop__container'>
-                    <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                      <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+              <tab-component class="tab" aria-hidden="true" data-id="pages">
+                <div class="shop" data-column-switcher-target>
+                  <div class="shop__container">
+                    <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                      <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                         {%- if show_results_count -%}
-                          <div class='shop__product-count'>
+                          <div class="shop__product-count">
                             {{ 'general.search_page.results_count' | t: count: page_count }}
                           </div>
                         {%- endif -%}
                         {%- if show_column_count_switcher -%}
                           <column-switcher
-                            class='shop__column-switcher--mobile column-switcher'
-                            data-default='{{ mobile_columns }}'
-                            data-column-switcher-css-variable='mobile-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--mobile column-switcher"
+                            data-default="{{ mobile_columns }}"
+                            data-column-switcher-css-variable="mobile-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -652,34 +530,20 @@
                         {%- endif -%}
                         {%- if show_column_count_switcher -%}
                           <column-switcher
-                            class='shop__column-switcher--desktop column-switcher'
-                            data-default='{{ desktop_columns }}'
-                            data-column-switcher-css-variable='desktop-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--desktop column-switcher"
+                            data-default="{{ desktop_columns }}"
+                            data-column-switcher-css-variable="desktop-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -688,19 +552,12 @@
                         {%- endif -%}
                       </div>
                     </div>
-                    <div class='shop__content'>
-                      <div class='shop__products'>
-                        <div class='shop__products-grid-wrap'>
-                          <div class='shop__products-grid'>
+                    <div class="shop__content">
+                      <div class="shop__products">
+                        <div class="shop__products-grid-wrap">
+                          <div class="shop__products-grid">
                             {%- for page in page_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: page %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                              <div class='main-search__item shop__grid-item'>
+                              <div class="main-search__item shop__grid-item">
                                 {% render 'page-card', page: page, img_ratio: img_ratio, with_small_icon: false %}
                               </div>
                             {%- endfor -%}
@@ -713,46 +570,32 @@
               </tab-component>
             {%- endif -%}
             {%- if show_articles == true and default_tab != 'articles' -%}
-              <tab-component class='tab' aria-hidden='true' data-id='articles'>
-                <div class='shop' data-column-switcher-target>
-                  <div class='shop__container'>
-                    <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                      <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+              <tab-component class="tab" aria-hidden="true" data-id="articles">
+                <div class="shop" data-column-switcher-target>
+                  <div class="shop__container">
+                    <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                      <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                         {%- if show_results_count -%}
-                          <div class='shop__product-count'>
+                          <div class="shop__product-count">
                             {{ 'general.search_page.results_count' | t: count: article_count }}
                           </div>
                         {%- endif -%}
                         {%- if show_column_count_switcher -%}
                           <column-switcher
-                            class='shop__column-switcher--mobile column-switcher'
-                            data-default='{{ mobile_columns }}'
-                            data-column-switcher-css-variable='mobile-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--mobile column-switcher"
+                            data-default="{{ mobile_columns }}"
+                            data-column-switcher-css-variable="mobile-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -761,34 +604,20 @@
                         {%- endif -%}
                         {%- if show_column_count_switcher -%}
                           <column-switcher
-                            class='shop__column-switcher--desktop column-switcher'
-                            data-default='{{ desktop_columns }}'
-                            data-column-switcher-css-variable='desktop-columns'
-                            data-section-id='{{ section.id }}'
+                            class="shop__column-switcher--desktop column-switcher"
+                            data-default="{{ desktop_columns }}"
+                            data-column-switcher-css-variable="desktop-columns"
+                            data-section-id="{{ section.id }}"
                           >
                             {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               {%- assign column_switch_string = column_switch | append: '' -%}
                               <div
-                                class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                                class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                                 data-column-switcher-item
-                                tabindex='0'
-                                data-value='{{ column_switch }}'
+                                tabindex="0"
+                                data-value="{{ column_switch }}"
                               >
                                 {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                   <span></span>
                                 {%- endfor -%}
                               </div>
@@ -797,19 +626,12 @@
                         {%- endif -%}
                       </div>
                     </div>
-                    <div class='shop__content'>
-                      <div class='shop__products'>
-                        <div class='shop__products-grid-wrap'>
-                          <div class='shop__products-grid'>
+                    <div class="shop__content">
+                      <div class="shop__products">
+                        <div class="shop__products-grid-wrap">
+                          <div class="shop__products-grid">
                             {%- for article in article_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                              <div class='main-search__item shop__grid-item'>
+                              <div class="main-search__item shop__grid-item">
                                 {% render 'article-card',
                                   with_bottom_spacing: true,
                                   article: article,
@@ -834,57 +656,57 @@
           </template>
 
           {%- if show_products == true and default_tab == 'products' -%}
-            <tab-component class='tab' aria-hidden='false' data-id='products'>
-              <sidebar-filters-sticky-mobile-button class='shop-mobile-filters-button'>
+            <tab-component class="tab" aria-hidden="false" data-id="products">
+              <sidebar-filters-sticky-mobile-button class="shop-mobile-filters-button">
                 <button
                   data-sidebar-button
-                  class='unstyled-button shop-mobile-filters-button__btn'
-                  aria-label='{{ 'products.shop.label_for_filters_toggler' | t }}'
-                  data-sidebar-id='SidebarFiltersMobile'
-                  data-aria-expanded='false'
+                  class="unstyled-button shop-mobile-filters-button__btn"
+                  aria-label="{{ 'products.shop.label_for_filters_toggler' | t }}"
+                  data-sidebar-id="SidebarFiltersMobile"
+                  data-aria-expanded="false"
                 >
                   {% render 'icon', icon_name: 'filter-toggle' %}
-                  <span class='shop-mobile-filters-button__btn-label'>
+                  <span class="shop-mobile-filters-button__btn-label">
                     {{ 'products.shop.label_for_filters_toggler' | t }}
                   </span>
                 </button>
               </sidebar-filters-sticky-mobile-button>
 
               <shop-component
-                class='shop'
-                data-base-params='{{ base_params }}'
-                data-section-id='{{ section.id }}'
+                class="shop"
+                data-base-params="{{ base_params }}"
+                data-section-id="{{ section.id }}"
                 data-column-switcher-target
               >
-                <div class='shop__container'>
-                  <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                    <div class='shop__header-left-panel {% if filters_position == 'right' %} shop__header-left-panel--reverse {% endif %}'>
+                <div class="shop__container">
+                  <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                    <div class="shop__header-left-panel {% if filters_position == 'right' %} shop__header-left-panel--reverse {% endif %}">
                       {%- if enable_filtering or enable_sorting -%}
                         {%- if enable_filtering -%}
-                          <sidebar-button class='shop__filters-btn-wrapper shop__filters-btn-wrapper--desktop'>
+                          <sidebar-button class="shop__filters-btn-wrapper shop__filters-btn-wrapper--desktop">
                             <button
                               data-sidebar-button
-                              class='unstyled-button shop__icon-btn shop__filters-btn '
-                              aria-label='{{ 'general.search_page.label_for_filters_toggler' | t }}'
-                              data-sidebar-id='SidebarFiltersDesktop'
-                              data-aria-expanded='{% if filter_style == 'open-embed' %}true{% else %}false{% endif %}'
+                              class="unstyled-button shop__icon-btn shop__filters-btn "
+                              aria-label="{{ 'general.search_page.label_for_filters_toggler' | t }}"
+                              data-sidebar-id="SidebarFiltersDesktop"
+                              data-aria-expanded="{% if filter_style == 'open-embed' %}true{% else %}false{% endif %}"
                             >
                               {% render 'icon', icon_name: 'filter-toggle' %}
-                              <span class='shop__filters-btn-label'>
+                              <span class="shop__filters-btn-label">
                                 {{ 'general.search_page.label_for_filters_toggler' | t }}
                               </span>
                             </button>
                           </sidebar-button>
-                          <sidebar-button class='shop__filters-btn-wrapper shop__filters-btn-wrapper--mobile'>
+                          <sidebar-button class="shop__filters-btn-wrapper shop__filters-btn-wrapper--mobile">
                             <button
                               data-sidebar-button
-                              class='unstyled-button shop__icon-btn shop__filters-btn '
-                              aria-label='{{ 'general.search_page.label_for_filters_toggler' | t }}'
-                              data-sidebar-id='SidebarFiltersMobile'
-                              data-aria-expanded='false'
+                              class="unstyled-button shop__icon-btn shop__filters-btn "
+                              aria-label="{{ 'general.search_page.label_for_filters_toggler' | t }}"
+                              data-sidebar-id="SidebarFiltersMobile"
+                              data-aria-expanded="false"
                             >
                               {% render 'icon', icon_name: 'filter-toggle' %}
-                              <span class='shop__filters-btn-label'>
+                              <span class="shop__filters-btn-label">
                                 {{ 'general.search_page.label_for_filters_toggler' | t }}
                               </span>
                             </button>
@@ -895,42 +717,28 @@
                         {%- endif -%}
                       {%- endif -%}
                     </div>
-                    <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+                    <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                       {%- if show_results_count -%}
-                        <div class='shop__product-count' id='ShopProductCount'>
+                        <div class="shop__product-count" id="ShopProductCount">
                           {{ 'general.search_page.results_count' | t: count: product_count }}
                         </div>
                       {%- endif -%}
                       {%- if show_column_count_switcher -%}
                         <column-switcher
-                          class='shop__column-switcher--mobile column-switcher'
-                          data-default='{{ mobile_columns }}'
-                          data-column-switcher-css-variable='mobile-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--mobile column-switcher"
+                          data-default="{{ mobile_columns }}"
+                          data-column-switcher-css-variable="mobile-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' -%}
                             <div
-                              class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -939,34 +747,20 @@
                       {%- endif -%}
                       {%- if show_column_count_switcher -%}
                         <column-switcher
-                          class='shop__column-switcher--desktop column-switcher'
-                          data-default='{{ desktop_columns }}'
-                          data-column-switcher-css-variable='desktop-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--desktop column-switcher"
+                          data-default="{{ desktop_columns }}"
+                          data-column-switcher-css-variable="desktop-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' -%}
                             <div
-                              class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -982,7 +776,7 @@
                       active_filter_count: active_filter_count
                     %}
                   {%- endif -%}
-                  <div class='shop__content'>
+                  <div class="shop__content">
                     {%- if enable_filtering -%}
                       {% render 'filters',
                         active_filter_count: active_filter_count,
@@ -997,94 +791,14 @@
                         results: search
                       %}
                     {%- endif -%}
-                    <div class='shop__products' id='ShopProducts'>
+                    <div class="shop__products" id="ShopProducts">
                       {% paginate search.results by product_per_page %}
                         {%- if search.results.size > 0 -%}
-                          <div class='shop__products-grid-wrap'>
-                            <div class='shop__products-grid' id='ShopProductsGrid'>
+                          <div class="shop__products-grid-wrap">
+                            <div class="shop__products-grid" id="ShopProductsGrid">
                               {%- for item in search.results -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: item %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-{% comment %} Wholesale_Club_Item_Prices Start {% endcomment %}
-{% if item.product %}{% assign base_product = item.product %}{% else %}{% assign base_product = item %}{% endif %}
-{% if item.variant %}{% assign base_variant = item.variant %}{% else %}{% assign base_variant = item.selected_or_first_available_variant %}{% endif %}
-
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
-
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
-
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: mf %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% assign saw_discount = 1 | minus: saw_discount %}
-
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
-
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
-
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCItem_OriginalPrice = item.original_price %}
-  {% assign WCItem_FinalPrice = item.final_price %}
-  {% assign WCItem_Price = item.price %}
-  {% assign WCItem_PriceMin = item.price_min %}
-  {% assign WCItem_PriceMax = item.price_max %}
-  {% assign WCItem_CompareAtPrice = item.compare_at_price %}
-  {% assign WCItem_CompareAtPriceMin = item.compare_at_price_min %}
-  {% assign WCItem_CompareAtPriceMax = item.compare_at_price_max %}
-  {% assign WCItem_OriginalLinePrice = item.original_line_price %}
-  {% assign WCItem_FinalLinePrice = item.final_line_price %}
-  {% assign WCItem_LinePrice = item.line_price %}
-{% else %}
-  {% assign WCItem_OriginalPrice = saw_variant_compare_at_price %}
-  {% assign WCItem_FinalPrice = saw_variant_price %}
-  {% assign WCItem_Price = saw_variant_price %}
-  {% assign WCItem_PriceMin = item.price_min | times: saw_discount %}
-  {% assign WCItem_PriceMax = item.price_max | times: saw_discount %}
-  {% assign WCItem_CompareAtPrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCItem_CompareAtPriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCItem_CompareAtPriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCItem_CompareAtPriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCItem_CompareAtPriceMax = base_product.price_max %}{% endif %}
-  {% assign WCItem_OriginalLinePrice = WCItem_OriginalPrice | round | times: item.quantity %}
-  {% assign WCItem_FinalLinePrice = WCItem_FinalPrice | round | times: item.quantity %}
-  {% assign WCItem_LinePrice = WCItem_Price | round | times: item.quantity %}
-{% endif %}
-{% comment %} Wholesale_Club_Item_Prices End {% endcomment %}
-
                                 {%- if item.object_type == 'product' -%}
-                                  <div class='main-search__item shop__grid-item'>
+                                  <div class="main-search__item shop__grid-item">
                                     {% render 'product-card',
                                       with_bottom_spacing: true,
                                       product: item,
@@ -1102,18 +816,18 @@
                           </div>
                         {%- else -%}
                           {%- if active_filter_count > 0 -%}
-                            <div class='shop__products-stub'>
+                            <div class="shop__products-stub">
                               <span>{{ 'general.search_page.text_for_no_results_found_in_stub' | t }}</span>
                               <span>
                                 {{- 'general.search_page.text_for_use_another_filters' | t }}
-                                <filter-remove-btn class='shop__filters-reset' data-url='{{ routes.search_url }}'>
+                                <filter-remove-btn class="shop__filters-reset" data-url="{{ routes.search_url }}">
                                   {{- 'general.search_page.text_for_clear_all_in_stub' | t -}}
                                 </filter-remove-btn></span
                               >
                               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
                             </div>
                           {%- else -%}
-                            <div class='shop__products-stub'>
+                            <div class="shop__products-stub">
                               <span>{{ 'general.search_page.text_for_change_query' | t }}</span>
                               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
                             </div>
@@ -1139,46 +853,32 @@
             </tab-component>
           {%- endif -%}
           {%- if show_pages == true and default_tab == 'pages' -%}
-            <tab-component class='tab' aria-hidden='false' data-id='pages'>
-              <div class='shop' data-column-switcher-target>
-                <div class='shop__container'>
-                  <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                    <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+            <tab-component class="tab" aria-hidden="false" data-id="pages">
+              <div class="shop" data-column-switcher-target>
+                <div class="shop__container">
+                  <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                    <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                       {%- if show_results_count -%}
-                        <div class='shop__product-count'>
+                        <div class="shop__product-count">
                           {{ 'general.search_page.results_count' | t: count: page_count }}
                         </div>
                       {%- endif -%}
                       {%- if show_column_count_switcher -%}
                         <column-switcher
-                          class='shop__column-switcher--mobile column-switcher'
-                          data-default='{{ mobile_columns }}'
-                          data-column-switcher-css-variable='mobile-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--mobile column-switcher"
+                          data-default="{{ mobile_columns }}"
+                          data-column-switcher-css-variable="mobile-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' -%}
                             <div
-                              class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -1187,34 +887,20 @@
                       {%- endif -%}
                       {%- if show_column_count_switcher %}
                         <column-switcher
-                          class='shop__column-switcher--desktop column-switcher'
-                          data-default='{{ desktop_columns }}'
-                          data-column-switcher-css-variable='desktop-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--desktop column-switcher"
+                          data-default="{{ desktop_columns }}"
+                          data-column-switcher-css-variable="desktop-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' -%}
                             <div
-                              class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -1223,19 +909,12 @@
                       {%- endif -%}
                     </div>
                   </div>
-                  <div class='shop__content'>
-                    <div class='shop__products'>
-                      <div class='shop__products-grid-wrap'>
-                        <div class='shop__products-grid'>
+                  <div class="shop__content">
+                    <div class="shop__products">
+                      <div class="shop__products-grid-wrap">
+                        <div class="shop__products-grid">
                           {%- for page in page_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: page %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                            <div class='main-search__item shop__grid-item'>
+                            <div class="main-search__item shop__grid-item">
                               {%- render 'page-card', page: page, img_ratio: img_ratio, with_small_icon: false -%}
                             </div>
                           {%- endfor -%}
@@ -1248,46 +927,32 @@
             </tab-component>
           {%- endif -%}
           {%- if show_articles == true and default_tab == 'articles' -%}
-            <tab-component class='tab' aria-hidden='false' data-id='articles'>
-              <div class='shop' data-column-switcher-target>
-                <div class='shop__container'>
-                  <div class='shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}'>
-                    <div class='shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}'>
+            <tab-component class="tab" aria-hidden="false" data-id="articles">
+              <div class="shop" data-column-switcher-target>
+                <div class="shop__container">
+                  <div class="shop__header {% if filters_position == 'right' %} shop__header--reverse {% endif %}">
+                    <div class="shop__header-right-panel {% if filters_position == 'right' %} shop__header-right-panel--reverse {% endif %}">
                       {%- if show_results_count -%}
-                        <div class='shop__product-count'>
+                        <div class="shop__product-count">
                           {{ 'general.search_page.results_count' | t: count: article_count }}
                         </div>
                       {%- endif -%}
                       {%- if show_column_count_switcher -%}
                         <column-switcher
-                          class='shop__column-switcher--mobile column-switcher'
-                          data-default='{{ mobile_columns }}'
-                          data-column-switcher-css-variable='mobile-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--mobile column-switcher"
+                          data-default="{{ mobile_columns }}"
+                          data-column-switcher-css-variable="mobile-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (1..2) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' -%}
                             <div
-                              class='column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if mobile_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -1296,34 +961,20 @@
                       {%- endif -%}
                       {%- if show_column_count_switcher -%}
                         <column-switcher
-                          class='shop__column-switcher--desktop column-switcher'
-                          data-default='{{ desktop_columns }}'
-                          data-column-switcher-css-variable='desktop-columns'
-                          data-section-id='{{ section.id }}'
+                          class="shop__column-switcher--desktop column-switcher"
+                          data-default="{{ desktop_columns }}"
+                          data-column-switcher-css-variable="desktop-columns"
+                          data-section-id="{{ section.id }}"
                         >
                           {%- for column_switch in (2..4) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: column_switch %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             {%- assign column_switch_string = column_switch | append: '' %}
                             <div
-                              class='column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}'
+                              class="column-switcher__item {% if desktop_columns == column_switch_string %}selected{% endif %}"
                               data-column-switcher-item
-                              tabindex='0'
-                              data-value='{{ column_switch }}'
+                              tabindex="0"
+                              data-value="{{ column_switch }}"
                             >
                               {%- for i in (1..column_switch) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                 <span></span>
                               {%- endfor -%}
                             </div>
@@ -1332,19 +983,12 @@
                       {%- endif -%}
                     </div>
                   </div>
-                  <div class='shop__content'>
-                    <div class='shop__products'>
-                      <div class='shop__products-grid-wrap'>
-                        <div class='shop__products-grid'>
+                  <div class="shop__content">
+                    <div class="shop__products">
+                      <div class="shop__products-grid-wrap">
+                        <div class="shop__products-grid">
                           {%- for article in article_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                            <div class='main-search__item shop__grid-item'>
+                            <div class="main-search__item shop__grid-item">
                               {% render 'article-card',
                                 with_bottom_spacing: true,
                                 article: article,
@@ -1370,8 +1014,8 @@
       </tabs-component>
     </div>
   {%- elsif search.terms != blank -%}
-    <div class='container container--small'>
-      <div class='search__no-results-note'>
+    <div class="container container--small">
+      <div class="search__no-results-note">
         No results found for “{{ search.terms }}”. Check the spelling or rephrase your query.
       </div>
     </div>

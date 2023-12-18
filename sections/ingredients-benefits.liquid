@@ -1,101 +1,95 @@
 {% if page.metafields.custom.benefits.value != blank %}
-{% assign container_size = section.settings.container_size %}
-<div class="container container--{{ container_size }} ingredients_benefits_section">
+  {% assign container_size = section.settings.container_size %}
+  <div class="container container--{{ container_size }} ingredients_benefits_section">
     <div class="ingredient_benefits_wrapper">
-        {% comment %} {% capture benefits_section_image %}
+      {% comment %}
+        {% capture benefits_section_image %}
             {% for obj in page.metafields.custom.benefits.value %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: obj %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 {% if obj.section_image %}
                     <img id="benefitsSectionImage" src="{{ obj.section_image | img_url: 'master' }}" alt="{{ obj.text }}"/>
                 {% endif %}
             {% endfor %}
-        {% endcapture %} {% endcomment %}
-        {% if page.metafields.custom.benefit_image != blank %}
-            <img id="benefitsSectionImage" src="{{ page.metafields.custom.benefit_image | img_url: 'master' }}" alt="{{ page.metafields.custom.benefit_image}}"/>
-        {% endif %}
-        <div class="ingredient_benefits_container">
-            {{ benefits_section_image }}
-            <div class="benefits_list">
-                <h2 class="benefits_title" style="font-size: {{ section.settings.benefit_title_font_size}}px;">{{ section.settings.benefit_title }}</h2>
-                {% for obj in page.metafields.custom.benefits.value %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: obj %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                    <div class="benefit">
-                        {% if obj.icon != blank %}
-                            <img src="{{ obj.icon | img_url: 'master' }}" alt="{{ obj.text }}"/>
-                        {% endif %}
-                        {{ obj.text }}
-                    </div>
-                {% endfor %}
+        {% endcapture %}
+      {% endcomment %}
+      {% if page.metafields.custom.benefit_image != blank %}
+        <img
+          id="benefitsSectionImage"
+          src="{{ page.metafields.custom.benefit_image | img_url: 'master' }}"
+          alt="{{ page.metafields.custom.benefit_image}}"
+        >
+      {% endif %}
+      <div class="ingredient_benefits_container">
+        {{ benefits_section_image }}
+        <div class="benefits_list">
+          <h2 class="benefits_title" style="font-size: {{ section.settings.benefit_title_font_size}}px;">
+            {{ section.settings.benefit_title }}
+          </h2>
+          {% for obj in page.metafields.custom.benefits.value %}
+            <div class="benefit">
+              {% if obj.icon != blank %}
+                <img src="{{ obj.icon | img_url: 'master' }}" alt="{{ obj.text }}">
+              {% endif %}
+              {{ obj.text }}
             </div>
+          {% endfor %}
         </div>
+      </div>
     </div>
-</div>
+  </div>
 {% endif %}
 
 {% schema %}
 {
-    "name": "Ingredients - Benefits",
-    "settings": [
+  "name": "Ingredients - Benefits",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_size",
+      "options": [
         {
-            "type": "select",
-            "id": "container_size",
-            "options": [
-              {
-                "value": "full-screen",
-                "label": "t:sections.general_section_settings.container_size.screen_width_option"
-              },
-              {
-                "value": "page-width",
-                "label": "t:sections.general_section_settings.container_size.page_width_option"
-              },
-              {
-                "value": "large",
-                "label": "t:sections.general_section_settings.container_size.large_width_option"
-              },
-              {
-                "value": "medium",
-                "label": "t:sections.general_section_settings.container_size.medium_width_option"
-              },
-              { 
-                "value": "small",
-                "label": "t:sections.general_section_settings.container_size.small_width_option"
-              }
-            ],
-            "default": "full-screen",
-            "label": "t:sections.general_section_settings.container_size.label"
+          "value": "full-screen",
+          "label": "t:sections.general_section_settings.container_size.screen_width_option"
         },
         {
-            "type": "text",
-            "id": "benefit_title",
-            "label": "Benefits title",
-            "default": "Benefits"
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
         },
         {
-            "type": "range",
-            "id": "benefit_title_font_size",
-            "label": "Benefit title font size",
-            "min": 10,
-            "max": 100,
-            "step": 1,
-            "default": 24
-        }
-    ],
-    "presets": [
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
         {
-            "name": "Ingredients - Benefits"
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.general_section_settings.container_size.small_width_option"
         }
-    ]
+      ],
+      "default": "full-screen",
+      "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "text",
+      "id": "benefit_title",
+      "label": "Benefits title",
+      "default": "Benefits"
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_font_size",
+      "label": "Benefit title font size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients - Benefits"
+    }
+  ]
 }
 {% endschema %}

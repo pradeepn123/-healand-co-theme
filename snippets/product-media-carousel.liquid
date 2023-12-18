@@ -10,33 +10,33 @@
 -%}
 
 <product-media-carousel
-  class='product-media-carousel'
-  data-section='{{ sectionId }}'
-  id='product-media-{{ product.id }}-{{ sectionId }}'
+  class="product-media-carousel"
+  data-section="{{ sectionId }}"
+  id="product-media-{{ product.id }}-{{ sectionId }}"
 >
   <carousel-component
-    class='carousel product-media-carousel__carousel {% if block_layout == 'thumbnails-bottom' %} product-media-carousel__carousel--with-bottom-thumbnails {% endif %} {% if block_layout == 'thumbnails-right' %} product-media-carousel__carousel--with-right-thumbnails {% endif %} {% if block_layout == 'thumbnails-left' %} product-media-carousel__carousel--with-left-thumbnails {% endif %}'
-    data-draggable='false'
-    data-section-id='{{ sectionId }}'
+    class="carousel product-media-carousel__carousel {% if block_layout == 'thumbnails-bottom' %} product-media-carousel__carousel--with-bottom-thumbnails {% endif %} {% if block_layout == 'thumbnails-right' %} product-media-carousel__carousel--with-right-thumbnails {% endif %} {% if block_layout == 'thumbnails-left' %} product-media-carousel__carousel--with-left-thumbnails {% endif %}"
+    data-draggable="false"
+    data-section-id="{{ sectionId }}"
     data-product-media-carousel-component
-    tabindex='-1'
+    tabindex="-1"
     {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %}
-      data-axis='vertical'
+      data-axis="vertical"
     {% endif %}
   >
     <div
-      class='shape shape--{{ img_ratio }} product-media-carousel__viewport embla {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %} carousel__viewport carousel__viewport--vertical{% endif %}'
+      class="shape shape--{{ img_ratio }} product-media-carousel__viewport embla {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %} carousel__viewport carousel__viewport--vertical{% endif %}"
       data-carousel-viewport
     >
-      <div class='carousel__container product-media-carousel__container' data-carousel-container>
+      <div class="carousel__container product-media-carousel__container" data-carousel-container>
         {%- if product.media != blank -%}
           {%- if featured_media != null -%}
             <div
-              class='carousel__slide product-media-carousel__slide'
+              class="carousel__slide product-media-carousel__slide"
               {% if featured_media.media_type == 'image' and enable_image_zoom %}
                 data-zoom-cursor-target
               {% endif %}
-              data-media-id='{{ featured_media.id }}'
+              data-media-id="{{ featured_media.id }}"
             >
               {% render 'product-media',
                 product: product,
@@ -50,20 +50,13 @@
             </div>
           {%- endif -%}
           {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- if media.id != featured_media.id or media.id == blank -%}
               <div
-                class='carousel__slide product-media-carousel__slide'
+                class="carousel__slide product-media-carousel__slide"
                 {% if media.media_type == 'image' and enable_image_zoom %}
                   data-zoom-cursor-target
                 {% endif %}
-                data-media-id='{{ media.id }}'
+                data-media-id="{{ media.id }}"
               >
                 {% render 'product-media',
                   product: product,
@@ -79,19 +72,12 @@
           {%- endfor -%}
         {%- else -%}
           {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             <div
-              class='carousel__slide product-media-carousel__slide'
+              class="carousel__slide product-media-carousel__slide"
               {% if enable_image_zoom %}
                 data-zoom-cursor-target
               {% endif %}
-              data-media-id='{{ forloop.index }}'
+              data-media-id="{{ forloop.index }}"
             >
               {% render 'product-media',
                 product: product,
@@ -108,22 +94,22 @@
       </div>
     </div>
 
-    <div class='product-media-carousel__thumbs-wrap'>
+    <div class="product-media-carousel__thumbs-wrap">
       <carousel-dots
-        class='carousel product-thumbnail-carousel {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %} product-thumbnail-carousel--aside {% else %} product-thumbnail-carousel--bottom{% endif %}'
-        data-contain-scroll='keepSnaps'
+        class="carousel product-thumbnail-carousel {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %} product-thumbnail-carousel--aside {% else %} product-thumbnail-carousel--bottom{% endif %}"
+        data-contain-scroll="keepSnaps"
         data-skip-snaps
         is-draggable
-        data-in-view-threshhold='1'
+        data-in-view-threshhold="1"
         {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %}
           data-with-wheel-gestures
-          data-axis='vertical'
+          data-axis="vertical"
         {% endif %}
       >
         <carousel-btn
-          class='carousel-btn product-thumbnail-carousel__btn {% if block_layout == 'thumbnails-bottom' %} product-thumbnail-carousel__btn--under product-thumbnail-carousel__btn--under-prev {% endif %} {% if block_layout == 'thumbnails-right' or block_layout == 'thumbnails-left' %} product-thumbnail-carousel__btn--aside product-thumbnail-carousel__btn--aside-prev {% endif %}'
-          data-scroll-direction='prev'
-          tabindex='0'
+          class="carousel-btn product-thumbnail-carousel__btn {% if block_layout == 'thumbnails-bottom' %} product-thumbnail-carousel__btn--under product-thumbnail-carousel__btn--under-prev {% endif %} {% if block_layout == 'thumbnails-right' or block_layout == 'thumbnails-left' %} product-thumbnail-carousel__btn--aside product-thumbnail-carousel__btn--aside-prev {% endif %}"
+          data-scroll-direction="prev"
+          tabindex="0"
         >
           {%- liquid
             if block_layout == 'thumbnails-bottom'
@@ -134,22 +120,22 @@
           -%}
         </carousel-btn>
         <div
-          class='carousel__viewport product-thumbnail-carousel__carousel-viewport embla {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %}carousel__viewport--vertical{% endif %}'
+          class="carousel__viewport product-thumbnail-carousel__carousel-viewport embla {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' %}carousel__viewport--vertical{% endif %}"
           data-carousel-viewport
         >
-          <div class='carousel__container product-thumbnail-carousel__container' data-carousel-container>
+          <div class="carousel__container product-thumbnail-carousel__container" data-carousel-container>
             {%- if featured_media != null -%}
               {%- assign image = featured_media | default: featured_media.image -%}
 
               <carousel-dot
-                class='carousel__slide product-thumbnail-carousel__thumb is-primary'
-                tabindex='0'
-                data-dot-index='{{ forloop.index0 }}'
+                class="carousel__slide product-thumbnail-carousel__thumb is-primary"
+                tabindex="0"
+                data-dot-index="{{ forloop.index0 }}"
               >
-                <div class='shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content '>
-                  <div class='product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}'>
+                <div class="shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content ">
+                  <div class="product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}">
                     <img
-                      class='product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}'
+                      class="product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}"
                       {% render 'image-attributes', image: image, size: 'small' %}
                     >
                   </div>
@@ -157,26 +143,19 @@
               </carousel-dot>
             {%- endif -%}
             {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- if media.id != featured_media.id or media.id == blank -%}
                 <carousel-dot
-                  class='carousel__slide product-thumbnail-carousel__thumb {% if forloop.index == 1 and featured_media == null %}is-primary{% endif %}'
-                  tabindex='0'
-                  data-dot-index='{{ forloop.index0 }}'
+                  class="carousel__slide product-thumbnail-carousel__thumb {% if forloop.index == 1 and featured_media == null %}is-primary{% endif %}"
+                  tabindex="0"
+                  data-dot-index="{{ forloop.index0 }}"
                 >
-                  <div class='shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content'>
+                  <div class="shape shape--{{ img_ratio }} product-thumbnail-carousel__thumb-content">
                     {%- assign image = media.preview_image -%}
 
-                    <div class='product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}'>
+                    <div class="product-thumbnail-carousel__thumb-image-wrapper {% if enable_darken_mode %}multiply-mode{% endif %}">
                       {%- if image != blank and media.id != blank -%}
                         <img
-                          class='product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}'
+                          class="product-thumbnail-carousel__thumb-image lazyload {{ class }} {% if enable_darken_mode %}multiply-mode__target{% endif %}"
                           {% render 'image-attributes', image: image, size: 'small' %}
                         >
                       {%- else -%}
@@ -190,11 +169,11 @@
                     -%}
                       {% case media.media_type %}
                         {% when 'video', 'external_video' %}
-                          <div class='product-thumbnail-carousel__thumb-icon-wrapper'>
+                          <div class="product-thumbnail-carousel__thumb-icon-wrapper">
                             {% render 'icon', icon_name: 'play', class: 'product-thumbnail-carousel__thumb-icon' %}
                           </div>
                         {% when 'model' %}
-                          <div class='product-thumbnail-carousel__thumb-icon-wrapper'>
+                          <div class="product-thumbnail-carousel__thumb-icon-wrapper">
                             {% render 'icon', icon_name: '3d', class: 'product-thumbnail-carousel__thumb-icon' %}
                           </div>
                       {% endcase %}
@@ -206,9 +185,9 @@
           </div>
         </div>
         <carousel-btn
-          class='carousel-btn product-thumbnail-carousel__btn {% if block_layout == 'thumbnails-bottom' %} product-thumbnail-carousel__btn--under product-thumbnail-carousel__btn--under-next {% endif %} {% if block_layout == 'thumbnails-right' or block_layout == 'thumbnails-left' %} product-thumbnail-carousel__btn--aside product-thumbnail-carousel__btn--aside-next {% endif %}'
-          data-scroll-direction='next'
-          tabindex='0'
+          class="carousel-btn product-thumbnail-carousel__btn {% if block_layout == 'thumbnails-bottom' %} product-thumbnail-carousel__btn--under product-thumbnail-carousel__btn--under-next {% endif %} {% if block_layout == 'thumbnails-right' or block_layout == 'thumbnails-left' %} product-thumbnail-carousel__btn--aside product-thumbnail-carousel__btn--aside-next {% endif %}"
+          data-scroll-direction="next"
+          tabindex="0"
         >
           {%- liquid
             if block_layout == 'thumbnails-bottom'

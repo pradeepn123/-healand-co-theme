@@ -28,7 +28,7 @@
   </script>
 </announcement-bar>
 {% assign disable_carousel = true %}
-{%assign  url_link = section.settings.link %}
+{% assign url_link = section.settings.link %}
 
 {%- if show_announcement_bar == true -%}
   <div class="announcement-bar section section-{{ section.id }} color-{{ color_scheme }}">
@@ -64,14 +64,6 @@
               <div class="carousel__viewport embla" data-carousel-viewport>
                 <div class="carousel__container announcement__carousel-container" data-carousel-container>
                   {%- for block in blocks -%}
-                  
-                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-                    {%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-                    {%- if hide_resource == 'true' -%}
-                      {% continue %}
-                    {%- endif -%}
-                    {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <div
                       class="carousel__slide announcement-bar__slide block-{{ block.id }}"
                       block-id="{{ block.id }}"
@@ -106,7 +98,6 @@
                       </div>
                     </div>
                     {% if disable_carousel %} {% break %} {% endif %}
-            
                   {%- endfor -%}
                 </div>
               </div>
@@ -124,31 +115,34 @@
           {%- endif -%}
           {% if blocks.size <= 0 %}
             <div
-              class='carousel__slide announcement-bar__slide block-{{ section.id }}'
-              block-id='{{ section.id }}'
+              class="carousel__slide announcement-bar__slide block-{{ section.id }}"
+              block-id="{{ section.id }}"
               {{ section.shopify_attributes }}
             >
               {%- if section.settings.link != blank -%}
                 <a
-                  href='{{ section.settings.link.url }}'
-                  class='announcement-bar__link'
-                  aria-label='{{ section.settings.text }}'
+                  href="{{ section.settings.link.url }}"
+                  class="announcement-bar__link"
+                  aria-label="{{ section.settings.text }}"
                 ></a>
               {%- endif -%}
-              <div class=' announcement-bar__text announcement-bar {% if section.blocks.size > 0 %} hidden {% endif %}'  data-announcement-bar >
+              <div
+                class=" announcement-bar__text announcement-bar {% if section.blocks.size > 0 %} hidden {% endif %}"
+                data-announcement-bar
+              >
                 {% assign custom_icon_image = section.settings.custom_icon_image %}
                 {% assign icon = section.settings.icon %}
 
                 {%- if custom_icon_image != blank -%}
                   <img
-                    class='announcement-bar__text-icon lazyload'
+                    class="announcement-bar__text-icon lazyload"
                     {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                   >
                 {%- elsif icon != 'none' -%}
                   {% render 'icon-pack', icon: icon, class: 'announcement-bar__text-icon' %}
                 {%- endif -%}
 
-                <div class='rte' data-announcement-text>
+                <div class="rte" data-announcement-text>
                   {{ section.settings.text }}
                 </div>
               </div>
@@ -186,13 +180,6 @@
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarLanguageForm' -%}
                             {%- for language in localization.available_languages -%}
-                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-                              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: language %}{%- endcapture -%}
-                              {%- if hide_resource == 'true' -%}
-                                {% continue %}
-                              {%- endif -%}
-                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               <button
                                 class="localization-dropdown__item {% if localization.language == language %} selected{% endif %}"
                                 data-localization-item
@@ -246,13 +233,6 @@
                         <localization-selector>
                           {%- form 'localization', id: 'AnnouncementBarCurrencyForm' -%}
                             {%- for country in localization.available_countries -%}
-                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-                              {%- capture hide_resource -%}{% render "wc_product_visibility", resource: country %}{%- endcapture -%}
-                              {%- if hide_resource == 'true' -%}
-                                {% continue %}
-                              {%- endif -%}
-                              {%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                               <button
                                 data-localization-item
                                 class="localization-dropdown__item {% if localization.country == country %} selected{% endif %}"

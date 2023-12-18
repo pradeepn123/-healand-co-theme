@@ -67,32 +67,25 @@
 <div>
   {%- if section.blocks.size > 0 -%}
     {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       {%- if block.settings.link == blank -%}
         <sidebar-component
-          class='sidebar quote-sidebar color-{{ color_scheme }}'
-          id='quote-sidebar-{{block.id}}'
+          class="sidebar quote-sidebar color-{{ color_scheme }}"
+          id="quote-sidebar-{{block.id}}"
           data-with-overlay
           data-with-close-on-outside
           data-with-close-on-escape
           data-overlay-important
-          data-open-direction='left'
-          tabindex='-1'
+          data-open-direction="left"
+          tabindex="-1"
         >
           <template>
-            <div class='sidebar__body quote-sidebar__body' data-sidebar-content>
+            <div class="sidebar__body quote-sidebar__body" data-sidebar-content>
               <sidebar-button>
                 <button
                   data-sidebar-button
-                  data-sidebar-id='quote-sidebar-{{block.id}}'
-                  class='unstyled-button quote-sidebar__close-button-with-scale-hover close-button-with-scale-hover'
-                  aria-label='Close'
+                  data-sidebar-id="quote-sidebar-{{block.id}}"
+                  class="unstyled-button quote-sidebar__close-button-with-scale-hover close-button-with-scale-hover"
+                  aria-label="Close"
                 ></button>
               </sidebar-button>
               {%- render 'quote',
@@ -109,31 +102,31 @@
   {%- endif -%}
 </div>
 
-<div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
-  <div class='section-spacing container container--{{ container_size }} testimonials__outer-container {% if container_size == 'full-screen' %} testimonials__outer-container--full-screen{% endif %}'>
-    <div class='testimonials'>
-      <div class='testimonials__body {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %} testimonials__body--{{ section_layout }} {% if section_layout != 'bottom-quotes' %} testimonials__body--aside-quotes {% endif %}'>
-        <div class='testimonials__container container container--large'>
+<div class="section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+  <div class="section-spacing container container--{{ container_size }} testimonials__outer-container {% if container_size == 'full-screen' %} testimonials__outer-container--full-screen{% endif %}">
+    <div class="testimonials">
+      <div class="testimonials__body {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %} testimonials__body--{{ section_layout }} {% if section_layout != 'bottom-quotes' %} testimonials__body--aside-quotes {% endif %}">
+        <div class="testimonials__container container container--large">
           {%- if caption != blank or title != blank or text != blank or btn_text != blank -%}
-            <div class='testimonials__content'>
+            <div class="testimonials__content">
               {%- if caption != blank -%}
-                <div class='caption testimonials__caption'>{{ caption }}</div>
+                <div class="caption testimonials__caption">{{ caption }}</div>
               {%- endif -%}
               {%- if title != blank -%}
-                <h3 class='{{ heading_size }}'>{{ title }}</h3>
+                <h3 class="{{ heading_size }}">{{ title }}</h3>
               {%- endif -%}
               {%- if text != blank -%}
-                <div class='rte {{ body_size }} testimonials__text body-font-weight-from-global-settings'>
+                <div class="rte {{ body_size }} testimonials__text body-font-weight-from-global-settings">
                   {{ text }}
                 </div>
               {%- endif -%}
               {%- if btn_text != blank -%}
                 <a
-                  class='link testimonials__link'
-                  href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                  aria-label='{{ btn_text }}'
+                  class="link testimonials__link"
+                  href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                  aria-label="{{ btn_text }}"
                 >
-                  <span class='link__text'>{{ btn_text }}</span>
+                  <span class="link__text">{{ btn_text }}</span>
                   {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
                 </a>
               {%- endif -%}
@@ -141,21 +134,21 @@
           {%- endif -%}
 
           <carousel-component
-            class='carousel testimonials__carousel testimonials__carousel--desktop'
-            data-contain-scroll=''
-            data-section-id='{{ section.id }}'
+            class="carousel testimonials__carousel testimonials__carousel--desktop"
+            data-contain-scroll=""
+            data-section-id="{{ section.id }}"
             {% if section_layout != 'bottom-quotes' %}
-              data-axis='vertical'
+              data-axis="vertical"
             {% endif %}
             {% if enable_autoplay == true %}
-              data-autoplay-interval='{{ autoplay_interval }}'
+              data-autoplay-interval="{{ autoplay_interval }}"
             {% endif %}
           >
             <div
-              class='carousel__viewport embla testimonials__carousel-viewport {% if section_layout != 'bottom-quotes' %}carousel__viewport--vertical{% endif %}'
+              class="carousel__viewport embla testimonials__carousel-viewport {% if section_layout != 'bottom-quotes' %}carousel__viewport--vertical{% endif %}"
               data-carousel-viewport
             >
-              <div class='carousel__container' data-carousel-container>
+              <div class="carousel__container" data-carousel-container>
                 {%- liquid
                   assign slide_size = desktop_columns
                   assign start = 0
@@ -163,15 +156,8 @@
                 -%}
 
                 {%- for slide_index in (1..slide_count) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide_index %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                  <div class='carousel__slide'>
-                    <div class='testimonials__slide-quotes'>
+                  <div class="carousel__slide">
+                    <div class="testimonials__slide-quotes">
                       {%- liquid
                         for slide in (start..end)
                           assign class = 'block-' | append: section.blocks[slide].id | append: ' testimonials__quote'
@@ -188,32 +174,25 @@
               </div>
             </div>
             <carousel-dots
-              class='solid-dots-carousel testimonials__solid-dots-carousel {% if section_layout != 'bottom-quotes' %} solid-dots-carousel--vertical {% endif %}'
-              data-contain-scroll='keepSnaps'
-              data-align='center'
+              class="solid-dots-carousel testimonials__solid-dots-carousel {% if section_layout != 'bottom-quotes' %} solid-dots-carousel--vertical {% endif %}"
+              data-contain-scroll="keepSnaps"
+              data-align="center"
               {% if section_layout != 'bottom-quotes' %}
-                data-axis='vertical'
+                data-axis="vertical"
               {% endif %}
             >
-              <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
+              <div class="solid-dots-carousel__viewport embla" data-carousel-viewport>
                 <div
-                  class='solid-dots-carousel__container'
+                  class="solid-dots-carousel__container"
                   data-carousel-container
                 >
                   {%- for slide in (1..slide_count) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <carousel-dot
-                      class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
-                      tabindex='0'
-                      data-dot-index='{{ forloop.index0 }}'
+                      class="solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}"
+                      tabindex="0"
+                      data-dot-index="{{ forloop.index0 }}"
                     >
-                      <div class='solid-dots-carousel__solid-dot-circle'></div>
+                      <div class="solid-dots-carousel__solid-dot-circle"></div>
                     </carousel-dot>
                   {%- endfor -%}
                 </div>
@@ -221,18 +200,18 @@
             </carousel-dots>
           </carousel-component>
           <carousel-component
-            class='carousel testimonials__carousel testimonials__carousel--tablet'
-            data-contain-scroll=''
-            data-section-id='{{ section.id }}'
+            class="carousel testimonials__carousel testimonials__carousel--tablet"
+            data-contain-scroll=""
+            data-section-id="{{ section.id }}"
             {% if enable_autoplay == true %}
-              data-autoplay-interval='{{ autoplay_interval }}'
+              data-autoplay-interval="{{ autoplay_interval }}"
             {% endif %}
           >
             <div
-              class='carousel__viewport embla testimonials__carousel-viewport'
+              class="carousel__viewport embla testimonials__carousel-viewport"
               data-carousel-viewport
             >
-              <div class='carousel__container' data-carousel-container>
+              <div class="carousel__container" data-carousel-container>
                 {%- liquid
                   assign slide_size = desktop_columns
                   assign start = 0
@@ -240,15 +219,8 @@
                 -%}
 
                 {%- for slide_index in (1..slide_count) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide_index %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                  <div class='carousel__slide'>
-                    <div class='testimonials__slide-quotes'>
+                  <div class="carousel__slide">
+                    <div class="testimonials__slide-quotes">
                       {%- liquid
                         for slide in (start..end)
                           assign class = 'block-' | append: section.blocks[slide].id | append: ' testimonials__quote'
@@ -265,29 +237,22 @@
               </div>
             </div>
             <carousel-dots
-              class='solid-dots-carousel testimonials__solid-dots-carousel'
-              data-contain-scroll='keepSnaps'
-              data-align='center'
+              class="solid-dots-carousel testimonials__solid-dots-carousel"
+              data-contain-scroll="keepSnaps"
+              data-align="center"
             >
-              <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
+              <div class="solid-dots-carousel__viewport embla" data-carousel-viewport>
                 <div
-                  class='solid-dots-carousel__container'
+                  class="solid-dots-carousel__container"
                   data-carousel-container
                 >
                   {%- for slide in (1..slide_count) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: slide %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <carousel-dot
-                      class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
-                      tabindex='0'
-                      data-dot-index='{{ forloop.index0 }}'
+                      class="solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}"
+                      tabindex="0"
+                      data-dot-index="{{ forloop.index0 }}"
                     >
-                      <div class='solid-dots-carousel__solid-dot-circle'></div>
+                      <div class="solid-dots-carousel__solid-dot-circle"></div>
                     </carousel-dot>
                   {%- endfor -%}
                 </div>
@@ -295,26 +260,19 @@
             </carousel-dots>
           </carousel-component>
           <carousel-component
-            class='carousel testimonials__carousel testimonials__carousel--mobile'
-            data-contain-scroll=''
-            data-section-id='{{ section.id }}'
+            class="carousel testimonials__carousel testimonials__carousel--mobile"
+            data-contain-scroll=""
+            data-section-id="{{ section.id }}"
             {% if enable_autoplay == true %}
-              data-autoplay-interval='{{ autoplay_interval }}'
+              data-autoplay-interval="{{ autoplay_interval }}"
             {% endif %}
           >
-            <div class='carousel__viewport embla testimonials__carousel-viewport' data-carousel-viewport>
-              <div class='carousel__container' data-carousel-container>
+            <div class="carousel__viewport embla testimonials__carousel-viewport" data-carousel-viewport>
+              <div class="carousel__container" data-carousel-container>
                 {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   <div
-                    class='carousel__slide block-{{ block.id }}'
-                    block-id='{{ block.id }}'
+                    class="carousel__slide block-{{ block.id }}"
+                    block-id="{{ block.id }}"
                   >
                     {% render 'quote', class: 'testimonials__quote', quote_alignment: quote_alignment, block: block %}
                   </div>
@@ -322,29 +280,22 @@
               </div>
             </div>
             <carousel-dots
-              class='solid-dots-carousel testimonials__solid-dots-carousel'
-              data-contain-scroll='keepSnaps'
-              data-align='center'
+              class="solid-dots-carousel testimonials__solid-dots-carousel"
+              data-contain-scroll="keepSnaps"
+              data-align="center"
             >
-              <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
+              <div class="solid-dots-carousel__viewport embla" data-carousel-viewport>
                 <div
-                  class='solid-dots-carousel__container'
+                  class="solid-dots-carousel__container"
                   data-carousel-container
                 >
                   {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <carousel-dot
-                      class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
-                      tabindex='0'
-                      data-dot-index='{{ forloop.index0 }}'
+                      class="solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}"
+                      tabindex="0"
+                      data-dot-index="{{ forloop.index0 }}"
                     >
-                      <div class='solid-dots-carousel__solid-dot-circle'></div>
+                      <div class="solid-dots-carousel__solid-dot-circle"></div>
                     </carousel-dot>
                   {%- endfor -%}
                 </div>
@@ -353,9 +304,9 @@
           </carousel-component>
           {%- if section_layout != 'bottom-quotes' -%}
             {%- if image != blank -%}
-              <div class='testimonials__image'>
+              <div class="testimonials__image">
                 <img
-                  class='image  lazyload zoom'
+                  class="image  lazyload zoom"
                   {% render 'image-attributes', image: image %}
                 >
               </div>

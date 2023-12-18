@@ -117,13 +117,6 @@
     >
       <div class='card-carousel__container' data-carousel-container>
         {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           <div class='card-carousel__slide'>
             {% render 'collection-card',
               title: collection.title,
@@ -164,13 +157,6 @@
 {% capture grid %}
   <div class="card-grid collection-list__card-grid" data-aos="fade-up" data-aos-delay="300">
     {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       {% render 'collection-card',
         title: collection.title,
         img: collection.image,
@@ -185,14 +171,17 @@
   </div>
 {% endcapture %}
 
-<div class='collection-list section collection-list--section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout contains 'grid' %} collection-list--grid-with-mobile-carousel{% endif %}'>
-  <div class='collection-list__container container container--{{ container_size }} section-spacing'>
+<div class="collection-list section collection-list--section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile and section_layout contains 'grid' %} collection-list--grid-with-mobile-carousel{% endif %}">
+  <div class="collection-list__container container container--{{ container_size }} section-spacing">
     {%- if title != blank -%}
-      <div class="collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}" data-aos="fade-up">
-        <h5 class='{{ heading_size }} decorated_heading'>{{ title }}</h5>
+      <div
+        class="collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}"
+        data-aos="fade-up"
+      >
+        <h5 class="{{ heading_size }} decorated_heading">{{ title }}</h5>
         {% if section.settings.shop_all_title != blank %}
           <a href="{{ section.settings.shop_all_url }}" class="view-btn shop_all w-full-sp">
-            <span>{{ section.settings.shop_all_title}}</span>
+            <span>{{ section.settings.shop_all_title }}</span>
             {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
           </a>
         {% endif %}
@@ -377,12 +366,12 @@
     },
     {
       "type": "text",
-      "id": "shop_all_title",      
+      "id": "shop_all_title",
       "label": "Shop all text"
     },
     {
       "type": "url",
-      "id": "shop_all_url",      
+      "id": "shop_all_url",
       "label": "Shop all link"
     },
     {

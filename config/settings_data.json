@@ -80,7 +80,7 @@
     "show_cart_order_note": false,
     "cart_status_background_color": "#6c745d",
     "cart_status_text_color": "#f7f5f1",
-    "cart_free_shipping_bar_visible": true,
+    "cart_free_shipping_bar_visible": false,
     "cart_free_shipping_bar_threshold": 40,
     "favicon": "shopify:\/\/shop_images\/HC-Favicon.png",
     "back_to_top_button_position": "bottom-left",

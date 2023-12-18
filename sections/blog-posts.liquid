@@ -53,25 +53,18 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='articles section articles--section {% if enable_carousel_on_mobile %}articles--with-mobile-carousel{% endif %} section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='container container--{{ container_size }} section-spacing'>
+<div class="articles section articles--section {% if enable_carousel_on_mobile %}articles--with-mobile-carousel{% endif %} section-{{ section.id }} color-{{ color_scheme }}">
+  <div class="container container--{{ container_size }} section-spacing">
     {%- if title != blank -%}
-      <div class='articles__header {% if heading_alignment == 'center' %} articles__header--center-alignment {% endif %}'>
-        <h5 class='articles__title {{ heading_size }}'>
+      <div class="articles__header {% if heading_alignment == 'center' %} articles__header--center-alignment {% endif %}">
+        <h5 class="articles__title {{ heading_size }}">
           {{ title }}
         </h5>
       </div>
     {%- endif -%}
     {%- if articles.size > 0 -%}
-      <div class='card-grid articles__card-grid'>
+      <div class="card-grid articles__card-grid">
         {%- for article in articles limit: desktop_columns -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- render 'article-card',
             class: 'card-grid__item',
             with_bottom_spacing: true,
@@ -88,18 +81,11 @@
       </div>
     {%- endif -%}
     {%- if enable_carousel_on_mobile and articles.size > 0 -%}
-      <carousel-component class='card-carousel articles__card-carousel' data-section-id='{{ section.id }}'>
-        <div class='card-carousel__viewport embla' data-carousel-viewport>
-          <div class='card-carousel__container' data-carousel-container>
+      <carousel-component class="card-carousel articles__card-carousel" data-section-id="{{ section.id }}">
+        <div class="card-carousel__viewport embla" data-carousel-viewport>
+          <div class="card-carousel__container" data-carousel-container>
             {%- for article in articles limit: desktop_columns -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-              <div class='card-carousel__slide'>
+              <div class="card-carousel__slide">
                 {%- render 'article-card',
                   article: article,
                   img_ratio: 'nature',

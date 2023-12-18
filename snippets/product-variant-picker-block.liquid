@@ -20,45 +20,31 @@
 
 {%- if product != blank and product.has_only_default_variant == false -%}
   <variant-picker
-    class='product-variant-picker block-{{ block.id }} {% if block.settings.picker_type contains 'dropdown' %}product-variant-picker--with-dropdown-options{% endif %}'
-    data-section='{{ sectionId }}'
-    data-section-id-without-prefix='{{ section.id }}'
-    data-product-id='{{ product.id }}'
-    data-url='{{ product.url }}'
-    id='product-variant-picker-{{ sectionId }}'
-    data-type='{% if block.settings.picker_type contains 'dropdown' %}dropdown{% else %}checkbox{% endif %}'
+    class="product-variant-picker block-{{ block.id }} {% if block.settings.picker_type contains 'dropdown' %}product-variant-picker--with-dropdown-options{% endif %}"
+    data-section="{{ sectionId }}"
+    data-section-id-without-prefix="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-url="{{ product.url }}"
+    id="product-variant-picker-{{ sectionId }}"
+    data-type="{% if block.settings.picker_type contains 'dropdown' %}dropdown{% else %}checkbox{% endif %}"
     {% if product.selected_or_first_available_variant %}
-      data-selected-variant-id='{{ product.selected_or_first_available_variant.id }}'
+      data-selected-variant-id="{{ product.selected_or_first_available_variant.id }}"
     {% endif %}
     {{ block.shopify_attributes }}
   >
-    <div class='product-variant-picker__form'>
+    <div class="product-variant-picker__form">
       {%- for option in product.options_with_values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         <div data-variant-picker-option-inputs>
           {{ option.name }}
 
           {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             <div>
               <input
-                type='radio'
-                id='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-                name='{{ option.name }}'
-                value='{{ value }}'
-                form='product-form-{{ product.id }}-{{ sectionId }}'
+                type="radio"
+                id="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                name="{{ option.name }}"
+                value="{{ value }}"
+                form="product-form-{{ product.id }}-{{ sectionId }}"
                 {% if option.selected_value == value %}
                   checked
                 {% endif %}
@@ -69,15 +55,8 @@
         </div>
       {%- endfor -%}
     </div>
-    <div class='product-variant-picker__list'>
+    <div class="product-variant-picker__list">
       {%- for option in product.options_with_values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         {%- assign option_name_downcase = option.name | downcase -%}
 
         <div data-variant-picker-option-labels>
@@ -93,7 +72,7 @@
               sectionId: sectionId,
             -%}
           {%- elsif block.settings.picker_type contains 'button' -%}
-            <div class='product-variant-picker__option-label'>
+            <div class="product-variant-picker__option-label">
               {{ option.name }}
 
               {%- assign option_name_downcase = option.name | downcase -%}
@@ -102,36 +81,29 @@
                 <sidebar-button>
                   <button
                     data-sidebar-button
-                    data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-                    class='unstyled-button product-variant-picker__popup-toggle'
+                    data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+                    class="unstyled-button product-variant-picker__popup-toggle"
                   >
                     <span>{{ information_drawer_button_label }}</span>
                   </button>
                 </sidebar-button>
               {%- endif -%}
             </div>
-            <div class='product-variant-picker__pill-list'>
+            <div class="product-variant-picker__pill-list">
               {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 <label
-                  for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-                  class='pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if picker_type == 'button-outline' %}pill--outline{% endif %} {% if picker_type == 'button-solid' %}pill--solid{% endif %}'
+                  for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                  class="pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if picker_type == 'button-outline' %}pill--outline{% endif %} {% if picker_type == 'button-solid' %}pill--solid{% endif %}"
                   {% if option.selected_value == value %}
-                    tabindex='0'
+                    tabindex="0"
                   {% endif %}
                 >
-                  <span class='pill__label'>{{ value }}</span>
+                  <span class="pill__label">{{ value }}</span>
                 </label>
               {%- endfor -%}
             </div>
           {%- else -%}
-            <div class='product-variant-picker__option-label'>
+            <div class="product-variant-picker__option-label">
               {{ option.name }}
 
               {%- assign option_name_downcase = option.name | downcase -%}
@@ -140,8 +112,8 @@
                 <sidebar-button>
                   <button
                     data-sidebar-button
-                    data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-                    class='unstyled-button product-variant-picker__popup-toggle'
+                    data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+                    class="unstyled-button product-variant-picker__popup-toggle"
                   >
                     <span>{{ information_drawer_button_label }}</span>
                   </button>
@@ -149,38 +121,31 @@
               {%- endif -%}
             </div>
             <dropdown-opener
-              class='dropdown__toggle dropdown__toggle--large {% if picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}'
-              data-aria-expanded='false'
-              data-float-element-id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-              data-trigger='click'
-              tabindex='0'
+              class="dropdown__toggle dropdown__toggle--large {% if picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}"
+              data-aria-expanded="false"
+              data-float-element-id="variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              data-trigger="click"
+              tabindex="0"
             >
-              <div class='dropdown__toggle-label' data-dropdown-variant-picker-label>
+              <div class="dropdown__toggle-label" data-dropdown-variant-picker-label>
                 {{ option.selected_value }}
               </div>
               {%- render 'icon', icon_name: 'chevron', class: 'dropdown__chevron' -%}
             </dropdown-opener>
             <float-element
-              class='dropdown'
-              aria-hidden='true'
-              id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-              data-placement='bottom-start'
-              data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
+              class="dropdown"
+              aria-hidden="true"
+              id="variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              data-placement="bottom-start"
+              data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}"
             >
               <template>
                 <div>
                   {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <label
-                      class='dropdown__item {% if option.selected_value == value %} selected {% endif %}'
-                      for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-                      tabindex='0'
+                      class="dropdown__item {% if option.selected_value == value %} selected {% endif %}"
+                      for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                      tabindex="0"
                       data-focus-trap-target
                     >
                       {{ value }}
@@ -193,7 +158,7 @@
         </div>
       {%- endfor -%}
     </div>
-    <script data-variant-picker-variants type='application/json'>
+    <script data-variant-picker-variants type="application/json">
       {{ product.variants | json }}
     </script>
   </variant-picker>

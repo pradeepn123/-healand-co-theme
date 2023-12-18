@@ -25,24 +25,17 @@
   </div>
 {% endcapture %}
 
-<div class='quick-view' data-aria-expanded='true'>
+<div class="quick-view" data-aria-expanded="true">
   <div
-    class='quick-view__body-wrapper color-{{ color_scheme }} set-text-color-from-variable'
-    id='QuickViewProduct'
-    data-product-string='{{ product_string | escape }}'
-    data-product-handle='{{ product.handle }}'
+    class="quick-view__body-wrapper color-{{ color_scheme }} set-text-color-from-variable"
+    id="QuickViewProduct"
+    data-product-string="{{ product_string | escape }}"
+    data-product-handle="{{ product.handle }}"
   >
     <div>
       {% capture css %}
         {% style %}
           {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {% case block.type %}
               {% when 'collapsible_row' %}
                 .block-{{ block.id }} {
@@ -95,13 +88,13 @@
 
       {%- if first_3d_model -%}
         <link
-          href='https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css'
-          id='ModelViewerStyle'
-          media='print'
+          href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+          id="ModelViewerStyle"
+          media="print"
           onload="this.media='all'"
-          rel='stylesheet'
+          rel="stylesheet"
         >
-        <script id='ProductJSON-{{ product.id }}' type='application/json'>
+        <script id="ProductJSON-{{ product.id }}" type="application/json">
           {{ product.media | where: 'media_type', 'model' | json }}
         </script>
       {%- endif -%}
@@ -109,13 +102,6 @@
 
     <div>
       {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         {% case block.type %}
           {% when 'variant_picker' %}
             {%- liquid
@@ -128,55 +114,48 @@
             -%}
 
             {%- for option in product.options_with_values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: option %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- assign option_name_downcase = option.name | downcase -%}
 
               {%- if block_option_name_downcase == option_name_downcase -%}
                 <product-information-drawer
-                  id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-                  class='product-information-drawer block-{{ block.id }}-drawer'
+                  id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+                  class="product-information-drawer block-{{ block.id }}-drawer"
                   data-with-overlay
                   data-with-close-on-outside
                   data-with-close-on-escape
                   data-overlay-important
-                  data-open-direction='right'
-                  tabindex='-1'
+                  data-open-direction="right"
+                  tabindex="-1"
                 >
                   <template>
-                    <div class='product-information-drawer__body'>
-                      <div class='product-information-drawer__header'>
-                        <div class='product-information-drawer__header-title'>
+                    <div class="product-information-drawer__body">
+                      <div class="product-information-drawer__header">
+                        <div class="product-information-drawer__header-title">
                           {{ information_drawer_button_label }}
                         </div>
                         <sidebar-button>
                           <button
                             data-sidebar-button
-                            class='unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper'
-                            data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
+                            class="unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper"
+                            data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
                           >
                             <span
-                              class='close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover'
+                              class="close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover"
                             ></span>
                           </button>
                         </sidebar-button>
                       </div>
 
-                      <div class='product-information-drawer__viewport' data-product-information-drawer-viewport>
-                        <div class='product-information-drawer__content product-information-drawer__content--restrict-top-space'>
+                      <div class="product-information-drawer__viewport" data-product-information-drawer-viewport>
+                        <div class="product-information-drawer__content product-information-drawer__content--restrict-top-space">
                           {% if text != blank %}
-                            <div class='rte'>
+                            <div class="rte">
                               {{ text }}
                             </div>
                           {% endif %}
 
                           {% if page != blank %}
-                            <div class='rte rte--page'>
+                            <div class="rte rte--page">
                               {{ page.content }}
                             </div>
                           {% endif %}
@@ -185,7 +164,7 @@
                             {% render 'video-with-alt', video: video, class: 'product-information-drawer__image' %}
                           {%- elsif image != blank -%}
                             <img
-                              class='product-information-drawer__image lazyload'
+                              class="product-information-drawer__image lazyload"
                               {% render 'image-attributes', image: image %}
                             >
                           {%- endif -%}
@@ -238,44 +217,44 @@
             -%}
 
             <product-information-drawer
-              id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-              class='product-information-drawer block-{{ block.id }}-drawer'
+              id="product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}"
+              class="product-information-drawer block-{{ block.id }}-drawer"
               data-with-overlay
               data-with-close-on-outside
               data-with-close-on-escape
               data-overlay-important
-              data-aria-expanded='false'
-              data-open-direction='right'
-              tabindex='-1'
+              data-aria-expanded="false"
+              data-open-direction="right"
+              tabindex="-1"
             >
               <template>
-                <div class='product-information-drawer__body'>
-                  <div class='product-information-drawer__header'>
-                    <div class='product-information-drawer__header-title'>
+                <div class="product-information-drawer__body">
+                  <div class="product-information-drawer__header">
+                    <div class="product-information-drawer__header-title">
                       {{ btn_text }}
                     </div>
                     <sidebar-button>
                       <button
                         data-sidebar-button
-                        class='unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper'
-                        data-sidebar-id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
+                        class="unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper"
+                        data-sidebar-id="product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}"
                       >
                         <span
-                          class='close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover'
+                          class="close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover"
                         ></span>
                       </button>
                     </sidebar-button>
                   </div>
 
-                  <div class='product-information-drawer__viewport' data-product-information-drawer-viewport>
-                    <tabs-component data-selected-tab-id='{{ first_tab_title }}'>
-                      <div class='product-information-drawer__tab-names'>
+                  <div class="product-information-drawer__viewport" data-product-information-drawer-viewport>
+                    <tabs-component data-selected-tab-id="{{ first_tab_title }}">
+                      <div class="product-information-drawer__tab-names">
                         {% if tab_1_title != blank %}
                           <div
                             data-tabs-name
-                            class='product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_1_title == first_tab_title %}selected{% endif %}'
-                            data-id='{{ tab_1_title }}'
-                            tabindex='0'
+                            class="product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_1_title == first_tab_title %}selected{% endif %}"
+                            data-id="{{ tab_1_title }}"
+                            tabindex="0"
                           >
                             {{ tab_1_title }}
                           </div>
@@ -283,9 +262,9 @@
                         {% if tab_2_title != blank %}
                           <div
                             data-tabs-name
-                            class='product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_2_title == first_tab_title %}selected{% endif %}'
-                            data-id='{{ tab_2_title }}'
-                            tabindex='0'
+                            class="product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_2_title == first_tab_title %}selected{% endif %}"
+                            data-id="{{ tab_2_title }}"
+                            tabindex="0"
                           >
                             {{ tab_2_title }}
                           </div>
@@ -293,32 +272,32 @@
                         {% if tab_3_title != blank %}
                           <div
                             data-tabs-name
-                            class='product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_3_title == first_tab_title %}selected{% endif %}'
-                            data-id='{{ tab_3_title }}'
-                            tabindex='0'
+                            class="product-information-drawer__tab-name {% if tab_count == 1 %} product-information-drawer__tab-name--single {% endif %} {% if tab_3_title == first_tab_title %}selected{% endif %}"
+                            data-id="{{ tab_3_title }}"
+                            tabindex="0"
                           >
                             {{ tab_3_title }}
                           </div>
                         {% endif %}
                       </div>
 
-                      <div class='tabs product-details__tabs' data-tabs-container>
+                      <div class="tabs product-details__tabs" data-tabs-container>
                         <template data-tabs-elements-template>
                           {% if tab_1_title != blank and tab_1_title != first_tab_title %}
                             <tab-component
-                              class='product-information-drawer__tab-element'
-                              aria-hidden='true'
-                              data-id='{{ tab_1_title }}'
+                              class="product-information-drawer__tab-element"
+                              aria-hidden="true"
+                              data-id="{{ tab_1_title }}"
                             >
-                              <div data-tabs-element-content class='product-information-drawer__content'>
+                              <div data-tabs-element-content class="product-information-drawer__content">
                                 {% if tab_1_text != blank %}
-                                  <div class='rte'>
+                                  <div class="rte">
                                     {{ tab_1_text }}
                                   </div>
                                 {% endif %}
 
                                 {% if tab_1_page != blank %}
-                                  <div class='rte rte--page'>
+                                  <div class="rte rte--page">
                                     {{ tab_1_page.content }}
                                   </div>
                                 {% endif %}
@@ -327,19 +306,19 @@
                           {% endif %}
                           {% if tab_2_title != blank and tab_2_title != first_tab_title %}
                             <tab-component
-                              class='product-information-drawer__tab-element'
-                              aria-hidden='true'
-                              data-id='{{ tab_2_title }}'
+                              class="product-information-drawer__tab-element"
+                              aria-hidden="true"
+                              data-id="{{ tab_2_title }}"
                             >
-                              <div data-tabs-element-content class='product-information-drawer__content'>
+                              <div data-tabs-element-content class="product-information-drawer__content">
                                 {% if tab_2_text != blank %}
-                                  <div class='rte'>
+                                  <div class="rte">
                                     {{ tab_2_text }}
                                   </div>
                                 {% endif %}
 
                                 {% if tab_2_page != blank %}
-                                  <div class='rte rte--page'>
+                                  <div class="rte rte--page">
                                     {{ tab_2_page.content }}
                                   </div>
                                 {% endif %}
@@ -348,19 +327,19 @@
                           {% endif %}
                           {% if tab_3_title != blank and tab_3_title != first_tab_title %}
                             <tab-component
-                              class='product-information-drawer__tab-element'
-                              aria-hidden='true'
-                              data-id='{{ tab_3_title }}'
+                              class="product-information-drawer__tab-element"
+                              aria-hidden="true"
+                              data-id="{{ tab_3_title }}"
                             >
-                              <div data-tabs-element-content class='product-information-drawer__content'>
+                              <div data-tabs-element-content class="product-information-drawer__content">
                                 {% if tab_3_text != blank %}
-                                  <div class='rte'>
+                                  <div class="rte">
                                     {{ tab_3_text }}
                                   </div>
                                 {% endif %}
 
                                 {% if tab_3_page != blank %}
-                                  <div class='rte rte--page'>
+                                  <div class="rte rte--page">
                                     {{ tab_3_page.content }}
                                   </div>
                                 {% endif %}
@@ -371,19 +350,19 @@
 
                         {% if tab_1_title != blank and tab_1_title == first_tab_title %}
                           <tab-component
-                            class='product-information-drawer__tab-element'
-                            aria-hidden='false'
-                            data-id='{{ tab_1_title }}'
+                            class="product-information-drawer__tab-element"
+                            aria-hidden="false"
+                            data-id="{{ tab_1_title }}"
                           >
-                            <div data-tabs-element-content class='product-information-drawer__content'>
+                            <div data-tabs-element-content class="product-information-drawer__content">
                               {% if tab_1_text != blank %}
-                                <div class='rte'>
+                                <div class="rte">
                                   {{ tab_1_text }}
                                 </div>
                               {% endif %}
 
                               {% if tab_1_page != blank %}
-                                <div class='rte rte--page'>
+                                <div class="rte rte--page">
                                   {{ tab_1_page.content }}
                                 </div>
                               {% endif %}
@@ -392,19 +371,19 @@
                         {% endif %}
                         {% if tab_2_title != blank and tab_2_title == first_tab_title %}
                           <tab-component
-                            class='product-information-drawer__tab-element'
-                            aria-hidden='false'
-                            data-id='{{ tab_2_title }}'
+                            class="product-information-drawer__tab-element"
+                            aria-hidden="false"
+                            data-id="{{ tab_2_title }}"
                           >
-                            <div data-tabs-element-content class='product-information-drawer__content'>
+                            <div data-tabs-element-content class="product-information-drawer__content">
                               {% if tab_2_text != blank %}
-                                <div class='rte'>
+                                <div class="rte">
                                   {{ tab_2_text }}
                                 </div>
                               {% endif %}
 
                               {% if tab_2_page != blank %}
-                                <div class='rte rte--page'>
+                                <div class="rte rte--page">
                                   {{ tab_2_page.content }}
                                 </div>
                               {% endif %}
@@ -413,19 +392,19 @@
                         {% endif %}
                         {% if tab_3_title != blank and tab_3_title == first_tab_title %}
                           <tab-component
-                            class='product-information-drawer__tab-element'
-                            aria-hidden='false'
-                            data-id='{{ tab_3_title }}'
+                            class="product-information-drawer__tab-element"
+                            aria-hidden="false"
+                            data-id="{{ tab_3_title }}"
                           >
-                            <div data-tabs-element-content class='product-information-drawer__content'>
+                            <div data-tabs-element-content class="product-information-drawer__content">
                               {% if tab_3_text != blank %}
-                                <div class='rte'>
+                                <div class="rte">
                                   {{ tab_3_text }}
                                 </div>
                               {% endif %}
 
                               {% if tab_3_page != blank %}
-                                <div class='rte rte--page'>
+                                <div class="rte rte--page">
                                   {{ tab_3_page.content }}
                                 </div>
                               {% endif %}
@@ -451,44 +430,44 @@
               -%}
 
               <product-information-drawer
-                id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
-                class='product-information-drawer block-{{ block.id }}-drawer'
+                id="product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}"
+                class="product-information-drawer block-{{ block.id }}-drawer"
                 data-with-overlay
                 data-with-close-on-outside
                 data-with-close-on-escape
                 data-overlay-important
-                data-open-direction='right'
-                tabindex='-1'
+                data-open-direction="right"
+                tabindex="-1"
               >
                 <template>
-                  <div class='product-information-drawer__body'>
-                    <div class='product-information-drawer__header'>
-                      <div class='product-information-drawer__header-title'>
+                  <div class="product-information-drawer__body">
+                    <div class="product-information-drawer__header">
+                      <div class="product-information-drawer__header-title">
                         {{ heading }}
                       </div>
                       <sidebar-button>
                         <button
                           data-sidebar-button
-                          class='unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper'
-                          data-sidebar-id='product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}'
+                          class="unstyled-button product-information-drawer__header-close-button-wrapper close-button-with-scale-hover-wrapper"
+                          data-sidebar-id="product-information-sidebar-{{ block.id }}-{{ product.id }}-{{ sectionId }}"
                         >
                           <span
-                            class='close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover'
+                            class="close-button-with-scale-hover product-information-drawer__close-button-with-scale-hover"
                           ></span>
                         </button>
                       </sidebar-button>
                     </div>
 
-                    <div class='product-information-drawer__viewport' data-product-information-drawer-viewport>
-                      <div class='product-information-drawer__content product-information-drawer__content--restrict-top-space'>
+                    <div class="product-information-drawer__viewport" data-product-information-drawer-viewport>
+                      <div class="product-information-drawer__content product-information-drawer__content--restrict-top-space">
                         {% if drawer_text != blank %}
-                          <div class='rte'>
+                          <div class="rte">
                             {{ drawer_text }}
                           </div>
                         {% endif %}
 
                         {% if drawer_page != blank %}
-                          <div class='rte rte--page'>
+                          <div class="rte rte--page">
                             {{ drawer_page.content }}
                           </div>
                         {% endif %}
@@ -497,7 +476,7 @@
                           {% render 'video-with-alt', video: drawer_video, class: 'product-information-drawer__image' %}
                         {%- elsif drawer_image != blank -%}
                           <img
-                            class='product-information-drawer__image lazyload'
+                            class="product-information-drawer__image lazyload"
                             {% render 'image-attributes', image: drawer_image %}
                           >
                         {%- endif -%}
@@ -517,24 +496,24 @@
       -%}
     </div>
 
-    <div class='quick-view__body'>
-      <div class='quick-view__header quick-view__header--mobile'>
-        <div class='quick-view__header-title'>{{ 'dialog_elements.quick_view.header_title' | t }}</div>
+    <div class="quick-view__body">
+      <div class="quick-view__header quick-view__header--mobile">
+        <div class="quick-view__header-title">{{ 'dialog_elements.quick_view.header_title' | t }}</div>
         <sidebar-button>
           <button
             data-sidebar-button
-            data-sidebar-id='Quick-view'
-            class='unstyled-button quick-view__close-button close-button-with-scale-hover-wrapper'
-            tabindex='0'
+            data-sidebar-id="Quick-view"
+            class="unstyled-button quick-view__close-button close-button-with-scale-hover-wrapper"
+            tabindex="0"
           >
-            <span class='quick-view__close-button-with-scale-hover close-button-with-scale-hover'></span>
+            <span class="quick-view__close-button-with-scale-hover close-button-with-scale-hover"></span>
           </button>
         </sidebar-button>
       </div>
-      <div class='quick-view__content' data-quick-view-content>
-        <div class='product__content'>
-          <div class='quick-view__media'>
-            <div class='product-desktop-media'>
+      <div class="quick-view__content" data-quick-view-content>
+        <div class="product__content">
+          <div class="quick-view__media">
+            <div class="product-desktop-media">
               {% render 'product-media-grid',
                 product: product,
                 block: block,
@@ -546,28 +525,21 @@
                 sectionId: sectionId
               %}
             </div>
-            <div class='product-mobile-media {% if show_part_of_next_slide %} product-mobile-media--with-half-next-slide{% endif %}'>
+            <div class="product-mobile-media {% if show_part_of_next_slide %} product-mobile-media--with-half-next-slide{% endif %}">
               <product-media-carousel
-                data-section='{{ sectionId }}'
-                id='product-media-{{ product.id }}-{{ sectionId }}'
+                data-section="{{ sectionId }}"
+                id="product-media-{{ product.id }}-{{ sectionId }}"
               >
                 <carousel-component
-                  class='carousel product-mobile-media__carousel'
-                  data-section-id='{{ sectionId }}'
+                  class="carousel product-mobile-media__carousel"
+                  data-section-id="{{ sectionId }}"
                   data-product-media-carousel-component
-                  tabindex='-1'
+                  tabindex="-1"
                 >
-                  <div class='carousel__viewport embla product-mobile-media__carousel-viewport' data-carousel-viewport>
-                    <div class='carousel__container' data-carousel-container>
+                  <div class="carousel__viewport embla product-mobile-media__carousel-viewport" data-carousel-viewport>
+                    <div class="carousel__container" data-carousel-container>
                       {%- if product.media != blank -%}
                         {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                           {%- if forloop.index0 == 0 -%}
                             {% assign is_first_media = true %}
                           {%- else -%}
@@ -575,10 +547,10 @@
                           {%- endif -%}
 
                           <div
-                            class='carousel__slide product-mobile-media__carousel-slide'
-                            data-media-id='{{ media.id }}'
+                            class="carousel__slide product-mobile-media__carousel-slide"
+                            data-media-id="{{ media.id }}"
                           >
-                            <div class='shape shape--{{ img_ratio }}'>
+                            <div class="shape shape--{{ img_ratio }}">
                               {%- render 'product-media',
                                 product: product,
                                 is_first_media: is_first_media,
@@ -594,18 +566,11 @@
                         {%- endfor -%}
                       {%- else -%}
                         {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                           <div
-                            class='carousel__slide product-mobile-media__carousel-slide'
-                            data-media-id='{{ forloop.index }}'
+                            class="carousel__slide product-mobile-media__carousel-slide"
+                            data-media-id="{{ forloop.index }}"
                           >
-                            <div class='shape shape--{{ img_ratio }}'>
+                            <div class="shape shape--{{ img_ratio }}">
                               {%- render 'product-media',
                                 product: product,
                                 enable_image_zoom: enable_image_zoom,
@@ -623,33 +588,26 @@
                   </div>
                   {% if show_part_of_next_slide != true and product_media.size > 1 %}
                     <carousel-dots
-                      class='dots-carousel product-mobile-media__dots-carousel'
-                      data-contain-scroll='keepSnaps'
-                      data-align='center'
+                      class="dots-carousel product-mobile-media__dots-carousel"
+                      data-contain-scroll="keepSnaps"
+                      data-align="center"
                     >
-                      <div class='dots-carousel__viewport embla' data-carousel-viewport>
-                        <div class='dots-carousel__container' data-carousel-container>
+                      <div class="dots-carousel__viewport embla" data-carousel-viewport>
+                        <div class="dots-carousel__container" data-carousel-container>
                           {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                             <carousel-dot
-                              class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
-                              tabindex='0'
-                              data-dot-index='{{ forloop.index0 }}'
+                              class="dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}"
+                              tabindex="0"
+                              data-dot-index="{{ forloop.index0 }}"
                             >
-                              <div class='dots-carousel__slide-body'>
-                                <div class='dots-carousel__slide-inner-circle'></div>
+                              <div class="dots-carousel__slide-body">
+                                <div class="dots-carousel__slide-inner-circle"></div>
                                 <div
-                                  class='dots-carousel__loader'
-                                  size='medium'
-                                  variant='dark'
+                                  class="dots-carousel__loader"
+                                  size="medium"
+                                  variant="dark"
                                   data-autoplay-indicator
-                                  style='--gsc-autoplay-interval: {{ autoplay_interval }}s;'
+                                  style="--gsc-autoplay-interval: {{ autoplay_interval }}s;"
                                 >
                                   {% render 'icon',
                                     icon_name: 'circle',
@@ -670,21 +628,21 @@
             </div>
           </div>
 
-          <div class='product__info-wrapper'>
-            <div class='quick-view__header quick-view__header--desktop'>
-              <div class='quick-view__header-title'>{{ 'dialog_elements.quick_view.header_title' | t }}</div>
+          <div class="product__info-wrapper">
+            <div class="quick-view__header quick-view__header--desktop">
+              <div class="quick-view__header-title">{{ 'dialog_elements.quick_view.header_title' | t }}</div>
               <sidebar-button>
                 <button
                   data-sidebar-button
-                  data-sidebar-id='Quick-view'
-                  class='unstyled-button quick-view__close-button close-button-with-scale-hover-wrapper'
-                  tabindex='0'
+                  data-sidebar-id="Quick-view"
+                  class="unstyled-button quick-view__close-button close-button-with-scale-hover-wrapper"
+                  tabindex="0"
                 >
-                  <span class='quick-view__close-button-with-scale-hover close-button-with-scale-hover'></span>
+                  <span class="quick-view__close-button-with-scale-hover close-button-with-scale-hover"></span>
                 </button>
               </sidebar-button>
             </div>
-            <div class='product__info'>
+            <div class="product__info">
               {%- liquid
                 for block in section.blocks
                   case block.type

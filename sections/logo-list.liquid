@@ -32,13 +32,6 @@
 {% capture css %}
   {% style %}
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{ block.id }} {
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
@@ -77,52 +70,45 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='logo-list section section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='logo-list__container container container--{{ container_size }} section-spacing'>
+<div class="logo-list section section-{{ section.id }} color-{{ color_scheme }}">
+  <div class="logo-list__container container container--{{ container_size }} section-spacing">
     {%- if title != blank -%}
-      <div class='logo-list__header {% if alignment == 'center' %}logo-list__header--center{% endif %}'>
-        <h5 class='logo-list__title {{ heading_size }}'>{{ title }}</h5>
+      <div class="logo-list__header {% if alignment == 'center' %}logo-list__header--center{% endif %}">
+        <h5 class="logo-list__title {{ heading_size }}">{{ title }}</h5>
       </div>
     {%- endif -%}
     {%- if section_layout == 'carousel' -%}
       <carousel-component
-        class='carousel logo-list__carousel'
-        data-section-id='{{ section.id }}'
-        data-contain-scroll='trimSnaps'
+        class="carousel logo-list__carousel"
+        data-section-id="{{ section.id }}"
+        data-contain-scroll="trimSnaps"
       >
         <carousel-btn
-          class='logo-list__carousel-btn {% if section.blocks.size < 3 %}logo-list__carousel-btn--mobile-hide{% endif %} {% if section.blocks.size <= desktop_columns %}logo-list__carousel-btn--desktop-hide{% endif %}'
-          data-scroll-direction='prev'
-          tabindex='0'
+          class="logo-list__carousel-btn {% if section.blocks.size < 3 %}logo-list__carousel-btn--mobile-hide{% endif %} {% if section.blocks.size <= desktop_columns %}logo-list__carousel-btn--desktop-hide{% endif %}"
+          data-scroll-direction="prev"
+          tabindex="0"
         >
           {% render 'icon', icon_name: 'chevron', class: 'x-flip logo-list__chevron' %}
         </carousel-btn>
         <div
-          class='carousel__viewport logo-list__carousel-viewport embla {% if some_block_has_image == false %} logo-list__carousel-viewport--with-only-placeholder{% endif %}'
+          class="carousel__viewport logo-list__carousel-viewport embla {% if some_block_has_image == false %} logo-list__carousel-viewport--with-only-placeholder{% endif %}"
           data-carousel-viewport
         >
-          <div class='carousel__container' data-carousel-container>
+          <div class="carousel__container" data-carousel-container>
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- liquid
                 assign image = block.settings.image
                 assign link = block.settings.link
               -%}
-              <div class='carousel__slide logo-list__slide block-{{ block.id }}' {{ block.shopify_attributes }}>
+              <div class="carousel__slide logo-list__slide block-{{ block.id }}" {{ block.shopify_attributes }}>
                 <a
-                  class='logo-list__link'
-                  href='{% if link.url != blank %}{{ link.url }}{% else %}#{% endif %}'
-                  aria-label='Home'
+                  class="logo-list__link"
+                  href="{% if link.url != blank %}{{ link.url }}{% else %}#{% endif %}"
+                  aria-label="Home"
                 >
                   {%- if image != blank -%}
                     <img
-                      class='logo-list__image lazyload'
+                      class="logo-list__image lazyload"
                       {% render 'image-attributes', image: image %}
                     >
                   {%- else -%}
@@ -137,36 +123,29 @@
           </div>
         </div>
         <carousel-btn
-          class='logo-list__carousel-btn {% if section.blocks.size < 3 %}logo-list__carousel-btn--mobile-hide{% endif %} {% if section.blocks.size <= desktop_columns %}logo-list__carousel-btn--desktop-hide{% endif %}'
-          data-scroll-direction='next'
-          tabindex='0'
+          class="logo-list__carousel-btn {% if section.blocks.size < 3 %}logo-list__carousel-btn--mobile-hide{% endif %} {% if section.blocks.size <= desktop_columns %}logo-list__carousel-btn--desktop-hide{% endif %}"
+          data-scroll-direction="next"
+          tabindex="0"
         >
           {%- render 'icon', icon_name: 'chevron', class: 'logo-list__chevron' -%}
         </carousel-btn>
       </carousel-component>
     {%- else -%}
-      <div class='logo-list__grid'>
+      <div class="logo-list__grid">
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- liquid
             assign image = block.settings.image
             assign link = block.settings.link
           -%}
-          <div class='logo-list__grid-item block-{{ block.id }}' {{ block.shopify_attributes }}>
+          <div class="logo-list__grid-item block-{{ block.id }}" {{ block.shopify_attributes }}>
             <a
-              class='logo-list__link'
-              href='{% if link.url != blank %}{{ link.url }}{% else %}#{% endif %}'
-              aria-label='Home'
+              class="logo-list__link"
+              href="{% if link.url != blank %}{{ link.url }}{% else %}#{% endif %}"
+              aria-label="Home"
             >
               {%- if image != blank -%}
                 <img
-                  class='logo-list__image lazyload'
+                  class="logo-list__image lazyload"
                   {% render 'image-attributes', image: image %}
                 >
               {%- else -%}

@@ -4,15 +4,15 @@
 -%}
 
 <product-media
-  class='product-media-grid {% if block_layout == 'two-column' and product_media.size > 1 %} product-media-grid--two-column {% endif %}'
-  data-section='{{ sectionId }}'
-  id='product-media-{{ product.id }}-{{ sectionId }}'
+  class="product-media-grid {% if block_layout == 'two-column' and product_media.size > 1 %} product-media-grid--two-column {% endif %}"
+  data-section="{{ sectionId }}"
+  id="product-media-{{ product.id }}-{{ sectionId }}"
 >
   {%- if product.media != blank -%}
     {%- if featured_media != null -%}
       <div
-        class='shape shape--{{ img_ratio }} product-media-grid__item'
-        data-media-id='{{ featured_media.id }}'
+        class="shape shape--{{ img_ratio }} product-media-grid__item"
+        data-media-id="{{ featured_media.id }}"
         {% if featured_media.media_type == 'image' and enable_image_zoom %}
           data-zoom-cursor-target
         {% endif %}
@@ -29,17 +29,10 @@
       </div>
     {%- endif -%}
     {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       {%- if media.id != featured_media.id or media.id == blank -%}
         <div
-          class='shape shape--{{ img_ratio }} product-media-grid__item'
-          data-media-id='{{ media.id }}'
+          class="shape shape--{{ img_ratio }} product-media-grid__item"
+          data-media-id="{{ media.id }}"
           {% if media.media_type == 'image' and enable_image_zoom %}
             data-zoom-cursor-target
           {% endif %}
@@ -58,16 +51,9 @@
     {%- endfor -%}
   {%- else -%}
     {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       <div
-        class='shape shape--{{ img_ratio }} product-media-grid__item'
-        data-media-id='{{ forloop.index }}'
+        class="shape shape--{{ img_ratio }} product-media-grid__item"
+        data-media-id="{{ forloop.index }}"
         {% if enable_image_zoom %}
           data-zoom-cursor-target
         {% endif %}

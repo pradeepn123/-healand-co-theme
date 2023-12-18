@@ -34,13 +34,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{ block.id }} {
             --gsc-image-width: {{ block.settings.mobile_image_width }}%;
             --gsc-img-ratio: {{ block.settings.image_ratio | times: 100 }}%;
@@ -55,13 +48,6 @@
         }
 
         {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             .block-{{ block.id }} {
                 --gsc-image-width: {{ block.settings.desktop_image_width }}%;
             }
@@ -72,16 +58,16 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='multicolumn section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}multicolumn--with-mobile-carousel{% endif %}'>
-  <div class='multicolumn__container container container--{{ container_size }} section-spacing'>
+<div class="multicolumn section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}multicolumn--with-mobile-carousel{% endif %}">
+  <div class="multicolumn__container container container--{{ container_size }} section-spacing">
     {%- if title != blank or text != blank -%}
-      <div class='multicolumn__content-wrap multicolumn__content-wrap--align-{{ content_alignment }}'>
-        <div class='multicolumn__content'>
+      <div class="multicolumn__content-wrap multicolumn__content-wrap--align-{{ content_alignment }}">
+        <div class="multicolumn__content">
           {%- if title != blank -%}
-            <h5 class='{{ heading_size }}'>{{ title }}</h5>
+            <h5 class="{{ heading_size }}">{{ title }}</h5>
           {%- endif -%}
           {%- if text != blank -%}
-            <div class='rte multicolumn__text body-font-weight-from-global-settings {{ body_size }}'>
+            <div class="rte multicolumn__text body-font-weight-from-global-settings {{ body_size }}">
               {{ text }}
             </div>
           {%- endif -%}
@@ -89,15 +75,8 @@
       </div>
     {%- endif -%}
     {%- if section.blocks.size > 0 -%}
-      <div class='card-grid multicolumn__card-grid {% if show_column_background == false %} multicolumn__card-grid--with-additional-between-row-space {% endif %}'>
+      <div class="card-grid multicolumn__card-grid {% if show_column_background == false %} multicolumn__card-grid--with-additional-between-row-space {% endif %}">
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- liquid
             assign image = block.settings.image
             assign video = block.settings.video
@@ -110,26 +89,26 @@
             assign custom_icon_image = block.settings.custom_icon_image
           -%}
           <div
-            class='multicolumn__column card-grid__item block-{{ block.id }} multicolumn__column--align-{{ column_alignment }} {% if show_column_background == false %}multicolumn__column--transparent{% endif %}'
+            class="multicolumn__column card-grid__item block-{{ block.id }} multicolumn__column--align-{{ column_alignment }} {% if show_column_background == false %}multicolumn__column--transparent{% endif %}"
             {{ block.shopify_attributes }}
           >
             {% if link_text == blank and link_url != blank %}
               <a
-                href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
-                class='multicolumn__column-link-overlay unstyled-link'
-                aria-label='{{ title }}'
+                href="{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}"
+                class="multicolumn__column-link-overlay unstyled-link"
+                aria-label="{{ title }}"
               ></a>
             {% endif %}
 
             {% if block.type == 'column' %}
               {%- if image != blank or video != blank -%}
-                <div class='multicolumn__column-image-wrap'>
-                  <div class='shape shape--nature'>
+                <div class="multicolumn__column-image-wrap">
+                  <div class="shape shape--nature">
                     {%- if video != blank -%}
                       {% render 'video-with-alt', video: video, class: 'image multicolumn__column-image' %}
                     {%- else -%}
                       <img
-                        class='image multicolumn__column-image lazyload'
+                        class="image multicolumn__column-image lazyload"
                         {% render 'image-attributes', image: image %}
                       >
                     {%- endif -%}
@@ -139,7 +118,7 @@
             {% elsif block.type == 'column_with_icon' %}
               {%- if custom_icon_image != blank -%}
                 <img
-                  class='multicolumn__column-icon lazyload'
+                  class="multicolumn__column-icon lazyload"
                   {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                 >
               {%- elsif icon != 'none' -%}
@@ -147,18 +126,18 @@
               {%- endif -%}
             {% endif %}
 
-            <div class='multicolumn__details'>
-              <div class='multicolumn__column-title {{ column_heading_size }}'>{{ title }}</div>
-              <div class='rte multicolumn__column-text body-font-weight-from-global-settings {{ column_body_size }}'>
+            <div class="multicolumn__details">
+              <div class="multicolumn__column-title {{ column_heading_size }}">{{ title }}</div>
+              <div class="rte multicolumn__column-text body-font-weight-from-global-settings {{ column_body_size }}">
                 {{ text }}
               </div>
               {%- if link_text != blank -%}
                 <a
-                  class='link multicolumn__column-link'
-                  href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
-                  aria-label='{{ link_text }}'
+                  class="link multicolumn__column-link"
+                  href="{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}"
+                  aria-label="{{ link_text }}"
                 >
-                  <span class='link__text'>{{ link_text }}</span>
+                  <span class="link__text">{{ link_text }}</span>
                   {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
                 </a>
               {%- endif -%}
@@ -168,20 +147,13 @@
       </div>
     {%- endif -%}
     {%- if section.blocks.size > 0 and enable_carousel_on_mobile -%}
-      <carousel-component class='carousel multicolumn__carousel' data-section-id='{{ section.id }}'>
+      <carousel-component class="carousel multicolumn__carousel" data-section-id="{{ section.id }}">
         <div
-          class='carousel__viewport embla multicolumn__carousel-viewport {% if show_column_background == false %} multicolumn__carousel-viewport--transparent-columns{% else %} multicolumn__carousel-viewport--colored-columns{% endif %}'
+          class="carousel__viewport embla multicolumn__carousel-viewport {% if show_column_background == false %} multicolumn__carousel-viewport--transparent-columns{% else %} multicolumn__carousel-viewport--colored-columns{% endif %}"
           data-carousel-viewport
         >
-          <div class='carousel__container' data-carousel-container>
+          <div class="carousel__container" data-carousel-container>
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- liquid
                 assign image = block.settings.image
                 assign video = block.settings.video
@@ -193,25 +165,25 @@
                 assign icon = block.settings.icon
                 assign custom_icon_image = block.settings.custom_icon_image
               -%}
-              <div class='carousel__slide block-{{ block.id }}' {{ block.shopify_attributes }}>
-                <div class='multicolumn__column multicolumn__column--align-{{ column_alignment }} {% if show_column_background == false %}multicolumn__column--transparent{% endif %}'>
+              <div class="carousel__slide block-{{ block.id }}" {{ block.shopify_attributes }}>
+                <div class="multicolumn__column multicolumn__column--align-{{ column_alignment }} {% if show_column_background == false %}multicolumn__column--transparent{% endif %}">
                   {%- if link_text == blank and link_url != blank -%}
                     <a
-                      href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
-                      class='multicolumn__column-link-overlay unstyled-link'
-                      aria-label='{{ title }}'
+                      href="{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}"
+                      class="multicolumn__column-link-overlay unstyled-link"
+                      aria-label="{{ title }}"
                     ></a>
                   {%- endif -%}
 
                   {% if block.type == 'column' %}
                     {%- if image != blank or video != blank -%}
-                      <div class='multicolumn__column-image-wrap'>
-                        <div class='shape shape--nature'>
+                      <div class="multicolumn__column-image-wrap">
+                        <div class="shape shape--nature">
                           {%- if video != blank -%}
                             {% render 'video-with-alt', video: video, class: 'image multicolumn__column-image' %}
                           {%- else -%}
                             <img
-                              class='image multicolumn__column-image lazyload'
+                              class="image multicolumn__column-image lazyload"
                               {% render 'image-attributes', image: image %}
                             >
                           {%- endif -%}
@@ -221,7 +193,7 @@
                   {% elsif block.type == 'column_with_icon' %}
                     {%- if custom_icon_image != blank -%}
                       <img
-                        class='multicolumn__column-icon lazyload'
+                        class="multicolumn__column-icon lazyload"
                         {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                       >
                     {%- elsif icon != 'none' -%}
@@ -229,18 +201,18 @@
                     {%- endif -%}
                   {% endif %}
 
-                  <div class='multicolumn__details'>
-                    <div class='multicolumn__column-title {{ column_heading_size }}'>{{ title }}</div>
-                    <div class='rte multicolumn__column-text body-font-weight-from-global-settings {{ column_body_size }}'>
+                  <div class="multicolumn__details">
+                    <div class="multicolumn__column-title {{ column_heading_size }}">{{ title }}</div>
+                    <div class="rte multicolumn__column-text body-font-weight-from-global-settings {{ column_body_size }}">
                       {{ text }}
                     </div>
                     {%- if link_text != blank -%}
                       <a
-                        class='link multicolumn__column-link'
-                        href='{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}'
-                        aria-label='{{ link_text }}'
+                        class="link multicolumn__column-link"
+                        href="{% if link_url != blank %}{{ link_url }}{% else %}#{% endif %}"
+                        aria-label="{{ link_text }}"
                       >
-                        <span class='link__text'>{{ link_text }}</span>
+                        <span class="link__text">{{ link_text }}</span>
                         {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
                       </a>
                     {%- endif -%}
@@ -252,26 +224,19 @@
         </div>
         {%- if section.blocks.size > 1 -%}
           <carousel-dots
-            class='solid-dots-carousel multicolumn__solid-dots-carousel'
-            data-contain-scroll='keepSnaps'
-            data-align='center'
+            class="solid-dots-carousel multicolumn__solid-dots-carousel"
+            data-contain-scroll="keepSnaps"
+            data-align="center"
           >
-            <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
-              <div class='solid-dots-carousel__container' data-carousel-container>
+            <div class="solid-dots-carousel__viewport embla" data-carousel-viewport>
+              <div class="solid-dots-carousel__container" data-carousel-container>
                 {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   <carousel-dot
-                    class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
-                    tabindex='0'
-                    data-dot-index='{{ forloop.index0 }}'
+                    class="solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}"
+                    tabindex="0"
+                    data-dot-index="{{ forloop.index0 }}"
                   >
-                    <div class='solid-dots-carousel__solid-dot-circle'></div>
+                    <div class="solid-dots-carousel__solid-dot-circle"></div>
                   </carousel-dot>
                 {%- endfor -%}
               </div>
@@ -282,9 +247,9 @@
     {%- endif -%}
     {%- if btn_text != blank -%}
       <a
-        class='btn btn--{{ btn_style }} multicolumn__btn'
-        href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-        aria-label='{{ btn_text }}'
+        class="btn btn--{{ btn_style }} multicolumn__btn"
+        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+        aria-label="{{ btn_text }}"
       >
         {{- btn_text -}}
       </a>

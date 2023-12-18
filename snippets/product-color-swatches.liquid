@@ -44,7 +44,7 @@
 -%}
 
 {% if color_option_picker_type contains 'button' %}
-  <div class='product-variant-picker__option-label'>
+  <div class="product-variant-picker__option-label">
     {{ option.name }}
 
     {%- assign option_name_downcase = option.name | downcase -%}
@@ -53,36 +53,29 @@
       <sidebar-button>
         <button
           data-sidebar-button
-          data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-          class='unstyled-button product-variant-picker__popup-toggle'
+          data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+          class="unstyled-button product-variant-picker__popup-toggle"
         >
           <span>{{ information_drawer_button_label }}</span>
         </button>
       </sidebar-button>
     {%- endif -%}
   </div>
-  <div class='product-variant-picker__pill-list'>
+  <div class="product-variant-picker__pill-list">
     {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       <label
-        for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-        class='pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if color_option_picker_type == 'button-outline' %}pill--outline{% endif %} {% if color_option_picker_type == 'button-solid' %}pill--solid{% endif %}'
+        for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+        class="pill pill--large {% if option.selected_value == value %} selected {% endif %} {% if color_option_picker_type == 'button-outline' %}pill--outline{% endif %} {% if color_option_picker_type == 'button-solid' %}pill--solid{% endif %}"
         {% if option.selected_value == value %}
-          tabindex='0'
+          tabindex="0"
         {% endif %}
       >
-        <span class='pill__label'>{{ value }}</span>
+        <span class="pill__label">{{ value }}</span>
       </label>
     {%- endfor -%}
   </div>
 {% elsif color_option_picker_type contains 'dropdown' %}
-  <div class='product-variant-picker__option-label'>
+  <div class="product-variant-picker__option-label">
     {{ option.name }}
 
     {%- assign option_name_downcase = option.name | downcase -%}
@@ -91,8 +84,8 @@
       <sidebar-button>
         <button
           data-sidebar-button
-          data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-          class='unstyled-button product-variant-picker__popup-toggle'
+          data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+          class="unstyled-button product-variant-picker__popup-toggle"
         >
           <span>{{ information_drawer_button_label }}</span>
         </button>
@@ -100,38 +93,31 @@
     {%- endif -%}
   </div>
   <dropdown-opener
-    class='dropdown__toggle dropdown__toggle--large {% if color_option_picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}'
-    data-aria-expanded='false'
-    data-float-element-id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-    data-trigger='click'
-    tabindex='0'
+    class="dropdown__toggle dropdown__toggle--large {% if color_option_picker_type == 'dropdown-outline' %}dropdown__toggle--outline{% endif %}"
+    data-aria-expanded="false"
+    data-float-element-id="variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    data-trigger="click"
+    tabindex="0"
   >
-    <div class='dropdown__toggle-label' data-dropdown-variant-picker-label>
+    <div class="dropdown__toggle-label" data-dropdown-variant-picker-label>
       {{ option.selected_value }}
     </div>
     {%- render 'icon', icon_name: 'chevron', class: 'dropdown__chevron' -%}
   </dropdown-opener>
   <float-element
-    class='dropdown'
-    aria-hidden='true'
-    id='variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-    data-placement='bottom-start'
-    data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}'
+    class="dropdown"
+    aria-hidden="true"
+    id="variant-picker-dropdown-{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    data-placement="bottom-start"
+    data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 0{% endif %}"
   >
     <template>
       <div>
         {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           <label
-            class='dropdown__item {% if option.selected_value == value %} selected {% endif %}'
-            for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-            tabindex='0'
+            class="dropdown__item {% if option.selected_value == value %} selected {% endif %}"
+            for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+            tabindex="0"
             data-focus-trap-target
           >
             {{ value }}
@@ -142,10 +128,10 @@
   </float-element>
 {% else %}
   <color-swatches-picker>
-    <div class='product-variant-picker__option-label'>
+    <div class="product-variant-picker__option-label">
       {{ option.name }}
 
-      <span class='truncate product-variant-picker__option-active-color' data-color-swatches-picker-active-value>
+      <span class="truncate product-variant-picker__option-active-color" data-color-swatches-picker-active-value>
         {{- option.selected_value -}}
       </span>
 
@@ -155,23 +141,16 @@
         <sidebar-button>
           <button
             data-sidebar-button
-            data-sidebar-id='product-variant-picker-popup-{{ product.id }}-{{ sectionId }}'
-            class='unstyled-button product-variant-picker__popup-toggle'
+            data-sidebar-id="product-variant-picker-popup-{{ product.id }}-{{ sectionId }}"
+            class="unstyled-button product-variant-picker__popup-toggle"
           >
             <span>{{ information_drawer_button_label }}</span>
           </button>
         </sidebar-button>
       {%- endif -%}
     </div>
-    <div class='{%- if color_option_picker_type == 'circles' or color_option_picker_type == 'squares' -%} product-variant-picker__pill-list {% else %} product-variant-picker__image-list {% endif %}'>
+    <div class="{%- if color_option_picker_type == 'circles' or color_option_picker_type == 'squares' -%} product-variant-picker__pill-list {% else %} product-variant-picker__image-list {% endif %}">
       {%- for value in option.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         {%- liquid
           assign color_downcase = value | downcase | strip
 
@@ -215,25 +194,25 @@
         <div>
           {%- if color_option_picker_type == 'circles' or color_option_picker_type == 'squares' -%}
             <label
-              for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-              class='color-swatch-select-parent {% if option.selected_value == value %} selected {% endif %}'
+              for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              class="color-swatch-select-parent {% if option.selected_value == value %} selected {% endif %}"
               {% if option.selected_value == value %}
-                tabindex='0'
+                tabindex="0"
               {% endif %}
               data-focus-trap-target
               data-color-swatches-picker-label
-              data-value='{{ value }}'
+              data-value="{{ value }}"
             >
               {%- if color_option_picker_type == 'circles' -%}
-                <div class='color-swatch color-swatch--large color-swatch--circle color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'>
-                  <div class='color-swatch__body'>
+                <div class="color-swatch color-swatch--large color-swatch--circle color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}">
+                  <div class="color-swatch__body">
                     {%- if is_valid_color -%}
                       <div
-                        class='color-swatch__body-inner'
-                        style='--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};'
+                        class="color-swatch__body-inner"
+                        style="--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};"
                       >
-                        <div class='color-swatch__no-available-mark'>
-                          <div class='color-swatch__line'></div>
+                        <div class="color-swatch__no-available-mark">
+                          <div class="color-swatch__line"></div>
                         </div>
                       </div>
                     {%- else -%}
@@ -244,15 +223,15 @@
                   </div>
                 </div>
               {%- else -%}
-                <div class='color-swatch color-swatch--large color-swatch--square color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'>
-                  <div class='color-swatch__body'>
+                <div class="color-swatch color-swatch--large color-swatch--square color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}">
+                  <div class="color-swatch__body">
                     {%- if is_valid_color -%}
                       <div
-                        class='color-swatch__body-inner'
-                        style='--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};'
+                        class="color-swatch__body-inner"
+                        style="--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};"
                       >
-                        <div class='color-swatch__no-available-mark'>
-                          <div class='color-swatch__line'></div>
+                        <div class="color-swatch__no-available-mark">
+                          <div class="color-swatch__line"></div>
                         </div>
                       </div>
                     {%- else -%}
@@ -266,27 +245,27 @@
             </label>
           {% else %}
             <label
-              for='{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}'
-              class='product-color-swatch__image shape {% if color_option_picker_type == 'variant_images_portrait' %} shape--portrait{% elsif color_option_picker_type == 'variant_images_square' %} shape--square{% endif %} {% if option.selected_value == value %} selected {% endif %}'
+              for="{{ sectionId }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              class="product-color-swatch__image shape {% if color_option_picker_type == 'variant_images_portrait' %} shape--portrait{% elsif color_option_picker_type == 'variant_images_square' %} shape--square{% endif %} {% if option.selected_value == value %} selected {% endif %}"
               {% if option.selected_value == value %}
-                tabindex='0'
+                tabindex="0"
               {% endif %}
               data-focus-trap-target
               data-color-swatches-picker-label
-              data-value='{{ value }}'
+              data-value="{{ value }}"
             >
               {%- if variant.image.src != blank -%}
-                <div class='product-color-swatch__image-body {% if enable_darken_mode %}multiply-mode{% endif %}'>
+                <div class="product-color-swatch__image-body {% if enable_darken_mode %}multiply-mode{% endif %}">
                   <img
-                    class='image lazyload {% if enable_darken_mode %}multiply-mode__target{% endif %}'
+                    class="image lazyload {% if enable_darken_mode %}multiply-mode__target{% endif %}"
                     {% render 'image-attributes', image: variant.image, size: 'small' %}
                   >
                 </div>
 
-                <div class='product-color-swatch__image-no-available-marker'></div>
+                <div class="product-color-swatch__image-no-available-marker"></div>
               {%- else -%}
                 <div
-                  class='product-color-swatch__image-body product-color-swatch__image-body--placeholder {% if enable_darken_mode %}multiply-mode{% endif %}'
+                  class="product-color-swatch__image-body product-color-swatch__image-body--placeholder {% if enable_darken_mode %}multiply-mode{% endif %}"
                 >
                   {% render 'icon-color-image-placeholder' %}
                 </div>

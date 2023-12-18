@@ -1,38 +1,31 @@
-<div class='article-comments'>
-  <div class='container container--xsmall'>
-    <div id='comments'>
+<div class="article-comments">
+  <div class="container container--xsmall">
+    <div id="comments">
       {%- if article.comments_count > 0 -%}
-        <div class='article-comments__header' id='Comments-{{ article.id }}'>
+        <div class="article-comments__header" id="Comments-{{ article.id }}">
           <h6>
             {{ 'blogs.blog_post.comments' | t: count: article.comments_count }}
           </h6>
         </div>
 
         {% paginate article.comments by 5 %}
-          <div class='article-comments__body-wrapper'>
-            <div class='article-comments__body' id='ArticleComments'>
+          <div class="article-comments__body-wrapper">
+            <div class="article-comments__body" id="ArticleComments">
               {%- if comment.status == 'pending' and comment.content -%}
-                <div class='comment' id='{{ comment.id }}'>
-                  <div class='comment__author'>- {{ comment.author }}</div>
-                  <div class='comment__content'>{{ comment.content }}</div>
-                  <div class='comment__date'>
+                <div class="comment" id="{{ comment.id }}">
+                  <div class="comment__author">- {{ comment.author }}</div>
+                  <div class="comment__content">{{ comment.content }}</div>
+                  <div class="comment__date">
                     {{ comment.created_at | time_tag: format: 'date' }}
                   </div>
                 </div>
               {%- endif -%}
 
               {%- for comment in article.comments -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: comment %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                <div class='comment' id='{{ comment.id }}'>
-                  <div class='comment__author'>- {{ comment.author }}</div>
-                  <div class='comment__content'>{{ comment.content }}</div>
-                  <div class='comment__date'>
+                <div class="comment" id="{{ comment.id }}">
+                  <div class="comment__author">- {{ comment.author }}</div>
+                  <div class="comment__content">{{ comment.content }}</div>
+                  <div class="comment__date">
                     {{ comment.created_at | time_tag: format: 'date' }}
                   </div>
                 </div>
@@ -59,67 +52,67 @@
           endif
         -%}
 
-        <div class='comment-form__title'>
+        <div class="comment-form__title">
           {{ 'blogs.blog_post.comment_form_title' | t }}
         </div>
 
         {%- if form.posted_successfully? -%}
           <script>
             window.addEventListener('load', () => {
-              window.bodyElement.notification.show('{{ post_message | t }}', 'success')
-            })
+              window.bodyElement.notification.show('{{ post_message | t }}', 'success');
+            });
           </script>
         {%- endif -%}
 
-        <div class='comment-form__body'>
-          <div class='field-group comment-form__field-group'>
-            <div class='field comment-form__field'>
+        <div class="comment-form__body">
+          <div class="field-group comment-form__field-group">
+            <div class="field comment-form__field">
               <label
-                class='visually-hidden'
-                for='NewCommentForm-CommentAuthorInput-{{ form.id }}'
+                class="visually-hidden"
+                for="NewCommentForm-CommentAuthorInput-{{ form.id }}"
               >
                 {{- 'blogs.blog_post.name' | t -}}
               </label>
               <input
-                type='text'
-                name='comment[author]'
-                class='input input--outline input--large'
-                autocomplete='name'
-                value='{{ form.author }}'
-                aria-required='true'
+                type="text"
+                name="comment[author]"
+                class="input input--outline input--large"
+                autocomplete="name"
+                value="{{ form.author }}"
+                aria-required="true"
                 required
-                placeholder='{{ 'blogs.blog_post.name' | t }}'
-                id='NewCommentForm-CommentAuthorInput-{{ form.id }}'
+                placeholder="{{ 'blogs.blog_post.name' | t }}"
+                id="NewCommentForm-CommentAuthorInput-{{ form.id }}"
               >
               {%- if form.errors contains 'author' -%}
                 {% assign error = 'Author field' | capitalize | append: ' ' | append: form.errors.messages.author %}
                 <script>
                   window.addEventListener('load', () => {
-                    window.bodyElement.notification.show('{{ error }}', 'warning')
-                  })
+                    window.bodyElement.notification.show('{{ error }}', 'warning');
+                  });
                 </script>
               {%- endif -%}
             </div>
 
-            <div class='field comment-form__field'>
+            <div class="field comment-form__field">
               <label
-                class='visually-hidden'
-                for='NewCommentForm-CommentEmailInput-{{ form.id }}'
+                class="visually-hidden"
+                for="NewCommentForm-CommentEmailInput-{{ form.id }}"
               >
                 {{- 'blogs.blog_post.email' | t -}}
               </label>
               <input
-                type='email'
-                name='comment[email]'
-                autocomplete='email'
-                class='input input--outline input--large'
-                value='{{ form.email }}'
-                autocorrect='off'
-                autocapitalize='off'
-                aria-required='true'
+                type="email"
+                name="comment[email]"
+                autocomplete="email"
+                class="input input--outline input--large"
+                value="{{ form.email }}"
+                autocorrect="off"
+                autocapitalize="off"
+                aria-required="true"
                 required
-                placeholder='{{ 'blogs.blog_post.email' | t }}'
-                id='NewCommentForm-CommentEmailInput-{{ form.id }}'
+                placeholder="{{ 'blogs.blog_post.email' | t }}"
+                id="NewCommentForm-CommentEmailInput-{{ form.id }}"
               >
               {%- if form.errors contains 'email' -%}
                 {% assign error = form.errors.translated_fields.email
@@ -129,22 +122,22 @@
                 %}
                 <script>
                   window.addEventListener('load', () => {
-                    window.bodyElement.notification.show('{{ error }}', 'warning')
-                  })
+                    window.bodyElement.notification.show('{{ error }}', 'warning');
+                  });
                 </script>
               {%- endif -%}
             </div>
           </div>
 
-          <div class='field comment-form__field'>
-            <label class='hidden' for='CommentForm-body'></label>
+          <div class="field comment-form__field">
+            <label class="hidden" for="CommentForm-body"></label>
             <textarea
-              name='comment[body]'
-              id='CommentForm-body'
-              class='textarea textarea--outline'
-              aria-required='true'
+              name="comment[body]"
+              id="CommentForm-body"
+              class="textarea textarea--outline"
+              aria-required="true"
               required
-              placeholder='{{ 'blogs.blog_post.placeholder_for_comment_message_textarea' | t }}'
+              placeholder="{{ 'blogs.blog_post.placeholder_for_comment_message_textarea' | t }}"
             >{{ form.body }}</textarea>
           </div>
 
@@ -152,22 +145,22 @@
             {% assign error = 'Text' | capitalize | append: ' ' | append: form.errors.messages.body %}
             <script>
               window.addEventListener('load', () => {
-                window.bodyElement.notification.show('{{ error }}', 'warning')
-              })
+                window.bodyElement.notification.show('{{ error }}', 'warning');
+              });
             </script>
           {%- endif -%}
         </div>
 
         {%- if blog.moderated? -%}
-          <div class='comment-form__note'>
+          <div class="comment-form__note">
             {{ 'blogs.blog_post.moderated' | t }}
           </div>
         {%- endif -%}
 
         <button
-          type='submit'
-          class='btn btn--solid image-banner__btn mt-22'
-          aria-label='{{ 'blogs.blog_post.text_for_send_comment_button' | t }}'
+          type="submit"
+          class="btn btn--solid image-banner__btn mt-22"
+          aria-label="{{ 'blogs.blog_post.text_for_send_comment_button' | t }}"
         >
           {{ 'blogs.blog_post.text_for_send_comment_button' | t }}
         </button>

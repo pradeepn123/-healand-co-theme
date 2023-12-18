@@ -20,13 +20,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{block.id}}{
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
@@ -36,32 +29,25 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='product-details section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
-  <div class='section-spacing container container--{{ container_size }}'>
-    <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
+<div class="product-details section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+  <div class="section-spacing container container--{{ container_size }}">
+    <div class="product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}">
       {%- if style == 'tabs' -%}
-        <tabs-component data-selected-tab-id='1'>
-          <div class='product-details__tab-names'>
+        <tabs-component data-selected-tab-id="1">
+          <div class="product-details__tab-names">
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {% assign custom_icon_image = block.settings.custom_icon_image %}
               {% assign icon = block.settings.icon %}
 
               <div
                 data-tabs-name
-                class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}'
-                data-id='{{ forloop.index }}'
-                tabindex='0'
+                class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
+                data-id="{{ forloop.index }}"
+                tabindex="0"
               >
                 {%- if custom_icon_image != blank -%}
                   <img
-                    class='product-details__tab-name-icon lazyload'
+                    class="product-details__tab-name-icon lazyload"
                     {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                   >
                 {%- elsif icon != 'none' -%}
@@ -73,36 +59,29 @@
           </div>
 
           <carousel-component
-            class='carousel product-details__tab-name-carousel'
-            data-contain-scroll='trimSnaps'
-            data-section-id='{{ section.id }}'
+            class="carousel product-details__tab-name-carousel"
+            data-contain-scroll="trimSnaps"
+            data-section-id="{{ section.id }}"
           >
             <div
-              class='carousel__viewport carousel__viewport--overflow embla'
+              class="carousel__viewport carousel__viewport--overflow embla"
               data-carousel-viewport
             >
-              <div class='carousel__container' data-carousel-container>
+              <div class="carousel__container" data-carousel-container>
                 {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   {% assign custom_icon_image = block.settings.custom_icon_image %}
                   {% assign icon = block.settings.icon %}
 
-                  <div class='product-details__tab-name-carousel-slide carousel__slide'>
+                  <div class="product-details__tab-name-carousel-slide carousel__slide">
                     <div
                       data-tabs-name
-                      class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}'
-                      data-id='{{ forloop.index }}'
-                      tabindex='0'
+                      class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
+                      data-id="{{ forloop.index }}"
+                      tabindex="0"
                     >
                       {%- if custom_icon_image != blank -%}
                         <img
-                          class='product-details__tab-name-icon lazyload'
+                          class="product-details__tab-name-icon lazyload"
                           {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                         >
                       {%- elsif icon != 'none' -%}
@@ -116,29 +95,22 @@
             </div>
           </carousel-component>
 
-          <div class='tabs product-details__tabs' data-tabs-container>
+          <div class="tabs product-details__tabs" data-tabs-container>
             <template data-tabs-elements-template>
               {%- for block in section.blocks offset: 1 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 {% assign custom_icon_image = block.settings.custom_icon_image %}
                 {% assign icon = block.settings.icon %}
 
                 {%- case block.type -%}
                   {%- when 'description' -%}
                     <tab-component
-                      class='tab product-details__tab block-{{block.id}}'
-                      aria-hidden='true'
-                      data-id='{{ forloop.index | plus: 1 }}'
+                      class="tab product-details__tab block-{{block.id}}"
+                      aria-hidden="true"
+                      data-id="{{ forloop.index | plus: 1 }}"
                     >
                       <div
                         data-tabs-element-content
-                        class='rte product-details__rte  body-font-weight-from-global-settings'
+                        class="rte product-details__rte  body-font-weight-from-global-settings"
                         {{ block.shopify_attributes }}
                       >
                         {{ product.description }}
@@ -146,9 +118,9 @@
                     </tab-component>
                   {%- when 'collapsible_row' -%}
                     <tab-component
-                      class='tab product-details__tab block-{{block.id}}'
-                      aria-hidden='true'
-                      data-id='{{ forloop.index | plus: 1 }}'
+                      class="tab product-details__tab block-{{block.id}}"
+                      aria-hidden="true"
+                      data-id="{{ forloop.index | plus: 1 }}"
                     >
                       {%- assign image = block.settings.image -%}
                       {%- assign video = block.settings.video -%}
@@ -156,18 +128,18 @@
                       {%- assign text = block.settings.text -%}
 
                       <div
-                        class='product-details__content-tab-content body-font-weight-from-global-settings'
+                        class="product-details__content-tab-content body-font-weight-from-global-settings"
                         data-tabs-element-content
                         {{ block.shopify_attributes }}
                       >
                         {% if text != blank %}
-                          <div class='rte product-details__rte'>
+                          <div class="rte product-details__rte">
                             {{ text }}
                           </div>
                         {% endif %}
 
                         {% if page != blank %}
-                          <div class='rte rte--page product-details__rte'>
+                          <div class="rte rte--page product-details__rte">
                             {{ page.content }}
                           </div>
                         {% endif %}
@@ -176,7 +148,7 @@
                           {% render 'video-with-alt', video: video, class: 'image product-details__image' %}
                         {% elsif image != blank %}
                           <img
-                            class='image product-details__image lazyload'
+                            class="image product-details__image lazyload"
                             {% render 'image-attributes', image: image %}
                           >
                         {% endif %}
@@ -184,12 +156,12 @@
                     </tab-component>
                   {%- when 'custom_liquid' -%}
                     <tab-component
-                      class='tab product-details__tab block-{{block.id}}'
-                      aria-hidden='true'
-                      data-id='{{ forloop.index | plus: 1 }}'
+                      class="tab product-details__tab block-{{block.id}}"
+                      aria-hidden="true"
+                      data-id="{{ forloop.index | plus: 1 }}"
                     >
                       <div
-                        class='rte product-details__rte  body-font-weight-from-global-settings'
+                        class="rte product-details__rte  body-font-weight-from-global-settings"
                         data-tabs-element-content
                         {{ block.shopify_attributes }}
                       >
@@ -206,12 +178,12 @@
 
               {%- when 'description' -%}
                 <tab-component
-                  class='tab product-details__tab block-{{first_block.id}}'
-                  aria-hidden='false'
-                  data-id='1'
+                  class="tab product-details__tab block-{{first_block.id}}"
+                  aria-hidden="false"
+                  data-id="1"
                 >
                   <div
-                    class='rte product-details__rte  body-font-weight-from-global-settings'
+                    class="rte product-details__rte  body-font-weight-from-global-settings"
                     data-tabs-element-content
                     {{ first_block.shopify_attributes }}
                   >
@@ -220,9 +192,9 @@
                 </tab-component>
               {%- when 'collapsible_row' -%}
                 <tab-component
-                  class='tab product-details__tab block-{{first_block.id}}'
-                  aria-hidden='false'
-                  data-id='1'
+                  class="tab product-details__tab block-{{first_block.id}}"
+                  aria-hidden="false"
+                  data-id="1"
                 >
                   {%- assign image = first_block.settings.image -%}
                   {%- assign video = first_block.settings.video -%}
@@ -230,18 +202,18 @@
                   {%- assign text = first_block.settings.text -%}
 
                   <div
-                    class='product-details__content-tab-content body-font-weight-from-global-settings'
+                    class="product-details__content-tab-content body-font-weight-from-global-settings"
                     data-tabs-element-content
                     {{ first_block.shopify_attributes }}
                   >
                     {% if text != blank %}
-                      <div class='rte product-details__rte'>
+                      <div class="rte product-details__rte">
                         {{ text }}
                       </div>
                     {% endif %}
 
                     {% if page != blank %}
-                      <div class='rte rte--page product-details__rte'>
+                      <div class="rte rte--page product-details__rte">
                         {{ page.content }}
                       </div>
                     {% endif %}
@@ -251,7 +223,7 @@
                         {% render 'video-with-alt', video: video, class: 'image product-details__image' %}
                       {% elsif image != blank %}
                         <img
-                          class='image product-details__image lazyload'
+                          class="image product-details__image lazyload"
                           {% render 'image-attributes', image: image %}
                         >
                       {% endif %}
@@ -260,12 +232,12 @@
                 </tab-component>
               {%- when 'custom_liquid' -%}
                 <tab-component
-                  class='tab product-details__tab block-{{ first_block.id }}'
-                  aria-hidden='false'
-                  data-id='1'
+                  class="tab product-details__tab block-{{ first_block.id }}"
+                  aria-hidden="false"
+                  data-id="1"
                 >
                   <div
-                    class='rte product-details__rte  body-font-weight-from-global-settings'
+                    class="rte product-details__rte  body-font-weight-from-global-settings"
                     data-tabs-element-content
                     {{ first_block.shopify_attributes }}
                   >
@@ -277,32 +249,25 @@
         </tabs-component>
       {%- else -%}
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {% assign custom_icon_image = block.settings.custom_icon_image %}
           {% assign icon = block.settings.icon %}
 
           {%- case block.type -%}
             {%- when 'description' -%}
               <accordeon-component
-                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
+                class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+                data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+                data-section-id="{{ section.id }}"
+                data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
                 <accordeon-btn
-                  class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn'
-                  tabindex='0'
+                  class="accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn"
+                  tabindex="0"
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      class='accordeon-plus__btn-icon lazyload'
+                      class="accordeon-plus__btn-icon lazyload"
                       {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
@@ -311,9 +276,9 @@
                   {{ block.settings.title }}
                   {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                 </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                  <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
-                    <div class='rte product-details__rte  body-font-weight-from-global-settings'>
+                <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+                  <div class="accordeon-plus__content product-details__accordeon-content" data-accordeon-content>
+                    <div class="rte product-details__rte  body-font-weight-from-global-settings">
                       {{ product.description }}
                     </div>
                   </div>
@@ -321,19 +286,19 @@
               </accordeon-component>
             {%- when 'collapsible_row' -%}
               <accordeon-component
-                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
+                class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+                data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+                data-section-id="{{ section.id }}"
+                data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
                 <accordeon-btn
-                  class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn'
-                  tabindex='0'
+                  class="accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn"
+                  tabindex="0"
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      class='accordeon-plus__btn-icon lazyload'
+                      class="accordeon-plus__btn-icon lazyload"
                       {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
@@ -342,22 +307,22 @@
                   {{ block.settings.title }}
                   {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                 </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                  <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
+                <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+                  <div class="accordeon-plus__content product-details__accordeon-content" data-accordeon-content>
                     {%- assign image = block.settings.image -%}
                     {%- assign video = block.settings.video -%}
                     {%- assign page = block.settings.page -%}
                     {%- assign text = block.settings.text -%}
 
-                    <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
+                    <div class="product-details__content-tab-content body-font-weight-from-global-settings">
                       {% if text != blank %}
-                        <div class='rte product-details__rte'>
+                        <div class="rte product-details__rte">
                           {{ text }}
                         </div>
                       {% endif %}
 
                       {% if page != blank %}
-                        <div class='rte rte--page product-details__rte'>
+                        <div class="rte rte--page product-details__rte">
                           {{ page.content }}
                         </div>
                       {% endif %}
@@ -366,7 +331,7 @@
                         {% render 'video-with-alt', video: video, class: 'image product-details__image' %}
                       {% elsif image != blank %}
                         <img
-                          class='image product-details__image lazyload'
+                          class="image product-details__image lazyload"
                           {% render 'image-attributes', image: image %}
                         >
                       {% endif %}
@@ -376,19 +341,19 @@
               </accordeon-component>
             {%- when 'custom_liquid' -%}
               <accordeon-component
-                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
+                class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+                data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+                data-section-id="{{ section.id }}"
+                data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
                 <accordeon-btn
-                  class='accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn'
-                  tabindex='0'
+                  class="accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn"
+                  tabindex="0"
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      class='accordeon-plus__btn-icon lazyload'
+                      class="accordeon-plus__btn-icon lazyload"
                       {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
@@ -397,9 +362,9 @@
                   {{ block.settings.title }}
                   {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                 </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                  <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
-                    <div class='rte product-details__rte  body-font-weight-from-global-settings'>
+                <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+                  <div class="accordeon-plus__content product-details__accordeon-content" data-accordeon-content>
+                    <div class="rte product-details__rte  body-font-weight-from-global-settings">
                       {{ block.settings.custom_liquid }}
                     </div>
                   </div>

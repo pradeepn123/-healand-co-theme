@@ -1,14 +1,5 @@
 <div class='cart-warning'>
   <h1 class='cart-warning__title h6'>{{ 'general.empty_cart_page.title' | t }}</h1>
-  {% if customer.tags contains 'WS_Wholesale' %}
-    <a
-      href='https://healandco.co/collections/quick-order'
-      class='btn btn--lg btn--solid'
-      aria-label='{{ 'general.empty_cart_page.link_to_continue_shopping' | t }}'
-    >
-      {{ 'general.empty_cart_page.link_to_continue_shopping' | t }}
-    </a>
-  {% else %}
   <a
     href='https://healandco.co/collections/shop-all'
     class='btn btn--lg btn--solid'
@@ -16,5 +7,4 @@
   >
     {{ 'general.empty_cart_page.link_to_continue_shopping' | t }}
   </a>
-  {% endif %}
 </div>

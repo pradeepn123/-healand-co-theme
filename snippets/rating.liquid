@@ -3,33 +3,34 @@
   assign half_star_index = value | minus: decimal | plus: 1
 -%}
 
-<div class='rating {{ class }}'>
+<div class="rating {{ class }}">
   {%- for i in (1..5) -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: i %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
     {%- if forloop.index <= value -%}
-      <svg class='rating__star' viewbox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <svg class="rating__star" viewbox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 0L11.3276 5.79629L17.5595 6.21885L12.7662 10.2237L14.2901 16.2812L9 12.96L3.70993 16.2812L5.23382 10.2237L0.440492 6.21885L6.67237 5.79629L9 0Z" fill="#F3AF57"/>
       </svg>
     {%- elsif forloop.index == half_star_index and decimal > 0 -%}
-      <svg class='rating__star' viewbox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <svg class="rating__star" viewbox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 0L11.3276 5.79629L17.5595 6.21885L12.7662 10.2237L14.2901 16.2812L9 12.96L3.70993 16.2812L5.23382 10.2237L0.440492 6.21885L6.67237 5.79629L9 0Z" fill="#F3AF57" opacity="0.35"/>
         <path d="M8.99994 0V12.96L3.70987 16.2812L5.23375 10.2237L0.44043 6.21885L6.67231 5.79629L8.99994 0Z" fill="#F3AF57"/>
       </svg>
     {%- else -%}
-      <svg class='rating__star rating__star--transparent' viewbox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <svg
+        class="rating__star rating__star--transparent"
+        viewbox="0 0 18 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path d="M9 0L11.3276 5.79629L17.5595 6.21885L12.7662 10.2237L14.2901 16.2812L9 12.96L3.70993 16.2812L5.23382 10.2237L0.440492 6.21885L6.67237 5.79629L9 0Z" fill="#F3AF57"/>
       </svg>
     {%- endif -%}
   {%- endfor -%}
 
   {%- if rating_count != blank and rating_count > 0 -%}
-    <div class='rating__count'>({{- rating_count -}})</div>
+    <div class="rating__count">
+      (
+      {{- rating_count -}}
+      )
+    </div>
   {%- endif -%}
 </div>
- 

@@ -64,38 +64,39 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
-  <div class='section-spacing container container--{{ container_size }} newsletter__outer-container {% if container_size == 'full-screen' %} newsletter__outer-container--full-screen{% endif %}'>
-    <div class='newsletter {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
-      <div class='newsletter__content-wrap'>
+<div class="section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+  <div class="section-spacing container container--{{ container_size }} newsletter__outer-container {% if container_size == 'full-screen' %} newsletter__outer-container--full-screen{% endif %}">
+    <div class="newsletter {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}">
+      <div class="newsletter__content-wrap">
         {%- if section.blocks.size > 0 -%}
-          <div class='newsletter__content newsletter__content--desktop {% if desktop_content_background != 'none' %} newsletter__content--with-{{ desktop_content_background }}-background{% endif %}' data-aos="fade-up">
+          <div
+            class="newsletter__content newsletter__content--desktop {% if desktop_content_background != 'none' %} newsletter__content--with-{{ desktop_content_background }}-background{% endif %}"
+            data-aos="fade-up"
+          >
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- case block.type -%}
                 {%- when 'caption' -%}
                   {%- if block.settings.caption != blank -%}
-                    <div class='caption newsletter__caption block-{{block.id}}' {{ block.shopify_attributes }}>
+                    <div class="caption newsletter__caption block-{{block.id}}" {{ block.shopify_attributes }}>
                       {{ block.settings.caption }}
                     </div>
                   {%- endif -%}
                 {%- when 'title' -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }} style="color: {{block.settings.color}}">
+                    <h2
+                      class="block-{{block.id}} {{ block.settings.heading_size }}"
+                      {{ block.shopify_attributes }}
+                      style="color: {{block.settings.color}}"
+                    >
                       {{ block.settings.title }}
                     </h2>
                   {%- endif -%}
                 {%- when 'text' -%}
                   {%- if block.settings.text != blank -%}
                     <div
-                      class='rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings'
-                      {{ block.shopify_attributes }} style="color: {{block.settings.color}}"
+                      class="rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings"
+                      {{ block.shopify_attributes }}
+                      style="color: {{block.settings.color}}"
                     >
                       {{ block.settings.text }}
                     </div>
@@ -103,42 +104,53 @@
                 {%- when 'subscribe' -%}
                   {%- form 'customer', id: 'DesktopNewsletterSectionForm', class: 'newsletter__form block-{{block.id}}' -%}
                     <input
-                      name='contact[tags]'
-                      type='hidden'
-                      value='newsletter'
-                      id='DesktopNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
+                      name="contact[tags]"
+                      type="hidden"
+                      value="newsletter"
+                      id="DesktopNewsletterSectionForm-ContactTagsInput-{{ form.id }}"
                     >
-                    <div class='field newsletter__field' {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %} >
-                      <label class='visually-hidden' for='DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
+                    <div
+                      class="field newsletter__field"
+                      {% if section.settings.newsletter_button == 'image' %}
+                        style="flex-wrap: nowrap;"
+                      {% endif %}
+                    >
+                      <label class="visually-hidden" for="DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}">
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
                       <input
-                        type='email'
-                        name='contact[email]'
-                        class='input input--large input--{{ block.settings.input_style }} newsletter__input email-bar'
-                        value='{{ form.email }}'
-                        aria-required='true'
-                        autocorrect='off'
-                        autocapitalize='off'
-                        autocomplete='email'
-                        placeholder='{{ 'forms.newsletter.email_input_placeholder' | t }}'
+                        type="email"
+                        name="contact[email]"
+                        class="input input--large input--{{ block.settings.input_style }} newsletter__input email-bar"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        placeholder="{{ 'forms.newsletter.email_input_placeholder' | t }}"
                         required
-                        id='DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}'
+                        id="DesktopNewsletterSectionForm-ContactEmailInput-{{ form.id }}"
                       >
                       <button
-                        class='btn btn--solid btn--lg newsletter__input-btn news--button'
-                        name='commit'
-                        aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
-                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; border:0; outline:0" {% endif %} 
+                        class="btn btn--solid btn--lg newsletter__input-btn news--button"
+                        name="commit"
+                        aria-label="{{ 'forms.newsletter.subscribe_button_label' | t }}"
+                        {% if section.settings.newsletter_button == 'image' %}
+                          style="padding:0 !important; border:0; outline:0"
+                        {% endif %}
                       >
                         <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
-                        {%- if section.settings.newsletter_button == "text" -%}
+                        {%- if section.settings.newsletter_button == 'text' -%}
                           {{ section.settings.newsletter_text }}
-                        {%- elsif section.settings.newsletter_button == "image" -%}
+                        {%- elsif section.settings.newsletter_button == 'image' -%}
                           {% if section.settings.newsletter_image != blank %}
-                            <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
+                            <img
+                              class="news_image"
+                              src="{{ section.settings.newsletter_image  | image_url }}"
+                              alt="button icon"
+                            >
                           {% endif %}
-                       {%- endif -%}
+                        {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -149,49 +161,47 @@
                       -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ error_message }}', 'warning')
-                        })
+                          window.bodyElement.notification.show('{{ error_message }}', 'warning');
+                        });
                       </script>
                     {%- endif -%}
                     {%- if form.posted_successfully? -%}
                       {%- assign success_message = 'forms.newsletter.success' | t -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ success_message }}', 'success')
-                        })
+                          window.bodyElement.notification.show('{{ success_message }}', 'success');
+                        });
                       </script>
                     {%- endif -%}
                   {%- endform -%}
               {%- endcase -%}
             {%- endfor -%}
           </div>
-          <div class='newsletter__content newsletter__content--mobile {% if mobile_content_background != 'none' %} newsletter__content--with-{{ mobile_content_background }}-background{% endif %}'>
+          <div class="newsletter__content newsletter__content--mobile {% if mobile_content_background != 'none' %} newsletter__content--with-{{ mobile_content_background }}-background{% endif %}">
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- case block.type -%}
                 {%- when 'caption' -%}
                   {%- if block.settings.caption != blank -%}
-                    <div class='caption newsletter__caption block-{{block.id}}' {{ block.shopify_attributes }}>
+                    <div class="caption newsletter__caption block-{{block.id}}" {{ block.shopify_attributes }}>
                       {{ block.settings.caption }}
                     </div>
                   {%- endif -%}
                 {%- when 'title' -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class='block-{{block.id}} {{ block.settings.heading_size }}' {{ block.shopify_attributes }} style="color: {{block.settings.color}}">
-                      {{ block.settings.title }} 
+                    <h2
+                      class="block-{{block.id}} {{ block.settings.heading_size }}"
+                      {{ block.shopify_attributes }}
+                      style="color: {{block.settings.color}}"
+                    >
+                      {{ block.settings.title }}
                     </h2>
                   {%- endif -%}
                 {%- when 'text' -%}
                   {%- if block.settings.text != blank -%}
                     <div
-                      class='rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings'
-                      {{ block.shopify_attributes }} style="color: {{block.settings.color}}"
+                      class="rte {{ block.settings.body_size }} newsletter__text block-{{block.id}} body-font-weight-from-global-settings"
+                      {{ block.shopify_attributes }}
+                      style="color: {{block.settings.color}}"
                     >
                       {{ block.settings.text }}
                     </div>
@@ -199,41 +209,54 @@
                 {%- when 'subscribe' -%}
                   {%- form 'customer', id: 'MobileNewsletterSectionForm', class: 'newsletter__form block-{{block.id}}' -%}
                     <input
-                      name='contact[tags]'
-                      type='hidden'
-                      value='newsletter'
-                      id='MobileNewsletterSectionForm-ContactTagsInput-{{ form.id }}'
+                      name="contact[tags]"
+                      type="hidden"
+                      value="newsletter"
+                      id="MobileNewsletterSectionForm-ContactTagsInput-{{ form.id }}"
                     >
-                    <div class='field newsletter__field'  {% if section.settings.newsletter_button == 'text' %} style="flex-wrap:wrap" {% endif %} {% if section.settings.newsletter_button == 'image' %} style="flex-wrap: nowrap;" {% endif %}>
-                      <label class='visually-hidden' for='MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}'>
+                    <div
+                      class="field newsletter__field"
+                      {% if section.settings.newsletter_button == 'text' %}
+                        style="flex-wrap:wrap"
+                      {% endif %}
+                      {% if section.settings.newsletter_button == 'image' %}
+                        style="flex-wrap: nowrap;"
+                      {% endif %}
+                    >
+                      <label class="visually-hidden" for="MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}">
                         {{- 'forms.newsletter.email_input_label' | t -}}
                       </label>
                       <input
-                        type='email'
-                        name='contact[email]'
-                        class='input input--large input--{{ block.settings.input_style }} newsletter__input email-bar'
-                        value='{{ form.email }}'
-                        aria-required='true'
-                        autocorrect='off'
-                        autocapitalize='off'
-                        autocomplete='email'
-                        placeholder='{{ 'forms.newsletter.email_input_placeholder' | t }}'
+                        type="email"
+                        name="contact[email]"
+                        class="input input--large input--{{ block.settings.input_style }} newsletter__input email-bar"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        placeholder="{{ 'forms.newsletter.email_input_placeholder' | t }}"
                         required
-                        id='MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}'
+                        id="MobileNewsletterSectionForm-ContactEmailInput-{{ form.id }}"
                       >
                       <button
-                        class='btn btn--solid btn--lg newsletter__input-btn'
-                        name='commit'
-                        aria-label='{{ 'forms.newsletter.subscribe_button_label' | t }}'
-                        {% if section.settings.newsletter_button == 'image' %} style="padding:0 !important; border:0; outline:0" {% endif %}
+                        class="btn btn--solid btn--lg newsletter__input-btn"
+                        name="commit"
+                        aria-label="{{ 'forms.newsletter.subscribe_button_label' | t }}"
+                        {% if section.settings.newsletter_button == 'image' %}
+                          style="padding:0 !important; border:0; outline:0"
+                        {% endif %}
                       >
-                      
                         <!-- {{ 'forms.newsletter.subscribe_button_label' | t }} -->
-                        {%- if section.settings.newsletter_button == "text" -%}
+                        {%- if section.settings.newsletter_button == 'text' -%}
                           {{ section.settings.newsletter_text }}
-                        {%- elsif section.settings.newsletter_button == "image" -%}
-                       <img class="news_image" src="{{ section.settings.newsletter_image  | image_url }}" alt="button icon" />
-                       {%- endif -%}
+                        {%- elsif section.settings.newsletter_button == 'image' -%}
+                          <img
+                            class="news_image"
+                            src="{{ section.settings.newsletter_image  | image_url }}"
+                            alt="button icon"
+                          >
+                        {%- endif -%}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -244,16 +267,16 @@
                       -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ error_message }}', 'warning')
-                        })
+                          window.bodyElement.notification.show('{{ error_message }}', 'warning');
+                        });
                       </script>
                     {%- endif -%}
                     {%- if form.posted_successfully? -%}
                       {%- assign success_message = 'forms.newsletter.success' | t -%}
                       <script>
                         window.addEventListener('load', () => {
-                          window.bodyElement.notification.show('{{ success_message }}', 'success')
-                        })
+                          window.bodyElement.notification.show('{{ success_message }}', 'success');
+                        });
                       </script>
                     {%- endif -%}
                   {%- endform -%}
@@ -326,7 +349,7 @@
       "label": "t:sections.general_section_settings.color_scheme_label",
       "info": "t:sections.general_section_settings.color_scheme_tip"
     },
-    
+
     {
       "type": "select",
       "id": "newsletter_button",
@@ -343,19 +366,18 @@
       "default": "image",
       "label": "Newsletter Button Style"
     },
-    
-        {
-          "type": "text",
-          "id": "newsletter_text",
-          "label": "Newsletter text"
-        },
-        {
-          "type": "image_picker",
-          "id": "newsletter_image",
-          "label": "Newsletter Image"
-        },
- 
- 
+
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter text"
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_image",
+      "label": "Newsletter Image"
+    },
+
     {
       "type": "checkbox",
       "id": "enable_background_around_container",
@@ -647,9 +669,9 @@
           "label": "t:sections.newsletter.title_block_label"
         },
         {
-          "type":"color",
-          "id":"color",
-          "label":"Heading color"
+          "type": "color",
+          "id": "color",
+          "label": "Heading color"
         },
         {
           "type": "select",
@@ -704,9 +726,9 @@
           "label": "t:sections.newsletter.text_block_text_label"
         },
         {
-          "type":"color",
-          "id":"color",
-          "label":"Sub-text color"
+          "type": "color",
+          "id": "color",
+          "label": "Sub-text color"
         },
         {
           "type": "select",

@@ -34,24 +34,17 @@
   </h2>
 </div>
 
-<div class='section-{{ section.id }} section-spacing color-{{ color_scheme }} {% if enable_background_around_container %} featured-articles--color-background  {% endif %}'>
-  <div class='featured-articles__container container container--{{ container_size }} {% if container_size == 'full-screen' %} featured-articles__container-full-screen{% endif %}'>
+<div class="section-{{ section.id }} section-spacing color-{{ color_scheme }} {% if enable_background_around_container %} featured-articles--color-background  {% endif %}">
+  <div class="featured-articles__container container container--{{ container_size }} {% if container_size == 'full-screen' %} featured-articles__container-full-screen{% endif %}">
     {%- if section.blocks.size > 0 -%}
       <carousel-component
-        class='carousel featured-articles__carousel'
-        data-section-id='{{ section.id }}'
-        data-animation='fade'
+        class="carousel featured-articles__carousel"
+        data-section-id="{{ section.id }}"
+        data-animation="fade"
       >
-        <div class='embla carousel__viewport featured-articles__carousel-viewport' data-carousel-viewport>
-          <div class='carousel__container featured-articles__carousel-container' data-carousel-container>
+        <div class="embla carousel__viewport featured-articles__carousel-viewport" data-carousel-viewport>
+          <div class="carousel__container featured-articles__carousel-container" data-carousel-container>
             {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- liquid
                 assign options = block.settings
                 assign article = options.article
@@ -72,54 +65,56 @@
               -%}
 
               <div
-                class='featured-article carousel__slide block-{{ block.id }}'
-                block-id='{{ block.id }}'
+                class="featured-article carousel__slide block-{{ block.id }}"
+                block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
-                <div class='featured-article__details-wrap' style="background-color: {{section.settings.text_bg}}">
-                  <div class='featured-article__details'>
+                <div class="featured-article__details-wrap" style="background-color: {{section.settings.text_bg}}">
+                  <div class="featured-article__details">
                     {%- if section.blocks.size > 1 -%}
-                      <h2 class='featured-article__order-number'>
+                      <h2 class="featured-article__order-number">
                         {% if forloop.index < 10 %}0{% endif -%}
                         {{- forloop.index }}
                       </h2>
                     {%- endif -%}
-                    <div class='featured-article__content'>
-                      <div class='featured-article__meta'>
+                    <div class="featured-article__content">
+                      <div class="featured-article__meta">
                         {%- if show_author -%}
-                          <span class='featured-article__meta-item'>{{ author }}</span>
+                          <span class="featured-article__meta-item">{{ author }}</span>
                         {%- endif -%}
                         {%- if show_date -%}
-                          <span class='featured-article__meta-item'>{{ date }}</span>
+                          <span class="featured-article__meta-item">{{ date }}</span>
                         {%- endif -%}
                         {%- if show_comment_count -%}
-                          <span class='featured-article__meta-item'>
+                          <span class="featured-article__meta-item">
                             {{- 'sections.featured_blog_posts.comments_count' | t: count: comments_count -}}
                           </span>
                         {%- endif -%}
                       </div>
                       {%- if title != blank -%}
-                        <h4 class='featured-article__title' style="color: {{ block.settings.article_title_color }}">
+                        <h4 class="featured-article__title" style="color: {{ block.settings.article_title_color }}">
                           <a
-                            class='unstyled-link'
-                            href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
-                            aria-label='{{ title }}'
+                            class="unstyled-link"
+                            href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
+                            aria-label="{{ title }}"
                           >
                             {{- title -}}
                           </a>
                         </h4>
                       {%- endif -%}
                       {%- if show_subheading and excerpt_or_content != blank -%}
-                        <div class='featured-article__text' style="color: {{ block.settings.article_text_color }}">{{ excerpt_or_content }}</div>
+                        <div class="featured-article__text" style="color: {{ block.settings.article_text_color }}">
+                          {{ excerpt_or_content }}
+                        </div>
                       {%- endif -%}
                       {%- if show_read_more -%}
                         <a
-                          class='link'
-                          href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
-                          aria-label='{{ 'sections.featured_blog_posts.read_more_link_aria_label' | t: blog_post_title: title }}'
+                          class="link"
+                          href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
+                          aria-label="{{ 'sections.featured_blog_posts.read_more_link_aria_label' | t: blog_post_title: title }}"
                           style="color: {{ block.settings.read_more_text_color }}"
                         >
-                          <span class='link__text'>{{ 'sections.featured_blog_posts.read_more_link' | t }}</span>
+                          <span class="link__text">{{ 'sections.featured_blog_posts.read_more_link' | t }}</span>
                           {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
                         </a>
                       {%- endif -%}
@@ -127,13 +122,13 @@
                   </div>
                 </div>
                 <a
-                  class='unstyled-link featured-article__link zoom-parent-for-hover'
-                  href='{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}'
-                  aria-label='{{ 'sections.featured_blog_posts.read_more_link_aria_label' | t: blog_post_title: title }}'
+                  class="unstyled-link featured-article__link zoom-parent-for-hover"
+                  href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
+                  aria-label="{{ 'sections.featured_blog_posts.read_more_link_aria_label' | t: blog_post_title: title }}"
                 >
                   {%- if image != blank -%}
                     <img
-                      class='image featured-article__image zoom lazyload'
+                      class="image featured-article__image zoom lazyload"
                       {% render 'image-attributes', image: image %}
                     >
                   {%- else -%}
@@ -149,12 +144,12 @@
         </div>
 
         {%- if section.blocks.size > 1 -%}
-          <div class='featured-articles__btns-wrap'>
-            <div class='featured-articles__btns'>
+          <div class="featured-articles__btns-wrap">
+            <div class="featured-articles__btns">
               <carousel-btn
-                class='carousel-btn featured-articles__carousel-btn'
-                data-scroll-direction='prev'
-                tabindex='0'
+                class="carousel-btn featured-articles__carousel-btn"
+                data-scroll-direction="prev"
+                tabindex="0"
                 style="background-color: {{section.settings.carousel_btn_color}}"
               >
                 {% render 'icon',
@@ -163,9 +158,9 @@
                 %}
               </carousel-btn>
               <carousel-btn
-                class='carousel-btn featured-articles__carousel-btn'
-                data-scroll-direction='next'
-                tabindex='0'
+                class="carousel-btn featured-articles__carousel-btn"
+                data-scroll-direction="next"
+                tabindex="0"
                 style="background-color: {{section.settings.carousel_btn_color}}"
               >
                 {% render 'icon',
@@ -176,7 +171,7 @@
               {% style %}
                 .carousel-btn[disabled] {
                   background-color: {{section.settings.carousel_btn_color}};
-                  opacity: 0.7; 
+                  opacity: 0.7;
                 }
               {% endstyle %}
             </div>

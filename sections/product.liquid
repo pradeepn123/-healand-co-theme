@@ -1,8 +1,3 @@
-{%- comment -%} Wholesale_Club_Product_Visibility_Resource_Page Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility" %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% render "wc_page_replacement" %}
-{%- else -%}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -38,19 +33,16 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='{{ section.settings.section_custom_class }} product section section-{{ section.id }} color-{{ color_scheme }} section-spacing product--page {% if block_layout == 'two-column' or block_layout == 'one-column' %} product--with-desktop-media-grid {% endif %} {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' or block_layout == 'thumbnails-bottom' %}  {% if container_size == 'page-width' %} product--with-page-width-container-and-desktop-media-carousel {% else %} product--with-desktop-media-carousel {% endif %}  {% endif %}'>
-  <div class='container container--{{ container_size }} product__container'>
+<div class="{{ section.settings.section_custom_class }} product section section-{{ section.id }} color-{{ color_scheme }} section-spacing product--page {% if block_layout == 'two-column' or block_layout == 'one-column' %} product--with-desktop-media-grid {% endif %} {% if block_layout == 'thumbnails-left' or block_layout == 'thumbnails-right' or block_layout == 'thumbnails-bottom' %}  {% if container_size == 'page-width' %} product--with-page-width-container-and-desktop-media-carousel {% else %} product--with-desktop-media-carousel {% endif %}  {% endif %}">
+  <div class="container container--{{ container_size }} product__container">
     {%- render 'product', product: product, section: section, sectionId: sectionIdWithMainSectionPrefix -%}
   </div>
 </div>
 
-<div style='display: none;' data-quick-view-product-id='{{ product.id }}'>
+<div style="display: none;" data-quick-view-product-id="{{ product.id }}">
   {%- render 'quick-view', product: product, section: section, sectionId: sectionIdWithQuickViewPrefix -%}
 </div>
 
-
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_Resource_Page End {%- endcomment -%}
 {% schema %}
 {
   "name": "t:sections.product.name",
@@ -289,7 +281,7 @@
         {
           "type": "text",
           "id": "upsell_headings",
-          "label": "Upsell Headings", 
+          "label": "Upsell Headings",
           "default": "SAVE MORE WITH BUNDLES"
         },
         {

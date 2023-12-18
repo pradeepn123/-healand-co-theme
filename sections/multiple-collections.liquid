@@ -99,13 +99,6 @@
       {%- endif -%}
       <div class='collection__tab-list'>
         {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           <div
             data-tabs-name
             class='tab-name collection__tab-name {% if forloop.index == 1 %}selected{% endif %}'
@@ -127,13 +120,6 @@
         >
           <div class='carousel__container' data-carousel-container>
             {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               <div
                 data-tabs-name
                 class='carousel__slide tab-name collection__tab-name {% if forloop.index == 1 %}selected{% endif %}'
@@ -160,13 +146,6 @@
       {%- endif -%}
       <div class='collection__tab-list'>
         {%- for collection in prepared_collection_list_placeholder -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           <div
             data-tabs-name
             class='tab-name collection__tab-name {% if forloop.index == 1 %}selected{% endif %}'
@@ -188,13 +167,6 @@
         >
           <div class='carousel__container' data-carousel-container>
             {%- for collection in prepared_collection_list_placeholder -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               <div
                 data-tabs-name
                 class='carousel__slide tab-name collection__tab-name {% if forloop.index == 1 %}selected{% endif %}'
@@ -220,13 +192,6 @@
         <div class='tabs' data-tabs-container>
           <template data-tabs-elements-template>
             {%- for collection in collection_list offset: 1 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               <tab-component
                 class='tab'
                 aria-hidden='true'
@@ -298,15 +263,7 @@
     {%- elsif collection_list.count == 1 -%}
       {{ section_header }}
 
-      {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-        {% if section_layout contains 'carousel' %}
+      {%- for collection in collection_list -%}arousel' %}
           {% render 'featured-collection-carousel',
             featured_collection: collection,
             enable_autoplay: enable_autoplay,
@@ -340,14 +297,6 @@
         <div class='tabs' data-tabs-container>
           <template data-tabs-elements-template>
             {%- for collection in prepared_collection_list_placeholder offset: 1 -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-              <tab-component
                 class='tab'
                 aria-hidden='true'
                 data-id='{{ forloop.index | plus: 1 }}'

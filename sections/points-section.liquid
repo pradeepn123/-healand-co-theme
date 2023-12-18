@@ -3,164 +3,159 @@
 {% endif %}
 
 <div class="points_section_container" style="background:{{section.settings.points_section_bg}}">
-    <h2 style="color:{{ section.settings.points_section_header_color }}">{{ section.settings.points_section_header }}</h2>
-    <div class="points_section_content">
+  <h2 style="color:{{ section.settings.points_section_header_color }}">{{ section.settings.points_section_header }}</h2>
+  <div class="points_section_content">
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-        {% if block.settings.points_title != blank and block.settings.points_text != blank %}
-            {% if block.settings.points_svg_icon != blank or block.settings.points_icon != blank %}
-            <div class="points_column">
-                <div class="points_icon">
-                    {% if block.settings.points_svg_icon != blank %}
-                        <div class="svg_icon">
-                            {{ block.settings.points_svg_icon }}
-                            {% style %}
-                                .svg_icon svg rect, .svg_icon svg path {
-                                    stroke: {{ block.settings.points_svg_icon_color }}
-                                }
-                            {% endstyle %}
-                        </div>
-                    {% else %}
-                        <img src="{{ block.settings.points_icon | img_url: 'master' }}" />
-                    {% endif %}
+      {% if block.settings.points_title != blank and block.settings.points_text != blank %}
+        {% if block.settings.points_svg_icon != blank or block.settings.points_icon != blank %}
+          <div class="points_column">
+            <div class="points_icon">
+              {% if block.settings.points_svg_icon != blank %}
+                <div class="svg_icon">
+                  {{ block.settings.points_svg_icon }}
+                  {% style %}
+                    .svg_icon svg rect, .svg_icon svg path {
+                        stroke: {{ block.settings.points_svg_icon_color }}
+                    }
+                  {% endstyle %}
                 </div>
-                <div class="points_text_content">
-                    <div class="points_text_title" style="color:{{ block.settings.points_title_color }}">
-                        {{ block.settings.points_title }}
-                    </div>
-                    <div class="points_text" style="color:{{ block.settings.points_text_color }}">
-                        {{ block.settings.points_text }}
-                    </div>
-                </div>
+              {% else %}
+                <img src="{{ block.settings.points_icon | img_url: 'master' }}">
+              {% endif %}
             </div>
+            <div class="points_text_content">
+              <div class="points_text_title" style="color:{{ block.settings.points_title_color }}">
+                {{ block.settings.points_title }}
+              </div>
+              <div class="points_text" style="color:{{ block.settings.points_text_color }}">
+                {{ block.settings.points_text }}
+              </div>
+            </div>
+          </div>
         {% endif %}
-        {% endif %}
+      {% endif %}
     {% endfor %}
-    </div>
-    <div class="button-wrapper" style="justify-content: {{ section.settings.points_section_btn_alignment }}">
-        <a class="points_section_btn_link" href="{{ section.settings.points_section_btn_link }}"><button
-            class='btn'
-            type='button'
-            style="background-color:{{ section.settings.points_section_btn_color }}; color:{{ section.settings.points_section_btn_text_color }}">
-            {{ section.settings.points_section_btn }}
-        </button></a>
-    </div>
+  </div>
+  <div class="button-wrapper" style="justify-content: {{ section.settings.points_section_btn_alignment }}">
+    <a class="points_section_btn_link" href="{{ section.settings.points_section_btn_link }}"
+      ><button
+        class="btn"
+        type="button"
+        style="background-color:{{ section.settings.points_section_btn_color }}; color:{{ section.settings.points_section_btn_text_color }}"
+      >
+        {{ section.settings.points_section_btn }}
+      </button></a
+    >
+  </div>
 </div>
 
 {% schema %}
 {
-    "name": "Points section",
-    "settings": [
+  "name": "Points section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "points_section_bg",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "points_section_header",
+      "label": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "points_section_header_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "text",
+      "id": "points_section_btn",
+      "label": "Button Label",
+      "default": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "points_section_btn_link",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "points_section_btn_color",
+      "label": "Button Color"
+    },
+    {
+      "type": "color",
+      "id": "points_section_btn_text_color",
+      "label": "Button Text Color"
+    },
+    {
+      "type": "select",
+      "id": "points_section_btn_alignment",
+      "label": "Button Alignment",
+      "options": [
         {
-            "type": "color",
-            "id": "points_section_bg",
-            "label": "Background Color"
+          "value": "flex-start",
+          "label": "Flex Start"
         },
         {
-            "type": "text",
-            "id": "points_section_header",
-            "label": "Heading"
+          "value": "center",
+          "label": "Center"
         },
         {
-            "type": "color",
-            "id": "points_section_header_color",
-            "label": "Heading Color"
-        },
-        {
-            "type": "text",
-            "id": "points_section_btn",
-            "label": "Button Label",
-            "default": "Button Text"
-        },
-        {
-            "type": "url",
-            "id": "points_section_btn_link",
-            "label": "Button URL"
-        },
-        {
-            "type": "color",
-            "id": "points_section_btn_color",
-            "label": "Button Color"
-        },
-        {
-            "type": "color",
-            "id": "points_section_btn_text_color",
-            "label": "Button Text Color"
-        },
-        {
-            "type": "select",
-            "id": "points_section_btn_alignment",
-            "label": "Button Alignment",
-            "options": [
-                {
-                    "value": "flex-start",
-                    "label": "Flex Start"
-                },
-                {
-                    "value": "center",
-                    "label": "Center"
-                },
-                {
-                    "value": "flex-end",
-                    "label": "Flex End"
-                }
-            ]
+          "value": "flex-end",
+          "label": "Flex End"
         }
-
-    ],
-    "blocks":[
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Points Content",
+      "type": "select",
+      "settings": [
         {
-            "name": "Points Content",
-            "type": "select",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "points_title",
-                    "label": "Points Title"
-                },
-                {
-                    "type": "color",
-                    "id": "points_title_color",
-                    "label": "Text Title Color"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "points_icon",
-                    "label": "Points Icon"
-                },
-                {
-                    "type": "html",
-                    "id": "points_svg_icon",
-                    "label": "Points SVG Icon"
-                },
-                {
-                    "type": "color",
-                    "id": "points_svg_icon_color",
-                    "label": "Points SVG Icon Color"
-                },
-                {
-                    "type": "text",
-                    "id": "points_text",
-                    "label": "Points Text"
-                },
-                {
-                    "type": "color",
-                    "id": "points_text_color",
-                    "label": "Text Color"
-                }
-            ]
-        }
-    ],
-    "presets": [
+          "type": "text",
+          "id": "points_title",
+          "label": "Points Title"
+        },
         {
-            "name": "Points section"
+          "type": "color",
+          "id": "points_title_color",
+          "label": "Text Title Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "points_icon",
+          "label": "Points Icon"
+        },
+        {
+          "type": "html",
+          "id": "points_svg_icon",
+          "label": "Points SVG Icon"
+        },
+        {
+          "type": "color",
+          "id": "points_svg_icon_color",
+          "label": "Points SVG Icon Color"
+        },
+        {
+          "type": "text",
+          "id": "points_text",
+          "label": "Points Text"
+        },
+        {
+          "type": "color",
+          "id": "points_text_color",
+          "label": "Text Color"
         }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Points section"
+    }
+  ]
 }
 {% endschema %}

@@ -143,13 +143,6 @@
 
 {% capture images %}
   {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
     {%- liquid
       assign image = block.settings.image
       assign video = block.settings.video
@@ -181,16 +174,16 @@
   {% endfor %}
 {% endcapture %}
 
-<div class='images-with-text section-spacing color-{{ color_scheme }} section-{{ section.id }}'>
-  <div class='images-with-text__container images-with-text__container--with-{{ content_layout }}-content container container--{{ container_size }}'>
+<div class="images-with-text section-spacing color-{{ color_scheme }} section-{{ section.id }}">
+  <div class="images-with-text__container images-with-text__container--with-{{ content_layout }}-content container container--{{ container_size }}">
     {% if show_content == true %}
-      <div class='images-with-text__content-wrapper'>{{ content }}</div>
+      <div class="images-with-text__content-wrapper">{{ content }}</div>
     {% endif %}
-    <div class='images-with-text__image-list-wrapper'>
-      <div class='images-with-text__image-list-body'>
-        <div class='{% if image_layout == 'collage' %} shape shape--nature shape--overflow-visible{% endif %}'>
+    <div class="images-with-text__image-list-wrapper">
+      <div class="images-with-text__image-list-body">
+        <div class="{% if image_layout == 'collage' %} shape shape--nature shape--overflow-visible{% endif %}">
           <div
-            class='images-with-text__image-list images-with-text__image-list--{{ image_layout }} images-with-text__image-list--{{ image_layout }}-with-{{ image_count }}-items {% if rotate_images %} images-with-text__image-list--{{ image_layout }}-with-{{ image_count }}-items-and-rotate{% endif %}'
+            class="images-with-text__image-list images-with-text__image-list--{{ image_layout }} images-with-text__image-list--{{ image_layout }}-with-{{ image_count }}-items {% if rotate_images %} images-with-text__image-list--{{ image_layout }}-with-{{ image_count }}-items-and-rotate{% endif %}"
           >
             {{ images }}
           </div>

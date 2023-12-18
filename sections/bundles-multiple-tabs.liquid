@@ -30,13 +30,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{block.id}}{
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
@@ -46,193 +39,208 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='bundles_page_tabChains product-details section-{{ section.id }}  section ' style="background-color: {{ section.settings.color_scheme_new }}">
-  <div class='section-spacing container container--{{ container_size }}'>
-    <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section {% endunless %}' style="background-color: {{ section.settings.color_scheme_new }}">
-
-        <div class="pc_tabs_dekstop_parent">
-            <tabs-component data-selected-tab-id='1' data-aos="fade-up">
-                {% comment %} Tabs Title Start {% endcomment %}
-                    <div class='product-details__tab-names' data-aos="fade-up">
-                        <p class="product_fixedTitle">Select a product to view details</p>
-                        {% for eachProduct in bundleProducts %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: eachProduct %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                            {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
-                            {% assign custom_icon_image = loopingFixedValues.featured_image %}
-                                <div class="content_parent content_parent_position_relative">
-                                    <img class='product-details__tab-name-icon lazyload' {% render 'image-attributes', image: custom_icon_image, size: 'medium' %} >
-                                    <span class="tab_Heading_Content">
-                                      <p class="subheading"> {{ loopingFixedValues.subheading }} </p>
-                                      <p class="featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
-                                    </span>
-                                    <div data-tabs-name class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}' data-id='{{ forloop.index }}' tabindex='0' >
-                                    </div>
-                                </div>
-                        {% endfor %}
-                    </div>
-                {% comment %} Tabs Title End {% endcomment %}
-
-                <carousel-component class='carousel product-details__tab-name-carousel' data-contain-scroll='trimSnaps' data-section-id='{{ section.id }}' >
-                    <div class='carousel__viewport carousel__viewport--overflow embla' data-carousel-viewport >
-                    <div class='carousel__container' data-carousel-container>
-                        {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                        {% assign custom_icon_image = block.settings.custom_icon_image %}
-                        {% assign icon = block.settings.icon %}
-
-                        <div class='product-details__tab-name-carousel-slide carousel__slide'>
-                            <div data-tabs-name class='tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}' data-id='{{ forloop.index }}' tabindex='0' >
-                            {%- if custom_icon_image != blank -%}
-                                <img class='product-details__tab-name-icon lazyload' {% render 'image-attributes', image: custom_icon_image, size: 'small' %} >
-                            {%- elsif icon != 'none' -%}
-                                {% render 'icon-pack', icon: icon, class: 'product-details__tab-name-icon' %}
-                            {%- endif -%}
-                            {{ block.settings.title }}
-                            </div>
-                        </div>
-                        {%- endfor -%}
-                    </div>
-                    </div>
-                </carousel-component>
-
-                <div class='tabs product-details__tabs' data-tabs-container>
-                    <template data-tabs-elements-template>
-                      {% for eachBlock in bundleProducts offset: 1 %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: eachBlock %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                        {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
-                          <tab-component class='tab product-details__tab block-{{block.id}}' aria-hidden='true' data-id='{{ forloop.index | plus: 1 }}'>
-                              <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ block.shopify_attributes }} >
-                                  <div class='rte product-details__rte'>
-                                      {% render 'product-bundle-tabs', productBlock: eachBlock %}
-                                  </div>
-                              </div>
-                          </tab-component>
-                      {%- endfor -%}
-                    </template>
-
-                    {%- case first_block.type -%}
-                        {% assign custom_icon_image = first_block.settings.custom_icon_image %}
-                        {% assign icon = first_block.settings.icon %}
-
-                    {%- when 'collapsible_row' -%}
-                        {% for eachBlock in bundleProducts limit: 1 %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: eachBlock %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                            <tab-component class='tab product-details__tab block-{{first_block.id}}' aria-hidden='false' data-id='1' >
-                                {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
-
-                                <div class='product-details__content-tab-content body-font-weight-from-global-settings' data-tabs-element-content {{ first_block.shopify_attributes }} >
-                                        <div class='rte product-details__rte' data-aos="fade-up">
-                                            {% render 'product-bundle-tabs', productBlock: eachBlock %}
-                                            <br>
-                                            {{ text }}
-                                        </div>
-
-                                </div>
-                            </tab-component>
-                        {% endfor %}
-                    {%- endcase -%}
-                </div>
-            </tabs-component>
-        </div>
-
-        <div class="pc_tabs_mobile" data-aos="fade-up">
+<div
+  class="bundles_page_tabChains product-details section-{{ section.id }}  section "
+  style="background-color: {{ section.settings.color_scheme_new }}"
+>
+  <div class="section-spacing container container--{{ container_size }}">
+    <div
+      class="product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section {% endunless %}"
+      style="background-color: {{ section.settings.color_scheme_new }}"
+    >
+      <div class="pc_tabs_dekstop_parent">
+        <tabs-component data-selected-tab-id="1" data-aos="fade-up">
+          {% comment %} Tabs Title Start {% endcomment %}
+          <div class="product-details__tab-names" data-aos="fade-up">
+            <p class="product_fixedTitle">Select a product to view details</p>
             {% for eachProduct in bundleProducts %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: eachProduct %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+              {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
+              {% assign custom_icon_image = loopingFixedValues.featured_image %}
+              <div class="content_parent content_parent_position_relative">
+                <img
+                  class="product-details__tab-name-icon lazyload"
+                  {% render 'image-attributes', image: custom_icon_image, size: 'medium' %}
+                >
+                <span class="tab_Heading_Content">
+                  <p class="subheading">{{ loopingFixedValues.subheading }}</p>
+                  <p class="featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>
+                </span>
+                <div
+                  data-tabs-name
+                  class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
+                  data-id="{{ forloop.index }}"
+                  tabindex="0"
+                ></div>
+              </div>
+            {% endfor %}
+          </div>
+          {% comment %} Tabs Title End {% endcomment %}
 
-                {% assign ep_GeneralInfo = eachProduct.metafields.custom.product_general_info.value %}
-                {% assign custom_icon_image = block.settings.custom_icon_image %}
-                {% assign icon = block.settings.icon %}
+          <carousel-component
+            class="carousel product-details__tab-name-carousel"
+            data-contain-scroll="trimSnaps"
+            data-section-id="{{ section.id }}"
+          >
+            <div class="carousel__viewport carousel__viewport--overflow embla" data-carousel-viewport>
+              <div class="carousel__container" data-carousel-container>
+                {%- for block in section.blocks -%}
+                  {% assign custom_icon_image = block.settings.custom_icon_image %}
+                  {% assign icon = block.settings.icon %}
 
-                    <accordeon-component class='top_accordion_component accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}' data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}' data-section-id='{{ section.id }}' data-block-id='{{ block.id }}' {{ block.shopify_attributes }} >
-                        <accordeon-btn class='top_accordion accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
-                            <img src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}" alt="">
-                              <div class="accordeonBtn_text_andIcon">
-                                <div class="mobile_accordion_headings">
-                                  <p class="mobile_accordion_subheading"> {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }} </p>
-                                  <p class="mobile_accordion_featuredTag"> {{ eachProduct.metafields.custom.featured_tag }} </p>
-                                </div>
-                                <div class="accordeon_svg_icon">
-                                  {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
-                                </div>
-                              </div>
+                  <div class="product-details__tab-name-carousel-slide carousel__slide">
+                    <div
+                      data-tabs-name
+                      class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
+                      data-id="{{ forloop.index }}"
+                      tabindex="0"
+                    >
+                      {%- if custom_icon_image != blank -%}
+                        <img
+                          class="product-details__tab-name-icon lazyload"
+                          {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
+                        >
+                      {%- elsif icon != 'none' -%}
+                        {% render 'icon-pack', icon: icon, class: 'product-details__tab-name-icon' %}
+                      {%- endif -%}
+                      {{ block.settings.title }}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </carousel-component>
+
+          <div class="tabs product-details__tabs" data-tabs-container>
+            <template data-tabs-elements-template>
+              {% for eachBlock in bundleProducts offset: 1 %}
+                {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
+                <tab-component
+                  class="tab product-details__tab block-{{block.id}}"
+                  aria-hidden="true"
+                  data-id="{{ forloop.index | plus: 1 }}"
+                >
+                  <div
+                    class="product-details__content-tab-content body-font-weight-from-global-settings"
+                    data-tabs-element-content
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="rte product-details__rte">
+                      {% render 'product-bundle-tabs', productBlock: eachBlock %}
+                    </div>
+                  </div>
+                </tab-component>
+              {%- endfor -%}
+            </template>
+
+            {%- case first_block.type -%}
+                {% assign custom_icon_image = first_block.settings.custom_icon_image %}
+                {% assign icon = first_block.settings.icon %}
+
+              {%- when 'collapsible_row' -%}
+                {% for eachBlock in bundleProducts limit: 1 %}
+                  <tab-component
+                    class="tab product-details__tab block-{{first_block.id}}"
+                    aria-hidden="false"
+                    data-id="1"
+                  >
+                    {% assign ContenValue = eachBlock.metafields.custom.product_general_info.value %}
+
+                    <div
+                      class="product-details__content-tab-content body-font-weight-from-global-settings"
+                      data-tabs-element-content
+                      {{ first_block.shopify_attributes }}
+                    >
+                      <div class="rte product-details__rte" data-aos="fade-up">
+                        {% render 'product-bundle-tabs', productBlock: eachBlock %}
+                        <br>
+                        {{ text }}
+                      </div>
+                    </div>
+                  </tab-component>
+                {% endfor %}
+            {%- endcase -%}
+          </div>
+        </tabs-component>
+      </div>
+
+      <div class="pc_tabs_mobile" data-aos="fade-up">
+        {% for eachProduct in bundleProducts %}
+          {% assign ep_GeneralInfo = eachProduct.metafields.custom.product_general_info.value %}
+          {% assign custom_icon_image = block.settings.custom_icon_image %}
+          {% assign icon = block.settings.icon %}
+
+          <accordeon-component
+            class="top_accordion_component accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+            data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+            data-section-id="{{ section.id }}"
+            data-block-id="{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            <accordeon-btn
+              class="top_accordion accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn"
+              tabindex="0"
+            >
+              <img
+                src="{{  eachProduct.metafields.custom.powerful_benefits_extra_info.value.featured_image | img_url: 'master' }}"
+                alt=""
+              >
+              <div class="accordeonBtn_text_andIcon">
+                <div class="mobile_accordion_headings">
+                  <p class="mobile_accordion_subheading">
+                    {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }}
+                  </p>
+                  <p class="mobile_accordion_featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>
+                </div>
+                <div class="accordeon_svg_icon">
+                  {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
+                </div>
+              </div>
+            </accordeon-btn>
+            <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+              <div class="accordeon-plus__content product-details__accordeon-content" data-accordeon-content>
+                <div class="product-details__content-tab-content body-font-weight-from-global-settings">
+                  <div class="rte product-details__rte">
+                    {% comment %} Internal Accordion Starts {% endcomment %}
+                    {%- for block in ep_GeneralInfo -%}
+                      <accordeon-component
+                        class="inner_accordion_heading_parent accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+                        data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+                        data-section-id="{{ section.id }}"
+                        data-block-id="{{ block.id }}"
+                        {{ block.shopify_attributes }}
+                      >
+                        <accordeon-btn
+                          class="inner_accordion_heading accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn"
+                          tabindex="0"
+                        >
+                          {{ block.info_heading }}
+                          {% render 'icon', icon_name: 'plus', class: 'accordeon__new__plus arrow-pointing-up' %}
                         </accordeon-btn>
-                        <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                          <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
-                              <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
-                                  <div class='rte product-details__rte'>
-                                  {% comment %} Internal Accordion Starts {% endcomment %}
-                                    {%- for block in ep_GeneralInfo -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+                        <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+                          <div
+                            class="accordeon-plus__content product-details__accordeon-content"
+                            data-accordeon-content
+                          >
+                            {%- assign text = block.settings.text -%}
 
-                                            <accordeon-component
-                                                class='inner_accordion_heading_parent accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                                                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                                                data-section-id='{{ section.id }}'
-                                                data-block-id='{{ block.id }}'
-                                                {{ block.shopify_attributes }} >
-                                                  <accordeon-btn class='inner_accordion_heading accordeon-plus__btn accordeon-plus__btn--small product-details__accordeon-btn' tabindex='0' >
-                                                    {{ block.info_heading}}
-                                                    {% render 'icon', icon_name: 'plus', class: 'accordeon__new__plus arrow-pointing-up' %}
-                                                  </accordeon-btn>
-                                                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                                                <div class='accordeon-plus__content product-details__accordeon-content' data-accordeon-content>
-                                                    {%- assign text = block.settings.text -%}
-
-                                                    <div class='product-details__content-tab-content body-font-weight-from-global-settings'>
-                                                        <div class='rte product-details__rte'>
-                                                          {{ block.content_left_column }}
-                                                          {{ block.content_right_column }}
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </accordeon-component>
-                                    {%- endfor -%}
-                                  {% comment %} Internal Accordion Ends {% endcomment %}
-                                  </div>
+                            <div class="product-details__content-tab-content body-font-weight-from-global-settings">
+                              <div class="rte product-details__rte">
+                                {{ block.content_left_column }}
+                                {{ block.content_right_column }}
                               </div>
-                              
+                            </div>
                           </div>
                         </div>
-                    </accordeon-component>
-            {%- endfor -%}
-
-        </div>
+                      </accordeon-component>
+                    {%- endfor -%}
+                    {% comment %} Internal Accordion Ends {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </accordeon-component>
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 </div>
@@ -896,7 +904,7 @@
   ],
   "presets": [
     {
-        "name": "Product Chained Tabs"
+      "name": "Product Chained Tabs"
     }
   ]
 }

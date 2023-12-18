@@ -28,15 +28,8 @@
   assign section_background_color = settings[key] | downcase
 -%}
 
-<div class='filters__colors'>
+<div class="filters__colors">
   {%- for value in sorted_filter_values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
     {%- liquid
       assign color_downcase = value.label | downcase | strip
 
@@ -73,23 +66,23 @@
     -%}
 
     <tooltip-trigger
-      style='display: block;'
-      class='{% if value.count == 0 %}hidden{% endif %}'
-      data-float-element-id='ShopColor-{{ forloop.index0 }}'
-      data-aria-expanded='false'
+      style="display: block;"
+      class="{% if value.count == 0 %}hidden{% endif %}"
+      data-float-element-id="ShopColor-{{ forloop.index0 }}"
+      data-aria-expanded="false"
     >
       <label
-        class='checkbox'
-        for='Filter-{{ resolution }}-{{ filter.label | escape }}-{{ forloop.index }}'
+        class="checkbox"
+        for="Filter-{{ resolution }}-{{ filter.label | escape }}-{{ forloop.index }}"
         data-filters-checkbox
       >
         <input
-          class='checkbox__input filters__input'
-          type='checkbox'
-          name='{{ value.param_name }}'
-          value='{{ value.value }}'
-          aria-label='{{ value.value }} color'
-          id='Filter-{{ resolution }}-{{ filter.label | escape }}-{{ forloop.index }}'
+          class="checkbox__input filters__input"
+          type="checkbox"
+          name="{{ value.param_name }}"
+          value="{{ value.value }}"
+          aria-label="{{ value.value }} color"
+          id="Filter-{{ resolution }}-{{ filter.label | escape }}-{{ forloop.index }}"
           {% if value.active %}
             checked
           {% endif %}
@@ -97,12 +90,12 @@
             disabled
           {% endif %}
         >
-        <div class='color-swatch color-swatch--medium color-swatch--circle color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}'>
-          <div class='color-swatch__body'>
+        <div class="color-swatch color-swatch--medium color-swatch--circle color-swatch--with-faded-border {% if section_background_color == hex_color %} color-swatch--with-inner-border{% endif %}">
+          <div class="color-swatch__body">
             {%- if is_valid_color -%}
               <div
-                class='color-swatch__body-inner'
-                style='--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};'
+                class="color-swatch__body-inner"
+                style="--gsc-color-swatch-value: {% if is_image %}url({{ selected_color_value | file_img_url: "120x" }}){% elsif is_image_url %}url({{ selected_color_value }}){% else %}{{ selected_color_value }}{% endif %};"
               ></div>
             {%- else -%}
               {% render 'icon-color-circle-placeholder',
@@ -111,18 +104,18 @@
             {%- endif -%}
           </div>
           <float-element
-            class='tooltip filters__color-swatch-tooltip'
-            aria-hidden='true'
-            id='ShopColor-{{ forloop.index0 }}'
-            data-placement='bottom'
-            data-main-axis-offset='-5'
-            data-type='tooltip'
+            class="tooltip filters__color-swatch-tooltip"
+            aria-hidden="true"
+            id="ShopColor-{{ forloop.index0 }}"
+            data-placement="bottom"
+            data-main-axis-offset="-5"
+            data-type="tooltip"
           >
             <template>
-              <div class='tooltip__body'>
-                <div class='tooltip__arrow' data-float-element-arrow></div>
+              <div class="tooltip__body">
+                <div class="tooltip__arrow" data-float-element-arrow></div>
                 {{ selected_color_label }}
-                <span class='filters__option-count'>({{ value.count }})</span>
+                <span class="filters__option-count">({{ value.count }})</span>
               </div>
             </template>
           </float-element>

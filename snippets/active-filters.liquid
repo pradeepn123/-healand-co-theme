@@ -9,27 +9,20 @@
   endif
 -%}
 
-<shop-active-filters id='ShopActiveFilters'>
+<shop-active-filters id="ShopActiveFilters">
   {%- if active_filter_count > 0 -%}
-    <div class='filters__active-options' data-shop-active-filters-options>
+    <div class="filters__active-options" data-shop-active-filters-options>
       {%- for filter in results.filters -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: filter %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         {%- if filter.type == 'price_range' -%}
           {% if filter.max_value.value < filter.range_max or filter.min_value.value > 0 %}
             <filter-remove-btn
-              class='filters__active-option'
-              data-url='{{ filter.url_to_remove }}'
+              class="filters__active-option"
+              data-url="{{ filter.url_to_remove }}"
               data-shop-active-filters-remove-btn
-              tabindex='0'
+              tabindex="0"
             >
               {{ filter.min_value.value | money }} - {{ filter.max_value.value | money }}
-              <span class='close-button'>
+              <span class="close-button">
                 {% render 'icon',
                   icon_name: 'close-large',
                   stroke_width: 2,
@@ -43,30 +36,16 @@
       {%- endfor -%}
 
       {%- for filter in results.filters -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: filter %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         {%- for value in filter.values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: value %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {% if value.active %}
             <filter-remove-btn
-              class='filters__active-option'
-              data-url='{{ value.url_to_remove }}'
+              class="filters__active-option"
+              data-url="{{ value.url_to_remove }}"
               data-shop-active-filters-remove-btn
-              tabindex='0'
+              tabindex="0"
             >
               {{ value.label | escape }}
-              <span class='close-button'>
+              <span class="close-button">
                 {% render 'icon',
                   icon_name: 'close-large',
                   stroke_width: 2,
@@ -80,10 +59,10 @@
 
       {%- if active_filter_count > 0 -%}
         <filter-remove-btn
-          class='filters__reset'
-          data-url='{{ results_url }}'
+          class="filters__reset"
+          data-url="{{ results_url }}"
           data-shop-active-filters-reset
-          tabindex='0'
+          tabindex="0"
         >
           {{ 'general.filters.clear_all' | t }}
         </filter-remove-btn>
