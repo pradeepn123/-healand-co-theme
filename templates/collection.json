@@ -36,7 +36,10 @@
           "type": "select",
           "settings": {
             "bundles_products": "{{ collection.metafields.custom.bundle_product.value }}",
-            "bundles_title": "Bundles"
+            "bundles_title": "Bundles",
+            "show_read_more": true,
+            "button_link": "shopify:\/\/collections\/bundles",
+            "collection_products_limit": 3
           }
         }
       },
@@ -44,6 +47,7 @@
         "9139c504-11a2-404a-979f-fad812e54305"
       ],
       "settings": {
+        "custom_collection_title": "",
         "color_scheme": "default",
         "container_size": "full-screen",
         "section_spacing_top": 48,
