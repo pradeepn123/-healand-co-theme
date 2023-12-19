@@ -173,7 +173,8 @@
               >
                 <h6 style="color: {{ product.metafields.custom.color_schema.value.highlighted_text_color }};">
                   {%- assign title_words = product.metafields.custom.product_card.value.title | split: ' ' -%}
-                  {%- for title_word in title_words limit: 4 -%}-}}</span>
+                  {%- for title_word in title_words limit: 4 -%}
+                    <span>{{- title_word -}}</span>
                     {%- unless forloop.last -%}
                       <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="2" cy="2" r="2" fill="{{ product.metafields.custom.color_schema.value.highlighted_text_color }}"/>
@@ -281,6 +282,7 @@
           </div>
         {%- endif -%}
         {%- for tag in product.tags -%}
+
           {%- assign tag_downcase = tag | downcase -%}
           {%- assign product_card_custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase -%}
           {%- assign product_card_custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase -%}
@@ -591,6 +593,7 @@
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               <product-media-tabs class='product-card__tabs' data-product-card-media-tabs>
                 {%- for img in images limit: 5 -%}
+
                   {%- if img.id != featured_media.id -%}
                     <product-media-tab class='product-card__tab' data-id='{{ forloop.index }}'></product-media-tab>
                   {%- endif -%}
