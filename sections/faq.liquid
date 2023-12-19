@@ -29,13 +29,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       .block-{{ block.id }} {
         --gsc-image-width: {{ block.settings.image_width }}%;
       }
@@ -45,21 +38,21 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='faq section section-{{ section.id }} color-{{ color_scheme }} faq--{{ section_layout }}'>
-  <div class='faq--main--parent faq__container container container--{{ container_size }} section-spacing {% if section_layout == 'left-tabs' %} faq__container--with-tabs-on-left-side {% elsif section_layout == 'right-tabs' %} faq__container--with-tabs-on-right-side {% elsif section_layout == 'bottom-tabs' %} faq__container--with-tabs-on-bottom-side {% endif %}'>
+<div class="faq section section-{{ section.id }} color-{{ color_scheme }} faq--{{ section_layout }}">
+  <div class="faq--main--parent faq__container container container--{{ container_size }} section-spacing {% if section_layout == 'left-tabs' %} faq__container--with-tabs-on-left-side {% elsif section_layout == 'right-tabs' %} faq__container--with-tabs-on-right-side {% elsif section_layout == 'bottom-tabs' %} faq__container--with-tabs-on-bottom-side {% endif %}">
     {%- if title != blank or text != blank or btn_text != blank -%}
-      <div class='faq__content {% if container_size == 'full-screen' and settings.edge_rounding_degree != "none" %}{% if section_layout == 'left-tabs' %} faq__content--with-right-spacing {% elsif section_layout == 'right-tabs' %} faq__content--with-left-spacing {% endif %}{% endif %}'>
+      <div class="faq__content {% if container_size == 'full-screen' and settings.edge_rounding_degree != "none" %}{% if section_layout == 'left-tabs' %} faq__content--with-right-spacing {% elsif section_layout == 'right-tabs' %} faq__content--with-left-spacing {% endif %}{% endif %}">
         {%- if title != blank -%}
-          <h5 class='{{ heading_size }}' style ="color: {{ section.settings.head_color }}">{{ title }}</h5>
+          <h5 class="{{ heading_size }}" style="color: {{ section.settings.head_color }}">{{ title }}</h5>
         {%- endif -%}
         {%- if text != blank -%}
-          <div class='rte {{ body_size }} faq__text body-font-weight-from-global-settings'>{{ text }}</div>
+          <div class="rte {{ body_size }} faq__text body-font-weight-from-global-settings">{{ text }}</div>
         {%- endif -%}
         {%- if btn_text != blank -%}
           <a
-            class='btn btn--{{ btn_style }} faq__btn'
-            href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-            aria-label='{{- btn_text -}}'
+            class="btn btn--{{ btn_style }} faq__btn"
+            href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+            aria-label="{{- btn_text -}}"
           >
             {{- btn_text -}}
           </a>
@@ -67,24 +60,21 @@
       </div>
     {%- endif -%}
     {%- if section.blocks.size > 0 -%}
-      <div class='faq__blocks'>
+      <div class="faq__blocks">
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- assign icon = block.settings.icon -%}
           {%- assign custom_icon_image = block.settings.custom_icon_image -%}
 
           {%- case block.type -%}
             {%- when 'category' -%}
-              <div class='faq__category block-{{ block.id }}' {{ block.shopify_attributes }} style = "background-color:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};">
+              <div
+                class="faq__category block-{{ block.id }}"
+                {{ block.shopify_attributes }}
+                style="background-color:{{ block.settings.faq_heading_bg }}; font-size:{{ block.settings.head_font_size }}px; color : {{ block.settings.heading_color }};"
+              >
                 {%- if custom_icon_image != blank -%}
                   <img
-                    class='faq__category-icon lazyload'
+                    class="faq__category-icon lazyload"
                     {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                   >
                 {%- elsif icon != 'none' -%}
@@ -98,16 +88,20 @@
               {%- assign page = block.settings.page -%}
 
               <accordeon-component
-                class='faq__question faq__accordeon-plus accordeon-plus accordeon-plus--bottom-bordered accordeon-plus--top-bordered block-{{ block.id }}'
-                data-aria-expanded='false'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
+                class="faq__question faq__accordeon-plus accordeon-plus accordeon-plus--bottom-bordered accordeon-plus--top-bordered block-{{ block.id }}"
+                data-aria-expanded="false"
+                data-section-id="{{ section.id }}"
+                data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
-                <accordeon-btn class='faq__accordeon-plus-btn accordeon-plus__btn' style="font-size: {{ block.settings.subhead_fontsize }}px;" tabindex='0'>
+                <accordeon-btn
+                  class="faq__accordeon-plus-btn accordeon-plus__btn"
+                  style="font-size: {{ block.settings.subhead_fontsize }}px;"
+                  tabindex="0"
+                >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      class='accordeon-plus__btn-icon lazyload'
+                      class="accordeon-plus__btn-icon lazyload"
                       {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                     >
                   {%- elsif icon != 'none' -%}
@@ -118,18 +112,19 @@
 
                   {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                 </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
+                <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
                   <div
-                    class='faq__accordeon-plus-content accordeon-plus__content body-font-weight-from-global-settings' style="font-size: {{ block.settings.content_font }}px;"
+                    class="faq__accordeon-plus-content accordeon-plus__content body-font-weight-from-global-settings"
+                    style="font-size: {{ block.settings.content_font }}px;"
                     data-accordeon-content
                   >
                     {% if block.settings.text != blank %}
-                      <div class='rte'>
+                      <div class="rte">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
                     {% if page != blank %}
-                      <div class='rte rte--page'>
+                      <div class="rte rte--page">
                         {{ page.content }}
                       </div>
                     {% endif %}
@@ -137,7 +132,7 @@
                       {% render 'video-with-alt', video: video, class: 'faq__question-image' %}
                     {%- elsif image != blank -%}
                       <img
-                        class='faq__question-image lazyload'
+                        class="faq__question-image lazyload"
                         {% render 'image-attributes', image: image %}
                       >
                     {%- endif -%}
@@ -319,10 +314,10 @@
       "default": "h5"
     },
     {
-      "type":"color",
+      "type": "color",
       "id": "head_color",
-      "label":"Heading_color",
-      "default":"#000"
+      "label": "Heading_color",
+      "default": "#000"
     },
     {
       "type": "select",
@@ -420,12 +415,13 @@
           "unit": "px",
           "label": "Header font size ",
           "default": 24
-        },{
+        },
+        {
           "type": "color",
-          "id":"heading_color",
-          "label":"Heading color",
+          "id": "heading_color",
+          "label": "Heading color",
           "default": "#fff"
-        },        
+        },
         {
           "type": "select",
           "id": "icon",

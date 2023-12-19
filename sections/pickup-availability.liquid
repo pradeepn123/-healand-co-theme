@@ -13,7 +13,7 @@
   assign closest_location = pick_up_locations.first
 -%}
 
-<pickup-availability-content class='pickup-availability-info'>
+<pickup-availability-content class="pickup-availability-info">
   {%- if pick_up_availabilities == true -%}
     <div>
       <div>
@@ -35,9 +35,9 @@
         <sidebar-button>
           <button
             data-sidebar-button
-            class='unstyled-button pickup-availability-info__btn'
-            data-sidebar-id='pickup-availability-sidebar'
-            aria-label='{{ 'products.product.pickup_availability.view_store_info' | t }}'
+            class="unstyled-button pickup-availability-info__btn"
+            data-sidebar-id="pickup-availability-sidebar"
+            aria-label="{{ 'products.product.pickup_availability.view_store_info' | t }}"
           >
             {{ 'products.product.pickup_availability.view_store_info' | t }}
           </button>
@@ -46,9 +46,9 @@
         <sidebar-button>
           <button
             data-sidebar-button
-            class='unstyled-button pickup-availability-info__btn'
-            data-sidebar-id='pickup-availability-sidebar'
-            aria-label='{{ 'products.product.pickup_availability.check_other_stores' | t }}'
+            class="unstyled-button pickup-availability-info__btn"
+            data-sidebar-id="pickup-availability-sidebar"
+            aria-label="{{ 'products.product.pickup_availability.check_other_stores' | t }}"
           >
             {{ 'products.product.pickup_availability.check_other_stores' | t }}
           </button>
@@ -59,63 +59,49 @@
 </pickup-availability-content>
 
 <sidebar-component
-  class='sidebar pickup-availability-sidebar'
-  id='pickup-availability-sidebar'
-  data-section-id='{{ section.id }}'
-  data-open-direction='right'
-  tabindex='-1'
+  class="sidebar pickup-availability-sidebar"
+  id="pickup-availability-sidebar"
+  data-section-id="{{ section.id }}"
+  data-open-direction="right"
+  tabindex="-1"
 >
   <template>
-    <div class='sidebar__body pickup-availability-sidebar__body' data-sidebar-content>
-      <div class='pickup-availability-sidebar__header'>
-        <div class='pickup-availability-sidebar__header-title'>pickup availability</div>
+    <div class="sidebar__body pickup-availability-sidebar__body" data-sidebar-content>
+      <div class="pickup-availability-sidebar__header">
+        <div class="pickup-availability-sidebar__header-title">pickup availability</div>
         <sidebar-button>
           <button
             data-sidebar-button
-            class='unstyled-button pickup-availability-sidebar__close-button-wrapper close-button-with-scale-hover-wrapper'
-            data-sidebar-id='pickup-availability-sidebar'
-            aria-label='{{ 'products.product.pickup_availability.aria_label_for_sidebar_close_button' | t }}'
+            class="unstyled-button pickup-availability-sidebar__close-button-wrapper close-button-with-scale-hover-wrapper"
+            data-sidebar-id="pickup-availability-sidebar"
+            aria-label="{{ 'products.product.pickup_availability.aria_label_for_sidebar_close_button' | t }}"
           >
-            <span class='pickup-availability-sidebar__close-button close-button-with-scale-hover'></span>
+            <span class="pickup-availability-sidebar__close-button close-button-with-scale-hover"></span>
           </button>
         </sidebar-button>
       </div>
 
-      <div class='pickup-availability-sidebar__content'>
+      <div class="pickup-availability-sidebar__content">
         {%- if product_variant.product.has_only_default_variant == false -%}
-          <div class='pickup-availability-sidebar__variant'>
+          <div class="pickup-availability-sidebar__variant">
             <h6>{{ product_variant.product.title | escape }}</h6>
 
             {%- for product_option in product_variant.product.options_with_values -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: product_option %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-              <span class='pickup-availability-sidebar__variant-option'>
+              <span class="pickup-availability-sidebar__variant-option">
                 {{- product_option.name | escape }} - {{ product_option.selected_value -}}
               </span>
             {%- endfor -%}
           </div>
         {%- endif -%}
 
-        <div class='pickup-availability-sidebar__list'>
+        <div class="pickup-availability-sidebar__list">
           {%- for availability in pick_up_locations -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: availability %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- assign address = availability.location.address -%}
 
-            <div class='pickup-availability-sidebar__list-item'>
-              <div class='pickup-availability-sidebar__list-item-title'>{{ availability.location.name | escape }}</div>
+            <div class="pickup-availability-sidebar__list-item">
+              <div class="pickup-availability-sidebar__list-item-title">{{ availability.location.name | escape }}</div>
 
-              <div class='pickup-availability-sidebar__list-item-info'>
+              <div class="pickup-availability-sidebar__list-item-info">
                 <div>
                   {{ address | format_address }}
 

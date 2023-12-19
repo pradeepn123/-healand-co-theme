@@ -119,13 +119,6 @@
 
 {% style %}
   {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
     .heading-for-icon{
       font-size: {{block.settings.icon_heading_font}}px;
       color: {{block.settings.icon_heading-color}};
@@ -137,229 +130,210 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='ingredientdb__page__main-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
-    <div class='main-banner__container section-spacing container--{{ container_size }} image-banner__outer-containers {% if container_size == 'full-screen' %} ingredients-image-banner{% endif %}'>
-      <div class='ingredient-hero-mage-banner {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
-        <div class='ingredient-image-banner__container'>
-            {%- if btn_text == blank and extra_btn_text == blank -%}
-                {%- if btn_url.url != blank or extra_btn_url.url != blank -%}
-                <a
-                    class='ingedient-banner__link'
-                    href='{% if btn_url.url != blank %}{{ btn_url.url }}{% else %}{{ extra_btn_url.url }}{% endif %}'
-                    aria-label='{% if btn_text != blank %}{{ btn_text }}{% elsif extra_btn_text != blank %}{{ extra_btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}'
-                ></a>
+<div class="ingredientdb__page__main-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+  <div class="main-banner__container section-spacing container--{{ container_size }} image-banner__outer-containers {% if container_size == 'full-screen' %} ingredients-image-banner{% endif %}">
+    <div class="ingredient-hero-mage-banner {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}">
+      <div class="ingredient-image-banner__container">
+        {%- if btn_text == blank and extra_btn_text == blank -%}
+          {%- if btn_url.url != blank or extra_btn_url.url != blank -%}
+            <a
+              class="ingedient-banner__link"
+              href="{% if btn_url.url != blank %}{{ btn_url.url }}{% else %}{{ extra_btn_url.url }}{% endif %}"
+              aria-label="{% if btn_text != blank %}{{ btn_text }}{% elsif extra_btn_text != blank %}{{ extra_btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}"
+            ></a>
+          {%- endif -%}
+        {%- endif -%}
+        {% if section.settings.video != blank %}
+          <div class="ingredient-video ">
+            {%- render 'media-with-art-direction',
+              class: 'image-banner__media',
+              mobile_video: video,
+              desktop_video: video
+            -%}
+          </div>
+        {% elsif section.settings.desktop_img != blank %}
+          <div class="ingredientdb__hero_image">
+            <img src="{{ desktop_img | img_url:'master' }}">
+          </div>
+        {% endif %}
+
+        {%- if caption != blank or title != blank or text != blank or btn_text != blank or extra_btn_text != blank -%}
+          <div class="ingredientdb-banner__content-wrap">
+            <div class="ingredient__contents image-banner__content--desktop {% if desktop_content_background != 'none' %} image-banner__content--with-{{ desktop_content_background }}-background{% endif %}">
+              {%- if caption != blank -%}
+                <div class="caption image-banner__captions">{{ caption }}</div>
+              {%- endif -%}
+              {%- if title != blank -%}
+                <span class="{{ heading_size }}">{{ title }}</span>
+              {%- endif -%}
+              {%- if text != blank -%}
+                <div class="{{ body_size }} ingredient-desc">
+                  {{ text }}
+                </div>
+              {%- endif -%}
+              <div class="icon-text-wrapper">
+                {% for block in section.blocks %}
+                  <div class="flex-wrap-imageicon">
+                    {% if block.settings.svg_image_icon != blank %}
+                      <div class="icon-wrap">
+                        {{ block.settings.svg_image_icon }}
+                      </div>
+                    {% elsif block.settings.image_icon != blank %}
+                      <div class="icon-wrap">
+                        <img src="{{ block.settings.image_icon | img_url:'master' }}">
+                      </div>
+                    {% endif %}
+                    {% if block.settings.svg_image_icon != blank or block.settings.image_icon != blank %}
+                      <div class="text-wrapper__info">
+                        <p class="heading-for-icon">{{ block.settings.icon_heading }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+
+              {%- if btn_text != blank or extra_btn_text != blank -%}
+                <div class="image-banner__btns {% if is_first_link %} image-banner__btns--with-first-button-link {% endif %} {% if is_second_link %} image-banner__btns--with-second-button-link {% endif %} {% if with_only_links %} image-banner__btns--with-only-links {% endif %}">
+                  {%- if btn_text != blank -%}
+                    {%- if btn_style == 'link' -%}
+                      <a
+                        class="link image-banner__btn-link"
+                        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                        aria-label="{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}"
+                      >
+                        <span class="link__text">{{ btn_text }}</span>
+                        {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+                      </a>
+                    {%- else -%}
+                      <a
+                        class="btn btn--{{ btn_style }} image-banner__btn"
+                        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                        aria-label="{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}"
+                      >
+                        {{- btn_text -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                  {%- if extra_btn_text != blank -%}
+                    {% if extra_btn_style == 'link' -%}
+                      <a
+                        class="link image-banner__btn-link"
+                        href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                        aria-label="{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}"
+                      >
+                        <span class="link__text">{{ extra_btn_text }}</span>
+                        {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+                      </a>
+                    {%- else -%}
+                      <a
+                        class="btn btn--{{ extra_btn_style }} image-banner__btn"
+                        href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                        aria-label="{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}"
+                      >
+                        {{- extra_btn_text -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+              {%- endif -%}
+            </div>
+          </div>
+          {% if section.settings.video != blank %}
+            <div class="ingredient-video-mobile">
+              {%- render 'media-with-art-direction',
+                class: 'image-banner__media',
+                mobile_video: video,
+                desktop_video: video
+              -%}
+            </div>
+          {% elsif section.settings.mobile_img != blank %}
+            <div class="ingredientdb__hero_image-mobile">
+              <img src="{{ mobile_img | img_url:'master' }}">
+            </div>
+          {% endif %}
+          <div class="image-banner__content image-banner__content--mobile icon-heding-color-mobile {% if mobile_content_background != 'none' %} image-banner__content--with-{{ mobile_content_background }}-background{% endif %}">
+            {%- if caption != blank -%}
+              <div class="caption image-banner__captions">{{ caption }}</div>
+            {%- endif -%}
+            {%- if title != blank -%}
+              <span class="{{ heading_size }}">{{ title }}</span>
+            {%- endif -%}
+            {%- if text != blank -%}
+              <div class="{{ body_size }} ingredient-desc">
+                {{ text }}
+              </div>
+            {%- endif -%}
+            <div class="icon-text-wrapper">
+              {% for block in section.blocks %}
+                <div class="flex-wrap-imageicon">
+                  {% if block.settings.svg_image_icon != blank %}
+                    <div class="icon-wrap">
+                      {{ block.settings.svg_image_icon }}
+                    </div>
+                  {% elsif block.settings.image_icon != blank %}
+                    <div class="icon-wrap">
+                      <img src="{{ block.settings.image_icon | img_url:'master' }}">
+                    </div>
+                  {% endif %}
+                  {% if block.settings.svg_image_icon != blank or block.settings.image_icon != blank %}
+                    <div class="text-wrapper__info">
+                      <p class="heading-for-icon">{{ block.settings.icon_heading }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+
+            {%- if btn_text != blank or extra_btn_text != blank -%}
+              <div class="image-banner__btns {% if is_first_link %} image-banner__btns--with-first-button-link {% endif %} {% if is_second_link %} image-banner__btns--with-second-button-link {% endif %} {% if with_only_links %} image-banner__btns--with-only-links {% endif %}">
+                {%- if btn_text != blank -%}
+                  {%- if btn_style == 'link' -%}
+                    <a
+                      class="link image-banner__btn-link"
+                      href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                      aria-label="{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}"
+                    >
+                      <span class="link__text">{{ btn_text }}</span>
+                      {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+                    </a>
+                  {%- else -%}
+                    <a
+                      class="btn btn--{{ btn_style }} image-banner__btn"
+                      href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                      aria-label="{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}"
+                    >
+                      {{- btn_text -}}
+                    </a>
+                  {%- endif -%}
+                {%- endif -%}
+                {%- if extra_btn_text != blank -%}
+                  {% if extra_btn_style == 'link' -%}
+                    <a
+                      class="link image-banner__btn-link"
+                      href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                      aria-label="{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}"
+                    >
+                      <span class="link__text">{{ extra_btn_text }}</span>
+                      {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+                    </a>
+                  {%- else -%}
+                    <a
+                      class="btn btn--{{ extra_btn_style }} image-banner__btn"
+                      href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                      aria-label="{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}"
+                    >
+                      {{- extra_btn_text -}}
+                    </a>
+                  {%- endif -%}
                 {%- endif -%}
             {%- endif -%}
-            {% if section.settings.video != blank%}
-                <div class="ingredient-video ">
-                    {%- render 'media-with-art-direction',
-                        class: 'image-banner__media',
-                        mobile_video: video,
-                        desktop_video: video
-                    -%}
-                </div>
-            {% elsif section.settings.desktop_img != blank %}
-            <div class="ingredientdb__hero_image">
-                <img src="{{ desktop_img | img_url:'master' }}">
-            </div>
-            {% endif %}
-         
-            {%- if caption != blank or title != blank or text != blank or btn_text != blank or extra_btn_text != blank -%}
-                <div class='ingredientdb-banner__content-wrap' >
-                    <div class='ingredient__contents image-banner__content--desktop {% if desktop_content_background != 'none' %} image-banner__content--with-{{ desktop_content_background }}-background{% endif %}'>
-                        {%- if caption != blank -%}
-                            <div class='caption image-banner__captions'>{{ caption }}</div>
-                        {%- endif -%}
-                        {%- if title != blank -%}
-                            <span class='{{ heading_size }}'>{{ title }}</span>
-                        {%- endif -%}
-                        {%- if text != blank -%}
-                            <div class='{{ body_size }} ingredient-desc'>
-                            {{ text }}
-                            </div>
-                        {%- endif -%}
-                        <div class="icon-text-wrapper">
-                            {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+          </div>
 
-                              <div class="flex-wrap-imageicon">
-                                {% if block.settings.svg_image_icon != blank%}
-                                    <div class="icon-wrap">
-                                        {{block.settings.svg_image_icon}}
-                                    </div>
-                                {% elsif block.settings.image_icon != blank %}
-                                    <div class="icon-wrap">
-                                        <img src="{{ block.settings.image_icon | img_url:'master' }}">
-                                    </div>
-                                {% endif %}
-                                {% if block.settings.svg_image_icon != blank or block.settings.image_icon != blank %}
-                                  <div class="text-wrapper__info">
-                                    <p class="heading-for-icon">{{block.settings.icon_heading}}</p>
-                                  </div>
-                                {% endif %}
-                              </div>
-                            {% endfor %}
-                        </div>
-
-                        {%- if btn_text != blank or extra_btn_text != blank -%}
-                        <div class='image-banner__btns {% if is_first_link %} image-banner__btns--with-first-button-link {% endif %} {% if is_second_link %} image-banner__btns--with-second-button-link {% endif %} {% if with_only_links %} image-banner__btns--with-only-links {% endif %}'>
-                        {%- if btn_text != blank -%}
-                            {%- if btn_style == 'link' -%}
-                                <a
-                                    class='link image-banner__btn-link'
-                                    href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                                    aria-label='{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}'>
-                                    <span class='link__text'>{{ btn_text }}</span>
-                                    {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
-                                </a>
-                            {%- else -%}
-                                <a
-                                    class='btn btn--{{ btn_style }} image-banner__btn'
-                                    href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                                    aria-label='{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}'>
-                                    {{- btn_text -}}
-                                </a>
-                            {%- endif -%}
-                        {%- endif -%}
-                        {%- if extra_btn_text != blank -%}
-                            {% if extra_btn_style == 'link' -%}
-                            <a
-                                class='link image-banner__btn-link'
-                                href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                                aria-label='{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}'
-                            >
-                                <span class='link__text'>{{ extra_btn_text }}</span>
-                                {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
-                            </a>
-                            {%- else -%}
-                            <a
-                                class='btn btn--{{ extra_btn_style }} image-banner__btn'
-                                href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                                aria-label='{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}'
-                            >
-                                {{- extra_btn_text -}}
-                            </a>
-                            {%- endif -%}
-                        {%- endif -%}
-                        {%- endif -%}
-                    </div>
-                    </div>
-                    {% if section.settings.video != blank%}
-                        <div class="ingredient-video-mobile">
-                            {%- render 'media-with-art-direction',
-                                class: 'image-banner__media',
-                                mobile_video: video,
-                                desktop_video: video
-                            -%}
-                        </div>
-                    {% elsif section.settings.mobile_img != blank %}
-                        <div class="ingredientdb__hero_image-mobile">
-                            <img src="{{ mobile_img | img_url:'master' }}">
-                        </div>
-                    {% endif %}
-                    <div class='image-banner__content image-banner__content--mobile icon-heding-color-mobile {% if mobile_content_background != 'none' %} image-banner__content--with-{{ mobile_content_background }}-background{% endif %}'>
-                        
-                        {%- if caption != blank -%}
-                            <div class='caption image-banner__captions'>{{ caption }}</div>
-                        {%- endif -%}
-                        {%- if title != blank -%}
-                            <span class='{{ heading_size }}'>{{ title }}</span>
-                        {%- endif -%}
-                        {%- if text != blank -%}
-                            <div class='{{ body_size }} ingredient-desc'>
-                            {{ text }}
-                            </div>
-                        {%- endif -%}
-                        <div class="icon-text-wrapper">
-                            {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                              <div class="flex-wrap-imageicon">
-                                {% if block.settings.svg_image_icon != blank%}
-                                    <div class="icon-wrap">
-                                        {{block.settings.svg_image_icon}}
-                                    </div>
-                                {% elsif block.settings.image_icon != blank %}
-                                    <div class="icon-wrap">
-                                        <img src="{{ block.settings.image_icon | img_url:'master' }}">
-                                    </div>
-                                {% endif %}
-                                {% if block.settings.svg_image_icon != blank or block.settings.image_icon != blank %}
-                                  <div class="text-wrapper__info">
-                                    <p class="heading-for-icon">{{block.settings.icon_heading}}</p>
-                                  </div>
-                                {% endif %}
-                              </div>
-                            {% endfor %}
-                        </div>
-
-                        {%- if btn_text != blank or extra_btn_text != blank -%}
-                        <div class='image-banner__btns {% if is_first_link %} image-banner__btns--with-first-button-link {% endif %} {% if is_second_link %} image-banner__btns--with-second-button-link {% endif %} {% if with_only_links %} image-banner__btns--with-only-links {% endif %}'>
-                        {%- if btn_text != blank -%}
-                            {%- if btn_style == 'link' -%}
-                                <a
-                                    class='link image-banner__btn-link'
-                                    href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                                    aria-label='{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}'>
-                                    <span class='link__text'>{{ btn_text }}</span>
-                                    {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
-                                </a>
-                            {%- else -%}
-                                <a
-                                    class='btn btn--{{ btn_style }} image-banner__btn'
-                                    href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                                    aria-label='{% if btn_text != blank %}{{ btn_text }}{% elsif btn_url.title != blank %}{{ btn_url.title }}{% else %}#{% endif %}'>
-                                    {{- btn_text -}}
-                                </a>
-                            {%- endif -%}
-                        {%- endif -%}
-                        {%- if extra_btn_text != blank -%}
-                            {% if extra_btn_style == 'link' -%}
-                            <a
-                                class='link image-banner__btn-link'
-                                href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                                aria-label='{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}'
-                            >
-                                <span class='link__text'>{{ extra_btn_text }}</span>
-                                {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
-                            </a>
-                            {%- else -%}
-                            <a
-                                class='btn btn--{{ extra_btn_style }} image-banner__btn'
-                                href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                                aria-label='{% if extra_btn_text != blank %}{{ extra_btn_text }}{% elsif extra_btn_url.title != blank %}{{ extra_btn_url.title }}{% else %}#{% endif %}'
-                            >
-                                {{- extra_btn_text -}}
-                            </a>
-                            {%- endif -%}
-                        {%- endif -%}
-                        {%- endif -%}
-                    </div>
-
-                </div> 
-             
-            {%- endif -%} 
-            
-
-        </div>
+          </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
-
-
-
-
-
+</div>
 
 {% schema %}
 {
@@ -828,20 +802,20 @@
       "label": "t:sections.image_banner.label_for_extra_button_style_setting"
     }
   ],
-   "blocks": [
+  "blocks": [
     {
-      "name":"Icon",
-      "type":"image",
-      "settings":[
+      "name": "Icon",
+      "type": "image",
+      "settings": [
         {
-            "type": "image_picker",
-            "id":"image_icon",
-            "label": "Icon"    
+          "type": "image_picker",
+          "id": "image_icon",
+          "label": "Icon"
         },
         {
-            "type": "html",
-            "id":"svg_image_icon",
-            "label": "SVG Icon"
+          "type": "html",
+          "id": "svg_image_icon",
+          "label": "SVG Icon"
         },
         {
           "type": "text",

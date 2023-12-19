@@ -42,25 +42,18 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='collection-list section section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='collection-list__container container container--{{ container_size }} section-spacing'>
+<div class="collection-list section section-{{ section.id }} color-{{ color_scheme }}">
+  <div class="collection-list__container container container--{{ container_size }} section-spacing">
     {%- if title != blank -%}
-      <div class='collection-list__header collection-list__header--center'>
-        <h5 class='{{ heading_size }}'>{{ title }}</h5>
+      <div class="collection-list__header collection-list__header--center">
+        <h5 class="{{ heading_size }}">{{ title }}</h5>
       </div>
     {%- endif -%}
     {%- if collections_to_show == 'all' -%}
       {%- paginate collections by collection_per_page -%}
-        <div class='collection-list__card-grid-wrap'>
-          <div class='card-grid collection-list__card-grid' id='CollectionListGrid'>
+        <div class="collection-list__card-grid-wrap">
+          <div class="card-grid collection-list__card-grid" id="CollectionListGrid">
             {%- for collection in collections -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {% render 'collection-card',
                 class: 'card-grid__item',
                 with_bottom_spacing: true,
@@ -105,16 +98,9 @@
         {%- endcase -%}
       {%- endpaginate -%}
     {%- else -%}
-      <div class='card-grid collection-list__card-grid'>
+      <div class="card-grid collection-list__card-grid">
         {%- for collection in collection_list -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-          <div class='card-grid__item'>
+          <div class="card-grid__item">
             {% render 'collection-card',
               with_bottom_spacing: true,
               content_align: collection_card_content_align,

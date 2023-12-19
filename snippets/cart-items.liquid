@@ -1,5 +1,5 @@
 <script>
-  function runCartDropdownParent(e){
+  function runCartDropdownParent(e) {
     e.classList.toggle('staticState');
     e.parentElement.nextElementSibling.classList.toggle('showDropdown');
   }
@@ -9,122 +9,56 @@
   assign enable_multiply = settings.enable_product_darken_background
 -%}
 
-<div class='cart-items'>
+<div class="cart-items">
   {% if inside_sidebar == false %}
-    <div class='cart-items__header'>
-      <h5 class='cart-items__title'>{{ 'general.cart_items.title' | t }}</h5>
-      <div class='cart-items__product-count'>{{ 'general.cart_items.product_count' | t: count: cart.item_count }}</div>
+    <div class="cart-items__header">
+      <h5 class="cart-items__title">{{ 'general.cart_items.title' | t }}</h5>
+      <div class="cart-items__product-count">{{ 'general.cart_items.product_count' | t: count: cart.item_count }}</div>
     </div>
   {% endif %}
 
-  <form action='{{ routes.cart_url }}' method='post' id='Cart-form'>
+  <form action="{{ routes.cart_url }}" method="post" id="Cart-form">
     {%- if cart != empty -%}
-      <div class='cart-items__params'>
-        <div class='cart-items__param'>{{ 'general.cart_items.product_label' | t }}</div>
-        <div class='cart-items__param'>{{ 'general.cart_items.price_label' | t }}</div>
-        <div class='cart-items__param'>{{ 'general.cart_items.quantity_label' | t }}</div>
-        <div class='cart-items__param'>{{ 'general.cart_items.total_label' | t }}</div>
+      <div class="cart-items__params">
+        <div class="cart-items__param">{{ 'general.cart_items.product_label' | t }}</div>
+        <div class="cart-items__param">{{ 'general.cart_items.price_label' | t }}</div>
+        <div class="cart-items__param">{{ 'general.cart_items.quantity_label' | t }}</div>
+        <div class="cart-items__param">{{ 'general.cart_items.total_label' | t }}</div>
       </div>
-      <div class='cart-items-render'>
+      <div class="cart-items-render">
         {%- for item in cart.items -%}
-{% comment %} Wholesale_Club_Item_Prices Start {% endcomment %}
-{% if item.product %}{% assign base_product = item.product %}{% else %}{% assign base_product = item %}{% endif %}
-{% if item.variant %}{% assign base_variant = item.variant %}{% else %}{% assign base_variant = item.selected_or_first_available_variant %}{% endif %}
-
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
-
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
-
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% assign saw_discount = 1 | minus: saw_discount %}
-
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
-
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
-
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCItem_OriginalPrice = item.original_price %}
-  {% assign WCItem_FinalPrice = item.final_price %}
-  {% assign WCItem_Price = item.price %}
-  {% assign WCItem_PriceMin = item.price_min %}
-  {% assign WCItem_PriceMax = item.price_max %}
-  {% assign WCItem_CompareAtPrice = item.compare_at_price %}
-  {% assign WCItem_CompareAtPriceMin = item.compare_at_price_min %}
-  {% assign WCItem_CompareAtPriceMax = item.compare_at_price_max %}
-  {% assign WCItem_OriginalLinePrice = item.original_line_price %}
-  {% assign WCItem_FinalLinePrice = item.final_line_price %}
-  {% assign WCItem_LinePrice = item.line_price %}
-{% else %}
-  {% assign WCItem_OriginalPrice = saw_variant_compare_at_price %}
-  {% assign WCItem_FinalPrice = saw_variant_price %}
-  {% assign WCItem_Price = saw_variant_price %}
-  {% assign WCItem_PriceMin = item.price_min | times: saw_discount %}
-  {% assign WCItem_PriceMax = item.price_max | times: saw_discount %}
-  {% assign WCItem_CompareAtPrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCItem_CompareAtPriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCItem_CompareAtPriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCItem_CompareAtPriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCItem_CompareAtPriceMax = base_product.price_max %}{% endif %}
-  {% assign WCItem_OriginalLinePrice = WCItem_OriginalPrice | round | times: item.quantity %}
-  {% assign WCItem_FinalLinePrice = WCItem_FinalPrice | round | times: item.quantity %}
-  {% assign WCItem_LinePrice = WCItem_Price | round | times: item.quantity %}
-{% endif %}
-{% comment %} Wholesale_Club_Item_Prices End {% endcomment %}
-
           <cart-item
-            class='cart-item'
-            id='CartItem-{{ item.index }}'
-            data-index='{{ item.index }}'
-            data-variant-id='{{ item.variant.id }}'
-            data-inventory-quantity='{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}'
-            data-quantity='{{ item.quantity }}'
+            class="cart-item"
+            id="CartItem-{{ item.index }}"
+            data-index="{{ item.index }}"
+            data-variant-id="{{ item.variant.id }}"
+            data-inventory-quantity="{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}"
+            data-quantity="{{ item.quantity }}"
           >
-            <div class='cart-item__body' data-cart-item-body>
-              <div class='cart-item__grid'>
-                <cart-remove-button class='cart-item__remove-button' data-index='{{ item.index }}' tabindex='0'>
+            <div class="cart-item__body" data-cart-item-body>
+              <div class="cart-item__grid">
+                <cart-remove-button class="cart-item__remove-button" data-index="{{ item.index }}" tabindex="0">
                   {% render 'icon', icon_name: 'trash', class: 'cart-item__remove-button-icon' %}
                 </cart-remove-button>
 
-                <div class='cart-item__details'>
+                <div class="cart-item__details">
                   {% if item.image %}
                     {% assign image = item.image %}
-                    <div class='cart-item__link'>
+                    <div class="cart-item__link">
                       <a
-                        href='{{ item.url }}'
-                        class='shape shape--{{ img_ratio }} cart-item__image-wrapper {% if enable_multiply %}multiply-mode{% endif %}'
-                        aria-hidden='true'
-                        tabindex='-1'
-                        aria-label='{{ item.product.title }}'
+                        href="{{ item.url }}"
+                        class="shape shape--{{ img_ratio }} cart-item__image-wrapper {% if enable_multiply %}multiply-mode{% endif %}"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        aria-label="{{ item.product.title }}"
                       >
                         <img
-                          class='image cart-item__image lazyload {% if enable_multiply %}multiply-mode__target{% endif %}'
+                          class="image cart-item__image lazyload {% if enable_multiply %}multiply-mode__target{% endif %}"
                           {% render 'image-attributes', image: image, size: 'medium' %}
                         >
                       </a>
-                      <div class='cart-item-checkmark hidden' data-cart-item-checkmark>
-                        <svg class='cart-item-checkmark__icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+                      <div class="cart-item-checkmark hidden" data-cart-item-checkmark>
+                        <svg class="cart-item-checkmark__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                           <circle class="cart-item-checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
                           <path class="cart-item-checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                         </svg>
@@ -132,17 +66,9 @@
                     </div>
                   {% endif %}
 
-                  <div class='cart-item__info cart-item__info--hide-mobile cart-item__info_sale_badge'>
-                    {% assign CMPR_PRICE = item.variant.compare_at_price  %}
-                    {% assign discount_percentage  =  CMPR_PRICE | minus: WCItem_FinalPrice| times: 100.0 | divided_by: CMPR_PRICE | money_without_currency | times: 100 | remove: '.0' %}
-                    {% if discount_percentage != '0' %}
-                    <div class="product-sale-amount-badge cart_page_sale_badge">
-                      {{ discount_percentage }}% off                
-                    </div>
-                   {% endif %}
-                    <div class="product_info_cart">
-                    <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
-                      <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
+                  <div class="cart-item__info cart-item__info--hide-mobile cart-item__info_sale_badge">
+                    <a href="{{ item.url }}" class="cart-item__name" aria-label="{{ item.product.title }}">
+                      <span class="cart-item__name-label">{{ item.product.title | escape }}</span>
                     </a>
                     {%- if item.product.has_only_default_variant == false
                       or item.properties.size != 0
@@ -151,18 +77,18 @@
                       {%- if item.product.has_only_default_variant == false -%}
                         {%- for option in item.options_with_values -%}
                           {% if option.value != blank %}
-                            <div class='cart-item__option'>{{ option.name }} - {{ option.value }}</div>
+                            <div class="cart-item__option">{{ option.name }} - {{ option.value }}</div>
                           {% endif %}
                         {%- endfor -%}
                       {%- endif -%}
                       {%- for property in item.properties -%}
                         {%- assign property_first_char = property.first | slice: 0 -%}
                         {%- if property.last != blank and property_first_char != '_' -%}
-                          <div class='cart-item__option'>
+                          <div class="cart-item__option">
                             <div>{{ property.first }}:</div>
                             <div>
                               {%- if property.last contains '/uploads/' -%}
-                                <a href='{{ property.last }}'>
+                                <a href="{{ property.last }}">
                                   {{ property.last | split: '/' | last }}
                                 </a>
                               {%- else -%}
@@ -174,35 +100,60 @@
                       {%- endfor -%}
                       {%- if item.product.selling_plan_groups.size > 0 -%}
                         {%- if item.selling_plan_allocation -%}
-                          <div class='cart-item__option selling_plan_label-small'>
+                          <div class="cart-item__option selling_plan_label-small">
                             SUBSCRIPTION
                             {% if item.product.selling_plan_groups.first.selling_plans.size > 1 %}
-                              <div class='cart-item__option cart-item__parentElement'>
-                                {% if item.selling_plan_allocation %} 
-                                  <div class="deliveryTime_cartDrawer">Delivery every
-                                    <span class="cartDropdownParent staticState" id="cartDropdownParent" onclick="runCartDropdownParent(this)">
+                              <div class="cart-item__option cart-item__parentElement">
+                                {% if item.selling_plan_allocation %}
+                                  <div class="deliveryTime_cartDrawer">
+                                    Delivery every
+                                    <span
+                                      class="cartDropdownParent staticState"
+                                      id="cartDropdownParent"
+                                      onclick="runCartDropdownParent(this)"
+                                    >
                                       <span class="cartDropwdownText">
-                                        {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}
+                                        {{
+                                          item.selling_plan_allocation.selling_plan.name
+                                          | replace: 'Delivery every ', ''
+                                        }}
                                       </span>
-                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
                                     </span>
                                   </div>
-                                  <div class="subscriptiomButton_update showDropdown" id="subscriptiomButton_update" >
+                                  <div class="subscriptiomButton_update showDropdown" id="subscriptiomButton_update">
                                     {%- for selling_plan_group in item.product.selling_plan_groups -%}
                                       {%- for selling_plan in selling_plan_group.selling_plans -%}
                                         <subscription-btn
-                                          value="{{ selling_plan.id }}" {% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}selected {% endif %} 
-                                          tabindex='0'
+                                          value="{{ selling_plan.id }}"
+                                          {% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}
+                                            selected
+                                          {% endif %}
+                                          tabindex="0"
                                           class="{% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}selected{% endif %}"
-                                          data-index='{{ item.index }}'
+                                          data-index="{{ item.index }}"
                                           data-selling_plan_id="{{- selling_plan.id -}}"
-                                          data-quantity="{{ item.quantity }}">
-                                          {{ selling_plan.name | replace : 'Delivery every ', '' }} 
-                                            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="subscription-btn_icon">
-                                              <path d="M1 5L4.3 8L12 1" stroke="#EE5C4C" stroke-width="2"/>
-                                            </svg>
+                                          data-quantity="{{ item.quantity }}"
+                                        >
+                                          {{ selling_plan.name | replace: 'Delivery every ', '' }}
+                                          <svg
+                                            width="13"
+                                            height="10"
+                                            viewBox="0 0 13 10"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="subscription-btn_icon"
+                                          >
+                                            <path d="M1 5L4.3 8L12 1" stroke="#EE5C4C" stroke-width="2"/>
+                                          </svg>
                                         </subscription-btn>
                                         <br>
                                       {%- endfor -%}
@@ -213,10 +164,8 @@
                             {% endif %}
                           </div>
                         {%- else -%}
-                          <div class='cart-item__option selling_plan_label-small'>
-                            ONE-TIME PURCHASE
-                          </div>
-                          <div class='cart-item__option selling_plan_label-action'>
+                          <div class="cart-item__option selling_plan_label-small">ONE-TIME PURCHASE</div>
+                          <div class="cart-item__option selling_plan_label-action">
                             {%- assign product_selling_plan_id = blank -%}
                             {%- for selling_plan_group in item.product.selling_plan_groups -%}
                               {%- for selling_plan in selling_plan_group.selling_plans -%}
@@ -227,8 +176,8 @@
                             <subscription-btn
                               type="button"
                               is="subscription-btn"
-                              data-index='{{ item.index }}'
-                              tabindex='0'
+                              data-index="{{ item.index }}"
+                              tabindex="0"
                               data-selling_plan_id="{{- product_selling_plan_id -}}"
                               data-quantity="{{ item.quantity }}"
                             >
@@ -237,12 +186,12 @@
                           </div>
                         {%- endif -%}
                       {%- endif -%}
-                      <div class='cart-item__option'>{{ item.selling_plan_allocation.selling_plan.name }}</div>
+                      <div class="cart-item__option">{{ item.selling_plan_allocation.selling_plan.name }}</div>
                     {%- endif -%}
                     {%- if item.discounts.size > 0 -%}
-                      <div class='cart-item__discounts'>
+                      <div class="cart-item__discounts">
                         {%- for discount in item.discounts -%}
-                          <div class='discount'>
+                          <div class="discount">
                             {%- render 'icon', icon_name: 'discount', class: 'discount__icon' -%}
                             {{ discount.title }}
                           </div>
@@ -250,21 +199,12 @@
                       </div>
                     {%- endif -%}
                   </div>
-                  </div>
                 </div>
 
-                <div class='cart-item__pay-info'>
-                  <div class='cart-item__info cart-item__info--desktop-hide cart-item__info_sale_badge'>
-                    {% assign CMPR_PRICE = item.variant.compare_at_price  %}
-                    {% assign discount_percentage  =  CMPR_PRICE | minus: WCItem_FinalPrice| times: 100.0 | divided_by: CMPR_PRICE | money_without_currency | times: 100 | remove: '.0' %}
-                    {% if discount_percentage != '0' %}
-                      <div class="product-sale-amount-badge cart_page_sale_badge">
-                        {{ discount_percentage }}% off                
-                      </div>
-                    {% endif %}
-                    <div class="product_info_cart">
-                    <a href='{{ item.url }}' class='cart-item__name' aria-label='{{ item.product.title }}'>
-                      <span class='cart-item__name-label'>{{ item.product.title | escape }}</span>
+                <div class="cart-item__pay-info">
+                  <div class="cart-item__info cart-item__info--desktop-hide cart-item__info_sale_badge">
+                    <a href="{{ item.url }}" class="cart-item__name" aria-label="{{ item.product.title }}">
+                      <span class="cart-item__name-label">{{ item.product.title | escape }}</span>
                     </a>
                     {%- if item.product.has_only_default_variant == false
                       or item.properties.size != 0
@@ -273,18 +213,18 @@
                       {%- if item.product.has_only_default_variant == false -%}
                         {%- for option in item.options_with_values -%}
                           {% if option.value != blank %}
-                            <div class='cart-item__option'>{{ option.name }} - {{ option.value }}</div>
+                            <div class="cart-item__option">{{ option.name }} - {{ option.value }}</div>
                           {% endif %}
                         {%- endfor -%}
                       {%- endif -%}
                       {%- for property in item.properties -%}
                         {%- assign property_first_char = property.first | slice: 0 -%}
                         {%- if property.last != blank and property_first_char != '_' -%}
-                          <div class='cart-item__option'>
+                          <div class="cart-item__option">
                             <div>{{ property.first }}:</div>
                             <div>
                               {%- if property.last contains '/uploads/' -%}
-                                <a href='{{ property.last }}'>
+                                <a href="{{ property.last }}">
                                   {{ property.last | split: '/' | last }}
                                 </a>
                               {%- else -%}
@@ -296,35 +236,60 @@
                       {%- endfor -%}
                       {%- if item.product.selling_plan_groups.size > 0 -%}
                         {%- if item.selling_plan_allocation -%}
-                          <div class='cart-item__option selling_plan_label-small'>
+                          <div class="cart-item__option selling_plan_label-small">
                             SUBSCRIPTION
                             {% if item.product.selling_plan_groups.first.selling_plans.size > 1 %}
-                              <div class='cart-item__option cart-item__parentElement'>
-                                {% if item.selling_plan_allocation %} 
-                                  <div class="deliveryTime_cartDrawer">Delivery every
-                                    <span class="cartDropdownParent staticState" id="cartDropdownParent" onclick="runCartDropdownParent(this)">
+                              <div class="cart-item__option cart-item__parentElement">
+                                {% if item.selling_plan_allocation %}
+                                  <div class="deliveryTime_cartDrawer">
+                                    Delivery every
+                                    <span
+                                      class="cartDropdownParent staticState"
+                                      id="cartDropdownParent"
+                                      onclick="runCartDropdownParent(this)"
+                                    >
                                       <span class="cartDropwdownText">
-                                        {{  item.selling_plan_allocation.selling_plan.name | replace : 'Delivery every ', '' }}
+                                        {{
+                                          item.selling_plan_allocation.selling_plan.name
+                                          | replace: 'Delivery every ', ''
+                                        }}
                                       </span>
-                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path d="M8 14L12 10L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
                                     </span>
                                   </div>
-                                  <div class="subscriptiomButton_update showDropdown" id="subscriptiomButton_update" >
+                                  <div class="subscriptiomButton_update showDropdown" id="subscriptiomButton_update">
                                     {%- for selling_plan_group in item.product.selling_plan_groups -%}
                                       {%- for selling_plan in selling_plan_group.selling_plans -%}
                                         <subscription-btn
-                                          value="{{ selling_plan.id }}" {% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}selected {% endif %} 
-                                          tabindex='0'
+                                          value="{{ selling_plan.id }}"
+                                          {% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}
+                                            selected
+                                          {% endif %}
+                                          tabindex="0"
                                           class="{% if item.selling_plan_allocation.selling_plan.id == selling_plan.id %}selected{% endif %}"
-                                          data-index='{{ item.index }}'
+                                          data-index="{{ item.index }}"
                                           data-selling_plan_id="{{- selling_plan.id -}}"
-                                          data-quantity="{{ item.quantity }}">
-                                          {{ selling_plan.name | replace : 'Delivery every ', '' }} 
-                                            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="subscription-btn_icon">
-                                              <path d="M1 5L4.3 8L12 1" stroke="#EE5C4C" stroke-width="2"/>
-                                            </svg>
+                                          data-quantity="{{ item.quantity }}"
+                                        >
+                                          {{ selling_plan.name | replace: 'Delivery every ', '' }}
+                                          <svg
+                                            width="13"
+                                            height="10"
+                                            viewBox="0 0 13 10"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="subscription-btn_icon"
+                                          >
+                                            <path d="M1 5L4.3 8L12 1" stroke="#EE5C4C" stroke-width="2"/>
+                                          </svg>
                                         </subscription-btn>
                                         <br>
                                       {%- endfor -%}
@@ -335,10 +300,8 @@
                             {% endif %}
                           </div>
                         {%- else -%}
-                          <div class='cart-item__option selling_plan_label-small'>
-                            ONE-TIME PURCHASE
-                          </div>
-                          <div class='cart-item__option selling_plan_label-action'>
+                          <div class="cart-item__option selling_plan_label-small">ONE-TIME PURCHASE</div>
+                          <div class="cart-item__option selling_plan_label-action">
                             {%- assign product_selling_plan_id = blank -%}
                             {%- for selling_plan_group in item.product.selling_plan_groups -%}
                               {%- for selling_plan in selling_plan_group.selling_plans -%}
@@ -349,8 +312,8 @@
                             <subscription-btn
                               type="button"
                               is="subscription-btn"
-                              data-index='{{ item.index }}'
-                              tabindex='0'
+                              data-index="{{ item.index }}"
+                              tabindex="0"
                               data-selling_plan_id="{{- product_selling_plan_id -}}"
                               data-quantity="{{ item.quantity }}"
                             >
@@ -360,15 +323,15 @@
                         {%- endif -%}
                       {%- endif -%}
                       {% if item.product.selling_plan_groups.first.selling_plans.size <= 1 %}
-                        <div class='cart-item__option'>
+                        <div class="cart-item__option">
                           {{ item.selling_plan_allocation.selling_plan.name }}
                         </div>
                       {% endif %}
                     {%- endif -%}
                     {%- if item.discounts.size > 0 -%}
-                      <div class='cart-item__discounts'>
+                      <div class="cart-item__discounts">
                         {%- for discount in item.discounts -%}
-                          <div class='discount'>
+                          <div class="discount">
                             {%- render 'icon', icon_name: 'discount', class: 'discount__icon' -%}
                             {{ discount.title }}
                           </div>
@@ -376,82 +339,76 @@
                       </div>
                     {%- endif -%}
                   </div>
-                  </div>
 
-                  <div class='cart-item__cost-wrap {% if WCItem_OriginalPrice != WCItem_FinalPrice %}cart-item__cost-wrap--medium{% endif%} {% if item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--medium{% endif %} {% if WCItem_OriginalPrice != WCItem_FinalPrice and item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--large{% endif%}'>
-                    <div class='cart-item__price-wrap'>
-                      <div class='cart-item__price'>
-                        <div class='cart-item__price-item'>
-                          {{ WCItem_FinalPrice | money }}
+                  <div class="cart-item__cost-wrap {% if item.original_price != item.final_price %}cart-item__cost-wrap--medium{% endif%} {% if item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--medium{% endif %} {% if item.original_price != item.final_price and item.variant.available and item.unit_price_measurement %}cart-item__cost-wrap--large{% endif%}">
+                    <div class="cart-item__price-wrap">
+                      <div class="cart-item__price">
+                        <div class="cart-item__price-item">
+                          {{ item.final_price | money }}
                         </div>
-                        <div class='cart-item__price-item--small cart-item__price-item--old'>
-                          {% if CMPR_PRICE > item.variant.price %}
-                            <s>{{ CMPR_PRICE | money }}</s>
-                          {% endif %}
-                        </div>
-                        {% if WCItem_OriginalPrice != WCItem_FinalPrice %}
-                          <div class='cart-item__price-item--small cart-item__price-item--old'>
-                            {{ WCItem_OriginalPrice | money }}
+                        {% if item.original_price != item.final_price %}
+                          <div class="cart-item__price-item--small cart-item__price-item--old">
+                            {{ item.original_price | money }}
                           </div>
                         {% endif %}
                       </div>
                     </div>
 
                     <quantity-component
-                      class='cart-item-quantity {% if settings.edge_rounding_degree != "none" %} cart-item-quantity--with-rounded-buttons{% endif %}'
-                      data-stock='{% if item.quantity == 0 %}0{% else %}{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}{% endif %}'
+                      class="cart-item-quantity {% if settings.edge_rounding_degree != "none" %} cart-item-quantity--with-rounded-buttons{% endif %}"
+                      data-stock="{% if item.quantity == 0 %}0{% else %}{% if item.variant.inventory_policy == 'deny' and item.variant.inventory_management != blank %}{% if item.variant.available == true %}{% if item.variant.inventory_quantity > 0 %}{{ item.variant.inventory_quantity }}{% else %}1{% endif %}{% else %}0{% endif %}{% else %}9999{% endif %}{% endif %}"
                       data-cart-item-quantity
                     >
-                      <label class='visually-hidden' for='QuantityInput-CartItem-{{ item.index }}'>
+                      <label class="visually-hidden" for="QuantityInput-CartItem-{{ item.index }}">
                         {{- 'general.cart_items.quantity_label' | t -}}
                       </label>
 
                       <quantity-btn
-                        class='cart-item-quantity__button'
-                        name='minus'
-                        data-action='minus'
-                        type='button'
+                        class="cart-item-quantity__button"
+                        name="minus"
+                        data-action="minus"
+                        type="button"
                         disabled
-                        tabindex='0'
+                        tabindex="0"
                       >
                         {% render 'icon', icon_name: 'minus', class: 'cart-item-quantity__button-icon' %}
                       </quantity-btn>
                       <input
-                        class='cart-item-quantity__input'
-                        data-index='{{ item.index }}'
-                        min='1'
-                        name='updates[]'
-                        type='number'
-                        value='{{ item.quantity }}'
+                        class="cart-item-quantity__input"
+                        data-index="{{ item.index }}"
+                        min="1"
+                        name="updates[]"
+                        type="number"
+                        value="{{ item.quantity }}"
                         data-quantity-input
-                        id='QuantityInput-CartItem-{{ item.index }}'
+                        id="QuantityInput-CartItem-{{ item.index }}"
                       >
                       <quantity-btn
-                        class='cart-item-quantity__button'
-                        name='plus'
-                        data-action='plus'
-                        type='button'
-                        tabindex='0'
+                        class="cart-item-quantity__button"
+                        name="plus"
+                        data-action="plus"
+                        type="button"
+                        tabindex="0"
                       >
                         {% render 'icon', icon_name: 'plus', class: 'cart-item-quantity__button-icon' %}
                       </quantity-btn>
                     </quantity-component>
 
-                    <div class='cart-item__totals' data-cart-item-totals>
-                      <div class='cart-item__totals-price'>
-                        <div class='cart-item__price {% if WCItem_OriginalPrice != WCItem_FinalPrice %}cart-item__price--column{% elsif item.variant.available and item.unit_price_measurement %}cart-item__price--column{% endif %}'>
-                          <div class='cart-item__price-item'>
-                            {{ WCItem_FinalLinePrice | money }}
+                    <div class="cart-item__totals" data-cart-item-totals>
+                      <div class="cart-item__totals-price">
+                        <div class="cart-item__price {% if item.original_price != item.final_price %}cart-item__price--column{% elsif item.variant.available and item.unit_price_measurement %}cart-item__price--column{% endif %}">
+                          <div class="cart-item__price-item">
+                            {{ item.final_line_price | money }}
                           </div>
-                          {%- if WCItem_OriginalLinePrice != WCItem_FinalLinePrice -%}
-                            <div class='cart-item__price-item--small cart-item__price-item--old'>
-                              {{ WCItem_OriginalLinePrice | money }}
+                          {%- if item.original_line_price != item.final_line_price -%}
+                            <div class="cart-item__price-item--small cart-item__price-item--old">
+                              {{ item.original_line_price | money }}
                             </div>
                           {%- endif -%}
                           {%- if item.variant.available and item.unit_price_measurement -%}
-                            <div class='cart-item__price-item--small'>
+                            <div class="cart-item__price-item--small">
                               ({{ item.variant.unit_price | money }}
-                              <span aria-hidden='true'>/</span>
+                              <span aria-hidden="true">/</span>
                               {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                                 {{- item.variant.unit_price_measurement.reference_value -}}
                               {%- endif -%}

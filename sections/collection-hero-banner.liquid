@@ -71,125 +71,125 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }}  {% endif %}'>
-  <div class='container container--{{ container_size }} section-spacing collection-hero__outer-container {% if container_size == 'full-screen' %} collection-hero__outer-container--full-screen{% endif %}'>
-    <div class='collection-hero {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
+<div class="section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }}  {% endif %}">
+  <div class="container container--{{ container_size }} section-spacing collection-hero__outer-container {% if container_size == 'full-screen' %} collection-hero__outer-container--full-screen{% endif %}">
+    <div class="collection-hero {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}">
       {%- if show_collection_image -%}
-        <div class='overlay'></div>
+        <div class="overlay"></div>
         {%- if video != blank -%}
           {% render 'video-with-alt', video: video, class: 'image collection-hero__image' %}
         {%- elsif collection.metafields.custom.collection_heroimage != blank -%}
-          {% comment %} <img class='image collection-hero__image lazyload'
-            src='{{ collection.metafields.custom.collection_heroimage | img_url: 'master' }}'> {% endcomment %}
+          {% comment %}
+            <img class='image collection-hero__image lazyload'
+            src='{{ collection.metafields.custom.collection_heroimage | img_url: 'master' }}'>
+          {% endcomment %}
+          <img
+            class="image collection-hero__image lazyload desktop-collection-img {% if collection.title == 'Beauty' %} banner-object-position {% endif %}"
+            loading="lazy"
+            src="{{ image | img_url: 'master' }}"
+            alt="{{ image.alt }}"
+            width="{{image.width}}"
+            height="{{image.height}}"
+            style="object-position: {{ image.presentation.focal_point }};"
+            data-aspectratio="{{ image.aspect_ratio }}"
+            data-sizes="auto"
+            data-srcset="{%- render 'srcset-for-image', image: image -%}"
+          >
+          {% if collection.metafields.custom.collection_heroimage_mobile != blank %}
             <img
-              class='image collection-hero__image lazyload desktop-collection-img {% if collection.title == 'Beauty' %} banner-object-position {% endif %}'
-              loading='lazy'
-              src='{{ image | img_url: 'master' }}'
-              alt='{{ image.alt }}'
-              width='{{image.width}}'
-              height='{{image.height}}'
-              style='object-position: {{ image.presentation.focal_point }};'
-              data-aspectratio='{{ image.aspect_ratio }}'
-              data-sizes='auto'
-              data-srcset='{%- render 'srcset-for-image', image: image -%}'
+              class="image collection-hero__image lazyload mobile-collection-img"
+              loading="lazy"
+              src="{{ mobile_image | img_url: 'master' }}"
+              alt="{{ mobile_image.alt }}"
+              width="{{image.width}}"
+              height="{{image.height}}"
+              style="object-position: center"
+              data-aspectratio="{{ mobile_image.aspect_ratio }}"
+              data-sizes="auto"
+              data-srcset="{%- render 'srcset-for-image', image: image -%}"
             >
-              {% if collection.metafields.custom.collection_heroimage_mobile != blank %}
-            <img
-              class='image collection-hero__image lazyload mobile-collection-img'
-              loading='lazy'
-              src='{{ mobile_image | img_url: 'master' }}'
-              alt='{{ mobile_image.alt }}'
-              width='{{image.width}}'
-              height='{{image.height}}'
-              style='object-position: center'
-              data-aspectratio='{{ mobile_image.aspect_ratio }}'
-              data-sizes='auto'
-              data-srcset='{%- render 'srcset-for-image', image: image -%}'
-            >
-            {% endif %}
+          {% endif %}
 
         {% elsif collection.image != blank %}
-        {% assign collection_image = collection.image %}
-        <img
-          class='image collection-hero__image lazyload'
-          loading='lazy'
-          src='{{ collection_image | img_url: 'master' }}'
-          alt='{{ collection_image.alt }}'
-          width='{{collection_image.width}}'
-          height='{{collection_image.height}}'
-          style='object-position: {{ collection_image.presentation.focal_point }};'
-          data-aspectratio='{{ collection_image.aspect_ratio }}'
-          data-sizes='auto'
-          data-srcset='{%- render 'srcset-for-image', image: collection_image -%}'
-        >
-          
-        {% comment %} {%- else -%}
-          <carousel-component
-            class='carousel collection-hero__carousel'
-            data-animation='fade'
-            data-autoplay-interval='3'
+          {% assign collection_image = collection.image %}
+          <img
+            class="image collection-hero__image lazyload"
+            loading="lazy"
+            src="{{ collection_image | img_url: 'master' }}"
+            alt="{{ collection_image.alt }}"
+            width="{{collection_image.width}}"
+            height="{{collection_image.height}}"
+            style="object-position: {{ collection_image.presentation.focal_point }};"
+            data-aspectratio="{{ collection_image.aspect_ratio }}"
+            data-sizes="auto"
+            data-srcset="{%- render 'srcset-for-image', image: collection_image -%}"
           >
-            <div class='carousel__viewport collection-hero__carousel-viewport embla' data-carousel-viewport>
-              <div class='carousel__container collection-hero__carousel-container' data-carousel-container>
-                {%- for collection in collections -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: collection %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
 
-                  {%- if collection.image != blank -%}
-                    <div class='carousel__slide'>
-                      <img
-                        class='image lazyload'
-                        loading='lazy'
-                        src='{{ image | img_url: 'master' }}'
-                        alt='{{ image.alt }}'
-                        width='{{image.width}}'
-                        height='{{image.height}}'
-                        style='object-position: {{ image.presentation.focal_point }};'
-                        data-aspectratio='{{ image.aspect_ratio }}'
-                        data-sizes='auto'
-                        data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                      >
-                    </div>
-                  {%- endif -%}
-                {%- endfor -%}
+          {% comment %}
+            {%- else -%}
+            <carousel-component
+              class='carousel collection-hero__carousel'
+              data-animation='fade'
+              data-autoplay-interval='3'
+            >
+              <div class='carousel__viewport collection-hero__carousel-viewport embla' data-carousel-viewport>
+                <div class='carousel__container collection-hero__carousel-container' data-carousel-container>
+                  {%- for collection in collections -%}
+                    {%- if collection.image != blank -%}
+                      <div class='carousel__slide'>
+                        <img
+                          class='image lazyload'
+                          loading='lazy'
+                          src='{{ image | img_url: 'master' }}'
+                          alt='{{ image.alt }}'
+                          width='{{image.width}}'
+                          height='{{image.height}}'
+                          style='object-position: {{ image.presentation.focal_point }};'
+                          data-aspectratio='{{ image.aspect_ratio }}'
+                          data-sizes='auto'
+                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
+                        >
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
               </div>
-            </div>
-          </carousel-component> {% endcomment %}
+            </carousel-component>
+          {% endcomment %}
         {%- endif -%}
       {%- endif -%}
-      <div class='collection-hero__content-wrap'>
-        <div class='collection-hero__content'>
+      <div class="collection-hero__content-wrap">
+        <div class="collection-hero__content">
           {%- if show_breadcrumbs -%}
-            <div class='breadcrumbs collection-hero__breadcrumbs'>
+            <div class="breadcrumbs collection-hero__breadcrumbs">
               <a
-                class='breadcrumbs__item'
-                href='/collections/'
-                aria-label='{{ 'sections.collection_hero_banner.breadcrumb_collections_link' | t }}'
+                class="breadcrumbs__item"
+                href="/collections/"
+                aria-label="{{ 'sections.collection_hero_banner.breadcrumb_collections_link' | t }}"
               >
                 {{ 'sections.collection_hero_banner.breadcrumb_collections_link' | t }}
               </a>
-              <span class='breadcrumbs__divider'>/</span>
-              <a class='breadcrumbs__item' href='{{ collection.url }}' aria-label='{{ collection.title }}'>
+              <span class="breadcrumbs__divider">/</span>
+              <a class="breadcrumbs__item" href="{{ collection.url }}" aria-label="{{ collection.title }}">
                 {{- collection.title -}}
               </a>
             </div>
           {%- endif -%}
           {%- if show_collection_title and title != blank -%}
-            <h5 class='collection-hero__title'>{{ title }}</h5>
+            <h5 class="collection-hero__title">{{ title }}</h5>
           {%- endif -%}
           {% if collection.title != blank and request.path != '/collections/all' %}
-            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ collection.title }}</span>
-          {% elsif section.settings.collection_title != blank and request.path == '/collections/all'%}
-            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">{{ section.settings.collection_title }}</span>
+            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">
+              {{- collection.title -}}
+            </span>
+          {% elsif section.settings.collection_title != blank and request.path == '/collections/all' %}
+            <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">
+              {{- section.settings.collection_title -}}
+            </span>
           {% endif %}
           {%- if show_collection_description and description != blank -%}
-            <div class='collection-hero__description body-font-weight-from-global-settings'>{{ description }}</div>
+            <div class="collection-hero__description body-font-weight-from-global-settings">{{ description }}</div>
           {%- endif -%}
-
         </div>
       </div>
     </div>

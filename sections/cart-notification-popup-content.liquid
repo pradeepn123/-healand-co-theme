@@ -1,101 +1,35 @@
 {%- if cart != empty -%}
   {%- for item in cart.items -%}
-{% comment %} Wholesale_Club_Item_Prices Start {% endcomment %}
-{% if item.product %}{% assign base_product = item.product %}{% else %}{% assign base_product = item %}{% endif %}
-{% if item.variant %}{% assign base_variant = item.variant %}{% else %}{% assign base_variant = item.selected_or_first_available_variant %}{% endif %}
-
-{% if shop.metafields.sawholesale['base_price'] == blank %}
-  {% assign base_price = 'compare_at_price' %}
-{% else %}
-  {% assign base_price = shop.metafields.sawholesale['base_price'] %}
-{% endif %}
-
-{% assign saw_discount = 0 %}{% assign saw_has_discount = false %}
-
-{% if customer.tags != blank %}
-  {% for mf in base_product.metafields.sawholesale %}
-    {% capture product_customer_tag %}{{ mf | first | replace: 'discount_', '' }}{% endcapture %}
-    {% if customer.tags contains product_customer_tag %}
-      {% assign saw_has_discount = true %}
-      {% assign discount_key = product_customer_tag | prepend: 'discount_' %}
-      {% assign price_key = product_customer_tag | prepend: 'price_' %}
-      {% assign saw_discount = base_product.metafields.sawholesale[discount_key] | divided_by: 100.0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% assign saw_discount = 1 | minus: saw_discount %}
-
-{% if base_price == 'price' or base_variant.compare_at_price == blank  or base_variant.compare_at_price == 0 or base_variant.compare_at_price < base_variant.price %}
-  {% assign saw_variant_compare_at_price = base_variant.price %}
-{% else %}
-  {% assign saw_variant_compare_at_price = base_variant.compare_at_price %}
-{% endif %}
-
-{% assign cpe = shop.metafields.sawholesale['cpe'] | default: "true" %}
-{% if base_variant.metafields.sawholesale[price_key] != blank and cpe == "true" %}
-  {% assign saw_variant_price = base_variant.metafields.sawholesale[price_key] %}
-{% else %}
-  {% assign saw_variant_price = saw_variant_compare_at_price | times: saw_discount %}
-{% endif %}
-
-{% if saw_has_discount == false or saw_variant_price >= saw_variant_compare_at_price %}
-  {% assign WCItem_OriginalPrice = item.original_price %}
-  {% assign WCItem_FinalPrice = item.final_price %}
-  {% assign WCItem_Price = item.price %}
-  {% assign WCItem_PriceMin = item.price_min %}
-  {% assign WCItem_PriceMax = item.price_max %}
-  {% assign WCItem_CompareAtPrice = item.compare_at_price %}
-  {% assign WCItem_CompareAtPriceMin = item.compare_at_price_min %}
-  {% assign WCItem_CompareAtPriceMax = item.compare_at_price_max %}
-  {% assign WCItem_OriginalLinePrice = item.original_line_price %}
-  {% assign WCItem_FinalLinePrice = item.final_line_price %}
-  {% assign WCItem_LinePrice = item.line_price %}
-{% else %}
-  {% assign WCItem_OriginalPrice = saw_variant_compare_at_price %}
-  {% assign WCItem_FinalPrice = saw_variant_price %}
-  {% assign WCItem_Price = saw_variant_price %}
-  {% assign WCItem_PriceMin = item.price_min | times: saw_discount %}
-  {% assign WCItem_PriceMax = item.price_max | times: saw_discount %}
-  {% assign WCItem_CompareAtPrice = saw_variant_compare_at_price %}
-  {% if base_product.compare_at_price_min != 0 %}{% assign WCItem_CompareAtPriceMin = base_product.compare_at_price_min %}{% else %}{% assign WCItem_CompareAtPriceMin = base_product.price_min %}{% endif %}
-  {% if base_product.compare_at_price_max != 0 %}{% assign WCItem_CompareAtPriceMax = base_product.compare_at_price_max %}{% else %}{% assign WCItem_CompareAtPriceMax = base_product.price_max %}{% endif %}
-  {% assign WCItem_OriginalLinePrice = WCItem_OriginalPrice | round | times: item.quantity %}
-  {% assign WCItem_FinalLinePrice = WCItem_FinalPrice | round | times: item.quantity %}
-  {% assign WCItem_LinePrice = WCItem_Price | round | times: item.quantity %}
-{% endif %}
-{% comment %} Wholesale_Club_Item_Prices End {% endcomment %}
-
     {% assign image = item.image %}
 
     <div
-      class='cart-notification-popup-item'
-      id='CartNotificationPopupItem-{{ item.variant.id }}'
+      class="cart-notification-popup-item"
+      id="CartNotificationPopupItem-{{ item.variant.id }}"
     >
-      <div class='cart-notification-popup-item__link'>
+      <div class="cart-notification-popup-item__link">
         <a
-          href='{{ item.url }}'
-          class='shape shape--default'
-          aria-hidden='true'
-          tabindex='-1'
-          aria-label='{{ item.product.title }}'
+          href="{{ item.url }}"
+          class="shape shape--default"
+          aria-hidden="true"
+          tabindex="-1"
+          aria-label="{{ item.product.title }}"
         >
           <img
-            class='image cart-notification-popup-item__image lazyload'
+            class="image cart-notification-popup-item__image lazyload"
             {% render 'image-attributes', image: image %}
           >
         </a>
-        <div class='cart-item-checkmark'>
-          <svg class='cart-item-checkmark__icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+        <div class="cart-item-checkmark">
+          <svg class="cart-item-checkmark__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
             <circle class="cart-item-checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
             <path class="cart-item-checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
           </svg>
         </div>
       </div>
 
-      <div class='cart-notification-popup-item__info'>
-        <a href='{{ item.url }}' class='cart-notification-popup-item__name' aria-label='{{ item.product.title }}'>
-          <span class='cart-notification-popup-item__name-label'>{{ item.product.title | escape }}</span>
+      <div class="cart-notification-popup-item__info">
+        <a href="{{ item.url }}" class="cart-notification-popup-item__name" aria-label="{{ item.product.title }}">
+          <span class="cart-notification-popup-item__name-label">{{ item.product.title | escape }}</span>
         </a>
         {%- if item.product.has_only_default_variant == false
           or item.properties.size != 0
@@ -104,18 +38,18 @@
           {%- if item.product.has_only_default_variant == false -%}
             {%- for option in item.options_with_values -%}
               {% if option.value != blank %}
-                <div class='cart-notification-popup-item__option'>{{ option.name }} - {{ option.value }}</div>
+                <div class="cart-notification-popup-item__option">{{ option.name }} - {{ option.value }}</div>
               {% endif %}
             {%- endfor -%}
           {%- endif -%}
           {%- for property in item.properties -%}
             {%- assign property_first_char = property.first | slice: 0 -%}
             {%- if property.last != blank and property_first_char != '_' -%}
-              <div class='cart-notification-popup-item__option'>
+              <div class="cart-notification-popup-item__option">
                 <div>{{ property.first }}:</div>
                 <div>
                   {%- if property.last contains '/uploads/' -%}
-                    <a href='{{ property.last }}'>
+                    <a href="{{ property.last }}">
                       {{ property.last | split: '/' | last }}
                     </a>
                   {%- else -%}
@@ -125,12 +59,12 @@
               </div>
             {%- endif -%}
           {%- endfor -%}
-          <div class='cart-notification-popup-item__option'>{{ item.selling_plan_allocation.selling_plan.name }}</div>
+          <div class="cart-notification-popup-item__option">{{ item.selling_plan_allocation.selling_plan.name }}</div>
         {%- endif -%}
         {%- if item.discounts.size > 0 -%}
-          <div class='cart-notification-popup-item__discounts'>
+          <div class="cart-notification-popup-item__discounts">
             {%- for discount in item.discounts -%}
-              <div class='cart-notification-popup-item__discount'>
+              <div class="cart-notification-popup-item__discount">
                 {%- render 'icon', icon_name: 'discount', class: 'cart-notification-popup-item__discount-icon' -%}
                 {{ discount.title }}
               </div>
@@ -138,19 +72,19 @@
           </div>
         {%- endif -%}
 
-        <div class='cart-notification-popup-item__price'>
-          <div class='cart-notification-popup-item__price-item'>
-            {{ WCItem_FinalLinePrice | money_with_currency }}
+        <div class="cart-notification-popup-item__price">
+          <div class="cart-notification-popup-item__price-item">
+            {{ item.final_line_price | money_with_currency }}
           </div>
-          {%- if WCItem_OriginalLinePrice != WCItem_FinalLinePrice -%}
-            <div class='cart-notification-popup-item__price-item--small cart-notification-popup-item__price-item--old'>
-              {{ WCItem_OriginalLinePrice | money_with_currency }}
+          {%- if item.original_line_price != item.final_line_price -%}
+            <div class="cart-notification-popup-item__price-item--small cart-notification-popup-item__price-item--old">
+              {{ item.original_line_price | money_with_currency }}
             </div>
           {%- endif -%}
           {%- if item.variant.available and item.unit_price_measurement -%}
-            <div class='cart-notification-popup-item__price-item--small'>
+            <div class="cart-notification-popup-item__price-item--small">
               ({{ item.variant.unit_price | money_with_currency }}
-              <span aria-hidden='true'>/</span>
+              <span aria-hidden="true">/</span>
               {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                 {{- item.variant.unit_price_measurement.reference_value -}}
               {%- endif -%}

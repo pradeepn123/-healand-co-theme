@@ -21,18 +21,11 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='rich-text__outer-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }}{% endif %}'>
-  <div class='section-spacing rich-text rich-text--section  container container--{{ container_size }}'>
-    <div class='rich-text__container  {% unless enable_background_around_container %} rich-text__container--with-aside-spacing section color-{{ color_scheme }}{% endunless %}'>
-      <div class='rich-text__content rich-text__content--with-{{ content_align }}-align'>
+<div class="rich-text__outer-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }}{% endif %}">
+  <div class="section-spacing rich-text rich-text--section  container container--{{ container_size }}">
+    <div class="rich-text__container  {% unless enable_background_around_container %} rich-text__container--with-aside-spacing section color-{{ color_scheme }}{% endunless %}">
+      <div class="rich-text__content rich-text__content--with-{{ content_align }}-align">
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {%- liquid
             assign options = block.settings
             assign caption = options.caption
@@ -59,7 +52,7 @@
             {% when 'icon' %}
               {%- if custom_icon_image != blank -%}
                 <img
-                  class='rich-text__icon lazyload'
+                  class="rich-text__icon lazyload"
                   {% render 'image-attributes', image: custom_icon_image, size: 'small' %}
                 >
               {%- elsif icon != 'none' -%}
@@ -67,34 +60,34 @@
               {%- endif -%}
             {%- when 'caption' -%}
               {%- if caption != blank -%}
-                <div class='caption rich-text__caption block-{{block.id}}' {{ block.shopify_attributes }}>
+                <div class="caption rich-text__caption block-{{block.id}}" {{ block.shopify_attributes }}>
                   {{ caption }}
                 </div>
               {%- endif -%}
             {%- when 'heading' -%}
               {%- if title != blank -%}
-                <h5 class='rte block-{{block.id}} {{ heading_size }} decorated_heading' {{ block.shopify_attributes }}>
+                <h5 class="rte block-{{block.id}} {{ heading_size }} decorated_heading" {{ block.shopify_attributes }}>
                   {{ title }}
                 </h5>
               {%- endif -%}
             {%- when 'text' -%}
               {%- if text != blank or text_2 != blank or text_3 != blank -%}
                 <div
-                  class=' {{ body_size }} rich-text__text-wrapper block-{{block.id}} body-font-weight-from-global-settings {% if container_size != 'xsmall' %} rich-text__text-wrapper--with-large-desktop-gap{% endif %}'
+                  class=" {{ body_size }} rich-text__text-wrapper block-{{block.id}} body-font-weight-from-global-settings {% if container_size != 'xsmall' %} rich-text__text-wrapper--with-large-desktop-gap{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% if text != blank %}
-                    <div class='rte rich-text__text rich-text-section__text'>
+                    <div class="rte rich-text__text rich-text-section__text">
                       {{ text }}
                     </div>
                   {% endif %}
                   {% if text_2 != blank %}
-                    <div class='rte rich-text__text rich-text-section__text'>
+                    <div class="rte rich-text__text rich-text-section__text">
                       {{ text_2 }}
                     </div>
                   {% endif %}
                   {% if text_3 != blank %}
-                    <div class='rte rich-text__text rich-text-section__text'>
+                    <div class="rte rich-text__text rich-text-section__text">
                       {{ text_3 }}
                     </div>
                   {% endif %}
@@ -102,22 +95,22 @@
               {%- endif -%}
             {%- when 'buttons' -%}
               {%- if btn_text != blank or extra_btn_text != blank -%}
-                <div class='rich-text__btns block-{{block.id}}' {{ block.shopify_attributes }}>
+                <div class="rich-text__btns block-{{block.id}}" {{ block.shopify_attributes }}>
                   {%- if btn_text != blank -%}
                     {%- if btn_style == 'link' -%}
                       <a
-                        class='link'
-                        href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                        aria-label='{{ btn_text }}'
+                        class="link"
+                        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                        aria-label="{{ btn_text }}"
                       >
-                        <span class='link__text'>{{ btn_text }}</span>
+                        <span class="link__text">{{ btn_text }}</span>
                         {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
                       </a>
                     {%- else -%}
                       <a
-                        class='btn btn--{{ btn_style }} rich-text__btn'
-                        href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-                        aria-label='{{- btn_text -}}'
+                        class="btn btn--{{ btn_style }} rich-text__btn"
+                        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+                        aria-label="{{- btn_text -}}"
                       >
                         {{- btn_text -}}
                       </a>
@@ -126,18 +119,18 @@
                   {%- if extra_btn_text != blank -%}
                     {%- if extra_btn_style == 'link' -%}
                       <a
-                        class='link'
-                        href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                        aria-label='{{ extra_btn_text }}'
+                        class="link"
+                        href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                        aria-label="{{ extra_btn_text }}"
                       >
-                        <span class='link__text'>{{ extra_btn_text }}</span>
+                        <span class="link__text">{{ extra_btn_text }}</span>
                         {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
                       </a>
                     {%- else -%}
                       <a
-                        class='btn btn--{{ extra_btn_style }} rich-text__btn'
-                        href='{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}'
-                        aria-label='{{- extra_btn_text -}}'
+                        class="btn btn--{{ extra_btn_style }} rich-text__btn"
+                        href="{% if extra_btn_url != blank %}{{ extra_btn_url }}{% else %}#{% endif %}"
+                        aria-label="{{- extra_btn_text -}}"
                       >
                         {{- extra_btn_text -}}
                       </a>

@@ -31,13 +31,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{block.id}}{
             --gsc-image-width: {{ block.settings.image_width }}%;
         }
@@ -56,50 +49,46 @@
 
 {% render 'inline-css-minifier', css: css %}
 {% if data_metafields_checkbox == false %}
-  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent' data-aos="fade-up">
-    <div class='section-spacing container container--{{ container_size }}'>
+  <div
+    class="section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent"
+    data-aos="fade-up"
+  >
+    <div class="section-spacing container container--{{ container_size }}">
       <div class="section_heading">
         {% if blocks_length > 0 %}
           {{ section_heading }}
         {% endif %}
       </div>
-      <div class='{% unless enable_background_around_container %} faq-section__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
+      <div class="{% unless enable_background_around_container %} faq-section__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}">
         {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           {% assign custom_icon_image = block.settings.custom_icon_image %}
           {% assign icon = block.settings.icon %}
 
           {%- case block.type -%}
             {%- when 'collapsible_row' -%}
               <accordeon-component
-                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
+                class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+                data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+                data-section-id="{{ section.id }}"
+                data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
                 <accordeon-btn
-                  class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
-                  tabindex='0'
+                  class="accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn"
+                  tabindex="0"
                 >
                   {%- if custom_icon_image != blank -%}
                     <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
-                      class='accordeon-plus__btn-icon lazyload'
-                      width='24'
-                      height='24'
-                      src='{{ custom_icon_image | image_url: width: 24 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
+                      loading="lazy"
+                      alt="{{ custom_icon_image.alt }}"
+                      class="accordeon-plus__btn-icon lazyload"
+                      width="24"
+                      height="24"
+                      src="{{ custom_icon_image | image_url: width: 24 }}"
+                      style="object-position: {{ custom_icon_image.presentation.focal_point }};"
+                      data-aspectratio="{{ custom_icon_image.aspect_ratio }}"
+                      data-srcset="{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}"
+                      data-sizes="auto"
                     >
                   {%- elsif icon != 'none' -%}
                     {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
@@ -107,41 +96,40 @@
                   {{ block.settings.title }}
                   {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
                 </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                  <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
+                <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+                  <div class="accordeon-plus__content faq-section__accordeon-content" data-accordeon-content>
                     {%- assign image = block.settings.image -%}
                     {%- assign video = block.settings.video -%}
                     {%- assign page = block.settings.page -%}
                     {%- assign text = block.settings.text -%}
 
-                    <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
+                    <div class="faq-section__content-tab-content body-font-weight-from-global-settings">
                       {% if text != blank %}
-                        <div class='rte faq-section__rte'>
+                        <div class="rte faq-section__rte">
                           {{ text }}
                         </div>
                       {% endif %}
 
                       {% if page != blank %}
-                        <div class='rte rte--page faq-section__rte'>
+                        <div class="rte rte--page faq-section__rte">
                           {{ page.content }}
                         </div>
                       {% endif %}
-
 
                       {% if video != blank %}
                         {% render 'video-with-alt', video: video, class: 'image faq-section__image' %}
                       {% elsif image != blank %}
                         <img
-                          class='image faq-section__image lazyload'
-                          loading='lazy'
-                          src='{{ image | image_url: width: 160 }}'
-                          alt='{{ image.alt }}'
-                          width='{{ image.width }}'
-                          height='{{ image.height }}'
-                          style='object-position: {{ image.presentation.focal_point }};'
-                          data-aspectratio='{{ image.aspect_ratio }}'
-                          data-srcset='{%- render 'srcset-for-image', image: image -%}'
-                          data-sizes='auto'
+                          class="image faq-section__image lazyload"
+                          loading="lazy"
+                          src="{{ image | image_url: width: 160 }}"
+                          alt="{{ image.alt }}"
+                          width="{{ image.width }}"
+                          height="{{ image.height }}"
+                          style="object-position: {{ image.presentation.focal_point }};"
+                          data-aspectratio="{{ image.aspect_ratio }}"
+                          data-srcset="{%- render 'srcset-for-image', image: image -%}"
+                          data-sizes="auto"
                         >
                       {% endif %}
                     </div>
@@ -153,68 +141,63 @@
       </div>
     </div>
   </div>
-  {% else %}
-  <div class='section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent' data-aos="fade-up">
-    <div class='section-spacing container container--{{ container_size }}'>
+{% else %}
+  <div
+    class="section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %} faq-section--parent"
+    data-aos="fade-up"
+  >
+    <div class="section-spacing container container--{{ container_size }}">
       <div class="section_heading">
         {{ section_heading }}
       </div>
-      <div class='{% unless enable_background_around_container %} faq-section__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}'>
+      <div class="{% unless enable_background_around_container %} faq-section__container--with-aside-spacing section color-{{ color_scheme }}  {% endunless %}">
         {% for data in data_metafields %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: data %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
           <accordeon-component
-                class='accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}'
-                data-aria-expanded='{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}'
-                data-section-id='{{ section.id }}'
-                data-block-id='{{ block.id }}'
-                {{ block.shopify_attributes }}
-              >
-                <accordeon-btn
-                  class='accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn'
-                  tabindex='0'
+            class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
+            data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
+            data-section-id="{{ section.id }}"
+            data-block-id="{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            <accordeon-btn
+              class="accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn"
+              tabindex="0"
+            >
+              {%- if custom_icon_image != blank -%}
+                <img
+                  loading="lazy"
+                  alt="{{ custom_icon_image.alt }}"
+                  class="accordeon-plus__btn-icon lazyload"
+                  width="24"
+                  height="24"
+                  src="{{ custom_icon_image | image_url: width: 24 }}"
+                  style="object-position: {{ custom_icon_image.presentation.focal_point }};"
+                  data-aspectratio="{{ custom_icon_image.aspect_ratio }}"
+                  data-srcset="{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}"
+                  data-sizes="auto"
                 >
-                  {%- if custom_icon_image != blank -%}
-                    <img
-                      loading='lazy'
-                      alt='{{ custom_icon_image.alt }}'
-                      class='accordeon-plus__btn-icon lazyload'
-                      width='24'
-                      height='24'
-                      src='{{ custom_icon_image | image_url: width: 24 }}'
-                      style='object-position: {{ custom_icon_image.presentation.focal_point }};'
-                      data-aspectratio='{{ custom_icon_image.aspect_ratio }}'
-                      data-srcset='{%- render 'srcset-for-image', image: custom_icon_image, size: 'small' -%}'
-                      data-sizes='auto'
-                    >
-                  {%- elsif icon != 'none' -%}
-                    {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
-                  {%- endif -%}
-                  {{ data.heading }}
-                  {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
-                </accordeon-btn>
-                <div class='accordeon-plus__content-wrap' data-accordeon-content-wrapper>
-                  <div class='accordeon-plus__content faq-section__accordeon-content' data-accordeon-content>
-                    {%- assign image = data.image -%}
-                    {%- assign video = data.video | file_url -%}
-                    {%- assign text = data.content -%}
+              {%- elsif icon != 'none' -%}
+                {% render 'icon-pack', icon: icon, class: 'accordeon-plus__btn-icon' %}
+              {%- endif -%}
+              {{ data.heading }}
+              {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
+            </accordeon-btn>
+            <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
+              <div class="accordeon-plus__content faq-section__accordeon-content" data-accordeon-content>
+                {%- assign image = data.image -%}
+                {%- assign video = data.video | file_url -%}
+                {%- assign text = data.content -%}
 
-                    <div class='faq-section__content-tab-content body-font-weight-from-global-settings'>
-                      {% if data.content != blank %}
-                        <div class='rte faq-section__rte'>
-                          {{ data.content }}
-                        </div>
-                      {% endif %}
-
+                <div class="faq-section__content-tab-content body-font-weight-from-global-settings">
+                  {% if data.content != blank %}
+                    <div class="rte faq-section__rte">
+                      {{ data.content }}
                     </div>
-                  </div>
+                  {% endif %}
                 </div>
-              </accordeon-component>
+              </div>
+            </div>
+          </accordeon-component>
         {% endfor %}
       </div>
     </div>
@@ -907,7 +890,7 @@
   ],
   "presets": [
     {
-        "name": "FAQ Section"
+      "name": "FAQ Section"
     }
   ]
 }

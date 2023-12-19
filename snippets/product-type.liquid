@@ -1,34 +1,25 @@
-{% comment %} {% if product.metafields.custom.addition_benefit.value %}
-  <div class='product-general-info-block' {{ block.shopify_attributes }}>
-    {% capture heading %}
-     {% for block in product.metafields.custom.addition_benefit.value %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
+{% comment %}
+  {% if product.metafields.custom.addition_benefit.value %}
+    <div class='product-general-info-block' {{ block.shopify_attributes }}>
+      {% capture heading %}
+       {% for block in product.metafields.custom.addition_benefit.value %}
+           {{block.heading}}{% unless forloop.last %}+ {% endunless %}
+       {% endfor %}
+      {%endcapture%}
 
-         {{block.heading}}{% unless forloop.last %}+ {% endunless %}
-     {% endfor %}
-    {%endcapture%}
-    
-    <div class="product-type">
-      <p style="color: {{ block.settings.product_type_color }}">{{heading}}</p>
+      <div class="product-type">
+        <p style="color: {{ block.settings.product_type_color }}">{{heading}}</p>
+      </div>
     </div>
-  </div>
-{% endif %} {% endcomment %}
+  {% endif %}
+{% endcomment %}
 
 {% assign benefits = product.metafields.custom.addition_benefits.value %}
-  <p class="product_benefits">
-    {% for elem in benefits %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: elem %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-      <span style="color: {{ block.settings.product_type_color }}">{{ elem }}{% unless forloop.last %} + {% endunless %}</span>
-    {% endfor %}
-  </p>
+<p class="product_benefits">
+  {% for elem in benefits %}
+    <span style="color: {{ block.settings.product_type_color }}">
+      {{- elem -}}
+      {%- unless forloop.last %} + {% endunless -%}
+    </span>
+  {% endfor %}
+</p>

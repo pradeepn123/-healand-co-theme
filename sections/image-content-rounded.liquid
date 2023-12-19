@@ -1,7 +1,7 @@
 {%- liquid
-assign options = section.settings
-assign section_spacing_top = options.section_spacing_top
-assign section_spacing_bottom = options.section_spacing_bottom
+  assign options = section.settings
+  assign section_spacing_top = options.section_spacing_top
+  assign section_spacing_bottom = options.section_spacing_bottom
 -%}
 
 {% capture css %}
@@ -13,171 +13,163 @@ assign section_spacing_bottom = options.section_spacing_bottom
 {% endstyle %}
 {% endcapture %}
 {% style %}
-    {% assign no_of_ingredients_per_page = section.settings.no_of_ingredients_per_page %}   
-    @media (max-width: 767px){
-        {% assign no_of_ingredients_per_page_mobile = section.settings.no_of_ingredients_per_page_mobile %}
-    }
+  {% assign no_of_ingredients_per_page = section.settings.no_of_ingredients_per_page %}
+  @media (max-width: 767px){
+      {% assign no_of_ingredients_per_page_mobile = section.settings.no_of_ingredients_per_page_mobile %}
+  }
 {% endstyle %}
 
 {% render 'inline-css-minifier', css: css %}
 {{ 'image-content-rounded.css' | asset_url | stylesheet_tag: preload: true }}
 <div class="ingredients-database-section section section-{{ section.id }} section-spacing color-{{ color_scheme }}">
-    <div class="container">
-        <div class="ingredients-database-wrapper">
-            <div class="ingredients-database" initial-load="true">
-              {% for block in page.metafields.custom.list.value %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                {% assign ingredient_heading = block.heading | handle %}
-                {% assign page =  pages[ingredient_heading] %}
-                <div class="ingredients-database-item hidden">
-                    {% if block.image != blank %}
-                        <a href="{{ page.url }}"> 
-                        <div class="ingredients_image_wrap">
-                            <img src="{{ block.image | img_url: 'master' }}" alt="">
-                        </div>
-                        </a>
-                    {% endif %}
-                    <div class="ingredients_content_info">
-                        <a href="{{ page.url }}">
-                            <h4>{{ block.heading }}</h4>
-                            <p class="tag_wrap">
-                              {{ block.origin.value }}
-                            </p>
-                        </a>
-                    </div>
+  <div class="container">
+    <div class="ingredients-database-wrapper">
+      <div class="ingredients-database" initial-load="true">
+        {% for block in page.metafields.custom.list.value %}
+          {% assign ingredient_heading = block.heading | handle %}
+          {% assign page = pages[ingredient_heading] %}
+          <div class="ingredients-database-item hidden">
+            {% if block.image != blank %}
+              <a href="{{ page.url }}">
+                <div class="ingredients_image_wrap">
+                  <img src="{{ block.image | img_url: 'master' }}" alt="">
                 </div>
-              {% endfor %} 
+              </a>
+            {% endif %}
+            <div class="ingredients_content_info">
+              <a href="{{ page.url }}">
+                <h4>{{ block.heading }}</h4>
+                <p class="tag_wrap">
+                  {{ block.origin.value }}
+                </p>
+              </a>
             </div>
-        </div>
-        <div class="load-button-pagination__btn pagination_load_btn" style="display: none;">
-            {%- render 'icon', icon_name: 'spinner', class: "loading-spinner", stroke_width: 5 -%}
-        </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+    <div class="load-button-pagination__btn pagination_load_btn" style="display: none;">
+      {%- render 'icon', icon_name: 'spinner', class: 'loading-spinner', stroke_width: 5 -%}
+    </div>
+  </div>
   <!-- </div> -->
 </div>
 
 <script>
-    const handleLoadMoreItems = (e) => {
-        var no_of_ingredients_per_page = {{ no_of_ingredients_per_page | json }}
-        var no_of_ingredients_per_page_mobile = {{ no_of_ingredients_per_page_mobile | json }}
+      const handleLoadMoreItems = (e) => {
+          var no_of_ingredients_per_page = {{ no_of_ingredients_per_page | json }}
+          var no_of_ingredients_per_page_mobile = {{ no_of_ingredients_per_page_mobile | json }}
 
-        const element = document.querySelector(".ingredients-database")
-        const rect = element.getBoundingClientRect();
-        if((rect.bottom <= window.innerHeight || element.getAttribute("initial-load")) && !element.getAttribute("is-loading")){
-//        if(rect.bottom <= window.innerHeight && !element.getAttribute("is-loading")){
-            var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
+          const element = document.querySelector(".ingredients-database")
+          const rect = element.getBoundingClientRect();
+          if((rect.bottom <= window.innerHeight || element.getAttribute("initial-load")) && !element.getAttribute("is-loading")){
+  //        if(rect.bottom <= window.innerHeight && !element.getAttribute("is-loading")){
+              var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
 
-            if (!ingredient_block_hidden.length) {
-                document.querySelector(".pagination_load_btn").remove()
-                window.removeEventListener("scroll", handleLoadMoreItems)
-                return false;
-            }
+              if (!ingredient_block_hidden.length) {
+                  document.querySelector(".pagination_load_btn").remove()
+                  window.removeEventListener("scroll", handleLoadMoreItems)
+                  return false;
+              }
 
-            element.setAttribute("is-loading", true)
-            document.querySelector(".pagination_load_btn").style.display = ""
+              element.setAttribute("is-loading", true)
+              document.querySelector(".pagination_load_btn").style.display = ""
 
-            setTimeout(function () {
-                var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
-                if(window.screen.width > 768){
-                    ingredient_block_hidden.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
-                    if(ingredient_block_hidden.length - (no_of_ingredients_per_page + 1) <= 0){
-                        document.querySelector('.pagination_load_btn').style.display = 'none';
-                        document.querySelector('.load_more_button_update').style.display = 'none';
-                        document.querySelector('.load-button-pagination__progress').style.display = 'none';
-                    }
-                } else {
-                    ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
-                    if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
-                        document.querySelector('.pagination_load_btn').style.display = 'none';
-                        document.querySelector('.load_more_button_update').style.display = 'none';
-                        document.querySelector('.load-button-pagination__progress').style.display = 'none';
-                    }
-                }
-                document.querySelector(".pagination_load_btn").style.display = 'none';
-                if (element.getAttribute("initial-load")) {
-                    element.removeAttribute("initial-load")
-                    window.addEventListener("scroll", handleLoadMoreItems)
-                }
-                element.removeAttribute("is-loading")
-            }, element.getAttribute("initial-load") ? 0 : 500)
-        }
-    };
+              setTimeout(function () {
+                  var ingredient_block_hidden = Array.from(document.querySelectorAll('.ingredients-database-item.hidden'));
+                  if(window.screen.width > 768){
+                      ingredient_block_hidden.slice(0,no_of_ingredients_per_page).forEach(el => el.classList.remove('hidden'));
+                      if(ingredient_block_hidden.length - (no_of_ingredients_per_page + 1) <= 0){
+                          document.querySelector('.pagination_load_btn').style.display = 'none';
+                          document.querySelector('.load_more_button_update').style.display = 'none';
+                          document.querySelector('.load-button-pagination__progress').style.display = 'none';
+                      }
+                  } else {
+                      ingredient_block_hidden.slice(0,no_of_ingredients_per_page_mobile).forEach(el => el.classList.remove('hidden'));
+                      if(ingredient_block_hidden.length - (no_of_ingredients_per_page_mobile + 1) <= 0){
+                          document.querySelector('.pagination_load_btn').style.display = 'none';
+                          document.querySelector('.load_more_button_update').style.display = 'none';
+                          document.querySelector('.load-button-pagination__progress').style.display = 'none';
+                      }
+                  }
+                  document.querySelector(".pagination_load_btn").style.display = 'none';
+                  if (element.getAttribute("initial-load")) {
+                      element.removeAttribute("initial-load")
+                      window.addEventListener("scroll", handleLoadMoreItems)
+                  }
+                  element.removeAttribute("is-loading")
+              }, element.getAttribute("initial-load") ? 0 : 500)
+          }
+      };
 
-    addEventListener("DOMContentLoaded", handleLoadMoreItems);
-
+      addEventListener("DOMContentLoaded", handleLoadMoreItems);
 </script>
 <style>
-    .pagination_load_btn {
-        color: var(--gsc-button-background-color-100);
-        justify-content: center;
-        margin: 0;
-        border: 0;
-        box-shadow:  unset !important;
-        width: 100%;
-    }
+  .pagination_load_btn {
+    color: var(--gsc-button-background-color-100);
+    justify-content: center;
+    margin: 0;
+    border: 0;
+    box-shadow: unset !important;
+    width: 100%;
+  }
 
-    .pagination_load_btn svg > circle{
-        stroke: var(--gsc-button-background-color-100);
-    }
+  .pagination_load_btn svg > circle {
+    stroke: var(--gsc-button-background-color-100);
+  }
 </style>
 {% schema %}
 {
-    "name": "Image content Rounded",
-    "tag": "section",
-    "settings": [
-        {
-            "type": "header",
-            "content": "t:sections.image_banner.image_settings_header"
-        },
-        {
-            "type": "range",
-            "id": "section_spacing_top",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "default": 0,
-            "unit": "t:sections.general_section_settings.section_spacing_top.unit",
-            "label": "t:sections.general_section_settings.section_spacing_top.label"
-        },
-        {
-            "type": "range",
-            "id": "section_spacing_bottom",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "default": 0,
-            "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
-            "label": "t:sections.general_section_settings.section_spacing_bottom.label"
-        },
-        {
-            "type": "range",
-            "id": "no_of_ingredients_per_page",
-            "min": 1,
-            "max": 20,
-            "default": 4,
-            "step": 1,
-            "label": "Number of ingredients per page"
-        },
-        {
-            "type": "range",
-            "id": "no_of_ingredients_per_page_mobile",
-            "min": 1,
-            "max": 20,
-            "default": 4,
-            "step": 1,
-            "label": "Number of ingredients per page on mobile"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Image content Rounded"
-        }
-    ]
+  "name": "Image content Rounded",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.image_banner.image_settings_header"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+      "label": "t:sections.general_section_settings.section_spacing_top.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+      "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+    },
+    {
+      "type": "range",
+      "id": "no_of_ingredients_per_page",
+      "min": 1,
+      "max": 20,
+      "default": 4,
+      "step": 1,
+      "label": "Number of ingredients per page"
+    },
+    {
+      "type": "range",
+      "id": "no_of_ingredients_per_page_mobile",
+      "min": 1,
+      "max": 20,
+      "default": 4,
+      "step": 1,
+      "label": "Number of ingredients per page on mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image content Rounded"
+    }
+  ]
 }
 {% endschema %}

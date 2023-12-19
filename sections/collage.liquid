@@ -34,13 +34,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
         .block-{{ block.id }} {
           --gsc-collage-grid-item-row-span: {{ block.settings.desktop_rows }};
           --gsc-collage-grid-item-column-span: {{ block.settings.desktop_columns }};
@@ -83,34 +76,27 @@
 
 {%- render 'inline-css-minifier', css: css -%}
 
-<div class='collage section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}collage--with-carousel{% endif %}'>
+<div class="collage section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}collage--with-carousel{% endif %}">
   {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
     {%- if block.settings.link == blank and block.type == 'quote' -%}
       <sidebar-component
-        class='sidebar quote-sidebar'
-        id='quote-sidebar-{{ block.id }}'
+        class="sidebar quote-sidebar"
+        id="quote-sidebar-{{ block.id }}"
         data-with-overlay
         data-with-close-on-outside
         data-with-close-on-escape
         data-overlay-important
-        data-open-direction='left'
-        tabindex='-1'
+        data-open-direction="left"
+        tabindex="-1"
       >
         <template>
-          <div class='sidebar__body quote-sidebar__body' data-sidebar-content>
+          <div class="sidebar__body quote-sidebar__body" data-sidebar-content>
             <sidebar-button>
               <button
                 data-sidebar-button
-                data-sidebar-id='quote-sidebar-{{ block.id }}'
-                class=' unstyled-button quote-sidebar__close-button-with-scale-hover close-button-with-scale-hover'
-                aria-label='Close'
+                data-sidebar-id="quote-sidebar-{{ block.id }}"
+                class=" unstyled-button quote-sidebar__close-button-with-scale-hover close-button-with-scale-hover"
+                aria-label="Close"
               ></button>
             </sidebar-button>
             {%- render 'quote', class: 'quote-sidebar__quote', block: block, is_inside_sidebar: true -%}
@@ -120,25 +106,18 @@
     {%- endif -%}
   {%- endfor -%}
 
-  <div class='collage__container container container--{{ container_size }} section-spacing'>
+  <div class="collage__container container container--{{ container_size }} section-spacing">
     {%- if title != blank -%}
-      <div class='collage__header {% if alignment == 'center' %}collage__header--center{% endif %}'>
-        <h5 class='collage__title {{ heading_size }}'>{{ title }}</h5>
+      <div class="collage__header {% if alignment == 'center' %}collage__header--center{% endif %}">
+        <h5 class="collage__title {{ heading_size }}">{{ title }}</h5>
       </div>
     {%- endif -%}
     {%- if section.blocks.size > 0 -%}
-      <div class='collage__blocks'>
-        <div class='collage__card-grid' data-aos="fade-up">
+      <div class="collage__blocks">
+        <div class="collage__card-grid" data-aos="fade-up">
           {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             <div
-              class='collage__item collage__card-grid-item block-{{ block.id }} color-{{ block.settings.color_scheme }}'
+              class="collage__item collage__card-grid-item block-{{ block.id }} color-{{ block.settings.color_scheme }}"
               {{ block.shopify_attributes }}
             >
               {%- render 'collage-item', block: block, section: section -%}
@@ -146,19 +125,12 @@
           {%- endfor -%}
         </div>
         {%- if enable_carousel_on_mobile -%}
-          <carousel-component class='carousel collage__carousel' data-section-id='{{ section.id }}'>
-            <div class='carousel__viewport collage__carousel-viewport embla' data-carousel-viewport>
-              <div class='carousel__container' data-carousel-container>
+          <carousel-component class="carousel collage__carousel" data-section-id="{{ section.id }}">
+            <div class="carousel__viewport collage__carousel-viewport embla" data-carousel-viewport>
+              <div class="carousel__container" data-carousel-container>
                 {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   <div
-                    class='collage__item carousel__slide collage__carousel-slide block-{{ block.id }} color-{{ block.settings.color_scheme }}'
+                    class="collage__item carousel__slide collage__carousel-slide block-{{ block.id }} color-{{ block.settings.color_scheme }}"
                     {{ block.shopify_attributes }}
                   >
                     {%- render 'collage-item', block: block, section: section -%}
@@ -168,26 +140,19 @@
             </div>
             {%- if section.blocks.size > 1 -%}
               <carousel-dots
-                class='solid-dots-carousel collage__solid-dots-carousel'
-                data-contain-scroll='keepSnaps'
-                data-align='center'
+                class="solid-dots-carousel collage__solid-dots-carousel"
+                data-contain-scroll="keepSnaps"
+                data-align="center"
               >
-                <div class='solid-dots-carousel__viewport embla' data-carousel-viewport>
-                  <div class='solid-dots-carousel__container' data-carousel-container>
+                <div class="solid-dots-carousel__viewport embla" data-carousel-viewport>
+                  <div class="solid-dots-carousel__container" data-carousel-container>
                     {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                       <carousel-dot
-                        class='solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}'
-                        tabindex='0'
-                        data-dot-index='{{ forloop.index0 }}'
+                        class="solid-dots-carousel__solid-dot {% if forloop.index == 1 %}is-primary{% endif %}"
+                        tabindex="0"
+                        data-dot-index="{{ forloop.index0 }}"
                       >
-                        <div class='solid-dots-carousel__solid-dot-circle'></div>
+                        <div class="solid-dots-carousel__solid-dot-circle"></div>
                       </carousel-dot>
                     {%- endfor -%}
                   </div>

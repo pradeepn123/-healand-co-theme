@@ -19,7 +19,6 @@
   assign enable_circle_navigation = options.enable_circle_navigation
   assign enable_arrows_navigation = options.enable_arrows_navigation
   assign show_arrows_on_hover = options.show_arrows_on_hover
- 
 -%}
 
 {% capture css %}
@@ -36,15 +35,7 @@
         }
     }
 
-    {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-        {% assign options = block.settings %}
+    {% for block in section.blocks %}= block.settings %}
 
         {% if block.type == 'split-image-banner' %}
           .block-{{ block.id }}{
@@ -128,45 +119,38 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='section-{{ section.id }} {% if enable_background_around_container %} section  color-{{ color_scheme }} {% endif %}'>
-  <div class='section-spacing container container--{{ container_size }} slideshow__outer-container {% if container_size == 'full-screen' %} slideshow__outer-container--full-screen{% endif %} {% if blocks.size > 1 and enable_circle_navigation %} slideshow--with-dots{% else %} slideshow--without-dots{% endif %}'>
-    <div class='slideshow {% if show_arrows_on_hover %}slideshow--navigation-on-hover{% endif %} {% unless enable_background_around_container %} color-{{ color_scheme }} {% endunless %}'>
+<div class="section-{{ section.id }} {% if enable_background_around_container %} section  color-{{ color_scheme }} {% endif %}">
+  <div class="section-spacing container container--{{ container_size }} slideshow__outer-container {% if container_size == 'full-screen' %} slideshow__outer-container--full-screen{% endif %} {% if blocks.size > 1 and enable_circle_navigation %} slideshow--with-dots{% else %} slideshow--without-dots{% endif %}">
+    <div class="slideshow {% if show_arrows_on_hover %}slideshow--navigation-on-hover{% endif %} {% unless enable_background_around_container %} color-{{ color_scheme }} {% endunless %}">
       {%- if section.blocks.size > 0 -%}
         <carousel-component
-          class='carousel slideshow__carousel'
-          data-animation='{{ transition_style }}'
+          class="carousel slideshow__carousel"
+          data-animation="{{ transition_style }}"
           {% if transition_style == 'seamless' %}
-            data-drag-free='true'
+            data-drag-free="true"
           {% endif %}
           {% if enable_autoplay %}
-            data-autoplay-interval='{{ autoplay_interval }}'
+            data-autoplay-interval="{{ autoplay_interval }}"
           {% endif %}
-          data-section-id='{{ section.id }}'
+          data-section-id="{{ section.id }}"
         >
-          <div class='carousel__viewport embla slideshow__carousel-viewport' data-carousel-viewport>
-            <div class='carousel__container slideshow__carousel-container' data-carousel-container>
+          <div class="carousel__viewport embla slideshow__carousel-viewport" data-carousel-viewport>
+            <div class="carousel__container slideshow__carousel-container" data-carousel-container>
               {%- for block in blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 {%- case block.type -%}
                   {%- when 'split-image-banner' -%}
                     <div
-                      class='carousel__slide block-{{ block.id }} split-image-banner {% if block.settings.image_proportion == 0 or block.settings.image_proportion == 100 %} split-image-banner--with-single-image{% endif %} {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}'
-                      block-id='{{ block.id }}'
+                      class="carousel__slide block-{{ block.id }} split-image-banner {% if block.settings.image_proportion == 0 or block.settings.image_proportion == 100 %} split-image-banner--with-single-image{% endif %} {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}"
+                      block-id="{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
-                      <div class='split-image-banner__container'>
+                      <div class="split-image-banner__container">
                         {%- if block.settings.btn_text == blank and block.settings.extra_btn_text == blank -%}
                           {%- if block.settings.btn_url.url != blank or block.settings.extra_btn_url.url != blank -%}
                             <a
-                              class='image-banner__link'
-                              href='{% if block.settings.btn_url.url != blank %}{{ block.settings.btn_url.url }}{% else %}{{ block.settings.extra_btn_url.url }}{% endif %}'
-                              aria-label='{% if block.settings.btn_text != blank %}{{ block.settings.btn_text }}{% elsif block.settings.extra_btn_text != blank %}{{ block.settings.extra_btn_text }}{% elsif block.settings.btn_url.title != blank %}{{ block.settings.btn_url.title }}{% elsif block.settings.extra_btn_url.title != blank %}{{ block.settings.extra_btn_url.title }}{% else %}#{% endif %}'
+                              class="image-banner__link"
+                              href="{% if block.settings.btn_url.url != blank %}{{ block.settings.btn_url.url }}{% else %}{{ block.settings.extra_btn_url.url }}{% endif %}"
+                              aria-label="{% if block.settings.btn_text != blank %}{{ block.settings.btn_text }}{% elsif block.settings.extra_btn_text != blank %}{{ block.settings.extra_btn_text }}{% elsif block.settings.btn_url.title != blank %}{{ block.settings.btn_url.title }}{% elsif block.settings.extra_btn_url.title != blank %}{{ block.settings.extra_btn_url.title }}{% else %}#{% endif %}"
                             ></a>
                           {%- endif -%}
                         {%- endif -%}
@@ -183,17 +167,17 @@
                     </div>
                   {%- when 'image-banner' -%}
                     <div
-                      class='carousel__slide block-{{ block.id }} image-banner {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}'
-                      block-id='{{ block.id }}'
+                      class="carousel__slide block-{{ block.id }} image-banner {% if block.settings.color_scheme == color_scheme %} color-{{ section.settings.color_scheme }}{% else %} color-{{ block.settings.color_scheme }}{% endif %}"
+                      block-id="{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
-                      <div class='image-banner__container'>
+                      <div class="image-banner__container">
                         {%- if block.settings.btn_text == blank and block.settings.extra_btn_text == blank -%}
                           {%- if block.settings.btn_url.url != blank or block.settings.extra_btn_url.url != blank -%}
                             <a
-                              class='image-banner__link'
-                              href='{% if block.settings.btn_url.url != blank %}{{ block.settings.btn_url.url }}{% else %}{{ block.settings.extra_btn_url.url }}{% endif %}'
-                              aria-label='{% if block.settings.btn_text != blank %}{{ block.settings.btn_text }}{% elsif block.settings.extra_btn_text != blank %}{{ block.settings.extra_btn_text }}{% elsif block.settings.btn_url.title != blank %}{{ block.settings.btn_url.title }}{% elsif block.settings.extra_btn_url.title != blank %}{{ block.settings.extra_btn_url.title }}{% else %}#{% endif %}'
+                              class="image-banner__link"
+                              href="{% if block.settings.btn_url.url != blank %}{{ block.settings.btn_url.url }}{% else %}{{ block.settings.extra_btn_url.url }}{% endif %}"
+                              aria-label="{% if block.settings.btn_text != blank %}{{ block.settings.btn_text }}{% elsif block.settings.extra_btn_text != blank %}{{ block.settings.extra_btn_text }}{% elsif block.settings.btn_url.title != blank %}{{ block.settings.btn_url.title }}{% elsif block.settings.extra_btn_url.title != blank %}{{ block.settings.extra_btn_url.title }}{% else %}#{% endif %}"
                             ></a>
                           {%- endif -%}
                         {%- endif -%}
@@ -233,7 +217,7 @@
           </div>
           {%- if enable_autoplay -%}
             <carousel-play-button>
-              <button data-carousel-play-button class='slideshow__play-button' aria-label='Toggle autoplay button'>
+              <button data-carousel-play-button class="slideshow__play-button" aria-label="Toggle autoplay button">
                 {% render 'icon',
                   icon_name: 'play',
                   class: 'slideshow__play-button-icon slideshow__play-button-icon--play'
@@ -247,33 +231,26 @@
           {%- endif -%}
           {%- if blocks.size > 1 and enable_circle_navigation -%}
             <carousel-dots
-              class='dots-carousel slideshow__dots-carousel'
-              data-contain-scroll='keepSnaps'
-              data-align='center'
+              class="dots-carousel slideshow__dots-carousel"
+              data-contain-scroll="keepSnaps"
+              data-align="center"
             >
-              <div class='dots-carousel__viewport embla' data-carousel-viewport>
-                <div class='dots-carousel__container' data-carousel-container>
+              <div class="dots-carousel__viewport embla" data-carousel-viewport>
+                <div class="dots-carousel__container" data-carousel-container>
                   {%- for block in blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                     <carousel-dot
-                      class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
-                      tabindex='0'
-                      data-dot-index='{{ forloop.index0 }}'
+                      class="dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}"
+                      tabindex="0"
+                      data-dot-index="{{ forloop.index0 }}"
                     >
-                      <div class='dots-carousel__slide-body'>
-                        <div class='dots-carousel__slide-inner-circle'></div>
+                      <div class="dots-carousel__slide-body">
+                        <div class="dots-carousel__slide-inner-circle"></div>
                         <div
-                          class='dots-carousel__loader'
-                          size='medium'
-                          variant='dark'
+                          class="dots-carousel__loader"
+                          size="medium"
+                          variant="dark"
                           data-autoplay-indicator
-                          style='--gsc-autoplay-interval: {{ autoplay_interval }}s;'
+                          style="--gsc-autoplay-interval: {{ autoplay_interval }}s;"
                         >
                           {% render 'icon',
                             icon_name: 'circle',
@@ -290,18 +267,18 @@
             </carousel-dots>
           {%- endif -%}
           {%- if blocks.size > 1 and enable_arrows_navigation -%}
-            <div class='slideshow__btns {% if arrows_style == 'corner-buttons' %}slideshow__btns--corner{% else %}slideshow__btns--aside{% endif %}'>
+            <div class="slideshow__btns {% if arrows_style == 'corner-buttons' %}slideshow__btns--corner{% else %}slideshow__btns--aside{% endif %}">
               <carousel-btn
-                class='carousel-btn slideshow__carousel-btn slideshow__carousel-btn--prev'
-                data-scroll-direction='prev'
-                tabindex='0'
+                class="carousel-btn slideshow__carousel-btn slideshow__carousel-btn--prev"
+                data-scroll-direction="prev"
+                tabindex="0"
               >
                 {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
               </carousel-btn>
               <carousel-btn
-                class='carousel-btn slideshow__carousel-btn slideshow__carousel-btn--next'
-                data-scroll-direction='next'
-                tabindex='0'
+                class="carousel-btn slideshow__carousel-btn slideshow__carousel-btn--next"
+                data-scroll-direction="next"
+                tabindex="0"
               >
                 {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
               </carousel-btn>
@@ -522,7 +499,6 @@
       "type": "image-banner",
       "name": "t:sections.slideshow.name_for_image_slide_block",
       "settings": [
-        
         {
           "type": "header",
           "content": "t:sections.image_banner.image_settings_header"

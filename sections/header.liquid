@@ -35,13 +35,6 @@
     }
 
     {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       {% case block.type %}
         {% when 'menu-1' %}
             {%- liquid
@@ -147,12 +140,12 @@
   <sticky-cart-button>
     {%- if settings.cart_type == 'page_only' or template.name contains 'cart' -%}
       <a
-        class='sticky-cart-button unstyled-button section-{{ section.id }}'
-        href='{{ routes.cart_url }}'
-        aria-label='{{ 'sections.header.aria_label_for_cart_icon' | t }}'
+        class="sticky-cart-button unstyled-button section-{{ section.id }}"
+        href="{{ routes.cart_url }}"
+        aria-label="{{ 'sections.header.aria_label_for_cart_icon' | t }}"
         data-cart-sticky-button
       >
-        <div class='header__cart-icon'>
+        <div class="header__cart-icon">
           {%- if cart_icon == 'bag' -%}
             {% render 'icon-pack', icon: 'header-bag-icon', class: 'sticky-cart-button__icon', icon_style: icon_style %}
           {%- else -%}
@@ -162,10 +155,10 @@
               icon_style: icon_style
             %}
           {%- endif -%}
-          <div id='StickyCartCount'>
+          <div id="StickyCartCount">
             {%- if cart != empty -%}
-              <div class='cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}'>
-                <span aria-hidden='true'>{{ cart.item_count }}</span>
+              <div class="cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}">
+                <span aria-hidden="true">{{ cart.item_count }}</span>
               </div>
             {%- endif -%}
           </div>
@@ -175,13 +168,13 @@
       <sidebar-button>
         <button
           data-sidebar-button
-          data-sidebar-id='sidebar-component-for-cart'
-          class='sticky-cart-button unstyled-button'
-          href='{{ routes.cart_url }}'
-          aria-label='{{ 'sections.header.aria_label_for_cart_icon' | t }}'
+          data-sidebar-id="sidebar-component-for-cart"
+          class="sticky-cart-button unstyled-button"
+          href="{{ routes.cart_url }}"
+          aria-label="{{ 'sections.header.aria_label_for_cart_icon' | t }}"
           data-cart-sticky-button
         >
-          <div class='header__cart-icon'>
+          <div class="header__cart-icon">
             {%- if cart_icon == 'bag' -%}
               {% render 'icon-pack',
                 icon: 'header-bag-icon',
@@ -195,10 +188,10 @@
                 icon_style: icon_style
               %}
             {%- endif -%}
-            <div id='StickyCartCount'>
+            <div id="StickyCartCount">
               {%- if cart != empty -%}
-                <div class='cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}'>
-                  <span aria-hidden='true'>{{ cart.item_count }}</span>
+                <div class="cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}">
+                  <span aria-hidden="true">{{ cart.item_count }}</span>
                 </div>
               {%- endif -%}
             </div>
@@ -209,18 +202,23 @@
   </sticky-cart-button>
 {%- endif -%}
 
-{% render 'drawer-menu', menu: menu, section: section, profile_url: profile_url, enable_language_in_mobile: section.settings.enable_language_in_mobile %}
+{% render 'drawer-menu',
+  menu: menu,
+  section: section,
+  profile_url: profile_url,
+  enable_language_in_mobile: section.settings.enable_language_in_mobile
+%}
 
 <header-component
-  class='header section-{{ section.id }} color-{{ color_scheme }} header--desktop {% if enable_border == true %}header--bordered{% endif %}'
+  class="header section-{{ section.id }} color-{{ color_scheme }} header--desktop {% if enable_border == true %}header--bordered{% endif %}"
   {% if enable_sticky == true %}
     is-sticky
   {% endif %}
-  id='header-component'
+  id="header-component"
 >
-  <div class='header__inner-background container container--{{ container_size }}'></div>
-  <div class='header__container container container--{{ container_size }}'>
-    <div class='header__grid header__grid--{{ grid }} '>
+  <div class="header__inner-background container container--{{ container_size }}"></div>
+  <div class="header__container container container--{{ container_size }}">
+    <div class="header__grid header__grid--{{ grid }} ">
       {%- render 'logo',
         class: 'header__logo header__logo--desktop',
         image: desktop_logo_img,
@@ -233,15 +231,8 @@
         logo_width: mobile_logo_width
       -%}
       {%- if menu != blank and menu.links != blank and grid != '6' -%}
-        <div class='header__nav' data-desktop-nav>
+        <div class="header__nav" data-desktop-nav>
           {%- for link in menu.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: link %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- liquid
               assign link_title_downcase = link.title | downcase
               assign has_menu = false
@@ -260,127 +251,113 @@
             {%- if link.links.size > 0 or has_menu == true -%}
               {%- if menu_trigger == 'hover' -%}
                 <float-element-btn
-                  class='header__dropdown-toggle'
-                  data-aria-expanded='false'
-                  data-float-element-id='HeaderDropdownMenu-{{ link.title }}'
+                  class="header__dropdown-toggle"
+                  data-aria-expanded="false"
+                  data-float-element-id="HeaderDropdownMenu-{{ link.title }}"
                 >
                   <a
-                    href='{{ link.url }}'
-                    class='underline-text header__item {% if link.active %}active{% endif %}'
-                    data-float-element-trigger='HeaderDropdownMenu-{{ link.title }}'
-                    aria-label='{{ link.title }}'
+                    href="{{ link.url }}"
+                    class="underline-text header__item {% if link.active %}active{% endif %}"
+                    data-float-element-trigger="HeaderDropdownMenu-{{ link.title }}"
+                    aria-label="{{ link.title }}"
                   >
-                    <span class='underline-text__label'>{{ link.title }}</span>
+                    <span class="underline-text__label">{{ link.title }}</span>
                     <div>
                       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 5L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
-                    </div>  
+                    </div>
                   </a>
                 </float-element-btn>
               {%- else -%}
                 <dropdown-opener
-                  class='header__dropdown-toggle'
-                  data-aria-expanded='false'
-                  data-float-element-id='HeaderDropdownMenu-{{ link.title }}'
+                  class="header__dropdown-toggle"
+                  data-aria-expanded="false"
+                  data-float-element-id="HeaderDropdownMenu-{{ link.title }}"
                 >
                   <a
-                    href='{{ link.url }}'
-                    class='underline-text header__item {% if link.active %}active{% endif %}'
-                    data-float-element-trigger='HeaderDropdownMenu-{{ link.title }}'
-                    aria-label='{{ link.title }}'
+                    href="{{ link.url }}"
+                    class="underline-text header__item {% if link.active %}active{% endif %}"
+                    data-float-element-trigger="HeaderDropdownMenu-{{ link.title }}"
+                    aria-label="{{ link.title }}"
                   >
-                    <span class='underline-text__label'>{{ link.title }}</span>
+                    <span class="underline-text__label">{{ link.title }}</span>
                     {% render 'icon', icon_name: 'chevron', class: 'header__dropdown-toggle-chevron' %}
                   </a>
                 </dropdown-opener>
               {%- endif -%}
               <float-element
-                class='float-element header__dropdown color-{{ color_scheme }} {% if has_menu %}header__dropdown--full-width{% endif %}'
+                class="float-element header__dropdown color-{{ color_scheme }} {% if has_menu %}header__dropdown--full-width{% endif %}"
                 data-header-dropdown
-                aria-hidden='true'
-                id='HeaderDropdownMenu-{{ link.title }}'
-                data-section-id='{{ section.id }}'
+                aria-hidden="true"
+                id="HeaderDropdownMenu-{{ link.title }}"
+                data-section-id="{{ section.id }}"
                 data-with-overlay
-                data-placement='bottom-start'
+                data-placement="bottom-start"
                 {% if settings.edge_rounding_degree != 'none' %}
                   data-overlay-with-blur
                 {% endif %}
                 {% if has_menu == true %}
-                  data-floating-element-id='header-component'
-                  data-alignment-axis-offset='0'
-                  data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 16{% else %} 0{% endif %}'
+                  data-floating-element-id="header-component"
+                  data-alignment-axis-offset="0"
+                  data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 16{% else %} 0{% endif %}"
                 {% elsif grid == '3' or grid == '5' %}
-                  data-alignment-axis-offset='-56'
-                  data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 1{% endif %}'
+                  data-alignment-axis-offset="-56"
+                  data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 1{% endif %}"
                 {% else %}
-                  data-alignment-axis-offset='-40'
-                  data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 1{% endif %}'
+                  data-alignment-axis-offset="-40"
+                  data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 8{% else %} 1{% endif %}"
                 {% endif %}
                 {% if blockIndex != '' %}
-                  block-id='{{ section.blocks[blockIndex].id }}'
+                  block-id="{{ section.blocks[blockIndex].id }}"
                   {{ section.blocks[blockIndex].shopify_attributes }}
                 {% endif %}
               >
                 <template>
-                  <div class='header__dropdown-menu {% if has_menu == true %} header__dropdown-menu--with-mega-menu{% endif %}'>
+                  <div class="header__dropdown-menu {% if has_menu == true %} header__dropdown-menu--with-mega-menu{% endif %}">
                     {%- if has_menu == true -%}
-                      <div class='mega-menu'>
-                        <div class='mega-menu__outer-container container container--{{ container_size }}'>
-                          <div class='mega-menu__inner-container '>
+                      <div class="mega-menu">
+                        <div class="mega-menu__outer-container container container--{{ container_size }}">
+                          <div class="mega-menu__inner-container ">
                             {%- if link != blank and link.links.size > 0 -%}
-                              <div class='mega-menu__nav'>
-                                <div class='mega-menu__list'>
+                              <div class="mega-menu__nav">
+                                <div class="mega-menu__list">
                                   {%- for childlink in link.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                     {%- if childlink.links.size > 0 -%}
                                       <float-element-btn
-                                        class='header__menu-item-wrap'
-                                        data-float-element-id='MegaMenuNav-{{ childlink.title }}'
-                                        data-aria-expanded='false'
+                                        class="header__menu-item-wrap"
+                                        data-float-element-id="MegaMenuNav-{{ childlink.title }}"
+                                        data-aria-expanded="false"
                                       >
                                         <a
-                                          href='{{ childlink.url }}'
-                                          class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
-                                          data-float-element-trigger='MegaMenuNav-{{ childlink.title }}'
-                                          aria-label='{{ childlink.title }}'
+                                          href="{{ childlink.url }}"
+                                          class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
+                                          data-float-element-trigger="MegaMenuNav-{{ childlink.title }}"
+                                          aria-label="{{ childlink.title }}"
                                         >
-                                          <span class='header__menu-item-label'>
+                                          <span class="header__menu-item-label">
                                             {{ childlink.title }}
                                           </span>
                                           {%- render 'icon', icon_name: 'chevron', class: 'mega-menu__chevron' -%}
                                         </a>
                                       </float-element-btn>
                                       <float-element
-                                        class='float-element header__menu childrenmenu-border {% if has_menu == true %} header__menu--inside-full-width-dropdown{% endif %}'
-                                        aria-hidden='true'
-                                        data-alignment-axis-offset='-25'
-                                        data-placement='right-start'
-                                        id='MegaMenuNav-{{ childlink.title }}'
+                                        class="float-element header__menu childrenmenu-border {% if has_menu == true %} header__menu--inside-full-width-dropdown{% endif %}"
+                                        aria-hidden="true"
+                                        data-alignment-axis-offset="-25"
+                                        data-placement="right-start"
+                                        id="MegaMenuNav-{{ childlink.title }}"
                                       >
                                         <template>
                                           <div>
                                             {%- for grandchildlink in childlink.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                               <a
-                                                href='{{ grandchildlink.url }}'
-                                                class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'
+                                                href="{{ grandchildlink.url }}"
+                                                class="header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}"
                                                 data-focus-trap-target
-                                                aria-label='{{ grandchildlink.title }}'
+                                                aria-label="{{ grandchildlink.title }}"
                                               >
-                                                <span class='header__menu-item-label'>
+                                                <span class="header__menu-item-label">
                                                   {{ grandchildlink.title }}
                                                 </span>
                                               </a>
@@ -390,12 +367,12 @@
                                       </float-element>
                                     {%- else -%}
                                       <a
-                                        href='{{ childlink.url }}'
-                                        class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
+                                        href="{{ childlink.url }}"
+                                        class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
                                         data-focus-trap-target
-                                        aria-label='{{ childlink.title }}'
+                                        aria-label="{{ childlink.title }}"
                                       >
-                                        <span class='header__menu-item-label'>
+                                        <span class="header__menu-item-label">
                                           {{ childlink.title }}
                                         </span>
                                       </a>
@@ -427,60 +404,46 @@
                         </div>
                       </div>
                     {%- elsif link.levels == 2 -%}
-                      <div class='header__wide-menu'>
+                      <div class="header__wide-menu">
                         {%- for childlink in link.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                           {%- if childlink.links.size > 0 -%}
                             <float-element-btn
-                              class='header__menu-item-wrap'
-                              data-float-element-id='MegaMenuNav-{{ childlink.title }}'
-                              data-aria-expanded='false'
+                              class="header__menu-item-wrap"
+                              data-float-element-id="MegaMenuNav-{{ childlink.title }}"
+                              data-aria-expanded="false"
                             >
                               <a
-                                href='{{ childlink.url }}'
-                                class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
-                                data-float-element-trigger='MegaMenuNav-{{ childlink.title }}'
-                                aria-label='{{ childlink.title }}'
+                                href="{{ childlink.url }}"
+                                class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
+                                data-float-element-trigger="MegaMenuNav-{{ childlink.title }}"
+                                aria-label="{{ childlink.title }}"
                                 data-focus-trap-target
                               >
-                                <span class='header__menu-item-label'>
+                                <span class="header__menu-item-label">
                                   {{ childlink.title }}
                                 </span>
                                 {%- render 'icon', icon_name: 'chevron', class: 'mega-menu__chevron' -%}
                               </a>
                             </float-element-btn>
                             <float-element
-                              class='float-element float-element--fixed header__menu'
-                              aria-hidden='true'
+                              class="float-element float-element--fixed header__menu"
+                              aria-hidden="true"
                               data-header-dropdown
-                              data-main-axis-offset='{% if settings.edge_rounding_degree != 'none' %} 32{% else %} 24{% endif %}'
-                              data-alignment-axis-offset='-24'
-                              data-placement='right-start'
-                              id='MegaMenuNav-{{ childlink.title }}'
+                              data-main-axis-offset="{% if settings.edge_rounding_degree != 'none' %} 32{% else %} 24{% endif %}"
+                              data-alignment-axis-offset="-24"
+                              data-placement="right-start"
+                              id="MegaMenuNav-{{ childlink.title }}"
                             >
                               <template>
                                 <div>
                                   {%- for grandchildlink in childlink.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                     <a
-                                      href='{{ grandchildlink.url }}'
-                                      class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'
+                                      href="{{ grandchildlink.url }}"
+                                      class="header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}"
                                       data-focus-trap-target
-                                      aria-label='{{ grandchildlink.title }}'
+                                      aria-label="{{ grandchildlink.title }}"
                                     >
-                                      <span class='header__menu-item-label'>
+                                      <span class="header__menu-item-label">
                                         {{ grandchildlink.title }}
                                       </span>
                                     </a>
@@ -490,12 +453,12 @@
                             </float-element>
                           {%- else -%}
                             <a
-                              href='{{ childlink.url }}'
-                              class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
+                              href="{{ childlink.url }}"
+                              class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
                               data-focus-trap-target
-                              aria-label='{{ childlink.title }}'
+                              aria-label="{{ childlink.title }}"
                             >
-                              <span class='header__menu-item-label'>
+                              <span class="header__menu-item-label">
                                 {{ childlink.title }}
                               </span>
                             </a>
@@ -503,60 +466,46 @@
                         {%- endfor -%}
                       </div>
                     {%- else -%}
-                      <div class='header__wide-menu'>
+                      <div class="header__wide-menu">
                         {%- for childlink in link.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: childlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                           {%- if childlink.links.size > 0 -%}
                             <float-element-btn
-                              class='header__menu-item-wrap'
-                              data-float-element-id='MegaMenuNav-{{ childlink.title }}'
-                              data-aria-expanded='false'
+                              class="header__menu-item-wrap"
+                              data-float-element-id="MegaMenuNav-{{ childlink.title }}"
+                              data-aria-expanded="false"
                             >
                               <a
-                                href='{{ childlink.url }}'
-                                class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
+                                href="{{ childlink.url }}"
+                                class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
                                 data-focus-trap-target
-                                data-float-element-trigger='MegaMenuNav-{{ childlink.title }}'
-                                aria-label='{{ childlink.title }}'
+                                data-float-element-trigger="MegaMenuNav-{{ childlink.title }}"
+                                aria-label="{{ childlink.title }}"
                               >
-                                <span class='header__menu-item-label'>
+                                <span class="header__menu-item-label">
                                   {{ childlink.title }}
                                 </span>
                                 {%- render 'icon', icon_name: 'chevron', class: 'mega-menu__chevron' -%}
                               </a>
                             </float-element-btn>
                             <float-element
-                              class='float-element header__menu'
+                              class="float-element header__menu"
                               data-header-dropdown
-                              aria-hidden='true'
-                              data-main-axis-offset='40'
-                              data-alignment-axis-offset='-25'
-                              data-placement='right-start'
-                              id='MegaMenuNav-{{ childlink.title }}'
+                              aria-hidden="true"
+                              data-main-axis-offset="40"
+                              data-alignment-axis-offset="-25"
+                              data-placement="right-start"
+                              id="MegaMenuNav-{{ childlink.title }}"
                             >
                               <template>
                                 <div>
                                   {%- for grandchildlink in childlink.links -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: grandchildlink %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                                     <a
-                                      href='{{ grandchildlink.url }}'
-                                      class='header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}'
+                                      href="{{ grandchildlink.url }}"
+                                      class="header__menu-item header__menu-item--small {% if grandchildlink.active %} active{% endif %}"
                                       data-focus-trap-target
-                                      aria-label='{{ grandchildlink.title }}'
+                                      aria-label="{{ grandchildlink.title }}"
                                     >
-                                      <span class='header__menu-item-label'>
+                                      <span class="header__menu-item-label">
                                         {{ grandchildlink.title }}
                                       </span>
                                     </a>
@@ -566,12 +515,12 @@
                             </float-element>
                           {%- else -%}
                             <a
-                              href='{{ childlink.url }}'
-                              class='header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}'
+                              href="{{ childlink.url }}"
+                              class="header__menu-item header__menu-item--medium {% if childlink.active %} active{% endif %}"
                               data-focus-trap-target
-                              aria-label='{{ childlink.title }}'
+                              aria-label="{{ childlink.title }}"
                             >
-                              <span class='header__menu-item-label'>
+                              <span class="header__menu-item-label">
                                 {{ childlink.title }}
                               </span>
                             </a>
@@ -583,27 +532,13 @@
                 </template>
               </float-element>
             {%- else -%}
-              {% if link.handle != "wholesale" %}
-                <a
-                  href='{{ link.url }}'
-                  class='underline-text header__item {% if link.active %}active{% endif %}'
-                  aria-label='{{ link.title }}'
-                >
-                  <span class='underline-text__label'>{{ link.title }}</span>
-                </a>
-              {% else %}
-              {% for tag in customer.tags %}
-                {% if tag == "WS_Wholesale" and customer %}
-                  <a
-                    href='{{ link.url }}'
-                    class='underline-text header__item {% if link.active %}active{% endif %}'
-                    aria-label='{{ link.title }}'
-                  >
-                    <span class='underline-text__label'>{{ link.title }}</span>
-                  </a>
-                {% endif %}
-              {% endfor %}
-              {%- endif -%}
+              <a
+                href="{{ link.url }}"
+                class="underline-text header__item {% if link.active %}active{% endif %}"
+                aria-label="{{ link.title }}"
+              >
+                <span class="underline-text__label">{{ link.title }}</span>
+              </a>
             {%- endif -%}
           {%- endfor -%}
         </div>
@@ -611,127 +546,127 @@
 
       <sidebar-button>
         <button
-          class='unstyled-button hamburger drawer-menu-toggle  {% if section.settings.grid == "6" %} drawer-menu-toggle--visible-on-desktop {% endif %}'
+          class="unstyled-button hamburger drawer-menu-toggle  {% if section.settings.grid == "6" %} drawer-menu-toggle--visible-on-desktop {% endif %}"
           data-sidebar-button
-          data-sidebar-id='DrawerMenu'
-          id='DrawerMenuToggler'
-          aria-label='Menu'
+          data-sidebar-id="DrawerMenu"
+          id="DrawerMenuToggler"
+          aria-label="Menu"
         >
-          <span class='hamburger__line'></span>
-          <span class='hamburger__line'></span>
-          <span class='hamburger__line'></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
         </button>
       </sidebar-button>
 
-      <div class='icon-list header__icons'>
+      <div class="icon-list header__icons">
         {% if settings.search_type != 'hide' %}
           {%- if settings.search_type == 'page_only' or template.name contains 'search' -%}
             <a
-              class='icon header__icon unstyled-link'
-              href='{{ routes.search_url }}'
-              aria-label='{{ 'sections.header.aria_label_for_search_icon' | t }}'
+              class="icon header__icon unstyled-link"
+              href="{{ routes.search_url }}"
+              aria-label="{{ 'sections.header.aria_label_for_search_icon' | t }}"
             >
               {% render 'icon-pack', icon: 'header-search-icon', class: '', icon_style: icon_style %}
             </a>
           {%- else -%}
             <style>
-            .search-sidebar-section__card-grid--queries{
-              font-family: 'BrownStd-Regular'
-            }
+              .search-sidebar-section__card-grid--queries {
+                font-family: 'BrownStd-Regular';
+              }
               suggestion-search-bar {
-                  display: flex;
-                  align-items: center;
+                display: flex;
+                align-items: center;
               }
 
               @media screen and (min-width: 768px) {
-                  .search-sidebar {
-                      position: absolute;
-                      width: auto;
-                      top: 0;
-                      right: 100px;
-                      border-radius: 17px;
-                      height: auto;
-                      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
-                  }
+                .search-sidebar {
+                  position: absolute;
+                  width: auto;
+                  top: 0;
+                  right: 100px;
+                  border-radius: 17px;
+                  height: auto;
+                  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+                }
 
-                  .search-sidebar__body {
-                      width: 48rem;
-                      border-radius: 15px;
-                  }
-                  .search-sidebar__content{
-                    max-height: 585px;
-                    overflow-y: auto;
-                    padding: 1rem 4rem 2.4rem;
-                  }
-                  .search-sidebar__header {
-                    height: 1rem;
-                  }
-                  .search-sidebar__form {
-                      padding: 0;
-                  }
-                  .search-field {
-                      display: none;
-                  }
-                  .header__icons suggestion-search-bar .search-field__input {
-                      border-bottom: 2px solid black;
-                      padding: 15px 0; 
-                  } 
-                  .search-sidebar-section__header--queries {
-                    padding-bottom: 1.5rem;
-                  }
-                  .search-sidebar__content .product-card__details .product-card__title {
-                    font-size: 15px;
-                    line-height: 1.4;
-                  }
-                  .search-sidebar__content .product-card__details .product-card__price-item{
-                    font-size: 14px;
-                  } 
-                  .search-sidebar-section__card-grid {
-                    --gsc-space-between-cards: 4.5rem;
-                  }
-                  .search-sidebar-section+.search-sidebar-section {
-                    margin-top: 2.5rem;
-                  }
-                  .search-sidebar-section__card-grid--queries {
-                    row-gap: 1.2rem;
-                  }
-                  .search-sidebar__body sidebar-button{
-                    position: relative;
-                    top: 30px
-                  }
+                .search-sidebar__body {
+                  width: 48rem;
+                  border-radius: 15px;
+                }
+                .search-sidebar__content {
+                  max-height: 585px;
+                  overflow-y: auto;
+                  padding: 1rem 4rem 2.4rem;
+                }
+                .search-sidebar__header {
+                  height: 1rem;
+                }
+                .search-sidebar__form {
+                  padding: 0;
+                }
+                .search-field {
+                  display: none;
+                }
+                .header__icons suggestion-search-bar .search-field__input {
+                  border-bottom: 2px solid black;
+                  padding: 15px 0;
+                }
+                .search-sidebar-section__header--queries {
+                  padding-bottom: 1.5rem;
+                }
+                .search-sidebar__content .product-card__details .product-card__title {
+                  font-size: 15px;
+                  line-height: 1.4;
+                }
+                .search-sidebar__content .product-card__details .product-card__price-item {
+                  font-size: 14px;
+                }
+                .search-sidebar-section__card-grid {
+                  --gsc-space-between-cards: 4.5rem;
+                }
+                .search-sidebar-section + .search-sidebar-section {
+                  margin-top: 2.5rem;
+                }
+                .search-sidebar-section__card-grid--queries {
+                  row-gap: 1.2rem;
+                }
+                .search-sidebar__body sidebar-button {
+                  position: relative;
+                  top: 30px;
+                }
               }
 
               @media screen and (max-width: 767px) {
-                  .header__icons suggestion-search-bar .search-field__input {
-                      display: none;
-                  }
+                .header__icons suggestion-search-bar .search-field__input {
+                  display: none;
+                }
               }
 
-              @media screen and (max-width: 1015px) and (min-width: 768px){
-                  .search-sidebar {
-                      top: 0px;
-                      right: 46px;
-                  }
-                  .search-sidebar__body {
-                      width: 40rem;
-                  }
+              @media screen and (max-width: 1015px) and (min-width: 768px) {
+                .search-sidebar {
+                  top: 0px;
+                  right: 46px;
+                }
+                .search-sidebar__body {
+                  width: 40rem;
+                }
               }
             </style>
             <sidebar-button>
               <suggestion-search-bar>
                 <input
-                  class='search-field__input'
-                  type='text'
-                  name='q'
-                  placeholder='{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}'
+                  class="search-field__input"
+                  type="text"
+                  name="q"
+                  placeholder="{{ 'dialog_elements.search_drawer.placeholder_for_search_input' | t }}"
                   data-sidebar-search-input
                   autocomplete="off"
                 >
                 <button
-                  class='unstyled-button icon header__icon'
+                  class="unstyled-button icon header__icon"
                   data-sidebar-button
-                  data-sidebar-id='SearchSidebar'
-                  aria-label='Search Sidebar'
+                  data-sidebar-id="SearchSidebar"
+                  aria-label="Search Sidebar"
                 >
                   {% render 'icon-pack', icon: 'header-search-icon', class: '', icon_style: icon_style %}
                 </button>
@@ -739,37 +674,41 @@
             </sidebar-button>
           {%- endif -%}
         {% endif %}
-        
-        {% comment %} ------ this part is rendering search icon, as moving search icon after cart icon 
-                                          so commented here for now --------------- {% endcomment %} 
-        
-        {% comment %} {%- if profile_url != blank -%}
-          <a
-            class='icon header__icon header__icon--people'
-            href='{{ profile_url }}'
-            tabindex='0'
-            aria-label='{{ 'sections.header.aria_label_for_account_icon' | t }}'
-          >
-            {% render 'icon-pack', icon: 'header-account-icon', class: '', icon_style: icon_style %}
-          </a>
-        {%- endif -%} {% endcomment %}
+
+        {% comment %}
+          ------ this part is rendering search icon, as moving search icon after cart icon
+          so commented here for now ---------------
+        {% endcomment %}
+
+        {% comment %}
+          {%- if profile_url != blank -%}
+            <a
+              class='icon header__icon header__icon--people'
+              href='{{ profile_url }}'
+              tabindex='0'
+              aria-label='{{ 'sections.header.aria_label_for_account_icon' | t }}'
+            >
+              {% render 'icon-pack', icon: 'header-account-icon', class: '', icon_style: icon_style %}
+            </a>
+          {%- endif -%}
+        {% endcomment %}
 
         {%- if settings.cart_type == 'page_only' or template.name contains 'cart' -%}
           <a
-            class='unstyled-link icon header__icon'
-            href='{{ routes.cart_url }}'
-            aria-label='{{ 'sections.header.aria_label_for_cart_icon' | t }}'
+            class="unstyled-link icon header__icon"
+            href="{{ routes.cart_url }}"
+            aria-label="{{ 'sections.header.aria_label_for_cart_icon' | t }}"
           >
-            <div class='header__cart-icon'>
+            <div class="header__cart-icon">
               {%- if cart_icon == 'bag' -%}
                 {% render 'icon-pack', icon: 'header-bag-icon', class: '', icon_style: icon_style %}
               {%- else -%}
                 {% render 'icon-pack', icon: 'header-cart-icon', class: '', icon_style: icon_style %}
               {%- endif -%}
-              <div id='CartCount'>
+              <div id="CartCount">
                 {%- if cart != empty -%}
-                  <div class='cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}'>
-                    <span aria-hidden='true'>{{ cart.item_count }}</span>
+                  <div class="cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}">
+                    <span aria-hidden="true">{{ cart.item_count }}</span>
                   </div>
                 {%- endif -%}
               </div>
@@ -779,21 +718,21 @@
           <sidebar-button>
             <button
               data-sidebar-button
-              data-sidebar-id='sidebar-component-for-cart'
-              class='unstyled-button icon header__icon'
-              href='{{ routes.cart_url }}'
-              aria-label='{{ 'sections.header.aria_label_for_cart_icon' | t }}'
+              data-sidebar-id="sidebar-component-for-cart"
+              class="unstyled-button icon header__icon"
+              href="{{ routes.cart_url }}"
+              aria-label="{{ 'sections.header.aria_label_for_cart_icon' | t }}"
             >
-              <div class='header__cart-icon'>
+              <div class="header__cart-icon">
                 {%- if cart_icon == 'bag' -%}
                   {% render 'icon-pack', icon: 'header-bag-icon', class: '', icon_style: icon_style %}
                 {%- else -%}
                   {% render 'icon-pack', icon: 'header-cart-icon', class: '', icon_style: icon_style %}
                 {%- endif -%}
-                <div id='CartCount'>
+                <div id="CartCount">
                   {%- if cart != empty -%}
-                    <div class='cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}'>
-                      <span aria-hidden='true'>{{ cart.item_count }}</span>
+                    <div class="cart-count {% if cart.item_count > 9 %}cart-count--ellipse{% endif %}">
+                      <span aria-hidden="true">{{ cart.item_count }}</span>
                     </div>
                   {%- endif -%}
                 </div>
@@ -802,17 +741,16 @@
           </sidebar-button>
         {%- endif -%}
 
-       {%- if profile_url != blank -%}
+        {%- if profile_url != blank -%}
           <a
-            class='icon header__icon header__icon--people'
-            href='{{ profile_url }}'
-            tabindex='0'
-            aria-label='{{ 'sections.header.aria_label_for_account_icon' | t }}'
+            class="icon header__icon header__icon--people"
+            href="{{ profile_url }}"
+            tabindex="0"
+            aria-label="{{ 'sections.header.aria_label_for_account_icon' | t }}"
           >
             {% render 'icon-pack', icon: 'header-account-icon', class: '', icon_style: icon_style %}
           </a>
         {%- endif -%}
-
       </div>
     </div>
   </div>

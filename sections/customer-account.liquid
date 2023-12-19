@@ -1,4 +1,3 @@
-
 {{ 'account.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -21,56 +20,49 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='account section section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='account__container container container--{{ container_size }} section-spacing'>
+<div class="account section section-{{ section.id }} color-{{ color_scheme }}">
+  <div class="account__container container container--{{ container_size }} section-spacing">
     {% render 'account-page-menu' %}
 
-    <div class='account__content'>
-      <div class='order-history__header'>
+    <div class="account__content">
+      <div class="order-history__header">
         <h5>{{ 'customer.account.order_history' | t }}</h5>
       </div>
 
       {%- if customer.orders.size > 0 -%}
-        <div class='order__items'>
+        <div class="order__items">
           {%- for order in customer.orders -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: order %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-            <div class='order__item'>
-              <div class='order__item-field'>
-                <div class='order__item-field-label'>{{ 'customer.orders.order_number' | t }}</div>
-                <div class='order__item-field-value'>
+            <div class="order__item">
+              <div class="order__item-field">
+                <div class="order__item-field-label">{{ 'customer.orders.order_number' | t }}</div>
+                <div class="order__item-field-value">
                   <a
-                    href='{{ order.customer_url }}'
-                    aria-label='{{- order.name -}}'
+                    href="{{ order.customer_url }}"
+                    aria-label="{{- order.name -}}"
                   >
                     {{- order.name -}}
                   </a>
                 </div>
               </div>
-              <div class='order__item-field'>
-                <div class='order__item-field-label'>{{ 'customer.orders.date' | t }}</div>
-                <div class='order__item-field-value'>
+              <div class="order__item-field">
+                <div class="order__item-field-label">{{ 'customer.orders.date' | t }}</div>
+                <div class="order__item-field-value">
                   {{ order.created_at | time_tag: format: 'date' }}
                 </div>
               </div>
-              <div class='order__item-field'>
-                <div class='order__item-field-label'>{{ 'customer.orders.payment_status' | t }}</div>
-                <div class='order__item-field-value'>
+              <div class="order__item-field">
+                <div class="order__item-field-label">{{ 'customer.orders.payment_status' | t }}</div>
+                <div class="order__item-field-value">
                   {{ order.financial_status_label }}
                 </div>
               </div>
-              <div class='order__item-field'>
-                <div class='order__item-field-label'>{{ 'customer.orders.fulfillment_status' | t }}</div>
-                <div class='order__item-field-value'>{{ order.fulfillment_status_label }}</div>
+              <div class="order__item-field">
+                <div class="order__item-field-label">{{ 'customer.orders.fulfillment_status' | t }}</div>
+                <div class="order__item-field-value">{{ order.fulfillment_status_label }}</div>
               </div>
-              <div class='order__item-field'>
-                <div class='order__item-field-label'>{{ 'customer.orders.total' | t }}</div>
-                <div class='order__item-field-value'>
+              <div class="order__item-field">
+                <div class="order__item-field-label">{{ 'customer.orders.total' | t }}</div>
+                <div class="order__item-field-value">
                   {{ order.total_price | money_with_currency }}
                 </div>
               </div>
@@ -80,35 +72,28 @@
       {%- endif -%}
 
       {%- if customer.orders.size > 0 -%}
-        <div class='table order__desktop-table'>
-          <div class='table__row table__row--header'>
-            <div class='table__heading order__table-heading'>{{ 'customer.orders.order_number' | t }}</div>
-            <div class='table__heading order__table-heading'>{{ 'customer.orders.date' | t }}</div>
-            <div class='table__heading order__table-heading'>{{ 'customer.orders.payment_status' | t }}</div>
-            <div class='table__heading order__table-heading'>{{ 'customer.orders.fulfillment_status' | t }}</div>
-            <div class='table__heading order__table-heading'>{{ 'customer.orders.total' | t }}</div>
+        <div class="table order__desktop-table">
+          <div class="table__row table__row--header">
+            <div class="table__heading order__table-heading">{{ 'customer.orders.order_number' | t }}</div>
+            <div class="table__heading order__table-heading">{{ 'customer.orders.date' | t }}</div>
+            <div class="table__heading order__table-heading">{{ 'customer.orders.payment_status' | t }}</div>
+            <div class="table__heading order__table-heading">{{ 'customer.orders.fulfillment_status' | t }}</div>
+            <div class="table__heading order__table-heading">{{ 'customer.orders.total' | t }}</div>
           </div>
           {%- for order in customer.orders -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: order %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-            <div class='table__row order__table-row'>
-              <div class='table__column order__table-column'>
+            <div class="table__row order__table-row">
+              <div class="table__column order__table-column">
                 <a
-                  href='{{ order.customer_url }}'
-                  aria-label='{{- order.name -}}'
+                  href="{{ order.customer_url }}"
+                  aria-label="{{- order.name -}}"
                 >
                   {{- order.name -}}
                 </a>
               </div>
-              <div class='table__column order__table-column'>{{ order.created_at | time_tag: format: 'date' }}</div>
-              <div class='table__column order__table-column'>{{ order.financial_status_label }}</div>
-              <div class='table__column order__table-column'>{{ order.fulfillment_status_label }}</div>
-              <div class='table__column order__table-column'>{{ order.total_price | money_with_currency }}</div>
+              <div class="table__column order__table-column">{{ order.created_at | time_tag: format: 'date' }}</div>
+              <div class="table__column order__table-column">{{ order.financial_status_label }}</div>
+              <div class="table__column order__table-column">{{ order.fulfillment_status_label }}</div>
+              <div class="table__column order__table-column">{{ order.total_price | money_with_currency }}</div>
             </div>
           {%- endfor -%}
         </div>

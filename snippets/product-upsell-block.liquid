@@ -1,105 +1,103 @@
-{% if block.settings.upsell_products != blank  %}
-    <div class="upsell_product_main_wrap">
-        <div class="upsell_product_heading">
-            <span class="heading_text">{{ block.settings.upsell_headings }}</span>
-            {% if product.metafields.custom.upsell_discount != blank %}
-                <span class="discount_percentage">upto {{ product.metafields.custom.upsell_discount }}%</span>
-            {% endif %}
+{% if block.settings.upsell_products != blank %}
+  <div class="upsell_product_main_wrap">
+    <div class="upsell_product_heading">
+      <span class="heading_text">{{ block.settings.upsell_headings }}</span>
+      {% if product.metafields.custom.upsell_discount != blank %}
+        <span class="discount_percentage">upto {{ product.metafields.custom.upsell_discount }}%</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="product_upsell_container">
+    <carousel-component
+      class="
+        card-carousel
+        {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{%else%}{% endif %}
+        {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %}
+        {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}
+      "
+      data-section-id="{{ section.id }}"
+    >
+      <div class="upsell_main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
+        <carousel-btn
+          class="carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev"
+          data-scroll-direction="prev"
+          tabindex="0"
+        >
+          {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
+        </carousel-btn>
+        <carousel-btn
+          class="carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next"
+          data-scroll-direction="next"
+          tabindex="0"
+        >
+          {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
+        </carousel-btn>
+      </div>
+      <div
+        class="
+          card-carousel__viewport
+          {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}
+        "
+        data-carousel-viewport
+      >
+        <div class="card-carousel__container announcement__carousel-container" data-carousel-container>
+          {%- for upsell_product in block.settings.upsell_products -%}
+            {% unless upsell_product.available == false %}
+              <div class="shop__grid-item">
+                {% render 'product-card',
+                  with_bottom_spacing: true,
+                  product: upsell_product,
+                  addtocartbutton: block.settings.show_add_to_cart,
+                  show_color_swatches_on_hover: false,
+                  img_ratio: block.settings.img_ratio,
+                  show_mobile_carousel: true,
+                  product_card_align: 'left'
+                %}
+              </div>
+            {% endunless %}
+          {% endfor %}
         </div>
-    </div>
+      </div>
 
-    <div class="product_upsell_container">
-        <carousel-component class="card-carousel
-            {% if show_navigation_on_hover %}card-carousel--navigation-on-hover{%else%}{% endif %}
-            {% if section_layout == 'carousel-overflow' %} card-carousel--with-half-next-slide{% endif %} 
-            {% if section_layout == 'carousel-overflow' and show_navigation_on_hover %} card-carousel--with-half-next-slide-and-hover-navigation{% endif %}"
-            data-section-id='{{ section.id }}'>
-            
-            
-            <div class="upsell_main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}">
-                <carousel-btn
-                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev'
-                    data-scroll-direction='prev'
-                    tabindex='0'
-                >
-                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon x-flip' -%}
-                </carousel-btn>
-                <carousel-btn
-                    class='carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--next'
-                    data-scroll-direction='next'
-                    tabindex='0'
-                >
-                    {%- render 'icon', icon_name: 'chevron', class: 'carousel-btn__icon' -%}
-                </carousel-btn>
-            </div>
-            <div class="card-carousel__viewport
-            {% if section_layout == 'carousel-overflow' %} card-carousel__viewport--overflow{% endif %}" data-carousel-viewport>
-                <div class='card-carousel__container announcement__carousel-container' data-carousel-container>
-                    {%- for upsell_product in block.settings.upsell_products -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: upsell_product %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-                        {% unless upsell_product.available == false %}
-                            <div class='shop__grid-item'>        
-                                {% render 'product-card',
-                                    with_bottom_spacing: true,
-                                    product: upsell_product,    
-                                    addtocartbutton: block.settings.show_add_to_cart,        
-                                    show_color_swatches_on_hover: false,
-                                    img_ratio: block.settings.img_ratio,
-                                    show_mobile_carousel: true,
-                                    product_card_align: "left"
-                                %}
-                            </div>
-                        {% endunless %}
-                    {% endfor %}
-                </div>
-            </div>
-            
-            <carousel-dots
-                class='dots-carousel card-carousel__dots-carousel'
-                data-contain-scroll='keepSnaps'
-                data-align='center'
-              >
-                <div class='dots-carousel__viewport embla' data-carousel-viewport>
-                  <div class='dots-carousel__container' data-carousel-container>
-                    {%- for upsell_product in block.settings.upsell_products -%}
-                        {% unless upsell_product.available == false %}
-                            {% if forloop.index0 > 0 %}
-                                <carousel-dot
-                                    class='dots-carousel__slide {% if forloop.index0 == 0 or forloop.index0 == 1 %}is-primary{% endif %}'
-                                    tabindex='0'
-                                    data-dot-index='{{ forloop.index0 | minus: 1 }}'
-                                >
-                                    <div class='dots-carousel__slide-body'>
-                                    <div class='dots-carousel__slide-inner-circle'></div>
-                                    <div
-                                        class='dots-carousel__loader'
-                                        size='medium'
-                                        variant='dark'
-                                        data-autoplay-indicator
-                                    >
-                                        {% render 'icon',
-                                        icon_name: 'circle',
-                                        background_class: 'dots-carousel__loader-background',
-                                        border_class: 'dots-carousel__loader-border',
-                                        circle_class: 'dots-carousel__loader-circle'
-                                        %}
-                                    </div>
-                                    </div>
-                                </carousel-dot>
-                            {% endif %}
-                        {% endunless %}
-                    {%- endfor -%}
-                </div>
-            </div>
-          </carousel-dots>
-
-        </carousel-component>
-    </div>
-
+      <carousel-dots
+        class="dots-carousel card-carousel__dots-carousel"
+        data-contain-scroll="keepSnaps"
+        data-align="center"
+      >
+        <div class="dots-carousel__viewport embla" data-carousel-viewport>
+          <div class="dots-carousel__container" data-carousel-container>
+            {%- for upsell_product in block.settings.upsell_products -%}
+              {% unless upsell_product.available == false %}
+                {% if forloop.index0 > 0 %}
+                  <carousel-dot
+                    class="dots-carousel__slide {% if forloop.index0 == 0 or forloop.index0 == 1 %}is-primary{% endif %}"
+                    tabindex="0"
+                    data-dot-index="{{ forloop.index0 | minus: 1 }}"
+                  >
+                    <div class="dots-carousel__slide-body">
+                      <div class="dots-carousel__slide-inner-circle"></div>
+                      <div
+                        class="dots-carousel__loader"
+                        size="medium"
+                        variant="dark"
+                        data-autoplay-indicator
+                      >
+                        {% render 'icon',
+                          icon_name: 'circle',
+                          background_class: 'dots-carousel__loader-background',
+                          border_class: 'dots-carousel__loader-border',
+                          circle_class: 'dots-carousel__loader-circle'
+                        %}
+                      </div>
+                    </div>
+                  </carousel-dot>
+                {% endif %}
+              {% endunless %}
+            {%- endfor -%}
+          </div>
+        </div>
+      </carousel-dots>
+    </carousel-component>
+  </div>
 {% endif %}

@@ -170,13 +170,6 @@
     </div>
     <div class="contact__methods__main container container--{{ container_size }}">
       {% for block in section.blocks %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
       <div class="Contact_method_links" {% if block.settings.contact_heading == "CHAT WITH US" %} id="chatWithUs" {% endif %}>
         {% if block.settings.contact_heading == "CHAT WITH US" %}
           <a href="javascript:void(0);" target="">

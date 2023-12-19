@@ -1034,3 +1034,6 @@ body.hamburger--open[scroll-y-offf] {
         font-size: 13px;
     }
 }
+.mega-menu .header__menu {
+    overflow: hidden;
+}

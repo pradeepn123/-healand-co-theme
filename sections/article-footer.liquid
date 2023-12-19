@@ -1,56 +1,48 @@
 {{ 'article.css' | asset_url | stylesheet_tag }}
 
 {% for article in blog.articles %}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-{% assign article = article %}
-    
+  {% assign article = article %}
 {% endfor %}
 {% render 'article-footer', block: section.settings, article: article %}
 {% schema %}
 {
-    "name": "Article Footer Section",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "show_author",
-        "default": true,
-        "label": "t:sections.blog_post.footer_block_show_author_label"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_date",
-        "default": true,
-        "label": "t:sections.blog_post.footer_block_show_date_label"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_share",
-        "default": true,
-        "label": "t:sections.blog_post.footer_block_show_share_label"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_next_and_previous_posts",
-        "default": true,
-        "label": "t:sections.blog_post.footer_block_show_next_and_previous_posts_label"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_comment_count",
-        "default": true,
-        "label": "t:sections.blog_post.footer_block_show_comment_count_label"
-      }
-    ],
-    "presets": [
-        {
-            "name": "Article Footer Section"
-        }
-    ]
+  "name": "Article Footer Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "t:sections.blog_post.footer_block_show_author_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.blog_post.footer_block_show_date_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share",
+      "default": true,
+      "label": "t:sections.blog_post.footer_block_show_share_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_next_and_previous_posts",
+      "default": true,
+      "label": "t:sections.blog_post.footer_block_show_next_and_previous_posts_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comment_count",
+      "default": true,
+      "label": "t:sections.blog_post.footer_block_show_comment_count_label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Footer Section"
+    }
+  ]
 }
 {% endschema %}

@@ -47,41 +47,37 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='articles section articles--page section-{{ section.id }} color-{{ color_scheme }}' id="tag-section">
-  <div class='articles__container container container--{{ container_size }} section-spacing'>
+<div class="articles section articles--page section-{{ section.id }} color-{{ color_scheme }}" id="tag-section">
+  <div class="articles__container container container--{{ container_size }} section-spacing">
     {%- if show_title or show_tag_navigation -%}
-      <div class='articles__header'>
+      <div class="articles__header">
         {%- if show_title -%}
-          <h5 class='articles__title'>
+          <h5 class="articles__title">
             {{ blog.title }}
             {%- if show_rss_icon -%}
-              <a class='unstyled-link' href='{{ shop.url }}{{ blog.url }}.atom' aria-label='RSS'>
+              <a class="unstyled-link" href="{{ shop.url }}{{ blog.url }}.atom" aria-label="RSS">
                 {%- render 'icon', icon_name: 'rss', class: 'articles__rss-icon' -%}
               </a>
             {%- endif -%}
           </h5>
         {%- endif -%}
         {%- if show_tag_navigation -%}
-          <div id="remove-class" class='articles__tags scroll-styling{% if blog.all_tags.size > 7 %}articles_justify_flex{% endif %}' >
+          <div
+            id="remove-class"
+            class="articles__tags scroll-styling{% if blog.all_tags.size > 7 %}articles_justify_flex{% endif %}"
+          >
             <a
-              class='articles__tag {% if current_tags == blank %}selected{% endif %}'
-              href='{{ blog.url }}'
-              aria-label='{{- 'sections.blog_page.link_to_all_tag' | t -}}'
+              class="articles__tag {% if current_tags == blank %}selected{% endif %}"
+              href="{{ blog.url }}"
+              aria-label="{{- 'sections.blog_page.link_to_all_tag' | t -}}"
             >
               {{- 'sections.blog_page.link_to_all_tag' | t -}}
             </a>
             {%- for tag in blog.all_tags -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: tag %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- if current_tags contains tag -%}
-                <span class='articles__tag selected'>{{ tag | link_to_remove_tag: tag }}</span>
+                <span class="articles__tag selected">{{ tag | link_to_remove_tag: tag }}</span>
               {%- else -%}
-                <span class='articles__tag'>{{ tag | link_to_tag: tag }}</span>
+                <span class="articles__tag">{{ tag | link_to_tag: tag }}</span>
               {%- endif -%}
             {%- endfor -%}
           </div>
@@ -89,16 +85,9 @@
       </div>
     {%- endif -%}
     {%- paginate blog.articles by article_per_page -%}
-      <div class='articles__card-grid-wrap'>
-        <div class='card-grid articles__card-grid' id='BlogPostListGrid'>
+      <div class="articles__card-grid-wrap">
+        <div class="card-grid articles__card-grid" id="BlogPostListGrid">
           {%- for article in blog.articles -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: article %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {% render 'article-card',
               class: 'articles__card card-grid__item',
               with_bottom_spacing: true,
@@ -145,19 +134,19 @@
 </div>
 
 <script>
-    var platform = navigator.platform.toLowerCase();
-    var element= document.getElementById('remove-class')
-    if (platform.indexOf('mac') !== -1) {
-      element.classList.remove('scroll-styling');
-    }
+  var platform = navigator.platform.toLowerCase();
+  var element = document.getElementById('remove-class');
+  if (platform.indexOf('mac') !== -1) {
+    element.classList.remove('scroll-styling');
+  }
 
-    window.addEventListener('DOMContentLoaded', function(){
-      var targetSection = document.getElementById('tag-section');
-      const url = window.location.href;
-      if(url.includes('tagged')) {
-        window.scrollTo(0, targetSection.offsetTop - 80);
-      }
-    });
+  window.addEventListener('DOMContentLoaded', function () {
+    var targetSection = document.getElementById('tag-section');
+    const url = window.location.href;
+    if (url.includes('tagged')) {
+      window.scrollTo(0, targetSection.offsetTop - 80);
+    }
+  });
 </script>
 
 {% schema %}

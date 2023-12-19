@@ -12,7 +12,7 @@
   endif
 -%}
 
-<div class='product-desktop-media'>
+<div class="product-desktop-media">
   {%- liquid
     if block_layout contains 'thumbnails' and product_media.size > 1
       render 'product-media-carousel', product: product, block: block, block_layout: block_layout, section: section, sectionId: sectionId
@@ -22,33 +22,26 @@
   -%}
 </div>
 
-<div class='product-mobile-media {% if show_part_of_next_slide %} product-mobile-media--with-half-next-slide{% endif %}'>
-  <product-media-carousel data-section='{{ sectionId }}' id='product-media-{{ product.id }}-{{ sectionId }}'>
+<div class="product-mobile-media {% if show_part_of_next_slide %} product-mobile-media--with-half-next-slide{% endif %}">
+  <product-media-carousel data-section="{{ sectionId }}" id="product-media-{{ product.id }}-{{ sectionId }}">
     <carousel-component
-      class='carousel product-mobile-media__carousel '
-      data-section-id='{{ sectionId }}'
+      class="carousel product-mobile-media__carousel "
+      data-section-id="{{ sectionId }}"
       data-product-media-carousel-component
-      tabindex='-1'
+      tabindex="-1"
     >
-      <div class='carousel__viewport embla product-mobile-media__carousel-viewport' data-carousel-viewport>
-        <div class='carousel__container' data-carousel-container>
+      <div class="carousel__viewport embla product-mobile-media__carousel-viewport" data-carousel-viewport>
+        <div class="carousel__container" data-carousel-container>
           {%- if product.media != blank -%}
             {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
               {%- if forloop.index0 == 0 -%}
                 {% assign is_first_media = true %}
               {%- else -%}
                 {%- assign is_first_media = false -%}
               {%- endif -%}
 
-              <div class='carousel__slide product-mobile-media__carousel-slide' data-media-id='{{ media.id }}'>
-                <div class='shape shape--{{ img_ratio }}'>
+              <div class="carousel__slide product-mobile-media__carousel-slide" data-media-id="{{ media.id }}">
+                <div class="shape shape--{{ img_ratio }}">
                   {%- render 'product-media',
                     product: product,
                     is_first_media: is_first_media,
@@ -64,15 +57,8 @@
             {%- endfor -%}
           {%- else -%}
             {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-              <div class='carousel__slide product-mobile-media__carousel-slide' data-media-id='{{ forloop.index }}'>
-                <div class='shape shape--{{ img_ratio }}'>
+              <div class="carousel__slide product-mobile-media__carousel-slide" data-media-id="{{ forloop.index }}">
+                <div class="shape shape--{{ img_ratio }}">
                   {%- render 'product-media',
                     product: product,
                     enable_image_zoom: enable_image_zoom,
@@ -90,33 +76,26 @@
       </div>
       {% if show_part_of_next_slide != true and product_media.size > 1 %}
         <carousel-dots
-          class='dots-carousel product-mobile-media__dots-carousel'
-          data-contain-scroll='keepSnaps'
-          data-align='center'
+          class="dots-carousel product-mobile-media__dots-carousel"
+          data-contain-scroll="keepSnaps"
+          data-align="center"
         >
-          <div class='dots-carousel__viewport embla' data-carousel-viewport>
-            <div class='dots-carousel__container' data-carousel-container>
+          <div class="dots-carousel__viewport embla" data-carousel-viewport>
+            <div class="dots-carousel__container" data-carousel-container>
               {%- for media in product_media -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: media %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                 <carousel-dot
-                  class='dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}'
-                  tabindex='0'
-                  data-dot-index='{{ forloop.index0 }}'
+                  class="dots-carousel__slide {% if forloop.index == 1 %}is-primary{% endif %}"
+                  tabindex="0"
+                  data-dot-index="{{ forloop.index0 }}"
                 >
-                  <div class='dots-carousel__slide-body'>
-                    <div class='dots-carousel__slide-inner-circle'></div>
+                  <div class="dots-carousel__slide-body">
+                    <div class="dots-carousel__slide-inner-circle"></div>
                     <div
-                      class='dots-carousel__loader'
-                      size='medium'
-                      variant='dark'
+                      class="dots-carousel__loader"
+                      size="medium"
+                      variant="dark"
                       data-autoplay-indicator
-                      style='--gsc-autoplay-interval: {{ autoplay_interval }}s;'
+                      style="--gsc-autoplay-interval: {{ autoplay_interval }}s;"
                     >
                       {% render 'icon',
                         icon_name: 'circle',

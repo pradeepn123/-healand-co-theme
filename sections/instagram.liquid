@@ -42,15 +42,15 @@
 
 {% render 'inline-css-minifier', css: css %}
 
-<div class='instagram section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}instagram--with-carousel{% endif %}'>
-  <div class='instagram__container container container--{{ container_size }} section-spacing {% if container_size == 'full-screen' %} instagram__container--full-screen{% endif %}'>
+<div class="instagram section section-{{ section.id }} color-{{ color_scheme }} {% if enable_carousel_on_mobile %}instagram--with-carousel{% endif %}">
+  <div class="instagram__container container container--{{ container_size }} section-spacing {% if container_size == 'full-screen' %} instagram__container--full-screen{% endif %}">
     {%- if text != blank or title != blank -%}
-      <div class='instagram__content instagram__content--with-{{ content_alignment }}-alignment'>
+      <div class="instagram__content instagram__content--with-{{ content_alignment }}-alignment">
         {%- if title != blank -%}
-          <h5 class='instagram__title {{ heading_size }}'>{{ title }}</h5>
+          <h5 class="instagram__title {{ heading_size }}">{{ title }}</h5>
         {%- endif -%}
         {%- if text != blank -%}
-          <div class='rte instagram__text body-font-weight-from-global-settings {{ body_size }}'>
+          <div class="rte instagram__text body-font-weight-from-global-settings {{ body_size }}">
             {{ text }}
           </div>
         {%- endif -%}
@@ -58,16 +58,9 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class='instagram__blocks'>
-        <div class='card-grid instagram__card-grid'>
+      <div class="instagram__blocks">
+        <div class="card-grid instagram__card-grid">
           {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
             {%- liquid
               assign image = block.settings.image
               assign video = block.settings.video
@@ -75,16 +68,16 @@
               assign icon = block.settings.icon
             -%}
             <div
-              class='instagram__card-grid-item instagram__item zoom-parent-for-hover card-grid__item block-{{ block.id }}'
+              class="instagram__card-grid-item instagram__item zoom-parent-for-hover card-grid__item block-{{ block.id }}"
               {{ block.shopify_attributes }}
             >
-              <div class='instagram__image-wrapper shape shape--nature'>
+              <div class="instagram__image-wrapper shape shape--nature">
                 {%- if link != blank -%}
                   <a
-                    class='overlay instagram__link-overlay unstyled-link'
-                    href='{{ link.url }}'
-                    target='_blank'
-                    aria-label='Instagram'
+                    class="overlay instagram__link-overlay unstyled-link"
+                    href="{{ link.url }}"
+                    target="_blank"
+                    aria-label="Instagram"
                   >
                     {%- if icon != 'none' -%}
                       {% render 'icon-pack', icon: icon, class: 'instagram__icon' %}
@@ -95,7 +88,7 @@
                   {% render 'video-with-alt', video: video, class: 'image instagram__image' %}
                 {%- elsif image != blank -%}
                   <img
-                    class='image instagram__image zoom lazyload'
+                    class="image instagram__image zoom lazyload"
                     {% render 'image-attributes', image: image %}
                   >
                 {%- else -%}
@@ -106,31 +99,24 @@
           {%- endfor -%}
         </div>
         {%- if enable_carousel_on_mobile -%}
-          <carousel-component class='card-carousel instagram__card-carousel' data-section-id='{{ section.id }}'>
-            <div class='card-carousel__viewport embla' data-carousel-viewport>
-              <div class='card-carousel__container' data-carousel-container>
+          <carousel-component class="card-carousel instagram__card-carousel" data-section-id="{{ section.id }}">
+            <div class="card-carousel__viewport embla" data-carousel-viewport>
+              <div class="card-carousel__container" data-carousel-container>
                 {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
                   {%- liquid
                     assign image = block.settings.image
                     assign video = block.settings.video
                     assign link = block.settings.link
                     assign icon = block.settings.icon
                   -%}
-                  <div class='card-carousel__slide instagram__item block-{{ block.id }}' {{ block.shopify_attributes }}>
-                    <div class='instagram__image-wrapper shape shape--square'>
+                  <div class="card-carousel__slide instagram__item block-{{ block.id }}" {{ block.shopify_attributes }}>
+                    <div class="instagram__image-wrapper shape shape--square">
                       {%- if link != blank -%}
                         <a
-                          class='overlay instagram__link-overlay unstyled-link'
-                          href='{{ link.url }}'
-                          target='_blank'
-                          aria-label='Instagram'
+                          class="overlay instagram__link-overlay unstyled-link"
+                          href="{{ link.url }}"
+                          target="_blank"
+                          aria-label="Instagram"
                         >
                           {%- if icon != 'none' -%}
                             {% render 'icon-pack', icon: icon, class: 'instagram__icon' %}
@@ -141,7 +127,7 @@
                         {% render 'video-with-alt', video: video, class: 'image instagram__image' %}
                       {%- elsif image != blank -%}
                         <img
-                          class='image instagram__image lazyload'
+                          class="image instagram__image lazyload"
                           {% render 'image-attributes', image: image %}
                         >
                       {%- else -%}
@@ -159,9 +145,9 @@
 
     {%- if btn_text != blank -%}
       <a
-        href='{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}'
-        class='btn btn--{{ btn_style }} instagram__btn'
-        aria-label='{{ btn_text }}'
+        href="{% if btn_url != blank %}{{ btn_url }}{% else %}#{% endif %}"
+        class="btn btn--{{ btn_style }} instagram__btn"
+        aria-label="{{ btn_text }}"
       >
         {{- btn_text -}}
       </a>

@@ -13,17 +13,10 @@
   }
 {% endstyle %}
 
-<div class='section section-{{ section.id }} color-{{ color_scheme }}'>
-  <div class='container container--{{ container_size }} section-spacing'>
+<div class="section section-{{ section.id }} color-{{ color_scheme }}">
+  <div class="container container--{{ container_size }} section-spacing">
     {%- for block in section.blocks -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop Start {%- endcomment -%}
-{%- capture hide_resource -%}{% render "wc_product_visibility", resource: block %}{%- endcapture -%}
-{%- if hide_resource == "true" -%}
-  {% continue %}
-{%- endif -%}
-{%- comment -%} Wholesale_Club_Product_Visibility_For_Loop End {%- endcomment -%}
-
-      <div class='custom-app-block custom-app-block--inside-standart-section' {{ block.shopify_attributes }}>
+      <div class="custom-app-block custom-app-block--inside-standart-section" {{ block.shopify_attributes }}>
         {% render block %}
       </div>
     {%- endfor -%}
