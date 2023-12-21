@@ -75,7 +75,8 @@
           "type": "image-banner",
           "disabled": true,
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/New_Product_Banner_Beet.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/Christmas_-_desk.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Christmas_-_mob.jpg",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
@@ -98,7 +99,7 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/products\/antioxidant-bundle-old",
+            "btn_url": "shopify:\/\/collections\/shop-all",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
