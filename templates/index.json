@@ -3,6 +3,40 @@
     "35abde66-b33a-4178-b3ef-5bba319784ba": {
       "type": "slideshow",
       "blocks": {
+        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
+          "type": "image-banner",
+          "settings": {
+            "desktop_img": "shopify:\/\/shop_images\/Christmas_-_desk.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Christmas_-_mob.jpg",
+            "desktop_overlay_opacity": 0,
+            "mobile_overlay_opacity": 0,
+            "background_color": "#faf5ef",
+            "text_colors": "#000000",
+            "desktop_text_color": "#ffffff",
+            "button_bg_color": "#ee5c4c",
+            "button_text_color": "#ffffff",
+            "caption": "",
+            "title": "",
+            "text": "",
+            "sub_heading_size": "h0",
+            "heading_size": "h2",
+            "body_size": "body4",
+            "desktop_content_position": "align-items:flex-end;justify-content:center;",
+            "desktop_content_align": "left",
+            "content_max_width": 528,
+            "content_spacing": 0,
+            "mobile_content_position": "align-items:flex-end;justify-content:center;",
+            "mobile_content_align": "center",
+            "desktop_content_background": "none",
+            "mobile_content_background": "none",
+            "btn_text": "",
+            "btn_url": "shopify:\/\/collections\/shop-all",
+            "btn_style": "solid",
+            "extra_btn_text": "",
+            "extra_btn_url": "",
+            "extra_btn_style": "solid"
+          }
+        },
         "4e4f4bce-2f4c-4405-8576-533654e3ca58": {
           "type": "image-banner",
           "settings": {
@@ -65,41 +99,6 @@
             "mobile_content_background": "none",
             "btn_text": "",
             "btn_url": "shopify:\/\/products\/immunity-bundle",
-            "btn_style": "solid",
-            "extra_btn_text": "",
-            "extra_btn_url": "",
-            "extra_btn_style": "solid"
-          }
-        },
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
-          "type": "image-banner",
-          "disabled": true,
-          "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Christmas_-_desk.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Christmas_-_mob.jpg",
-            "desktop_overlay_opacity": 0,
-            "mobile_overlay_opacity": 0,
-            "background_color": "#faf5ef",
-            "text_colors": "#000000",
-            "desktop_text_color": "#ffffff",
-            "button_bg_color": "#ee5c4c",
-            "button_text_color": "#ffffff",
-            "caption": "",
-            "title": "",
-            "text": "",
-            "sub_heading_size": "h0",
-            "heading_size": "h2",
-            "body_size": "body4",
-            "desktop_content_position": "align-items:flex-end;justify-content:center;",
-            "desktop_content_align": "left",
-            "content_max_width": 528,
-            "content_spacing": 0,
-            "mobile_content_position": "align-items:flex-end;justify-content:center;",
-            "mobile_content_align": "center",
-            "desktop_content_background": "none",
-            "mobile_content_background": "none",
-            "btn_text": "",
-            "btn_url": "shopify:\/\/collections\/shop-all",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
@@ -208,9 +207,9 @@
         }
       },
       "block_order": [
+        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "4e4f4bce-2f4c-4405-8576-533654e3ca58",
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b",
-        "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0",
         "9cd66c69-6020-4d07-80ad-6c6bdd73ef26",
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-1",
         "bd04fb65-8f0e-4b9d-bff5-f4b08ff479bf"
