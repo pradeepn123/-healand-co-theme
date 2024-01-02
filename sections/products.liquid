@@ -274,13 +274,6 @@
                   <div class="tab_header">
                     <div class="filters_card_child">
                       <a
-                        href="/collections/bundles"
-                        class="filters_switch {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
-                        id="all_bundle"
-                      >
-                        All
-                      </a>
-                      <a
                         href="/collections/the-essentials"
                         class="filters_switch {% if collection.url == '/collections/the-essentials' %}is_active{% endif %}"
                         id="single-product-bundle"
@@ -294,14 +287,13 @@
                       >
                         Wellness Kit
                       </a>
-                      {% comment %}
-                        {% assign unique_tags = collection.metafields.custom.collection_tabbed_section.value %}
-                        {% for tag in unique_tags %}
-                            <a class="filters_switch " id="{{ tag.collection_tag.value }}">
-                              {{ tag.tabbed_collection_title.value }}
-                            </a>
-                        {% endfor %}
-                      {% endcomment %}
+                      <a
+                        href="/collections/bundles"
+                        class="filters_switch {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
+                        id="all_bundle"
+                      >
+                        All
+                      </a>
                     </div>
                   </div>
                 {% endif %}
@@ -367,7 +359,12 @@
   ) {
     window.addEventListener('DOMContentLoaded', function () {
       var targetSection = document.querySelector('.shop__container');
-      window.scrollTo(0, targetSection.offsetTop - 80);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 </script>
