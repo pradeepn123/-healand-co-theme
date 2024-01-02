@@ -272,36 +272,40 @@
               <div class="shop__products-grid-wrap">
                 {% if showTabbedsection == true %}
                   <div class="tab_header">
-                    <div class="filters_card_child">
+                    <div class="bundles-categories">
+                      <div class="filters_card_child">
+                        <a
+                          href="/collections/bundles"
+                          class="filters_switch mobile_view {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
+                          id="all_bundle"
+                        >
+                          All
+                        </a>
+                        <a
+                          href="/collections/the-essentials"
+                          class="filters_switch {% if collection.url == '/collections/the-essentials' %}is_active{% endif %}"
+                          id="single-product-bundle"
+                        >
+                          The Essentials
+                        </a>
+                        <a
+                          href="/collections/wellness-kit"
+                          class="filters_switch {% if collection.url == '/collections/wellness-kit' %}is_active{% endif %}"
+                          id="mix-match-bundle"
+                        >
+                          Wellness Kit
+                        </a>
+                      </div>
+                    </div>
+                    <div class="bundles-view-all">
                       <a
                         href="/collections/bundles"
-                        class="filters_switch {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
+                        class="filters_switch link collection__read-more-link{% if collection.url == '/collections/bundles' %} is_active{% endif %}"
                         id="all_bundle"
                       >
-                        All
+                        <span class="link__text">View All</span>
+                        {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
                       </a>
-                      <a
-                        href="/collections/the-essentials"
-                        class="filters_switch {% if collection.url == '/collections/the-essentials' %}is_active{% endif %}"
-                        id="single-product-bundle"
-                      >
-                        The Essentials
-                      </a>
-                      <a
-                        href="/collections/wellness-kit"
-                        class="filters_switch {% if collection.url == '/collections/wellness-kit' %}is_active{% endif %}"
-                        id="mix-match-bundle"
-                      >
-                        Wellness Kit
-                      </a>
-                      {% comment %}
-                        {% assign unique_tags = collection.metafields.custom.collection_tabbed_section.value %}
-                        {% for tag in unique_tags %}
-                            <a class="filters_switch " id="{{ tag.collection_tag.value }}">
-                              {{ tag.tabbed_collection_title.value }}
-                            </a>
-                        {% endfor %}
-                      {% endcomment %}
                     </div>
                   </div>
                 {% endif %}
