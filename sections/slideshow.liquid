@@ -29,10 +29,30 @@
         --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
 
-    @media {% render 'media-queries', screen: 'md' %} {
+    @media {% render 'media-queries', screen: 'xl' %} {
         .section-{{section.id}} {
             --gsc-height: {{desktop_height}}px;
         }
+    }
+    @media(min-width:426px) and (max-width:767px){
+      .section-{{section.id}} {
+        --gsc-height: 350px;
+      }
+    }
+    @media(min-width:768px) and (max-width:1023px){
+      .section-{{section.id}} {
+        --gsc-height: 360px;
+      }
+    }
+    @media(min-width:1024px) and (max-width:1399px){
+      .section-{{section.id}} {
+        --gsc-height: 460px;
+      }
+    }
+    @media(min-width:1680px) {
+      .section-{{section.id}} {
+        --gsc-height: 700px;
+      }
     }
 
     {% for block in section.blocks %}= block.settings %}
