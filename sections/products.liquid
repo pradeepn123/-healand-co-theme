@@ -272,39 +272,27 @@
               <div class="shop__products-grid-wrap">
                 {% if showTabbedsection == true %}
                   <div class="tab_header">
-                    <div class="bundles-categories">
-                      <div class="filters_card_child">
-                        <a
-                          href="/collections/bundles"
-                          class="filters_switch mobile_view {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
-                          id="all_bundle"
-                        >
-                          All
-                        </a>
-                        <a
-                          href="/collections/the-essentials"
-                          class="filters_switch {% if collection.url == '/collections/the-essentials' %}is_active{% endif %}"
-                          id="single-product-bundle"
-                        >
-                          The Essentials
-                        </a>
-                        <a
-                          href="/collections/wellness-kit"
-                          class="filters_switch {% if collection.url == '/collections/wellness-kit' %}is_active{% endif %}"
-                          id="mix-match-bundle"
-                        >
-                          Wellness Kit
-                        </a>
-                      </div>
-                    </div>
-                    <div class="bundles-view-all">
+                    <div class="filters_card_child">
+                      <a
+                        href="/collections/the-essentials"
+                        class="filters_switch {% if collection.url == '/collections/the-essentials' %}is_active{% endif %}"
+                        id="single-product-bundle"
+                      >
+                        The Essentials
+                      </a>
+                      <a
+                        href="/collections/wellness-kit"
+                        class="filters_switch {% if collection.url == '/collections/wellness-kit' %}is_active{% endif %}"
+                        id="mix-match-bundle"
+                      >
+                        Wellness Kit
+                      </a>
                       <a
                         href="/collections/bundles"
-                        class="filters_switch link collection__read-more-link{% if collection.url == '/collections/bundles' %} is_active{% endif %}"
+                        class="filters_switch {% if collection.url == '/collections/bundles' %}is_active{% endif %}"
                         id="all_bundle"
                       >
-                        <span class="link__text">View All</span>
-                        {%- render 'icon', icon_name: 'link-chevron', class: 'link__chevron' -%}
+                        All
                       </a>
                     </div>
                   </div>
