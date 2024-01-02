@@ -371,7 +371,12 @@
   ) {
     window.addEventListener('DOMContentLoaded', function () {
       var targetSection = document.querySelector('.shop__container');
-      window.scrollTo(0, targetSection.offsetTop - 80);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 </script>
