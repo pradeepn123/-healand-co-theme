@@ -348,7 +348,29 @@
       "title": "Adressen",
       "default": "Standard",
       "add_new": "Füge eine neue Adresse hinzu",
-      "edit_address": "Adresse bearbeiten"
+      "edit_address": "Adresse bearbeiten",
+      "first_name": "Vorname",
+      "company": "Unternehmen",
+      "last_name": "Familienname, Nachname",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Stadt",
+      "country": "Land\/Region",
+      "province": "Provinz",
+      "zip": "Postleitzahl",
+      "phone": "Telefon",
+      "set_default": "Als Standardadresse festlegen",
+      "update": "Adresse aktualisieren",
+      "edit": "Bearbeiten",
+      "add": "Adresse hinzufügen",
+      "cancel": "Stornieren",
+      "delete": "Löschen",
+      "delete_confirm": "Sind Sie sicher, dass Sie diese Adresse löschen möchten?"
+    },
+    "login_page": {
+      "cancel": "Stornieren",
+      "email_input_placeholder": "E-Mail Adresse eingeben",
+      "email_input_label": "Email"
     }
   }
 }
