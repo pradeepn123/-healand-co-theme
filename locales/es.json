@@ -79,6 +79,26 @@
     },
     "custom_liquid": {
       "stub_text": "Escribir o copiar\/pegar código Liquid"
+    },
+    "collection_hero_banner": {
+      "breadcrumb_collections_link": "Colecciones"
+    },
+    "blog_post": {
+      "breadcrumb_home_link": "Hogar",
+      "next_post_link": "PRÓXIMO ARTÍCULO",
+      "breadcrumb_blog_link": "Blog",
+      "prev_post_link": "ARTÍCULO ANTERIOR",
+      "comments_count": {
+        "one": "{{ count }} Comentario",
+        "other": "{{ count }} Comentarios"
+      }
+    },
+    "blog_page": {
+      "link_to_all_tag": "Todo"
+    },
+    "header": {
+      "back_to_home_in_drawer_on_mobile": "Menú",
+      "go_to_login_in_drawer_on_mobile": "Acceso"
     }
   }
 }
