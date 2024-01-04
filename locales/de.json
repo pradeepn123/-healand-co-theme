@@ -132,7 +132,37 @@
       "text_for_title_in_login_modal": "Geben Sie das Store-Passwort ein"
     },
     "empty_cart_page": {
-      "link_to_continue_shopping": "Beginn mit dem Einkauf"
+      "link_to_continue_shopping": "Beginn mit dem Einkauf",
+      "title": "Ihr Warenkorb ist leer"
+    },
+    "cart_items": {
+      "title": "Wagen",
+      "product_count": {
+        "one": "{{ count }} Artikel in Ihrem Warenkorb",
+        "other": "{{ count }} Produkte in Ihrem Einkaufswagen"
+      },
+      "product_label": "Produkt",
+      "price_label": "Preis",
+      "quantity_label": "Menge",
+      "total_label": "Gesamt"
+    },
+    "subtotal": {
+      "add_order_notes_button": "Bestellhinweis hinzufügen",
+      "placeholder_for_textarea_for_order_note": "Hinterlassen Sie eine Nachricht für den Verkäufer",
+      "text_for_checkout_button": "Kasse",
+      "label_for_total_price": "Zwischensumme",
+      "label_for_subtotal_price_html": {
+        "one": "Zwischensumme <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} Artikel)<\/span>",
+        "other": "Zwischensumme <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} Artikel)<\/span>"
+      },
+      "text_for_go_to_cart_button": "Zum Einkaufskorb gehen",
+      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand<\/a> An der Kasse berechnet",
+      "taxes_included_but_shipping_at_checkout": "Die Mehrwertsteuer ist inbegriffen und der Versand wird an der Kasse berechnet",
+      "taxes_included_and_shipping_policy_html": "Steuern inklusive. <a href=\"{{ link }}\">Versand<\/a> An der Kasse berechnet.",
+      "taxes_and_shipping_at_checkout": "Steuern und Versand werden an der Kasse berechnet"
+    },
+    "search_page": {
+      "placeholder_for_search_input": "Wonach suchst du?"
     }
   }
 }
