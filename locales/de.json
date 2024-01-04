@@ -240,5 +240,53 @@
         "variant_5": "Speichern {{ amount }}"
       }
     }
+  },
+  "blogs": {
+    "blog_post": {
+      "comments": {
+        "one": "{{ count }} Kommentar",
+        "other": "{{ count }} Kommentare"
+      },
+      "moderated": "Bitte beachten Sie, dass Kommentare vor der Veröffentlichung genehmigt werden müssen.",
+      "comment_form_title": "Hinterlasse einen Kommentar",
+      "name": "Name",
+      "email": "Email",
+      "success": "Ihr Kommentar wurde erfolgreich gepostet! Danke schön!",
+      "success_moderated": "Ihr Kommentar wurde erfolgreich gepostet. Wir werden es in Kürze veröffentlichen, da unser Blog moderiert wird.",
+      "text_for_send_comment_button": "EINREICHEN",
+      "placeholder_for_comment_message_textarea": "Nachricht"
+    }
+  },
+  "products": {
+    "shop": {
+      "results_count": {
+        "other": "{{ count }} Ergebnisse",
+        "one": "{{ count }} Ergebnis"
+      },
+      "label_for_filters_toggler": "Filter",
+      "text_for_no_results_found_in_stub": "Keine Produkte gefunden",
+      "text_for_clear_all_in_stub": "Alles löschen",
+      "text_for_use_another_filters": "Verwenden Sie andere Filteroptionen oder",
+      "text_for_change_query": "Leider gibt es für diese Suchanfrage keine Produkte.",
+      "aria_label_for_max_number_input": "Zahleneingabe für Maximalpreis",
+      "aria_label_for_min_number_input": "Zahleneingabe für Mindestpreis",
+      "aria_label_for_max_range_input": "Bereichseingabe für maximalen Preis",
+      "aria_label_for_min_range_input": "Bereichseingabe für Mindestpreis"
+    },
+    "product": {
+      "default_title": "Ihr Produkttitel",
+      "default_vendor": "Verkäufer",
+      "sku": "Artikelnummer: {{ sku }}",
+      "view_full_details": "Vollständige Details anzeigen",
+      "add_to_cart": "In den Warenkorb legen",
+      "pre_order": "Vorbestellen",
+      "on_sale": "Verkauf",
+      "quantity": {
+        "label": "Menge"
+      },
+      "stock": {
+        "out_of_stock": "Ausverkauft"
+      }
+    }
   }
 }
