@@ -441,6 +441,44 @@
         "one": "{{ count }} Produkt",
         "other": "{{ count }} Produkte"
       }
+    },
+    "product_card": {
+      "quick_view_button_label": "Schnellansicht",
+      "add_to_cart_button_label": "In den Warenkorb legen",
+      "default_title": "Ihr Produkttitel",
+      "default_vendor": "Verkäufer",
+      "from_price_html": "Aus {{ price }}"
+    },
+    "article_card": {
+      "read_more_link": "Mehr lesen",
+      "default_title": "Deine Beitragsüberschrift",
+      "default_content": "Nutzen Sie Blogbeiträge, um über neue Produkteinführungen, Tipps oder andere Neuigkeiten zu Ihrem Shop zu sprechen, die Sie Ihren Kunden mitteilen möchten.",
+      "default_author": "Autorenname",
+      "comments_count": {
+        "one": "{{ count }} Kommentar",
+        "other": "{{ count }} Kommentare"
+      }
+    }
+  },
+  "dialog_elements": {
+    "search_drawer": {
+      "header_title": "Suchen",
+      "placeholder_for_search_input": "Nach Produkten suchen...",
+      "label_for_search_input": "Suchen",
+      "screen_reader_label_for_close_button": "Suchleiste schließen",
+      "screen_reader_label_for_search_button": "Suchen"
+    },
+    "quick_view": {
+      "header_title": "Schnellansicht"
+    },
+    "quick_add": {
+      "header_title": "In den Warenkorb legen"
+    }
+  },
+  "before_after_images": {
+    "separator": {
+      "line": "Linie zwischen Bildern",
+      "button": "Ziehen Sie den Rand zwischen den Bildern"
     }
   }
 }
