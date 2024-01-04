@@ -48,7 +48,57 @@
       "blog_posts_tab": "I post del blog",
       "pages_tab": "Pagine",
       "collections_tab": "Collezioni",
-      "queries_tab": "Suggerimenti"
+      "queries_tab": "Suggerimenti",
+      "button_label": "Visualizza tutti i risultati"
+    },
+    "gift_card": {
+      "title": "Ecco la tua carta regalo!",
+      "remaining_html": "Residuo {{ balance }}",
+      "text": "Utilizza questo codice al momento del pagamento per riscattare la tua carta regalo",
+      "shop_link": "Inizia a fare acquisti",
+      "add_to_apple_wallet": "Aggiungi ad Apple Wallet",
+      "gift_card_image": "Immagine della carta regalo",
+      "copy_code": "Copia il codice",
+      "expired": "Scaduto",
+      "copied": "Copiato",
+      "print": "Stampa"
+    },
+    "featured_blog_posts": {
+      "comments_count": {
+        "one": "{{ count }} Commento",
+        "other": "{{ count }} Commenti"
+      },
+      "read_more_link": "Per saperne di più",
+      "read_more_link_aria_label": "Post sul blog: {{ blog_post_title }}",
+      "default_article_title": "L'intestazione del tuo post",
+      "default_article_content": "Utilizza i post del blog per parlare del lancio di nuovi prodotti, suggerimenti o altre notizie sul tuo negozio che desideri condividere con i tuoi clienti.",
+      "default_article_author": "Nome dell'autore"
+    },
+    "contact_form": {
+      "captcha_note": "Questo sito è protetto da reCAPTCHA e si applicano l'Informativa sulla privacy e i Termini di servizio di Google."
+    },
+    "custom_liquid": {
+      "stub_text": "Scrivi o copia\/incolla il codice Liquid"
+    },
+    "collection_hero_banner": {
+      "breadcrumb_collections_link": "Collezioni"
+    },
+    "blog_post": {
+      "breadcrumb_blog_link": "Blog",
+      "breadcrumb_home_link": "Casa",
+      "next_post_link": "PROSSIMO ARTICOLO",
+      "prev_post_link": "ARTICOLO PRECEDENTE",
+      "comments_count": {
+        "one": "{{ count }} Commento",
+        "other": "{{ count }} Commenti"
+      }
+    },
+    "blog_page": {
+      "link_to_all_tag": "Tutto"
+    },
+    "header": {
+      "back_to_home_in_drawer_on_mobile": "Menù",
+      "go_to_login_in_drawer_on_mobile": "Login"
     }
   }
 }
