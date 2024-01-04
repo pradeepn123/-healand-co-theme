@@ -98,7 +98,41 @@
     },
     "header": {
       "back_to_home_in_drawer_on_mobile": "Menu",
-      "go_to_login_in_drawer_on_mobile": "Se connecter"
+      "go_to_login_in_drawer_on_mobile": "Se connecter",
+      "aria_label_for_search_icon": "Tiroir de recherche",
+      "back_to_login_in_drawer_on_mobile": "Se connecter",
+      "aria_label_for_account_icon": "Page de compte",
+      "aria_label_for_cart_icon": "Chariot"
+    }
+  },
+  "general": {
+    "back_to_top_button": {
+      "aria_label": "Retour au sommet"
+    },
+    "free_shipping_bar": {
+      "progress_message": "Vous êtes à <span>[valeur]<\/span> de la livraison gratuite !",
+      "achieved_message": "Livraison gratuite débloquée !"
+    },
+    "logo": {
+      "aria_label_for_logo_link": "Logo"
+    },
+    "localization_dropdown": {
+      "aria_label_for_currency_selector": "Sélecteur de devise",
+      "aria_label_for_language_selector": "Sélecteur de langue"
+    },
+    "password_page": {
+      "label_for_password_input": "Mot de passe",
+      "placeholder_for_email_input": "Votre email",
+      "placeholder_for_password_input": "Votre mot de passe",
+      "label_for_email_input": "E-mail",
+      "subscribe_button_label": "S'abonner",
+      "text_before_powered_shopify_logo": "Cette boutique sera alimentée par",
+      "text_for_link_to_admin_at_html": "Êtes-vous le propriétaire du magasin? <a href=\"\/admin\" class=\"{{ class }}\">Connectez-vous ici<\/a>",
+      "text_for_element_which_open_modal": "Entrez en utilisant le mot de passe",
+      "text_for_title_in_login_modal": "Entrez le mot de passe du magasin"
+    },
+    "empty_cart_page": {
+      "link_to_continue_shopping": "Commencer à magasiner"
     }
   }
 }
