@@ -60,7 +60,45 @@
       "gift_card_image": "Image de la carte cadeau",
       "copy_code": "Copier le code",
       "expired": "Expiré",
-      "copied": "Copié"
+      "copied": "Copié",
+      "print": "Imprimer"
+    },
+    "featured_blog_posts": {
+      "read_more_link_aria_label": "Article de blog : {{ blog_post_title }}",
+      "read_more_link": "En savoir plus",
+      "comments_count": {
+        "one": "{{ count }} Commentaire",
+        "other": "{{ count }} commentaires"
+      },
+      "default_article_title": "Titre de votre message",
+      "default_article_content": "Utilisez des articles de blog pour parler des lancements de nouveaux produits, des conseils ou d'autres actualités sur votre boutique que vous souhaitez partager avec vos clients.",
+      "default_article_author": "Nom de l'auteur"
+    },
+    "contact_form": {
+      "captcha_note": "Ce site est protégé par reCAPTCHA et la politique de confidentialité et les conditions d'utilisation de Google s'appliquent."
+    },
+    "custom_liquid": {
+      "stub_text": "Écrire ou copier\/coller le code Liquid"
+    },
+    "collection_hero_banner": {
+      "breadcrumb_collections_link": "Collections"
+    },
+    "blog_post": {
+      "breadcrumb_home_link": "Maison",
+      "breadcrumb_blog_link": "Blog",
+      "next_post_link": "ARTICLE SUIVANT",
+      "prev_post_link": "ARTICLE PRÉCÉDENT",
+      "comments_count": {
+        "one": "{{ count }} Commentaire",
+        "other": "{{ count }} commentaires"
+      }
+    },
+    "blog_page": {
+      "link_to_all_tag": "Tous"
+    },
+    "header": {
+      "back_to_home_in_drawer_on_mobile": "Menu",
+      "go_to_login_in_drawer_on_mobile": "Se connecter"
     }
   }
 }
