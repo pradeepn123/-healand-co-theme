@@ -188,7 +188,41 @@
       "expand_options_button_label": "Más",
       "collapse_options_button_label": "Menos",
       "clear_button_label": "Claro",
-      "clear_all": "Limpiar todo"
+      "clear_all": "Limpiar todo",
+      "apply_button_label": "Aplicar",
+      "in_stock_only_label": "Solo en stock"
+    },
+    "load_button_pagination": {
+      "button_label": "Carga más",
+      "results_label": "has visto {{ current_count }} de {{ count }} resultados"
+    },
+    "share": {
+      "facebook_label": "Facebook",
+      "twitter_label": "Gorjeo",
+      "instagram_label": "Instagram",
+      "pinterest_label": "Pinterest",
+      "base_label": "Copiar link",
+      "button_label": "Compartir"
+    },
+    "sidebar_cart": {
+      "title_count": {
+        "one": "({{ count }})",
+        "other": "({{ count }})"
+      },
+      "title": "MI CARRITO",
+      "continue_shopping": "Seguir comprando"
+    },
+    "sort_list": {
+      "button_label": "Clasificar",
+      "sort_by": "Ordenar por"
+    },
+    "gift_page": {
+      "title": "Aquí está tu {{ value }} tarjeta de regalo para {{ shop }}!",
+      "subtext": "Tu tarjeta regalo"
+    },
+    "cart_page": {
+      "cart_error": "Se produjo un error al actualizar su carrito. Inténtalo de nuevo.",
+      "cart_quantity_error_html": "Solo puede agregar [cantidad] artículos a su carrito."
     }
   }
 }
