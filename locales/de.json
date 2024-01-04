@@ -60,7 +60,45 @@
       "gift_card_image": "Bild einer Geschenkkarte",
       "copy_code": "Code kopieren",
       "expired": "Abgelaufen",
-      "copied": "Kopiert"
+      "copied": "Kopiert",
+      "print": "Drucken"
+    },
+    "featured_blog_posts": {
+      "read_more_link_aria_label": "Blogeintrag: {{ blog_post_title }}",
+      "read_more_link": "Mehr lesen",
+      "comments_count": {
+        "one": "{{ count }} Kommentar",
+        "other": "{{ count }} Kommentare"
+      },
+      "default_article_title": "Deine Beitragsüberschrift",
+      "default_article_content": "Nutzen Sie Blogbeiträge, um über neue Produkteinführungen, Tipps oder andere Neuigkeiten zu Ihrem Shop zu sprechen, die Sie Ihren Kunden mitteilen möchten.",
+      "default_article_author": "Autorenname"
+    },
+    "contact_form": {
+      "captcha_note": "Diese Website ist durch reCAPTCHA geschützt und es gelten die Datenschutzbestimmungen und Nutzungsbedingungen von Google."
+    },
+    "custom_liquid": {
+      "stub_text": "Schreiben oder kopieren\/fügen Sie Liquid-Code ein"
+    },
+    "blog_page": {
+      "link_to_all_tag": "Alle"
+    },
+    "collection_hero_banner": {
+      "breadcrumb_collections_link": "Sammlungen"
+    },
+    "blog_post": {
+      "breadcrumb_home_link": "Heim",
+      "breadcrumb_blog_link": "Blog",
+      "next_post_link": "NÄCHSTER ARTIKEL",
+      "prev_post_link": "VORHERIGER ARTIKEL",
+      "comments_count": {
+        "one": "{{ count }} Kommentar",
+        "other": "{{ count }} Kommentare"
+      }
+    },
+    "header": {
+      "back_to_home_in_drawer_on_mobile": "Speisekarte",
+      "go_to_login_in_drawer_on_mobile": "Anmeldung"
     }
   }
 }
