@@ -374,7 +374,23 @@
       "order_number": "Commande",
       "order_number_link": "Numéro de commande {{ number }}",
       "date": "Date",
-      "payment_status": "Statut de paiement"
+      "payment_status": "Statut de paiement",
+      "total": "Total",
+      "fulfillment_status": "État d'exécution"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "email": "E-mail",
+      "password": "Mot de passe"
+    },
+    "recover_password": {
+      "success": "Nous vous avons envoyé un e-mail avec un lien pour mettre à jour votre mot de passe."
+    },
+    "reset_password": {
+      "title": "Réinitialiser le mot de passe du compte",
+      "subtext": "Entrez un nouveau mot de passe pour {{ email }}"
     }
   }
 }
