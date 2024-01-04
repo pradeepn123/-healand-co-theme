@@ -285,7 +285,39 @@
         "label": "Menge"
       },
       "stock": {
-        "out_of_stock": "Ausverkauft"
+        "out_of_stock": "Ausverkauft",
+        "label_with_counter": {
+          "other": "{{ count }} Sachen auf Lager",
+          "one": "{{ count }} Produkt im lager"
+        }
+      },
+      "pickup_availability": {
+        "view_store_info": "Shop-Informationen anzeigen",
+        "pick_up_available": "Abholung möglich",
+        "check_other_stores": "Überprüfen Sie die Verfügbarkeit in anderen Geschäften",
+        "pick_up_available_at_html": "Abholung möglich unter <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Abholung derzeit nicht möglich unter <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable": "Abholung derzeit nicht möglich",
+        "aria_label_for_sidebar_close_button": "Schließen Sie die Seitenleiste zur Abholverfügbarkeit",
+        "unavailable": "Abholverfügbarkeit konnte nicht geladen werden",
+        "refresh": "Aktualisierung"
+      },
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "include_taxes": "Steuern inklusive.",
+      "no_include_taxes": "Steuer nicht inbegriffen.",
+      "xr_button_label": "Sehen Sie in Ihrem Raum"
+    },
+    "modal": {
+      "label": "Medien Gallerie"
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Telefonnummer"
       }
     }
   }
