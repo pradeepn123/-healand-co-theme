@@ -189,6 +189,26 @@
       "collapse_options_button_label": "Moins",
       "clear_button_label": "Clair",
       "clear_all": "Tout effacer"
+    },
+    "sidebar_cart": {
+      "title": "MON PANIER",
+      "title_count": {
+        "one": "({{ count }})",
+        "other": "({{ count }})"
+      },
+      "continue_shopping": "Continuer vos achats"
+    },
+    "sort_list": {
+      "button_label": "Trier",
+      "sort_by": "Trier par"
+    },
+    "gift_page": {
+      "title": "Voici votre {{ value }} carte cadeau pour {{ shop }}!",
+      "subtext": "Votre carte cadeau"
+    },
+    "cart_page": {
+      "cart_error": "Une erreur s'est produite lors de la mise à jour de votre panier. Veuillez réessayer.",
+      "cart_quantity_error_html": "Vous ne pouvez ajouter que [quantité] articles à votre panier."
     }
   }
 }
