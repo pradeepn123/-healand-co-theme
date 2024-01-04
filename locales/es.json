@@ -223,6 +223,22 @@
     "cart_page": {
       "cart_error": "Se produjo un error al actualizar su carrito. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puede agregar [cantidad] artículos a su carrito."
+    },
+    "badges": {
+      "product_sale_amount_badge": {
+        "variant_1": "Venta",
+        "variant_3": "Ahorrar {{ amount }}%",
+        "variant_4": "-{{ amount }}",
+        "variant_5": "Ahorrar {{ amount }}",
+        "variant_2": "-{{ amount }}%"
+      },
+      "product_sale_badge": {
+        "variant_1": "Venta",
+        "variant_2": "-{{ amount }}%",
+        "variant_3": "Ahorrar {{ amount }}%",
+        "variant_4": "-{{ amount }}",
+        "variant_5": "Ahorrar {{ amount }}"
+      }
     }
   }
 }
