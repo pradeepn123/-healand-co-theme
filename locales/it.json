@@ -420,7 +420,65 @@
     },
     "reset_password": {
       "title": "Reimposta la password dell'account",
-      "subtext": "Inserisci una nuova password per {{ email }}"
+      "subtext": "Inserisci una nuova password per {{ email }}",
+      "submit": "Resetta la password",
+      "password_confirm": "Conferma password",
+      "password": "Parola d'ordine"
+    }
+  },
+  "forms": {
+    "newsletter": {
+      "success": "Congratulazioni! Ti sei registrato con successo per ricevere le newsletter.",
+      "subscribe_button_label": "sottoscrivi",
+      "email_input_placeholder": "Indirizzo e-mail",
+      "email_input_label": "E-mail"
+    }
+  },
+  "cards": {
+    "collection_card": {
+      "default_title": "Il titolo della tua raccolta",
+      "product_count": {
+        "one": "{{ count }} Prodotto",
+        "other": "{{ count }} prodotti"
+      }
+    },
+    "product_card": {
+      "add_to_cart_button_label": "Aggiungi al carrello",
+      "default_title": "Il titolo del tuo prodotto",
+      "default_vendor": "Venditore",
+      "from_price_html": "Da {{ price }}",
+      "quick_view_button_label": "Occhiata veloce"
+    },
+    "article_card": {
+      "read_more_link": "Per saperne di più",
+      "default_title": "L'intestazione del tuo post",
+      "default_content": "Utilizza i post del blog per parlare del lancio di nuovi prodotti, suggerimenti o altre notizie sul tuo negozio che desideri condividere con i tuoi clienti.",
+      "default_author": "Nome dell'autore",
+      "comments_count": {
+        "one": "{{ count }} commento",
+        "other": "{{ count }} Commenti"
+      }
+    }
+  },
+  "dialog_elements": {
+    "search_drawer": {
+      "header_title": "Ricerca",
+      "placeholder_for_search_input": "Cerca prodotti...",
+      "screen_reader_label_for_close_button": "Chiudi il cassetto di ricerca",
+      "label_for_search_input": "Ricerca",
+      "screen_reader_label_for_search_button": "Ricerca"
+    },
+    "quick_view": {
+      "header_title": "Occhiata veloce"
+    },
+    "quick_add": {
+      "header_title": "Aggiungi al carrello"
+    }
+  },
+  "before_after_images": {
+    "separator": {
+      "line": "linea tra le immagini",
+      "button": "trascina il bordo tra le immagini"
     }
   }
 }
