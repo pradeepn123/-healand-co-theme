@@ -60,7 +60,25 @@
       "gift_card_image": "Imagen de tarjeta de regalo",
       "copy_code": "Copiar código",
       "expired": "Venció",
-      "copied": "Copiado"
+      "copied": "Copiado",
+      "print": "Imprimir"
+    },
+    "featured_blog_posts": {
+      "read_more_link_aria_label": "Entrada en el blog: {{ blog_post_title }}",
+      "read_more_link": "Leer más",
+      "comments_count": {
+        "other": "{{ count }} Comentarios",
+        "one": "{{ count }} Comentario"
+      },
+      "default_article_title": "Encabezado de tu publicación",
+      "default_article_content": "Utilice publicaciones de blog para hablar sobre lanzamientos de nuevos productos, consejos u otras noticias sobre su tienda que desee compartir con sus clientes.",
+      "default_article_author": "Nombre del autor"
+    },
+    "contact_form": {
+      "captcha_note": "Este sitio está protegido por reCAPTCHA y se aplican la Política de privacidad y los Términos de servicio de Google."
+    },
+    "custom_liquid": {
+      "stub_text": "Escribir o copiar\/pegar código Liquid"
     }
   }
 }
