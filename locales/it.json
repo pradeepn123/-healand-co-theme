@@ -381,6 +381,18 @@
       "title": "Login",
       "sign_in": "Registrazione",
       "submit": "Invia"
+    },
+    "order": {
+      "order_info_cancelled_date_html": "Annullato: {{ cancelled_at }}",
+      "order_info_placed_date_html": "Posto su {{ date_at }}",
+      "order_info_name": "Ordine {{ order_name }}",
+      "order_info_cancelled_reason": "Motivo dell'annullamento: {{ reason }}",
+      "header": "Cronologia ordini",
+      "product": "Prodotto",
+      "sku": "SKU",
+      "price": "Prezzo",
+      "quantity": "Quantità",
+      "total": "Totale"
     }
   }
 }
