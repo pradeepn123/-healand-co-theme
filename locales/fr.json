@@ -390,7 +390,27 @@
     },
     "reset_password": {
       "title": "Réinitialiser le mot de passe du compte",
-      "subtext": "Entrez un nouveau mot de passe pour {{ email }}"
+      "subtext": "Entrez un nouveau mot de passe pour {{ email }}",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmez le mot de passe",
+      "submit": "Réinitialiser le mot de passe"
+    }
+  },
+  "forms": {
+    "newsletter": {
+      "success": "Toutes nos félicitations! Vous vous êtes inscrit avec succès pour recevoir les newsletters.",
+      "subscribe_button_label": "S'abonner",
+      "email_input_placeholder": "Adresse e-mail",
+      "email_input_label": "E-mail"
+    }
+  },
+  "cards": {
+    "collection_card": {
+      "default_title": "Titre de votre collection",
+      "product_count": {
+        "one": "{{ count }} produit",
+        "other": "{{ count }} des produits"
+      }
     }
   }
 }
