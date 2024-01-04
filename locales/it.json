@@ -240,5 +240,21 @@
         "variant_5": "Salva {{ amount }}"
       }
     }
+  },
+  "blogs": {
+    "blog_post": {
+      "comments": {
+        "other": "{{ count }} Commenti",
+        "one": "{{ count }} commento"
+      },
+      "moderated": "Tieni presente che i commenti devono essere approvati prima di essere pubblicati.",
+      "comment_form_title": "lascia un commento",
+      "name": "Nome",
+      "email": "E-mail",
+      "success": "Il tuo commento è stato pubblicato con successo! Grazie!",
+      "success_moderated": "Il tuo commento è stato pubblicato con successo. Lo pubblicheremo tra poco, poiché il nostro blog è moderato.",
+      "text_for_send_comment_button": "INVIA",
+      "placeholder_for_comment_message_textarea": "Messaggio"
+    }
   }
 }
