@@ -411,6 +411,44 @@
         "one": "{{ count }} produit",
         "other": "{{ count }} des produits"
       }
+    },
+    "product_card": {
+      "add_to_cart_button_label": "Ajouter au panier",
+      "quick_view_button_label": "Aperçu rapide",
+      "default_title": "Le titre de votre produit",
+      "default_vendor": "Fournisseur",
+      "from_price_html": "Depuis {{ price }}"
+    },
+    "article_card": {
+      "read_more_link": "En savoir plus",
+      "default_title": "Titre de votre message",
+      "default_content": "Utilisez des articles de blog pour parler des lancements de nouveaux produits, des conseils ou d'autres actualités sur votre boutique que vous souhaitez partager avec vos clients.",
+      "default_author": "Nom de l'auteur",
+      "comments_count": {
+        "one": "{{ count }} commentaire",
+        "other": "{{ count }} commentaires"
+      }
+    }
+  },
+  "dialog_elements": {
+    "search_drawer": {
+      "header_title": "Recherche",
+      "placeholder_for_search_input": "Rechercher des produits...",
+      "label_for_search_input": "Recherche",
+      "screen_reader_label_for_close_button": "Fermer le tiroir de recherche",
+      "screen_reader_label_for_search_button": "Recherche"
+    },
+    "quick_view": {
+      "header_title": "Aperçu rapide"
+    },
+    "quick_add": {
+      "header_title": "Ajouter au panier"
+    }
+  },
+  "before_after_images": {
+    "separator": {
+      "line": "ligne entre les images",
+      "button": "faites glisser la bordure entre les images"
     }
   }
 }
