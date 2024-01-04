@@ -381,6 +381,30 @@
       "title": "Acceso",
       "sign_in": "Iniciar sesión",
       "submit": "Entregar"
+    },
+    "order": {
+      "order_info_name": "Orden {{ order_name }}",
+      "order_info_placed_date_html": "Colocado en {{ date_at }}",
+      "order_info_cancelled_date_html": "Cancelado: {{ cancelled_at }}",
+      "header": "Historial de pedidos",
+      "order_info_cancelled_reason": "Motivo de la cancelación: {{ reason }}",
+      "product": "Producto",
+      "sku": "SKU",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "total": "Total",
+      "shipping_address": "Dirección de envío",
+      "discount": "Descuento",
+      "tax": "Impuesto",
+      "shipping": "Envío",
+      "fulfilled_at_html": "cumplido {{ date }}",
+      "track_shipment": "Rastrear envio"
+    },
+    "orders": {
+      "order_number": "Orden",
+      "order_number_link": "Número de orden {{ number }}",
+      "date": "Fecha",
+      "payment_status": "Estado de pago"
     }
   }
 }
