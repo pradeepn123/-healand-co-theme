@@ -299,8 +299,44 @@
         "pick_up_unavailable_at_html": "Ritiro attualmente non disponibile presso <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
         "pick_up_unavailable": "Ritiro al momento non disponibile",
         "aria_label_for_sidebar_close_button": "Chiudi la barra laterale della disponibilità del ritiro",
-        "unavailable": "Impossibile caricare la disponibilità del ritiro"
+        "unavailable": "Impossibile caricare la disponibilità del ritiro",
+        "refresh": "ricaricare"
+      },
+      "unavailable": "Non disponibile",
+      "sold_out": "Esaurito",
+      "no_include_taxes": "Tasse non incluse.",
+      "include_taxes": "Tasse incluse.",
+      "xr_button_label": "Visualizza nel tuo spazio"
+    },
+    "modal": {
+      "label": "Galleria multimediale"
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "name": "Nome",
+        "email": "E-mail",
+        "phone": "Numero di telefono",
+        "send": "Inviare",
+        "comment": "Commento",
+        "message": "Messaggio"
       }
+    }
+  },
+  "customer": {
+    "menu": {
+      "order_history": "Cronologia ordini",
+      "addresses": "Indirizzi",
+      "my_account": "Il mio conto",
+      "log_out": "Disconnettersi"
+    },
+    "account": {
+      "order_history": "Cronologia ordini"
+    },
+    "activate_account": {
+      "title": "Attiva account",
+      "text": "Crea la tua password per attivare il tuo account"
     }
   }
 }
