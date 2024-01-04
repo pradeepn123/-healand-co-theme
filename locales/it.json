@@ -98,7 +98,41 @@
     },
     "header": {
       "back_to_home_in_drawer_on_mobile": "Menù",
-      "go_to_login_in_drawer_on_mobile": "Login"
+      "go_to_login_in_drawer_on_mobile": "Login",
+      "aria_label_for_search_icon": "Cerca nel cassetto",
+      "back_to_login_in_drawer_on_mobile": "Login",
+      "aria_label_for_account_icon": "Pagina del conto",
+      "aria_label_for_cart_icon": "Carrello"
+    }
+  },
+  "general": {
+    "back_to_top_button": {
+      "aria_label": "Torna in cima"
+    },
+    "free_shipping_bar": {
+      "progress_message": "Ti mancano <span>[value]<\/span> alla spedizione gratuita!",
+      "achieved_message": "Spedizione gratuita sbloccata!"
+    },
+    "logo": {
+      "aria_label_for_logo_link": "Logo"
+    },
+    "localization_dropdown": {
+      "aria_label_for_currency_selector": "Selettore di valuta",
+      "aria_label_for_language_selector": "Selettore della lingua"
+    },
+    "password_page": {
+      "subscribe_button_label": "sottoscrivi",
+      "placeholder_for_email_input": "La tua email",
+      "label_for_password_input": "Parola d'ordine",
+      "placeholder_for_password_input": "La tua password",
+      "label_for_email_input": "E-mail",
+      "text_before_powered_shopify_logo": "Questo negozio sarà alimentato da",
+      "text_for_link_to_admin_at_html": "Sei il proprietario del negozio? <a href=\"\/admin\" class=\"{{ class }}\">Accedi qui<\/a>",
+      "text_for_element_which_open_modal": "Accedi utilizzando la password",
+      "text_for_title_in_login_modal": "Inserisci la password del negozio"
+    },
+    "empty_cart_page": {
+      "link_to_continue_shopping": "Inizia a fare acquisti"
     }
   }
 }
