@@ -269,8 +269,44 @@
         "pick_up_unavailable_at_html": "Ramassage actuellement indisponible à <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
         "pick_up_unavailable": "Ramassage actuellement indisponible",
         "aria_label_for_sidebar_close_button": "Fermer la barre latérale des disponibilités de ramassage",
-        "unavailable": "Impossible de charger la disponibilité du ramassage"
+        "unavailable": "Impossible de charger la disponibilité du ramassage",
+        "refresh": "Rafraîchir"
+      },
+      "include_taxes": "Taxe inclu.",
+      "sold_out": "Épuisé",
+      "unavailable": "Indisponible",
+      "no_include_taxes": "Taxe non incluse.",
+      "xr_button_label": "Visualisez dans votre espace"
+    },
+    "modal": {
+      "label": "Galerie des médias"
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "name": "Nom",
+        "email": "E-mail",
+        "phone": "Numéro de téléphone",
+        "comment": "Commentaire",
+        "send": "Envoyer",
+        "message": "Message"
       }
+    }
+  },
+  "customer": {
+    "menu": {
+      "addresses": "Adresses",
+      "order_history": "Historique des commandes",
+      "my_account": "Mon compte",
+      "log_out": "Se déconnecter"
+    },
+    "account": {
+      "order_history": "Historique des commandes"
+    },
+    "activate_account": {
+      "title": "Activer le compte",
+      "text": "Créez votre mot de passe pour activer votre compte"
     }
   }
 }
