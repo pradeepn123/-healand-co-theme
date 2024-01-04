@@ -351,6 +351,30 @@
       "title": "Se connecter",
       "sign_in": "S'identifier",
       "submit": "Soumettre"
+    },
+    "order": {
+      "header": "Historique des commandes",
+      "order_info_name": "Commande {{ order_name }}",
+      "order_info_placed_date_html": "Placé sur {{ date_at }}",
+      "order_info_cancelled_reason": "Motif annulé : {{ reason }}",
+      "order_info_cancelled_date_html": "Annulé: {{ cancelled_at }}",
+      "product": "Produit",
+      "sku": "UGS",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "discount": "Rabais",
+      "shipping_address": "adresse de livraison",
+      "shipping": "Expédition",
+      "tax": "Impôt",
+      "fulfilled_at_html": "Rempli {{ date }}",
+      "track_shipment": "Suivi de livraison"
+    },
+    "orders": {
+      "order_number": "Commande",
+      "order_number_link": "Numéro de commande {{ number }}",
+      "date": "Date",
+      "payment_status": "Statut de paiement"
     }
   }
 }
