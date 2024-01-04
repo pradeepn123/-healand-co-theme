@@ -404,7 +404,43 @@
       "order_number": "Befehl",
       "order_number_link": "Bestellnummer {{ number }}",
       "date": "Datum",
-      "payment_status": "Zahlungsstatus"
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Erfüllungsstatus",
+      "total": "Gesamt"
+    },
+    "recover_password": {
+      "success": "Wir haben Ihnen eine E-Mail mit einem Link zur Aktualisierung Ihres Passworts gesendet."
+    },
+    "register": {
+      "first_name": "Vorname",
+      "title": "Benutzerkonto erstellen",
+      "last_name": "Familienname, Nachname",
+      "email": "Email",
+      "password": "Passwort"
+    },
+    "reset_password": {
+      "title": "Kontopasswort zurücksetzen",
+      "subtext": "Geben Sie ein neues Passwort für ein {{ email }}",
+      "password": "Passwort",
+      "password_confirm": "Bestätige das Passwort",
+      "submit": "Passwort zurücksetzen"
+    }
+  },
+  "forms": {
+    "newsletter": {
+      "subscribe_button_label": "Abonnieren",
+      "success": "Glückwunsch! Sie haben sich erfolgreich für den Erhalt von Newslettern angemeldet.",
+      "email_input_placeholder": "E-Mail-Adresse",
+      "email_input_label": "Email"
+    }
+  },
+  "cards": {
+    "collection_card": {
+      "default_title": "Ihr Sammlungstitel",
+      "product_count": {
+        "one": "{{ count }} Produkt",
+        "other": "{{ count }} Produkte"
+      }
     }
   }
 }
