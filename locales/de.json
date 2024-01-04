@@ -98,7 +98,41 @@
     },
     "header": {
       "back_to_home_in_drawer_on_mobile": "Speisekarte",
-      "go_to_login_in_drawer_on_mobile": "Anmeldung"
+      "go_to_login_in_drawer_on_mobile": "Anmeldung",
+      "back_to_login_in_drawer_on_mobile": "Anmeldung",
+      "aria_label_for_search_icon": "Suchschublade",
+      "aria_label_for_account_icon": "Kontoseite",
+      "aria_label_for_cart_icon": "Wagen"
+    }
+  },
+  "general": {
+    "back_to_top_button": {
+      "aria_label": "Zurück nach oben"
+    },
+    "free_shipping_bar": {
+      "progress_message": "Sie sind <span>[value]<\/span> vom kostenlosen Versand entfernt!",
+      "achieved_message": "Kostenloser Versand freigeschaltet!"
+    },
+    "logo": {
+      "aria_label_for_logo_link": "Logo"
+    },
+    "localization_dropdown": {
+      "aria_label_for_currency_selector": "Währungsauswahl",
+      "aria_label_for_language_selector": "Sprachauswahl"
+    },
+    "password_page": {
+      "placeholder_for_password_input": "Ihr Passwort",
+      "label_for_password_input": "Passwort",
+      "placeholder_for_email_input": "Deine E-Mail",
+      "label_for_email_input": "Email",
+      "subscribe_button_label": "Abonnieren",
+      "text_before_powered_shopify_logo": "Dieser Shop wird betrieben von",
+      "text_for_link_to_admin_at_html": "Sind Sie der Ladenbesitzer? <a href=\"\/admin\" class=\"{{ class }}\">Hier anmelden<\/a>",
+      "text_for_element_which_open_modal": "Geben Sie mit dem Passwort ein",
+      "text_for_title_in_login_modal": "Geben Sie das Store-Passwort ein"
+    },
+    "empty_cart_page": {
+      "link_to_continue_shopping": "Beginn mit dem Einkauf"
     }
   }
 }
