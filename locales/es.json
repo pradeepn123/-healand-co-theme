@@ -358,7 +358,29 @@
       "country": "País\/región",
       "province": "Provincia",
       "zip": "Código postal\/ZIP",
-      "phone": "Teléfono"
+      "phone": "Teléfono",
+      "update": "Actualizar dirección",
+      "add": "Añadir dirección",
+      "set_default": "Establecer como dirección predeterminada",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "delete_confirm": "¿Está seguro de que desea eliminar esta dirección?"
+    },
+    "login_page": {
+      "cancel": "Cancelar",
+      "email_input_placeholder": "Introducir la dirección de correo electrónico",
+      "email_input_label": "Correo electrónico",
+      "forgot_password_note": "Le enviaremos un correo electrónico para restablecer su contraseña.",
+      "forgot_password_title": "Olvidaste tu contraseña",
+      "forgot_password_link": "¿Olvidaste tu contraseña?",
+      "new_customer_at_html": "¿Nuevo cliente? <a href=\"{{ url }}\">Crea una cuenta<\/a>",
+      "guest_continue": "Continuar",
+      "password_input_placeholder": "Ingresa tu contraseña",
+      "password_input_label": "Contraseña",
+      "title": "Acceso",
+      "sign_in": "Iniciar sesión",
+      "submit": "Entregar"
     }
   }
 }
