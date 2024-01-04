@@ -404,7 +404,23 @@
       "order_number": "Orden",
       "order_number_link": "Número de orden {{ number }}",
       "date": "Fecha",
-      "payment_status": "Estado de pago"
+      "payment_status": "Estado de pago",
+      "total": "Total",
+      "fulfillment_status": "Estado de cumplimiento"
+    },
+    "recover_password": {
+      "success": "Le hemos enviado un correo electrónico con un enlace para actualizar su contraseña."
+    },
+    "register": {
+      "title": "Crear una cuenta",
+      "first_name": "Nombre de pila",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "reset_password": {
+      "title": "Restablecer contraseña de cuenta",
+      "subtext": "Introduzca una nueva contraseña para {{ email }}"
     }
   }
 }
