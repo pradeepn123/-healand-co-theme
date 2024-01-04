@@ -299,8 +299,44 @@
         "pick_up_unavailable_at_html": "Recogida no disponible actualmente en <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
         "pick_up_unavailable": "Recogida actualmente no disponible",
         "aria_label_for_sidebar_close_button": "Cerrar barra lateral de disponibilidad de recogida",
-        "unavailable": "No se pudo cargar la disponibilidad de recogida"
+        "unavailable": "No se pudo cargar la disponibilidad de recogida",
+        "refresh": "Actualizar"
+      },
+      "sold_out": "Agotado",
+      "unavailable": "Indisponible",
+      "include_taxes": "Impuesto incluido.",
+      "no_include_taxes": "Impuestos no incluidos.",
+      "xr_button_label": "Ver en tu espacio"
+    },
+    "modal": {
+      "label": "Galería media"
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "message": "Mensaje",
+        "comment": "Comentario",
+        "send": "Enviar"
       }
+    }
+  },
+  "customer": {
+    "menu": {
+      "order_history": "Historial de pedidos",
+      "addresses": "Direcciones",
+      "my_account": "Mi cuenta",
+      "log_out": "Cerrar sesión"
+    },
+    "account": {
+      "order_history": "Historial de pedidos"
+    },
+    "activate_account": {
+      "title": "Activar la cuenta",
+      "text": "Crea tu contraseña para activar tu cuenta"
     }
   }
 }
