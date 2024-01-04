@@ -35,8 +35,32 @@
         "lh_k2eb9e_content_html": "<p>Todos los pedidos en todo el mundo califican para envío gratuito en pedidos superiores a $40 USD antes de impuestos. Los pedidos inferiores a $40 califican para un envío de tarifa fija de $10.<\/p><!--lh-live-editor-->",
         "lh_k2e875_title": "¿Dónde envías?",
         "lh_k2e875_content_html": "<p>¡Enviamos a todo el mundo desde Canadá! Todos los pedidos superiores a $50 se envían gratis.<\/p><!--lh-live-editor-->",
-        "lh_k2e54w_title": "¿Cuánto tardaré en recibir mi pedido?"
+        "lh_k2e54w_title": "¿Cuánto tardaré en recibir mi pedido?",
+        "lh_k2e22n_content_html": "<p>En algunas circunstancias lo hacemos. Consulte nuestra política de devoluciones aquí.<\/p><!--lh-live-editor-->",
+        "lh_k2e54w_content_html": "<p>La mayoría de los pedidos dentro de los Estados Unidos generalmente se reciben dentro de 3 a 5 días hábiles después de que se procesa el pedido. Los envíos fuera de los Estados Unidos pueden tardar más en recibirse.<\/p><!--lh-live-editor-->",
+        "lh_2u_title": "¿No encontraste lo que buscabas?",
+        "lh_2u_des_html": "¡Dirígete a nuestra página de contacto!<!--lh-live-editor-->",
+        "lh_k2e22n_title": "¿Aceptan devoluciones de clientes?"
       }
+    },
+    "predictive_search": {
+      "products_tab": "Productos",
+      "blog_posts_tab": "Publicaciones de blog",
+      "pages_tab": "paginas",
+      "collections_tab": "Colecciones",
+      "queries_tab": "Sugerencias",
+      "button_label": "Ver todos los resultados"
+    },
+    "gift_card": {
+      "title": "¡Aquí está tu tarjeta de regalo!",
+      "text": "Use este código al finalizar la compra para canjear su tarjeta de regalo",
+      "shop_link": "Empieza a comprar",
+      "remaining_html": "Restante {{ balance }}",
+      "add_to_apple_wallet": "Agregar a la billetera de Apple",
+      "gift_card_image": "Imagen de tarjeta de regalo",
+      "copy_code": "Copiar código",
+      "expired": "Venció",
+      "copied": "Copiado"
     }
   }
 }
