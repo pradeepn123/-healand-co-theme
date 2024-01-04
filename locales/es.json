@@ -240,5 +240,21 @@
         "variant_5": "Ahorrar {{ amount }}"
       }
     }
+  },
+  "blogs": {
+    "blog_post": {
+      "comments": {
+        "one": "{{ count }} comentario",
+        "other": "{{ count }} comentarios"
+      },
+      "moderated": "Tenga en cuenta que los comentarios deben aprobarse antes de publicarse.",
+      "comment_form_title": "Deja un comentario",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "success": "¡Tu comentario fue publicado exitosamente! ¡Gracias!",
+      "success_moderated": "Tu comentario fue publicado exitosamente. Lo publicaremos en un rato, ya que nuestro blog está moderado.",
+      "text_for_send_comment_button": "ENTREGAR",
+      "placeholder_for_comment_message_textarea": "Mensaje"
+    }
   }
 }
