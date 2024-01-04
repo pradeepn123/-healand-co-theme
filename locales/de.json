@@ -35,8 +35,32 @@
         "lh_k2eb9e_content_html": "<p>Alle Bestellungen weltweit sind für den kostenlosen Versand ab einem Bestellwert von 40 USD vor Steuern berechtigt. Bei Bestellungen unter 40 $ gilt eine Versandkostenpauschale von 10 $.<\/p><!--lh-live-editor-->",
         "lh_k2e875_title": "Wohin versenden Sie?",
         "lh_k2e875_content_html": "<p>Wir versenden weltweit aus Kanada! Alle Bestellungen über 50 $ werden kostenlos versendet.<\/p><!--lh-live-editor-->",
-        "lh_k2e54w_title": "Wie lange dauert es, bis ich meine Bestellung erhalte?"
+        "lh_k2e54w_title": "Wie lange dauert es, bis ich meine Bestellung erhalte?",
+        "lh_k2e22n_content_html": "<p>Unter bestimmten Umständen tun wir das. Bitte beachten Sie hier unsere Rückgabebedingungen.<\/p><!--lh-live-editor-->",
+        "lh_k2e22n_title": "Akzeptieren Sie Kundenretouren?",
+        "lh_2u_des_html": "Besuchen Sie unsere Kontaktseite!<!--lh-live-editor-->",
+        "lh_2u_title": "Haben Sie nicht gefunden, was Sie gesucht haben?",
+        "lh_k2e54w_content_html": "<p>Die meisten Bestellungen innerhalb der Vereinigten Staaten gehen in der Regel innerhalb von 3–5 Werktagen nach der Bearbeitung der Bestellung ein. Bei Sendungen außerhalb der USA kann der Empfang länger dauern.<\/p><!--lh-live-editor-->"
       }
+    },
+    "predictive_search": {
+      "products_tab": "Produkte",
+      "blog_posts_tab": "Blogeinträge",
+      "pages_tab": "Seiten",
+      "collections_tab": "Sammlungen",
+      "queries_tab": "Vorschläge",
+      "button_label": "Alle Ergebnisse anzeigen"
+    },
+    "gift_card": {
+      "title": "Hier ist Ihr Geschenkgutschein!",
+      "text": "Verwenden Sie diesen Code an der Kasse, um Ihre Geschenkkarte einzulösen",
+      "remaining_html": "Übrig {{ balance }}",
+      "shop_link": "Beginn mit dem Einkauf",
+      "add_to_apple_wallet": "Zum Apple Wallet hinzufügen",
+      "gift_card_image": "Bild einer Geschenkkarte",
+      "copy_code": "Code kopieren",
+      "expired": "Abgelaufen",
+      "copied": "Kopiert"
     }
   }
 }
