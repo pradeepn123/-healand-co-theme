@@ -392,7 +392,19 @@
       "sku": "Artikelnummer",
       "price": "Preis",
       "quantity": "Menge",
-      "total": "Gesamt"
+      "total": "Gesamt",
+      "shipping": "Versand",
+      "discount": "Rabatt",
+      "fulfilled_at_html": "Erfüllt {{ date }}",
+      "tax": "Steuer",
+      "shipping_address": "Lieferanschrift",
+      "track_shipment": "Sendung verfolgen"
+    },
+    "orders": {
+      "order_number": "Befehl",
+      "order_number_link": "Bestellnummer {{ number }}",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus"
     }
   }
 }
