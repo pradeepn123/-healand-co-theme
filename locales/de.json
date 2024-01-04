@@ -317,8 +317,38 @@
       "form": {
         "name": "Name",
         "email": "Email",
-        "phone": "Telefonnummer"
+        "phone": "Telefonnummer",
+        "message": "Nachricht",
+        "comment": "Kommentar",
+        "send": "Schicken"
       }
+    }
+  },
+  "customer": {
+    "menu": {
+      "addresses": "Adressen",
+      "order_history": "Bestellverlauf",
+      "my_account": "Mein Konto",
+      "log_out": "Ausloggen"
+    },
+    "account": {
+      "order_history": "Bestellverlauf"
+    },
+    "activate_account": {
+      "title": "Konto aktivieren",
+      "text": "Erstellen Sie Ihr Passwort, um Ihr Konto zu aktivieren",
+      "activate_button_label": "aktivieren Sie",
+      "label_for_password_input": "Passwort",
+      "placeholder_for_password_input": "Passwort eingeben",
+      "label_for_password_confirm_input": "Bestätige das Passwort",
+      "decline_invitation_button_label": "Einladung ablehnen",
+      "placeholder_for_password_confirm_input": "Geben Sie das Bestätigungspasswort ein"
+    },
+    "addresses": {
+      "title": "Adressen",
+      "default": "Standard",
+      "add_new": "Füge eine neue Adresse hinzu",
+      "edit_address": "Adresse bearbeiten"
     }
   }
 }
