@@ -420,7 +420,65 @@
     },
     "reset_password": {
       "title": "Restablecer contraseña de cuenta",
-      "subtext": "Introduzca una nueva contraseña para {{ email }}"
+      "subtext": "Introduzca una nueva contraseña para {{ email }}",
+      "password_confirm": "Confirmar Contraseña",
+      "password": "Contraseña",
+      "submit": "Restablecer la contraseña"
+    }
+  },
+  "forms": {
+    "newsletter": {
+      "subscribe_button_label": "Suscribir",
+      "success": "¡Felicidades! Te has registrado exitosamente para recibir boletines.",
+      "email_input_placeholder": "Dirección de correo electrónico",
+      "email_input_label": "Correo electrónico"
+    }
+  },
+  "cards": {
+    "collection_card": {
+      "default_title": "Título de tu colección",
+      "product_count": {
+        "one": "{{ count }} producto",
+        "other": "{{ count }} productos"
+      }
+    },
+    "product_card": {
+      "add_to_cart_button_label": "Añadir a la cesta",
+      "quick_view_button_label": "Vista rápida",
+      "from_price_html": "De {{ price }}",
+      "default_title": "Título de tu producto",
+      "default_vendor": "Proveedor"
+    },
+    "article_card": {
+      "read_more_link": "Leer más",
+      "default_title": "Encabezado de tu publicación",
+      "default_content": "Utilice publicaciones de blog para hablar sobre lanzamientos de nuevos productos, consejos u otras noticias sobre su tienda que desee compartir con sus clientes.",
+      "default_author": "Nombre del autor",
+      "comments_count": {
+        "one": "{{ count }} comentario",
+        "other": "{{ count }} comentarios"
+      }
+    }
+  },
+  "dialog_elements": {
+    "search_drawer": {
+      "header_title": "Buscar",
+      "label_for_search_input": "Buscar",
+      "placeholder_for_search_input": "Buscar productos...",
+      "screen_reader_label_for_close_button": "Cerrar cajón de búsqueda",
+      "screen_reader_label_for_search_button": "Buscar"
+    },
+    "quick_view": {
+      "header_title": "Vista rápida"
+    },
+    "quick_add": {
+      "header_title": "Añadir a la cesta"
+    }
+  },
+  "before_after_images": {
+    "separator": {
+      "line": "línea entre imágenes",
+      "button": "arrastra el borde entre imágenes"
     }
   }
 }
