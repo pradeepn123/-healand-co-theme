@@ -210,5 +210,37 @@
       "cart_error": "Une erreur s'est produite lors de la mise à jour de votre panier. Veuillez réessayer.",
       "cart_quantity_error_html": "Vous ne pouvez ajouter que [quantité] articles à votre panier."
     }
+  },
+  "blogs": {
+    "blog_post": {
+      "comments": {
+        "one": "{{ count }} commentaire",
+        "other": "{{ count }} commentaires"
+      },
+      "comment_form_title": "laissez un commentaire",
+      "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être publiés.",
+      "name": "Nom",
+      "email": "E-mail",
+      "success": "Votre commentaire a été posté avec succès ! Merci!",
+      "success_moderated": "Votre commentaire a été publié avec succès. Nous le publierons dans peu de temps, car notre blog est modéré.",
+      "text_for_send_comment_button": "SOUMETTRE",
+      "placeholder_for_comment_message_textarea": "Message"
+    }
+  },
+  "products": {
+    "shop": {
+      "label_for_filters_toggler": "Filtre",
+      "results_count": {
+        "one": "{{ count }} Résultat",
+        "other": "{{ count }} Résultats"
+      },
+      "text_for_no_results_found_in_stub": "Aucun produit trouvé",
+      "text_for_clear_all_in_stub": "Tout effacer",
+      "text_for_use_another_filters": "Utilisez une autre option de filtre ou",
+      "text_for_change_query": "Désolé, il n'y a aucun produit correspondant à cette requête de recherche.",
+      "aria_label_for_max_number_input": "Saisie du numéro pour le prix maximum",
+      "aria_label_for_min_number_input": "Saisie du numéro pour le prix minimum",
+      "aria_label_for_max_range_input": "Entrée de plage pour le prix maximum"
+    }
   }
 }
