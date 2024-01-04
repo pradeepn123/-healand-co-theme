@@ -148,7 +148,33 @@
     },
     "subtotal": {
       "add_order_notes_button": "Añadir nota de pedido",
-      "placeholder_for_textarea_for_order_note": "Deja una nota para el vendedor."
+      "placeholder_for_textarea_for_order_note": "Deja una nota para el vendedor.",
+      "label_for_total_price": "total parcial",
+      "text_for_go_to_cart_button": "Ir al carrito",
+      "label_for_subtotal_price_html": {
+        "other": "Total parcial <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} elementos)<\/span>",
+        "one": "Total parcial <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} artículo)<\/span>"
+      },
+      "text_for_checkout_button": "Verificar",
+      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a href=\"{{ link }}\">envío<\/a> calculado a la salida",
+      "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado al finalizar la compra.",
+      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Envío<\/a> calculado a la salida.",
+      "taxes_and_shipping_at_checkout": "Impuestos y envío calculados al finalizar la compra"
+    },
+    "search_page": {
+      "placeholder_for_search_input": "¿Qué estás buscando?",
+      "label_for_search_input": "Buscar",
+      "screen_reader_label_for_search_button": "Buscar",
+      "products_tab": "Productos ({{ count }})",
+      "screen_reader_label_for_close_button": "Cerrar cajón de búsqueda",
+      "blog_posts_tab": "Publicaciones de blog ({{ count }})",
+      "pages_tab": "Páginas ({{ count }})",
+      "label_for_filters_toggler": "Filtrar",
+      "results_count": {
+        "one": "{{ count }} Resultado",
+        "other": "{{ count }} Resultados"
+      },
+      "text_for_no_results_found_in_stub": "No se han encontrado resultados."
     }
   }
 }
