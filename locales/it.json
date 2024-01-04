@@ -392,7 +392,35 @@
       "sku": "SKU",
       "price": "Prezzo",
       "quantity": "Quantità",
+      "total": "Totale",
+      "shipping_address": "Indirizzo di spedizione",
+      "shipping": "Spedizione",
+      "discount": "Sconto",
+      "tax": "Imposta",
+      "fulfilled_at_html": "Soddisfatto {{ date }}",
+      "track_shipment": "Tracciare la spedizione"
+    },
+    "orders": {
+      "order_number": "Ordine",
+      "order_number_link": "Numero d'ordine {{ number }}",
+      "date": "Data",
+      "payment_status": "Stato del pagamento",
+      "fulfillment_status": "Stato di adempimento",
       "total": "Totale"
+    },
+    "register": {
+      "title": "Creare un account",
+      "first_name": "Nome di battesimo",
+      "last_name": "Cognome",
+      "email": "E-mail",
+      "password": "Parola d'ordine"
+    },
+    "recover_password": {
+      "success": "Ti abbiamo inviato un'email con un link per aggiornare la tua password."
+    },
+    "reset_password": {
+      "title": "Reimposta la password dell'account",
+      "subtext": "Inserisci una nuova password per {{ email }}"
     }
   }
 }
