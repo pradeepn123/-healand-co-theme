@@ -336,7 +336,29 @@
     },
     "activate_account": {
       "title": "Attiva account",
-      "text": "Crea la tua password per attivare il tuo account"
+      "text": "Crea la tua password per attivare il tuo account",
+      "activate_button_label": "Attivare",
+      "decline_invitation_button_label": "Rifiuta l'invito",
+      "label_for_password_input": "Parola d'ordine",
+      "placeholder_for_password_input": "Inserire la password",
+      "label_for_password_confirm_input": "Conferma password",
+      "placeholder_for_password_confirm_input": "Inserisci la password di conferma"
+    },
+    "addresses": {
+      "title": "Indirizzi",
+      "default": "Predefinito",
+      "add_new": "Aggiungi un nuovo indirizzo",
+      "edit_address": "Modifica indirizzo",
+      "first_name": "Nome di battesimo",
+      "address1": "Indirizzo 1",
+      "address2": "Indirizzo 2",
+      "last_name": "Cognome",
+      "company": "Azienda",
+      "city": "Città",
+      "country": "Paese\/regione",
+      "province": "Provincia",
+      "zip": "Codice postale",
+      "phone": "Telefono"
     }
   }
 }
