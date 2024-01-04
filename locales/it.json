@@ -256,5 +256,51 @@
       "text_for_send_comment_button": "INVIA",
       "placeholder_for_comment_message_textarea": "Messaggio"
     }
+  },
+  "products": {
+    "shop": {
+      "text_for_clear_all_in_stub": "Cancella tutto",
+      "label_for_filters_toggler": "Filtro",
+      "text_for_no_results_found_in_stub": "Nessun prodotto trovato",
+      "results_count": {
+        "other": "{{ count }} Risultati",
+        "one": "{{ count }} Risultato"
+      },
+      "text_for_use_another_filters": "Utilizza un'altra opzione di filtro o",
+      "text_for_change_query": "Siamo spiacenti, non ci sono prodotti per questa query di ricerca.",
+      "aria_label_for_max_number_input": "Immissione del numero per il prezzo massimo",
+      "aria_label_for_min_number_input": "Immissione del numero per il prezzo minimo",
+      "aria_label_for_max_range_input": "Immissione dell'intervallo per il prezzo massimo",
+      "aria_label_for_min_range_input": "Immissione dell'intervallo per il prezzo minimo"
+    },
+    "product": {
+      "default_vendor": "Venditore",
+      "default_title": "Il titolo del tuo prodotto",
+      "sku": "SKU: {{ sku }}",
+      "view_full_details": "Visualizza i dettagli completi",
+      "add_to_cart": "Aggiungi al carrello",
+      "pre_order": "Ordine prestabilito",
+      "on_sale": "Vendita",
+      "quantity": {
+        "label": "Quantità"
+      },
+      "stock": {
+        "out_of_stock": "Esaurito",
+        "label_with_counter": {
+          "other": "{{ count }} Articoli in magazzino",
+          "one": "{{ count }} articolo in magazzino"
+        }
+      },
+      "pickup_availability": {
+        "view_store_info": "Visualizza le informazioni del negozio",
+        "pick_up_available": "Ritiro disponibile",
+        "check_other_stores": "Verifica la disponibilità negli altri negozi",
+        "pick_up_available_at_html": "Ritiro disponibile presso <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Ritiro attualmente non disponibile presso <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable": "Ritiro al momento non disponibile",
+        "aria_label_for_sidebar_close_button": "Chiudi la barra laterale della disponibilità del ritiro",
+        "unavailable": "Impossibile caricare la disponibilità del ritiro"
+      }
+    }
   }
 }
