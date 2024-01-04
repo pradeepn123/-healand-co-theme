@@ -370,7 +370,29 @@
     "login_page": {
       "cancel": "Stornieren",
       "email_input_placeholder": "E-Mail Adresse eingeben",
-      "email_input_label": "Email"
+      "email_input_label": "Email",
+      "forgot_password_title": "Haben Sie Ihr Passwort vergessen",
+      "forgot_password_link": "Haben Sie Ihr Passwort vergessen?",
+      "forgot_password_note": "Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen.",
+      "new_customer_at_html": "Neukunde? <a href=\"{{ url }}\">Ein Konto erstellen<\/a>",
+      "guest_continue": "Weitermachen",
+      "password_input_placeholder": "Geben Sie Ihr Passwort ein",
+      "password_input_label": "Passwort",
+      "title": "Anmeldung",
+      "sign_in": "anmelden",
+      "submit": "Einreichen"
+    },
+    "order": {
+      "header": "Bestellverlauf",
+      "order_info_name": "Befehl {{ order_name }}",
+      "order_info_placed_date_html": "Platziert auf {{ date_at }}",
+      "order_info_cancelled_date_html": "Abgesagt: {{ cancelled_at }}",
+      "order_info_cancelled_reason": "Grund für die Stornierung: {{ reason }}",
+      "product": "Produkt",
+      "sku": "Artikelnummer",
+      "price": "Preis",
+      "quantity": "Menge",
+      "total": "Gesamt"
     }
   }
 }
