@@ -132,7 +132,37 @@
       "text_for_title_in_login_modal": "Inserisci la password del negozio"
     },
     "empty_cart_page": {
-      "link_to_continue_shopping": "Inizia a fare acquisti"
+      "link_to_continue_shopping": "Inizia a fare acquisti",
+      "title": "il tuo carrello è vuoto"
+    },
+    "cart_items": {
+      "title": "Carrello",
+      "product_count": {
+        "one": "{{ count }} articolo nel carrello",
+        "other": "{{ count }} articoli nel carrello"
+      },
+      "product_label": "Prodotto",
+      "price_label": "Prezzo",
+      "quantity_label": "Quantità",
+      "total_label": "Totale"
+    },
+    "subtotal": {
+      "add_order_notes_button": "Aggiungi nota d'ordine",
+      "placeholder_for_textarea_for_order_note": "Lascia una nota per il venditore",
+      "label_for_subtotal_price_html": {
+        "other": "totale parziale <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} elementi)<\/span>",
+        "one": "totale parziale <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} articolo)<\/span>"
+      },
+      "label_for_total_price": "totale parziale",
+      "text_for_go_to_cart_button": "Vai al carrello",
+      "text_for_checkout_button": "Guardare",
+      "taxes_and_shipping_policy_at_checkout_html": "Tasse e <a href=\"{{ link }}\">spedizione<\/a> calcolato al momento del pagamento",
+      "taxes_included_but_shipping_at_checkout": "Tasse incluse e spedizione calcolata al momento del pagamento",
+      "taxes_included_and_shipping_policy_html": "Tasse incluse. <a href=\"{{ link }}\">Spedizione<\/a> calcolato al momento del pagamento.",
+      "taxes_and_shipping_at_checkout": "Tasse e spese di spedizione calcolate al momento del pagamento"
+    },
+    "search_page": {
+      "placeholder_for_search_input": "Che cosa sta cercando?"
     }
   }
 }
