@@ -240,7 +240,37 @@
       "text_for_change_query": "Désolé, il n'y a aucun produit correspondant à cette requête de recherche.",
       "aria_label_for_max_number_input": "Saisie du numéro pour le prix maximum",
       "aria_label_for_min_number_input": "Saisie du numéro pour le prix minimum",
-      "aria_label_for_max_range_input": "Entrée de plage pour le prix maximum"
+      "aria_label_for_max_range_input": "Entrée de plage pour le prix maximum",
+      "aria_label_for_min_range_input": "Entrée de plage pour le prix minimum"
+    },
+    "product": {
+      "default_vendor": "Fournisseur",
+      "default_title": "Le titre de votre produit",
+      "sku": "UGS : {{ sku }}",
+      "view_full_details": "Afficher tous les détails",
+      "add_to_cart": "Ajouter au panier",
+      "pre_order": "Pré-commander",
+      "on_sale": "Vente",
+      "quantity": {
+        "label": "Quantité"
+      },
+      "stock": {
+        "out_of_stock": "En rupture de stock",
+        "label_with_counter": {
+          "other": "{{ count }} articles en stock",
+          "one": "{{ count }} objet en stock"
+        }
+      },
+      "pickup_availability": {
+        "view_store_info": "Afficher les informations du magasin",
+        "check_other_stores": "Vérifier la disponibilité dans d'autres magasins",
+        "pick_up_available": "Ramassage disponible",
+        "pick_up_available_at_html": "Ramassage disponible à <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Ramassage actuellement indisponible à <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable": "Ramassage actuellement indisponible",
+        "aria_label_for_sidebar_close_button": "Fermer la barre latérale des disponibilités de ramassage",
+        "unavailable": "Impossible de charger la disponibilité du ramassage"
+      }
     }
   }
 }
