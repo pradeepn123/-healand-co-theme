@@ -256,5 +256,51 @@
       "text_for_send_comment_button": "ENTREGAR",
       "placeholder_for_comment_message_textarea": "Mensaje"
     }
+  },
+  "products": {
+    "shop": {
+      "label_for_filters_toggler": "Filtrar",
+      "results_count": {
+        "one": "{{ count }} Resultado",
+        "other": "{{ count }} Resultados"
+      },
+      "text_for_no_results_found_in_stub": "No se encontraron productos",
+      "text_for_clear_all_in_stub": "Limpiar todo",
+      "text_for_use_another_filters": "Utilice otras opciones de filtro o",
+      "text_for_change_query": "Lo sentimos, no hay productos para esta consulta de búsqueda.",
+      "aria_label_for_max_number_input": "Entrada de número para precio máximo",
+      "aria_label_for_min_number_input": "Entrada numérica para precio mínimo",
+      "aria_label_for_max_range_input": "Entrada de rango para precio máximo",
+      "aria_label_for_min_range_input": "Entrada de rango para precio mínimo"
+    },
+    "product": {
+      "default_title": "Título de tu producto",
+      "default_vendor": "Proveedor",
+      "view_full_details": "Ver todos los detalles",
+      "sku": "SKU: {{ sku }}",
+      "add_to_cart": "Añadir a la cesta",
+      "pre_order": "Hacer un pedido",
+      "on_sale": "Venta",
+      "quantity": {
+        "label": "Cantidad"
+      },
+      "stock": {
+        "out_of_stock": "Agotado",
+        "label_with_counter": {
+          "other": "{{ count }} artículos en stock",
+          "one": "{{ count }} artículo en la acción"
+        }
+      },
+      "pickup_availability": {
+        "view_store_info": "Ver información de la tienda",
+        "check_other_stores": "Consultar disponibilidad en otras tiendas.",
+        "pick_up_available": "Recogida disponible",
+        "pick_up_available_at_html": "Recogida disponible en <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Recogida no disponible actualmente en <span class=\"pickup-availability-info__location-name\">{{ location_name }}<\/span>",
+        "pick_up_unavailable": "Recogida actualmente no disponible",
+        "aria_label_for_sidebar_close_button": "Cerrar barra lateral de disponibilidad de recogida",
+        "unavailable": "No se pudo cargar la disponibilidad de recogida"
+      }
+    }
   }
 }
