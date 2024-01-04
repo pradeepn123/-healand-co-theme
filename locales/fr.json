@@ -132,7 +132,37 @@
       "text_for_title_in_login_modal": "Entrez le mot de passe du magasin"
     },
     "empty_cart_page": {
-      "link_to_continue_shopping": "Commencer à magasiner"
+      "link_to_continue_shopping": "Commencer à magasiner",
+      "title": "Votre panier est vide"
+    },
+    "cart_items": {
+      "product_count": {
+        "one": "{{ count }} article dans votre panier",
+        "other": "{{ count }} Articles dans votre panier"
+      },
+      "title": "Chariot",
+      "product_label": "Produit",
+      "price_label": "Prix",
+      "quantity_label": "Quantité",
+      "total_label": "Total"
+    },
+    "subtotal": {
+      "add_order_notes_button": "Ajouter une note de commande",
+      "placeholder_for_textarea_for_order_note": "Laisser une note au vendeur",
+      "label_for_subtotal_price_html": {
+        "one": "Total <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} article)<\/span>",
+        "other": "Total <span class=\"subtotal__subtotals-cart-item-count\">({{ count }} articles)<\/span>"
+      },
+      "label_for_total_price": "total",
+      "text_for_go_to_cart_button": "Aller au panier",
+      "text_for_checkout_button": "Vérifier",
+      "taxes_and_shipping_policy_at_checkout_html": "Les impôts et <a href=\"{{ link }}\">expédition<\/a> Calculé à la caisse",
+      "taxes_included_but_shipping_at_checkout": "Taxes incluses et frais de port calculés à la caisse",
+      "taxes_included_and_shipping_policy_html": "Taxe inclu. <a href=\"{{ link }}\">Expédition<\/a> Calculé à la caisse.",
+      "taxes_and_shipping_at_checkout": "Taxes et livraison calculées à la caisse"
+    },
+    "search_page": {
+      "placeholder_for_search_input": "Qu'est-ce que tu cherches?"
     }
   }
 }
