@@ -174,7 +174,55 @@
         "one": "{{ count }} Risultato",
         "other": "{{ count }} Risultati"
       },
-      "text_for_no_results_found_in_stub": "Nessun risultato trovato."
+      "text_for_no_results_found_in_stub": "Nessun risultato trovato.",
+      "text_for_clear_all_in_stub": "cancella tutto.",
+      "text_for_change_query": "Siamo spiacenti, non ci sono risultati per questa query di ricerca.",
+      "text_for_use_another_filters": "Utilizza un'altra opzione di filtro o"
+    },
+    "filters": {
+      "header": "Filtro",
+      "header_with_results_count": {
+        "one": "({{ count }} risultato)",
+        "other": "({{ count }} risultati)"
+      },
+      "expand_options_button_label": "Di più",
+      "collapse_options_button_label": "Meno",
+      "clear_button_label": "Chiaro",
+      "clear_all": "Cancella tutto",
+      "in_stock_only_label": "Solo in magazzino",
+      "apply_button_label": "Fare domanda a"
+    },
+    "load_button_pagination": {
+      "button_label": "Carica di più",
+      "results_label": "Hai visualizzato {{ current_count }} Di {{ count }} risultati"
+    },
+    "share": {
+      "facebook_label": "Facebook",
+      "twitter_label": "Twitter",
+      "instagram_label": "Instagram",
+      "pinterest_label": "Pinterest",
+      "base_label": "Copia link",
+      "button_label": "Condividere"
+    },
+    "sidebar_cart": {
+      "title_count": {
+        "one": "({{ count }})",
+        "other": "({{ count }})"
+      },
+      "title": "LA MIA CARTA",
+      "continue_shopping": "Continua a fare acquisti"
+    },
+    "sort_list": {
+      "button_label": "Ordinare",
+      "sort_by": "Ordina per"
+    },
+    "gift_page": {
+      "title": "Ecco il tuo {{ value }} carta regalo per {{ shop }}!",
+      "subtext": "La tua carta regalo"
+    },
+    "cart_page": {
+      "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Per favore riprova.",
+      "cart_quantity_error_html": "Puoi aggiungere solo articoli di [quantità] al tuo carrello."
     }
   }
 }
