@@ -162,7 +162,33 @@
       "taxes_and_shipping_at_checkout": "Steuern und Versand werden an der Kasse berechnet"
     },
     "search_page": {
-      "placeholder_for_search_input": "Wonach suchst du?"
+      "placeholder_for_search_input": "Wonach suchst du?",
+      "label_for_search_input": "Suchen",
+      "screen_reader_label_for_close_button": "Suchleiste schließen",
+      "screen_reader_label_for_search_button": "Suchen",
+      "products_tab": "Produkte ({{ count }})",
+      "blog_posts_tab": "Blogeinträge ({{ count }})",
+      "pages_tab": "Seiten ({{ count }})",
+      "label_for_filters_toggler": "Filter",
+      "results_count": {
+        "one": "{{ count }} Ergebnis",
+        "other": "{{ count }} Ergebnisse"
+      },
+      "text_for_no_results_found_in_stub": "Keine Ergebnisse gefunden.",
+      "text_for_clear_all_in_stub": "alles löschen.",
+      "text_for_use_another_filters": "Verwenden Sie andere Filteroptionen oder",
+      "text_for_change_query": "Leider gibt es für diese Suchanfrage keine Ergebnisse."
+    },
+    "filters": {
+      "header": "Filter",
+      "header_with_results_count": {
+        "one": "({{ count }} Ergebnis)",
+        "other": "({{ count }} Ergebnisse)"
+      },
+      "expand_options_button_label": "Mehr",
+      "collapse_options_button_label": "Weniger",
+      "clear_button_label": "Klar",
+      "clear_all": "Alles löschen"
     }
   }
 }
