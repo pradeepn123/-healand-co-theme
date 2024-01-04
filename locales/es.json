@@ -98,7 +98,57 @@
     },
     "header": {
       "back_to_home_in_drawer_on_mobile": "Menú",
-      "go_to_login_in_drawer_on_mobile": "Acceso"
+      "go_to_login_in_drawer_on_mobile": "Acceso",
+      "back_to_login_in_drawer_on_mobile": "Acceso",
+      "aria_label_for_search_icon": "Cajón de búsqueda",
+      "aria_label_for_account_icon": "Página de cuenta",
+      "aria_label_for_cart_icon": "Carro"
+    }
+  },
+  "general": {
+    "back_to_top_button": {
+      "aria_label": "Volver arriba"
+    },
+    "free_shipping_bar": {
+      "progress_message": "¡Estás a <span>[value]<\/span> de recibir envío gratis!",
+      "achieved_message": "¡Envío gratuito desbloqueado!"
+    },
+    "logo": {
+      "aria_label_for_logo_link": "Logo"
+    },
+    "localization_dropdown": {
+      "aria_label_for_currency_selector": "Selector de moneda",
+      "aria_label_for_language_selector": "Selector de idioma"
+    },
+    "password_page": {
+      "placeholder_for_email_input": "Tu correo electrónico",
+      "label_for_password_input": "Contraseña",
+      "placeholder_for_password_input": "Tu contraseña",
+      "label_for_email_input": "Correo electrónico",
+      "subscribe_button_label": "Suscribir",
+      "text_before_powered_shopify_logo": "Esta tienda será impulsada por",
+      "text_for_link_to_admin_at_html": "¿Eres el propietario de la tienda? <a href=\"\/admin\" class=\"{{ class }}\">Entre aquí<\/a>",
+      "text_for_element_which_open_modal": "Ingresar usando contraseña",
+      "text_for_title_in_login_modal": "Ingrese la contraseña de la tienda"
+    },
+    "empty_cart_page": {
+      "link_to_continue_shopping": "Empieza a comprar",
+      "title": "Tu carrito esta vacío"
+    },
+    "cart_items": {
+      "product_count": {
+        "one": "{{ count }} artículo en tu carrito",
+        "other": "{{ count }} objetos en tu carro de compras"
+      },
+      "title": "Carro",
+      "product_label": "Producto",
+      "price_label": "Precio",
+      "quantity_label": "Cantidad",
+      "total_label": "Total"
+    },
+    "subtotal": {
+      "add_order_notes_button": "Añadir nota de pedido",
+      "placeholder_for_textarea_for_order_note": "Deja una nota para el vendedor."
     }
   }
 }
