@@ -35,8 +35,32 @@
         "lh_k2eb9e_content_html": "<p>Toutes les commandes dans le monde entier bénéficient de la livraison gratuite pour les commandes supérieures à 40 $ avant taxes. Les commandes inférieures à 40 $ donnent droit à un tarif forfaitaire de 10 $.<\/p><!--lh-live-editor-->",
         "lh_k2e875_title": "Où expédiez-vous ?",
         "lh_k2e875_content_html": "<p>Nous expédions dans le monde entier à partir du Canada ! Toutes les commandes supérieures à 50 $ sont expédiées gratuitement.<\/p><!--lh-live-editor-->",
-        "lh_k2e54w_title": "Combien de temps faudra-t-il pour recevoir ma commande ?"
+        "lh_k2e54w_title": "Combien de temps faudra-t-il pour recevoir ma commande ?",
+        "lh_k2e22n_title": "Acceptez-vous les retours des clients ?",
+        "lh_k2e54w_content_html": "<p>La plupart des commandes aux États-Unis sont généralement reçues dans les 3 à 5 jours ouvrables suivant le traitement de la commande. Les expéditions en dehors des États-Unis peuvent prendre plus de temps à recevoir.<\/p><!--lh-live-editor-->",
+        "lh_k2e22n_content_html": "<p>Dans certaines circonstances, nous le faisons. Veuillez vous référer à notre politique de retour ici.<\/p><!--lh-live-editor-->",
+        "lh_2u_title": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+        "lh_2u_des_html": "Rendez-vous sur notre page contact !<!--lh-live-editor-->"
       }
+    },
+    "predictive_search": {
+      "products_tab": "Des produits",
+      "blog_posts_tab": "Articles de blog",
+      "pages_tab": "Pages",
+      "collections_tab": "Collections",
+      "queries_tab": "Suggestions",
+      "button_label": "Voir tous les résultats"
+    },
+    "gift_card": {
+      "text": "Utilisez ce code lors du paiement pour utiliser votre carte-cadeau",
+      "title": "Voici votre carte cadeau !",
+      "shop_link": "Commencer à magasiner",
+      "remaining_html": "Restant {{ balance }}",
+      "add_to_apple_wallet": "Ajouter au portefeuille Apple",
+      "gift_card_image": "Image de la carte cadeau",
+      "copy_code": "Copier le code",
+      "expired": "Expiré",
+      "copied": "Copié"
     }
   }
 }
