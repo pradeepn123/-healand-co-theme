@@ -188,7 +188,41 @@
       "expand_options_button_label": "Mehr",
       "collapse_options_button_label": "Weniger",
       "clear_button_label": "Klar",
-      "clear_all": "Alles löschen"
+      "clear_all": "Alles löschen",
+      "in_stock_only_label": "Nur auf Lager",
+      "apply_button_label": "Anwenden"
+    },
+    "load_button_pagination": {
+      "results_label": "Du hast es angesehen {{ current_count }} von {{ count }} Ergebnisse",
+      "button_label": "Mehr laden"
+    },
+    "share": {
+      "facebook_label": "Facebook",
+      "twitter_label": "Twitter",
+      "instagram_label": "Instagram",
+      "pinterest_label": "Pinterest",
+      "base_label": "Link kopieren",
+      "button_label": "Aktie"
+    },
+    "sidebar_cart": {
+      "title": "MEIN WARENKORB",
+      "title_count": {
+        "one": "({{ count }})",
+        "other": "({{ count }})"
+      },
+      "continue_shopping": "Mit dem Einkaufen fortfahren"
+    },
+    "sort_list": {
+      "button_label": "Sortieren",
+      "sort_by": "Sortiere nach"
+    },
+    "gift_page": {
+      "title": "Hier ist dein {{ value }} Geschenkkarte für {{ shop }}!",
+      "subtext": "Ihre Geschenkkarte"
+    },
+    "cart_page": {
+      "cart_error": "Beim Aktualisieren Ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      "cart_quantity_error_html": "Sie können Ihrem Warenkorb nur [Menge] Artikel hinzufügen."
     }
   }
 }
