@@ -162,7 +162,33 @@
       "taxes_and_shipping_at_checkout": "Taxes et livraison calculées à la caisse"
     },
     "search_page": {
-      "placeholder_for_search_input": "Qu'est-ce que tu cherches?"
+      "placeholder_for_search_input": "Qu'est-ce que tu cherches?",
+      "label_for_search_input": "Recherche",
+      "screen_reader_label_for_close_button": "Fermer le tiroir de recherche",
+      "screen_reader_label_for_search_button": "Recherche",
+      "products_tab": "Des produits ({{ count }})",
+      "blog_posts_tab": "Articles de blog ({{ count }})",
+      "pages_tab": "Pages ({{ count }})",
+      "label_for_filters_toggler": "Filtre",
+      "results_count": {
+        "one": "{{ count }} Résultat",
+        "other": "{{ count }} Résultats"
+      },
+      "text_for_no_results_found_in_stub": "Aucun résultat trouvé.",
+      "text_for_change_query": "Désolé, il n'y a aucun résultat pour cette requête de recherche.",
+      "text_for_clear_all_in_stub": "tout effacer.",
+      "text_for_use_another_filters": "Utilisez une autre option de filtre ou"
+    },
+    "filters": {
+      "header": "Filtre",
+      "header_with_results_count": {
+        "one": "({{ count }} résultat)",
+        "other": "({{ count }} résultats)"
+      },
+      "expand_options_button_label": "Plus",
+      "collapse_options_button_label": "Moins",
+      "clear_button_label": "Clair",
+      "clear_all": "Tout effacer"
     }
   }
 }
