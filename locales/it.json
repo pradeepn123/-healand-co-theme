@@ -162,7 +162,19 @@
       "taxes_and_shipping_at_checkout": "Tasse e spese di spedizione calcolate al momento del pagamento"
     },
     "search_page": {
-      "placeholder_for_search_input": "Che cosa sta cercando?"
+      "placeholder_for_search_input": "Che cosa sta cercando?",
+      "label_for_search_input": "Ricerca",
+      "products_tab": "Prodotti ({{ count }})",
+      "blog_posts_tab": "I post del blog ({{ count }})",
+      "screen_reader_label_for_close_button": "Chiudi il cassetto di ricerca",
+      "screen_reader_label_for_search_button": "Ricerca",
+      "pages_tab": "Pagine ({{ count }})",
+      "label_for_filters_toggler": "Filtro",
+      "results_count": {
+        "one": "{{ count }} Risultato",
+        "other": "{{ count }} Risultati"
+      },
+      "text_for_no_results_found_in_stub": "Nessun risultato trovato."
     }
   }
 }
