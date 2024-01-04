@@ -174,7 +174,21 @@
         "one": "{{ count }} Resultado",
         "other": "{{ count }} Resultados"
       },
-      "text_for_no_results_found_in_stub": "No se han encontrado resultados."
+      "text_for_no_results_found_in_stub": "No se han encontrado resultados.",
+      "text_for_use_another_filters": "Utilice otras opciones de filtro o",
+      "text_for_clear_all_in_stub": "limpiar todo.",
+      "text_for_change_query": "Lo sentimos, no hay resultados para esta consulta de búsqueda."
+    },
+    "filters": {
+      "header_with_results_count": {
+        "one": "({{ count }} resultado)",
+        "other": "({{ count }} resultados)"
+      },
+      "header": "Filtrar",
+      "expand_options_button_label": "Más",
+      "collapse_options_button_label": "Menos",
+      "clear_button_label": "Claro",
+      "clear_all": "Limpiar todo"
     }
   }
 }
