@@ -6,8 +6,8 @@
         "cf9b9f5c-0388-4b19-b0ed-3e0508b3087b": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Frame_8380.webp",
-            "mobile_img": "shopify:\/\/shop_images\/Frame_8381.webp",
+            "desktop_img": "shopify:\/\/shop_images\/Frame_8380_1.webp",
+            "mobile_img": "shopify:\/\/shop_images\/Frame_8381_1.webp",
             "desktop_overlay_opacity": 30,
             "mobile_overlay_opacity": 0,
             "background_color": "",
