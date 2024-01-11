@@ -5,7 +5,7 @@
     "primaryLocale": "en",
     "adminMode": false
   },
-  "tsPublished": 1705004891,
+  "tsPublished": 1705010354,
   "declaration": {
     "showPurpose": false,
     "showProvider": false,
@@ -346,13 +346,13 @@
   },
   "geolocation": {
     "brOnly": false,
-    "caOnly": false,
+    "caOnly": true,
     "chOnly": false,
-    "euOnly": false,
+    "euOnly": true,
     "jpOnly": false,
     "thOnly": false,
-    "canadaOnly": false,
-    "globalVisibility": true
+    "canadaOnly": true,
+    "globalVisibility": false
   },
   "dsr": {
     "guestsSupport": false,
