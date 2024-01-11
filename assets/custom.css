@@ -1037,3 +1037,23 @@ body.hamburger--open[scroll-y-offf] {
 .mega-menu .header__menu {
     overflow: hidden;
 }
+
+/* products additional tags */
+.product-info--additional-tags {
+    margin-top: 10px;
+}
+.product-info--additional-tags .product-info--additional-tags--wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.product-info--additional-tags .product-info--additional-tags--tag {
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0.2rem 1.2rem;
+}
+.product-info--additional-tags .product-info--additional-tags--tag.enable_rounded_tags {
+    border-radius: 20px;
+}

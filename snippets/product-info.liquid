@@ -44,6 +44,8 @@
             render 'sticky-add-to-cart', product: product, section: section, block: block, sectionId: block.id
           when 'button'
             render 'product-button-block', product: product, section: section, block: block, sectionId: sectionId
+          when 'additional_tag'
+            render 'product-information-additional-tag-block', product: product, section: section, block: block, sectionId: sectionId
         endcase
       endfor
     -%}
