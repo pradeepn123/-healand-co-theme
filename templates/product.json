@@ -49,6 +49,14 @@
             "drawer_media_size": 60
           }
         },
+        "additional_tag_cRFgjY": {
+          "type": "additional_tag",
+          "settings": {
+            "enable_rounded_tags": true,
+            "tag_text_color": "#141416",
+            "tag_bg_color": "#141416"
+          }
+        },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
           "settings": {
@@ -110,6 +118,7 @@
         "d4e0aa65-39f7-4a2c-ab9e-4062256bf259",
         "price",
         "158a4565-cbe2-4930-abcf-6a67725b1c77",
+        "additional_tag_cRFgjY",
         "28586830-d855-4547-8946-94914bac9e85",
         "a39896fb-3f82-4262-bb94-f2832a73fa7b",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
@@ -320,7 +329,7 @@
       "type": "tolstoy",
       "blocks": {
         "ea75c8ac-1c66-464d-a024-2c4da6175d25": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "3hes7fu5mv47y"
           }
