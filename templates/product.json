@@ -53,8 +53,8 @@
           "type": "additional_tag",
           "settings": {
             "enable_rounded_tags": true,
-            "tag_text_color": "#141416",
-            "tag_bg_color": "#141416"
+            "tag_text_color": "#ffffff",
+            "tag_bg_color": "#ee5c4c"
           }
         },
         "28586830-d855-4547-8946-94914bac9e85": {
