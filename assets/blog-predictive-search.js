@@ -23,7 +23,6 @@ class BlogPredictiveSearch extends HTMLElement {
     }
   
     getQuery() {
-    console.log(this.input.value.trim(),'lp')
       return this.input.value.trim();
     }
   

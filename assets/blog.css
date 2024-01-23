@@ -340,10 +340,20 @@
 
 
 /* Blog page predictive search css */
-.spinner {
+.predictive-search__loading-state .spinner {
     animation: rotator 1.4s linear infinite;
+    width: 1.5rem;
+    height: 1.5rem;
 }
   
+.predictive-search__loading-state .path{
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    stroke: rgb(var(--gsc-black-color),.5);
+    animation: dash 1.4s ease-in-out infinite;
+    vector-effect: none;
+}
 @keyframes rotator {
     0% {
       transform: rotate(0deg);
@@ -352,9 +362,26 @@
       transform: rotate(270deg);
     }
 }
-blog-predictive-search:not([loading]) .predictive-search__loading-state {
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 280;
+    }
+    50% {
+        stroke-dashoffset: 75;
+        transform: rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 280;
+        transform: rotate(450deg);
+    }
+}
+
+blog-predictive-search:not([loading]) .predictive-search__heading .spinner,
+blog-predictive-search:not([loading]) .predictive-search__loading-state,
+blog-predictive-search:not([loading]) .predictive-search-status__loading {
     display: none;
 }
+
 .predictive-search {
     display: none;
     position: absolute;
@@ -390,6 +417,9 @@ blog-predictive-search .search {
     border-radius: 10px;
     border: 1px solid #DFDFDF;
     width: 100%;
+}
+.template-search__search .field .search__input.field__input:focus-visible{
+    outline: none;
 }
 blog-predictive-search .search .field {
     width: 100%;
@@ -448,6 +478,7 @@ blog-predictive-search .search .field {
     padding: 1.3rem 2rem;
     word-break: break-all;
     line-height: 1.4;
+    border: 0;
 }
 
 .predictive-search__item--term svg {
