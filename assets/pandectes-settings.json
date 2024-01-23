@@ -5,7 +5,7 @@
     "primaryLocale": "en",
     "adminMode": false
   },
-  "tsPublished": 1705071588,
+  "tsPublished": 1706030225,
   "declaration": {
     "showPurpose": false,
     "showProvider": false,
@@ -272,7 +272,7 @@
     "previewMode": false,
     "fadeInTimeout": 0,
     "defaultBlocked": 7,
-    "showLink": true,
+    "showLink": false,
     "showImprintLink": false,
     "enabled": true,
     "cookie": {
@@ -326,7 +326,7 @@
     },
     "type": "opt-both",
     "layouts": {
-      "basic": "{{logo}}{{messagelink}}{{compliance}}{{close}}"
+      "basic": "{{logo}}{{message}}{{compliance}}{{close}}"
     },
     "position": "bottom-center",
     "theme": "wired",
