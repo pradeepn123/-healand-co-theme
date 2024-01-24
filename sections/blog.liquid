@@ -61,7 +61,7 @@
                       type="search"
                       name="q"
                       value="{{ search.terms | escape }}"
-                      placeholder="Search Blog"
+                      placeholder="Search for blog..."
                       role="combobox"
                       aria-expanded="false"
                       aria-owns="predictive-search-results-list"
@@ -92,7 +92,7 @@
           </form>
         </blog-predictive-search>
       </div>
-      
+
       {%- if show_title or show_tag_navigation -%}
         <div class="articles__header">
           {%- if show_title -%}
