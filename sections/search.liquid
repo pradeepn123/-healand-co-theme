@@ -117,22 +117,27 @@
 -%}
 
 {% capture css %}
-   {% style %}
-
-   .section-{{ section.id }}{
+   {% style %}    
+    .hide_margin_false{
+      margin: 0;
+    }
+    .section-{{ section.id }}{
       --gsc-mobile-columns: {{ mobile_columns }};
       --gsc-desktop-columns: {{ desktop_columns }};
       --gsc-space-between-cards: {{ mobile_space_between_cards }}rem;
 
       --gsc-section-spacing-top: calc({{ section_spacing_top }}px + 6.4rem);
       --gsc-section-spacing-bottom: calc({{ section_spacing_bottom }}px + 6.4rem);
-   }
+    }
 
-   @media {% render 'media-queries', screen: 'md' %} {
+    @media {% render 'media-queries', screen: 'md' %} {
       .section-{{ section.id }}{
-         --gsc-space-between-cards: {{ desktop_space_between_cards }}rem;
+        --gsc-space-between-cards: {{ desktop_space_between_cards }}rem;
       }
-   }
+      #SearchPageForm{
+        margin: 0 0 2rem;
+      }
+    }
 
    {% endstyle %}
 {% endcapture %}
@@ -191,7 +196,7 @@
   {%- if search.filters.size > 0 or search.results.size > 0 -%}
     <div class="search__results-container container container--{{ container_size }}">
       <tabs-component data-selected-tab-id="{{ default_tab }}">
-        <div class="search__tab-name-list">
+        <div class="search__tab-name-list hide_margin_{{show_products}}">
           {%- if section.settings.show_products_only == true -%}
             {%- if show_products == true -%}
               <div

@@ -401,6 +401,7 @@ blog-predictive-search .search {
     padding-left: 2rem;
     padding-right: 0;
     border-radius: 40px;
+    background: #ffffff;
     border: 1px solid #B9B9B9;
     width: 100%;
     height: 6rem;
@@ -537,7 +538,7 @@ blog-predictive-search .search .field {
     }
     .template-search__search .field .search__input.field__input {
         font-size: 14px;
-    }
+    }    
 }
 @media(min-width: 1200px){
     blog-predictive-search .search .field {
