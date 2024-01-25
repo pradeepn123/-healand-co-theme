@@ -1057,3 +1057,16 @@ body.hamburger--open[scroll-y-offf] {
 .product-info--additional-tags .product-info--additional-tags--tag.enable_rounded_tags {
     border-radius: 20px;
 }
+
+.article-card__link{
+    z-index: 2;
+    position: relative;
+}
+.search__carousel-tab-names{
+    display: none;
+}
+@media(max-width:767px){
+    .search__form{
+        margin-bottom: 0;
+    }
+}
