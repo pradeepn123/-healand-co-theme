@@ -49,41 +49,87 @@
 
 <div class="articles section articles--page section-{{ section.id }} color-{{ color_scheme }}" id="tag-section">
   <div class="articles__container container container--{{ container_size }} section-spacing">
-    {%- if show_title or show_tag_navigation -%}
-      <div class="articles__header">
-        {%- if show_title -%}
-          <h5 class="articles__title">
-            {{ blog.title }}
-            {%- if show_rss_icon -%}
-              <a class="unstyled-link" href="{{ shop.url }}{{ blog.url }}.atom" aria-label="RSS">
-                {%- render 'icon', icon_name: 'rss', class: 'articles__rss-icon' -%}
-              </a>
-            {%- endif -%}
-          </h5>
-        {%- endif -%}
-        {%- if show_tag_navigation -%}
-          <div
-            id="remove-class"
-            class="articles__tags scroll-styling{% if blog.all_tags.size > 7 %}articles_justify_flex{% endif %}"
-          >
-            <a
-              class="articles__tag {% if current_tags == blank %}selected{% endif %}"
-              href="{{ blog.url }}"
-              aria-label="{{- 'sections.blog_page.link_to_all_tag' | t -}}"
-            >
-              {{- 'sections.blog_page.link_to_all_tag' | t -}}
-            </a>
-            {%- for tag in blog.all_tags -%}
-              {%- if current_tags contains tag -%}
-                <span class="articles__tag selected">{{ tag | link_to_remove_tag: tag }}</span>
-              {%- else -%}
-                <span class="articles__tag">{{ tag | link_to_tag: tag }}</span>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
+    <div class="blog_search_article_tags">
+      <div class="template-search__search js-drawer">
+        <blog-predictive-search data-loading-text="Loading...">
+          <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+              <input type="hidden" name="type" value="article" />
+              <div class="field">
+                  <input
+                      class="search__input field__input"
+                      id="Search-In-Template"
+                      type="search"
+                      name="q"
+                      value="{{ search.terms | escape }}"
+                      placeholder="Search for blog..."
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-owns="predictive-search-results-list"
+                      aria-controls="predictive-search-results-list"
+                      aria-haspopup="listbox"
+                      aria-autocomplete="list"
+                      autocorrect="off"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                  >
+                  {% comment %} <label class="field__label" for="Search-In-Template">Search Blog</label> {% endcomment %}
+                  <input name="options[prefix]" type="hidden" value="last">
+                  <div class="predictive-search predictive-search--search-template" tabindex="-1" blog-data-predictive-search>
+                      <div class="predictive-search__loading-state">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                      </div>
+                  </div>
+                  <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                  <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search_blog' | t }}">
+                      <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="#2A7DE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </button>
+              </div>
+          </form>
+        </blog-predictive-search>
       </div>
-    {%- endif -%}
+
+      {%- if show_title or show_tag_navigation -%}
+        <div class="articles__header">
+          {%- if show_title -%}
+            <h5 class="articles__title">
+              {{ blog.title }}
+              {%- if show_rss_icon -%}
+                <a class="unstyled-link" href="{{ shop.url }}{{ blog.url }}.atom" aria-label="RSS">
+                  {%- render 'icon', icon_name: 'rss', class: 'articles__rss-icon' -%}
+                </a>
+              {%- endif -%}
+            </h5>
+          {%- endif -%}
+          {%- if show_tag_navigation -%}
+            <div
+              id="remove-class"
+              class="articles__tags scroll-styling{% if blog.all_tags.size > 7 %}articles_justify_flex{% endif %}"
+            >
+              <a
+                class="articles__tag {% if current_tags == blank %}selected{% endif %}"
+                href="{{ blog.url }}"
+                aria-label="{{- 'sections.blog_page.link_to_all_tag' | t -}}"
+              >
+                {{- 'sections.blog_page.link_to_all_tag' | t -}}
+              </a>
+              {%- for tag in blog.all_tags -%}
+                {%- if current_tags contains tag -%}
+                  <span class="articles__tag selected">{{ tag | link_to_remove_tag: tag }}</span>
+                {%- else -%}
+                  <span class="articles__tag">{{ tag | link_to_tag: tag }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
     {%- paginate blog.articles by article_per_page -%}
       <div class="articles__card-grid-wrap">
         <div class="card-grid articles__card-grid" id="BlogPostListGrid">
