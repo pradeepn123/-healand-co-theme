@@ -322,6 +322,21 @@
         "comment": "Kommentar",
         "send": "Schicken"
       }
+    },
+    "search": {
+      "page": "Seite",
+      "products": "Produkte",
+      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}”. Überprüfen Sie die Rechtschreibung oder verwenden Sie ein anderes Wort oder eine andere Phrase.",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis",
+        "other": "{{ count }} Ergebnisse"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} Ergebnis gefunden für „{{ terms }}”",
+        "other": "{{ count }} Ergebnisse gefunden für „{{ terms }}”"
+      },
+      "title": "Suchergebnisse",
+      "search_for": "Suchen nach \"{{ terms }}”"
     }
   },
   "customer": {
