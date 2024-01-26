@@ -480,5 +480,13 @@
       "line": "Linie zwischen Bildern",
       "button": "Ziehen Sie den Rand zwischen den Bildern"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "payment_gateway": {
+        "fixed_payment_label": "Ihre Zahlung wird am fällig {{dueDate}}.",
+        "fixed_direct_payment_terms": "Ihre Karte wird belastet {{dueDate}}."
+      }
+    }
   }
 }
