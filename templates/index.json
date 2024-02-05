@@ -5,7 +5,6 @@
       "blocks": {
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
-          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/Newyear-1.webp",
             "mobile_img": "shopify:\/\/shop_images\/Newyear.webp",
@@ -75,6 +74,7 @@
         },
         "4e4f4bce-2f4c-4405-8576-533654e3ca58": {
           "type": "image-banner",
+          "disabled": true,
           "settings": {
             "desktop_img": "shopify:\/\/shop_images\/heal_co_winter_bundle.png",
             "mobile_img": "shopify:\/\/shop_images\/heal_co_winter_bundle_mobile.png",
