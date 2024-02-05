@@ -24,35 +24,38 @@
 {% capture css %}
   {% style %}
     .section-{{section.id}} {
-        --gsc-height: {{mobile_height}}px;
-        --gsc-section-spacing-top: {{ section_spacing_top }}px;
-        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+      {% comment %} --gsc-height: {{mobile_height}}px; {% endcomment %}
+      --gsc-section-spacing-top: {{ section_spacing_top }}px;
+      --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
     }
 
+    .section-{{section.id}} carousel-component.slideshow__carousel .image-banner__media {
+      position: static !important;
+      height: 100%;
+      padding-bottom: 75%;
+    }
+    @media {% render 'media-queries', screen: 'md' %} {
+      .section-{{section.id}} carousel-component.slideshow__carousel .image-banner__media {
+        padding-bottom: 50%;
+      }
+    }
     @media {% render 'media-queries', screen: 'xl' %} {
-        .section-{{section.id}} {
-            --gsc-height: {{desktop_height}}px;
-        }
-    }
-    @media(min-width:426px) and (max-width:767px){
       .section-{{section.id}} {
-        --gsc-height: 350px;
+        {% comment %} --gsc-height: {{desktop_height}}px; {% endcomment %}
+        height: 100%;
+      }
+      .section-{{section.id}} carousel-component.slideshow__carousel .image-banner__media {
+        padding-bottom: 45%
       }
     }
-    @media(min-width:768px) and (max-width:1023px){
-      .section-{{section.id}} {
-        --gsc-height: 360px;
-      }
-    }
-    @media(min-width:1024px) and (max-width:1399px){
-      .section-{{section.id}} {
-        --gsc-height: 460px;
-      }
-    }
-    @media(min-width:1680px) {
-      .section-{{section.id}} {
-        --gsc-height: 700px;
-      }
+        
+    .section-{{section.id}} carousel-component.slideshow__carousel .media__image {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      left: 0;
+      width: 100%;
+      object-fit: fill;
     }
 
     {% for block in section.blocks %}= block.settings %}
