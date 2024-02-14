@@ -3,6 +3,15 @@
     "featured-blog-posts": {
       "type": "featured-blog-post",
       "blocks": {
+        "featured_post_F4XAxa": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/spice-up-your-love-life-maca-and-the-magic-of-valentines-day",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": "#ffffff"
+          }
+        },
         "04847407-be1c-48c3-8012-2d8f151e8037": {
           "type": "featured_post",
           "settings": {
@@ -30,21 +39,22 @@
             "read_more_text_color": "#ffffff"
           }
         },
-        "3f1187ff-97df-4002-a83e-d7c1f0c6eec1": {
+        "featured_post_L7Fc6z": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/echinacea-101-6-science-backed-benefits-of-echinacea",
-            "article_title_color": "#ffffff",
-            "article_text_color": "#ffffff",
-            "read_more_text_color": "#ffffff"
+            "article": "news\/how-long-does-it-take-the-supplements-to-work",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": ""
           }
         }
       },
       "block_order": [
+        "featured_post_F4XAxa",
         "04847407-be1c-48c3-8012-2d8f151e8037",
         "post-1",
         "post-2",
-        "3f1187ff-97df-4002-a83e-d7c1f0c6eec1"
+        "featured_post_L7Fc6z"
       ],
       "settings": {
         "color_scheme": "default",
