@@ -38,23 +38,13 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
-        },
-        "post-2": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/which-mushrooms-are-best-for-my-immune-system",
-            "article_title_color": "#ffffff",
-            "article_text_color": "#ffffff",
-            "read_more_text_color": "#ffffff"
-          }
         }
       },
       "block_order": [
         "featured_post_F4XAxa",
         "featured_post_L7Fc6z",
         "04847407-be1c-48c3-8012-2d8f151e8037",
-        "post-1",
-        "post-2"
+        "post-1"
       ],
       "settings": {
         "color_scheme": "default",
