@@ -12,6 +12,15 @@
             "read_more_text_color": "#ffffff"
           }
         },
+        "featured_post_L7Fc6z": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/how-long-does-it-take-the-supplements-to-work",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": "#ffffff"
+          }
+        },
         "04847407-be1c-48c3-8012-2d8f151e8037": {
           "type": "featured_post",
           "settings": {
@@ -38,23 +47,14 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
-        },
-        "featured_post_L7Fc6z": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/how-long-does-it-take-the-supplements-to-work",
-            "article_title_color": "",
-            "article_text_color": "",
-            "read_more_text_color": ""
-          }
         }
       },
       "block_order": [
         "featured_post_F4XAxa",
+        "featured_post_L7Fc6z",
         "04847407-be1c-48c3-8012-2d8f151e8037",
         "post-1",
-        "post-2",
-        "featured_post_L7Fc6z"
+        "post-2"
       ],
       "settings": {
         "color_scheme": "default",
