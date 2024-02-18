@@ -6,8 +6,8 @@
         "template--16729789989105__35abde66-b33a-4178-b3ef-5bba319784ba-1681818289a64f7335-0": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Valentine_s_day_heal.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Valentine_s_day_heal_mob.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/winter_bundle.webp",
+            "mobile_img": "shopify:\/\/shop_images\/winter_bundle_small_2d37a305-dadb-4d4c-9e46-68d0167e8092.webp",
             "desktop_overlay_opacity": 0,
             "mobile_overlay_opacity": 0,
             "background_color": "#faf5ef",
@@ -30,7 +30,7 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/collections\/shop-all",
+            "btn_url": "shopify:\/\/products\/winter-bundle",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
