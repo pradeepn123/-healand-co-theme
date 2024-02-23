@@ -420,13 +420,14 @@
         "84a3e809-dc5d-477f-a9be-3ea131520f2d": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/spice-up-your-love-life-maca-and-the-magic-of-valentines-day",
+            "article": "news\/top-10-foods-high-in-quercetin-that-you-should-eat-daily",
             "title": "LEARN",
             "color_scheme": "white",
             "desktop_columns": 2,
             "desktop_rows": 2,
             "heading_size": "h6",
             "show_product_count": true,
+            "blog_image": "shopify:\/\/shop_images\/blog_img_1_58d7d211-0be9-4c56-9ca3-9ef5ab8ccd03.jpg",
             "overlay_opacity": 10,
             "link_text": "https:\/\/healandco.co\/blogs\/news\/which-mushrooms-are-best-for-my-immune-system",
             "content_position": "bottom-left"
