@@ -55,7 +55,8 @@
             <p class="product_fixedTitle">Select a product to view details</p>
             {% for eachProduct in bundleProducts %}
               {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
-              {% assign custom_icon_image = loopingFixedValues.featured_image %}
+              {% assign custom_icon_image = loopingFixedValues.featured_image | default: eachProduct.featured_image %}
+  
               <div class="content_parent content_parent_position_relative">
                 <img
                   class="product-details__tab-name-icon lazyload"
