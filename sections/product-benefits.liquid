@@ -3,7 +3,7 @@
 {%- liquid
   assign highlightedBackgroundColor = product.metafields.custom.color_schema.value.highlighted_background_color | default: '#EA6852'
   assign highlightedTextColor = product.metafields.custom.color_schema.value.highlighted_text_color
-  assign powerfulBenefits_ExtraInfo = product.metafields.custom.powerful_benefits_extra_info.value
+  assign powerfulBenefits_ExtraInfo = product.metafields.custom.powerful_benefits_extra_info.value | default: product.featured_image
 -%}
 {% assign prodBenefits = product.metafields.custom.product_benefits.value %}
 {% capture imageFromLoop %}
@@ -73,7 +73,8 @@
         {% endfor %}
       </div>
       <div class="pb_center" data-aos="fade-up" data-aos-delay="400">
-        <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
+        {% assign featured_product_image = powerfulBenefits_ExtraInfo.featured_image | default: product.featured_image %}
+        <img src="{{ featured_product_image | img_url: 'master'}}" alt="">
       </div>
       <div class="pb_right pb_styling">
         {% for block in prodBenefits offset: rightCounter %}
