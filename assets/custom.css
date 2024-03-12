@@ -884,6 +884,9 @@ body.hamburger--open[scroll-y-offf] {
     .cart {
         padding: 2rem 0 0;
     }
+    .shop__grid-item.all_bundle.Shop-all{
+        padding: 0;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
