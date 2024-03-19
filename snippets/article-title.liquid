@@ -6,7 +6,7 @@
   assign title_color = options.title_color
 -%}
 
-<div class='container container--xsmall' {{ block.shopify_attributes }}>
+<div class='container auth-info container--xsmall' {{ block.shopify_attributes }}>
   {% if show_author or show_date or show_comment_count %}
     <div class='article-meta'>
       {% if show_author and article.author != blank %}

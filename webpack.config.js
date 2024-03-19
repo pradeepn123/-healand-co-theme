@@ -124,7 +124,7 @@ if (mode === 'development') {
     splitChunks: {
       usedExports: true, //check for ununsed exports for treeshaking within chunk
       cacheGroups: {
-        default: false, //override default
+        default: false, //override defaul
         Vendors: {  //create a seperate chunk for vendor
           test: /[\\/]node_modules[\\/]/, //required both / & \ to support cross platform between unix and windows
           name: 'vendors',//only create chunk for dependencies

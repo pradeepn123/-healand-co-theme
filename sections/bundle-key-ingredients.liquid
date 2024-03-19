@@ -106,6 +106,7 @@
 
 {% render 'inline-css-minifier', css: css %}
 
+{{ 'key-ingredient.css' | asset_url | stylesheet_tag }}
 {{ 'key-ingredients.css' | asset_url | stylesheet_tag }}
 {% if bundlekeymetadata %}
   <div class="section-{{ section.id }} bundle_key_ingredients_main">

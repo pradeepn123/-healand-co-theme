@@ -493,7 +493,7 @@
         {%- endif -%}
         <div class='product-card__info'>
           {% assign product_titles = product.title | split: ' | ' %}
-          <p class="product_featured_tag">{{ product.metafields.custom.featured_tag }}</p>
+          {% if product.metafields.custom.featured_tag %} <p class="product_featured_tag">{{ product.metafields.custom.featured_tag }}</p> {% endif %}
           <a
             class='product-card__title unstyled-link {% if product.metafields.custom.featured_tag == blank %} pro-heading-padding {% endif %}'
             href='{{ product.url }}'

@@ -115,6 +115,7 @@
 
 {% render 'inline-css-minifier', css: css %}
 
+{{ 'key-ingredient.css' | asset_url | stylesheet_tag }}
 {{ 'key-ingredients.css' | asset_url | stylesheet_tag }}
 
 {% if keymetadata != blank %}

@@ -1,0 +1,88 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.ingredientdb__page__main-container{
+    .ingredient-desc{
+        @include use-text-style('body-alt');
+        line-height: 27px;
+    }
+    .icon-text-wrapper{
+        column-gap: 40px;
+        .flex-wrap-imageicon{
+            flex-basis: 27.33%;
+            @media(max-width: 520px){
+                flex: 1 0 40%;
+            }
+            .icon-wrap{
+                svg{
+                    display: inline-block;
+                }
+            }
+            .text-wrapper__info{
+                @media(max-width: 520px){
+                    width: 60%;
+                    margin: 0 auto;
+                }
+            }
+            .heading-for-icon{
+                @include use-text-style('body-title');
+                font-family: var(--primary-semibold-font-family) !important;
+            }
+        }
+    }
+    .ingredient-hero-mage-banner {
+        background: colors.$light-grey;
+    }
+   
+}
+
+
+.ingredient-image-banner__container{
+    .ingredientdb__hero_image{
+        img{
+            object-position: center right;
+            @media(--md-large){
+                object-position: inherit;
+            }
+        }
+    }
+    .image-banner__content{
+        span{
+            @include use-text-style('heading-mob');
+            font-family: var(--secondary-font-family);
+            color: colors.$dark-blue;
+        }
+        .ingredient-desc p{
+            @include use-text-style('body-title');
+            font-weight: typography.$regular-weight;
+            color: colors.$dark-blue;
+            line-height: 24px;
+            @media(--sm){
+                @include use-text-style('body-alt');
+                line-height: 27px;
+            }
+        }        
+        .flex-wrap-imageicon .icon-wrap circle{
+            stroke: colors.$dark-blue;
+        }
+
+        .flex-wrap-imageicon .icon-wrap path{
+            fill: colors.$dark-blue;
+        }
+
+        .text-wrapper__info p{
+            color: colors.$dark-blue;
+            font-family: var(--primary-semibold-font-family) !important;
+        }
+    }
+    .image-banner__content--desktop span{
+        font-family: var(--secondary-font-family);
+        @media(--sm){
+            @include use-text-style('heading-1');
+            font-family: var(--secondary-font-family);
+        }
+    }
+}

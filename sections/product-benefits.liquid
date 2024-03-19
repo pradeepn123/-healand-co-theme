@@ -1,3 +1,5 @@
+{{ 'bundle-tabs-section.css' | asset_url | stylesheet_tag }}
+{{ 'bundle-tabs-section-new.css' | asset_url | stylesheet_tag }}
 {{ 'product-benefits.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -43,104 +45,25 @@
 {% endstyle %}
 
 {% if powerfulBenefits_ExtraInfo.show_hide_section %}
-  <div class="pb_container" data-aos="fade-up">
-    <div class="pb_title" data-aos="fade-up">
-      <p class="heading">{{ section.settings.heading }}</p>
-      <p class="subheading">
-        {{ powerfulBenefits_ExtraInfo.subheading }}
-      </p>
-    </div>
-    <div class="pb_content" data-aos="fade-up">
-      <div class="pb_left pb_styling">
-        {% for block in prodBenefits limit: leftCounter %}
-          {% unless block.heading == 'false' %}
-            <div
-              class="pb_content_continer"
-              style="{% if block.description == blank %} min-height: fit-content; {% endif %}"
-            >
-              {% if block.images != blank %}
-                <img src="{{ block.images | img_url: 'master'}}" alt="">
-              {% endif %}
-              <span class="pb_content_left pb_content_inner">
-                <h6>{{ block.heading }}</h6>
-                <p>{{ block.description }}</p>
-              </span>
-            </div>
-            {% if block.show_horizontal_line %}
-              <hr>
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-      </div>
-      <div class="pb_center" data-aos="fade-up" data-aos-delay="400">
-        {% assign featured_product_image = powerfulBenefits_ExtraInfo.featured_image | default: product.featured_image %}
-        <img src="{{ featured_product_image | img_url: 'master'}}" alt="">
-      </div>
-      <div class="pb_right pb_styling">
-        {% for block in prodBenefits offset: rightCounter %}
-          {% unless block.heading == 'false' %}
-            <div
-              class="pb_content_continer"
-              style="{% if block.description == blank %} min-height: fit-content; {% endif %}"
-            >
-              {% if block.images != blank %}
-                <img src="{{ block.images | img_url: 'master'}}" alt="">
-              {% endif %}
-              <span class="pb_content_right pb_content_inner">
-                <h6>{{ block.heading }}</h6>
-                <p>{{ block.description }}</p>
-              </span>
-            </div>
-            {% if block.show_horizontal_line %}
-              <hr>
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-      </div>
-    </div>
-    <div class="pb_content_mobile">
-      <div class="pb_content_mobile_image">
-        {{ imageFromLoop }}
-        <img src="{{ powerfulBenefits_ExtraInfo.featured_image | img_url: 'master'}}" alt="">
-      </div>
-      <div class="pb_content_mobile_accordion container container--page-width section">
-        {% for blockX in prodBenefits %}
-          {% unless blockX.heading == 'false' %}
-            <accordeon-component
-              class="accordeon-plus {% unless forloop.last %} accordeon-plus--bottom-bordered{% endunless %} {% unless forloop.first %} accordeon-plus--top-bordered{% endunless %} block-{{block.id}}"
-              data-aria-expanded="{% if expand_first_collapsible_row and forloop.index == 1 %}true{% else %}false{% endif %}"
-              data-section-id="{{ section.id }}"
-              data-block-id="{{ block.id }}"
-              style="{% if blockX.description == blank %}pointer-events: none;{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              <accordeon-btn
-                class="accordeon-plus__btn accordeon-plus__btn--small faq-section__accordeon-btn"
-                tabindex="0"
-              >
-                {% if blockX.images != blank %}
-                  <img src="{{ blockX.images | img_url: 'master'}}" alt="">
-                {% endif %}
-                <h6>{{ blockX.heading }}</h6>
-                {% if blockX.description != blank %}
-                  {% render 'icon', icon_name: 'plus', class: 'accordeon-plus__icon' %}
-                {% endif %}
-              </accordeon-btn>
-              <div class="accordeon-plus__content-wrap" data-accordeon-content-wrapper>
-                <div class="accordeon-plus__content faq-section__accordeon-content" data-accordeon-content>
-                  <div class="faq-section__content-tab-content body-font-weight-from-global-settings">
-                    <div
-                      class="rte faq-section__rte"
-                      style="{% if blockX.images == blank %}padding-left: 2rem{% endif %}"
-                    >
-                      {{ blockX.description }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </accordeon-component>
-          {% endunless %}
-        {% endfor %}
+   <div class="bundle-product-details product-details section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}">
+    <div class="section-spacing container--{{ container_size }}">
+      <div class="product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section {% endunless %}">
+        <div class="desktop_only desktop_tabs">
+          
+         <bundle-tabs-section>
+          <script type="application/json" id="product-bundle-data">
+              {
+                data:  {
+                  "title": "{{section.settings.heading}}",
+                    "products": [
+                        {% render 'JSON-product-single-data', product: product %}
+                    ]
+                }
+              }
+          </script>
+        </bundle-tabs-section>
+        
+        </div>
       </div>
     </div>
   </div>

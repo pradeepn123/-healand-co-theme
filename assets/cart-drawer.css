@@ -21,7 +21,7 @@
     background: #eeeeee;
 }
 .cart-free-shipping-bar__progress-bar-dots{
-    background: #EA6852;
+    background: #2F4775;
     z-index: 2;
 }
 
@@ -150,8 +150,7 @@
     display: none;
 }
 .subtotal__content .subtotal__cta button{
-    background-color: #EA6852;
-    text-transform: uppercase;
+    background-color: #EA6852;    
     font-weight: 700;
     font-size:20px;
 }

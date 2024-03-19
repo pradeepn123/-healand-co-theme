@@ -17,14 +17,15 @@
         "banner_image": "shopify:\/\/shop_images\/Home_Desktop.jpg",
         "banner_image_mob": "shopify:\/\/shop_images\/Main-Banner_Mobile.jpg",
         "heading": "Potent Plants For Healthy Humans",
-        "heading-color": "#ffffff",
-        "banner_bgimage": "shopify:\/\/shop_images\/aboutus-banner-bg.png"
+        "heading-color-desktop": "#ffffff",
+        "heading-color-mobile": "#2f4775",
+        "banner_bgimage": "shopify:\/\/shop_images\/Rectangle_371.png"
       }
     },
     "440fa401-af0a-409e-a1b4-8d39c7f62293": {
       "type": "about-story",
       "settings": {
-        "heading": "OUR STORY",
+        "heading": "Our story",
         "subtext": "With a passion for health and wellness, our mission as a company is to help people benefit from the amazing healing powers of nature's apothecary. Our medicinal ingredients are carefully sourced and tested to meet our core values of transparency, potency, and efficacy.",
         "heading_size": "h2",
         "desktop_content_position": "right-alignment"
@@ -47,7 +48,7 @@
           "settings": {
             "val-heading": "Efficacy",
             "val-desc": "Our dedication to efficacy means that every formulation is crafted with the highest quality ingredients, resulting in supplements that truly deliver on their claims and support your health.",
-            "user_color": "#797baa"
+            "user_color": "#97a3ba"
           }
         },
         "1c196b6e-ed3c-4fbe-a7cc-f10ba5d627fc": {
@@ -55,7 +56,7 @@
           "settings": {
             "val-heading": "Purity",
             "val-desc": "All of our products are produced in a GMP-certified facility and third party tested for contaminants. All products have been approved by Health Canada for their safety and efficacy.",
-            "user_color": "#ad7983"
+            "user_color": "#97a3ba"
           }
         },
         "ff24fc94-8352-45e5-b26e-f1ad9fa2872d": {
@@ -63,7 +64,7 @@
           "settings": {
             "val-heading": "Potency",
             "val-desc": "We strive to deliver products formulated with ingredients that are as potent as possible. Each ingredient contains the highest level of bioactives possible to get the most out of each capsule.",
-            "user_color": "#82a1c4"
+            "user_color": "#97a3ba"
           }
         }
       },
@@ -73,7 +74,7 @@
         "ff24fc94-8352-45e5-b26e-f1ad9fa2872d"
       ],
       "settings": {
-        "val-main-heading": "OUR VALUES",
+        "val-main-heading": "Our values",
         "heading_size": "h2"
       }
     },
@@ -81,7 +82,7 @@
       "type": "about-creator",
       "settings": {
         "cimage": "shopify:\/\/shop_images\/Group_1_Mobile.jpg",
-        "creator-heading": "ABOUT OUR PRODUCTS",
+        "creator-heading": "About our products",
         "creator-desc": "When you buy Heal + Co. supplements, you can be confident that you are making the right choice for your health. All of our ingredients are sourced with purity and potency in mind to ensure the maximum efficacy of our products. We offer an extensive line of herbal supplements to target all health concerns. All of our products contain high-potency plant extracts for more benefits and fewer doses. We are constantly working to expand our range. Explore products by benefit or by ingredient to find the right fit for you!",
         "heading_size": "h2"
       }
@@ -92,7 +93,7 @@
         "template--16187955019934__f5eb5833-c5ec-4524-9eec-a4553fdc0dc2-1685108957fd26fec2-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "<strong>Get 20% off your first order<\/strong>",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -121,17 +122,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 300,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 20,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -152,9 +153,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false

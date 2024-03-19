@@ -94,6 +94,7 @@
 }
 .desktop_mobile .ticker-to-left {
     text-align: center;
+    font-family: 'proximanova-regular';
 }
 @media (max-width:767px){
     .show-on--mobile{

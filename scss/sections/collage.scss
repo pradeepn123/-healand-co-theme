@@ -1,0 +1,116 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+$child: '.article';
+
+.collage {
+   
+    #{$child}-card{
+        height: 100%;
+        display: block;        
+        &__details {
+            position: inherit;
+            flex-flow: column;
+            justify-content: flex-end;
+            row-gap: 1.2rem;
+            padding: 0;
+            display: flex;
+            overflow: hidden;
+
+            &--hover-on-text {                
+                .article-card__title:before{
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: colors.$dark-blue;
+                    -webkit-transform: scaleY(0);
+                    transform: scaleY(0);
+                    -webkit-transform-origin: 50% 100%;
+                    transform-origin: 50% 100%;
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    -webkit-transition: 300ms ease-out;
+                    transition: 300ms ease-out;
+                }
+            }
+        }
+        &__title{
+            padding: 2rem;
+            position: relative;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition: color 1000ms;
+            transition: color 1000ms;
+            width: 100%;     
+            letter-spacing: 0.035em;
+            line-height: 1.2;
+            font-family: var(--secondary-font-family);
+            .small_title{
+                display: block;
+                margin-bottom: 10px;
+                font-family: var(--primary-font-family) !important;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1;
+            }
+        }
+        &--link-for-hover {
+            .article-card__details{
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+            }
+        }
+    }
+}
+
+.article-card:hover.link-parent-for-hover .article-card__details.hover_on_text .article-card__title {
+    width: 100%;
+    padding: 2.5rem 3.5rem;
+}
+.article-card:hover.link-parent-for-hover .article-card__details.hover_on_text .article-card__title:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+.collage__card-grid {
+    grid-auto-rows: 380px;
+}
+.article-card.link-parent-for-hover .article-card__details .article-card__title{
+    padding: 2rem;
+}  
+.article-card__details h6 {
+   font-size: 2rem;
+} 
+
+
+
+@media(--sm) {
+    .collage__card-grid {
+        --gsc-collage-grid-calculated-row-height: 250px;
+    }
+    .article-card.link-parent-for-hover .article-card__details .article-card__title{
+        padding: 2.5rem 3.5rem;
+    }  
+    .article-card__details h6 {
+        font-size: 2rem;
+    } 
+}
+@media(min-width: 1281px){
+    .collage__card-grid {
+        --gsc-collage-grid-calculated-row-height: max(420px, min(100vw/5, var(--gsc-collage-row-height)))
+    }
+    .article-card.link-parent-for-hover .article-card__details .article-card__title{
+        padding: 2.5rem 3.5rem;
+    }  
+    .article-card__details h6 {
+        font-size: typography.$heading-2-size;
+        font-weight: typography.$heading-weight;
+        font-family: "BrownStd-Bold";
+    } 
+}

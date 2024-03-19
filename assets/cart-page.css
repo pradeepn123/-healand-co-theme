@@ -1,0 +1,86 @@
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/cart-page.scss ***!
+  \*************************************************************************************************************************************************************************************************************************/
+.cart .cart-free-shipping-bar__title {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.cart .cart-free-shipping-bar__title span {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.cart .cart-items .cart-items__header .cart-items__title {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.cart .cart-items .cart-items__params .cart-items__param {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--primary-semibold-font-family);
+  color: #2F4775;
+}
+.cart .cart-items-render .cart-item__grid .cart-item__info .cart-item__name-label {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.cart .cart-items-render .cart-item__grid .cart-item__pay-info .cart-item__info--desktop-hide {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.cart .cart-items-render .cart-item__grid .cart-item__pay-info .cart-item__price .cart-item__price-item {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+
+.subtotal__container .subtotal .subtotal__content .subtotal__totals .subtotal__label {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+.subtotal__container .subtotal .subtotal__content .subtotal__totals .subtotal__price {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--primary-alt-semibold-font-family);
+  color: #2F4775;
+  font-size: 30px;
+}
+.subtotal__container .subtotal .subtotal__content .subtotal__cta button {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  background: #2F4775;
+  font-size: 20px;
+}

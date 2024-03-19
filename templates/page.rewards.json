@@ -21,7 +21,7 @@
         "section_spacing_bottom": 0,
         "desktop_height": 960,
         "mobile_height": 600,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_351.png",
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
         "caption": "",
@@ -73,7 +73,7 @@
         "template--16185221906590__cc662e22-b40d-40e9-bb2c-d05f3d0174e1-1684842256481cc2b6-4": {
           "type": "buttons",
           "settings": {
-            "btn_text": "JOIN NOW",
+            "btn_text": "Join now",
             "btn_url": "https:\/\/healandco.co\/account\/login",
             "btn_style": "solid",
             "extra_btn_text": "",
@@ -104,60 +104,60 @@
           "type": "select",
           "settings": {
             "points_title": "Signup",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/signup_icon_bd1c91b3-82dc-44d4-8b4c-d10eb9097265.svg",
+            "points_title_color": "#2f4775",
+            "points_icon": "shopify:\/\/shop_images\/Group_355.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
             "points_text": "100 Points",
-            "points_text_color": "#ffffff"
+            "points_text_color": "#2f4775"
           }
         },
         "de505b0e-ef05-4555-9463-dc34a6192f76": {
           "type": "select",
           "settings": {
             "points_title": "Celebrate a Birthday",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/Group_363_1.png",
+            "points_title_color": "#2f4775",
+            "points_icon": "shopify:\/\/shop_images\/Group_363.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
             "points_text": "100 Points",
-            "points_text_color": "#ffffff"
+            "points_text_color": "#2f4775"
           }
         },
         "ecdcca71-c0c0-4ea6-b4fb-3d780a4056bc": {
           "type": "select",
           "settings": {
             "points_title": "Place an Order",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/Group_363.png",
+            "points_title_color": "#2f4775",
+            "points_icon": "shopify:\/\/shop_images\/Group_479.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
             "points_text": "2 points for every $1 spent",
-            "points_text_color": "#ffffff"
+            "points_text_color": "#2f4775"
           }
         },
         "f29f0d21-8f40-4911-827a-68f113687f4a": {
           "type": "select",
           "settings": {
             "points_title": "Like Us on Instagram",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/Instagram_icon_c4eec5f5-5b31-4765-9355-0d09e61a0b20.svg",
+            "points_title_color": "#2f4775",
+            "points_icon": "shopify:\/\/shop_images\/Group_357.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
             "points_text": "50 Points",
-            "points_text_color": "#ffffff"
+            "points_text_color": "#2f4775"
           }
         },
         "f05987cc-a940-4b2c-acad-41127fa6f900": {
           "type": "select",
           "settings": {
             "points_title": "Like Us on Facebook",
-            "points_title_color": "#ffffff",
-            "points_icon": "shopify:\/\/shop_images\/fb_icon_051ad8e8-bb60-4d0e-944d-4e1551494a91.svg",
+            "points_title_color": "#2f4775",
+            "points_icon": "shopify:\/\/shop_images\/Group_480.svg",
             "points_svg_icon": "",
             "points_svg_icon_color": "",
             "points_text": "50 Points",
-            "points_text_color": "#ffffff"
+            "points_text_color": "#2f4775"
           }
         },
         "2a7b2c95-7b55-4355-a15a-670ea07a0a8a": {
@@ -183,12 +183,12 @@
         "2a7b2c95-7b55-4355-a15a-670ea07a0a8a"
       ],
       "settings": {
-        "points_section_bg": "#ea6852",
-        "points_section_header": "WAYS TO EARN POINTS",
-        "points_section_header_color": "#ffffff",
-        "points_section_btn": "EARN POINTS",
+        "points_section_bg": "#eaedf1",
+        "points_section_header": "Ways to earn points",
+        "points_section_header_color": "#2f4775",
+        "points_section_btn": "Earn Points",
         "points_section_btn_link": "https:\/\/healandco.co\/account",
-        "points_section_btn_color": "#f3b563",
+        "points_section_btn_color": "#2f4775",
         "points_section_btn_text_color": "#ffffff",
         "points_section_btn_alignment": "center"
       }
@@ -199,7 +199,7 @@
         "e1b9935b-4ed3-4136-9875-098eb7cc1723": {
           "type": "select",
           "settings": {
-            "card_bg": "#756cae",
+            "card_bg": "#2f4775",
             "card_title": "$5 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
@@ -212,7 +212,7 @@
         "bc0e45c0-348c-4b30-92f9-45a6c20eff57": {
           "type": "select",
           "settings": {
-            "card_bg": "#756cae",
+            "card_bg": "#2f4775",
             "card_title": "$10 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
@@ -225,7 +225,7 @@
         "2553782a-d2a3-42f6-8ab3-14fdd06e14c2": {
           "type": "select",
           "settings": {
-            "card_bg": "#756cae",
+            "card_bg": "#2f4775",
             "card_title": "$15 off",
             "card_title_color": "#ffffff",
             "card_icon": "shopify:\/\/shop_images\/coupon_icon_9cfef822-e299-4fee-91ed-1bf70b4d3806.svg",
@@ -242,7 +242,7 @@
         "2553782a-d2a3-42f6-8ab3-14fdd06e14c2"
       ],
       "settings": {
-        "cards_section_header": "HOW DO YOU REDEEM?",
+        "cards_section_header": "How do you redeem?",
         "cards_section_bg": "#ffffff"
       }
     },
@@ -253,24 +253,24 @@
           "type": "select",
           "settings": {
             "refer_title": "They get",
-            "refer_title_color": "#ffffff",
-            "refer_icon": "shopify:\/\/shop_images\/THEY_GET.png",
+            "refer_title_color": "#2f4775",
+            "refer_icon": "shopify:\/\/shop_images\/THEY_GET.svg",
             "refer_svg_icon": "",
             "refer_svg_icon_color": "",
             "refer_text": "$5 off coupon",
-            "refer_text_color": "#ffffff"
+            "refer_text_color": "#2f4775"
           }
         },
         "a8979460-c44b-4569-923d-354fd8459d78": {
           "type": "select",
           "settings": {
             "refer_title": "You get",
-            "refer_title_color": "#ffffff",
-            "refer_icon": "shopify:\/\/shop_images\/YOU_GET.png",
+            "refer_title_color": "#2f4775",
+            "refer_icon": "shopify:\/\/shop_images\/YOU_GET.svg",
             "refer_svg_icon": "",
             "refer_svg_icon_color": "",
             "refer_text": "$5 off coupon",
-            "refer_text_color": "#ffffff"
+            "refer_text_color": "#2f4775"
           }
         },
         "e3294e78-48d1-48fb-bfbd-ea1b7c623e0d": {
@@ -293,12 +293,12 @@
         "e3294e78-48d1-48fb-bfbd-ea1b7c623e0d"
       ],
       "settings": {
-        "custom_image_with_text_heading": "REFER & EARN",
-        "custom_image_with_text_heading_color": "#ffffff",
+        "custom_image_with_text_heading": "Refer & Earn",
+        "custom_image_with_text_heading_color": "#2f4775",
         "custom_image_with_text_description": "Give your friends a reward and claim your own when they make a purchase",
-        "custom_image_with_text_description_color": "#ffffff",
-        "right_content_section_bg": "#7eaad6",
-        "left_content_image": "shopify:\/\/shop_images\/refer_and_earn.png"
+        "custom_image_with_text_description_color": "#2f4775",
+        "right_content_section_bg": "#eaedf1",
+        "left_content_image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
     },
     "22194aba-6eea-4363-96cc-a0b92b6fda72": {
@@ -307,9 +307,10 @@
         "template--16185221906590__22194aba-6eea-4363-96cc-a0b92b6fda72-168493413083263352-0": {
           "type": "category",
           "settings": {
-            "title": "HEAL + CLUB REWARDS",
-            "faq_heading_bg": "#f3b563",
-            "head_font_size": 24,
+            "title": "Heal + Club rewards",
+            "faq_heading_bg": "#2f4775",
+            "head_font_size_desktop": 25,
+            "head_font_size_mobile": 20,
             "heading_color": "#ffffff",
             "icon": "none"
           }
@@ -318,10 +319,10 @@
           "type": "question",
           "settings": {
             "title": "What is the Heal + Club?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>The Heal + Club is our way of saying thank you to our most loyal customers! It is a way to earn points and redeem them on future purchases for discounts. <\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -330,10 +331,10 @@
           "type": "question",
           "settings": {
             "title": "How do I sign up?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Joining the Heal + Club is easy! Simply click on the rewards icon on the bottom left-hand side of the screen. From there, enter your email address to set up your account and begin earning points. We recommend signing up when you make your first purchase to begin earning points right away. <\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -344,7 +345,8 @@
           "settings": {
             "title": "Category",
             "faq_heading_bg": "",
-            "head_font_size": 24,
+            "head_font_size_desktop": 24,
+            "head_font_size_mobile": 20,
             "heading_color": "#ffffff",
             "icon": "none"
           }
@@ -353,10 +355,10 @@
           "type": "question",
           "settings": {
             "title": "How do I earn points?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>You can earn points many ways. Simply make sure that you are logged into your account (by clicking on the rewards button at the bottom of the screen and logging in), and start earning. Earn points when you create an account and follow us on social media. Earn 2 points for every $1 spent.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -365,10 +367,10 @@
           "type": "question",
           "settings": {
             "title": "How do I redeem my points?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Points can be redeemed for various discounts on your orders. All you have to do is log into your account by clicking the rewards button at the bottom of the screen. From there, click on ways to redeem followed by the number of points you want to use! You will receive a discount code that must then be applied at checkout when prompted for a promo code. Please note that the discount is not automatically applied, you must enter the code in the promo code box.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -377,10 +379,10 @@
           "type": "question",
           "settings": {
             "title": "Can I use multiple discounts on my order?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Unfortunately only one discount can be applied at checkout. Make sure to copy and paste your discount code at checkout. The discount is not automatically applied at checkout.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -389,10 +391,10 @@
           "type": "question",
           "settings": {
             "title": "Do my points expire?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>No! Your points never expire. <\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -401,10 +403,10 @@
           "type": "question",
           "settings": {
             "title": "Who can I contact if I have issues with my account?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>You can send us an email at hello@healandco.co, or use our chat function on the website. We are available from Monday to Friday between 9 am and 5 pm EST.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -430,7 +432,7 @@
         "title": "FAQ’S",
         "text": "",
         "heading_size": "h5",
-        "head_color": "#000000",
+        "head_color": "#2f4775",
         "body_size": "body3",
         "btn_text": "",
         "btn_url": "",
@@ -449,7 +451,7 @@
         "template--16191895175326__a603edf6-cf9c-4029-9d80-e8b111ec84a3-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -479,17 +481,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subscribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 300,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -510,9 +512,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false

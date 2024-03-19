@@ -3,16 +3,22 @@
     font-size: 24px;
     line-height: 1.2;
     text-align: center;
+    font-family: 'BrownStd-Bold';
+    text-transform: lowercase;
 }
 .collection-text .collection-text__content .collection-text__text ul{
     padding-inline-start: 20px;
     row-gap: 0.6rem;
+}
+.collection-text .collection-text__content .collection-text__text{
+    font-family: 'proximanova-regular';
 }
 .our-bundles__btn{
     width: auto;
     align-self: flex-start;
     margin: 0 auto;    
     margin-top: 22px;
+    font-family: 'BrownStd-Bold';
 }
 .collection-text .collection-text__card-carousel .card-carousel__viewport 
 .card-carousel__slide .product-card .product-card__details .product-card__info .product-card__rating{
@@ -23,19 +29,19 @@
 .card-carousel__slide .product-card .product-card__details .product-card__info .product-card__vendor{
     display: none;
 }
-.collection-text .collection-text__card-carousel .card-carousel__viewport 
+/* .collection-text .collection-text__card-carousel .card-carousel__viewport 
 .card-carousel__slide .product-card .product-card__details .product-card__info .product-card__title{
     text-transform: uppercase;
     font-size: 18px;
-}
+} */
 #shopify-section-template--16186860470430__3a8446b4-f3d0-4013-84a1-245927640c4e 
 .carousel-btn
 {
     background: #DD8571 !important; 
 }
-.product-card__details  .product-card__price-item{
+/* .product-card__details  .product-card__price-item{
     font-size: 16px;
-}
+} */
 
 @media screen and (min-width: 768px){
     .collection-text .collection-text__content h5{
@@ -75,6 +81,7 @@
     .collection-text .collection-text__content h5 {
         margin: auto;
         width: 83%;
+        font-size: 32px;
     }
     .collection-text__content .collection-text__text{
         font-size: 16px;

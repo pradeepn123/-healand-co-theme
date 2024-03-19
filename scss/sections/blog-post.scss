@@ -1,0 +1,71 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.articles--section{
+    .container--small.section-spacing {
+        padding-top: var(--section-margin);
+        padding-bottom: calc(var(--section-margin) * 4);
+        @media(--sm){
+            padding-top: calc(var(--section-margin) * 2);
+        }
+        .articles__header {
+            margin-bottom: var(--section-margin);
+            @media(--sm){
+                margin-bottom: var(--setion-heading-padding);
+            }
+            h5{
+                @include use-text-style('heading-3');
+                font-family: var(--secondary-font-family);
+                color: colors.$dark-blue;
+                @media(--sm){
+                    @include use-text-style('heading-1');
+                    font-family: var(--secondary-font-family);
+                }
+            }
+        }
+        .articles__card-grid{
+            column-gap: 30px;
+            .article-card__details{
+                padding-bottom: 0;
+                .article-card__meta{
+                    color: colors.$dark-blue;
+                    padding-bottom: 10px;
+                    font-family: var(--primary-font-family) !important;
+                    @media(--sm){
+                        @include use-text-style('body-title');
+                        font-weight: typography.$regular-weight;
+                    }
+                }
+                .article-card__title{
+                    color: colors.$dark-blue;
+                    padding-bottom: 12px;
+                    @include use-text-style('heading-3');
+                    font-family: var(--secondary-font-family);
+                    @media(--sm){
+                        @include use-text-style('heading-2');
+                        font-family: var(--secondary-font-family);
+                    }
+                }
+                .article-card__description{
+                    color: colors.$dark-blue;
+                    @include use-text-style('body-alt');
+                    font-family: var(--primary-font-family) !important;
+                }
+                .article-card__read-more-link{
+                    color: colors.$dark-blue;
+                    @include use-text-style('body-alt');
+                    font-weight: typography.$heading-weight;
+                    font-family: var(--primary-semibold-font-family) !important;
+                    .link__text{
+                        font-family: var(--primary-semibold-font-family) !important;
+                        &:before {
+                            background: colors.$dark-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

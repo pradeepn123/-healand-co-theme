@@ -1,0 +1,40 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+
+.our-story{
+    .astory_wrp{
+        padding: var(--setion-heading-padding) 0;
+        @media(--sm){
+            padding: calc(var(--section-padding)* 3) 0;
+        }
+        .story-heading {
+            padding-bottom: var(--setion-heading-padding);
+            .decorated_heading{
+                @include use-text-style('heading-mob');
+                font-family: var(--secondary-font-family);
+                color: colors.$dark-blue;
+                @media(--sm){
+                    @include use-text-style('heading-1');
+                    font-family: var(--secondary-font-family);
+                }
+                &::after{
+                    color: colors.$grey;
+                }
+            }
+        }
+        .story-subtext {
+            @include use-text-style('body-title');
+            font-weight: typography.$regular-weight;
+            font-family: var(--primary-font-family);
+            color: colors.$dark-blue;
+            line-height: 27px;
+            @media(--sm){
+                @include use-text-style('body-alt');
+            }
+        }
+    }
+}

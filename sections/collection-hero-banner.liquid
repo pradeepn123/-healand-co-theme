@@ -47,6 +47,12 @@
       font-size: {{ section.settings.collection_title_font_size_mobile }}px;
     }
 
+    {% if section.settings.show_text_shadow == true %}
+      .collection-custom__title{
+        text-shadow: 4px 4px 5px #000000;
+      }
+    {% endif %}
+
     @media {% render 'media-queries', screen: 'md' %} {
         .section-{{ section.id }} {
             --gsc-section-height: {{ desktop_section_height }}px;
@@ -97,7 +103,7 @@
           >
           {% if collection.metafields.custom.collection_heroimage_mobile != blank %}
             <img
-              class="image collection-hero__image lazyload mobile-collection-img"
+              class="image collection-hero__image lazyload mobile-collection-img"  
               loading="lazy"
               src="{{ mobile_image | img_url: 'master' }}"
               alt="{{ mobile_image.alt }}"
@@ -381,6 +387,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.collection_hero_banner.image_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_shadow",
+      "default": true,
+      "label": "Show banner heading shadow"
     },
     {
       "type": "video",

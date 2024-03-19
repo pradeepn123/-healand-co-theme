@@ -16,6 +16,11 @@
     })
   }
 </script>
+{% style %}
+  .custom_app_backdrop{
+    margin: 0;
+  }
+{% endstyle %}
 
 <div class="custom_app_backdrop" onclick='callbackFunction(this)'>
   <div class='custom-app-block custom-app-block--inside-product-section' {{ block.shopify_attributes }}>

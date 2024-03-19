@@ -44,6 +44,8 @@
   endif
 -%}
 
+{{ 'collection-list.css' | asset_url | stylesheet_tag }}
+
 {% capture css %}
   {% style %}
     .section-{{ section.id }} {
@@ -180,8 +182,8 @@
       >
         <h5 class="{{ heading_size }} decorated_heading">{{ title }}</h5>
         {% if section.settings.shop_all_title != blank %}
-          <a href="{{ section.settings.shop_all_url }}" class="view-btn shop_all w-full-sp">
-            <span>{{ section.settings.shop_all_title }}</span>
+          <a href="{{ section.settings.shop_all_url }}" class="link view-btn shop_all w-full-sp">
+            <span class="link__text">{{ section.settings.shop_all_title }}</span>
             {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
           </a>
         {% endif %}

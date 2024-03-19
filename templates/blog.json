@@ -7,8 +7,8 @@
           "type": "featured_post",
           "settings": {
             "article": "news\/spice-up-your-love-life-maca-and-the-magic-of-valentines-day",
-            "article_title_color": "",
-            "article_text_color": "",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
         },
@@ -16,8 +16,8 @@
           "type": "featured_post",
           "settings": {
             "article": "news\/how-long-does-it-take-the-supplements-to-work",
-            "article_title_color": "",
-            "article_text_color": "",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
         },
@@ -48,11 +48,11 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "text_bg": "#ea6852",
-        "page_title": "Supplement",
-        "page_title_color": "#769e92",
-        "page_subtitle": "SPOTLIGHT",
-        "page_subtitle_color": "#ea6852",
+        "text_bg": "#2f4775",
+        "page_title": "Supplement Spotlight",
+        "page_title_color": "#2f4775",
+        "page_subtitle": "",
+        "page_subtitle_color": "#2f4775",
         "enable_background_around_container": false,
         "container_size": "page-width",
         "section_spacing_top": 0,
@@ -101,7 +101,7 @@
         "template--16191895601310__a9dc7323-1ca7-4f91-82e9-96b9a21854aa-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -131,17 +131,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subscribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 300,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -162,9 +162,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false

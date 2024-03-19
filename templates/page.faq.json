@@ -19,8 +19,7 @@
           "settings": {
             "title": "Category",
             "faq_heading_bg": "",
-            "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -65,8 +64,7 @@
           "settings": {
             "title": "Category",
             "faq_heading_bg": "",
-            "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -123,8 +121,7 @@
           "settings": {
             "title": "Category",
             "faq_heading_bg": "",
-            "head_font_size": 24,
-            "heading_color": "#fff",
+            "heading_color": "#ffffff",
             "icon": "none"
           }
         },
@@ -176,7 +173,7 @@
         "title": "FAQ",
         "text": "Answers to most common questions about products, orders, shipments, and payments.",
         "heading_size": "h5",
-        "head_color": "#000",
+        "head_color": "#000000",
         "body_size": "body3",
         "btn_text": "",
         "btn_url": "",
@@ -195,7 +192,7 @@
         "template--16191895142558__04978747-f13f-4992-b1bd-dd15752cd905-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -225,17 +222,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subscribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 400,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -256,11 +253,21 @@
             "link": "",
             "icon": "none"
           }
+        },
+        "announcement_MYYXiJ": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Make an announcement<\/p>",
+            "link": "",
+            "icon": "none"
+          }
         }
       },
       "block_order": [
-        "0f4fcad5-7912-42cb-a450-680a78efab6d"
+        "0f4fcad5-7912-42cb-a450-680a78efab6d",
+        "announcement_MYYXiJ"
       ],
+      "disabled": true,
       "settings": {
         "show_only_on_homepage": false,
         "color_scheme": "custom-2",
@@ -272,12 +279,31 @@
         "show_currency_selector": false,
         "show_social_list": false
       }
+    },
+    "ticker_WnFQTX": {
+      "type": "ticker",
+      "settings": {
+        "top_spacing": "normal",
+        "ticker_time": 10,
+        "direction": "ticker-to-left",
+        "text_size": "ticker-text-5",
+        "url": "",
+        "text": "<p><a href=\"http:\/\/127.0.0.1:9292\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
+        "show_on_mobile": "mobile_only",
+        "color_text": "#2f4775",
+        "background": "color",
+        "color_background": "#eaedf1",
+        "gradient": "",
+        "background_spacing": "xsmall",
+        "remove_bottom_spacing": false
+      }
     }
   },
   "order": [
     "page",
     "questions",
     "04978747-f13f-4992-b1bd-dd15752cd905",
-    "809dc6d4-c444-45d2-97f2-ecea3e0d5c72"
+    "809dc6d4-c444-45d2-97f2-ecea3e0d5c72",
+    "ticker_WnFQTX"
   ]
 }

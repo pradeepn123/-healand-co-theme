@@ -23,7 +23,7 @@
     assign comments_count = 0
   endif
 -%}
-<article-card class="article-card link-parent-for-hover zoom-parent-for-hover {{ class }}">
+<article-card class="article-card article-card--link-for-hover link-parent-for-hover zoom-parent-for-hover {{ class }}">
   <a
     class="article-card__link"
     href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
@@ -63,7 +63,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="article-card__details {% if content_position == "bottom-left" or content_position == "bottom-center" or content_position == "bottom-right" %}hover_on_text{% endif %} {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}">
+    <div class="article-card__details {% if content_position == "bottom-left" or content_position == "bottom-center" or content_position == "bottom-right" %}article-card__details--hover-on-text hover_on_text{% endif %} {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}">
       {%- if show_author or show_date or show_comment_count -%}
         <div class="article-card__meta">
           {%- if show_author -%}

@@ -42,6 +42,7 @@
   {% endstyle %}
 {%- endcapture -%}
 
+{{ 'footer-sec.css' | asset_url | stylesheet_tag }}
 {%- render 'inline-css-minifier', css: css -%}
 
 <div class="footer section-{{ section.id }} section-spacing">

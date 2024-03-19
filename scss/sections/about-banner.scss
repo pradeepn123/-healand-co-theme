@@ -1,0 +1,15 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.abanner_wrp{
+    .banner_text_wrp h1{
+        @include use-text-style('heading-mob');
+        font-family: var(--secondary-font-family);
+        @media(--sm){
+            @include use-text-style('heading-1');
+            font-family: var(--secondary-font-family);
+        }
+    }
+}

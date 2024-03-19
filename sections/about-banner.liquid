@@ -1,7 +1,15 @@
+{{ 'about-banner.css' | asset_url | stylesheet_tag }}
+
 {% style %}
 .about-heading{
-    color:{{ section.settings.heading-color }};
+        color:{{ section.settings.heading-color-mobile }};
+    }
+@media(min-width: 768px){
+    .about-heading{
+    color:{{ section.settings.heading-color-desktop }};
 }
+}
+
 @media(max-width:767px){
     .banner_text_wrp{
         background-image: url({{ section.settings.banner_bgimage | img_url: 'master' }});
@@ -59,8 +67,13 @@
                 },
                 {
                     "type": "color",
-                    "id": "heading-color",
-                    "label": "Heading color"
+                    "id": "heading-color-desktop",
+                    "label": "Heading color Desktop"
+                },
+                {
+                    "type": "color",
+                    "id": "heading-color-mobile",
+                    "label": "Heading color Mobile"
                 },
                 {
                     "type":"image_picker",

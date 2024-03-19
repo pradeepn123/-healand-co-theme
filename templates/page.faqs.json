@@ -17,9 +17,10 @@
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-0": {
           "type": "category",
           "settings": {
-            "title": "GENERAL",
-            "faq_heading_bg": "#ee5c4c",
-            "head_font_size": 24,
+            "title": "General",
+            "faq_heading_bg": "#2f4775",
+            "head_font_size_desktop": 25,
+            "head_font_size_mobile": 20,
             "heading_color": "#ffffff",
             "icon": "none"
           }
@@ -28,10 +29,10 @@
           "type": "question",
           "settings": {
             "title": "Where is Heal + Co. based?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>The company is headquartered in Toronto, Canada.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -40,10 +41,10 @@
           "type": "question",
           "settings": {
             "title": "What are your values?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Our mission is to help people benefit from the amazing healing powers of nature's apothecary. All of our products are carefully sourced to meet our values of efficacy, purity and potency.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -52,10 +53,10 @@
           "type": "question",
           "settings": {
             "title": "Where are your products available for purchase?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>You can purchase our products on our website, Heal + Co. and Amazon. Additionally, our products are stocked in over 350 retail locations, including Whole Foods<br\/>Market, Sobeys, Mountain Goodness Natural Food, and other outlets across different provinces throughout Canada.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -64,10 +65,10 @@
           "type": "question",
           "settings": {
             "title": "Do you provide samples or coupons?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>We don't currently offer samples or coupons. However, by subscribing to our newsletter, you can unlock an exclusive 20% discount on your first purchase from the website. You can also follow us on social media, where we periodically do giveaways and special promotions<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -75,9 +76,10 @@
         "template--16186035273886__c03a296a-c335-4807-95ee-711915117743-16849270572a984704-3": {
           "type": "category",
           "settings": {
-            "title": "PRODUCTS",
-            "faq_heading_bg": "#797baa",
-            "head_font_size": 24,
+            "title": "products",
+            "faq_heading_bg": "#2f4775",
+            "head_font_size_desktop": 25,
+            "head_font_size_mobile": 20,
             "heading_color": "#ffffff",
             "icon": "none"
           }
@@ -86,10 +88,10 @@
           "type": "question",
           "settings": {
             "title": "Where are Heal + Co. products manufactured?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>All Heal + Co. products are manufactured in state-of-the-art, GMP-certified facilities in Canada. Each product undergoes rigorous testing for heavy metals and contaminants to ensure compliance with Health Canada standards.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -98,10 +100,10 @@
           "type": "question",
           "settings": {
             "title": "What kind of testing do you do on your products?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Each Heal + Co. product is rigorously tested for heavy metals and contaminants to ensure quality and safety.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -110,10 +112,10 @@
           "type": "question",
           "settings": {
             "title": "When should you take the supplements for optimal results?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>It is recommended to take the supplements either with food or a few hours before or after taking other medication.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -122,10 +124,10 @@
           "type": "question",
           "settings": {
             "title": "Are your products FDA approved?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>By law, the FDA does not approve dietary supplements. However, all of our products are manufactured in accordance to the FDA's current Good Manufacturing Practices to help ensure quality and safety.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -134,10 +136,10 @@
           "type": "question",
           "settings": {
             "title": "Are all products vegan, non-GMO, and gluten-free?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Yes! All our products are vegan, gluten-free, and non-GMO. They are also free of all major allergens.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -146,10 +148,10 @@
           "type": "question",
           "settings": {
             "title": "Are your products safe for everyone to take?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Though all our products are safe, we always recommend consulting a healthcare practitioner before use, especially if you are pregnant, breastfeeding, or have prior medical conditions.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -158,10 +160,10 @@
           "type": "question",
           "settings": {
             "title": "Where do you source your products from?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>All of our products are derived from natural plants that are well renowned for their natural health benefits.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -170,10 +172,10 @@
           "type": "question",
           "settings": {
             "title": "How and where should I store the products?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>It's recommended to store the products in a cool, dry location.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -182,10 +184,10 @@
           "type": "question",
           "settings": {
             "title": "What's the difference between an extract and a powder?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>An extract uses the major compound of the plant to provide a high-potency supplement. A powder, on the other hand, uses the entire plant to make the supplement.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -193,9 +195,10 @@
         "00d4cda7-3fe3-453d-a5e0-9bad2f17f4c8": {
           "type": "category",
           "settings": {
-            "title": "SHIPPING & RETURNS",
-            "faq_heading_bg": "#82a1c4",
-            "head_font_size": 24,
+            "title": "Shipping & Returns",
+            "faq_heading_bg": "#2f4775",
+            "head_font_size_desktop": 25,
+            "head_font_size_mobile": 20,
             "heading_color": "#ffffff",
             "icon": "none"
           }
@@ -204,10 +207,10 @@
           "type": "question",
           "settings": {
             "title": "What is the typical order processing time?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>All orders placed on our website are normally processed within 24-48 hours. However, for orders received over the weekend or on public holidays, we process them on the following business day.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -216,10 +219,10 @@
           "type": "question",
           "settings": {
             "title": "Is there a shipping fee charged on orders?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Orders above $50 CAD, $40 US, €65 Euro, and £60 Pound before tax are eligible for free shipping. However, for orders below the mentioned amount, shipping charges (depending on the country) may apply.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -228,10 +231,10 @@
           "type": "question",
           "settings": {
             "title": "Where do you ship?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>We currently ship to Canada, the United States, the United Kingdom, and the European Union (Germany, Austria, Belgium, France, Germany,<br\/>Ireland, Italy, Netherlands, Portugal, and Spain).<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -240,10 +243,10 @@
           "type": "question",
           "settings": {
             "title": "How long will it take to receive my order?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>Most orders within Canada and the United States are typically delivered within 3-5 business days once processed. Shipments outside Canada and the United States may take longer.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -252,10 +255,10 @@
           "type": "question",
           "settings": {
             "title": "Do you accept customer returns?",
-            "subhead_fontsize": 20,
+            "subhead_fontsize": 18,
             "icon": "none",
             "text": "<p>In some circumstances, we do. Please refer to our <a href=\"https:\/\/healco.com\/pages\/shipping-and-returns\" target=\"_blank\" title=\"https:\/\/healco.com\/pages\/shipping-and-returns\">return policy<\/a> here.<\/p>",
-            "content_font": 16,
+            "content_font": 18,
             "page": "",
             "image_width": 100
           }
@@ -293,7 +296,7 @@
         "title": "FAQ",
         "text": "",
         "heading_size": "h2",
-        "head_color": "#000000",
+        "head_color": "#2f4775",
         "body_size": "body0",
         "btn_text": "",
         "btn_url": "",
@@ -312,7 +315,7 @@
         "template--16191895797918__73ce298f-6ff6-440e-b747-64f6cc749806-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -342,17 +345,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subscribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 400,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -373,9 +376,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false

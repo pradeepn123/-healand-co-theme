@@ -34,39 +34,39 @@
     }
 
     {% for block in section.blocks %}
-        .block-{{ block.id }} {
-          --gsc-collage-grid-item-row-span: {{ block.settings.desktop_rows }};
-          --gsc-collage-grid-item-column-span: {{ block.settings.desktop_columns }};
-        }
+      .block-{{ block.id }} {
+        --gsc-collage-grid-item-row-span: {{ block.settings.desktop_rows }};
+        --gsc-collage-grid-item-column-span: {{ block.settings.desktop_columns }};
+      }
 
-        {% assign options = block.settings %}
-        
-        {% case block.type %}
-                {% when 'collection' %}
-                    .block-{{ block.id }} {
-                        --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
-                    }
+      {% assign options = block.settings %}
+      
+      {% case block.type %}
+        {% when 'collection' %}
+            .block-{{ block.id }} {
+                --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
+            }
 
-                    .block-{{ block.id }} .collection-card__content {
-                        {% render 'position-and-alignment', content_position: options.content_position %}
-                    }
-                {% when 'featured_post' %}
-                    .block-{{ block.id }} {
-                        --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
-                    }
+            .block-{{ block.id }} .collection-card__content {
+                {% render 'position-and-alignment', content_position: options.content_position %}
+            }
+        {% when 'featured_post' %}
+            .block-{{ block.id }} {
+                --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
+            }
 
-                    .block-{{ block.id }} .article-card__details {
-                      {% render 'position-and-alignment', content_position: options.content_position %}
-                    }
+            .block-{{ block.id }} .article-card__details {
+              {% render 'position-and-alignment', content_position: options.content_position %}
+            }
 
-                {% when 'image' %}
-                    .block-{{ block.id }} {
-                        --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
-                    }
+        {% when 'image' %}
+            .block-{{ block.id }} {
+                --gsc-overlay-opacity: {{ options.overlay_opacity | times: 0.01 }};
+            }
 
-                    .block-{{ block.id }} .image-block__content-wrap {
-                        {% render 'position-and-alignment', content_position: options.content_position %}
-                    }
+            .block-{{ block.id }} .image-block__content-wrap {
+                {% render 'position-and-alignment', content_position: options.content_position %}
+            }
         {% endcase %}
     {% endfor %}
   {% endstyle %}

@@ -1,0 +1,62 @@
+@use "StyleComponents/colors";
+@use "StyleComponents/typography";
+@import "breakpoints";
+@import "Token";
+
+.account {
+    * {
+        font-family: var(--secondary-font-family);
+    }
+    &__content {
+        .accordeon__content-wrap {
+            .addresses__form {
+                form {
+                    label {
+                        @include use-text-style("body-title");
+                        font-family: var(--secondary-font-family);
+                    }
+                }
+            }
+        }
+    }
+  
+    .account-menu {
+        &__title {
+            @include use-text-style("body-alt");
+            font-family: var(--secondary-font-family);
+            font-weight: typography.$heading-weight;
+        }
+        &__item{
+            font-size: typography.$body-title-size;
+        }
+    }
+    .login__content {
+        .login__title {
+            font-size: 38px;
+            color: colors.$dark-blue;
+        }
+    }
+    .login__field {
+        .label {
+            font-size: typography.$body-alt-size;
+            color: colors.$dark-blue;
+        }
+        .field__link {
+            font-size: typography.$body-mobile-size;
+            color: colors.$dark-blue;
+        }
+    }
+    .login__btns {
+        .btn {
+            font-size: typography.$body-title-size;
+        }
+    }
+    .login__footer {
+        font-size: typography.$body-mobile-size;
+        color: colors.$dark-blue;
+    }
+    #rc_login {
+        font-size: typography.$body-alt-size;
+        color: colors.$dark-blue;
+    }
+}

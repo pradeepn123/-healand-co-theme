@@ -16,6 +16,8 @@
   assign img_ratio = options.img_ratio
 -%}
 
+{{ 'cart-page.css' | asset_url | stylesheet_tag }}
+
 <div class='section color-{{ color_scheme }}' id='CartPage-CartItemsSection'>
   <div class='container container--{{ container_size }}'>
     <cart-component class='cart {% if cart == empty %} is-empty{% endif %}' id='cart-page-component'>

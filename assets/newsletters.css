@@ -1,0 +1,39 @@
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/newsletters.scss ***!
+  \***************************************************************************************************************************************************************************************************************************/
+.newsletter__content {
+  max-width: 67rem;
+}
+.newsletter__content-wrap h2 {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: "BrownStd-Bold" !important;
+}
+@media (min-width: 768px) {
+  .newsletter__content-wrap h2 {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family) !important;
+  }
+}
+.newsletter__content-wrap .newsletter__text {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.newsletter__content .news_image {
+  width: auto;
+  height: 5.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newsletter__content .email-bar {
+  -webkit-box-flex: 32.5rem;
+      -ms-flex: 32.5rem;
+          flex: 32.5rem;
+}

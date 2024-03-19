@@ -1,3 +1,4 @@
+{{ 'ingredient-benefit.css' | asset_url | stylesheet_tag }}
 {% if page.metafields.custom.benefits.value != blank %}
   {% assign container_size = section.settings.container_size %}
   <div class="container container--{{ container_size }} ingredients_benefits_section">
@@ -22,7 +23,7 @@
         {{ benefits_section_image }}
         <div class="benefits_list">
           <h2 class="benefits_title" style="font-size: {{ section.settings.benefit_title_font_size}}px;">
-            {{ section.settings.benefit_title }}
+            {{ section.settings.benefit_title | capitalize}}
           </h2>
           {% for obj in page.metafields.custom.benefits.value %}
             <div class="benefit">

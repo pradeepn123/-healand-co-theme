@@ -1,0 +1,23 @@
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/ingredients-desc.scss ***!
+  \********************************************************************************************************************************************************************************************************************************/
+.ingredient_description_container {
+  padding: var(--setion-heading-padding) 0;
+}
+@media (min-width: 768px) {
+  .ingredient_description_container {
+    padding: calc(var(--setion-heading-padding) * 2) 0;
+  }
+}
+.ingredient_description_container .description_title {
+  color: #2F4775;
+  font-family: var(--secondary-font-family);
+}
+.ingredient_description_container .description_content p {
+  color: #2F4775;
+  font-family: var(--primary-font-family) !important;
+}
+
+.collection-hero__title {
+  font-family: var(--secondary-font-family);
+}

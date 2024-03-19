@@ -1,0 +1,96 @@
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/about-values.scss ***!
+  \****************************************************************************************************************************************************************************************************************************/
+.about-values .values-main-heading {
+  padding: var(--setion-heading-padding) 0;
+}
+.about-values .values-main-heading .decorated_heading {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .about-values .values-main-heading .decorated_heading {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family);
+  }
+}
+.about-values .values-main-heading .decorated_heading::after {
+  color: #CBD1DC;
+}
+.about-values .values-main {
+  padding-bottom: calc(var(--section-padding) * 2);
+  -webkit-column-gap: calc(var(--grid-column-gap) * 2);
+     -moz-column-gap: calc(var(--grid-column-gap) * 2);
+          column-gap: calc(var(--grid-column-gap) * 2);
+}
+@media (min-width: 768px) {
+  .about-values .values-main {
+    padding-bottom: calc(var(--section-padding) * 3);
+    -webkit-column-gap: var(--grid-column-gap);
+       -moz-column-gap: var(--grid-column-gap);
+            column-gap: var(--grid-column-gap);
+  }
+}
+.about-values .values-main .values-block h3 {
+  font-family: "proximanova-regular";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #fff;
+  text-transform: capitalize;
+}
+.about-values .values-main .values-block .values-block-hover {
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 2em 2em;
+}
+@media (min-width: 768px) {
+  .about-values .values-main .values-block .values-block-hover {
+    padding: 4em 2em;
+  }
+}
+@media (min-width: 1024px) {
+  .about-values .values-main .values-block .values-block-hover {
+    padding: 9em 2em;
+  }
+}
+.about-values .values-main .values-block .values-block-hover h3 {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.about-values .values-main .values-block .values-block-hover p {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #fff;
+  line-height: 24px;
+}
+@media (min-width: 768px) {
+  .about-values .values-main .values-block .values-block-hover p {
+    font-family: "proximanova-regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    line-height: 27px;
+  }
+}

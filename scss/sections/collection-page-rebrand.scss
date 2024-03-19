@@ -1,0 +1,96 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.product_featured_tag {
+    font-weight: 700;
+    font-size: 12px !important;
+    color: colors.$white !important;
+    background: colors.$dark-blue;
+    padding: var(--grid-product-badge-padding) !important;
+    border-radius: 50px;
+    margin-bottom: 8px;
+    @media(--sm){
+        font-size: 14px;
+    }
+}
+.product-card__title {
+    @include use-text-style('heading-3');
+    color: colors.$dark-blue !important;
+    font-family: var(--secondary-font-family) !important; 
+    @media(--sm){
+        @include use-text-style('heading-2');
+        font-family: var(--secondary-font-family) !important;
+    }
+}
+
+.product_benefits {
+    @include use-text-style('body-title');
+    color: colors.$dark-blue; 
+}
+.product-card__details .product-card__price-item{
+    @include use-text-style('heading-3');
+    color: colors.$dark-blue;
+    font-family: var(--primary-alt-semibold-font-family);
+    @media(--sm){
+        @include use-text-style('heading-2');
+        font-family: var(--primary-alt-semibold-font-family);
+    }
+}
+
+.product-card__details .product-card__price-item-old{
+    @include use-text-style('heading-3');
+    color: colors.$light-blue;
+    font-family: var(--primary-alt-semibold-font-family);
+    text-decoration-color: colors.$light-blue;
+    @media(--sm){
+        @include use-text-style('heading-2');
+        font-family: var(--primary-alt-semibold-font-family);
+    }
+}
+
+.product-card__details--bottom-spacing{
+    @media(--sm){
+        padding-bottom: 0;
+    }
+}
+.shop__grid-item.cart{
+    padding: 0;
+}
+.shop__filters-btn, .sort-list__btn {
+    @include use-text-style('body-alt');
+    color: colors.$dark-blue;
+}
+.accordeon__btn.filters__label{
+    @include use-text-style('body-alt');
+    color: colors.$dark-blue;
+}
+.filters__form .accordeon__content .checkbox span{
+    @include use-text-style('body-title');
+    color: colors.$dark-blue;
+}
+.section_collection_header .collection_title, .shop.all-section .collection_title{
+    font-family: var(--secondary-font-family);
+    color: colors.$dark-blue;
+}
+.collection__read-more-link{
+    @include use-text-style('body-title');
+    color: colors.$dark-blue;
+    font-size: 16px;
+    @media(--sm){
+        font-size: 18px;
+    }
+}
+.filters__btns .filters__btn{
+    background-color: colors.$dark-blue !important;
+    font-family: var(--primary-semibold-font-family);
+}
+
+.bundles-section{
+    margin-bottom: 18px;
+    @media(--sm){
+        margin-bottom: 60px;
+    }
+}

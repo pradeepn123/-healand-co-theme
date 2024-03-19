@@ -54,15 +54,7 @@
     color: #ffffff;
 }
 
-.featured-article__title {
-    font-family: "BrownStd-Bold";
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 39px;
-    letter-spacing: 0.045em;
-    text-align: left;
-    text-transform: uppercase;
-}
+
 
 .featured-article__text {
     font-family: "BrownStd-Regular";

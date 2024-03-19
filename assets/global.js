@@ -22,6 +22,26 @@
 
 /***/ }),
 
+/***/ "./js/sections/bundleTabsSection.js":
+/*!******************************************!*\
+  !*** ./js/sections/bundleTabsSection.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_BundleTabsSection_index_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/BundleTabsSection/index.svelte */ "./js/components/svelte/BundleTabsSection/index.svelte");
+ //wrapper that inject svelte into DOM
+ //svelte component to load
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_BundleTabsSection_index_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'bundle-tabs-section', '#product-bundle-data');
+});
+
+/***/ }),
+
 /***/ "./js/sections/global.js":
 /*!*******************************!*\
   !*** ./js/sections/global.js ***!
@@ -29,10 +49,16 @@
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 /* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
+/* harmony import */ var _bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bundleTabsSection */ "./js/sections/bundleTabsSection.js");
 //global imports here
+
+
+
+//config lazyload to default settings
 
 document.addEventListener('DOMContentLoaded', () => {
   (0,_announcementBar__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 /***/ })

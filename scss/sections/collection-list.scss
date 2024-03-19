@@ -1,0 +1,57 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.decorated_heading {
+    @include use-text-style('heading-mob');
+    font-family: var(--secondary-font-family);
+    color: colors.$dark-blue;
+    @media(--sm){
+        @include use-text-style('heading-1');
+        font-family: 'BrownStd-Bold';
+    }
+}
+.view-btn.shop_all {
+    color: colors.$dark-blue;
+    font-size: typography.$body-alt-size;
+    font-weight: typography.$heading-weight;
+    display: flex;
+    align-items: center;    
+    font-family: var(--primary-font-family);
+    text-decoration: none;
+}
+.view-btn span ,.shop_all span {
+    position: relative;
+    overflow: hidden;
+}
+.view-btn:hover span:before, .shop_all:hover span:before{
+    width: 100%;
+    height: 0.2rem;
+    background: colors.$dark-blue;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @media(--sm){
+        left: -4%;
+    }
+}
+
+.collection-list .carousel-btn, .collection-text .carousel-btn, .collection .carousel-btn{
+    background: colors.$dark-blue;
+}
+.collection-list .carousel-btn:not([disabled]):hover, .collection-text .carousel-btn:not([disabled]):hover, .collection .carousel-btn:not([disabled]):hover{
+    background: colors.$dark-blue;
+}
+.collection-card__title.benefit-text{
+    @include use-text-style('heading-3');
+    font-family: var(--secondary-font-family);
+    color: colors.$dark-blue;
+    text-transform: inherit;
+    @media(--sm){
+        @include use-text-style('heading-2');
+        font-family: 'BrownStd-Bold';
+    }
+}

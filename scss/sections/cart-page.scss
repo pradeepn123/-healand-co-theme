@@ -1,0 +1,86 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.cart{
+    .cart-free-shipping-bar__title{
+        @include use-text-style('body-title');
+        font-family: var(--secondary-font-family);
+        color: colors.$dark-blue;
+        span{
+            @include use-text-style('body-title');
+            font-family: var(--secondary-font-family);
+            color: colors.$dark-blue;
+        }
+    }
+    .cart-items{
+        .cart-items__header{
+            .cart-items__title{
+                @include use-text-style('heading-2');
+                font-family: var(--secondary-font-family);
+                color: colors.$dark-blue;
+            }
+        }
+        .cart-items__params{
+            .cart-items__param{
+                @include use-text-style('body-title');
+                font-family: var(--primary-semibold-font-family);
+                color: colors.$dark-blue;
+            }
+        }
+    }
+    .cart-items-render{
+        .cart-item__grid{            
+            .cart-item__info{
+                .cart-item__name-label{
+                    @include use-text-style('heading-3');
+                    font-family: var(--secondary-font-family);
+                    color: colors.$dark-blue;
+                }
+            }        
+            .cart-item__pay-info{
+                .cart-item__info--desktop-hide {
+                    @include use-text-style('heading-3');
+                    font-family: var(--secondary-font-family);
+                    color: colors.$dark-blue;
+                }
+                .cart-item__price{
+                    .cart-item__price-item{
+                        @include use-text-style('heading-3');
+                        font-family: var(--secondary-font-family);
+                        color: colors.$dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subtotal__container{
+    .subtotal{
+        .subtotal__content{
+            .subtotal__totals{
+                .subtotal__label{
+                    @include use-text-style('heading-2');
+                    font-family: var(--secondary-font-family);
+                    color: colors.$dark-blue;
+                }
+                .subtotal__price{
+                    @include use-text-style('heading-2');
+                    font-family: var(--primary-alt-semibold-font-family);
+                    color: colors.$dark-blue;
+                    font-size: typography.$heading-1-alt-size;
+                }
+            }
+            .subtotal__cta{
+                button{
+                    @include use-text-style('heading-2');
+                    font-family: var(--secondary-font-family);
+                    background: colors.$dark-blue;
+                    font-size: typography.$heading-3-size;
+                }
+            }
+        }
+    }
+}

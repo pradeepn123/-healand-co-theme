@@ -30,7 +30,8 @@
 }
 
 .product--features--main .flex-wrap-info span,.product--features--main .features span {
-    border: 1px solid #000;
+    border: 1px solid #2f4775;
+    color: #2f4775;
     padding: 2.5px 0;
     display: inline-block;
     width: 42px;

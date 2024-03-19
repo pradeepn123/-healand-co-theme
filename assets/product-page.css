@@ -1,0 +1,513 @@
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/product-page.scss ***!
+  \****************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1200px) {
+  .product__info {
+    background: #F9F9FB;
+    padding: 50px;
+  }
+}
+.product__info .product-general-info-block h1 {
+  font-size: 32px !important;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775;
+}
+@media (min-width: 1200px) {
+  .product__info .product-general-info-block h1 {
+    font-size: 40px !important;
+    font-family: var(--secondary-font-family) !important;
+    text-transform: lowercase;
+  }
+}
+.product__info .product_benefits {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+}
+@media (min-width: 1200px) {
+  .product__info .product_benefits {
+    font-family: "proximanova-regular";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.product__info .product-price__cost .product-price__current-price {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2F4775;
+  font-family: var(--primary-alt-font-family) !important;
+  font-weight: 400 !important;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .product__info .product-price__cost .product-price__current-price {
+    line-height: 48px;
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.product__info .product-price__cost .product-price__old-price {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--primary-alt-font-family) !important;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration-color: #97A3BA;
+}
+@media (min-width: 768px) {
+  .product__info .product-price__cost .product-price__old-price {
+    line-height: 48px;
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--primary-alt-font-family) !important;
+    font-weight: 400;
+  }
+}
+.product__info .product-content-tab .product-content-tab__content .rte.product-content-tab__text {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  line-height: 1.3;
+}
+@media (min-width: 768px) {
+  .product__info .product-content-tab .product-content-tab__content .rte.product-content-tab__text {
+    font-family: "proximanova-regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}
+.product__info .product-additional-details-child .product-additional-details-iandt {
+  border-left: 1px solid #97A3BA;
+  border-bottom: 1px solid #97A3BA;
+}
+@media (min-width: 1200px) {
+  .product__info .product-additional-details-child .product-additional-details-iandt {
+    border: 0;
+  }
+}
+.product__info .product-additional-details-child .product-additional-details-iandt p {
+  font-family: "proximanova-regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .product__info .product-additional-details-child .product-additional-details-iandt p {
+    font-family: "proximanova-regular";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+.product__info .product_quantity_button .product-quantity__wrap .quantity .quantity__input {
+  background: #fff;
+}
+.product__info .product_quantity_button .product-quantity__wrap .quantity .quantity__btn {
+  background: #2F4775;
+  border: 1px solid #2F4775;
+  color: #fff;
+}
+.product__info .product_quantity_button .product_main_dynamic_btn .product-form__btns .product-form__btn-wrapper .product-form__btn {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  background: #2F4775 !important;
+  font-family: var(--secondary-font-family) !important;
+}
+.product__info .quantity__input[disabled],
+.product__info .quantity__btn[disabled] {
+  background: #97A3BA;
+  border: 1px solid #97A3BA;
+  color: #fff;
+}
+
+.product-desktop-media .product-media-carousel__thumbs-wrap .product-thumbnail-carousel__btn--under-next,
+.product-desktop-media .product-media-carousel__thumbs-wrap .product-thumbnail-carousel__btn--under-prev {
+  background: #2F4775;
+}
+.product-desktop-media .product-media-carousel__thumbs-wrap .product-thumbnail-carousel__thumb.is-primary .product-thumbnail-carousel__thumb-content {
+  -webkit-box-shadow: 0 0 0 0.2rem #2F4775 inset;
+          box-shadow: 0 0 0 0.2rem #2F4775 inset;
+}
+
+.custom-product-details.product-details {
+  background: #F9F9FB !important;
+}
+.custom-product-details.product-details .product-page-tabs .product-details__tab-names .product-details__tab-name.selected {
+  background: #2F4775 !important;
+}
+.custom-product-details.product-details .product-page-tabs .product-details__content-tab-content .product-details__rte.text-container {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2F4775 !important;
+}
+.custom-product-details.product-details .product-page-tabs .product-details__content-tab-content .product-details__rte.text-container p {
+  color: #2F4775 !important;
+}
+.custom-product-details.product-details .product-accordion-dropdown accordeon-component accordeon-btn {
+  color: #2F4775 !important;
+}
+
+.imagesOnly_parent .imageText_child span {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2F4775 !important;
+  text-transform: lowercase !important;
+}
+
+.pb_container .pb_title {
+  font-family: "proximanova-regular";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+  background: #EAEDF1 !important;
+}
+.pb_container .pb_title .heading, .pb_container .pb_title .subheading {
+  color: #2F4775 !important;
+}
+.pb_container .pb_title .subheading {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+}
+.pb_container .pb_content {
+  background: #EAEDF1 !important;
+}
+.pb_container .pb_content .pb_content_continer .pb_content_inner h6 {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775 !important;
+  text-transform: lowercase !important;
+  margin-bottom: 8px !important;
+}
+.pb_container .pb_content .pb_content_continer .pb_content_inner p {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2F4775 !important;
+  line-height: 1.3 !important;
+}
+.pb_container .pb_content_mobile {
+  background: #EAEDF1 !important;
+}
+.pb_container .pb_content_mobile .pb_content_mobile_accordion {
+  background: #EAEDF1 !important;
+}
+
+.key_ingredient_section .main_title_key h4 {
+  font-family: "proximanova-regular";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775 !important;
+}
+.key_ingredient_section .main_title_key .carousel-btn {
+  background: #2F4775 !important;
+}
+@media (min-width: 768px) {
+  .key_ingredient_section .main_title_key .carousel-btn {
+    background: #2F4775;
+    color: #fff;
+  }
+}
+.key_ingredient_section carousel-component .card-carousel__slide .ingredients_wrapper {
+  background: #EAEDF1 !important;
+  color: #2F4775 !important;
+}
+.key_ingredient_section carousel-component .card-carousel__slide .ingredients_wrapper .key_ingre_description {
+  font-family: var(--primary-font-family);
+}
+.key_ingredient_section carousel-component .card-carousel__slide .ingredients_wrapper .img_wrap_text_info .key_ingre_title h4 {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775 !important;
+}
+@media (min-width: 1200px) {
+  .key_ingredient_section carousel-component .card-carousel__slide .ingredients_wrapper .img_wrap_text_info .key_ingre_title h4 {
+    font-family: "proximanova-regular";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.key_ingredient_section carousel-component .card-carousel__carousel-btn[disabled] {
+  background-color: #97A3BA !important;
+}
+
+.product--features--main {
+  background: #EAEDF1 !important;
+}
+.product--features--main .product--features--heading {
+  padding-bottom: 24px !important;
+}
+.product--features--main .product--features .product--features--information .product--features--heading {
+  font-size: 32px !important;
+  color: #2F4775 !important;
+  text-transform: lowercase;
+  font-family: var(--secondary-font-family) !important;
+}
+@media (min-width: 768px) {
+  .product--features--main .product--features .product--features--information .product--features--heading {
+    font-size: 40px !important;
+    font-family: var(--secondary-font-family) !important;
+  }
+}
+.product--features--main .product--features .product--features--information .product--features--content {
+  padding-bottom: 60px;
+}
+@media (min-width: 1200px) {
+  .product--features--main .product--features .product--features--information .product--features--content {
+    padding-bottom: 88px;
+  }
+}
+.product--features--main .product--features .product--features--information .product--features--content .text-info .feature, .product--features--main .product--features .product--features--information .product--features--content .text-info .features {
+  font-size: 20px !important;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775 !important;
+  text-transform: lowercase;
+}
+@media (min-width: 768px) {
+  .product--features--main .product--features .product--features--information .product--features--content .text-info .feature, .product--features--main .product--features .product--features--information .product--features--content .text-info .features {
+    font-size: 25px !important;
+    font-family: var(--secondary-font-family) !important;
+  }
+}
+.product--features--main .product--features .product--features--information .product--features--content .text-info .sub-feature {
+  padding-bottom: 32px !important;
+  font-family: var(--primary-font-family);
+}
+@media (max-width: 530px) {
+  .product--features--main .product--features .product--features--information .product--features--content .text-info .sub-feature {
+    font-size: 16px !important;
+  }
+}
+.product--features--main .product--features .product--features--information .product--features--content .text-info p {
+  color: #2F4775;
+}
+
+.faq-section--parent .section_heading {
+  font-size: 32px !important;
+  font-family: var(--secondary-font-family) !important;
+  background: #2F4775 !important;
+  padding: 15px 24px 8px !important;
+}
+@media (min-width: 768px) {
+  .faq-section--parent .section_heading {
+    font-size: 40px !important;
+    font-family: var(--secondary-font-family) !important;
+    padding: var(--section-padding) var(--section-padding) 10px !important;
+  }
+}
+.faq-section--parent accordeon-component {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  color: #2F4775 !important;
+  line-height: 1.4 !important;
+}
+.faq-section--parent accordeon-component accordeon-btn {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  font-family: var(--primary-semibold-font-family);
+  color: #2F4775;
+}
+.faq-section--parent accordeon-component .faq-section__rte {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  color: #2F4775 !important;
+  line-height: 1.4 !important;
+}
+@media (min-width: 768px) {
+  .faq-section--parent accordeon-component .faq-section__rte {
+    font-family: "proximanova-regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: var(--primary-font-family);
+  }
+}
+
+.okeReviews[data-oke-container] .oke-button, div.okeReviews .oke-button {
+  background: #2F4775 !important;
+}
+
+.okeReviews[data-oke-container] .oke-button:not(.oke-is-loading):not(.oke-is-active):hover,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover {
+  background: #2F4775 !important;
+  color: #fff;
+  -webkit-box-shadow: 0 0 0 2px #2F4775;
+          box-shadow: 0 0 0 2px #2F4775;
+}
+
+.sticky-cart-modal-inner-wrap .product-price .product-price__current-price {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+}
+
+.product-recommendations__title {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family) !important;
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .product-recommendations__title {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family) !important;
+  }
+}
+.product-recommendations .product_featured_tag {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff !important;
+  background: #2F4775;
+  padding: var(--grid-product-badge-padding) !important;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+.product-recommendations .product-card__title {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2F4775 !important;
+  font-family: var(--secondary-font-family);
+}
+.product-recommendations .product_benefits {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2F4775;
+}
+.product-recommendations .product-card__price-item {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2F4775;
+  font-family: var(--primary-alt-font-family);
+}
+.product-recommendations .product-card__price-item-old {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #97A3BA;
+  font-family: var(--primary-alt-font-family);
+  text-decoration-color: #97A3BA;
+}
+
+.product-page-color {
+  background: #EAEDF1 !important;
+}
+
+.powerfull_benifits_section .pb_content {
+  grid-template-columns: 36% 25% 36% !important;
+}
+.powerfull_benifits_section .pb_content .pb_content_continer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 1024px) {
+  .powerfull_benifits_section .pb_content .pb_content_continer {
+    min-height: 180px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .powerfull_benifits_section .pb_content .pb_content_continer {
+    min-height: 210px !important;
+  }
+}
+.powerfull_benifits_section .pb_content .pb_styling {
+  row-gap: 16px !important;
+}
+.powerfull_benifits_section .pb_content_mobile_image {
+  background-color: transparent !important;
+  background-color: initial !important;
+}
+.powerfull_benifits_section .pb_center img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  max-height: none !important;
+  max-height: initial !important;
+}
+.powerfull_benifits_section .pb_content {
+  display: none !important;
+}
+@media (min-width: 1024px) {
+  .powerfull_benifits_section .pb_content {
+    display: grid !important;
+  }
+}
+.powerfull_benifits_section .pb_content_mobile {
+  display: block !important;
+}
+@media (min-width: 1024px) {
+  .powerfull_benifits_section .pb_content_mobile {
+    display: none !important;
+  }
+}
+.powerfull_benifits_section .pb_content_mobile .pb_content_mobile_accordion accordeon-btn {
+  padding: 1.6rem 0.8rem 1.6rem 2rem !important;
+  border-bottom: 0;
+  border-top: 0;
+}
+.powerfull_benifits_section accordeon-component:first-of-type {
+  margin-top: 30px;
+}
+.powerfull_benifits_section accordeon-component:not(:first-of-type) {
+  margin-top: 16px !important;
+}
+.powerfull_benifits_section .pb_content_mobile .pb_content_mobile_accordion.powerful_benifits_header accordeon-btn h6 {
+  font-family: var(--secondary-font-family);
+  text-transform: lowercase;
+  font-size: 20px;
+}
+.powerfull_benifits_section .pb_content_mobile .pb_content_mobile_accordion.powerful_benifits_header accordeon-btn h6 accordeon-component:not(:first-of-type) {
+  margin-top: 16px !important;
+}

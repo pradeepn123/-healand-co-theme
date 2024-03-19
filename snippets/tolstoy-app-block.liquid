@@ -2,13 +2,13 @@
 {%- liquid
     assign colorsMetafield = product.metafields.custom.color_schema.value 
 -%}
-<div class="custom_app_tolstoy">
-    <div class='custom-block' id="wrapper-tolstoy">
-        <div class="app-heading">{{section.settings.section_heading}} </div>
-      {%- render block -%}
-    </div>
-</div>
 
+    <div class="custom_app_tolstoy">
+        <div class='custom-block' id="wrapper-tolstoy">
+            <div class="app-heading">{{section.settings.section_heading}} </div>
+        {%- render block -%}
+        </div>
+    </div>
 
 <style>
     {% if colorsMetafield %}
@@ -18,28 +18,15 @@
     {% endif %}
     #AppInfoWrapper{
         {% comment %} margin-bottom:44px; {% endcomment %}
-        padding-bottom:10px;
+        padding-bottom:40px;
     }
     .other-page-background{
         background: {{section.settings.section_bg_color}};
     }
-    
     .app-heading{
-        color: #FFF;
-        text-align: center;
-        font-size: 40px;
-        font-family: BrownStd;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 52px;
-        padding-top: 36px;
+        color: {{ section.settings.heading_color}}
     }
     .qMWqRG_dot {
         background: #FFF;
-    }
-    @media(max-width:520px){
-        .app-heading{
-            font-size:24px
-        }
-    }
+    }    
 </style>

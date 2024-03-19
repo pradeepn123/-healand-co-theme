@@ -1,0 +1,16 @@
+       {
+            "title": "{{ product.title }}",
+            "image": { "src": "{{ product.featured_image | image_url}}", "height": "
+            {{- product.featured_image.height | default: 1080 -}}
+            ", "width": "{{ product.featured_image.height | default: 1920 }}" },
+            "content": [
+                {% assign productBeneits = product.metafields.custom.product_benefits.value %}
+                {% for block in productBeneits %}
+                 {% unless forloop.first %},{% endunless %} {
+                    "icon": "{{ block.images | image_url }}",
+                    "heading": "{{ block.heading}}",
+                    "description": "{{ block.description }}"
+                }
+            {% endfor %}
+        ]  
+        }

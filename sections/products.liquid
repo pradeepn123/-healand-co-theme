@@ -58,6 +58,7 @@
     assign enable_filtering = false
   endif
 -%}
+{{ 'collection-page-rebrand.css' | asset_url | stylesheet_tag }}
 {{ 'collection-page.css' | asset_url | stylesheet_tag }}
 {% capture css %}
     {% style %}
@@ -225,7 +226,7 @@
               <div class="{{ block.settings.bundles_title | downcase }}-section" style="position: relative;">
                 <div class="section_seperation {% if block.settings.show_read_more %}bundle_section_seperation{% endif %}"></div>
                 <div class="section_collection_header">
-                  <h4 class="collection_title">{{ block.settings.bundles_title | upcase }}</h4>
+                  <h4 class="collection_title">{{ block.settings.bundles_title | capitalize }}</h4>
                   {%- if block.settings.show_read_more -%}
                     <a
                       class="link collection__read-more-link"
@@ -262,9 +263,9 @@
           <div class="section_seperation"></div>
           <h4 class="collection_title">
             {% if custom_collection_title != blank -%}
-              {{- custom_collection_title | upcase -}}
+              {{- custom_collection_title | capitalize -}}
             {%- else -%}
-              {{- collection.title | upcase -}}
+              {{- collection.title | capitalize -}}
             {%- endif %}
           </h4>
           {%- paginate collection.products by product_per_page -%}

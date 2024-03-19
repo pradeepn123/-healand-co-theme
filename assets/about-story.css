@@ -1,0 +1,52 @@
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/about-story.scss ***!
+  \***************************************************************************************************************************************************************************************************************************/
+.our-story .astory_wrp {
+  padding: var(--setion-heading-padding) 0;
+}
+@media (min-width: 768px) {
+  .our-story .astory_wrp {
+    padding: calc(var(--section-padding) * 3) 0;
+  }
+}
+.our-story .astory_wrp .story-heading {
+  padding-bottom: var(--setion-heading-padding);
+}
+.our-story .astory_wrp .story-heading .decorated_heading {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .our-story .astory_wrp .story-heading .decorated_heading {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family);
+  }
+}
+.our-story .astory_wrp .story-heading .decorated_heading::after {
+  color: #CBD1DC;
+}
+.our-story .astory_wrp .story-subtext {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: var(--primary-font-family);
+  color: #2F4775;
+  line-height: 27px;
+}
+@media (min-width: 768px) {
+  .our-story .astory_wrp .story-subtext {
+    font-family: "proximanova-regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}

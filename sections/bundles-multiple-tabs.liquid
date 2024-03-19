@@ -1,4 +1,5 @@
-{{ 'bundles-multiple-tabs.css' | asset_url | stylesheet_tag }}
+
+{{ 'bundle-multiple-tabs.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign options = section.settings
@@ -165,6 +166,7 @@
       </div>
 
       <div class="pc_tabs_mobile" data-aos="fade-up">
+        <p class="product_fixedTitle_mobile">Select a product to view details</p>
         {% for eachProduct in bundleProducts %}
           {% assign ep_GeneralInfo = eachProduct.metafields.custom.product_general_info.value %}
           {% assign custom_icon_image = block.settings.custom_icon_image %}

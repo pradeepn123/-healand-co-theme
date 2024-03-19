@@ -1,0 +1,60 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.bundleTabsSection{  
+    --swiper-scrollbar-drag-bg-color: #2F4775;
+    --swiper-scrollbar-sides-offset: 7%;  
+    background: colors.$white;
+    .bundle-header{
+        margin-bottom: 40px;
+    }
+    .product-image{
+        &__list{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            max-width: 100%;
+            margin: auto;
+            max-height: max-content;
+        }
+        &__list--desktop{
+            display: none;
+            @media (--md){
+                display: flex;
+            }
+        }
+        &__list--mobile{
+            display: block;
+            @media (--md){
+                display: none;
+            }
+        }
+        &__item{
+            cursor: pointer;
+            opacity: 0.5;
+            transform: scale(0.75);
+            @media(--md-large) {
+              border-bottom: 3px solid #EAEDF1;
+              flex-basis: 25%;
+            }
+            padding-bottom: 50px;
+        }
+        &__item--selected{
+            img{  
+                transform: scale(1.3);
+                transition: transform 500ms;
+            }
+            opacity: 1;
+            border-bottom: 3px solid #2F4775;
+            height: max-content;
+        }
+    }
+    .content__list-item{
+        p::-webkit-scrollbar-thumb {
+            background-color: var(--swiper-scrollbar-drag-bg-color);
+        }
+    }
+}

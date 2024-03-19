@@ -1,0 +1,47 @@
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/account-page.scss ***!
+  \****************************************************************************************************************************************************************************************************************************/
+.account * {
+  font-family: var(--secondary-font-family);
+}
+.account__content .accordeon__content-wrap .addresses__form form label {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+}
+.account .account-menu__title {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  font-weight: 700;
+}
+.account .account-menu__item {
+  font-size: 16px;
+}
+.account .login__content .login__title {
+  font-size: 38px;
+  color: #2F4775;
+}
+.account .login__field .label {
+  font-size: 18px;
+  color: #2F4775;
+}
+.account .login__field .field__link {
+  font-size: 14px;
+  color: #2F4775;
+}
+.account .login__btns .btn {
+  font-size: 16px;
+}
+.account .login__footer {
+  font-size: 14px;
+  color: #2F4775;
+}
+.account #rc_login {
+  font-size: 18px;
+  color: #2F4775;
+}

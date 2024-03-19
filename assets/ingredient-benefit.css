@@ -1,0 +1,36 @@
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/ingredient-benefit.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+.ingredient_benefits_wrapper {
+  padding: var(--setion-heading-padding) 0;
+}
+@media (min-width: 768px) {
+  .ingredient_benefits_wrapper {
+    padding: calc(var(--section-padding) * 2) 0;
+  }
+}
+.ingredient_benefits_wrapper .ingredient_benefits_container .benefits_list {
+  margin-top: var(--section-margin);
+  gap: 16px;
+}
+.ingredient_benefits_wrapper .ingredient_benefits_container .benefits_list .benefits_title {
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+  text-transform: capitalize;
+}
+.ingredient_benefits_wrapper .ingredient_benefits_container .benefits_list .benefit {
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: var(--primary-font-family) !important;
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .ingredient_benefits_wrapper .ingredient_benefits_container .benefits_list .benefit {
+    font-family: "proximanova-regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}

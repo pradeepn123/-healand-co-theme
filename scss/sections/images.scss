@@ -1,0 +1,14 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.product-image{
+    &__list{
+        display: flex;
+        height: 200px;
+    }
+    &__item{
+        width: 200px;
+    }
+}

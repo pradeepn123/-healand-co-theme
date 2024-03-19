@@ -12,7 +12,7 @@
   assign enable_background_around_container = options.enable_background_around_container
 -%}
 
-{{ 'blog.css' | asset_url | stylesheet_tag }}
+{{ 'blogs.css' | asset_url | stylesheet_tag }}
 
 {% capture css %}
   {% style %}
@@ -26,12 +26,14 @@
 {% render 'inline-css-minifier', css: css %}
 
 <div class="page_title_container">
-  <h1 class="page_title" style="color: {{ section.settings.page_title_color }}">
-    {{ section.settings.page_title }}
-  </h1>
-  <h2 class="page_subtitle" style="color: {{ section.settings.page_subtitle_color }}">
-    {{ section.settings.page_subtitle }}
-  </h2>
+  <div class="blog_main_heading_wrap">
+    <h1 class="page_title {% if section.settings.decore_heading %}decorated_heading{% endif %}" style="color: {{ section.settings.page_title_color }}">
+      {{ section.settings.page_title }}
+    </h1>
+    <h2 class="page_subtitle" style="color: {{ section.settings.page_subtitle_color }}">
+      {{ section.settings.page_subtitle }}
+    </h2>
+  </div>
 </div>
 
 <div class="section-{{ section.id }} section-spacing color-{{ color_scheme }} {% if enable_background_around_container %} featured-articles--color-background  {% endif %}">
@@ -236,6 +238,12 @@
       "type": "color",
       "id": "page_title_color",
       "label": "Page Title Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "decore_heading",
+      "default": true,
+      "label": "Decore Heading with underline"
     },
     {
       "type": "text",

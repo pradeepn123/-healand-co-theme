@@ -1,0 +1,23 @@
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/footer-sec.scss ***!
+  \**************************************************************************************************************************************************************************************************************************/
+.footer__title {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2F4775;
+  font-family: var(--secondary-font-family);
+}
+.footer__menu-item span {
+  font-family: var(--primary-font-family);
+  color: #2F4775;
+}
+.footer__text.rte {
+  font-family: var(--primary-font-family);
+  color: #2F4775;
+}
+
+.footer__block .localization-dropdown-toggle {
+  border: 1px solid #2F4775;
+}

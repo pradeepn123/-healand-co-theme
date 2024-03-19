@@ -1,0 +1,84 @@
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/ingredient-breadcrumbs.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+.bredcrumbs_section .breadcrumbs_container {
+  padding: var(--setion-heading-padding) var(--section-padding) 0;
+}
+@media (min-width: 769px) {
+  .bredcrumbs_section .breadcrumbs_container {
+    padding: calc(var(--setion-heading-padding) * 2) 0 var(--setion-heading-padding);
+  }
+}
+.bredcrumbs_section .breadcrumbs_container .redirection_link a {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  text-transform: none;
+  color: #2F4775;
+  gap: 14px;
+}
+@media (min-width: 375px) {
+  .bredcrumbs_section .breadcrumbs_container .redirection_link a {
+    font-family: "proximanova-regular";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family);
+    gap: 10px;
+  }
+}
+@media (min-width: 390px) {
+  .bredcrumbs_section .breadcrumbs_container .redirection_link a {
+    font-family: "proximanova-regular";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family);
+    gap: 5px;
+  }
+}
+@media (min-width: 1200px) {
+  .bredcrumbs_section .breadcrumbs_container .redirection_link a {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--secondary-font-family);
+    gap: 18px;
+  }
+}
+@media (min-width: 769px) {
+  .bredcrumbs_section .breadcrumbs_container .other_ingredients_list_container {
+    max-width: 60%;
+    border: 1px solid #CBD1DC;
+    border-radius: 60px;
+  }
+}
+.bredcrumbs_section .breadcrumbs_container .other_ingredients_list_container .ingredient_list__carousel .carousel-btn__icon path {
+  stroke: #2F4775;
+}
+.bredcrumbs_section .breadcrumbs_container .other_ingredients_list_container .ingredient_list_container a {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: var(--primary-semibold-font-family) !important;
+  color: #97A3BA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.bredcrumbs_section .breadcrumbs_container .other_ingredients_list_container .ingredient_list_container .active {
+  color: #2F4775;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.carousel-btn {
+  height: 4.6rem;
+}
+
+.ingredient_list__carousel {
+  min-height: 58px;
+}

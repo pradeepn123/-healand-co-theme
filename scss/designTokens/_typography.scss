@@ -1,0 +1,83 @@
+@import 'accoutrement/sass/plugin/type';
+@import 'StyleComponents/typography';
+
+
+$typography: (
+  'heading-1' : ('font': 'proximanova-regular',
+    'size': #{$heading-1-size},
+    'weight': #{$heading-1-weight},
+    'height': #{$heading-1-height}),
+  'heading-mob' : ('font': 'proximanova-regular',
+    'size': #{$heading-mob-size},
+    'weight': #{$heading-mob-weight},
+    'height': #{$heading-mob-height}),
+  'heading-1-alt' : ('font': 'proximanova-regular',
+    'size': #{$heading-1-alt-size},
+    'weight': #{$heading-1-alt-weight},
+    'height': #{$heading-1-alt-height}),
+  'heading-2' : ('font': 'proximanova-regular',
+    'size': #{$heading-2-size},
+    'weight': #{$heading-2-weight},
+    'height': #{$heading-2-height}),
+  'heading-3' : ('font': 'proximanova-regular',
+    'size': #{$heading-3-size},
+    'weight': #{$heading-3-weight},
+    'height': #{$heading-3-height}),
+  'body-title' : ('font': 'proximanova-regular',
+    'size': #{$body-title-size},
+    'weight': #{$body-title-weight},
+    'height': #{$body-title-height}),
+  'body-regular' : ('font': 'proximanova-regular',
+    'size': #{$body-regular-size},
+    'weight': #{$body-regular-weight},
+    'height': #{$body-regular-height}),
+  'body-mobile' : ('font': 'proximanova-regular',
+    'size': #{$body-mobile-size},
+    'weight': #{$body-mobile-weight},
+    'height': #{$body-mobile-height}),
+  'body-alt' : ('font': 'proximanova-regular',
+    'size': #{$body-alt-size},
+    'weight': #{$body-alt-weight},
+    'height': #{$body-alt-height}),
+  'body-small' : ('font': 'proximanova-regular',
+    'size': #{$body-small-size},
+    'weight': #{$body-small-weight},
+    'height': #{$body-small-height}),
+  'body-alt-small' : ('font': 'proximanova-regular',
+    'size': #{$body-small-alt-size},
+    'weight': #{$body-small-alt-weight},
+    'height': #{$body-small-alt-height})
+);
+
+@include import-webfonts;
+
+
+/// @param {string} type.$token - One of keys of $typography map above.
+
+@mixin use-text-style($token: "body") {
+  $type: get-token($typography, $token);
+
+  @if (get-token($type, "font") !="font") {
+    font-family: get-token($type, "font");
+  }
+
+  @if (get-token($type, "size") !="size") {
+    font-size: get-token($type, "size");
+  }
+
+  @if (get-token($type, "weight") !="weight") {
+    font-weight: get-token($type, "weight");
+  }
+
+  @if (get-token($type, "height") !="height") {
+    line-height: get-token($type, "height");
+  }
+
+  @if (get-token($type, "spacing") !="spacing") {
+    letter-spacing: get-token($type, "spacing");
+  }
+
+  @if (get-token($type, "style") !="style") {
+    font-style: get-token($type, "style");
+  }
+}

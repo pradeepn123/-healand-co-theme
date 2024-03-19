@@ -1,0 +1,38 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+
+.product_featured_tag {
+    font-weight: 700;
+    font-size: 14px;
+    color: colors.$white !important;
+    background: colors.$dark-blue;
+    padding: var(--grid-product-badge-padding) !important;
+    border-radius: 50px;
+    margin-bottom: 8px;
+    font-family: var(--primary-font-family);
+}
+.product-card__title {
+    @include use-text-style('heading-2');
+    color: colors.$dark-blue !important;
+    font-family: var(--secondary-font-family);
+}
+
+.product_benefits {
+    @include use-text-style('body-title');
+    color: colors.$dark-blue;
+}
+.product-card__details .product-card__price-item{
+    @include use-text-style('heading-2');
+    color: colors.$dark-blue;
+    font-family: var(--primary-alt-semibold-font-family);
+}
+
+.product-card__price-item-old{
+    @include use-text-style('heading-2');
+    font-family: var(--primary-alt-semibold-font-family) !important;
+    color: colors.$light-blue;
+}
+.product-card__price-item-old--highlight-sale{
+    text-decoration-color: colors.$light-blue;
+}

@@ -1,0 +1,32 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+@custom-selector :--localization .footer__block .localization-dropdown-toggle;
+
+$child : '.footer';
+
+#{$child}{
+    &__title{
+        @include use-text-style('heading-2');
+        color: colors.$dark-blue;
+        font-family: var(--secondary-font-family);
+    }
+    &__menu{
+        &-item{
+            span{
+                font-family: var(--primary-font-family);
+                color: colors.$dark-blue;
+            }
+        }
+    }
+    &__text.rte{
+        font-family: var(--primary-font-family);
+        color: colors.$dark-blue;
+    }
+
+}
+:--localization{
+    border: 1px solid colors.$dark-blue;
+}

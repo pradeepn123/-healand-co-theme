@@ -12,7 +12,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title_color": "",
+            "title_color": "#2f4775",
             "show_author": false,
             "show_date": true,
             "show_comment_count": false,
@@ -110,7 +110,7 @@
         "template--16191895830686__3778fc27-a373-4e56-a5ef-abfa8c4d8034-16862940429e8061d6-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -140,17 +140,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subscribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 300,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -171,9 +171,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false

@@ -1,0 +1,82 @@
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/collection-list.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+.decorated_heading {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .decorated_heading {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: "BrownStd-Bold";
+  }
+}
+
+.view-btn.shop_all {
+  color: #2F4775;
+  font-size: 18px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: var(--primary-font-family);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.view-btn span, .shop_all span {
+  position: relative;
+  overflow: hidden;
+}
+
+.view-btn:hover span:before, .shop_all:hover span:before {
+  width: 100%;
+  height: 0.2rem;
+  background: #2F4775;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@media (min-width: 768px) {
+  .view-btn:hover span:before, .shop_all:hover span:before {
+    left: -4%;
+  }
+}
+
+.collection-list .carousel-btn, .collection-text .carousel-btn, .collection .carousel-btn {
+  background: #2F4775;
+}
+
+.collection-list .carousel-btn:not([disabled]):hover, .collection-text .carousel-btn:not([disabled]):hover, .collection .carousel-btn:not([disabled]):hover {
+  background: #2F4775;
+}
+
+.collection-card__title.benefit-text {
+  font-family: "proximanova-regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+  text-transform: inherit;
+}
+@media (min-width: 768px) {
+  .collection-card__title.benefit-text {
+    font-family: "proximanova-regular";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: "BrownStd-Bold";
+  }
+}

@@ -248,7 +248,7 @@
         "section_spacing_top": 0,
         "section_spacing_bottom": 48,
         "section_layout": "carousel",
-        "title": "SHOP BY BENEFIT",
+        "title": "Shop by benefit",
         "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
@@ -282,37 +282,43 @@
         "30c0db77-d122-4859-a060-9d0d4aa76d13": {
           "type": "image",
           "settings": {
-            "image_small": "shopify:\/\/shop_images\/Group_69.png",
-            "image_heading": "VEGAN",
-            "image_heading-color": "#3c8771",
-            "image_heading_font": 14,
+            "image_small": "shopify:\/\/shop_images\/vegan_a63e4555-10c1-4c0f-b8f5-34b494129f87.png",
+            "image_heading": "Vegan",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
             "image_richtext": "<p>100% plant-based ingredients<\/p>",
-            "image_subheading-color": "#000000",
-            "image_subheading_font": 14
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
           }
         },
         "f2d8cef6-0613-4af8-a42a-bc4858bef89c": {
           "type": "image",
           "settings": {
-            "image_small": "shopify:\/\/shop_images\/Group_68.png",
-            "image_heading": "POTENT EXTRACT",
-            "image_heading-color": "#3c8771",
-            "image_heading_font": 14,
+            "image_small": "shopify:\/\/shop_images\/potent_extract.png",
+            "image_heading": "Potent Extract",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
             "image_richtext": "<p>High efficacy, fewer doses<\/p>",
-            "image_subheading-color": "#000000",
-            "image_subheading_font": 14
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
           }
         },
         "4324d8b8-f6ae-43f1-915d-95fd85a32907": {
           "type": "image",
           "settings": {
-            "image_small": "shopify:\/\/shop_images\/Group_67.png",
-            "image_heading": "MADE IN CANADA",
-            "image_heading-color": "#3c8771",
-            "image_heading_font": 14,
-            "image_richtext": "<p>Health Canada approved, GMP-certified<\/p>",
-            "image_subheading-color": "#000000",
-            "image_subheading_font": 14
+            "image_small": "shopify:\/\/shop_images\/made-in-canada_d31e4317-2ef4-4ff1-8cfe-1747cf0e60f5.png",
+            "image_heading": "Made in canada",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
+            "image_richtext": "<p>Health Canada approved, <\/p><p>GMP-certified<\/p>",
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
           }
         }
       },
@@ -322,11 +328,11 @@
         "4324d8b8-f6ae-43f1-915d-95fd85a32907"
       ],
       "settings": {
-        "container-background": "#faf5ef",
-        "title_color": "#3c8771",
-        "subtitle_color": "#000000",
+        "container-background": "#eaedf1",
+        "title_color": "#2f4775",
+        "subtitle_color": "#2f4775",
         "button_color": "#ffffff",
-        "buton_bg_color": "#789f91",
+        "buton_bg_color": "#2f4775",
         "color_scheme": "default",
         "container_size": "page-width",
         "section_spacing_for_top": 65,
@@ -383,11 +389,11 @@
     "3a8446b4-f3d0-4013-84a1-245927640c4e": {
       "type": "collection-text",
       "settings": {
-        "background": "#faf5ef",
-        "heading_color": "#ce6a4e",
-        "subheading_color": "#000000",
+        "background": "#eaedf1",
+        "heading_color": "#2f4775",
+        "subheading_color": "#2f4775",
         "btn_color": "#ffffff",
-        "btn_bg_color": "#dd8571",
+        "btn_bg_color": "#2f4775",
         "color_scheme": "default",
         "container_size": "page-width",
         "section_spacing_top": 65,
@@ -499,8 +505,9 @@
         "0cfe1d8f-7060-4322-8f4a-7c8d6fbcd7f3"
       ],
       "settings": {
-        "section_bg_color": "#e6af32",
-        "section_heading": "Follow us @healcohealth"
+        "section_bg_color": "#cbd1dc",
+        "section_heading": "Follow us @healcohealth",
+        "heading_color": "#2f4775"
       }
     },
     "6bd854d6-6a11-48bc-a56c-aeff798f8299": {
@@ -509,7 +516,7 @@
         "template--16187656994974__6bd854d6-6a11-48bc-a56c-aeff798f8299-168535721416a097e0-1": {
           "type": "title",
           "settings": {
-            "title": "GET 20% OFF YOUR FIRST ORDER",
+            "title": "Get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
@@ -538,17 +545,17 @@
         "color_scheme": "secondary",
         "newsletter_button": "image",
         "newsletter_text": "Subcribe",
-        "newsletter_image": "shopify:\/\/shop_images\/Group_57.svg",
+        "newsletter_image": "shopify:\/\/shop_images\/Button_-_Subscribe.png",
         "enable_background_around_container": false,
         "container_size": "full-screen",
         "section_spacing_top": 0,
         "section_spacing_bottom": 0,
         "desktop_height": 280,
         "mobile_height": 300,
-        "desktop_img": "shopify:\/\/shop_images\/newsletter_bg_color.png",
-        "mobile_img": "shopify:\/\/shop_images\/newletter_bg.png",
-        "desktop_overlay_opacity": 5,
-        "mobile_overlay_opacity": 20,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_21.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_222_7e105dc8-2343-4dbc-9517-8d3824968233.png",
+        "desktop_overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
         "desktop_content_position": "align-items: center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 624,
@@ -597,9 +604,9 @@
         "url": "",
         "text": "<p><a href=\"\/pages\/rewards\" title=\"Rewards\"><strong>Join<\/strong><\/a><strong> <\/strong>— our rewards program and collect points to earn exclusive rewards ★<\/p>",
         "show_on_mobile": "mobile_only",
-        "color_text": "#ffffff",
+        "color_text": "#2f4775",
         "background": "color",
-        "color_background": "#ee5c4c",
+        "color_background": "#eaedf1",
         "gradient": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(238, 92, 76, 1) 1%)",
         "background_spacing": "xsmall",
         "remove_bottom_spacing": false
@@ -618,6 +625,7 @@
       "block_order": [
         "4a250647-4639-4446-bcef-7e7844a61762"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "large",

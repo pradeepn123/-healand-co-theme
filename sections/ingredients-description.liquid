@@ -1,17 +1,18 @@
 {{ 'ingredients.css' | asset_url | stylesheet_tag }}
+{{ 'ingredients-desc.css' | asset_url | stylesheet_tag }}
 {% assign container_size = section.settings.container_size %}
 {% style %}
     .description_title{
         font-size: {{ section.settings.description_title_font_size }}px;
     }
-    .description_content{
+    .description_content p{
         font-size: {{ section.settings.description_content_font_size}}px;
     }
     @media (max-width: 768px){
         .description_title{
             font-size: {{ section.settings.description_title_font_size_for_mobile }}px;
         }
-        .description_content{
+        .description_content p{
             font-size: {{ section.settings.description_content_font_size_for_mobile }}px;
         }
     }
@@ -19,7 +20,7 @@
 {% if page.metafields.custom.description != blank %}
     <div class="container container--{{ container_size }} ingredients_description_section">
         <div class="ingredient_description_container">
-            <h2 class="description_title">{{ section.settings.description_title | upcase }}</h2>
+            <h2 class="description_title">{{ section.settings.description_title | capitalize }}</h2>
             <div class="description_content {{ section.settings.description_text_align }}">{{ page.metafields.custom.description }}</div>
         </div>
     </div>

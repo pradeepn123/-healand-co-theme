@@ -1,0 +1,30 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.ingredients-database-wrapper{
+    .ingredients-database-item{
+        padding: 0;
+        @media(--xs){
+            padding: 12px;
+        }
+        &:hover{
+            .ingredients_image_wrap{
+                border: 4px solid colors.$dark-blue;
+            }
+        }
+        .ingredients_content_info{
+            h4{
+                @include use-text-style('body-title');
+                font-family: var(--primary-semibold-font-family);
+                color: colors.$dark-blue;
+                @media(--xs){
+                    @include use-text-style('body-alt');
+                    font-family: var(--primary-semibold-font-family);
+                }
+            }
+        }
+    }
+}

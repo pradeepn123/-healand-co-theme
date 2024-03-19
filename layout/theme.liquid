@@ -28,16 +28,18 @@
         &ndash; {{ shop.name -}}
       {%- endunless -%}
     </title>
-
+    
+    
     {% render 'css-variables' %}
     {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'search.js' | asset_url | preload_tag: as: 'script' }}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{ 'index.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'common-imports.css' | asset_url | stylesheet_tag }}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
 
-    {% render 'fonts' %}
+    {% comment %} {% render 'fonts' %} {% endcomment %}
     {{ content_for_header }}
   
 {% render 'gsf-conversion-pixels' %}
@@ -81,10 +83,6 @@
         document.documentElement.className = `${document.documentElement.className} is-editor-mode`
       }
 
-      window.lazySizesConfig = {
-        loadMode: 1,
-      }
-
       window.auroraTheme = {
         version: '1.4.0',
         id: window.Shopify.theme.id,
@@ -100,6 +98,10 @@
       AOS.init({
         duration: 1000        
       })
+
+      window.lazySizesConfig = {
+        loadMode: 1,
+      }
     </script>
     {%- if template == 'article' -%}
       <script>
@@ -116,6 +118,5 @@
     <script src="{{ 'shared.js' | asset_url }}" defer></script>
     <script src="{{ 'global.js' | asset_url }}" defer></script> 
     <script src="{{ 'blog-predictive-search.js' | asset_url }}" defer="defer"></script>
-
   </body>
 </html>

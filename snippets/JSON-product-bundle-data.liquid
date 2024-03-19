@@ -1,0 +1,10 @@
+{
+    
+    "title": "{{section.settings.heading}}",
+    "products": [
+        {% for bundleproduct in products %}
+         {% unless forloop.first %} , {% endunless %}
+          {% render 'JSON-product-single-data', product: bundleproduct %}
+         {% endfor %}        
+    ]
+} 

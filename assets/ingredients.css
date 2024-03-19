@@ -1,7 +1,3 @@
-*{
-    font-family: "BrownStd-Regular" !important;
-}
-
 /* Ingredients page breadcrumbs */
 
 .breadcrumbs_container{
@@ -28,7 +24,7 @@
 }
 @media (max-width: 374px){
     .breadcrumbs_container .redirection_link a{
-        font-size: 20px !important;
+        font-size: 22px !important;
     }
 }
 @media (min-width: 769px) and (max-width: 1023px){

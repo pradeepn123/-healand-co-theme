@@ -27,7 +27,7 @@
             href="/pages/{{ ingredient_handle }}"
             class="ingredient {% if request.path contains ingredient_handle %} active {% endif %}"
           >
-            {{- ingredient.heading | upcase -}}
+            {{- ingredient.heading | capitalize -}}
           </a>
         </div>
       {% endfor %}

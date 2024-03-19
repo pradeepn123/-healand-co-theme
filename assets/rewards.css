@@ -6,7 +6,7 @@
 
 .image-banner__content.image-banner__content--desktop .h0 h1 {
     font-family: "BrownStd-Bold";
-    font-size: 96px;
+    font-size: 72px;
     font-weight: 700;
     line-height: 96px;
     letter-spacing: 0em;
@@ -19,11 +19,10 @@
     font-family: "BrownStd-Bold";
     font-size: 40px;
     font-weight: 700;
-    line-height: 39px;
-    letter-spacing: 0.045em;
+    line-height: 39px;    
     text-align: center;
-    text-transform: uppercase;
-    color: #000;
+    letter-spacing: 0;
+    color: #2F4775;
 }
 
 .rich-text__container .rich-text__content .rich-text__text-wrapper {
@@ -31,24 +30,25 @@
 }
 
 .rich-text__container .rich-text__content .rich-text__text-wrapper .rich-text__text p {
-    font-family: "BrownStd-Regular";
-    font-size: 20px;
+    font-family: 'proximanova-regular';
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.045em;
     text-align: center;
-    color: #000;
+    color: #2F4775;
 }
 
 .rich-text__container .rich-text__btns .btn--solid {
-    background-color: #F3B563;
+    background-color: #2F4775;
     font-size: 20px;
     width: 183px;
     padding: 12px;
+    font-family: "BrownStd-Bold";
 }
 
 .points_section_container {
-    padding: 64px 72px 54px 52px;
+    padding: 48px 57px 60px 54px;
 }
 
 .points_section_container h2 {
@@ -56,15 +56,9 @@
     font-size: 40px;
     font-weight: 700;
     line-height: 39px;
-    letter-spacing: 0.045em;
+    letter-spacing: 0;
     text-align: center;
     margin-bottom: 72px;
-}
-
-.points_section_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 83px;
 }
 
 .cards_section_content {
@@ -83,7 +77,8 @@
 }
 
 .points_column{
-    flex-basis: 33.33%;
+    flex: 0 0 33.33%;
+    flex-grow: 1;    
 }
 
 .card {
@@ -92,7 +87,6 @@
     min-width: 100%;
     max-width: 401px;
     max-height: 184px;
-    border-radius: 8px;
 }
 
 .refer_content_container {
@@ -110,13 +104,13 @@
 .points_column .points_text_content, .refer_content .refer_text_content {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 8px;
 }
 
 .card .card_text_content {
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 10px;
 }
 
 .points_column .points_text_content img, .card.card_icon, .refer_content .refer_icon {
@@ -126,26 +120,26 @@
 
 .points_column .points_text_content .points_text_title, .card .card_text_content .card_text_title, .refer_content .refer_text_title {
     font-family: "BrownStd-Bold";
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 28px;
-    letter-spacing: 0.045em;
+    letter-spacing: 0;
     text-align: left;
 }
 
 .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
-    font-family: "BrownStd-Regular";
-    font-size: 20px;
+    font-family: 'proximanova-regular';
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
-    letter-spacing: 0.045em;
+    letter-spacing: 0;
     text-align: left;
 }
 
 .button-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 75px;
+    margin-top: 55px;
 }
 
 .points_section_btn_link {
@@ -154,11 +148,12 @@
 }
 
 .points_section_btn_link button {
-    font-size: 20px;
+    font-size: 18px;
     background-color: #f3b563;
     color: #ffffff;
     width: 183px;
     padding: 12px;
+    font-family: "BrownStd-Bold";
 }
 
 .points_section_btn_link button:not([disabled]):hover {
@@ -168,7 +163,7 @@
 .cards_section_container {
     text-align: center;
     display: block;
-    padding: 64px 48px;
+    padding: 64px 48px 114px;
 }
 
 .images-with-text, .custom_image_with_text_section_container {
@@ -177,6 +172,7 @@
 .custom_image_with_text_section_container {
     display: flex;
     margin: 0 48px;
+    min-height: 632px;
 }
 .left_content_section {
     flex-basis: 50%;
@@ -185,12 +181,16 @@
 .left_content_section img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .right_content_section {
     flex-basis: 50%;
-    padding: 54px 51px;
+    padding: 54px 51px 54px 122px;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .right_content_section h2 {
@@ -198,14 +198,14 @@
     font-size: 40px;
     font-weight: 700;
     line-height: 39px;
-    letter-spacing: 0.045em;
+    letter-spacing: 0;
     text-align: left;
     margin-bottom: 24px;
 }
 
 .right_content_section p {
-    font-family: "BrownStd-Regular";
-    font-size: 20px;
+    font-family: 'proximanova-regular';
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.045em;
@@ -217,15 +217,43 @@
 .points_section_content{
     text-align: center;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    row-gap: 83px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.faq__blocks .faq__accordeon-plus-btn {
+    padding: 25px 20px;
+    color: #2F4775;
+}
+
+.faq__accordeon-plus-content p{
+    color: #2F4775;
+}
+
+.faq__container{
+    row-gap: 42px;
 }
 /* End: Heal+ Club, Points, Cards and Refer and Earn Sections */
 
 /* Begin: Media Query */
-@media(min-width:820px){
-    .points_column:last-child{
-        padding-left: 40px;
+@media(min-width:1024px){
+    .points_section_content{
+        justify-content: center;
+    }
+    .points_column{        
+        flex-grow: 0;
+    }
+}
+@media(min-width:1200px){
+    .points_column{        
+        justify-content: center;
+    }
+}
+@media(min-width:1680px){
+    .custom_image_with_text_section_container {
+        max-height: 632px;
     }
 }
 
@@ -248,7 +276,7 @@
         align-items: center;
     }
 
-    .refer_content_container, .points_column .points_text_content, .card .card_text_content, .refer_content .refer_text_content {
+    .refer_content_container, .card .card_text_content, .refer_content .refer_text_content {
         row-gap: 15px;
     }
 
@@ -280,10 +308,7 @@
     }
     .rich-text__container .rich-text__content .rich-text__text-wrapper {
         padding: 0;
-    }
-    .points_section_content {
-        grid-template-columns: 1fr 1fr;
-    }
+    }    
     .cards_section_container {
         padding: 40px 15px 60px 15px;
     }
@@ -311,7 +336,7 @@
         row-gap: 16px;
     }
     .points_section_container h2 {
-        margin-bottom: 59px;
+        margin-bottom: 55px;
     }
     .points_column .points_icon,
     .points_column .points_text_content img,
@@ -329,12 +354,12 @@
     .points_column .points_text_content .points_text_title, .card .card_text_content .card_text_title, .refer_content .refer_text_title {
         font-size: 20px;
         line-height: 28px;
-        letter-spacing: 0.045em;
+        letter-spacing: 0;
     }
     .points_column .points_text_content .points_text, .card .card_text_content .card_text, .refer_content .refer_text {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 28px;
-        letter-spacing: 0.045em;
+        letter-spacing: 0;
     }
     .custom_image_with_text_section_container {
         margin: 0 15px;
@@ -344,12 +369,16 @@
     }
     .right_content_section {
         padding: 40px 15px;
+        align-items: center;
     }
     .refer_content_container {
         row-gap: 24px;
     }
     .refer_text_content {
         row-gap: 10.31px;
+    }
+    .right_content_section p {
+        text-align: center;
     }
 }
 
@@ -361,9 +390,6 @@
     .faq--bottom-tabs .faq__blocks {
         width: 695px;
     }
-    .faq__blocks .faq__accordeon-plus-btn {
-        padding: 3.7rem 1.6rem 3.7rem 1.5rem;
-    }
     .faq__accordeon-plus-content {
         padding-left: 1.6rem;
         padding-right: 1.6rem;
@@ -374,15 +400,32 @@
         padding: 8rem 0rem 8rem 12rem;
     }
     .image-banner__content-wrap .image-banner__content h1 {
-        font-size: 75px;
+        font-size: 72px;
         font-weight: 700;
         line-height: 75px;
         letter-spacing: 0em;
         text-align: left;
         margin-top: 0;
+        font-family: "BrownStd-Bold";
     }
     .faq__container {
         padding-top: 40px;
+    }
+    .points_column .points_text_content .points_text{
+        text-align: center;
+        font-size: 16px;
+    }
+    .button-wrapper{
+        margin-top: 45px;
+    }
+    .card .card_text_content .card_text{
+        font-size: 16px;
+    }
+    .cards_section_container {
+        padding: 40px 15px 40px;
+    }
+    .faq__container{
+        row-gap: 35px;
     }
 }
 
@@ -394,13 +437,14 @@
         padding: 75.5px 0 75.5px 70px;
     }
     .rich-text__container .rich-text__content h5.decorated_heading, .cards_section_container h3.decorated_heading {
-        font-size: 24px;
+        font-size: 26px;
         line-height: 33px;
+        letter-spacing: 0;
     }
     .rich-text__container .rich-text__content .rich-text__text-wrapper .rich-text__text p {
         font-size: 16px;
         line-height: 26px;
-        letter-spacing: 0.045em;
+        letter-spacing: 0;
     }
     .points_section_btn_link button, .rich-text__container .rich-text__btns .btn--solid {
         font-size: 18px;
@@ -408,44 +452,34 @@
         padding: 12px;
     }
     .points_section_container {
-        padding: 53px 51px 40px 39px;
+        padding: 53px 18px 47px;
     }
     .points_section_container h2 {
-        font-size: 24px;
+        font-size: 32px;
         line-height: 39px;
-        letter-spacing: 0.045em;
-    }
-    .points_column .points_text_content {
-        row-gap: 16px;
-    }
-    .points_column .points_text_content .points_text_title, .points_column .points_text_content .points_text {
-        font-size: 14px;
-        line-height: 16.94px;
-        letter-spacing: 0.045em;
-        text-align: center;
+        letter-spacing: 0;
     }
     .right_content_section h2 {
-        font-size: 24px;
+        font-size: 26px;
         line-height: 39px;
-        letter-spacing: 0.045em;
+        letter-spacing: 0;
         margin-bottom: 16px;
     }
     .right_content_section p {
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: 0.045em;
+        font-size: 18px;
+        line-height: 1.2;        
         margin-bottom: 28px;
     }
     .cards_section_content {
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .card .card_text_content, .refer_content .refer_text_content {
-        row-gap: 10.31px;
+        row-gap: 10px;
     }
     .card .card_text_content .card_text_title, .refer_content .refer_text_title, .card .card_text_content .card_text, .refer_content .refer_text {
         font-size: 20px;
         line-height: 28px;
-        letter-spacing: 0.045em;
+        letter-spacing: 0;
     }
     .refer_content_container {
         row-gap: 24px;
@@ -457,15 +491,31 @@
         padding-right: 1.5rem;
         padding-left: 1.5rem;
     }
+    .refer_content .refer_text{
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 320px) {
+    .points_section_container h2 {
+        font-size: 28px;
+    }
     .image-banner__content {
         padding: 5rem 0rem 5rem 4rem;
     }
     .image-banner__content-wrap .image-banner__content h1 {
         font-size: 65px;
         line-height: 65px;
+    }
+    .points_column .points_icon,
+    .points_column .points_text_content img,
+    .cards_section_content .card .card_icon, .cards_section_content .card .card_icon img,
+    .refer_content .refer_icon, .refer_content .refer_icon img {
+        height: 80px;
+        width: 80px;
+    }
+    .points_column .points_icon img{
+        width: 100%;
     }
 }
 

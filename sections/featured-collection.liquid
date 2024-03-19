@@ -103,6 +103,7 @@
   {% endstyle %}
 {% endcapture %}
 
+{{ 'featured-collection.css' | asset_url | stylesheet_tag }}
 {% render 'inline-css-minifier', css: css %}
 
 {% capture section_header %}
@@ -110,8 +111,8 @@
     <div class="collection__header {% if alignment == 'center' %}collection__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}" data-aos="fade-up">
       <h5 class='collection__title {{ heading_size }} {% if section.settings.title_decoration == true %}decorated_heading {% endif %}'>{{ title }}</h5>
       {% if section.settings.shop_all_title != blank %}
-        <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="view-btn shop_all w-full-sp">
-          <span>{{ section.settings.shop_all_title }}</span>
+        <a href="{{ section.settings.shop_all_url | default: collection.url }}" class="link view-btn shop_all w-full-sp">
+          <span class="link__text">{{ section.settings.shop_all_title }}</span>
           {% render 'icon', icon_name: 'link-chevron', class: 'link__chevron' %}
         </a>
       {% endif %}

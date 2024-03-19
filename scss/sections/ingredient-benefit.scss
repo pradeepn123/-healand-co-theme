@@ -1,0 +1,30 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.ingredient_benefits_wrapper{
+    padding: var(--setion-heading-padding) 0;
+    @media(--sm){
+        padding: calc(var(--section-padding) * 2) 0;
+    }
+    .ingredient_benefits_container{
+        .benefits_list{
+            margin-top: var(--section-margin);
+            gap:16px;
+            .benefits_title{
+                font-family: var(--secondary-font-family);
+                color: colors.$dark-blue;
+                text-transform: capitalize;
+            }
+            .benefit{
+                @include use-text-style('body-title');
+                font-family: var(--primary-font-family) !important;
+                color: colors.$dark-blue;
+                @media(--sm){
+                    @include use-text-style('body-alt');
+                }
+            }
+        }
+    }
+}

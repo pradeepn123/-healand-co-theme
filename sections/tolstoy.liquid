@@ -1,5 +1,7 @@
+{{ 'tolstoy-sec.css' | asset_url | stylesheet_tag }}
+
 {%- liquid
-    render 'tolstoy-app' , section: section,  product: product, sectionId: sectionId
+  render 'tolstoy-app' , section: section,  product: product, sectionId: sectionId
 -%}
 
 {% schema %}
@@ -17,6 +19,11 @@
         "type": "text",
         "id": "section_heading",
         "label": "Heading"
+    },
+    {
+        "type": "color",
+        "id": "heading_color",
+        "label": "heading color"        
     }
    
   ],

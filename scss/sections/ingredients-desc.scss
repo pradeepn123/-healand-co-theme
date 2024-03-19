@@ -1,0 +1,23 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.ingredient_description_container{
+    padding: var(--setion-heading-padding) 0;
+    @media(--sm){
+        padding: calc(var(--setion-heading-padding) * 2) 0;
+    }
+    .description_title{
+        color: colors.$dark-blue;
+        font-family: var(--secondary-font-family);
+    }
+    .description_content p{        
+        color: colors.$dark-blue;
+        font-family: var(--primary-font-family) !important;
+    }
+}
+
+.collection-hero__title{
+    font-family: var(--secondary-font-family);
+}

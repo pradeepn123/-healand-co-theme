@@ -1,0 +1,67 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.bredcrumbs_section {
+    .breadcrumbs_container{
+        padding: var(--setion-heading-padding) var(--section-padding) 0;
+        @media(min-width:769px){
+            padding: calc(var(--setion-heading-padding) * 2) 0 var(--setion-heading-padding);
+        }
+        .redirection_link{
+            a{
+                @include use-text-style('heading-2');
+                font-family: var(--secondary-font-family);
+                text-transform: none;
+                color: colors.$dark-blue;
+                gap: 14px;
+                @media(--xxs){
+                    @include use-text-style('heading-1-alt');
+                    font-family: var(--secondary-font-family);
+                    gap: 10px;
+                }
+                @media(--xs){
+                    @include use-text-style('heading-mob');
+                    font-family: var(--secondary-font-family);
+                    gap: 5px;
+                }
+                @media(--md-large){
+                    @include use-text-style('heading-1');
+                    font-family: var(--secondary-font-family);
+                    gap: 18px;
+                }
+            }
+        }
+        .other_ingredients_list_container{
+            @media(min-width:769px){
+                max-width: 60%;
+                border: 1px solid colors.$grey;
+                border-radius: 60px;
+            }
+            .ingredient_list__carousel .carousel-btn__icon path{
+                stroke: colors.$dark-blue;
+            }
+            .ingredient_list_container {
+                a{
+                    @include use-text-style('body-alt');
+                    font-family: var(--primary-semibold-font-family) !important;
+                    color: colors.$light-blue;
+                    text-decoration: none;
+                }
+                .active{
+                    color: colors.$dark-blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.carousel-btn{
+    height: 4.6rem;
+}
+
+.ingredient_list__carousel{
+    min-height: 58px;
+}
