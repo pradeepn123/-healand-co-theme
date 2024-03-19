@@ -311,7 +311,7 @@
           "type": "image",
           "settings": {
             "image_small": "shopify:\/\/shop_images\/made-in-canada_d31e4317-2ef4-4ff1-8cfe-1747cf0e60f5.png",
-            "image_heading": "Made in canada",
+            "image_heading": "Made in Canada",
             "image_heading-color": "#2f4775",
             "image_heading_font_desktop": 24,
             "image_heading_font_mobile": 20,
@@ -507,7 +507,7 @@
       "settings": {
         "section_bg_color": "#cbd1dc",
         "section_heading": "Follow us @healcohealth",
-        "heading_color": "#2f4775"
+        "heading_color": ""
       }
     },
     "6bd854d6-6a11-48bc-a56c-aeff798f8299": {
