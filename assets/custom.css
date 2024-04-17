@@ -1128,7 +1128,7 @@ body.hamburger--open[scroll-y-offf] {
 
 .article-card__link{
     z-index: 2;
-    position: relative;
+    /* position: relative; */
 }
 .search__carousel-tab-names{
     display: none;
