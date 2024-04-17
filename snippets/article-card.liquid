@@ -63,7 +63,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="article-card__details {% if content_position == "bottom-left" or content_position == "bottom-center" or content_position == "bottom-right" %}article-card__details--hover-on-text hover_on_text{% endif %} {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}">
+    <div class="article-card__details {% if content_position == "bottom-left" or content_position == "bottom-center" or content_position == "bottom-right" %}article-card__details--hover-on-text hover_on_text{% endif %} {% if content_position == "top-left" or content_position == "top-center" or content_position == "top-right" %}article-card__details--hover-on-text-top hover_on_text{% endif %} {% if with_bottom_spacing %}article-card__details--bottom-spacing{% endif %}">
       {%- if show_author or show_date or show_comment_count -%}
         <div class="article-card__meta">
           {%- if show_author -%}
