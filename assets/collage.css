@@ -117,6 +117,11 @@
     font-family: "BrownStd-Bold";
   }
 }
+.collage .article-card:hover .article-card__details--hover-on-text-top:before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .collage .article-card__details--hover-on-text-top .article-card__title:before {
   content: "";
   position: absolute;
@@ -126,15 +131,8 @@
   right: 0;
   bottom: 0;
   background: #2F4775;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -webkit-transition-property: transform;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition: 300ms ease-out;
-  transition: 300ms ease-out;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
