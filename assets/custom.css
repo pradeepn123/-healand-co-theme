@@ -1146,3 +1146,17 @@ body.hamburger--open[scroll-y-offf] {
 .rte.rte--page h1, .rte.rte--page h2, .rte.rte--page h3, .rte.rte--page h4, .rte.rte--page h5, .rte.rte--page h6{
     font-family: 'BrownStd-Bold';
 }
+
+/* 404 error page font-family */
+.page-404__content-wrap .caption {
+    font-family: proximanova-regular;
+    font-size: 20px;
+}
+
+.page-404__content>*+.page-404__text {
+    font-family: proximanova-regular;
+}
+
+.page-404__content-wrap h1,.page-404__content>*+.page-404__buttons .btn {
+    font-family: var(--secondary-font-family);
+}
