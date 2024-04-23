@@ -12,7 +12,6 @@
   }
 }
 .landing-page-timeline__content-wrapper {
-  font-family: var(--secondary-alt-font-family);
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -32,6 +31,9 @@
   border-left: 2px solid #2F4775;
   position: relative;
   margin-left: 10px;
+  cursor: default;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 .landing-page-timeline__content-block:last-child {
   border: 0px;
@@ -41,25 +43,34 @@
   content: "";
   width: 24px;
   height: 24px;
-  background: white;
+  background: #fff;
   border: 3px solid #2F4775;
   border-radius: 50%;
   position: absolute;
   left: -13px;
   top: 0px;
 }
+.landing-page-timeline__content-block:hover .landing-page-timeline__content-heading {
+  color: #2F4775;
+}
+.landing-page-timeline__content-block:hover::before {
+  background: #2F4775;
+}
 .landing-page-timeline__content-heading {
   color: #97A3BA;
-  font-family: inherit;
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-alt-font-family);
   line-height: 1;
-  font-weight: 500; /* need to change */
-  font-size: 25px; /* need to change */
 }
 .landing-page-timeline__content-text {
   color: #2F4775;
-  font-family: inherit;
-  line-height: 1.5;
   margin-top: 10px;
-  font-weight: 400; /* need to change */
-  font-size: 18px; /* need to change */
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  line-height: 1.5;
 }

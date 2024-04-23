@@ -1,12 +1,13 @@
 
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
 
 .landing-page-timeline{
     @include mixins.container;
 
     &__content-wrapper {
-        font-family: var(--secondary-alt-font-family);
         max-width: fit-content;
         margin: 0 auto;
         margin-top: 40px;
@@ -23,9 +24,11 @@
     &__content-block {
         list-style: none;
         padding: 0 0 30px 60px;
-        border-left: 2px solid #2F4775;
+        border-left: 2px solid colors.$dark-blue;
         position: relative;
         margin-left: 10px;
+        cursor: default;
+        transition: ease 0.3s all;
 
         &:last-child {
             border: 0px;
@@ -36,30 +39,34 @@
             content: '';
             width: 24px;
             height: 24px;
-            background: white;
-            border: 3px solid #2F4775;
+            background: colors.$white;
+            border: 3px solid colors.$dark-blue;
             border-radius: 50%;
             position: absolute;
             left: -13px;
             top: 0px;
         }
+
+        &:hover .landing-page-timeline__content-heading {
+            color: colors.$dark-blue;
+        }
+
+        &:hover::before {
+            background: colors.$dark-blue;
+        }
     }
 
     &__content-heading{
-        color: #97A3BA;
-        font-family: inherit;
+        color: colors.$light-blue;
+        @include use-text-style('heading-2');
+        font-family: var(--secondary-alt-font-family);
         line-height: 1;
-        font-weight: 500;   /* need to change */
-        font-size: 25px;   /* need to change */
     }
 
     &__content-text{
-        color: #2F4775;
-        font-family: inherit;
-        line-height: 1.5;
+        color: colors.$dark-blue;
         margin-top: 10px;
-        font-weight: 400;   /* need to change */
-        font-size: 18px;   /* need to change */
+        @include use-text-style('body-alt');
+        line-height: 1.5;
     }
-
 }
