@@ -14,6 +14,7 @@
   --nav-vertical-padding: 15px;
   --grid-product-badge-padding: 4px 12px;
   --setion-heading-padding: 30px;
+  --setion-top-padding:25px;
 }
 @media (min-width: 768px) {
   :root {
@@ -21,6 +22,7 @@
     --grid-row-gap: 20px;
     --header-padding: 18px;
     --base-margin: 40px;
+    --heading-bottom-padding:15px;
   }
 }
 @media (min-width: 1024px) {

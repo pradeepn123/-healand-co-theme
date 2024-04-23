@@ -78,11 +78,22 @@
         "enable_carousel_on_mobile": false,
         "show_navigation_on_hover": true
       }
+    },
+    "landing_page_compare_section_QTFTk3": {
+      "type": "landing-page-compare-section",
+      "settings": {
+        "heading_alignment": "center",
+        "block_heading_one": "Others",
+        "block_heading_two": "HEAL + CO.",
+        "image_other_one": "shopify:\/\/shop_images\/Frame_633.png",
+        "image_other_two": "shopify:\/\/shop_images\/supermushroom_complex_1.png"
+      }
     }
   },
   "order": [
     "page",
     "landing_page_image_with_text_kDdceA",
-    "key_ingredients_k8Qhr4"
+    "key_ingredients_k8Qhr4",
+    "landing_page_compare_section_QTFTk3"
   ]
 }

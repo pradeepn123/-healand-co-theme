@@ -1,0 +1,46 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+
+.info-compare{
+    @include mixins.container;
+    &__wrapper{
+        @include mixins.grid(1, 40px, 40px);
+        row-gap: calc(var(--grid-row-gap-large) * 2);
+        @media(--sm){
+            @include mixins.grid(2, 40px, 40px);
+        }
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+
+    &__heading{
+        padding-bottom: var(--nav-vertical-padding);
+        @media(--sm){
+            padding-bottom: var(--heading-bottom-padding) ;
+        }
+    }
+
+    &__description{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__description{
+        background: colors.$off-white;
+        padding: var(--setion-top-padding) var(--nav-vertical-padding);
+        @media(--sm){
+            padding: var(--setion-top-padding) var(--setion-heading-padding);
+        }
+    }
+
+    &__description-wrap{
+        display: flex;
+        column-gap: var(--setion-top-padding);
+    }
+}

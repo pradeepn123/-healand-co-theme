@@ -1,0 +1,138 @@
+{{ 'landing-page-compare-section.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign options = section.settings
+  assign heading_alignment = options.heading_alignment
+  assign firstHeading = options.block_heading_one
+  assign secondHeading = options.block_heading_two
+  assign firstImage = options.image_other_one
+  assign SecondImage = options.image_other_two
+  
+-%}
+<div class="landing-page-image-with-text">
+    <div class="landing-page-image-with-text__wrapper">
+        <div class="landing-page-image-with-text__content">
+            {%- liquid
+                assign heading = 'How we compare'
+                assign text = 'We deliver the healing power of nature, one bottle at a time'
+            -%}
+            {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+        </div>
+        <div class="info-compare">
+            <div class="info-compare__wrapper">
+               <div class="info-compare__container">
+                    <div class="info-compare__heading">{{firstHeading}}</div>
+                    <div class="info-compare__image"> {% render 'shopify-responsive-image', image:firstImage, aspect_ratio: 1.4 %} </div>
+                    <div class="info-compare__text-wrapp">
+                        <div class="info-compare__description">
+                            <div class="info-compare__description-wrap">
+                                <div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12.2964" r="12" fill="#CBD1DC"/>
+                                        <path d="M7.41797 7.7124L16.5842 16.8786" stroke="#2F4775" stroke-width="2"/>
+                                        <path d="M16.582 7.7124L7.41583 16.8786" stroke="#2F4775" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span>Added filters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-compare__container">
+                    <div class="info-compare__heading">{{secondHeading}}</div>
+                    <div class="info-compare__image"> {% render 'shopify-responsive-image', image:SecondImage, aspect_ratio: 1.4 %} </div>
+                    <div class="info-compare__description">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Landing compare section",
+    "settings": [        
+        {
+            "type": "select",
+            "id": "heading_alignment",
+            "label": "t:sections.general_section_settings.heading_alignment_label",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.general_section_settings.alignment_option_left_label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.general_section_settings.alignment_option_center_label"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "text",
+            "id": "block_heading_one",
+            "label": "First Heading"
+        },
+        {
+            "type": "text",
+            "id": "block_heading_two",
+            "label": "Second Heading"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_other_one",
+            "label": "First Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_other_two",
+            "label": "Second Image"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "other",
+            "name": "Other",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "svg_image_other",
+                    "label": "Bullets image"
+                },
+                {
+                    "type": "text",
+                    "id": "description_other",
+                    "label": "Description"
+                }
+            ]
+        },
+        {
+            "type": "heal_and_co",
+            "name": "Heal_and_co",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "svg_image_heal_and_co",
+                    "label": "Bullets image"
+                },
+                {
+                    "type": "text",
+                    "id": "description_heal_and_co",
+                    "label": "Description"
+                }
+            ]
+
+        }
+    ],
+    "presets": [
+        {
+        "name": "Landing compare section"
+        }
+    ]
+}
+{%  endschema %}
