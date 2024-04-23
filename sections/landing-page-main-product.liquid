@@ -1,0 +1,49 @@
+
+{% liquid 
+    assign blocks = section.blocks
+    assign product = section.settings.product
+    assign descriptionContent = product.metafields.description.value
+    assign descriptionTitle = descriptionContent.title
+    assign descriptionText = descriptionContent.text 
+    assign textIcons = product.metafields.textIcons.value
+  %}
+<div class="landing-page-main-product">
+ <div class="landing-page-main-product__wrapper">
+    <div class="landing-page-main-product__content">
+        <div class="landing-page-main-product__carousel">
+            <div class="landing-page-main-product__main-carousel">
+            <custom-carousel>
+                //pass data here
+              <script></script>
+            </custom-carousel>
+            </div>
+
+            <div class="landing-page-main-product__thumbnail-carousel">
+                <custom-carousel>
+                    //pass data here
+                  <script></script>
+                </custom-carousel>
+                </div>
+        </div>
+        <div class="landing-page-main-product__content">
+           <div class="landing-page-main-product__info">
+            <h3 class="landing-page-main-product__title"></h3>
+            <div class="landing-page-main-product__reviews"></div>
+            <div class="landing-page-main-product__description"></div>
+            <div class="landing-page-main-product__icon-text-wrapper"></div>
+            <div class="landing-page-main-product__banner-teaser"></div>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+{%  schema %} 
+{
+  "name": "Main product-landing page",
+  "presets": [
+    {
+        "name": "Main product-landing page"
+    }
+  ]
+}
+{%  endschema %}

@@ -1,6 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import handleClick from 'JsComponents/handleClick';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { CAROUSEL } from 'JsComponents/constants';
+import { gsap } from 'gsap';
+
 
 class CustomCarousel extends HTMLElement {
   constructor() {
@@ -12,28 +14,11 @@ class CustomCarousel extends HTMLElement {
   }
 
   connectedCallback() {
-    if (this.innerHTML.length > 0) {
-      this.initCarousel();
-    }
-    else {
-      const that = this;
-      let checkHtmlLength = window.setInterval(() => {
-        if (this.innerHTML.length > 0) {
-          that.initCarousel();
-          handleClick(this)
-          window.clearInterval(checkHtmlLength);
-          checkHtmlLength = false
-        }
-      }, 500);
-      window.setTimeout(() => {
-        if (checkHtmlLength) {
-          window.clearInterval(checkHtmlLength);
-        }
-      }, 5000)
-    }
+    this.initCarousel();
   }
 
   getCarouselSettings() {
+    const {paginationType: readOnlyPaginationType} = CAROUSEL;
     this.currentWidth = window.innerWidth;
     //default settings
     const defaultSettings = {
@@ -64,24 +49,43 @@ class CustomCarousel extends HTMLElement {
       })
     }
     if (this.carouselSettings && Object.keys(this.carouselSettings).length > 0) {
-      const { navigation, pagination, progressPagination, ...otherSwiperSettings } = this.carouselSettings;
+      const { navigation, pagination, progressPagination,paginationType=readOnlyPaginationType["dots"], ...otherSwiperSettings } = this.carouselSettings;
       carouselSettings = { ...otherSwiperSettings };
       if (navigation) {
-        const navigationNext = this.querySelector('.swiper-navigation--next');
-        const navigationPrev = this.querySelector('.swiper-navigation--prev');
+        const navigationNext = this.parent.querySelector('[data-navigation-next]');
+        const navigationPrev = this.parent.querySelector('[data-navigation-prev]');
         carouselSettings = {
           ...carouselSettings, navigation: {
             nextEl: navigationNext,
-            prevEl: navigationPrev,
+            prevEl: navigationPrev
           }
         }
       }
       if (pagination) {
-        const swiperPagination = this.querySelector('.swiper-pagination');
+        const swiperPagination = this.parent.querySelector('[data-pagination]');
         let pagination = {
           el: swiperPagination,
-          clickable: true
+          clickable: true,
         }
+
+        if(paginationType == "bars") {
+   
+           pagination = {
+            el: swiperPagination,
+            clickable: true,
+            type: 'custom',
+            renderCustom: (swiper, current, total) => {
+              let text = '';
+               (Array(total).fill()).forEach((_,index) => {
+                  text += `<div class='swiper-pagination-bullet swiper-pagination--bar ${index == (current - 1) ? 'swiper-pagination-active' : ''} '>
+                    <div class="swiper-pagination__progress"></div>
+                  </div>`
+               })
+               return text;
+            }
+          }
+        }
+
         if (progressPagination) {
           pagination = {
             el: swiperPagination,
@@ -96,34 +100,20 @@ class CustomCarousel extends HTMLElement {
   }
 
   initCarousel() {
+    this.parent = this.closest('[data-parent]');
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
-    this.carouselContent = this.querySelector('[data-carousel-content]')?.innerHTML;
     this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
-    this.navigations = this.querySelector('[data-swiper-navigations]');
+    this.navigations = this.parent.querySelector('[data-navigations]');
     this.currentWidth = window.innerWidth;
     const swiperNavigationElements = `
-      <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-      <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-      <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
+      <div data-navigation-next data-navigation  class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12.4016H11.5H23M23 12.4016L13.8 3M23 12.4016L13.8 21.8032" stroke="currentColor" stroke-width="1.75"></path></svg>
     </div>
-    <div class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-        <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-        <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
+    <div data-navigation-prev data-navigation class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12.4016H11.5H23M23 12.4016L13.8 3M23 12.4016L13.8 21.8032" stroke="currentColor" stroke-width="1.75"></path></svg>
     </div>
     `
-    this.carouselContent ?
-      this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
-    <div class="swiper-wrapper">
-    ${this.carouselContent}
-    </div> </div>
-    <div class="swiper-pagination"></div>
-    ${this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements}
-    ${this.placeholders ? this.placeholders : `<div class="carousel-placeholders"></div>`}`
-      : this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
+   this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     const carouselSettings = this.getCarouselSettings();
     this.swiper = new Swiper(this.container, {
@@ -131,38 +121,41 @@ class CustomCarousel extends HTMLElement {
         beforeInit: () => {
           const { navigation, pagination } = carouselSettings || {};
           if (!navigation) {
-            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+            this.parent.querySelectorAll('[data-navigation]').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           }
           else {
-            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            this.parent.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
 
           if (!pagination) {
-            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+            this.parent.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
           }
           else {
-            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            this.parent.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
+          
         },
-        init: (swiper) => {
-          if (!!swiper.navigation) {
-            swiper.navigation.destroy();
-            // const el = this.querySelector('.carousel__container')
-            // handleClick(el);
+        init: () => {
+          const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[0].querySelector('.swiper-pagination__progress');
+          if(currentSlider) {
+            gsap.to(currentSlider, { width: `100%`, duration:4, "ease": "ease" });
           }
-        },
-        afterInit: () => {
-          this.querySelector('.carousel__container').classList.remove('hide');
-          this.querySelector('.carousel-placeholders')?.classList.add('hide');
         }
       },
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
       ...carouselSettings
+   
     });
 
     this.swiper.on('activeIndexChange', (current) => {
-      this.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
-      this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]?.classList.add('swiper-pagination-bullet-active');
+      const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex];
+      this.parent.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
+      currentSlider?.classList.add('swiper-pagination-bullet-active');
+    })
+
+    this.swiper.on('slideChange', (current) => {
+      const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex].querySelector('.swiper-pagination__progress');
+      gsap.to(currentSlider, { width: `100%`, duration:4, "ease": "ease" });
     })
   }
 }
