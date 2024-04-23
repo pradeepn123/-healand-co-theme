@@ -1,0 +1,22 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+
+.landing-page-header {
+    &__content {
+      @include mixins.grid(1,100px,100px);
+
+      @media(--lg) {
+        @include mixins.grid(6,100px,100px);
+      }
+    }
+
+    &__left-content {
+        grid-column: span 1;
+        order:0;
+    }
+
+    &__right-content {
+        background: colors.$dark-blue;
+        order:1;
+    }
+}

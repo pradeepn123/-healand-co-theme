@@ -25,7 +25,7 @@
 }
 @media (min-width: 1024px) {
   :root {
-    --base-margin: 40px;
+    --base-margin: 48px;
     --section-content-margin: 20px;
     --section-margin: 40px;
     --section-padding:40px;
