@@ -1,0 +1,9 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+
+.landing-page-image-with-text{
+    @include mixins.container;
+    .landing-page-image-with-text__content-wrapper{
+        @include mixins.grid(2,100px,100px);
+    }
+}

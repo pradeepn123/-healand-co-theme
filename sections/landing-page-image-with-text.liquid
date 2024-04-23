@@ -1,17 +1,31 @@
+{{ 'landing-page-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign options = section.settings
   assign heading_alignment = options.heading_alignment
-  
+  assign image = options.image
+  assign heading = options.heading
+  assign text = options.text
 -%}
+
 <div class="landing-page-image-with-text">
     <div class="landing-page-image-with-text__wrapper">
         <div class="landing-page-image-with-text__content">
-            {%- liquid
-                assign heading = 'Nature’s super charger'
-                assign text = 'Supercharger yourself with berberine to a  happier and healthier you.'
-            -%}
-            {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+            <div class="landing-page-image-with-text__heading">
+                {%- liquid
+                    assign heading = heading
+                    assign text = text
+                -%}
+                {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+            </div>
+            <div class="landing-page-image-with-text__content-wrapper">
+                <div class="landing-page-image-with-text__image">
+                    {% render 'shopify-responsive-image', image: image, aspect_ratio: 1.2 %}
+                </div>
+                <div class="landing-page-image-with-text__textcontent">
+                    Hello
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -20,7 +34,17 @@
 {% schema %}
 {
     "name": "Landing page image & text",
-    "settings": [        
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.collection_list.title_label"
+        },
+        {
+            "type": "text",
+            "id": "text",            
+            "label": "Content"
+        },
         {
             "type": "select",
             "id": "heading_alignment",
@@ -36,7 +60,12 @@
                 }
             ],
             "default": "center"
-        }        
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Choose Image"
+        }
     ],
     "presets": [
         {
