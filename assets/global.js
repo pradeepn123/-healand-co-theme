@@ -1,24 +1,500 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./js/components/constants.js":
+/*!************************************!*\
+  !*** ./js/components/constants.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BREAKPOINTS: () => (/* binding */ BREAKPOINTS)
+/* harmony export */ });
+var BREAKPOINTS = {
+  '768': 768,
+  '1200': 1200,
+  '1920': 1920
+};
+
+/***/ }),
+
+/***/ "./js/components/custom-carousel.js":
+/*!******************************************!*\
+  !*** ./js/components/custom-carousel.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var JsComponents_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/constants */ "./js/components/constants.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
+
+var _excluded = ["breakpoints"],
+  _excluded2 = ["pagination", "navigation"],
+  _excluded3 = ["navigation", "pagination", "progressPagination", "paginationType"];
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+
+
+
+
+class CustomCarousel extends HTMLElement {
+  constructor() {
+    super();
+    this.carouselSettings;
+    this.currentWidth;
+    this.innerHTML;
+    this.container;
+  }
+  connectedCallback() {
+    this.initCarousel();
+  }
+  getCarouselSettings() {
+    var {
+      paginationType: readOnlyPaginationType
+    } = JsComponents_constants__WEBPACK_IMPORTED_MODULE_4__.CAROUSEL;
+    this.currentWidth = window.innerWidth;
+    //default settings
+    var defaultSettings = {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      speed: 1000,
+      navigation: false
+    };
+    var carouselSettings = defaultSettings;
+    //end of default settings 
+
+    //handle breakpoint
+    var _this$carouselSetting = this.carouselSettings,
+      {
+        breakpoints
+      } = _this$carouselSetting,
+      otherSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting, _excluded);
+    if (breakpoints) {
+      this.breakpoints = Object.keys(breakpoints);
+      this.breakpoints.forEach((breakpoint, index) => {
+        if (this.currentWidth >= breakpoint) {
+          if (breakpoints[breakpoint]) {
+            this.breakpointSettings = breakpoints[breakpoint];
+          } else {
+            this.breakpointSettings = breakpoints[this.breakpoints[index - 1]];
+          }
+          var _this$breakpointSetti = this.breakpointSettings,
+            {
+              pagination,
+              navigation
+            } = _this$breakpointSetti,
+            otherResponsiveSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$breakpointSetti, _excluded2);
+          this.carouselSettings = _objectSpread(_objectSpread(_objectSpread({}, otherSettings), otherResponsiveSettings), {}, {
+            pagination,
+            navigation
+          });
+        }
+      });
+    }
+    if (this.carouselSettings && Object.keys(this.carouselSettings).length > 0) {
+      var _this$carouselSetting2 = this.carouselSettings,
+        {
+          navigation,
+          pagination,
+          progressPagination,
+          paginationType = readOnlyPaginationType["dots"]
+        } = _this$carouselSetting2,
+        otherSwiperSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting2, _excluded3);
+      carouselSettings = _objectSpread({}, otherSwiperSettings);
+      if (navigation) {
+        var navigationNext = this.parent.querySelector('[data-navigation-next]');
+        var navigationPrev = this.parent.querySelector('[data-navigation-prev]');
+        carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
+          navigation: {
+            nextEl: navigationNext,
+            prevEl: navigationPrev
+          }
+        });
+      }
+      if (pagination) {
+        var swiperPagination = this.parent.querySelector('[data-pagination]');
+        var _pagination = {
+          el: swiperPagination,
+          clickable: true
+        };
+        if (paginationType == "bars") {
+          _pagination = {
+            el: swiperPagination,
+            clickable: true,
+            type: 'custom',
+            renderCustom: (swiper, current, total) => {
+              var text = '';
+              Array(total).fill().forEach((_, index) => {
+                text += "<div class='swiper-pagination-bullet swiper-pagination--bar ".concat(index == current - 1 ? 'swiper-pagination-active' : '', " '>\n                    <div class=\"swiper-pagination__progress\"></div>\n                  </div>");
+              });
+              return text;
+            }
+          };
+        }
+        if (progressPagination) {
+          _pagination = {
+            el: swiperPagination,
+            type: 'progressbar'
+          };
+        }
+        carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
+          pagination: _pagination
+        });
+      }
+    }
+    return carouselSettings;
+  }
+  initCarousel() {
+    var _this$querySelector, _this$querySelector2;
+    this.parent = this.closest('[data-parent]');
+    this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
+    this.placeholders = (_this$querySelector2 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
+    this.navigations = this.parent.querySelector('[data-navigations]');
+    this.currentWidth = window.innerWidth;
+    var swiperNavigationElements = "\n      <div data-navigation-next data-navigation  class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 12.4016H11.5H23M23 12.4016L13.8 3M23 12.4016L13.8 21.8032\" stroke=\"currentColor\" stroke-width=\"1.75\"></path></svg>\n    </div>\n    <div data-navigation-prev data-navigation class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 12.4016H11.5H23M23 12.4016L13.8 3M23 12.4016L13.8 21.8032\" stroke=\"currentColor\" stroke-width=\"1.75\"></path></svg>\n    </div>\n    ");
+    this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
+    this.container = this.querySelector('[data-swiper-container]');
+    var carouselSettings = this.getCarouselSettings();
+    this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
+      on: {
+        beforeInit: () => {
+          var {
+            navigation,
+            pagination
+          } = carouselSettings || {};
+          if (!navigation) {
+            this.parent.querySelectorAll('[data-navigation]').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+          } else {
+            this.parent.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+          }
+          if (!pagination) {
+            this.parent.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+          } else {
+            this.parent.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+          }
+        },
+        init: () => {
+          var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[0].querySelector('.swiper-pagination__progress');
+          if (currentSlider) {
+            gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.to(currentSlider, {
+              width: "100%",
+              duration: 4,
+              "ease": "ease"
+            });
+          }
+        }
+      },
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Autoplay]
+    }, carouselSettings));
+    this.swiper.on('activeIndexChange', current => {
+      var _this$parent$querySel;
+      var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex];
+      (_this$parent$querySel = this.parent.querySelector('.swiper-pagination-bullet-active')) === null || _this$parent$querySel === void 0 || _this$parent$querySel.classList.remove('swiper-pagination-bullet-active');
+      currentSlider === null || currentSlider === void 0 || currentSlider.classList.add('swiper-pagination-bullet-active');
+    });
+    this.swiper.on('slideChange', current => {
+      var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex].querySelector('.swiper-pagination__progress');
+      gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.to(currentSlider, {
+        width: "100%",
+        duration: 4,
+        "ease": "ease"
+      });
+    });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomCarousel);
+
+/***/ }),
+
+/***/ "./js/components/import-custom-elements.js":
+/*!*************************************************!*\
+  !*** ./js/components/import-custom-elements.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_custom_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/custom-carousel */ "./js/components/custom-carousel.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  customElements.define('custom-carousel', JsComponents_custom_carousel__WEBPACK_IMPORTED_MODULE_0__["default"]);
+});
+
+/***/ }),
+
+/***/ "./js/sections/announcementBar.js":
+/*!****************************************!*\
+  !*** ./js/sections/announcementBar.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/AnnouncementBar.svelte */ "./js/components/svelte/AnnouncementBar.svelte");
+ //wrapper that inject svelte into DOM
+ //svelte component to load
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'announcement-bar', '#announcement-bar-data');
+});
+
+/***/ }),
+
+/***/ "./js/sections/bundleTabsSection.js":
+/*!******************************************!*\
+  !*** ./js/sections/bundleTabsSection.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_BundleTabsSection_index_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/BundleTabsSection/index.svelte */ "./js/components/svelte/BundleTabsSection/index.svelte");
+ //wrapper that inject svelte into DOM
+ //svelte component to load
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_BundleTabsSection_index_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'bundle-tabs-section', '#product-bundle-data');
+});
+
+/***/ }),
 
 /***/ "./js/sections/global.js":
 /*!*******************************!*\
   !*** ./js/sections/global.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/shoptradepradeep/shoptrade/healand-co-theme/js/sections/global.js: Unexpected token (4:1)\n\n\u001b[0m \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m announcementBar \u001b[36mfrom\u001b[39m \u001b[32m\"./announcementBar\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m \u001b[36mimport\u001b[39m bundleTabsSection \u001b[36mfrom\u001b[39m \u001b[32m\"./bundleTabsSection\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m \u001b[36mimport\u001b[39m hideRewards \u001b[36mfrom\u001b[39m \u001b[32m\"./hideRewards\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m \u001b[36mimport\u001b[39m importCustomElements \u001b[36mfrom\u001b[39m \u001b[32m\"JsComponents/import-custom-elements\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at constructor (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:356:19)\n    at JSXParserMixin.raise (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:3223:19)\n    at JSXParserMixin.unexpected (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:3253:16)\n    at JSXParserMixin.jsxParseIdentifier (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6725:12)\n    at JSXParserMixin.jsxParseNamespacedName (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6732:23)\n    at JSXParserMixin.jsxParseElementName (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6741:21)\n    at JSXParserMixin.jsxParseOpeningElementAt (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6821:22)\n    at JSXParserMixin.jsxParseElementAt (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6846:33)\n    at JSXParserMixin.jsxParseElement (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6915:17)\n    at JSXParserMixin.parseExprAtom (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:6927:19)\n    at JSXParserMixin.parseExprSubscripts (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10857:23)\n    at JSXParserMixin.parseUpdate (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10840:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10816:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10654:61)\n    at JSXParserMixin.parseExprOps (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10659:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10636:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10597:21)\n    at JSXParserMixin.parseExpressionBase (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10551:23)\n    at /Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10547:39\n    at JSXParserMixin.allowInAnd (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12279:16)\n    at JSXParserMixin.parseExpression (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:10547:17)\n    at JSXParserMixin.parseStatementContent (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12737:23)\n    at JSXParserMixin.parseStatementLike (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12588:17)\n    at JSXParserMixin.parseModuleItem (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12565:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:13189:36)\n    at JSXParserMixin.parseBlockBody (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:13182:10)\n    at JSXParserMixin.parseProgram (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12464:10)\n    at JSXParserMixin.parseTopLevel (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:12454:25)\n    at JSXParserMixin.parse (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:14376:10)\n    at parse (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/parser/lib/index.js:14417:38)\n    at parser (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/core/lib/parser/index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/core/lib/transformation/index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/@babel/core/lib/transform.js:22:33)\n    at transform.next (<anonymous>)\n    at step (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/gensync/index.js:261:32)\n    at /Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/shoptradepradeep/shoptrade/healand-co-theme/node_modules/gensync/index.js:223:11)");
+/* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
+/* harmony import */ var _bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bundleTabsSection */ "./js/sections/bundleTabsSection.js");
+/* harmony import */ var _hideRewards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hideRewards */ "./js/sections/hideRewards.js");
+/* harmony import */ var JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/import-custom-elements */ "./js/components/import-custom-elements.js");
+//global imports here
+
+
+
+
+
+//config lazyload to default settings
+
+document.addEventListener('DOMContentLoaded', () => {
+  (0,_announcementBar__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_hideRewards__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__["default"])();
+});
+
+/***/ }),
+
+/***/ "./js/sections/hideRewards.js":
+/*!************************************!*\
+  !*** ./js/sections/hideRewards.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var hideReward = () => {
+  var popup = document.querySelector('.needsclick');
+  var reward = document.querySelector('#smile-ui-lite-container');
+  var chatIcon = document.querySelector('#gorgias-chat-container');
+  var cookies = document.querySelector('#pandectes-banner');
+  var visibilityProps = [reward, chatIcon, cookies].filter(Boolean);
+  var isPopupClosed = popup ? popup.classList.contains('undefined') : false;
+  if (!popup || isPopupClosed) {
+    visibilityProps.forEach(e => {
+      e.style.opacity = '1';
+    });
+  } else {
+    visibilityProps.forEach(e => {
+      e.style.opacity = '0';
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  var interval = setInterval(() => {
+    hideReward();
+  }, 1000);
+});
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"global": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkshoptrade_Shopify_Development"] = self["webpackChunkshoptrade_Shopify_Development"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./js/sections/global.js"]();
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/global.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
