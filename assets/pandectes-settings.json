@@ -6,7 +6,7 @@
     "primaryLocale": "en",
     "adminMode": false
   },
-  "tsPublished": 1713877707,
+  "tsPublished": 1713878622,
   "declaration": {
     "showPurpose": false,
     "showProvider": false,
@@ -321,7 +321,7 @@
       "target": "",
       "logo": "<img class=\"cc-banner-logo\" height=\"20\" width=\"20\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0436\/8993\/5006\/t\/108\/assets\/pandectes-logo.png?v=1705004814\" alt=\"Heal + Co.\" \/>"
     },
-    "window": "<div role=\"dialog\" aria-live=\"polite\" aria-label=\"cookieconsent\" aria-describedby=\"cookieconsent:desc\" id=\"pandectes-banner\" class=\"cc-window-wrapper cc-bottom-center-wrapper\"><div class=\"pd-cookie-banner-window cc-window {{classes}}\"><!--googleoff: all-->{{children}}<!--googleon: all--><\/div><\/div>",
+    "window": "<div role=\"dialog\" aria-live=\"polite\" aria-label=\"cookieconsent\" aria-describedby=\"cookieconsent:desc\" id=\"pandectes-banner\" class=\"cc-window-wrapper cc-bottom-wrapper\"><div class=\"pd-cookie-banner-window cc-window {{classes}}\"><!--googleoff: all-->{{children}}<!--googleon: all--><\/div><\/div>",
     "compliance": {
       "opt-both": "<div class=\"cc-compliance cc-highlight\">{{deny}}{{allow}}<\/div>"
     },
@@ -329,7 +329,7 @@
     "layouts": {
       "basic": "{{logo}}{{message}}{{compliance}}{{close}}"
     },
-    "position": "bottom-center",
+    "position": "bottom",
     "theme": "wired",
     "revokable": false,
     "animateRevokable": false,
