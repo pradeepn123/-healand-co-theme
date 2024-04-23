@@ -1,0 +1,14 @@
+<div class="section-header">
+    <div class="section-header__wrapper">
+        <div class="section-header__content">
+            {% if heading %}
+                <h2 class="section-header__title">{{heading}}</h2>
+            {% endif %}
+            {% if text %}
+                <p class="section-header__text">
+                    {{ text }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

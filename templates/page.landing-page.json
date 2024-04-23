@@ -2,6 +2,7 @@
   "sections": {
     "page": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "xsmall",
@@ -9,9 +10,29 @@
         "section_spacing_bottom": 96,
         "show_heading": false
       }
+    },
+    "key_ingredients_k8Qhr4": {
+      "type": "key-ingredients",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "Key Ingredients",
+        "heading_size": "h5",
+        "mobile_title_size": 24,
+        "alignment": "center",
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
     }
   },
   "order": [
-    "page"
+    "page",
+    "key_ingredients_k8Qhr4"
   ]
 }
