@@ -1,0 +1,9 @@
+.text-image{
+    &__heading-text{
+        @include use-text-style('heading-2');
+    }
+    &__description{
+        @include use-text-style('body-alt');
+        line-height: 1.4;
+    }
+}

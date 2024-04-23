@@ -1,8 +1,14 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
 @use 'StyleComponents/typography';
-@import 'StyleComponents/breakpoints';
 @import 'Token';
+@import 'StyleComponents/breakpoints';
+@import 'StyleComponents/text-image';
+
+@custom-selector :--text-image .text-image;
+@custom-selector :--text-image-heading .text-image--image-with-text .text-image__heading;
+@custom-selector :--text-image-heading-text .text-image--image-with-text .text-image__heading-text;
+@custom-selector :--text-image-responsive .text-image--image-with-text .text-image__heading .responsive-image__wrapper;
 
 .landing-page-image-with-text{
     @include mixins.container;
@@ -25,19 +31,20 @@
     }
 }
 
-.text-image{
+:--text-image{
     margin-bottom: var(--setion-heading-padding);
-    &__heading{
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        padding-bottom: var(--section-heading-margin);
-    }
-    &__heading-text{
-        @include use-text-style('heading-2');
-    }
-    &__description{
-        @include use-text-style('body-alt');
-        line-height: 1.4;
-    }
+}
+
+:--text-image-heading {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: var(--section-heading-margin);
+}
+:--text-image-heading-text{
+    font-family: var(--secondary-font-family);
+}
+
+:--text-image-responsive{
+    width: 50px;
 }

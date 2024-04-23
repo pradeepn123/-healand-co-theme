@@ -1,24 +1,23 @@
-<div class="text-image">
+{%- liquid
+    assign image = block.settings.image
+    assign heading = block.settings.heading
+    assign description = block.settings.description
+-%}
+
+<div class="text-image {% if wrapper_class %} text-image--{{wrapper_class}} {% endif %}">
     <div class="text-image__wrapper">
         <div class="text-image__content">
             <div class="text-image__heading">
                 {%- if image -%}
-                    <svg width="29" height="34" viewBox="0 0 29 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.4427 10.0127C11.4667 9.95305 11.4903 9.89377 11.5134 9.83496C11.5293 9.88458 11.5454 9.93453 11.5618 9.98479C12.0703 11.5468 12.8689 13.5253 14.001 14.8367C15.2631 16.2987 17.361 17.4204 19.0408 18.1599C19.1566 18.2109 19.271 18.2603 19.3838 18.3082C19.2891 18.3333 19.1933 18.3593 19.0966 18.3863C17.3755 18.865 15.1914 19.6687 13.8071 20.9656C12.4575 22.2301 11.5236 24.2862 10.9305 25.9444C10.4466 24.2476 9.64859 22.1295 8.38506 20.7743C7.09795 19.3937 4.9874 18.4397 3.31331 17.84C3.16846 17.7881 3.02576 17.7385 2.88589 17.6911C3.07343 17.6231 3.26626 17.5515 3.46277 17.4765C5.18561 16.819 7.3342 15.8497 8.59885 14.6706C9.87609 13.4798 10.8259 11.5462 11.4427 10.0127Z" stroke="#2F4775" stroke-width="1.67423"/>
-                        <path d="M21.3821 4.31715C21.8536 3.84572 22.2237 3.2021 22.5043 2.58624C22.7779 3.18972 23.1318 3.81915 23.5718 4.2941C24.105 4.86972 24.862 5.32407 25.5738 5.66491C24.8719 5.94881 24.1269 6.34303 23.5925 6.88001C23.1221 7.35279 22.7626 7.98883 22.4916 8.61333C22.2175 7.98811 21.8549 7.35131 21.3821 6.87857C20.8301 6.3265 20.0543 5.92457 19.3345 5.63856C20.0669 5.29106 20.8582 4.84109 21.3821 4.31715Z" stroke="#2F4775" stroke-width="1.67423"/>
-                        <path d="M20.8727 27.3202C21.244 26.9489 21.5434 26.4616 21.7791 25.9796C22.007 26.4499 22.2911 26.9251 22.6357 27.2971C23.0616 27.7569 23.6434 28.128 24.2102 28.4166C23.6532 28.6599 23.0822 28.9847 22.6565 29.4125C22.2874 29.7834 21.996 30.2634 21.7679 30.7479C21.5375 30.2627 21.2436 29.782 20.8727 29.4111C20.4326 28.9709 19.8379 28.6393 19.2646 28.3934C19.8485 28.1025 20.4537 27.7392 20.8727 27.3202Z" stroke="#2F4775" stroke-width="1.67423"/>
-                    </svg>
+                    {% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}
                 {%- endif -%}
                 {%- if heading -%}
-                    <h3 class="text-image__heading-text">incredibly convenient</h3>
+                    <h3 class="text-image__heading-text">{{ heading }}</h3>
                 {%- endif -%}
             </div>
             {%- if description -%}
                 <div class="text-image__description">
-                    <p>
-                        High quality - Manufactured in a state-of-the-art, health Canada compliant, 
-                        GMP certified facility in Canada, Rigorously tested for heavy metals and contaminants.
-                    </p>
+                    <p>{{description}}</p>
                 </div>
             {%- endif -%}
         </div>  

@@ -13,6 +13,46 @@
     },
     "landing_page_image_with_text_kDdceA": {
       "type": "landing-page-image-with-text",
+      "blocks": {
+        "text_4BFKKD": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
+            "heading": "incredibly convenient",
+            "description": "<p>High quality - Manufactured in a state-of-the-art, health Canada compliant, GMP certified facility in Canada, Rigorously tested for heavy metals and contaminants.<\/p>"
+          }
+        },
+        "text_fFiJnt": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
+            "heading": "Heading 2",
+            "description": "<p>High quality - Manufactured in a state-of-the-art, health Canada compliant, GMP certified facility in Canada, Rigorously tested for heavy metals and contaminants.<\/p>"
+          }
+        },
+        "text_4C3pmP": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
+            "heading": "Heading 3",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
+        "text_e4iGhR": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
+            "heading": "Heading 4",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4BFKKD",
+        "text_fFiJnt",
+        "text_4C3pmP",
+        "text_e4iGhR"
+      ],
       "settings": {
         "heading": "Nature’s super charger",
         "text": "Supercharger yourself with berberine to a  happier and healthier you.",

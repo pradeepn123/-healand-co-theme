@@ -1,6 +1,19 @@
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-image-with-text.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
+.text-image__heading-text {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.text-image__description {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  line-height: 1.4;
+}
 .landing-page-image-with-text {
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
@@ -64,7 +77,8 @@
 .text-image {
   margin-bottom: var(--setion-heading-padding);
 }
-.text-image__heading {
+
+.text-image--image-with-text .text-image__heading {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,16 +88,11 @@
           align-items: center;
   padding-bottom: var(--section-heading-margin);
 }
-.text-image__heading-text {
-  font-family: "proximanova-regular";
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
+
+.text-image--image-with-text .text-image__heading-text {
+  font-family: var(--secondary-font-family);
 }
-.text-image__description {
-  font-family: "proximanova-regular";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2;
-  line-height: 1.4;
+
+.text-image--image-with-text .text-image__heading .responsive-image__wrapper {
+  width: 50px;
 }
