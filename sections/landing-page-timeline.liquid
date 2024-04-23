@@ -1,0 +1,99 @@
+{{ 'landing-page-timeline.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign options = section.settings
+  assign heading_alignment = options.heading_alignment
+  assign heading = options.heading
+  assign text = options.text
+-%}
+
+<div class="landing-page-timeline">
+    <div class="landing-page-timeline__wrapper">
+        <div class="landing-page-timeline__content">
+
+            <div class="landing-page-timeline__heading">
+                {%- liquid
+                    assign heading = heading
+                    assign text = text
+                -%}
+                {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+            </div>
+
+            <div class="landing-page-timeline__content-wrapper">
+                <ul class="landing-page-timeline__content">
+                    {% for block in section.blocks %}
+                    <li>
+                        <div class="landing-page-timeline__content__heading">{{ block.settings.timeline_block_heading }}</div>
+                        <p class="landing-page-timeline__content__text">{{ block.settings.timeline_block_text }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+              </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% schema %}
+{
+    "name": "Landing page timeline",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.collection_list.title_label"
+        },
+        {
+            "type": "text",
+            "id": "text",            
+            "label": "Content"
+        },
+        {
+            "type": "select",
+            "id": "heading_alignment",
+            "label": "t:sections.general_section_settings.heading_alignment_label",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.general_section_settings.alignment_option_left_label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.general_section_settings.alignment_option_center_label"
+                }
+            ],
+            "default": "center"
+        }
+    ],
+    "blocks": [
+        {
+          "name": "Timeline Blocks",
+          "type": "cardType",
+          "settings": [
+            {
+              "type": "text",
+              "id": "timeline_block_heading",
+              "label": "Heading"
+            },
+            {
+              "type": "text",
+              "id": "timeline_block_text",
+              "label": "Description"
+            }
+          ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "Landing page timeline"
+        }
+    ]
+}
+{%  endschema %}

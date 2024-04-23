@@ -1,0 +1,65 @@
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-timeline.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+.landing-page-timeline {
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (--lg) {
+  .landing-page-timeline {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper {
+  font-family: var(--secondary-alt-font-family);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content {
+  list-style: none;
+  padding: 0 12px;
+  margin-top: 2rem;
+  border-radius: 12px;
+  position: relative;
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content li {
+  list-style: none;
+  padding: 0 0 30px 60px;
+  border-left: 2px solid #2F4775;
+  position: relative;
+  margin-left: 10px;
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content li:last-child {
+  border: 0px;
+  padding-bottom: 0;
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content li:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 3px solid #2F4775;
+  border-radius: 50%;
+  position: absolute;
+  left: -13px;
+  top: 0px;
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content li .landing-page-timeline__content__heading {
+  color: #97A3BA;
+  font-family: inherit;
+  line-height: 1;
+  font-weight: 500; /* need to change */
+  font-size: 25px; /* need to change */
+}
+.landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper .landing-page-timeline__content li .landing-page-timeline__content__text {
+  color: #2F4775;
+  font-family: inherit;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-weight: 400; /* need to change */
+  font-size: 18px; /* need to change */
+}
