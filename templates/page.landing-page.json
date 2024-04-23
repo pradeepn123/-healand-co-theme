@@ -54,6 +54,8 @@
         "text_e4iGhR"
       ],
       "settings": {
+        "heading": "",
+        "text": "",
         "heading_alignment": "center"
       }
     },
@@ -79,24 +81,60 @@
     "landing_page_compare_section_QTFTk3": {
       "type": "landing-page-compare-section",
       "blocks": {
-        "other_9mbDFz": {
+        "other_LzCRMd": {
           "type": "other",
           "settings": {
-            "description_other": "hlo"
+            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
+            "description_other": "Added filters"
           }
         },
-        "other_MgHCcc": {
+        "heal_and_co_Kw4GW8": {
+          "type": "heal_and_co",
+          "settings": {
+            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
+            "description_heal_and_co": "No Filter added"
+          }
+        },
+        "other_HxKin6": {
           "type": "other",
           "settings": {
-            "description_other": "hi"
+            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
+            "description_other": "Low potency despite lable"
+          }
+        },
+        "other_XtWpLD": {
+          "type": "other",
+          "settings": {
+            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
+            "description_other": "Bitter \/ bad \/ rancid taste"
+          }
+        },
+        "heal_and_co_AyagQ4": {
+          "type": "heal_and_co",
+          "settings": {
+            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
+            "description_heal_and_co": "A combination of 5 medicinal mushrooms in every capsule"
+          }
+        },
+        "heal_and_co_DTaQgK": {
+          "type": "heal_and_co",
+          "settings": {
+            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
+            "description_heal_and_co": "No taste or aftertaste"
           }
         }
       },
       "block_order": [
-        "other_9mbDFz",
-        "other_MgHCcc"
+        "other_LzCRMd",
+        "heal_and_co_Kw4GW8",
+        "other_HxKin6",
+        "other_XtWpLD",
+        "heal_and_co_AyagQ4",
+        "heal_and_co_DTaQgK"
       ],
       "settings": {
+        "heading": "How we compare",
+        "text": "We deliver the healing power of nature, one bottle at a time",
         "heading_alignment": "center",
         "block_heading_one": "Others",
         "block_heading_two": "HEAL + CO.",

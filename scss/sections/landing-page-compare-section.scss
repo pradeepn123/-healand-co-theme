@@ -29,13 +29,11 @@
 
     &__description{
         display: flex;
-        flex-direction: column;
         height: 100%;
-    }
-
-    &__description{
+        flex-direction: column;
         background: colors.$off-white;
         padding: var(--setion-top-padding) var(--nav-vertical-padding);
+        column-gap: var(--setion-top-padding);
         @media(--sm){
             padding: var(--setion-top-padding) var(--setion-heading-padding);
         }
@@ -43,11 +41,18 @@
 
     &__description-wrap{
         display: flex;
+        margin-bottom: var(--grid-row-gap);
         column-gap: var(--setion-top-padding);
+        @media(--sm){
+            margin-bottom: var(--nav-vertical-padding);
+        }
+    }
+
+    &__bullet-img{
+        min-width: 30px;
     }
 
     &__text{
         @include use-text-style('body-alt');
-        line-height: 27px;
     }
 }
