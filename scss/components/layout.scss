@@ -3,8 +3,8 @@
     --grid-row-gap: 10px;
     --grid-row-gap-large: 20px;
     --section-content-margin: 16px;
-    --section-margin: 20px;
-    --section-padding:20px;
+    --section-margin: 25px;
+    --section-padding:25px;
     --section-heading-margin: 10px;
     --grid-column-gap: 10px;
     --header-padding: 10px;
@@ -22,8 +22,8 @@
     @media(min-width: 1024px) {
         --base-margin: 40px;
         --section-content-margin: 20px;
-        --section-margin: 20px;
-        --section-padding:20px;
+        --section-margin: 40px;
+        --section-padding:40px;
         --section-heading-margin: 20px;
         --grid-row-gap-large: 20px;
     }
