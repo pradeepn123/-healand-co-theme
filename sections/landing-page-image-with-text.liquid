@@ -1,0 +1,47 @@
+
+{%- liquid
+  assign options = section.settings
+  assign heading_alignment = options.heading_alignment
+  
+-%}
+<div class="landing-page-image-with-text">
+    <div class="landing-page-image-with-text__wrapper">
+        <div class="landing-page-image-with-text__content">
+            {%- liquid
+                assign heading = 'Nature’s super charger'
+                assign text = 'Supercharger yourself with berberine to a  happier and healthier you.'
+            -%}
+            {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Landing page image & text",
+    "settings": [        
+        {
+            "type": "select",
+            "id": "heading_alignment",
+            "label": "t:sections.general_section_settings.heading_alignment_label",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.general_section_settings.alignment_option_left_label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.general_section_settings.alignment_option_center_label"
+                }
+            ],
+            "default": "center"
+        }        
+    ],
+    "presets": [
+        {
+        "name": "Landing page image & text"
+        }
+    ]
+}
+{%  endschema %}

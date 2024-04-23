@@ -11,6 +11,11 @@
         "show_heading": false
       }
     },
+    "landing_page_image_with_text_kDdceA": {
+      "type": "landing-page-image-with-text",
+      "settings": {
+      }
+    },
     "key_ingredients_k8Qhr4": {
       "type": "key-ingredients",
       "settings": {
@@ -33,6 +38,7 @@
   },
   "order": [
     "page",
+    "landing_page_image_with_text_kDdceA",
     "key_ingredients_k8Qhr4"
   ]
 }

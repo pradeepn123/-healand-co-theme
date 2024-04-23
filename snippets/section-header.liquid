@@ -1,6 +1,8 @@
+{{ 'section-header.css' |  asset_url | stylesheet_tag }}
+
 <div class="section-header">
     <div class="section-header__wrapper">
-        <div class="section-header__content">
+        <div class="section-header__content {% if heading_alignment == 'center' %} section__header--center-alignment {% endif %}">
             {% if heading %}
                 <h2 class="section-header__title">{{heading}}</h2>
             {% endif %}

@@ -101,3 +101,14 @@
 .needsclick {
   min-height: 0 !important;
 }
+
+.section-header__wrapper {
+  padding: 10px 0;
+  margin: 10px 0;
+}
+.section-header__content {
+  display: grid;
+}
+.section-header .section__header--center-alignment {
+  text-align: center;
+}
