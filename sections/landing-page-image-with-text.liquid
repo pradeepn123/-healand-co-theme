@@ -10,20 +10,22 @@
 
 <div class="landing-page-image-with-text">
     <div class="landing-page-image-with-text__wrapper">
+        <div class="landing-page-image-with-text__heading">
+            {%- liquid
+                assign heading = heading
+                assign text = text
+            -%}
+            {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
+        </div>
         <div class="landing-page-image-with-text__content">
-            <div class="landing-page-image-with-text__heading">
-                {%- liquid
-                    assign heading = heading
-                    assign text = text
-                -%}
-                {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
-            </div>
             <div class="landing-page-image-with-text__content-wrapper">
                 <div class="landing-page-image-with-text__image">
                     {% render 'shopify-responsive-image', image: image, aspect_ratio: 1.2 %}
                 </div>
                 <div class="landing-page-image-with-text__textcontent">
-                    Hello
+                    {% for i in (1..4) %}
+                        {% render 'text-image' %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -1,9 +1,43 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'StyleComponents/breakpoints';
+@import 'Token';
 
 .landing-page-image-with-text{
     @include mixins.container;
-    .landing-page-image-with-text__content-wrapper{
-        @include mixins.grid(2,100px,100px);
+    &__content-wrapper{
+        @include mixins.grid(1,100px,100px);
+        @media(--lg){
+            @include mixins.grid(5,100px,100px);
+            column-gap: 70px;
+        }        
+    }
+    &__image{
+        @media(--lg){
+            grid-column: span 2;
+        }
+    }
+    &__textcontent{
+        @media(--lg){
+            grid-column: span 3;
+        }
+    }
+}
+
+.text-image{
+    margin-bottom: var(--setion-heading-padding);
+    &__heading{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-bottom: var(--section-heading-margin);
+    }
+    &__heading-text{
+        @include use-text-style('heading-2');
+    }
+    &__description{
+        @include use-text-style('body-alt');
+        line-height: 1.4;
     }
 }

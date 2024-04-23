@@ -7,7 +7,7 @@
   margin-right: auto;
   
   @media(--lg) {
-    max-width: calc(1440px - 2*var(--base-margin));
+    max-width: calc(100% - 2*var(--base-margin));
   }
 }
 

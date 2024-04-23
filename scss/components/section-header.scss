@@ -1,18 +1,37 @@
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+
 .section-header{
     &__wrapper{
-        padding: 10px 0;
-        margin: 10px 0;
+        padding: var(--section-padding) 0;
+        margin: var(--section-margin) 0 0 0;        
     }
     &__content{
-        display: grid;
+        max-width: 670px;
+        margin: 0 auto;
+        &--center-alignment {
+            text-align: left;
+            @media(--lg){
+                text-align: center;
+            }
+        }
     }
-    .section__header--center-alignment {
-        text-align: center;
-    }
+    // TODO remove options from customization
+    
     &__title{
-
+        @include use-text-style('heading-mob');
+        padding-bottom: 20px;
+        @media(--lg){
+            @include use-text-style('heading-brown-h1');
+        }
+        font-family: var(--secondary-font-family);
     }
     &__text{
-
+        @include use-text-style('heading-3');
+        font-family: var(--secondary-font-family);
+        @media(--lg){
+            @include use-text-style('heading-2');
+            font-family: var(--secondary-font-family);
+        }
     }
 } 
