@@ -8,7 +8,7 @@
 }
 @media (--lg) {
   .landing-page-timeline {
-    max-width: calc(1440px - 2 * var(--base-margin));
+    max-width: calc(100% - 2 * var(--base-margin));
   }
 }
 .landing-page-timeline .landing-page-timeline__wrapper .landing-page-timeline__content .landing-page-timeline__content-wrapper {
