@@ -5,71 +5,61 @@
 .landing-page-timeline{
     @include mixins.container;
 
-    .landing-page-timeline__wrapper {
+    &__content-wrapper {
+        font-family: var(--secondary-alt-font-family);
+        max-width: fit-content;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
 
-        .landing-page-timeline__content {
+    &__content {
+        list-style: none;
+        padding: 0 12px;
+        margin-top: 2rem;
+        border-radius: 12px;
+        position: relative;
+    }
 
-            .landing-page-timeline__content-wrapper {
-                font-family: var(--secondary-alt-font-family);
-                width: max-content;
-                margin: 0 auto;
-                margin-top: 40px;
+    &__content-block {
+        list-style: none;
+        padding: 0 0 30px 60px;
+        border-left: 2px solid #2F4775;
+        position: relative;
+        margin-left: 10px;
 
-                .landing-page-timeline__content {
-                    list-style: none;
-                    padding: 0 12px;
-                    margin-top: 2rem;
-                    border-radius: 12px;
-                    position: relative;
+        &:last-child {
+            border: 0px;
+            padding-bottom: 0;
+        }
 
-                    li {
-                        list-style: none;
-                        padding: 0 0 30px 60px;
-                        border-left: 2px solid #2F4775;
-                        position: relative;
-                        margin-left: 10px;
-
-                        &:last-child {
-                            border: 0px;
-                            padding-bottom: 0;
-                        }
-
-                        &:before {
-                            content: '';
-                            width: 24px;
-                            height: 24px;
-                            background: white;
-                            border: 3px solid #2F4775;
-                            border-radius: 50%;
-                            position: absolute;
-                            left: -13px;
-                            top: 0px;
-                        }
-
-                        .landing-page-timeline__content__heading{
-                            color: #97A3BA;
-                            font-family: inherit;
-                            line-height: 1;
-                            font-weight: 500;   /* need to change */
-                            font-size: 25px;   /* need to change */
-                        }
-
-                        .landing-page-timeline__content__text{
-                            color: #2F4775;
-                            font-family: inherit;
-                            line-height: 1.5;
-                            margin-top: 10px;
-                            font-weight: 400;   /* need to change */
-                            font-size: 18px;   /* need to change */
-                        }
-
-                    }
-                }
-            }
+        &:before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 3px solid #2F4775;
+            border-radius: 50%;
+            position: absolute;
+            left: -13px;
+            top: 0px;
         }
     }
+
+    &__content-heading{
+        color: #97A3BA;
+        font-family: inherit;
+        line-height: 1;
+        font-weight: 500;   /* need to change */
+        font-size: 25px;   /* need to change */
+    }
+
+    &__content-text{
+        color: #2F4775;
+        font-family: inherit;
+        line-height: 1.5;
+        margin-top: 10px;
+        font-weight: 400;   /* need to change */
+        font-size: 18px;   /* need to change */
+    }
+
 }
-
-
-
-
