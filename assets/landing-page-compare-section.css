@@ -1,16 +1,6 @@
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-compare-section.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
-.info-compare {
-  max-width: calc(100% - 2 * var(--base-margin));
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 1440px) {
-  .info-compare {
-    max-width: calc(1440px - 2 * var(--base-margin));
-  }
-}
 .info-compare__wrapper {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -62,6 +52,10 @@
 }
 .info-compare__heading {
   padding-bottom: var(--nav-vertical-padding);
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 @media (min-width: 768px) {
   .info-compare__heading {
@@ -94,4 +88,11 @@
   -webkit-column-gap: var(--setion-top-padding);
      -moz-column-gap: var(--setion-top-padding);
           column-gap: var(--setion-top-padding);
+}
+.info-compare__text {
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  line-height: 27px;
 }

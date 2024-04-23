@@ -13,10 +13,10 @@
 /* unused harmony exports default, _getBBox, _createElement, checkPrefix */
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.12.4
+ * CSSPlugin 3.12.5
  * https://gsap.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1631,10 +1631,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.12.4
+ * GSAP 3.12.5
  * https://gsap.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -2629,10 +2629,11 @@ distribute = function distribute(v) {
     _quickTween,
     _registerPluginQueue = [],
     _createPlugin = function _createPlugin(config) {
-  if (_windowExists() && config) {
-    // edge case: some build tools may pass in a null/undefined value
-    config = !config.name && config["default"] || config; //UMD packaging wraps things oddly, so for example MotionPathHelper becomes {MotionPathHelper:MotionPathHelper, default:MotionPathHelper}.
+  if (!config) return;
+  config = !config.name && config["default"] || config; // UMD packaging wraps things oddly, so for example MotionPathHelper becomes {MotionPathHelper:MotionPathHelper, default:MotionPathHelper}.
 
+  if (_windowExists() || config.headless) {
+    // edge case: some build tools may pass in a null/undefined value
     var name = config.name,
         isFunc = _isFunction(config),
         Plugin = name && !isFunc && config.init ? function () {
@@ -2683,7 +2684,7 @@ distribute = function distribute(v) {
 
     config.register && config.register(gsap, Plugin, PropTween);
   } else {
-    config && _registerPluginQueue.push(config);
+    _registerPluginQueue.push(config);
   }
 },
 
@@ -2922,7 +2923,7 @@ _tickerActive,
         time,
         frame;
 
-    elapsed > _lagThreshold && (_startTime += elapsed - _adjustedLag);
+    (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
     _lastUpdate += elapsed;
     time = _lastUpdate - _startTime;
     overlap = time - _nextTime;
@@ -2964,11 +2965,10 @@ _tickerActive,
 
           _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
 
-          _raf = _win.requestAnimationFrame;
-
           _registerPluginQueue.forEach(_createPlugin);
         }
 
+        _raf = typeof requestAnimationFrame !== "undefined" && requestAnimationFrame;
         _id && _self.sleep();
 
         _req = _raf || function (f) {
@@ -2981,7 +2981,7 @@ _tickerActive,
       }
     },
     sleep: function sleep() {
-      (_raf ? _win.cancelAnimationFrame : clearTimeout)(_id);
+      (_raf ? cancelAnimationFrame : clearTimeout)(_id);
       _tickerActive = 0;
       _req = _emptyFunc;
     },
@@ -5026,8 +5026,8 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         if (iteration !== prevIteration) {
           timeline && this._yEase && _propagateYoyoEase(timeline, isYoyo); //repeatRefresh functionality
 
-          if (this.vars.repeatRefresh && !isYoyo && !this._lock && this._time !== dur && this._initted) {
-            // this._time will === dur when we render at EXACTLY the end of an iteration. Without this condition, it'd often do the repeatRefresh render TWICE (again on the very next tick).
+          if (this.vars.repeatRefresh && !isYoyo && !this._lock && this._time !== cycleDuration && this._initted) {
+            // this._time will === cycleDuration when we render at EXACTLY the end of an iteration. Without this condition, it'd often do the repeatRefresh render TWICE (again on the very next tick).
             this._lock = force = 1; //force, otherwise if lazy is true, the _attemptInitTween() will return and we'll jump out and get caught bouncing on each tick.
 
             this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
@@ -5084,7 +5084,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         pt = pt._next;
       }
 
-      timeline && timeline.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline._dur * timeline._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+      timeline && timeline.render(totalTime < 0 ? totalTime : timeline._dur * timeline._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
 
       if (this._onUpdate && !suppressEvents) {
         isNegative && _rewindStartAt(this, totalTime, suppressEvents, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
@@ -5682,6 +5682,7 @@ var MatchMedia = /*#__PURE__*/function () {
   function MatchMedia(scope) {
     this.contexts = [];
     this.scope = scope;
+    _context && _context.data.push(this);
   }
 
   var _proto6 = MatchMedia.prototype;
@@ -6087,7 +6088,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.12.4";
+Tween.version = Timeline.version = gsap.version = "3.12.5";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -8721,7 +8722,7 @@ function toPrimitive(t, r) {
 
 function toPropertyKey(t) {
   var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
-  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : String(i);
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
 }
 
 /***/ }),
@@ -9327,7 +9328,7 @@ if (typeof HTMLElement === 'function') {
 			if (!this.$$c) {
 				// We wait one tick to let possible child slot elements be created/mounted
 				await Promise.resolve();
-				if (!this.$$cn) {
+				if (!this.$$cn || this.$$c) {
 					return;
 				}
 				function create_slot(name) {
@@ -11965,7 +11966,7 @@ function beforeUpdate(fn) {
  *
  * If a function is returned _synchronously_ from `onMount`, it will be called when the component is unmounted.
  *
- * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+ * `onMount` does not run inside a [server-side component](https://svelte.dev/docs#run-time-server-side-component-api).
  *
  * https://svelte.dev/docs/svelte#onmount
  * @template T
@@ -12004,7 +12005,7 @@ function onDestroy(fn) {
 }
 
 /**
- * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
+ * Creates an event dispatcher that can be used to dispatch [component events](https://svelte.dev/docs#template-syntax-component-directives-on-eventname).
  * Event dispatchers are functions that can take two arguments: `name` and `detail`.
  *
  * Component events created with `createEventDispatcher` create a
@@ -13727,7 +13728,7 @@ function draw(node, { delay = 0, speed, duration, easing = _easing_index_js__WEB
 }
 
 /**
- * The `crossfade` function creates a pair of [transitions](/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
+ * The `crossfade` function creates a pair of [transitions](https://svelte.dev/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
  *
  * https://svelte.dev/docs/svelte-transition#crossfade
  * @param {import('./public').CrossfadeParams & {
@@ -13925,7 +13926,7 @@ function is_svg(name) {
  * https://svelte.dev/docs/svelte-compiler#svelte-version
  * @type {string}
  */
-const VERSION = '4.2.8';
+const VERSION = '4.2.15';
 const PUBLIC_VERSION = '4';
 
 

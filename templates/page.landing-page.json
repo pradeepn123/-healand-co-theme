@@ -54,10 +54,7 @@
         "text_e4iGhR"
       ],
       "settings": {
-        "heading": "Nature’s super charger",
-        "text": "Supercharger yourself with berberine to a  happier and healthier you.",
-        "heading_alignment": "center",
-        "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
+        "heading_alignment": "center"
       }
     },
     "key_ingredients_k8Qhr4": {
@@ -81,6 +78,24 @@
     },
     "landing_page_compare_section_QTFTk3": {
       "type": "landing-page-compare-section",
+      "blocks": {
+        "other_9mbDFz": {
+          "type": "other",
+          "settings": {
+            "description_other": "hlo"
+          }
+        },
+        "other_MgHCcc": {
+          "type": "other",
+          "settings": {
+            "description_other": "hi"
+          }
+        }
+      },
+      "block_order": [
+        "other_9mbDFz",
+        "other_MgHCcc"
+      ],
       "settings": {
         "heading_alignment": "center",
         "block_heading_one": "Others",

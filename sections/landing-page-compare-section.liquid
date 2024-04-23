@@ -2,6 +2,7 @@
 
 {%- liquid
   assign options = section.settings
+  assign block = block.settings
   assign heading_alignment = options.heading_alignment
   assign firstHeading = options.block_heading_one
   assign secondHeading = options.block_heading_two
@@ -26,15 +27,15 @@
                     <div class="info-compare__text-wrapp">
                         <div class="info-compare__description">
                             <div class="info-compare__description-wrap">
-                                <div>
+                                <div class="info-compare__bullet-img">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="12" cy="12.2964" r="12" fill="#CBD1DC"/>
                                         <path d="M7.41797 7.7124L16.5842 16.8786" stroke="#2F4775" stroke-width="2"/>
                                         <path d="M16.582 7.7124L7.41583 16.8786" stroke="#2F4775" stroke-width="2"/>
                                     </svg>
                                 </div>
-                                <div>
-                                    <span>Added filters</span>
+                                <div class="info-compare__text">
+                                    Added filters
                                 </div>
                             </div>
                         </div>
@@ -44,7 +45,18 @@
                     <div class="info-compare__heading">{{secondHeading}}</div>
                     <div class="info-compare__image"> {% render 'shopify-responsive-image', image:SecondImage, aspect_ratio: 1.4 %} </div>
                     <div class="info-compare__description">
-                       
+                       <div class="info-compare__description-wrap">
+                            <div class="info-compare__bullet-img">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12.2964" r="12" fill="#CBD1DC"/>
+                                    <path d="M7.41797 7.7124L16.5842 16.8786" stroke="#2F4775" stroke-width="2"/>
+                                    <path d="M16.582 7.7124L7.41583 16.8786" stroke="#2F4775" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="info-compare__text">
+                                Added filters
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

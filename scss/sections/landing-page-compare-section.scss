@@ -1,9 +1,10 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
-@import 'breakpoints';
+@use 'StyleComponents/typography';
+@import 'StyleComponents/breakpoints';
+@import 'Token';
 
 .info-compare{
-    @include mixins.container;
     &__wrapper{
         @include mixins.grid(1, 40px, 40px);
         row-gap: calc(var(--grid-row-gap-large) * 2);
@@ -20,6 +21,7 @@
 
     &__heading{
         padding-bottom: var(--nav-vertical-padding);
+        @include use-text-style('heading-2');
         @media(--sm){
             padding-bottom: var(--heading-bottom-padding) ;
         }
@@ -42,5 +44,10 @@
     &__description-wrap{
         display: flex;
         column-gap: var(--setion-top-padding);
+    }
+
+    &__text{
+        @include use-text-style('body-alt');
+        line-height: 27px;
     }
 }
