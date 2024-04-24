@@ -1,0 +1,13 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-image-with-descritpion.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.landing-page-image-with-descritpion {
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1440px) {
+  .landing-page-image-with-descritpion {
+    max-width: calc(100% - 2 * var(--base-margin));
+  }
+}

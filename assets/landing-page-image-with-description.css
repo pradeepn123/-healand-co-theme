@@ -1,0 +1,67 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-image-with-description.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.landing-page-image-with-description {
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1440px) {
+  .landing-page-image-with-description {
+    max-width: calc(100% - 2 * var(--base-margin));
+  }
+}
+.landing-page-image-with-description__wrapper {
+  padding-top: var(--section-padding);
+  margin-top: var(--section-margin);
+}
+.landing-page-image-with-description__slide {
+  min-width: var(--gsc-slide-width);
+}
+.landing-page-image-with-description__carousel-btn {
+  cursor: pointer;
+  padding: 1.2rem 0;
+}
+.landing-page-image-with-description__carousel-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+@media (min-width: 768px) {
+  .landing-page-image-with-description__carousel-btn--desktop-hide {
+    display: none;
+  }
+}
+.landing-page-image-with-description__carousel-btn--mobile-hide {
+  display: none;
+}
+@media (min-width: 768px) {
+  .landing-page-image-with-description__carousel-btn--mobile-hide {
+    display: block;
+  }
+}
+
+.carousel--image-with-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  -webkit-column-gap: 2.4rem;
+     -moz-column-gap: 2.4rem;
+          column-gap: 2.4rem;
+  margin: 0 auto;
+}
+
+.text-image.text-image--image-with-description {
+  text-align: center;
+}
+
+.text-image.text-image--image-with-description .text-image__heading .responsive-image__wrapper {
+  max-width: 100% !important;
+  margin: 0 var(--section-padding);
+  max-height: -webkit-fit-content !important;
+  max-height: -moz-fit-content !important;
+  max-height: fit-content !important;
+}

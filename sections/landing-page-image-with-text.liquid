@@ -31,7 +31,7 @@
                 </div>
                 <div class="landing-page-image-with-text__textcontent">
                     {% for block in section.blocks %}
-                        {% render 'text-image', block: block, wrapper_class: 'image-with-text' %}
+                        {% render 'text-image', block: block, aspect_ratio: 1, wrapper_class: 'image-with-text' %}
                     {% endfor %}
                 </div>
             </div>

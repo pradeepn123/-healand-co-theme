@@ -1,0 +1,57 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'StyleComponents/breakpoints';
+
+@custom-selector :--text-image-with-desc .text-image.text-image--image-with-description;
+@custom-selector :--text-image-with-responsive-sec .text-image.text-image--image-with-description .text-image__heading .responsive-image__wrapper;
+
+.landing-page-image-with-description{
+    @include mixins.container;
+    &__wrapper {
+        padding-top: var(--section-padding);
+        margin-top: var(--section-margin);
+    }
+    &__slide {
+        min-width: var(--gsc-slide-width);
+    }
+    &__carousel-btn{
+        cursor: pointer;
+        padding: 1.2rem 0;
+        &[disabled]{
+            cursor: not-allowed;
+            opacity: .35;
+        }
+    }
+    &__carousel-btn--desktop-hide{
+        @media(--sm){
+            display: none;
+        }
+    }
+    &__carousel-btn--mobile-hide{
+        display: none;
+        @media(--sm){
+            display: block;
+        }
+    }
+} 
+
+.carousel {
+    &--image-with-desc{
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        column-gap: 2.4rem;
+        margin: 0 auto;
+    }
+}
+
+:--text-image-with-desc{
+    text-align: center;
+}
+:--text-image-with-responsive-sec{
+    max-width: 100% !important;
+    margin: 0 var(--section-padding);
+    max-height: fit-content !important;
+}

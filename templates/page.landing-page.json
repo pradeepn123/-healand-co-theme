@@ -25,6 +25,55 @@
         "show_heading": false
       }
     },
+    "landing_page_image_with_description_A7N4YH": {
+      "type": "landing-page-image-with-description",
+      "blocks": {
+        "text_jQ7rrn": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_268_1.png",
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
+        "text_LnirVD": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_266_1.png",
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
+        "text_U8gTdi": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_267_1.png",
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
+        "text_HMnQzB": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_268_1.png",
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_jQ7rrn",
+        "text_LnirVD",
+        "text_U8gTdi",
+        "text_HMnQzB"
+      ],
+      "settings": {
+        "section_layout": "carousel",
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 12
+      }
+    },
     "key_ingredients_k8Qhr4": {
       "type": "key-ingredients",
       "settings": {
@@ -164,6 +213,7 @@
     "landing_page_header_e47V3w",
     "landing_page_main_product_PGnkxL",
     "page",
+    "landing_page_image_with_description_A7N4YH",
     "key_ingredients_k8Qhr4",
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc"
