@@ -1,0 +1,27 @@
+.text-with-button {
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px var(--gsc-container-padding);
+        background: colors.$dark-blue;
+    }
+    
+    &__teaser, &__text {
+        color: colors.$white;
+        @include use-text-style('body-title');
+        font-weight: 600;
+        line-height: 1.4;
+    }
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+    @include use-text-style('body-alt');
+    font-family: var(--secondary-alt-font-family);
+    font-weight: 700;
+}

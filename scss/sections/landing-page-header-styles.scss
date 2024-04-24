@@ -3,6 +3,7 @@
 @use 'StyleComponents/typography';
 @import 'breakpoints';
 @import 'Token';
+@import 'StyleComponents/text-with-button';
 
 .landing-page-header {
     &__content {
@@ -58,31 +59,15 @@
     &__left-content {
       flex-basis: 35%;
       align-content: center;
+      padding: 16px var(--gsc-container-padding);
     }
 
     &__right-content {
-      background: colors.$dark-blue;
-      display: flex;
-      flex-direction: row;
       flex-basis: 65%;
-      justify-content: space-between;
     }
 
     &__logo {
       width: fit-content;
     }
 
-    .button {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 8px;
-      @include use-text-style('body-alt');
-      font-family: var(--secondary-alt-font-family);
-      font-weight: 700;
-    }
-
-    &__header-container {
-      padding: 16px var(--gsc-container-padding);
-    }
 }
