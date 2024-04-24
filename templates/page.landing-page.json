@@ -48,7 +48,7 @@
       ],
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_heading.value.heading.value }}",
-        "text": "Supercharger yourself with berberine to a  happier and healthier you.",
+        "text": "<p>{{ page.metafields.custom.landing_page_heading.value.descritpion | metafield_tag }}<\/p>",
         "heading_alignment": "center",
         "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
@@ -123,35 +123,35 @@
         "text_yVCBaA": {
           "type": "text",
           "settings": {
-            "timeline_block_heading": "Day 1",
+            "title": "",
             "timeline_block_text": "Setting up your brand new relic of imbued evil."
           }
         },
         "text_6ycQ8Q": {
           "type": "text",
           "settings": {
-            "timeline_block_heading": "Day 2",
+            "title": "",
             "timeline_block_text": "Hushing the murmurs that do not cease"
           }
         },
         "text_JFewWA": {
           "type": "text",
           "settings": {
-            "timeline_block_heading": "Day 3",
+            "title": "",
             "timeline_block_text": "Integrating with marketo"
           }
         },
         "text_RAXRCB": {
           "type": "text",
           "settings": {
-            "timeline_block_heading": "Day 4",
+            "title": "",
             "timeline_block_text": "Productivity tips for you and your new pet."
           }
         },
         "text_UBDyBq": {
           "type": "text",
           "settings": {
-            "timeline_block_heading": "Day 5",
+            "title": "",
             "timeline_block_text": "Email marketing! and the endless void that awaits."
           }
         }
@@ -173,8 +173,8 @@
   "order": [
     "page",
     "key_ingredients_k8Qhr4",
-    "landing_page_compare_section_QTFTk3",
     "landing_page_image_with_text_kDdceA",
+    "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc"
   ]
 }

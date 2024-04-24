@@ -12,8 +12,8 @@
 
 .landing-page-image-with-text{
     &__wrapper{
-        padding: var(--section-padding) 0;
-        margin: var(--section-margin) 0 0 0; 
+        padding-top: var(--section-padding);
+        margin-top: var(--section-margin); 
     }
     @include mixins.container;
     &__content-wrapper{
@@ -31,6 +31,20 @@
     &__textcontent{
         @media(--lg){
             grid-column: span 3;
+        }
+    }
+    &__heading{
+        &--desktop{
+            display: none;
+            @media(--lg){
+                display: block;
+            }
+        }
+        &--mobile{
+            display: block;
+            @media(--lg){
+                display: none;
+            }
         }
     }
 }

@@ -10,7 +10,7 @@
 
 <div class="landing-page-image-with-text">
     <div class="landing-page-image-with-text__wrapper">
-        <div class="landing-page-image-with-text__heading">
+        <div class="landing-page-image-with-text__heading landing-page-image-with-text__heading--desktop">
             {%- liquid
                 assign heading = heading
                 assign text = text
@@ -21,6 +21,13 @@
             <div class="landing-page-image-with-text__content-wrapper">
                 <div class="landing-page-image-with-text__image">
                     {% render 'shopify-responsive-image', image: image, aspect_ratio: 1.2 %}
+                </div>
+                <div class="landing-page-image-with-text__heading landing-page-image-with-text__heading--mobile">
+                    {%- liquid
+                        assign heading = heading
+                        assign text = text
+                    -%}
+                    {% render 'section-header', heading: heading, text: text, heading_alignment: heading_alignment %}
                 </div>
                 <div class="landing-page-image-with-text__textcontent">
                     {% for block in section.blocks %}
@@ -43,7 +50,7 @@
             "label": "t:sections.collection_list.title_label"
         },
         {
-            "type": "text",
+            "type": "richtext",
             "id": "text",            
             "label": "Content"
         },
