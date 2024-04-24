@@ -1,5 +1,10 @@
 {
   "sections": {
+    "landing_page_header_e47V3w": {
+      "type": "landing-page-header",
+      "settings": {
+      }
+    },
     "page": {
       "type": "page",
       "disabled": true,
@@ -121,35 +126,35 @@
         "text_yVCBaA": {
           "type": "text",
           "settings": {
-            "title": "",
+            "title": "Day 1",
             "timeline_block_text": "Setting up your brand new relic of imbued evil."
           }
         },
         "text_6ycQ8Q": {
           "type": "text",
           "settings": {
-            "title": "",
+            "title": "Day 2",
             "timeline_block_text": "Hushing the murmurs that do not cease"
           }
         },
         "text_JFewWA": {
           "type": "text",
           "settings": {
-            "title": "",
+            "title": "Day 3",
             "timeline_block_text": "Integrating with marketo"
           }
         },
         "text_RAXRCB": {
           "type": "text",
           "settings": {
-            "title": "",
+            "title": "Day 4",
             "timeline_block_text": "Productivity tips for you and your new pet."
           }
         },
         "text_UBDyBq": {
           "type": "text",
           "settings": {
-            "title": "",
+            "title": "Day 5",
             "timeline_block_text": "Email marketing! and the endless void that awaits."
           }
         }
@@ -169,6 +174,7 @@
     }
   },
   "order": [
+    "landing_page_header_e47V3w",
     "page",
     "key_ingredients_k8Qhr4",
     "landing_page_image_with_text_kDdceA",

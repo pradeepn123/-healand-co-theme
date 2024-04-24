@@ -1,5 +1,6 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
+@import 'breakpoints';
 
 .landing-page-header {
     &__content {
@@ -7,6 +8,20 @@
 
       @media(--lg) {
         @include mixins.grid(6,100px,100px);
+      }
+
+      &--mobile {
+        @media(--sm) {
+          display: none;
+        }
+        display: grid;
+      }
+
+      &--desktop {
+        @media(--sm) {
+          display: grid;
+        }
+        display: none;
       }
     }
 
