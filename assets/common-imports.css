@@ -65,14 +65,6 @@
   max-width: 670px;
   margin: 0 auto;
 }
-.section-header__content--center-alignment {
-  text-align: left;
-}
-@media (min-width: 768px) {
-  .section-header__content--center-alignment {
-    text-align: center;
-  }
-}
 .section-header__title {
   font-family: "proximanova-regular";
   font-size: 32px;

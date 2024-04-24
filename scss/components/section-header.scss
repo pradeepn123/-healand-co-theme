@@ -8,12 +8,6 @@
     &__content{
         max-width: 670px;
         margin: 0 auto;
-        &--center-alignment {
-            text-align: left;
-            @media(--sm){
-                text-align: center;
-            }
-        }
     }
     // TODO remove options from customization
     

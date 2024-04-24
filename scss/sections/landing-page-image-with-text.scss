@@ -52,3 +52,10 @@
 :--text-image-responsive{
     width: 50px;
 }
+
+.section-header--image-with-text {
+    text-align: left;
+    @media(--sm){
+        text-align: center;
+    }
+}

@@ -2,7 +2,7 @@
 
 <div class="section-header">
     <div class="section-header__wrapper">
-        <div class="section-header__content {% if heading_alignment == 'center' %}section-header__content--center-alignment{% endif %}">
+        <div class="section-header__content {% if wrapper_class %} section-header--{{wrapper_class}} {% endif %}">
             {% if heading %}
                 <h2 class="section-header__title">{{heading}}</h2>
             {% endif %}
