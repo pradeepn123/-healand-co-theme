@@ -49,7 +49,6 @@
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_heading.value.heading.value }}",
         "text": "<p>{{ page.metafields.custom.landing_page_heading.value.descritpion | metafield_tag }}<\/p>",
-        "heading_alignment": "center",
         "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
     },
@@ -110,7 +109,6 @@
       "settings": {
         "heading": "How we compare",
         "text": "We deliver the healing power of nature, one bottle at a time",
-        "heading_alignment": "center",
         "block_heading_one": "Others",
         "block_heading_two": "HEAL + CO.",
         "image_other_one": "shopify:\/\/shop_images\/Frame_633.png",
