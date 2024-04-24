@@ -41,7 +41,7 @@
             }
         }
         .card-carousel__carousel-btn{
-            transform: none;
+            transform: none !important;
             position: relative;
             top: -0.6em;
             @media(--sm){
@@ -158,16 +158,16 @@
     justify-content: center;
 }
 
-// .single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap {
-//     @media(--md-large) {
-//         margin-top: -7rem;
-//     }
-// }
-// .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info {
-//     @media(--md-large) {
-//         margin-top: -7rem;
-//     }
-// }
+.single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap {
+    @media(--md-large) {
+        margin-top: -7rem;
+    }
+}
+.bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info {
+    @media(--md-large) {
+        margin-top: -7rem;
+    }
+}
 
 /* Blank Image Class - blankImage_keyIngredients */
 .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info.blankImage_keyIngredients.blankImage_keyIngredients {
@@ -222,4 +222,54 @@
     color: white;
     opacity: 1;
     pointer-events: none;
+}
+
+
+.key_ingredient_section{
+    .main_title_key {
+        h4{
+            @include use-text-style('heading-1');
+            font-family: var(--secondary-font-family) !important;
+            color: colors.$dark-blue !important; 
+        }
+        .carousel-btn{
+            background: colors.$dark-blue !important;
+            @media(--sm){
+                background: colors.$dark-blue;
+                color: colors.$white;                
+            }
+        }
+    }
+    carousel-component{
+        .card-carousel__slide{
+            .ingredients_wrapper{
+                background: colors.$light-grey !important;
+                color: colors.$dark-blue !important;
+                .key_ingre_description{
+                    font-family: var(--primary-font-family);
+                }
+                .img_wrap_text_info {
+                    .key_ingre_title {
+                        h4{
+                            @include use-text-style('heading-3');
+                            font-family: var(--secondary-font-family) !important;
+                            color: colors.$dark-blue !important;
+                            @media(--md-large){                                
+                                @include use-text-style('heading-2');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .card-carousel__carousel-btn[disabled] {
+            background-color: colors.$light-blue !important;
+        }
+    }
+}
+
+.card-carousel--with-half-next-slide-and-hover-navigation:hover .card-carousel__carousel-btn:not([disabled]), 
+.card-carousel--with-half-next-slide-and-hover-navigation .card-carousel__carousel-btn:not([disabled]):focus-visible,
+.card-carousel--with-half-next-slide-and-hover-navigation .card-carousel__carousel-btn{
+    opacity: 1 !important;
 }

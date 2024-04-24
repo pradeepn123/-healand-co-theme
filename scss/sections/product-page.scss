@@ -235,7 +235,7 @@
                             @include use-text-style('heading-3');
                             font-family: var(--secondary-font-family) !important;
                             color: colors.$dark-blue !important;
-                            @media(--md-large){                                
+                            @media(--md-large){
                                 @include use-text-style('heading-2');
                             }
                         }
@@ -244,7 +244,7 @@
             }
         }
         .card-carousel__carousel-btn[disabled] {
-            background-color: colors.$light-blue !important;
+            background-color: colors.$light-blue !important;            
         }
     }
 }

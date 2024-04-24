@@ -23,7 +23,7 @@
         "heading_size": "h5",
         "mobile_title_size": 24,
         "alignment": "center",
-        "desktop_columns": 4,
+        "desktop_columns": 2,
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
