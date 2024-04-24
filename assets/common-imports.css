@@ -15,6 +15,7 @@
   --grid-product-badge-padding: 4px 12px;
   --setion-heading-padding: 30px;
   --setion-top-padding:25px;
+  --button-padding: 12px 22px;
 }
 @media (min-width: 768px) {
   :root {
@@ -33,14 +34,54 @@
     --section-padding:40px;
     --section-heading-margin: 20px;
     --grid-row-gap-large: 20px;
-    --button-padding: 12px 22px;
+  }
+}
+
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --grid-row-gap-large: 20px;
+  --section-content-margin: 16px;
+  --section-margin: 25px;
+  --section-padding:25px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+  --header-padding: 10px;
+  --nav-vertical-padding: 15px;
+  --grid-product-badge-padding: 4px 12px;
+  --setion-heading-padding: 30px;
+  --setion-top-padding:25px;
+  --button-padding: 12px 22px;
+}
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --header-padding: 18px;
+    --base-margin: 40px;
+    --heading-bottom-padding:15px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 48px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 20px;
+    --grid-row-gap-large: 20px;
   }
 }
 
 .button--primary {
   background-color: #2F4775;
   color: #fff;
+  padding: 12px 22px;
   padding: var(--button-padding);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  cursor: pointer;
 }
 .button--primary:hover {
   opacity: 0.8;
@@ -48,7 +89,12 @@
 .button--secondary {
   background-color: #fff;
   color: #2F4775;
+  padding: 12px 22px;
   padding: var(--button-padding);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  cursor: pointer;
 }
 .button--secondary:hover {
   background-color: #EAEDF1;

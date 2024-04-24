@@ -1,37 +1,88 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
 @import 'breakpoints';
+@import 'Token';
 
 .landing-page-header {
     &__content {
-      @include mixins.grid(1,100px,100px);
-
-      @media(--lg) {
-        @include mixins.grid(6,100px,100px);
-      }
+      flex-direction: column;
 
       &--mobile {
+        display: flex;
         @media(--sm) {
           display: none;
         }
-        display: grid;
+
       }
 
       &--desktop {
-        @media(--sm) {
-          display: grid;
-        }
         display: none;
+        @media(--sm) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          border-bottom: 1px solid #E7E7E7;
+        }
       }
     }
 
+    &__top-content {
+      padding: 10px 20px;
+      text-align: center;
+      background: colors.$dark-blue;
+    }
+
+    &__teaser, &__text {
+      color: colors.$white;
+      @include use-text-style('body-regular');
+      font-weight: 600;
+      line-height: 1.4;
+
+      @media(--sm) {
+        @include use-text-style('body-title');
+        font-weight: 600;
+        line-height: 1.4;
+      }
+    }
+
+    &__bottom-content {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #E7E7E7;
+      box-shadow: 0px 8px 16px 0px #0000000D;
+    }
+
     &__left-content {
-        grid-column: span 1;
-        order:0;
+      flex-basis: 35%;
+      align-content: center;
     }
 
     &__right-content {
-        background: colors.$dark-blue;
-        order:1;
+      background: colors.$dark-blue;
+      display: flex;
+      flex-direction: row;
+      flex-basis: 65%;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      width: fit-content;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 8px;
+      @include use-text-style('body-alt');
+      font-family: var(--secondary-alt-font-family);
+      font-weight: 700;
+    }
+
+    &__header-container {
+      padding: 16px var(--gsc-container-padding);
     }
 }

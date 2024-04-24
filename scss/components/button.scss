@@ -1,5 +1,6 @@
 @use 'StyleComponents/colors';
 @use 'StyleComponents/typography';
+@import 'StyleComponents/layout';
 
 .button {   
     &--primary{
@@ -9,6 +10,9 @@
         &:hover{
             opacity: 0.8;
         }
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
     }
     &--secondary{
         background-color: colors.$white;
@@ -17,6 +21,9 @@
         &:hover{
             background-color: colors.$light-grey;
         }
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
     }
 }
 

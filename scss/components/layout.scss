@@ -12,6 +12,7 @@
     --grid-product-badge-padding: 4px 12px;
     --setion-heading-padding: 30px;
     --setion-top-padding:25px;
+    --button-padding: 12px 22px;
 
     @media(min-width: 768px) {
         --grid-column-gap: 20px;
@@ -28,7 +29,6 @@
         --section-padding:40px;
         --section-heading-margin: 20px;
         --grid-row-gap-large: 20px;
-        --button-padding: 12px 22px;
     }
 
 }
