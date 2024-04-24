@@ -78,7 +78,7 @@
                     <div class="carousel__container" data-carousel-container>
                         {%- for block in section.blocks -%}
                             <div class="carousel__slide landing-page-image-with-description__slide block-{{ block.id }}" {{ block.shopify_attributes }}>
-                                {% render 'text-image', block: block, aspect_ratio: 4, wrapper_class: 'image-with-description' %}
+                                {% render 'text-image', block: block, aspect_ratio: 4, contain: true, wrapper_class: 'image-with-description' %}
                             </div>
                         {%- endfor -%}
                     </div>
@@ -105,7 +105,7 @@
 {% schema %}
 {
     "name": "Landing page image & desc",
-    "settings": [        
+    "settings": [
         {
             "type": "select",
             "id": "section_layout",

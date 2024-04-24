@@ -1,0 +1,53 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'StyleComponents/breakpoints';
+
+
+.landing-page-bundle-section{
+    background: colors.$dark-blue;    
+    &__information{
+
+    }
+}
+
+.landing-bundle-sec-info{
+    &__wrapper{
+        @include mixins.container;
+        @include mixins.grid(1,100px,100px);
+        @media(--lg){
+            @include mixins.grid(3,100px,100px);
+            column-gap: 20px;
+        }
+    }
+    &__content{
+        background: colors.$white;
+        text-align: center;
+        padding: var(--section-padding);
+    }
+    &__heading{
+        @include use-text-style('heading-2');
+        color: colors.$dark-blue;
+        margin-bottom: 12px;
+    }
+    &__button.button--primary{
+        border-radius: 4rem;
+        background: #CBD1DC;
+        color: #fff;
+        border: 0;
+        margin-bottom: 16px;
+        @include use-text-style('heading-3');
+    }
+    &__gift-price{
+        display: block;
+        color: colors.$black;
+        @include use-text-style('body-title');
+        font-weight: 600;
+    }
+    &__description{
+        @include use-text-style('heading-3');
+        font-family: var(--secondary-font-family);
+        line-height: 1.4;
+    }
+}

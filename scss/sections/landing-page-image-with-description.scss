@@ -5,7 +5,7 @@
 @import 'StyleComponents/breakpoints';
 
 @custom-selector :--text-image-with-desc .text-image.text-image--image-with-description;
-@custom-selector :--text-image-with-responsive-sec .text-image.text-image--image-with-description .text-image__heading .responsive-image__wrapper;
+
 
 .landing-page-image-with-description{
     @include mixins.container;
@@ -49,9 +49,4 @@
 
 :--text-image-with-desc{
     text-align: center;
-}
-:--text-image-with-responsive-sec{
-    max-width: 100% !important;
-    margin: 0 var(--section-padding);
-    max-height: fit-content !important;
 }

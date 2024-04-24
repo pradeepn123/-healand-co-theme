@@ -1,0 +1,61 @@
+{{ 'landing-page-bundle-section.css' | asset_url | stylesheet_tag }}
+
+<div class="landing-page-bundle-section">
+    <div class="landing-page-bundle-section__wrapper">
+        <div class="landing-page-bundle-section__content">
+            <div class="landing-page-bundle-section__heading">
+                {%- liquid
+                    assign heading = 'Get your daily immune support'
+                    assign text = 'Discounts cannot be used in conjunction with any other offer.'
+                -%}
+                {% render 'section-header', heading: heading, text: text, wrapper_class:'bundle-section-center' %}
+            </div>
+            <div class="landing-page-bundle-section__information">
+                {% render 'landing-bundle-sec-info', block: block %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Landing page bundle sec",
+    "settings": [ 
+
+    ],
+    "blocks": [    
+        {
+            "type": "text",
+            "name": "t:sections.rich_text.text_block_name",
+            "settings": [
+                {
+                    "type": "paragraph",
+                    "content": "t:sections.rich_text.blocks.text.description.content"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Choose Image"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "default": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+                    "label": "t:sections.rich_text.blocks.text.text_1.label"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Landing page bundle sec"
+        }
+    ]
+}
+{%  endschema %}

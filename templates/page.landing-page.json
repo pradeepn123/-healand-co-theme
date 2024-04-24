@@ -207,6 +207,11 @@
         "text": "A 5-days guide to controlling what cannot be controlled",
         "heading_alignment": "center"
       }
+    },
+    "landing_page_bundle_section_6G3dtP": {
+      "type": "landing-page-bundle-section",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -216,6 +221,7 @@
     "landing_page_image_with_description_A7N4YH",
     "key_ingredients_k8Qhr4",
     "landing_page_compare_section_QTFTk3",
-    "landing_page_timeline_kfRwhc"
+    "landing_page_timeline_kfRwhc",
+    "landing_page_bundle_section_6G3dtP"
   ]
 }

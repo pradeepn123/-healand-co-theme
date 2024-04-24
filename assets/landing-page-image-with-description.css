@@ -57,11 +57,3 @@
 .text-image.text-image--image-with-description {
   text-align: center;
 }
-
-.text-image.text-image--image-with-description .text-image__heading .responsive-image__wrapper {
-  max-width: 100% !important;
-  margin: 0 var(--section-padding);
-  max-height: -webkit-fit-content !important;
-  max-height: -moz-fit-content !important;
-  max-height: fit-content !important;
-}
