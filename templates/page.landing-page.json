@@ -16,47 +16,22 @@
       "blocks": {
         "text_4BFKKD": {
           "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_heading.value.landing_page_inner_content_info.value }}",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
-            "heading": "incredibly convenient",
-            "description": "<p>High quality - Manufactured in a state-of-the-art, health Canada compliant, GMP certified facility in Canada, Rigorously tested for heavy metals and contaminants.<\/p>"
-          }
-        },
-        "text_fFiJnt": {
-          "type": "text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
-            "heading": "Heading 2",
-            "description": "<p>High quality - Manufactured in a state-of-the-art, health Canada compliant, GMP certified facility in Canada, Rigorously tested for heavy metals and contaminants.<\/p>"
-          }
-        },
-        "text_4C3pmP": {
-          "type": "text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
-            "heading": "Heading 3",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
-          }
-        },
-        "text_e4iGhR": {
-          "type": "text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_535_1.png",
-            "heading": "Heading 4",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
           }
         }
       },
       "block_order": [
-        "text_4BFKKD",
-        "text_fFiJnt",
-        "text_4C3pmP",
-        "text_e4iGhR"
+        "text_4BFKKD"
       ],
       "settings": {
-        "heading": "",
-        "text": "",
-        "heading_alignment": "center"
+        "heading": "{{ page.metafields.custom.landing_page_heading.value.heading.value }}",
+        "text": "Supercharger yourself with berberine to a  happier and healthier you.",
+        "heading_alignment": "center",
+        "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
     },
     "key_ingredients_k8Qhr4": {
