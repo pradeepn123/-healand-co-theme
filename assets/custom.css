@@ -1160,3 +1160,15 @@ body.hamburger--open[scroll-y-offf] {
 .page-404__content-wrap h1,.page-404__content>*+.page-404__buttons .btn {
     font-family: var(--secondary-font-family);
 }
+
+#smile-ui-lite-container{
+    opacity: 0;
+}
+
+#gorgias-chat-container{
+    opacity: 0;
+}
+
+#pandectes-banner{
+    opacity: 0;
+}

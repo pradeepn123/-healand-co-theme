@@ -143,6 +143,7 @@
     resizeHandler() {
       if (this.width == window.innerWidth) return;
       this.width = window.innerWidth;
+      if(!this.ticker) return;
       this.ticker.classList.remove('ticker--animation');
       var boxes = this.querySelectorAll('.ticker--clone');
       if (boxes.length) {
