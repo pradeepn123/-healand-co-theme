@@ -20,7 +20,7 @@
             <ul class="landing-page-timeline__content">
                 {% for block in section.blocks %}
                 <li class="landing-page-timeline__content-block">
-                    <div class="landing-page-timeline__content-heading">{{ block.settings.timeline_block_heading }}</div>
+                    <div class="landing-page-timeline__content-heading">{{ block.settings.title }}</div>
                     <p class="landing-page-timeline__content-text">{{ block.settings.timeline_block_text }}</p>
                 </li>
                 {% endfor %}
@@ -68,7 +68,7 @@
           "settings": [
             {
               "type": "text",
-              "id": "timeline_block_heading",
+              "id": "title",
               "label": "Heading"
             },
             {

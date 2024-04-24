@@ -116,12 +116,65 @@
         "image_other_one": "shopify:\/\/shop_images\/Frame_633.png",
         "image_other_two": "shopify:\/\/shop_images\/supermushroom_complex_1.png"
       }
+    },
+    "landing_page_timeline_kfRwhc": {
+      "type": "landing-page-timeline",
+      "blocks": {
+        "text_yVCBaA": {
+          "type": "text",
+          "settings": {
+            "timeline_block_heading": "Day 1",
+            "timeline_block_text": "Setting up your brand new relic of imbued evil."
+          }
+        },
+        "text_6ycQ8Q": {
+          "type": "text",
+          "settings": {
+            "timeline_block_heading": "Day 2",
+            "timeline_block_text": "Hushing the murmurs that do not cease"
+          }
+        },
+        "text_JFewWA": {
+          "type": "text",
+          "settings": {
+            "timeline_block_heading": "Day 3",
+            "timeline_block_text": "Integrating with marketo"
+          }
+        },
+        "text_RAXRCB": {
+          "type": "text",
+          "settings": {
+            "timeline_block_heading": "Day 4",
+            "timeline_block_text": "Productivity tips for you and your new pet."
+          }
+        },
+        "text_UBDyBq": {
+          "type": "text",
+          "settings": {
+            "timeline_block_heading": "Day 5",
+            "timeline_block_text": "Email marketing! and the endless void that awaits."
+          }
+        }
+      },
+      "block_order": [
+        "text_yVCBaA",
+        "text_6ycQ8Q",
+        "text_JFewWA",
+        "text_RAXRCB",
+        "text_UBDyBq"
+      ],
+      "settings": {
+        "heading": "The “NOW YOU’RE MARKETING WITH (INCREDIBLY DANGEROUS) POWER” Course:",
+        "text": "A 5-days guide to controlling what cannot be controlled",
+        "heading_alignment": "center"
+      }
     }
   },
   "order": [
     "page",
     "landing_page_image_with_text_kDdceA",
     "key_ingredients_k8Qhr4",
-    "landing_page_compare_section_QTFTk3"
+    "landing_page_compare_section_QTFTk3",
+    "landing_page_timeline_kfRwhc"
   ]
 }
