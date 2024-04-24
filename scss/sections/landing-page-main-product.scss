@@ -1,0 +1,59 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'StyleComponents/breakpoints';
+@import 'StyleComponents/text-image';
+
+
+.landing-page-main-product{
+    &__wrapper{
+        @include mixins.container;
+    }
+
+    &__container{
+        @include mixins.grid(1,100px,100px);
+        @media(--sm){
+            @include mixins.grid(2,100px,100px);
+        }
+    }
+
+    &__content{
+        padding: 0;
+        @media(--sm){
+            background: colors.$off-white;
+            padding: calc(var(--setion-top-padding) *2);
+        }
+    }
+
+    &__title{
+        @include use-text-style('heading-mob');
+        font-family: 'BrownStd-Bold';
+        @media(--sm){
+            @include use-text-style('heading-1');
+            font-family: 'BrownStd-Bold';
+        }
+    }
+
+    &__description_title{
+        @include use-text-style('heading-mob');
+        font-family: 'BrownStd-Bold';
+        @media(--sm){
+            @include use-text-style('heading-3');
+            font-family: 'BrownStd-Bold';
+        }
+    }
+
+    &__description{
+        @include use-text-style('body-title');
+        font-family: 'proximanova-regular';
+        @media(--sm){
+            @include use-text-style('body-alt');
+            font-family: 'proximanova-regular';
+        }
+    }
+
+    &__icon-text-wrapper{
+        display: flex;
+    }
+}

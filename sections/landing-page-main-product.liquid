@@ -1,20 +1,21 @@
+{{ 'landing-page-main-product.css' | asset_url | stylesheet_tag }}
 
 {% liquid 
-    assign blocks = section.blocks
-    assign product = section.settings.product
-    assign descriptionContent = product.metafields.description.value
-    assign descriptionTitle = descriptionContent.title
+    assign options = section.settings
+    assign product = all_products[options.product_selected]
+    assign descriptionContent = page.metafields.custom.landing_page_description.value
     assign descriptionText = descriptionContent.text 
-    assign textIcons = product.metafields.textIcons.value
+    assign textIcons = product.metafields.custom.texticons.value
   %}
+
 <div class="landing-page-main-product">
  <div class="landing-page-main-product__wrapper">
-    <div class="landing-page-main-product__content">
+    <div class="landing-page-main-product__container">
         <div class="landing-page-main-product__carousel">
             <div class="landing-page-main-product__main-carousel">
             <custom-carousel>
-                //pass data here
-              <script></script>
+               //pass data here
+            <script></script>
             </custom-carousel>
             </div>
 
@@ -26,13 +27,26 @@
                 </div>
         </div>
         <div class="landing-page-main-product__content">
-           <div class="landing-page-main-product__info">
-            <h3 class="landing-page-main-product__title"></h3>
-            <div class="landing-page-main-product__reviews"></div>
-            <div class="landing-page-main-product__description"></div>
-            <div class="landing-page-main-product__icon-text-wrapper"></div>
-            <div class="landing-page-main-product__banner-teaser"></div>
-          </div>
+            <div class="landing-page-main-product__info">
+           
+                  <h3 class="landing-page-main-product__title">{{product.title}}</h3>
+                  <div class="landing-page-main-product__reviews"></div>
+                  <div class="landing-page-main-product__description_title">{{descriptionContent.title}}</div>
+                  <div class="landing-page-main-product__description">{{descriptionContent.description}}</div>
+                    <div class="landing-page-main-product__icon-text-wrapper">
+                      {% if textIcons %}
+                        {% for item in textIcons %}
+                          {%liquid assign image = item.icon.value %}
+                            <div class="landing-page-main-product__icon-text-wrapper-item">
+                              <div>{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
+                              <div>{{item.text}}</div>
+                            </div>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  <div class="landing-page-main-product__banner-teaser"></div>
+              
+            </div>
         </div>
     </div>
 </div>
@@ -40,6 +54,26 @@
 {%  schema %} 
 {
   "name": "Main product-landing page",
+   "settings": [
+        {
+            "type": "product",
+            "id": "product_selected",
+            "label": "Product"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "image",
+        "settings": [
+          {
+              "type": "image_picker",
+              "id": "product_image",
+              "label": "Product image"
+          }
+        ]
+      }
+    ],
   "presets": [
     {
         "name": "Main product-landing page"
