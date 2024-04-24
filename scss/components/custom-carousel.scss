@@ -1,0 +1,116 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/mixins';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+.swiper {
+  height: 100%;
+}
+.carousel {
+  position: relative;
+}
+
+.swiper-pagination {
+  display: flex;
+  z-index: 1;
+  &:not(.swiper-pagination-progressbar){
+    height: 9px !important;
+    bottom: 24px !important;
+  }
+  left: 50% !important;
+  box-sizing: content-box;
+  transform: translateX(-50%) !important;
+  justify-content: center;
+
+  &-bullet {
+    background: colors.$white;
+    opacity: 1;
+
+    &-active {
+      background: transparent;
+      border: 2px solid colors.$white;
+    }
+  }
+  &--hide {
+    display: none;
+  }
+}
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-navigation {
+  user-select: none;
+  height: unset !important;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  height: unset;
+  z-index: 3;
+  cursor: pointer;
+
+  &--next {
+    right: 20px;
+    &.swiper-navigation--overflow {
+      right: -20px;
+    }
+  }
+
+  &--prev {
+    left: 13px;
+    &.swiper-navigation--overflow {
+      left: -20px;
+    }
+  }
+
+
+
+  svg {
+    @media (--md) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  &.swiper-button-disabled {
+    pointer-events: all;
+
+    svg circle {
+      fill: colors.$gray-200;
+    }
+  }
+
+  &--hide{
+    display: none;
+  }
+}
+img{
+  width: 100%;
+}
+
+:root {
+  --swiper-pagination-bullet-width: 9px;
+  --swiper-pagination-bullet-height: 9px;
+  --swiper-pagination-progressbar-bg-color: #{colors.$gray-300};
+  --swiper-pagination-progressbar-size: 1px;
+  --swiper-pagination-color: #{colors.$black};
+}
+
+
+custom-carousel {
+  position: relative;
+  display: block;
+  height: 100%
+}
+
+
+.swiper-wrapper {
+ display: flex;
+ align-items: stretch;
+}
+
+.hide {
+  display: none !important;
+}
+

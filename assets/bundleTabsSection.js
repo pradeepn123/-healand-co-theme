@@ -2,23 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/constants.js":
-/*!************************************!*\
-  !*** ./js/components/constants.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BREAKPOINTS: () => (/* binding */ BREAKPOINTS)
-/* harmony export */ });
-var BREAKPOINTS = {
-  '768': 768,
-  '1200': 1200,
-  '1920': 1920
-};
-
-/***/ }),
-
 /***/ "./js/sections/bundleTabsSection.js":
 /*!******************************************!*\
   !*** ./js/sections/bundleTabsSection.js ***!

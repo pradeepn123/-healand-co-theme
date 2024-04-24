@@ -6,19 +6,19 @@
 
 .landing-page-timeline{
     @include mixins.container;
+    @include mixins.section-spacing;
 
     &__content-wrapper {
         max-width: fit-content;
         margin: 0 auto;
-        margin-top: 40px;
     }
 
     &__content {
         list-style: none;
-        padding: 0 12px;
-        margin-top: 2rem;
         border-radius: 12px;
         position: relative;
+        padding: 0;
+        margin: 0;
     }
 
     &__content-block {
@@ -68,5 +68,11 @@
         margin-top: 10px;
         @include use-text-style('body-alt');
         line-height: 1.5;
+    }
+}
+
+.section-header.section-header--timeline-section {
+    .section-header__content {
+        text-align: center;
     }
 }

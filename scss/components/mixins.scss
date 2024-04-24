@@ -97,3 +97,9 @@
     grid-template-columns: repeat(auto-fill, minmax(0, calc(25% - 4*(var(--grid-column-gap)/5))));
   }
 }
+
+
+@mixin section-spacing {
+  padding-top: var(--section-padding);
+  margin-top: var(--section-margin); 
+}

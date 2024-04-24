@@ -9,6 +9,7 @@
 .landing-page-main-product{
     &__wrapper{
         @include mixins.container;
+        @include mixins.section-spacing;
     }
 
     &__container{

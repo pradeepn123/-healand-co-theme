@@ -2,23 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/constants.js":
-/*!************************************!*\
-  !*** ./js/components/constants.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BREAKPOINTS: () => (/* binding */ BREAKPOINTS)
-/* harmony export */ });
-var BREAKPOINTS = {
-  '768': 768,
-  '1200': 1200,
-  '1920': 1920
-};
-
-/***/ }),
-
 /***/ "./js/components/custom-carousel.js":
 /*!******************************************!*\
   !*** ./js/components/custom-carousel.js ***!
@@ -32,8 +15,7 @@ var BREAKPOINTS = {
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var JsComponents_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/constants */ "./js/components/constants.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 
 var _excluded = ["breakpoints"],
@@ -41,7 +23,6 @@ var _excluded = ["breakpoints"],
   _excluded3 = ["navigation", "pagination", "progressPagination", "paginationType"];
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-
 
 
 
@@ -57,9 +38,7 @@ class CustomCarousel extends HTMLElement {
     this.initCarousel();
   }
   getCarouselSettings() {
-    var {
-      paginationType: readOnlyPaginationType
-    } = JsComponents_constants__WEBPACK_IMPORTED_MODULE_4__.CAROUSEL;
+    var readOnlyPaginationType = "dots";
     this.currentWidth = window.innerWidth;
     //default settings
     var defaultSettings = {
@@ -184,7 +163,7 @@ class CustomCarousel extends HTMLElement {
         init: () => {
           var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[0].querySelector('.swiper-pagination__progress');
           if (currentSlider) {
-            gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.to(currentSlider, {
+            gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(currentSlider, {
               width: "100%",
               duration: 4,
               "ease": "ease"
@@ -202,7 +181,7 @@ class CustomCarousel extends HTMLElement {
     });
     this.swiper.on('slideChange', current => {
       var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex].querySelector('.swiper-pagination__progress');
-      gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.to(currentSlider, {
+      gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(currentSlider, {
         width: "100%",
         duration: 4,
         "ease": "ease"

@@ -1,6 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { CAROUSEL } from 'JsComponents/constants';
 import { gsap } from 'gsap';
 
 
@@ -18,7 +17,7 @@ class CustomCarousel extends HTMLElement {
   }
 
   getCarouselSettings() {
-    const {paginationType: readOnlyPaginationType} = CAROUSEL;
+    const readOnlyPaginationType = "dots";
     this.currentWidth = window.innerWidth;
     //default settings
     const defaultSettings = {

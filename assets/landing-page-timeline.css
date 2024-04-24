@@ -5,6 +5,8 @@
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
   margin-right: auto;
+  padding-top: var(--section-padding);
+  margin-top: var(--section-margin);
 }
 @media (--lg) {
   .landing-page-timeline {
@@ -16,14 +18,13 @@
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: 0 auto;
-  margin-top: 40px;
 }
 .landing-page-timeline__content {
   list-style: none;
-  padding: 0 12px;
-  margin-top: 2rem;
   border-radius: 12px;
   position: relative;
+  padding: 0;
+  margin: 0;
 }
 .landing-page-timeline__content-block {
   list-style: none;
@@ -73,4 +74,8 @@
   font-weight: 400;
   line-height: 1.2;
   line-height: 1.5;
+}
+
+.section-header.section-header--timeline-section .section-header__content {
+  text-align: center;
 }

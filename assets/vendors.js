@@ -13,7 +13,7 @@
 /* unused harmony exports default, _getBBox, _createElement, checkPrefix */
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.12.4
+ * CSSPlugin 3.12.3
  * https://gsap.com
  *
  * Copyright 2008-2023, GreenSock. All rights reserved.
@@ -777,10 +777,12 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   if (!originIsAbsolute) {
     bounds = _getBBox(target);
     xOrigin = bounds.x + (~originSplit[0].indexOf("%") ? xOrigin / 100 * bounds.width : xOrigin);
-    yOrigin = bounds.y + (~(originSplit[1] || originSplit[0]).indexOf("%") ? yOrigin / 100 * bounds.height : yOrigin); // if (!("xOrigin" in cache) && (xOrigin || yOrigin)) { // added in 3.12.3, reverted in 3.12.4; requires more exploration
-    // 	xOrigin -= bounds.x;
-    // 	yOrigin -= bounds.y;
-    // }
+    yOrigin = bounds.y + (~(originSplit[1] || originSplit[0]).indexOf("%") ? yOrigin / 100 * bounds.height : yOrigin);
+
+    if (!("xOrigin" in cache) && (xOrigin || yOrigin)) {
+      xOrigin -= bounds.x;
+      yOrigin -= bounds.y;
+    }
   } else if (matrix !== _identity2DMatrix && (determinant = a * d - b * c)) {
     //if it's zero (like if scaleX and scaleY are zero), skip it to avoid errors with dividing by zero.
     x = xOrigin * (d / determinant) + yOrigin * (-c / determinant) + (c * ty - d * tx) / determinant;
@@ -1026,7 +1028,7 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
     style[_transformOriginProp] = _firstTwoOnly(origin);
   }
 
-  cache.xOffset = cache.yOffset = 0;
+  cache.svg || (cache.xOffset = cache.yOffset = 0);
   cache.force3D = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.force3D;
   cache.renderTransform = cache.svg ? _renderSVGTransforms : _supports3D ? _renderCSSTransforms : _renderNon3DTransforms;
   cache.uncache = 0;
@@ -1631,7 +1633,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.12.4
+ * GSAP 3.12.3
  * https://gsap.com
  *
  * @license Copyright 2008-2023, GreenSock. All rights reserved.
@@ -3365,11 +3367,11 @@ var Animation = /*#__PURE__*/function () {
   };
 
   _proto.totalProgress = function totalProgress(value, suppressEvents) {
-    return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() > 0 ? 1 : 0;
+    return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio;
   };
 
   _proto.progress = function progress(value, suppressEvents) {
-    return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
+    return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.ratio;
   };
 
   _proto.iteration = function iteration(value, suppressEvents) {
@@ -6087,7 +6089,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.12.4";
+Tween.version = Timeline.version = gsap.version = "3.12.3";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -13941,10 +13943,8 @@ const PUBLIC_VERSION = '4';
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared/ssr-window.esm.mjs */ "./node_modules/swiper/shared/ssr-window.esm.mjs");
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/classes-to-selector.mjs */ "./node_modules/swiper/shared/classes-to-selector.mjs");
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/utils.mjs */ "./node_modules/swiper/shared/utils.mjs");
-
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared/classes-to-selector.mjs */ "./node_modules/swiper/shared/classes-to-selector.mjs");
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/utils.mjs */ "./node_modules/swiper/shared/utils.mjs");
 
 
 
@@ -13975,9 +13975,6 @@ function A11y(_ref) {
     clicked: false
   };
   let liveRegion = null;
-  let preventFocusHandler;
-  let focusTargetSlideEl;
-  let visibilityChangedTimestamp = new Date().getTime();
   function notify(message) {
     const notification = liveRegion;
     if (notification.length === 0) return;
@@ -13992,61 +13989,61 @@ function A11y(_ref) {
     return 'x'.repeat(size).replace(/x/g, randomChar);
   }
   function makeElFocusable(el) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('tabIndex', '0');
     });
   }
   function makeElNotFocusable(el) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('tabIndex', '-1');
     });
   }
   function addElRole(el, role) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('role', role);
     });
   }
   function addElRoleDescription(el, description) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-roledescription', description);
     });
   }
   function addElControls(el, controls) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-controls', controls);
     });
   }
   function addElLabel(el, label) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-label', label);
     });
   }
   function addElId(el, id) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('id', id);
     });
   }
   function addElLive(el, live) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-live', live);
     });
   }
   function disableEl(el) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-disabled', true);
     });
   }
   function enableEl(el) {
-    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(el);
+    el = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(el);
     el.forEach(subEl => {
       subEl.setAttribute('aria-disabled', false);
     });
@@ -14056,33 +14053,29 @@ function A11y(_ref) {
     const params = swiper.params.a11y;
     const targetEl = e.target;
     if (swiper.pagination && swiper.pagination.el && (targetEl === swiper.pagination.el || swiper.pagination.el.contains(e.target))) {
-      if (!e.target.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__.c)(swiper.params.pagination.bulletClass))) return;
+      if (!e.target.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__.c)(swiper.params.pagination.bulletClass))) return;
     }
-    if (swiper.navigation && swiper.navigation.prevEl && swiper.navigation.nextEl) {
-      const prevEls = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(swiper.navigation.prevEl);
-      const nextEls = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(swiper.navigation.nextEl);
-      if (nextEls.includes(targetEl)) {
-        if (!(swiper.isEnd && !swiper.params.loop)) {
-          swiper.slideNext();
-        }
-        if (swiper.isEnd) {
-          notify(params.lastSlideMessage);
-        } else {
-          notify(params.nextSlideMessage);
-        }
+    if (swiper.navigation && swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl) {
+      if (!(swiper.isEnd && !swiper.params.loop)) {
+        swiper.slideNext();
       }
-      if (prevEls.includes(targetEl)) {
-        if (!(swiper.isBeginning && !swiper.params.loop)) {
-          swiper.slidePrev();
-        }
-        if (swiper.isBeginning) {
-          notify(params.firstSlideMessage);
-        } else {
-          notify(params.prevSlideMessage);
-        }
+      if (swiper.isEnd) {
+        notify(params.lastSlideMessage);
+      } else {
+        notify(params.nextSlideMessage);
       }
     }
-    if (swiper.pagination && targetEl.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__.c)(swiper.params.pagination.bulletClass))) {
+    if (swiper.navigation && swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl) {
+      if (!(swiper.isBeginning && !swiper.params.loop)) {
+        swiper.slidePrev();
+      }
+      if (swiper.isBeginning) {
+        notify(params.firstSlideMessage);
+      } else {
+        notify(params.prevSlideMessage);
+      }
+    }
+    if (swiper.pagination && targetEl.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__.c)(swiper.params.pagination.bulletClass))) {
       targetEl.click();
     }
   }
@@ -14125,10 +14118,10 @@ function A11y(_ref) {
         makeElFocusable(bulletEl);
         if (!swiper.params.pagination.renderBullet) {
           addElRole(bulletEl, 'button');
-          addElLabel(bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.h)(bulletEl) + 1));
+          addElLabel(bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.h)(bulletEl) + 1));
         }
       }
-      if (bulletEl.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__.c)(swiper.params.pagination.bulletActiveClass))) {
+      if (bulletEl.matches((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__.c)(swiper.params.pagination.bulletActiveClass))) {
         bulletEl.setAttribute('aria-current', 'true');
       } else {
         bulletEl.removeAttribute('aria-current');
@@ -14144,14 +14137,10 @@ function A11y(_ref) {
     addElLabel(el, message);
     addElControls(el, wrapperId);
   };
-  const handlePointerDown = e => {
-    if (focusTargetSlideEl && focusTargetSlideEl !== e.target && !focusTargetSlideEl.contains(e.target)) {
-      preventFocusHandler = true;
-    }
+  const handlePointerDown = () => {
     swiper.a11y.clicked = true;
   };
   const handlePointerUp = () => {
-    preventFocusHandler = false;
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (!swiper.destroyed) {
@@ -14160,15 +14149,10 @@ function A11y(_ref) {
       });
     });
   };
-  const onVisibilityChange = e => {
-    visibilityChangedTimestamp = new Date().getTime();
-  };
   const handleFocus = e => {
     if (swiper.a11y.clicked) return;
-    if (new Date().getTime() - visibilityChangedTimestamp < 100) return;
     const slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
     if (!slideEl || !swiper.slides.includes(slideEl)) return;
-    focusTargetSlideEl = slideEl;
     const isActive = swiper.slides.indexOf(slideEl) === swiper.activeIndex;
     const isVisible = swiper.params.watchSlidesProgress && swiper.visibleSlides && swiper.visibleSlides.includes(slideEl);
     if (isActive || isVisible) return;
@@ -14178,11 +14162,7 @@ function A11y(_ref) {
     } else {
       swiper.el.scrollTop = 0;
     }
-    requestAnimationFrame(() => {
-      if (preventFocusHandler) return;
-      swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
-      preventFocusHandler = false;
-    });
+    swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
   };
   const initSlides = () => {
     const params = swiper.params.a11y;
@@ -14229,8 +14209,8 @@ function A11y(_ref) {
       nextEl,
       prevEl
     } = swiper.navigation ? swiper.navigation : {};
-    nextEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(nextEl);
-    prevEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(prevEl);
+    nextEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(nextEl);
+    prevEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(prevEl);
     if (nextEl) {
       nextEl.forEach(el => initNavEl(el, wrapperId, params.nextSlideMessage));
     }
@@ -14240,16 +14220,13 @@ function A11y(_ref) {
 
     // Pagination
     if (hasClickablePagination()) {
-      const paginationEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(swiper.pagination.el);
+      const paginationEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(swiper.pagination.el);
       paginationEl.forEach(el => {
         el.addEventListener('keydown', onEnterOrSpaceKey);
       });
     }
 
     // Tab focus
-    const document = (0,_shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.g)();
-    document.addEventListener('visibilitychange', onVisibilityChange);
-    swiper.el.addEventListener('focus', handleFocus, true);
     swiper.el.addEventListener('focus', handleFocus, true);
     swiper.el.addEventListener('pointerdown', handlePointerDown, true);
     swiper.el.addEventListener('pointerup', handlePointerUp, true);
@@ -14260,8 +14237,8 @@ function A11y(_ref) {
       nextEl,
       prevEl
     } = swiper.navigation ? swiper.navigation : {};
-    nextEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(nextEl);
-    prevEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(prevEl);
+    nextEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(nextEl);
+    prevEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(prevEl);
     if (nextEl) {
       nextEl.forEach(el => el.removeEventListener('keydown', onEnterOrSpaceKey));
     }
@@ -14271,20 +14248,19 @@ function A11y(_ref) {
 
     // Pagination
     if (hasClickablePagination()) {
-      const paginationEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.m)(swiper.pagination.el);
+      const paginationEl = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.m)(swiper.pagination.el);
       paginationEl.forEach(el => {
         el.removeEventListener('keydown', onEnterOrSpaceKey);
       });
     }
-    const document = (0,_shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.g)();
-    document.removeEventListener('visibilitychange', onVisibilityChange);
+
     // Tab focus
     swiper.el.removeEventListener('focus', handleFocus, true);
     swiper.el.removeEventListener('pointerdown', handlePointerDown, true);
     swiper.el.removeEventListener('pointerup', handlePointerUp, true);
   }
   on('beforeInit', () => {
-    liveRegion = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.c)('span', swiper.params.a11y.notificationClass);
+    liveRegion = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.c)('span', swiper.params.a11y.notificationClass);
     liveRegion.setAttribute('aria-live', 'assertive');
     liveRegion.setAttribute('aria-atomic', 'true');
   });
@@ -17227,10 +17203,8 @@ function Navigation(_ref) {
     }
     if (el) {
       if (typeof el === 'string') res = [...document.querySelectorAll(el)];
-      if (swiper.params.uniqueNavElements && typeof el === 'string' && res && res.length > 1 && swiper.el.querySelectorAll(el).length === 1) {
+      if (swiper.params.uniqueNavElements && typeof el === 'string' && res.length > 1 && swiper.el.querySelectorAll(el).length === 1) {
         res = swiper.el.querySelector(el);
-      } else if (res && res.length === 1) {
-        res = res[0];
       }
     }
     if (el && !res) return el;
@@ -18185,7 +18159,7 @@ function Scrollbar(_ref) {
       dragEl
     } = scrollbar;
     if (!isTouched) return;
-    if (e.preventDefault && e.cancelable) e.preventDefault();else e.returnValue = false;
+    if (e.preventDefault) e.preventDefault();else e.returnValue = false;
     setDragPosition(e);
     wrapperEl.style.transitionDuration = '0ms';
     el.style.transitionDuration = '0ms';
@@ -18654,17 +18628,13 @@ function Virtual(_ref) {
     }
     return slideEl;
   }
-  function update(force, beforeInit) {
+  function update(force) {
     const {
       slidesPerView,
       slidesPerGroup,
       centeredSlides,
-      loop: isLoop,
-      initialSlide
+      loop: isLoop
     } = swiper.params;
-    if (beforeInit && !isLoop && initialSlide > 0) {
-      return;
-    }
     const {
       addSlidesBefore,
       addSlidesAfter
@@ -18914,7 +18884,7 @@ function Virtual(_ref) {
     swiper.classNames.push(`${swiper.params.containerModifierClass}virtual`);
     swiper.params.watchSlidesProgress = true;
     swiper.originalParams.watchSlidesProgress = true;
-    update(false, true);
+    update();
   });
   on('setTranslate', () => {
     if (!swiper.params.virtual.enabled) return;
@@ -19172,17 +19142,6 @@ function Zoom(_ref) {
       gesture.slideEl = undefined;
     }
   }
-  let allowTouchMoveTimeout;
-  function allowTouchMove() {
-    swiper.touchEventsData.preventTouchMoveFromPointerMove = false;
-  }
-  function preventTouchMove() {
-    clearTimeout(allowTouchMoveTimeout);
-    swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
-    allowTouchMoveTimeout = setTimeout(() => {
-      allowTouchMove();
-    });
-  }
   function onTouchStart(e) {
     const device = swiper.device;
     if (!gesture.imageEl) return;
@@ -19194,19 +19153,13 @@ function Zoom(_ref) {
     image.touchesStart.y = event.pageY;
   }
   function onTouchMove(e) {
-    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
-      return;
-    }
+    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
     const zoom = swiper.zoom;
-    if (!gesture.imageEl) {
-      return;
-    }
-    if (!image.isTouched || !gesture.slideEl) {
-      return;
-    }
+    if (!gesture.imageEl) return;
+    if (!image.isTouched || !gesture.slideEl) return;
     if (!image.isMoved) {
-      image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
-      image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
+      image.width = gesture.imageEl.offsetWidth;
+      image.height = gesture.imageEl.offsetHeight;
       image.startX = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.j)(gesture.imageWrapEl, 'x') || 0;
       image.startY = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.j)(gesture.imageWrapEl, 'y') || 0;
       gesture.slideWidth = gesture.slideEl.offsetWidth;
@@ -19216,10 +19169,7 @@ function Zoom(_ref) {
     // Define if we need image drag
     const scaledWidth = image.width * zoom.scale;
     const scaledHeight = image.height * zoom.scale;
-    if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) {
-      allowTouchMove();
-      return;
-    }
+    if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) return;
     image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
     image.maxX = -image.minX;
     image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
@@ -19233,12 +19183,10 @@ function Zoom(_ref) {
     if (!image.isMoved && !isScaling) {
       if (swiper.isHorizontal() && (Math.floor(image.minX) === Math.floor(image.startX) && image.touchesCurrent.x < image.touchesStart.x || Math.floor(image.maxX) === Math.floor(image.startX) && image.touchesCurrent.x > image.touchesStart.x)) {
         image.isTouched = false;
-        allowTouchMove();
         return;
       }
       if (!swiper.isHorizontal() && (Math.floor(image.minY) === Math.floor(image.startY) && image.touchesCurrent.y < image.touchesStart.y || Math.floor(image.maxY) === Math.floor(image.startY) && image.touchesCurrent.y > image.touchesStart.y)) {
         image.isTouched = false;
-        allowTouchMove();
         return;
       }
     }
@@ -19246,7 +19194,6 @@ function Zoom(_ref) {
       e.preventDefault();
     }
     e.stopPropagation();
-    preventTouchMove();
     image.isMoved = true;
     const scaleRatio = (zoom.scale - currentScale) / (gesture.maxRatio - swiper.params.zoom.minRatio);
     const {
@@ -19406,8 +19353,8 @@ function Zoom(_ref) {
       offsetY = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.b)(gesture.slideEl).top + window.scrollY;
       diffX = offsetX + slideWidth / 2 - touchX;
       diffY = offsetY + slideHeight / 2 - touchY;
-      imageWidth = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
-      imageHeight = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
+      imageWidth = gesture.imageEl.offsetWidth;
+      imageHeight = gesture.imageEl.offsetHeight;
       scaledWidth = imageWidth * zoom.scale;
       scaledHeight = imageHeight * zoom.scale;
       translateMinX = Math.min(slideWidth / 2 - scaledWidth / 2, 0);
@@ -20961,13 +20908,6 @@ function updateProgress(translate) {
   swiper.emit('progress', progress);
 }
 
-const toggleSlideClasses = (slideEl, condition, className) => {
-  if (condition && !slideEl.classList.contains(className)) {
-    slideEl.classList.add(className);
-  } else if (!condition && slideEl.classList.contains(className)) {
-    slideEl.classList.remove(className);
-  }
-};
 function updateSlidesClasses() {
   const swiper = this;
   const {
@@ -20981,6 +20921,9 @@ function updateSlidesClasses() {
   const getFilteredSlide = selector => {
     return (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.e)(slidesEl, `.${params.slideClass}${selector}, swiper-slide${selector}`)[0];
   };
+  slides.forEach(slideEl => {
+    slideEl.classList.remove(params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
+  });
   let activeSlide;
   let prevSlide;
   let nextSlide;
@@ -21003,11 +20946,23 @@ function updateSlidesClasses() {
     }
   }
   if (activeSlide) {
-    if (!gridEnabled) {
+    // Active classes
+    activeSlide.classList.add(params.slideActiveClass);
+    if (gridEnabled) {
+      if (nextSlide) {
+        nextSlide.classList.add(params.slideNextClass);
+      }
+      if (prevSlide) {
+        prevSlide.classList.add(params.slidePrevClass);
+      }
+    } else {
       // Next Slide
       nextSlide = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
       if (params.loop && !nextSlide) {
         nextSlide = slides[0];
+      }
+      if (nextSlide) {
+        nextSlide.classList.add(params.slideNextClass);
       }
 
       // Prev Slide
@@ -21015,13 +20970,11 @@ function updateSlidesClasses() {
       if (params.loop && !prevSlide === 0) {
         prevSlide = slides[slides.length - 1];
       }
+      if (prevSlide) {
+        prevSlide.classList.add(params.slidePrevClass);
+      }
     }
   }
-  slides.forEach(slideEl => {
-    toggleSlideClasses(slideEl, slideEl === activeSlide, params.slideActiveClass);
-    toggleSlideClasses(slideEl, slideEl === nextSlide, params.slideNextClass);
-    toggleSlideClasses(slideEl, slideEl === prevSlide, params.slidePrevClass);
-  });
   swiper.emitSlidesClasses();
 }
 
@@ -21399,7 +21352,6 @@ function translateTo(translate, speed, runCallbacks, translateBounds, internal) 
           swiper.wrapperEl.removeEventListener('transitionend', swiper.onTranslateToWrapperTransitionEnd);
           swiper.onTranslateToWrapperTransitionEnd = null;
           delete swiper.onTranslateToWrapperTransitionEnd;
-          swiper.animating = false;
           if (runCallbacks) {
             swiper.emit('transitionEnd');
           }
@@ -21507,6 +21459,9 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
   if (index === void 0) {
     index = 0;
   }
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
@@ -21526,11 +21481,8 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
     wrapperEl,
     enabled
   } = swiper;
-  if (!enabled && !internal && !initial || swiper.destroyed || swiper.animating && params.preventInteractionOnTransition) {
+  if (swiper.animating && params.preventInteractionOnTransition || !enabled && !internal && !initial || swiper.destroyed) {
     return false;
-  }
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
   }
   const skip = Math.min(swiper.params.slidesPerGroupSkip, slideIndex);
   let snapIndex = skip + Math.floor((slideIndex - skip) / swiper.params.slidesPerGroup);
@@ -21658,6 +21610,9 @@ function slideToLoop(index, speed, runCallbacks, internal) {
   if (index === void 0) {
     index = 0;
   }
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
@@ -21667,9 +21622,6 @@ function slideToLoop(index, speed, runCallbacks, internal) {
   }
   const swiper = this;
   if (swiper.destroyed) return;
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
-  }
   const gridEnabled = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
   let newIndex = index;
   if (swiper.params.loop) {
@@ -21701,9 +21653,6 @@ function slideToLoop(index, speed, runCallbacks, internal) {
       if (centeredSlides) {
         needLoopFix = needLoopFix || targetSlideIndex < Math.ceil(slidesPerView / 2);
       }
-      if (internal && centeredSlides && swiper.params.slidesPerView !== 'auto' && !gridEnabled) {
-        needLoopFix = false;
-      }
       if (needLoopFix) {
         const direction = centeredSlides ? targetSlideIndex < swiper.activeIndex ? 'prev' : 'next' : targetSlideIndex - swiper.activeIndex - 1 < swiper.params.slidesPerView ? 'next' : 'prev';
         swiper.loopFix({
@@ -21729,6 +21678,9 @@ function slideToLoop(index, speed, runCallbacks, internal) {
 
 /* eslint no-unused-vars: "off" */
 function slideNext(speed, runCallbacks, internal) {
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
@@ -21739,9 +21691,6 @@ function slideNext(speed, runCallbacks, internal) {
     animating
   } = swiper;
   if (!enabled || swiper.destroyed) return swiper;
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
-  }
   let perGroup = params.slidesPerGroup;
   if (params.slidesPerView === 'auto' && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
     perGroup = Math.max(swiper.slidesPerViewDynamic('current', true), 1);
@@ -21770,6 +21719,9 @@ function slideNext(speed, runCallbacks, internal) {
 
 /* eslint no-unused-vars: "off" */
 function slidePrev(speed, runCallbacks, internal) {
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
@@ -21783,9 +21735,6 @@ function slidePrev(speed, runCallbacks, internal) {
     animating
   } = swiper;
   if (!enabled || swiper.destroyed) return swiper;
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
-  }
   const isVirtual = swiper.virtual && params.virtual.enabled;
   if (params.loop) {
     if (animating && !isVirtual && params.loopPreventsSliding) return false;
@@ -21838,19 +21787,22 @@ function slidePrev(speed, runCallbacks, internal) {
 
 /* eslint no-unused-vars: "off" */
 function slideReset(speed, runCallbacks, internal) {
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
   const swiper = this;
   if (swiper.destroyed) return;
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
-  }
   return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
 }
 
 /* eslint no-unused-vars: "off" */
 function slideToClosest(speed, runCallbacks, internal, threshold) {
+  if (speed === void 0) {
+    speed = this.params.speed;
+  }
   if (runCallbacks === void 0) {
     runCallbacks = true;
   }
@@ -21859,9 +21811,6 @@ function slideToClosest(speed, runCallbacks, internal, threshold) {
   }
   const swiper = this;
   if (swiper.destroyed) return;
-  if (typeof speed === 'undefined') {
-    speed = swiper.params.speed;
-  }
   let index = swiper.activeIndex;
   const skip = Math.min(swiper.params.slidesPerGroupSkip, index);
   const snapIndex = skip + Math.floor((index - skip) / swiper.params.slidesPerGroup);
@@ -22496,7 +22445,7 @@ function onTouchMove(event) {
       data.startMoving = true;
     }
   }
-  if (data.isScrolling || e.type === 'touchmove' && data.preventTouchMoveFromPointerMove) {
+  if (data.isScrolling) {
     data.isTouched = false;
     return;
   }
@@ -23040,8 +22989,6 @@ function setBreakpoint() {
   const breakpointParams = breakpointOnlyParams || swiper.originalParams;
   const wasMultiRow = isGridEnabled(swiper, params);
   const isMultiRow = isGridEnabled(swiper, breakpointParams);
-  const wasGrabCursor = swiper.params.grabCursor;
-  const isGrabCursor = breakpointParams.grabCursor;
   const wasEnabled = params.enabled;
   if (wasMultiRow && !isMultiRow) {
     el.classList.remove(`${params.containerModifierClass}grid`, `${params.containerModifierClass}grid-column`);
@@ -23052,11 +22999,6 @@ function setBreakpoint() {
       el.classList.add(`${params.containerModifierClass}grid-column`);
     }
     swiper.emitContainerClasses();
-  }
-  if (wasGrabCursor && !isGrabCursor) {
-    swiper.unsetGrabCursor();
-  } else if (!wasGrabCursor && isGrabCursor) {
-    swiper.setGrabCursor();
   }
 
   // Toggle navigation, pagination, scrollbar
@@ -24650,7 +24592,7 @@ function makeElementsArray(el) {
 /* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/effect-creative.mjs */ "./node_modules/swiper/modules/effect-creative.mjs");
 /* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/effect-cards.mjs */ "./node_modules/swiper/modules/effect-cards.mjs");
 /**
- * Swiper 11.1.1
+ * Swiper 11.0.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -24658,7 +24600,7 @@ function makeElementsArray(el) {
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: February 27, 2024
  */
 
 
@@ -24711,7 +24653,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 /* harmony import */ var _shared_get_element_params_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/get-element-params.mjs */ "./node_modules/swiper/shared/get-element-params.mjs");
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper Custom Element 11.1.1
+ * Swiper Custom Element 11.0.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -24719,7 +24661,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: February 27, 2024
  */
 
 
@@ -25013,7 +24955,7 @@ if (typeof window !== 'undefined') {
 /* harmony export */ });
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper 11.1.1
+ * Swiper 11.0.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -25021,7 +24963,7 @@ if (typeof window !== 'undefined') {
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: February 27, 2024
  */
 
 

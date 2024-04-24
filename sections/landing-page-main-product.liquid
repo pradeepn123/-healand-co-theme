@@ -1,30 +1,81 @@
 {{ 'landing-page-main-product.css' | asset_url | stylesheet_tag }}
 
 {% liquid 
+    assign slider_content_blocks = ''
     assign options = section.settings
-    assign product = all_products[options.product_selected]
+    assign product = options.product_selected
     assign descriptionContent = page.metafields.custom.landing_page_description.value
     assign descriptionText = descriptionContent.text 
     assign textIcons = product.metafields.custom.texticons.value
+    assign isProductImagesSlider = section.blocks.size
+    if isProductImagesSlider <= 0
+      assign isProductImagesSlider = true
+    else 
+      assign isProductImagesSlider = false
+    endif
+    if isProductImagesSlider
+      assign slider_content_blocks = product.images
+    else 
+      assign slider_content_blocks = section.blocks
+    endif
   %}
+
+  {%  capture slider_content %} 
+    {%  for block in slider_content_blocks %}
+          {%  if isProductImagesSlider %} 
+            {%  assign image = block %}
+          {%  else  %}
+              {%  assign image = block.settings.product_image %}
+          {%  endif %}
+          {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
+          {%  unless forloop.last %}::carousel_item {%  endunless %}
+    {%  endfor  %}
+  {%  endcapture %}
 
 <div class="landing-page-main-product">
  <div class="landing-page-main-product__wrapper">
     <div class="landing-page-main-product__container">
-        <div class="landing-page-main-product__carousel">
+        <div class="landing-page-main-product__carousel" data-parent>
             <div class="landing-page-main-product__main-carousel">
-            <custom-carousel>
-               //pass data here
-            <script></script>
-            </custom-carousel>
+              <custom-carousel>
+                {%  render 'custom-carousel' , slider_content: slider_content %}
+                <script type="text/json" data-settings>
+                  {
+                    "slidesPerView": 1,
+                    "spaceBetween": 15,
+                    "autoplay": {
+                      "delay": 3000
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "pagination": true
+                      },
+                      "768": {
+                        "spaceBetween": 20,
+                        "pagination": true
+                      },
+                      "1024": {
+                        "navigation": true,
+                        "pagination": true
+                      }
+                    }
+                  }
+                </script>
+              </custom-carousel>
             </div>
-
-            <div class="landing-page-main-product__thumbnail-carousel">
-                <custom-carousel>
-                    //pass data here
-                  <script></script>
-                </custom-carousel>
-                </div>
+            <div class="landing-page-main-product__thumbnail-carousel" data-parent>
+              <custom-carousel>
+                {%  render 'custom-carousel' , slider_content: slider_content %}
+                <script type="text/json" data-settings>
+                  {
+                    "slidesPerView": 3,
+                    "spaceBetween": 15,
+                    "pagination": false,
+                    "navigation": true
+                  }
+                </script>
+              </custom-carousel>
+            </div>
         </div>
         <div class="landing-page-main-product__content">
             <div class="landing-page-main-product__info">

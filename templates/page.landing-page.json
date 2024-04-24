@@ -8,6 +8,12 @@
         "btn_text": "Get Offer"
       }
     },
+    "landing_page_main_product_PGnkxL": {
+      "type": "landing-page-main-product",
+      "settings": {
+        "product_selected": "8-mushroom-immunity-tincture-500mg"
+      }
+    },
     "page": {
       "type": "page",
       "disabled": true,
@@ -36,28 +42,6 @@
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
         "show_navigation_on_hover": true
-      }
-    },
-    "landing_page_image_with_text_kDdceA": {
-      "type": "landing-page-image-with-text",
-      "blocks": {
-        "text_4BFKKD": {
-          "type": "text",
-          "repeater": "{{ page.metafields.custom.landing_page_heading.value.landing_page_inner_content_info.value }}",
-          "settings": {
-            "image": "{{ block.repeater.image.value }}",
-            "heading": "{{ block.repeater.heading.value }}",
-            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_4BFKKD"
-      ],
-      "settings": {
-        "heading": "{{ page.metafields.custom.landing_page_heading.value.heading.value }}",
-        "text": "<p>{{ page.metafields.custom.landing_page_heading.value.descritpion | metafield_tag }}<\/p>",
-        "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
     },
     "landing_page_compare_section_QTFTk3": {
@@ -174,21 +158,14 @@
         "text": "A 5-days guide to controlling what cannot be controlled",
         "heading_alignment": "center"
       }
-    },
-    "landing_page_main_product_PGnkxL": {
-      "type": "landing-page-main-product",
-      "settings": {
-        "product_selected": "8-mushroom-immunity-tincture-500mg"
-      }
     }
   },
   "order": [
     "landing_page_header_e47V3w",
+    "landing_page_main_product_PGnkxL",
     "page",
     "key_ingredients_k8Qhr4",
-    "landing_page_image_with_text_kDdceA",
     "landing_page_compare_section_QTFTk3",
-    "landing_page_timeline_kfRwhc",
-    "landing_page_main_product_PGnkxL"
+    "landing_page_timeline_kfRwhc"
   ]
 }

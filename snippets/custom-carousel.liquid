@@ -1,0 +1,12 @@
+<div class="carousel__container swiper" data-swiper-container>
+    <div class="swiper-wrapper">
+      {% assign carousel_items = slider_content | split: '::carousel_item' %}
+      {% for carousel_item in carousel_items %}
+        <div class="swiper-slide">
+          {{carousel_item}}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination" data-pagination></div>
+    <div class="swiper-navigations" data-navigations></div>
+  </div>
