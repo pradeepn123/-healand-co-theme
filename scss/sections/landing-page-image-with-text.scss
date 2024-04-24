@@ -11,6 +11,10 @@
 @custom-selector :--text-image-responsive .text-image--image-with-text .text-image__heading .responsive-image__wrapper;
 
 .landing-page-image-with-text{
+    &__wrapper{
+        padding: var(--section-padding) 0;
+        margin: var(--section-margin) 0 0 0; 
+    }
     @include mixins.container;
     &__content-wrapper{
         @include mixins.grid(1,100px,100px);

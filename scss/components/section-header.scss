@@ -3,15 +3,14 @@
 
 .section-header{
     &__wrapper{
-        padding: var(--section-padding) 0;
-        margin: var(--section-margin) 0 0 0;        
+        padding-bottom: var(--section-padding);
     }
     &__content{
         max-width: 670px;
         margin: 0 auto;
         &--center-alignment {
             text-align: left;
-            @media(--lg){
+            @media(--sm){
                 text-align: center;
             }
         }

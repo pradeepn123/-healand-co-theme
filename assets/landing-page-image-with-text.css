@@ -19,6 +19,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+.landing-page-image-with-text__wrapper {
+  padding: var(--section-padding) 0;
+  margin: var(--section-margin) 0 0 0;
+}
 @media (min-width: 1440px) {
   .landing-page-image-with-text {
     max-width: calc(100% - 2 * var(--base-margin));

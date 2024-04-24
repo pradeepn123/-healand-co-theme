@@ -11,6 +11,25 @@
         "show_heading": false
       }
     },
+    "key_ingredients_k8Qhr4": {
+      "type": "key-ingredients",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "Key Ingredients",
+        "heading_size": "h5",
+        "mobile_title_size": 24,
+        "alignment": "center",
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
+    },
     "landing_page_image_with_text_kDdceA": {
       "type": "landing-page-image-with-text",
       "blocks": {
@@ -34,25 +53,6 @@
         "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
       }
     },
-    "key_ingredients_k8Qhr4": {
-      "type": "key-ingredients",
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "page-width",
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48,
-        "section_layout": "carousel-overflow",
-        "title": "Key Ingredients",
-        "heading_size": "h5",
-        "mobile_title_size": 24,
-        "alignment": "center",
-        "desktop_columns": 4,
-        "desktop_space_between_cards": 16,
-        "mobile_space_between_cards": 16,
-        "enable_carousel_on_mobile": false,
-        "show_navigation_on_hover": true
-      }
-    },
     "landing_page_compare_section_QTFTk3": {
       "type": "landing-page-compare-section",
       "blocks": {
@@ -61,13 +61,6 @@
           "settings": {
             "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
             "description_other": "Added filters"
-          }
-        },
-        "heal_and_co_Kw4GW8": {
-          "type": "heal_and_co",
-          "settings": {
-            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "No Filter added"
           }
         },
         "other_HxKin6": {
@@ -82,6 +75,13 @@
           "settings": {
             "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
             "description_other": "Bitter \/ bad \/ rancid taste"
+          }
+        },
+        "heal_and_co_Kw4GW8": {
+          "type": "heal_and_co",
+          "settings": {
+            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
+            "description_heal_and_co": "No Filter added"
           }
         },
         "heal_and_co_AyagQ4": {
@@ -101,9 +101,9 @@
       },
       "block_order": [
         "other_LzCRMd",
-        "heal_and_co_Kw4GW8",
         "other_HxKin6",
         "other_XtWpLD",
+        "heal_and_co_Kw4GW8",
         "heal_and_co_AyagQ4",
         "heal_and_co_DTaQgK"
       ],
@@ -172,9 +172,9 @@
   },
   "order": [
     "page",
-    "landing_page_image_with_text_kDdceA",
     "key_ingredients_k8Qhr4",
     "landing_page_compare_section_QTFTk3",
+    "landing_page_image_with_text_kDdceA",
     "landing_page_timeline_kfRwhc"
   ]
 }

@@ -58,10 +58,8 @@
   min-height: 0 !important;
 }
 .section-header__wrapper {
-  padding: 25px 0;
-  padding: var(--section-padding) 0;
-  margin: 25px 0 0 0;
-  margin: var(--section-margin) 0 0 0;
+  padding-bottom: 25px;
+  padding-bottom: var(--section-padding);
 }
 .section-header__content {
   max-width: 670px;
@@ -70,7 +68,7 @@
 .section-header__content--center-alignment {
   text-align: left;
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .section-header__content--center-alignment {
     text-align: center;
   }
