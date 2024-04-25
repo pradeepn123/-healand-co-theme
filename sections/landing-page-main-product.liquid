@@ -5,9 +5,11 @@
     assign options = section.settings
     assign product = options.product_selected
     assign descriptionContent = page.metafields.custom.landing_page_description.value
-    assign descriptionText = descriptionContent.text 
+    assign descriptionTitle = descriptionContent.title 
     assign textIcons = product.metafields.custom.texticons.value
     assign isProductImagesSlider = section.blocks.size
+    assign productTag = product.metafields.custom.landing_page_tag.value
+    assign description = descriptionContent.description | strip_html
     if isProductImagesSlider <= 0
       assign isProductImagesSlider = true
     else 
@@ -42,23 +44,7 @@
                 <script type="text/json" data-settings>
                   {
                     "slidesPerView": 1,
-                    "spaceBetween": 15,
-                    "autoplay": {
-                      "delay": 3000
-                    },
-                    "breakpoints": {
-                      "320": {
-                        "pagination": true
-                      },
-                      "768": {
-                        "spaceBetween": 20,
-                        "pagination": true
-                      },
-                      "1024": {
-                        "navigation": true,
-                        "pagination": true
-                      }
-                    }
+                    "spaceBetween": 15
                   }
                 </script>
               </custom-carousel>
@@ -68,10 +54,16 @@
                 {%  render 'custom-carousel' , slider_content: slider_content %}
                 <script type="text/json" data-settings>
                   {
-                    "slidesPerView": 3,
+                    "slidesPerView": 5.5,
                     "spaceBetween": 15,
                     "pagination": false,
-                    "navigation": true
+                    "navigation": true,
+                    "breakpoints": {
+                      "1441": {
+                          "slidesPerView": 7,
+                          "spaceBetween": 18
+                        }
+                    }
                   }
                 </script>
               </custom-carousel>
@@ -82,20 +74,42 @@
            
                   <h3 class="landing-page-main-product__title">{{product.title}}</h3>
                   <div class="landing-page-main-product__reviews"></div>
-                  <div class="landing-page-main-product__description_title">{{descriptionContent.title}}</div>
-                  <div class="landing-page-main-product__description">{{descriptionContent.description}}</div>
+                  <div class="landing-page-main-product__tags">
+                    {% for tag in productTag  %}
+                      <div class="landing-page-main-product__tags-list">{{tag}}</div>
+                    {% endfor %}
+                  </div>
+                  <div class="landing-page-main-product__description_title">{{descriptionTitle}}</div>
+                    <div class="landing-page-main-product__description">
+                      <div class="landing-page-main-product__description-half" id="show_more_prodDescription" style="color: {{ fontColor }}">
+                        {{description | truncate: 120 }}
+                          {% if description.size >= 120 %}
+                            <span id="readMore_btn">
+                              Read More
+                            </span>
+                          {% endif %}
+                      </div>
+                       <div class="landing-page-main-product__description-half" id="show_less_prodDescription" style="color: {{ fontColor }}; display: none">
+                        {{description}}
+                          <span id="readLess_btn">
+                            Read Less
+                          </span>
+                      </div>
+                    </div>
                     <div class="landing-page-main-product__icon-text-wrapper">
                       {% if textIcons %}
                         {% for item in textIcons %}
                           {%liquid assign image = item.icon.value %}
                             <div class="landing-page-main-product__icon-text-wrapper-item">
-                              <div>{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
-                              <div>{{item.text}}</div>
+                              <div class="landing-page-main-product__icon">{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
+                              <div class="landing-page-main-product__text">{{item.text}}</div>
                             </div>
                         {% endfor %}
-                      {% endif %}
+                      {% endif %} 
                     </div>
-                  <div class="landing-page-main-product__banner-teaser"></div>
+                  <div class="landing-page-main-product__banner-teaser">
+                    {% render 'text-with-button', wrapper_class:"header", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
+                  </div>
               
             </div>
         </div>
@@ -110,6 +124,21 @@
             "type": "product",
             "id": "product_selected",
             "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "header_teaser",
+          "label": "Content teaser text"
+        },
+        {
+          "type": "text",
+          "id": "header_text",
+          "label": "Content text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button text"
         }
     ],
     "blocks": [

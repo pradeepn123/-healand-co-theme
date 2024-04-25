@@ -3,6 +3,7 @@ import announcementBar from "./announcementBar";
 import bundleTabsSection from "./bundleTabsSection";
 import hideRewards from "./hideRewards";
 import importCustomElements from "JsComponents/import-custom-elements";
+import readmore from "./readmore";
 
 //config lazyload to default settings
 
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     bundleTabsSection();
     hideRewards();
     importCustomElements();
+    readmore();
 })

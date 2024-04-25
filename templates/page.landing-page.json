@@ -11,7 +11,10 @@
     "landing_page_main_product_PGnkxL": {
       "type": "landing-page-main-product",
       "settings": {
-        "product_selected": "8-mushroom-immunity-tincture-500mg"
+        "product_selected": "8-mushroom-immunity-tincture-500mg",
+        "header_teaser": "LIMITED TIME OFFER",
+        "header_text": "\u2028Save up to 40% off on your first order",
+        "btn_text": "Get Offer"
       }
     },
     "page": {

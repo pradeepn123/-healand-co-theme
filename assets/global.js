@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./js/components/custom-carousel.js":
@@ -8,6 +7,7 @@
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -199,6 +199,7 @@ class CustomCarousel extends HTMLElement {
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -216,6 +217,7 @@ class CustomCarousel extends HTMLElement {
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -236,6 +238,7 @@ class CustomCarousel extends HTMLElement {
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -256,11 +259,15 @@ class CustomCarousel extends HTMLElement {
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
 /* harmony import */ var _bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bundleTabsSection */ "./js/sections/bundleTabsSection.js");
 /* harmony import */ var _hideRewards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hideRewards */ "./js/sections/hideRewards.js");
 /* harmony import */ var JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/import-custom-elements */ "./js/components/import-custom-elements.js");
+/* harmony import */ var _readmore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./readmore */ "./js/sections/readmore.js");
+/* harmony import */ var _readmore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_readmore__WEBPACK_IMPORTED_MODULE_4__);
 //global imports here
+
 
 
 
@@ -273,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_hideRewards__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  _readmore__WEBPACK_IMPORTED_MODULE_4___default()();
 });
 
 /***/ }),
@@ -283,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -307,6 +316,33 @@ var hideReward = () => {
   var interval = setInterval(() => {
     hideReward();
   }, 1000);
+});
+
+/***/ }),
+
+/***/ "./js/sections/readmore.js":
+/*!*********************************!*\
+  !*** ./js/sections/readmore.js ***!
+  \*********************************/
+/***/ (() => {
+
+document.addEventListener('DOMContentLoaded', () => {
+  var readMoreParentContent = document.querySelector("#show_more_prodDescription");
+  var readMoreBTN = document.querySelector('#readMore_btn');
+  var readLessContent = document.querySelector("#show_less_prodDescription");
+  var readLessBTN = document.querySelector('#readLess_btn');
+  readMoreBTN.addEventListener('click', () => {
+    readMoreBTN.style.display = 'none';
+    readMoreParentContent.style.display = 'none';
+    readLessBTN.style.display = 'block';
+    readLessContent.style.display = 'block';
+  });
+  readLessBTN.addEventListener('click', () => {
+    readLessBTN.style.display = 'none';
+    readLessContent.style.display = 'none';
+    readMoreBTN.style.display = 'block';
+    readMoreParentContent.style.display = 'block';
+  });
 });
 
 /***/ })
