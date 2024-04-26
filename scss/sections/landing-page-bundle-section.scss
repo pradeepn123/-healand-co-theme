@@ -5,27 +5,44 @@
 @import 'StyleComponents/breakpoints';
 
 
+@custom-selector :--button .landing-bundle-sec-info__content .button;
+@custom-selector :--title .landing-page-bundle-section__heading .section-header__title;
+@custom-selector :--sub_title .landing-page-bundle-section__heading .section-header__content p;  
+
 .landing-page-bundle-section{
     background: colors.$dark-blue;
     &__information{
-
+        @include mixins.container;   
     }
     &__wrapper{
-        padding-top: var(--section-padding);
+        padding-top: calc(var(--grid-row-gap-large)*3);
+        padding-bottom: calc(var(--grid-row-gap-large)*3);
         margin-top: var(--section-margin);
+        @media(--md-large){
+            padding-top: var(--section-padding);
+            padding-bottom: calc(var(--setion-top-padding)*4);
+            margin-top: var(--section-margin);
+        }
     }
     &__information{
         @include mixins.grid(1,100px,100px);
-        @media(--lg){
+        row-gap: calc(var(--grid-row-gap-large)*3);
+        @media(--sm){
+            @include mixins.grid(2,100px,100px);
+            row-gap: calc(var(--grid-row-gap-large)*3);
+            column-gap: var(--grid-row-gap-large);
+        }
+        @media(--md-large){
             @include mixins.grid(3,100px,100px);
-            column-gap: 20px;
+            
         }
     }
 }
 
 .landing-bundle-sec-info{
     &__wrapper{
-        @include mixins.container;        
+         
+        position: relative;    
     }
     &__content{
         background: colors.$white;
@@ -35,7 +52,11 @@
     &__heading{
         @include use-text-style('heading-2');
         color: colors.$dark-blue;
-        margin-bottom: 12px;
+        margin-bottom: var(--setion-top-padding);
+        padding-top:var(--grid-row-gap-large);
+        @media(--sm){
+            padding-top: 0;
+        }
     }
     &__button.button--primary{
         border-radius: 4rem;
@@ -56,4 +77,58 @@
         font-family: var(--secondary-font-family);
         line-height: 1.4;
     }
+    &__percentage-off{
+        position: absolute;
+        top: -23px;
+        right: 38px;
+        padding: var(--percentage-button-padding);
+        background: colors.$dark-blue;
+        border-radius: calc(var( --setion-top-padding)*2);
+        border-top: 1px solid colors.$white;
+
+        span{
+            @include use-text-style('heading-2');
+            color: colors.$white;
+        }
+    }    
+    &__button-top{
+        margin-top: var(--setion-heading-padding); 
+    }
+    &__price{
+        @include use-text-style('heading-mob');
+        font-weight: typography.$regular-weight;
+        font-family: 'proximanovaexcn-regular';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: var( --setion-top-padding);
+        padding-bottom: var(--setion-top-padding);
+        @media(--xxs){
+            @include use-text-style('heading-1');
+            font-weight: typography.$regular-weight;
+            font-family: 'proximanovaexcn-regular';
+        }
+    }
+
+    :--image{
+        width: 257px;
+        margin: 0 auto;
+        margin: var(--setion-top-padding) auto; 
+    }
+    :--button{
+        margin: 0 auto;
+    }
 }
+
+.section-header--bundle-section-center {
+    text-align: center;
+    padding-bottom: calc(var(--grid-row-gap-large)*2);
+}
+
+:--title {
+    color: colors.$white;
+}     
+:--sub_title {
+    color: colors.$white;  
+}
+

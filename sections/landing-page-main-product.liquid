@@ -29,7 +29,9 @@
           {%  else  %}
               {%  assign image = block.settings.product_image %}
           {%  endif %}
-          {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
+          {% if 'block.settings.product_image' %}
+            {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
+          {% endif %}
           {%  unless forloop.last %}::carousel_item {%  endunless %}
     {%  endfor  %}
   {%  endcapture %}

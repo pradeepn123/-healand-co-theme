@@ -778,6 +778,7 @@ custom-carousel {
   --setion-heading-padding: 30px;
   --setion-top-padding:25px;
   --button-padding: 12px 22px;
+  --percentage-button-padding: 12px 16px;
 }
 @media (min-width: 768px) {
   :root {
@@ -814,6 +815,7 @@ custom-carousel {
   --setion-heading-padding: 30px;
   --setion-top-padding:25px;
   --button-padding: 12px 22px;
+  --percentage-button-padding: 12px 16px;
 }
 @media (min-width: 768px) {
   :root {
