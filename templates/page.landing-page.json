@@ -150,6 +150,28 @@
         "show_navigation_on_hover": true
       }
     },
+    "landing_page_image_with_text_AkGUxq": {
+      "type": "landing-page-image-with-text",
+      "blocks": {
+        "text_Aw6UG8": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_image_with_text.value.landing_page_image_with_text_inner.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image_or_icon.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Aw6UG8"
+      ],
+      "settings": {
+        "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
+        "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
+        "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
+      }
+    },
     "landing_page_compare_section_QTFTk3": {
       "type": "landing-page-compare-section",
       "blocks": {
@@ -356,6 +378,7 @@
     "page",
     "landing_page_image_with_description_A7N4YH",
     "key_ingredients_k8Qhr4",
+    "landing_page_image_with_text_AkGUxq",
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc",
     "landing_page_bundle_section_6G3dtP",
