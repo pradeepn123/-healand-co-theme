@@ -25,7 +25,7 @@
 -%}
 <article-card class="article-card article-card--link-for-hover link-parent-for-hover zoom-parent-for-hover {{ class }}">
   <a
-    class="article-card__link"
+    class="article-card__link {% if template.name == 'blog' %}article-card__relative{% endif %}"
     href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
     aria-label="{{ article.title }}"
   >
