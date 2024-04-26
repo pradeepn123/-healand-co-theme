@@ -134,7 +134,6 @@ class CustomCarousel extends HTMLElement {
       on: {
         beforeInit: () => {
           const { navigation, pagination } = carouselSettings || {};
-          debugger;
           if (!navigation) {
             this.parent.querySelectorAll('[data-navigation]').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           }

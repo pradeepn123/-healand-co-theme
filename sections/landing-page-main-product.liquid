@@ -29,7 +29,7 @@
           {%  else  %}
               {%  assign image = block.settings.product_image %}
           {%  endif %}
-          {% if 'block.settings.product_image' %}
+          {% if block.type == 'image' %}
             {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
           {% endif %}
           {%  unless forloop.last %}::carousel_item {%  endunless %}
@@ -78,10 +78,9 @@
               <h3 class="landing-page-main-product__title">{{product.title}}</h3>
               <div class="landing-page-main-product__reviews">
                 {% for block in section.blocks %}
-                  {% case block.type %}
-                    {% when '@app' %}
+                  {% if block.type == '@app' %}
                       {% render 'product-app-block', product: product, section: section, block: block, sectionId: sectionId %}
-                  {% endcase %}
+                  {% endif %}
                 {% endfor %}
               </div>
                    
