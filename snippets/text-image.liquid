@@ -1,10 +1,11 @@
 {%- liquid
     assign image = block.settings.image
     assign heading = block.settings.heading
+    assign sub_heading = block.settings.sub_heading
     assign description = block.settings.description
 -%}
 
-<div class="text-image {% if wrapper_class %} text-image--{{wrapper_class}} {% endif %}">
+<div class="text-image {% if wrapper_class %}text-image--{{wrapper_class}} {% endif %}">
     <div class="text-image__wrapper">
         <div class="text-image__content">
             <div class="text-image__heading">
@@ -13,6 +14,9 @@
                 {%- endif -%}
                 {%- if heading -%}
                     <h3 class="text-image__heading-text">{{ heading }}</h3>
+                {%- endif -%}
+                {%- if sub_heading -%}
+                    <h3 class="text-image__subheading-text">{{ sub_heading }}</h3>
                 {%- endif -%}
             </div>
             {%- if description -%}

@@ -2,7 +2,6 @@
 
 {%- liquid
   assign options = section.settings
-  assign heading_alignment = options.heading_alignment
   assign heading = options.heading
   assign text = options.text
 -%}
@@ -43,22 +42,6 @@
             "type": "text",
             "id": "text",            
             "label": "Content"
-        },
-        {
-            "type": "select",
-            "id": "heading_alignment",
-            "label": "t:sections.general_section_settings.heading_alignment_label",
-            "options": [
-                {
-                    "value": "left",
-                    "label": "t:sections.general_section_settings.alignment_option_left_label"
-                },
-                {
-                    "value": "center",
-                    "label": "t:sections.general_section_settings.alignment_option_center_label"
-                }
-            ],
-            "default": "center"
         }
     ],
     "blocks": [

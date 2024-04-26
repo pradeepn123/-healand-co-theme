@@ -1,0 +1,26 @@
+
+@custom-selector :--text-image-wrapper .text-image--testimonials-section .text-image__wrapper;
+@custom-selector :--text-image-heading .text-image--testimonials-section .text-image__heading-text;
+@custom-selector :--text-image-subheading .text-image--testimonials-section .text-image__subheading-text;
+@custom-selector :--text-image-description .text-image--testimonials-section .text-image__description;
+
+
+:--text-image-wrapper {
+    background: #eaedf1;
+    color: #2f4775;
+    padding: 0 40px 40px;
+}
+
+:--text-image-heading {
+    @include use-text-style('heading-2');
+    font-family: var(--secondary-alt-font-family);
+    font-weight: 700;
+}
+
+:--text-image-subheading {
+    @include use-text-style('body-title');
+}
+
+:--text-image-description {
+    @include use-text-style('body-alt');
+}

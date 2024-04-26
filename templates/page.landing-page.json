@@ -229,8 +229,7 @@
       ],
       "settings": {
         "heading": "The “NOW YOU’RE MARKETING WITH (INCREDIBLY DANGEROUS) POWER” Course:",
-        "text": "A 5-days guide to controlling what cannot be controlled",
-        "heading_alignment": "center"
+        "text": "A 5-days guide to controlling what cannot be controlled"
       }
     },
     "landing_page_bundle_section_6G3dtP": {
@@ -238,6 +237,47 @@
       "settings": {
         "heading": "Get your daily immune support",
         "text": "<p>Discounts cannot be used in conjunction with any other offer.<\/p>"
+      }
+    },
+    "landing_page_testimonials_MrGMLF": {
+      "type": "landing-page-testimonials",
+      "blocks": {
+        "text_99iKkV": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
+            "heading": "Jess Jaunty",
+            "sub_heading": "Current content marketer,soon-to-be incarnation of seething despair",
+            "description": "<p>I’m just thrilled with the results my relic has produced. Not only has it generated a ton of new business, It’s enabled me to completely obliterate my competition. Literally! ha ha ha!<\/p>"
+          }
+        },
+        "text_i4QczC": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
+            "heading": "Eric Enigma",
+            "sub_heading": "Custom Tortoiseshell PC case craftman",
+            "description": "<p>I’m just thrilled with the results my relic has produced. Not only has it generated a ton of new business, It’s enabled me to completely obliterate my competition. Literally! ha ha ha!<\/p>"
+          }
+        },
+        "text_nDQKAR": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
+            "heading": "Heading 1",
+            "sub_heading": "lala position",
+            "description": "<p>ulalallaaaaaaaaa.......<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_99iKkV",
+        "text_i4QczC",
+        "text_nDQKAR"
+      ],
+      "settings": {
+        "heading": "What medical experts are saying about\u2028Super Mushroom complex",
+        "text": ""
       }
     }
   },
@@ -250,6 +290,7 @@
     "landing_page_image_with_text_AkGUxq",
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc",
-    "landing_page_bundle_section_6G3dtP"
+    "landing_page_bundle_section_6G3dtP",
+    "landing_page_testimonials_MrGMLF"
   ]
 }

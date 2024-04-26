@@ -1,0 +1,114 @@
+{{ 'landing-page-testimonials.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign options = section.settings
+  assign heading = options.heading
+  assign text = options.text
+  assign slider_content_blocks = ''
+  assign isProductImagesSlider = section.blocks.size
+  if isProductImagesSlider >= 0
+    assign isProductImagesSlider = true
+  endif
+  if isProductImagesSlider
+    assign slider_content_blocks = section.blocks
+  endif
+-%}
+
+{%  capture slider_content %} 
+    {%  for block in slider_content_blocks %}
+        {% render 'text-image', block: block, aspect_ratio: 1, contain: true, wrapper_class: 'testimonials-section' %}
+        {%  unless forloop.last %}::carousel_item {%  endunless %}
+    {%  endfor  %}
+{%  endcapture %}
+
+<div class="landing-page-testimonials">
+    <div class="landing-page-testimonials__wrapper">
+        <div class="landing-page-testimonials__heading">
+            {%- liquid
+                assign heading = heading
+                assign text = text
+            -%}
+            {% render 'section-header', heading: heading, text: text, wrapper_class:'testimonials-section' %}
+        </div>
+
+        <div class="landing-page-testimonials__carousel" data-parent>
+            <div class="landing-page-testimonials__main-carousel">
+              <custom-carousel>
+                {%  render 'custom-carousel' , slider_content: slider_content %}
+                <script type="text/json" data-settings>
+                {
+                    "slidesPerView": 2,
+                    "spaceBetween": 150,
+                    "breakpoints": {
+                        "320": {
+                            "pagination": true
+                        },
+                        "768": {
+                            "spaceBetween": 20,
+                            "pagination": true
+                        },
+                        "1024": {
+                            "navigation": true,
+                            "pagination": true
+                        }
+                    }
+                }
+                </script>
+              </custom-carousel>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Landing page testimonials",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.collection_list.title_label"
+        },
+        {
+            "type": "text",
+            "id": "text",            
+            "label": "Content"
+        }
+    ],
+    "blocks": [    
+    {
+      "type": "text",
+      "name": "block",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Choose Image"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "sub_heading",          
+          "label": "Sub Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+          "label": "t:sections.rich_text.blocks.text.text_1.label"
+        }        
+      ]      
+    }
+  ],
+    "presets": [
+        {
+        "name": "Landing page testimonials"
+        }
+    ]
+}
+{%  endschema %}
