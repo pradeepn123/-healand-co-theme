@@ -3,6 +3,16 @@
     "featured-blog-posts": {
       "type": "featured-blog-post",
       "blocks": {
+        "featured_post_9fQVtb": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/unveiling-the-magic-the-super-mushroom-complex-and-its-fantastical-benefits",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
+            "read_more_text_color": "#ffffff",
+            "image": "shopify:\/\/shop_images\/Super_Mushroom.jpg"
+          }
+        },
         "featured_post_F4XAxa": {
           "type": "featured_post",
           "settings": {
@@ -21,15 +31,6 @@
             "read_more_text_color": "#ffffff"
           }
         },
-        "04847407-be1c-48c3-8012-2d8f151e8037": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/everything-you-need-to-know-about-berberine-and-its-benefits",
-            "article_title_color": "#ffffff",
-            "article_text_color": "#ffffff",
-            "read_more_text_color": "#ffffff"
-          }
-        },
         "post-1": {
           "type": "featured_post",
           "settings": {
@@ -41,9 +42,9 @@
         }
       },
       "block_order": [
+        "featured_post_9fQVtb",
         "featured_post_F4XAxa",
         "featured_post_L7Fc6z",
-        "04847407-be1c-48c3-8012-2d8f151e8037",
         "post-1"
       ],
       "settings": {
