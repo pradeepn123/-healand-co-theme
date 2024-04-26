@@ -72,6 +72,9 @@
     padding: calc(var(--setion-top-padding) * 2);
   }
 }
+.landing-page-main-product__reviews {
+  padding-top: var(--setion-top-padding);
+}
 .landing-page-main-product__title {
   font-family: "proximanova-regular";
   font-size: 32px;

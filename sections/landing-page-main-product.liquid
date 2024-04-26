@@ -73,45 +73,63 @@
         <div class="landing-page-main-product__content">
             <div class="landing-page-main-product__info">
            
-                  <h3 class="landing-page-main-product__title">{{product.title}}</h3>
-                  <div class="landing-page-main-product__reviews"></div>
-                  <div class="landing-page-main-product__tags">
-                    {% for tag in productTag  %}
-                      <div class="landing-page-main-product__tags-list">{{tag}}</div>
-                    {% endfor %}
+              <h3 class="landing-page-main-product__title">{{product.title}}</h3>
+              <div class="landing-page-main-product__reviews">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when '@app' %}
+                      {% render 'product-app-block', product: product, section: section, block: block, sectionId: sectionId %}
+                  {% endcase %}
+                {% endfor %}
+              </div>
+                   
+              {% if productTag %}
+                <div class="landing-page-main-product__tags">
+                  {% for tag in productTag  %}
+                    <div class="landing-page-main-product__tags-list">{{tag}}</div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if descriptionTitle %}
+                <div class="landing-page-main-product__description_title">{{descriptionTitle}}</div>
+              {% endif %}
+
+              {% if description %}
+                <div class="landing-page-main-product__description">
+                  <div class="landing-page-main-product__description-half" id="show_more_prodDescription" style="color: {{ fontColor }}">
+                    {{description | truncate: 120 }}
+                      {% if description.size >= 120 %}
+                        <span id="readMore_btn">
+                          Read More
+                        </span>
+                      {% endif %}
                   </div>
-                  <div class="landing-page-main-product__description_title">{{descriptionTitle}}</div>
-                    <div class="landing-page-main-product__description">
-                      <div class="landing-page-main-product__description-half" id="show_more_prodDescription" style="color: {{ fontColor }}">
-                        {{description | truncate: 120 }}
-                          {% if description.size >= 120 %}
-                            <span id="readMore_btn">
-                              Read More
-                            </span>
-                          {% endif %}
-                      </div>
-                       <div class="landing-page-main-product__description-half" id="show_less_prodDescription" style="color: {{ fontColor }}; display: none">
-                        {{description}}
-                          <span id="readLess_btn">
-                            Read Less
-                          </span>
-                      </div>
-                    </div>
-                    <div class="landing-page-main-product__icon-text-wrapper">
-                      {% if textIcons %}
-                        {% for item in textIcons %}
-                          {%liquid assign image = item.icon.value %}
-                            <div class="landing-page-main-product__icon-text-wrapper-item">
-                              <div class="landing-page-main-product__icon">{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
-                              <div class="landing-page-main-product__text">{{item.text}}</div>
-                            </div>
-                        {% endfor %}
-                      {% endif %} 
-                    </div>
-                  <div class="landing-page-main-product__banner-teaser">
-                    {% render 'text-with-button', wrapper_class:"product-section", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
+                    <div class="landing-page-main-product__description-half" id="show_less_prodDescription" style="color: {{ fontColor }}; display: none">
+                    {{description}}
+                      <span id="readLess_btn">
+                        Read Less
+                      </span>
                   </div>
-              
+                </div>
+              {% endif %}
+
+              <div class="landing-page-main-product__icon-text-wrapper">
+                {% if textIcons %}
+                  {% for item in textIcons %}
+                    {%liquid assign image = item.icon.value %}
+                      <div class="landing-page-main-product__icon-text-wrapper-item">
+                        <div class="landing-page-main-product__icon">{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
+                        <div class="landing-page-main-product__text">{{item.text}}</div>
+                      </div>
+                  {% endfor %}
+                {% endif %} 
+              </div>
+
+              <div class="landing-page-main-product__banner-teaser">
+                {% render 'text-with-button', wrapper_class:"product-section", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
+              </div>
+        
             </div>
         </div>
     </div>

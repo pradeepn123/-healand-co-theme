@@ -10,8 +10,61 @@
     },
     "landing_page_main_product_PGnkxL": {
       "type": "landing-page-main-product",
+      "blocks": {
+        "okendo_star_rating_yBwmtG": {
+          "type": "shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "beetroot-650mg"
+          }
+        },
+        "image_UrRVac": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
+          }
+        },
+        "image_Bd3yMM": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_1_2ac61549-76d3-4041-8199-a1d1aedd3e24.png"
+          }
+        },
+        "image_YdwcGW": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_4.png"
+          }
+        },
+        "image_NTRWRC": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
+          }
+        },
+        "image_HdYxnX": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
+          }
+        },
+        "image_XFKHjy": {
+          "type": "image",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Berberine_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_star_rating_yBwmtG",
+        "image_UrRVac",
+        "image_Bd3yMM",
+        "image_YdwcGW",
+        "image_NTRWRC",
+        "image_HdYxnX",
+        "image_XFKHjy"
+      ],
       "settings": {
-        "product_selected": "8-mushroom-immunity-tincture-500mg",
+        "product_selected": "beetroot-650mg",
         "header_teaser": "LIMITED TIME OFFER",
         "header_text": "\u2028Save up to 40% off on your first order",
         "btn_text": "Get Offer"
