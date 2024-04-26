@@ -6,14 +6,54 @@
 @import 'StyleComponents/testimonials-text-image';
 
 
+@custom-selector :--carousel-container .landing-page-testimonials__main-carousel .carousel__container;
+@custom-selector :--carousel-container .landing-page-testimonials__main-carousel .carousel__container;
+@custom-selector :--next .landing-page-testimonials__main-carousel .swiper-navigation--next;
+@custom-selector :--prev .landing-page-testimonials__main-carousel .swiper-navigation--prev;
+@custom-selector :--disabled .landing-page-testimonials__main-carousel .swiper-button-disabled;
+@custom-selector :--swiper-pagination .landing-page-testimonials__main-carousel .swiper-pagination;
+
 .landing-page-testimonials {
-
+    background: #EAEDF1;
+    
     &__wrapper {
-        padding: 60px 0;
+        @include mixins.container;
+        @include mixins.section-spacing;
     }
 
-    &__main-carousel {
-        max-width: 1100px;
-        margin: 0 auto;
+    &__carousel {
+        padding-bottom: 10rem;
     }
+}
+:--carousel-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 7rem;
+}
+:--prev {
+    left: 0;
+}
+:--next {
+    right: 0;
+}
+:--next circle, :--prev circle, :--disabled svg circle {
+    fill: #FFFFFF;
+}
+:--next path, :--prev path {
+    stroke: #000000;
+}
+:--swiper-pagination {
+    bottom: 0 !important;
+    align-items: center;
+}
+:--swiper-pagination .swiper-pagination-bullet {
+    height: 6px;
+    width: 6px;
+    background: #97A3BA;
+}
+:--swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 10px;
+    height: 10px;
+    background: #2F4775;
+    border: none;
 }
