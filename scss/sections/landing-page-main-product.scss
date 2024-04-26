@@ -123,10 +123,6 @@
         width: 60px;
     }
 
-    // :--thumbnail-image{
-    //     width: 88px;
-    // }
-
     :--product-thumbnail{
         height: 80px;
     }
@@ -135,4 +131,8 @@
 #readLess_btn{
     cursor: pointer;
     text-decoration: underline;
+}
+
+.text-with-button--product-section .text-with-button__container{
+    padding: 10px 30px;
 }

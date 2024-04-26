@@ -232,3 +232,7 @@
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
+
+.text-with-button--product-section .text-with-button__container {
+  padding: 10px 30px;
+}

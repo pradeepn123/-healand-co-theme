@@ -61,7 +61,7 @@
                     "breakpoints": {
                       "1441": {
                           "slidesPerView": 7,
-                          "spaceBetween": 18
+                          "spaceBetween": 18 
                         }
                     }
                   }
@@ -108,7 +108,7 @@
                       {% endif %} 
                     </div>
                   <div class="landing-page-main-product__banner-teaser">
-                    {% render 'text-with-button', wrapper_class:"header", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
+                    {% render 'text-with-button', wrapper_class:"product-section", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
                   </div>
               
             </div>
@@ -152,8 +152,11 @@
               "label": "Product image"
           }
         ]
+      },
+      {
+        "type": "@app"
       }
-    ],
+  ],
   "presets": [
     {
         "name": "Main product-landing page"

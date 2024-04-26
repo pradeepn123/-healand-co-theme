@@ -51,14 +51,14 @@
   cursor: pointer;
 
   &--next {
-    right: 20px;
+    right: -20px;
     &.swiper-navigation--overflow {
       right: -20px;
     }
   }
 
   &--prev {
-    left: 13px;
+    left: -20px;
     &.swiper-navigation--overflow {
       left: -20px;
     }

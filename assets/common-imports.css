@@ -709,13 +709,13 @@ button.swiper-pagination-bullet {
   cursor: pointer;
 }
 .swiper-navigation--next {
-  right: 20px;
+  right: -20px;
 }
 .swiper-navigation--next.swiper-navigation--overflow {
   right: -20px;
 }
 .swiper-navigation--prev {
-  left: 13px;
+  left: -20px;
 }
 .swiper-navigation--prev.swiper-navigation--overflow {
   left: -20px;
