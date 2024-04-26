@@ -30,22 +30,12 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
-        },
-        "post-1": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/top-8-health-benefits-of-quercetin",
-            "article_title_color": "#ffffff",
-            "article_text_color": "#ffffff",
-            "read_more_text_color": "#ffffff"
-          }
         }
       },
       "block_order": [
         "featured_post_9fQVtb",
         "featured_post_F4XAxa",
-        "featured_post_L7Fc6z",
-        "post-1"
+        "featured_post_L7Fc6z"
       ],
       "settings": {
         "color_scheme": "default",
