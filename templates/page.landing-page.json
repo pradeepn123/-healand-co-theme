@@ -87,14 +87,16 @@
       "blocks": {
         "text_jQ7rrn": {
           "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_image_with_description.value }}",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_268_1.png",
-            "heading": "",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "{{ block.repeater.description | metafield_tag }}"
           }
         },
         "text_LnirVD": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/image_266_1.png",
             "heading": "",
@@ -103,6 +105,7 @@
         },
         "text_U8gTdi": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/image_267_1.png",
             "heading": "",
@@ -111,6 +114,7 @@
         },
         "text_HMnQzB": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/image_268_1.png",
             "heading": "",
