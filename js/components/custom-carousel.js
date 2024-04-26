@@ -1,6 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { gsap } from 'gsap';
+import { Navigation, Pagination, Autoplay, Thumbs } from 'swiper/modules';
 
 
 class CustomCarousel extends HTMLElement {
@@ -104,6 +103,8 @@ class CustomCarousel extends HTMLElement {
     this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
     this.navigations = this.parent.querySelector('[data-navigations]');
     this.currentWidth = window.innerWidth;
+    window.carousels = window.carousels || {};
+
     const swiperNavigationElements = `
     <div data-navigation-next data-navigation  class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
@@ -121,10 +122,19 @@ class CustomCarousel extends HTMLElement {
    this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     const carouselSettings = this.getCarouselSettings();
+    const linkedSlider = window.carousels[`${this.carouselSettings.linked}`];
+    //get thumbs
+    if(linkedSlider) {
+       carouselSettings.thumbs = {
+         swiper: linkedSlider
+       }
+    }
+
     this.swiper = new Swiper(this.container, {
       on: {
         beforeInit: () => {
           const { navigation, pagination } = carouselSettings || {};
+          debugger;
           if (!navigation) {
             this.parent.querySelectorAll('[data-navigation]').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           }
@@ -138,30 +148,18 @@ class CustomCarousel extends HTMLElement {
           else {
             this.parent.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
-          
         },
-        init: () => {
-          const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[0].querySelector('.swiper-pagination__progress');
-          if(currentSlider) {
-            gsap.to(currentSlider, { width: `100%`, duration:4, "ease": "ease" });
-          }
-        }
+        init: (swiper) => {
+           const name = this.carouselSettings.name;
+           if(name) {
+             window.carousels = window.carousels || {};
+             window.carousels[`${name}`] = swiper;
+           }
+        },
       },
-      modules: [Navigation, Pagination, Autoplay],
+      modules: [Navigation, Pagination, Autoplay, Thumbs],
       ...carouselSettings
-   
     });
-
-    this.swiper.on('activeIndexChange', (current) => {
-      const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex];
-      this.parent.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
-      currentSlider?.classList.add('swiper-pagination-bullet-active');
-    })
-
-    this.swiper.on('slideChange', (current) => {
-      const currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex].querySelector('.swiper-pagination__progress');
-      gsap.to(currentSlider, { width: `100%`, duration:4, "ease": "ease" });
-    })
   }
 }
 export default CustomCarousel;

@@ -37,35 +37,36 @@
 <div class="landing-page-main-product">
  <div class="landing-page-main-product__wrapper">
     <div class="landing-page-main-product__container">
-        <div class="landing-page-main-product__carousel" data-parent>
-            <div class="landing-page-main-product__main-carousel">
+        <div class="landing-page-main-product__carousel" >
+          <div class="landing-page-main-product__thumbnail-carousel" data-parent>
+            <custom-carousel>
+              {%  render 'custom-carousel' , slider_content: slider_content %}
+              <script type="text/json" data-settings>
+                {
+                  "spaceBetween": 10,
+                  "slidesPerView": 5,
+                  "freeMode": true,
+                  "watchSlidesVisibility": true,
+                  "watchSlidesProgress": true,
+                  "name": "product-thumbnail-carousel",
+                  "pagination": false,
+                  "navigation": true
+                }
+              </script>
+            </custom-carousel>
+          </div>
+            <div class="landing-page-main-product__main-carousel" data-parent>
               <custom-carousel>
                 {%  render 'custom-carousel' , slider_content: slider_content %}
                 <script type="text/json" data-settings>
                   {
                     "slidesPerView": 1,
-                    "spaceBetween": 15
+                    "spaceBetween": 10,
+                    "name": "product-main-carousel",
+                    "linked": "product-thumbnail-carousel"
                   }
                 </script>
-              </custom-carousel>
-            </div>
-            <div class="landing-page-main-product__thumbnail-carousel" data-parent>
-              <custom-carousel>
-                {%  render 'custom-carousel' , slider_content: slider_content %}
-                <script type="text/json" data-settings>
-                  {
-                    "slidesPerView": 5.5,
-                    "spaceBetween": 15,
-                    "pagination": false,
-                    "navigation": true,
-                    "breakpoints": {
-                      "1441": {
-                          "slidesPerView": 7,
-                          "spaceBetween": 18 
-                        }
-                    }
-                  }
-                </script>
+                
               </custom-carousel>
             </div>
         </div>

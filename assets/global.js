@@ -15,7 +15,6 @@
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 
 var _excluded = ["breakpoints"],
@@ -23,7 +22,6 @@ var _excluded = ["breakpoints"],
   _excluded3 = ["navigation", "pagination", "progressPagination", "paginationType"];
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-
 
 
 class CustomCarousel extends HTMLElement {
@@ -138,10 +136,18 @@ class CustomCarousel extends HTMLElement {
     this.placeholders = (_this$querySelector2 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
     this.navigations = this.parent.querySelector('[data-navigations]');
     this.currentWidth = window.innerWidth;
+    window.carousels = window.carousels || {};
     var swiperNavigationElements = "\n    <div data-navigation-next data-navigation  class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#2F4775\"/>\n        <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n    </svg>\n    </div>\n    <div data-navigation-prev data-navigation class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#2F4775\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ");
     this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings();
+    var linkedSlider = window.carousels["".concat(this.carouselSettings.linked)];
+    //get thumbs
+    if (linkedSlider) {
+      carouselSettings.thumbs = {
+        swiper: linkedSlider
+      };
+    }
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
       on: {
         beforeInit: () => {
@@ -149,6 +155,7 @@ class CustomCarousel extends HTMLElement {
             navigation,
             pagination
           } = carouselSettings || {};
+          debugger;
           if (!navigation) {
             this.parent.querySelectorAll('[data-navigation]').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           } else {
@@ -160,33 +167,16 @@ class CustomCarousel extends HTMLElement {
             this.parent.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
         },
-        init: () => {
-          var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[0].querySelector('.swiper-pagination__progress');
-          if (currentSlider) {
-            gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(currentSlider, {
-              width: "100%",
-              duration: 4,
-              "ease": "ease"
-            });
+        init: swiper => {
+          var name = this.carouselSettings.name;
+          if (name) {
+            window.carousels = window.carousels || {};
+            window.carousels["".concat(name)] = swiper;
           }
         }
       },
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Autoplay]
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Thumbs]
     }, carouselSettings));
-    this.swiper.on('activeIndexChange', current => {
-      var _this$parent$querySel;
-      var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex];
-      (_this$parent$querySel = this.parent.querySelector('.swiper-pagination-bullet-active')) === null || _this$parent$querySel === void 0 || _this$parent$querySel.classList.remove('swiper-pagination-bullet-active');
-      currentSlider === null || currentSlider === void 0 || currentSlider.classList.add('swiper-pagination-bullet-active');
-    });
-    this.swiper.on('slideChange', current => {
-      var currentSlider = this.parent.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex].querySelector('.swiper-pagination__progress');
-      gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(currentSlider, {
-        width: "100%",
-        duration: 4,
-        "ease": "ease"
-      });
-    });
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomCarousel);

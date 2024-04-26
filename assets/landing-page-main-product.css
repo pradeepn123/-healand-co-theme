@@ -219,6 +219,15 @@
 .landing-page-main-product__main-carousel {
   height: 551px;
 }
+.landing-page-main-product__thumbnail-carousel .swiper-slide {
+  width: 100px;
+}
+.landing-page-main-product .swiper-thumbs .swiper-slide {
+  border: 1px solid transparent;
+}
+.landing-page-main-product .swiper-thumbs .swiper-slide-thumb-active {
+  border-color: black;
+}
 .landing-page-main-product :is(.landing-page-main-product__icon .responsive-image__wrapper) {
   width: 60px;
 }

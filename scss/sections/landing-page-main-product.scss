@@ -119,6 +119,21 @@
         height: 551px;
     }
 
+    &__thumbnail-carousel {
+        .swiper-slide {
+            width: 100px;
+        }
+    }
+
+    .swiper-thumbs {
+        .swiper-slide {
+            border: 1px solid transparent;
+            &-thumb-active {
+               border-color: black;
+            }
+        }
+    }
+ 
     :--image{
         width: 60px;
     }
@@ -136,3 +151,4 @@
 .text-with-button--product-section .text-with-button__container{
     padding: 10px 30px;
 }
+
