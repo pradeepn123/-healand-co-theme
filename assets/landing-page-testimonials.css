@@ -2,8 +2,8 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-testimonials.scss ***!
   \*****************************************************************************************************************************************************************************************************************************************/
 .text-image--testimonials-section .text-image__wrapper {
-  background: #FFFFFF;
-  color: #2f4775;
+  background: #fff;
+  color: #2F4775;
   padding: 0 40px 40px;
   position: relative;
 }
@@ -15,7 +15,7 @@
   bottom: -7%;
   width: 0;
   height: 0;
-  border-top: solid 35px #FFFFFF;
+  border-top: solid 35px #fff;
   border-left: solid 35px transparent;
   border-right: solid 35px transparent;
   rotate: 225deg;
@@ -103,11 +103,11 @@
 }
 
 .landing-page-testimonials__main-carousel .swiper-navigation--next circle,.landing-page-testimonials__main-carousel .swiper-navigation--prev circle,.landing-page-testimonials__main-carousel .swiper-button-disabled svg circle {
-  fill: #FFFFFF;
+  fill: #fff;
 }
 
 .landing-page-testimonials__main-carousel .swiper-navigation--next path,.landing-page-testimonials__main-carousel .swiper-navigation--prev path {
-  stroke: #000000;
+  stroke: #000;
 }
 
 .landing-page-testimonials__main-carousel .swiper-pagination {

@@ -13,7 +13,7 @@
 @custom-selector :--swiper-pagination .landing-page-testimonials__main-carousel .swiper-pagination;
 
 .landing-page-testimonials {
-    background: #EAEDF1;
+    background: colors.$light-grey;
     
     &__wrapper {
         @include mixins.container;
@@ -27,9 +27,6 @@
 
     &__carousel {
         padding-bottom: 5rem;
-        // @media(--sm){
-        //     padding-bottom: 10rem;
-        // }
     }
 }
 :--carousel-container {
@@ -45,10 +42,10 @@
     right: 0;
 }
 :--next circle, :--prev circle, :--disabled svg circle {
-    fill: #FFFFFF;
+    fill: colors.$white;
 }
 :--next path, :--prev path {
-    stroke: #000000;
+    stroke: colors.$black;
 }
 :--swiper-pagination {
     bottom: 0 !important;
@@ -57,12 +54,12 @@
 :--swiper-pagination .swiper-pagination-bullet {
     height: 6px;
     width: 6px;
-    background: #97A3BA;
+    background: colors.$light-blue;
     margin: 0 10px;
 }
 :--swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 10px;
     height: 10px;
-    background: #2F4775;
+    background: colors.$dark-blue;
     border: none;
 }
