@@ -1,17 +1,25 @@
 {{ 'landing-page-bundle-section.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+    assign options = section.settings    
+    assign heading = options.heading
+    assign text = options.text
+-%}
+
 <div class="landing-page-bundle-section">
     <div class="landing-page-bundle-section__wrapper">
         <div class="landing-page-bundle-section__content">
             <div class="landing-page-bundle-section__heading">
                 {%- liquid
-                    assign heading = 'Get your daily immune support'
-                    assign text = 'Discounts cannot be used in conjunction with any other offer.'
+                    assign heading = heading
+                    assign text = text
                 -%}
                 {% render 'section-header', heading: heading, text: text, wrapper_class:'bundle-section-center' %}
             </div>
             <div class="landing-page-bundle-section__information">
-                {% render 'landing-bundle-sec-info', block: block %}
+                {% for block in section.blocks %}
+                    {% render 'landing-bundle-sec-info', block: block %}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -22,7 +30,16 @@
 {
     "name": "Landing page bundle sec",
     "settings": [ 
-
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.collection_list.title_label"
+        },
+        {
+            "type": "richtext",
+            "id": "text",            
+            "label": "Content"
+        }
     ],
     "blocks": [    
         {
@@ -34,9 +51,9 @@
                     "content": "t:sections.rich_text.blocks.text.description.content"
                 },
                 {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Choose Image"
+                    "type": "text",
+                    "id": "tag_heading",
+                    "label": "Percentage Heading"
                 },
                 {
                     "type": "text",
@@ -45,8 +62,17 @@
                 },
                 {
                     "type": "richtext",
-                    "id": "description",
-                    "default": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+                    "id": "content",
+                    "label": "Content info"
+                },
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Choose Product"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",                    
                     "label": "t:sections.rich_text.blocks.text.text_1.label"
                 }
             ]

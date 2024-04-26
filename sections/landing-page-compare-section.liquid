@@ -33,15 +33,8 @@
                                         assign options = block.settings
                                         assign otherBullet = options.svg_image_other
                                         assign otherText = options.description_other
-                                    %}
-                                    <div class="info-compare__description-wrap">
-                                        <div class="info-compare__bullet-img">
-                                            {% render 'shopify-responsive-image', image:otherBullet, aspect_ratio: 1 %} 
-                                        </div>
-                                        <div class="info-compare__text">
-                                            {{otherText}}
-                                        </div>
-                                    </div>
+                                    %}                                    
+                                    {% render 'landing-page-compare-info', image: otherBullet, content: otherText %}
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -58,14 +51,7 @@
                                     assign heal_and_co_bullet = options.svg_image_heal_and_co
                                     assign heal_and_co_text = options.description_heal_and_co
                                 %}
-                                <div class="info-compare__description-wrap">
-                                    <div class="info-compare__bullet-img">
-                                         {% render 'shopify-responsive-image', image:heal_and_co_bullet, aspect_ratio: 1 %} 
-                                    </div>
-                                    <div class="info-compare__text">
-                                        {{heal_and_co_text}}
-                                    </div>
-                                </div>
+                                {% render 'landing-page-compare-info', image: heal_and_co_bullet, content: heal_and_co_text %}
                             {% endif %}
                         {% endfor %}
                     </div>

@@ -654,10 +654,6 @@ button.swiper-pagination-bullet {
   height: 100%;
 }
 
-.carousel {
-  position: relative;
-}
-
 .swiper-pagination {
   display: -webkit-box;
   display: -ms-flexbox;

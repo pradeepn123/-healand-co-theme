@@ -1,17 +1,29 @@
+{%- liquid 
+    assign options = block.settings
+    assign tag_heading = options.tag_heading
+    assign heading = options.heading
+    assign content = options.content
+    assign product = options.product
+    assign product_image = options.product.featured_image
+    assign description = options.description
+    
+-%}
 <div class="landing-bundle-sec-info">
     <div class="landing-bundle-sec-info__wrapper">
         <div class="landing-bundle-sec-info__content">
             <div class="landing-bundle-sec-info__percentage-off">
-                <span class="">15% off</span>
+                <span class="">{{ tag_heading }}</span>
             </div>
-            <h3 class="landing-bundle-sec-info__heading">MOST POPULAR</h3>
+            <h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>
             <button class="landing-bundle-sec-info__button button--primary">3 month supply</button>
-            <span class="landing-bundle-sec-info__gift-price">$0.70 per day + a Free gift Limited time offer</span>
-            <img src="" alt="" />
-            <div class="landing-bundle-sec-info__description">Be consistent and have clean greens for a full 90 days to start feeling your best</div>
+            <span class="landing-bundle-sec-info__gift-price">{{ content }}</span>
+            {% render 'shopify-responsive-image', image: product_image, aspect_ratio: 1.2 %}
+            <div class="landing-bundle-sec-info__description">{{ description }}</div>
+            
+            {% render 'landing-page-compare-info', image: image, content: '30 servings to try clean green.' %}
             <div class="landing-bundle-sec-info__price">
-                <span class="landing-bundle-sec-info__compare-price">$33.86</span>
-                <span class="landing-bundle-sec-info__origin-price">$28.78 USD</span>
+                <span class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</span>
+                <span class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</span>
             </div>
             <button class="button button--primary">checkout</button>
         </div>
