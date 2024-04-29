@@ -18,7 +18,7 @@
             </div>
             <div class="landing-page-bundle-section__information">
                 {% for block in section.blocks %}
-                    {% render 'landing-bundle-sec-info', block: block %}
+                    {% render 'landing-bundle-sec-info', block: block , block_index: forloop.index %}
                 {% endfor %}
             </div>
         </div>
@@ -59,6 +59,11 @@
                     "type": "text",
                     "id": "heading",
                     "label": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label",
+                    "label": "Button Label"
                 },
                 {
                     "type": "richtext",

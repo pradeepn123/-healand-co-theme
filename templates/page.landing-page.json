@@ -235,20 +235,24 @@
       "blocks": {
         "text_E9iNQ9": {
           "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_bundle_section.value }}",
           "settings": {
-            "tag_heading": "15% off",
-            "heading": "1 month supply",
-            "content": "<p>$0.70 per day<\/p>",
-            "product": "8-mushroom-immunity-tincture-500mg",
-            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
-            "shipping_text": ""
+            "tag_heading": "{{ block.repeater.percentage_heading.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "button_label": "{{ block.repeater.button_label.value }}",
+            "content": "<p>{{ block.repeater.content_info | metafield_tag }}<\/p>",
+            "product": "{{ block.repeater.product.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>",
+            "shipping_text": "{{ block.repeater.free_shipping_text.value }}"
           }
         },
         "text_d8fp4A": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "tag_heading": "15% off",
             "heading": "",
+            "button_label": "",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
             "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
@@ -257,9 +261,11 @@
         },
         "text_yQtWqf": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "tag_heading": "15%",
             "heading": "1 month supply",
+            "button_label": "",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
             "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
