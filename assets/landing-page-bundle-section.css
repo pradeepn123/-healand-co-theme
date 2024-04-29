@@ -17,13 +17,13 @@
 .landing-page-bundle-section__wrapper {
   padding-top: calc(var(--grid-row-gap-large) * 3);
   padding-bottom: calc(var(--grid-row-gap-large) * 3);
-  margin-top: var(--section-margin);
+  margin-top: calc(var(--setion-top-padding) * 2);
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .landing-page-bundle-section__wrapper {
     padding-top: var(--section-padding);
     padding-bottom: calc(var(--setion-top-padding) * 4);
-    margin-top: var(--section-margin);
+    margin-top: calc(var(--section-margin) * 2);
   }
 }
 .landing-page-bundle-section__information {

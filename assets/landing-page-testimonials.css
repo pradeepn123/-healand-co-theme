@@ -73,10 +73,16 @@
   margin-right: auto;
   padding-top: var(--section-padding);
   margin-top: var(--section-margin);
+  margin-top: calc(var(--setion-top-padding) * 2);
 }
 @media (min-width: 1440px) {
   .landing-page-testimonials__wrapper {
     max-width: calc(100% - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 1024px) {
+  .landing-page-testimonials__wrapper {
+    margin-top: calc(var(--section-margin) * 2);
   }
 }
 .landing-page-testimonials__heading .section-header__content {

@@ -109,6 +109,7 @@
   -webkit-column-gap: var(--setion-top-padding);
      -moz-column-gap: var(--setion-top-padding);
           column-gap: var(--setion-top-padding);
+  margin-top: var(--setion-top-padding);
 }
 @media (min-width: 768px) {
   .info-compare__description-wrap {

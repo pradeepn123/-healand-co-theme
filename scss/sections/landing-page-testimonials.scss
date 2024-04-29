@@ -18,6 +18,10 @@
     &__wrapper {
         @include mixins.container;
         @include mixins.section-spacing;
+        margin-top: calc( var(--setion-top-padding)*2);
+        @media(--md){
+            margin-top: calc(var(--section-margin)*2);
+        }
     }
 
     &__heading .section-header__content {

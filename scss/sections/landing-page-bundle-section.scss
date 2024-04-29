@@ -18,11 +18,11 @@
     &__wrapper{
         padding-top: calc(var(--grid-row-gap-large)*3);
         padding-bottom: calc(var(--grid-row-gap-large)*3);
-        margin-top: var(--section-margin);
-        @media(--md-large){
+        margin-top: calc( var(--setion-top-padding)*2);
+        @media(--md){
             padding-top: var(--section-padding);
             padding-bottom: calc(var(--setion-top-padding)*4);
-            margin-top: var(--section-margin);
+            margin-top: calc(var(--section-margin)*2);
         }
     }
     &__information{

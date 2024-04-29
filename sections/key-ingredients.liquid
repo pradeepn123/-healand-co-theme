@@ -109,6 +109,11 @@
             color: var(--meta-text-color);
         }
     {% endif %}
+    {% if page.handle == 'landing-page' %}
+      .section-spacing {
+        padding-bottom: 0;
+      }
+    {% endif %}
 
   {% endstyle %}
 {% endcapture %}
