@@ -2,6 +2,7 @@
   "sections": {
     "landing_page_header_e47V3w": {
       "type": "landing-page-header",
+      "disabled": true,
       "settings": {
         "header_teaser": "Join 750,000+ HEAL + CO. Customer 🤍",
         "header_text": "LIMITED TIME - Save up to 40% + a FREE Super mushroom complex Bottle 🌱",
@@ -65,7 +66,7 @@
         "image_XFKHjy"
       ],
       "settings": {
-        "product_selected": "beetroot-650mg",
+        "product_selected": "8-mushroom-immunity-tincture-500mg",
         "header_teaser": "LIMITED TIME OFFER",
         "header_text": "\u2028Save up to 40% off on your first order",
         "btn_text": "Get Offer"
@@ -91,42 +92,12 @@
           "settings": {
             "image": "{{ block.repeater.image.value }}",
             "heading": "{{ block.repeater.heading.value }}",
-            "description": "{{ block.repeater.description | metafield_tag }}"
-          }
-        },
-        "text_LnirVD": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_266_1.png",
-            "heading": "",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
-          }
-        },
-        "text_U8gTdi": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_267_1.png",
-            "heading": "",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
-          }
-        },
-        "text_HMnQzB": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_268_1.png",
-            "heading": "",
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
           }
         }
       },
       "block_order": [
-        "text_jQ7rrn",
-        "text_LnirVD",
-        "text_U8gTdi",
-        "text_HMnQzB"
+        "text_jQ7rrn"
       ],
       "settings": {
         "section_layout": "carousel",
@@ -181,44 +152,56 @@
       "blocks": {
         "other_LzCRMd": {
           "type": "other",
+          "repeater": "{{ page.metafields.custom.landing_page_compare_section.value.landing_page_compare_sec_inner_blocks.value }}",
           "settings": {
-            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
-            "description_other": "Added filters"
+            "svg_image_other": "{{ block.repeater.image_icon.value }}",
+            "description_other": "{{ block.repeater.description.value }}",
+            "info_type": "{{ block.repeater.block_type.value }}"
           }
         },
         "other_HxKin6": {
           "type": "other",
+          "disabled": true,
           "settings": {
             "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
-            "description_other": "Low potency despite lable"
+            "description_other": "Low potency despite lable",
+            "info_type": ""
           }
         },
         "other_XtWpLD": {
           "type": "other",
+          "disabled": true,
           "settings": {
             "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
-            "description_other": "Bitter \/ bad \/ rancid taste"
+            "description_other": "Bitter \/ bad \/ rancid taste",
+            "info_type": ""
           }
         },
         "heal_and_co_Kw4GW8": {
           "type": "heal_and_co",
+          "disabled": true,
           "settings": {
             "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "No Filter added"
+            "description_heal_and_co": "No Filter added",
+            "info_type": ""
           }
         },
         "heal_and_co_AyagQ4": {
           "type": "heal_and_co",
+          "disabled": true,
           "settings": {
             "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "A combination of 5 medicinal mushrooms in every capsule"
+            "description_heal_and_co": "A combination of 5 medicinal mushrooms in every capsule",
+            "info_type": ""
           }
         },
         "heal_and_co_DTaQgK": {
           "type": "heal_and_co",
+          "disabled": true,
           "settings": {
             "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "No taste or aftertaste"
+            "description_heal_and_co": "No taste or aftertaste",
+            "info_type": ""
           }
         }
       },
@@ -231,12 +214,14 @@
         "heal_and_co_DTaQgK"
       ],
       "settings": {
-        "heading": "How we compare",
-        "text": "We deliver the healing power of nature, one bottle at a time",
-        "block_heading_one": "Others",
-        "block_heading_two": "HEAL + CO.",
-        "image_other_one": "shopify:\/\/shop_images\/Frame_633.png",
-        "image_other_two": "shopify:\/\/shop_images\/supermushroom_complex_1.png"
+        "heading": "{{ page.metafields.custom.landing_page_compare_section.value.heading.value }}",
+        "text": "{{ page.metafields.custom.landing_page_compare_section.value.content_info.value }}",
+        "block_heading_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_heading.value }}",
+        "block_heading_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_heading.value }}",
+        "image_other_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_image.value }}",
+        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}",
+        "first_info_type": "{{ page.metafields.custom.landing_page_compare_section.value.first_section_block_type.value }}",
+        "second_info_type": "{{ page.metafields.custom.landing_page_compare_section.value.second_section_block_type.value }}"
       }
     },
     "landing_page_timeline_kfRwhc": {

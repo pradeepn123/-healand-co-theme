@@ -11,7 +11,7 @@
 .landing-page-main-product{
     &__wrapper{
         @include mixins.container;
-        @include mixins.section-spacing;
+        margin-top: var(--section-margin); 
     }
 
     &__container{

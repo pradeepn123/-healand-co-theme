@@ -129,6 +129,14 @@
           "desktop_logo_width": 100,
           "mobile_logo_width": 100
         }
+      },
+      "landing-page-header": {
+        "type": "landing-page-header",
+        "settings": {
+          "header_teaser": "Join 750,000+ HEAL + CO. Customer 🤍",
+          "header_text": "LIMITED TIME - Save up to 40% + a FREE Super mushroom complex Bottle 🌱",
+          "btn_text": "Get Offer"
+        }
       }
     },
     "content_for_index": [

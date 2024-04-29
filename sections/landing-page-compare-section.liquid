@@ -28,31 +28,36 @@
                     <div class="info-compare__text-wrapp">
                         <div class="info-compare__description">
                             {% for block in section.blocks %}
-                                {% if block.type == 'other' %}
-                                    {% liquid
-                                        assign options = block.settings
-                                        assign otherBullet = options.svg_image_other
-                                        assign otherText = options.description_other
-                                    %}                                    
+                                {% liquid
+                                    assign options = block.settings
+                                    assign otherBullet = options.svg_image_other
+                                    assign otherText = options.description_other
+                                    assign info_type = options.info_type
+                                %}
+                                {% if info_type == 'other' %}
                                     {% render 'landing-page-compare-info', image: otherBullet, content: otherText %}
                                 {% endif %}
+                    
+                                
                             {% endfor %}
                         </div>
                     </div>
                 </div>
+
                 <div class="info-compare__container">
                     <div class="info-compare__heading">{{secondHeading}}</div>
                     <div class="info-compare__image"> {% render 'shopify-responsive-image', image:SecondImage, aspect_ratio: 1.4 %} </div>
                     <div class="info-compare__description">
                          {% for block in section.blocks %}
-                            {% if block.type == 'heal_and_co' %}
-                                {% liquid
-                                    assign options = block.settings
-                                    assign heal_and_co_bullet = options.svg_image_heal_and_co
-                                    assign heal_and_co_text = options.description_heal_and_co
-                                %}
+                            {% liquid
+                                assign options = block.settings
+                                assign heal_and_co_bullet = options.svg_image_other
+                                assign heal_and_co_text = options.description_other
+                                assign info_type = options.info_type
+                            %}
+                            {% unless info_type == 'other' %}
                                 {% render 'landing-page-compare-info', image: heal_and_co_bullet, content: heal_and_co_text %}
-                            {% endif %}
+                            {% endunless %}
                         {% endfor %}
                     </div>
                 </div>
@@ -111,6 +116,11 @@
                     "type": "text",
                     "id": "description_other",
                     "label": "Description"
+                },
+                {
+                    "type": "text",
+                    "id": "info_type",
+                    "label": "Add block type"
                 }
             ]
         },
@@ -127,6 +137,11 @@
                     "type": "text",
                     "id": "description_heal_and_co",
                     "label": "Description"
+                },
+                {
+                    "type": "text",
+                    "id": "info_type",
+                    "label": "Add block type"
                 }
             ]
 

@@ -37,7 +37,7 @@
     {{ 'index.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'common-imports.css' | asset_url | stylesheet_tag }}
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     {% comment %} {% render 'fonts' %} {% endcomment %}
     {{ content_for_header }}
@@ -48,7 +48,11 @@
     {% if template.name == 'password' %}
       {% sections 'password-header-group' %}
     {% else %}
-      {% sections 'main-header-group' %}
+      {% if template.name == 'page' and page.handle == 'landing-page' %}
+        {% section 'landing-page-header' %}
+      {% else %}
+        {% sections 'main-header-group' %}
+      {% endif %}
       {% sections 'main-aside-group' %}
     {% endif %}
 

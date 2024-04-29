@@ -8,19 +8,18 @@
 .landing-page-header {
     &__content {
       flex-direction: column;
-
       &--mobile {
         display: flex;
         @media(--sm) {
           display: none;
         }
-
       }
 
       &--desktop {
         display: none;
         @media(--sm) {
           display: flex;
+          align-items: center;
           flex-direction: row;
           justify-content: space-between;
           border-bottom: 1px solid #E7E7E7;
@@ -68,6 +67,6 @@
 
     &__logo {
       width: fit-content;
-    }
+    }   
 
 }
