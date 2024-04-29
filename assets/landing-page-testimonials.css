@@ -102,7 +102,7 @@
   right: 0;
 }
 
-.landing-page-testimonials__main-carousel .swiper-navigation--next circle,.landing-page-testimonials__main-carousel .swiper-navigation--prev circle,.landing-page-testimonials__main-carousel .swiper-button-disabled svg circle {
+.landing-page-testimonials__main-carousel .swiper-navigation--next circle,.landing-page-testimonials__main-carousel .swiper-navigation--prev circle {
   fill: #fff;
 }
 
