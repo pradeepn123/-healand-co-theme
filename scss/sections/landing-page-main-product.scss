@@ -16,8 +16,8 @@
 
     &__container{
         @include mixins.grid(1,100px,100px);
-        padding: 0 64px;
         @media(--md){
+            padding: 0 64px;
             @include mixins.grid(2,100px,100px);
             column-gap: 70px; 
         }
