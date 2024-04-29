@@ -285,7 +285,8 @@
             "heading": "1 month supply",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
-            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>"
+            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
+            "shipping_text": ""
           }
         },
         "text_d8fp4A": {
@@ -295,7 +296,8 @@
             "heading": "",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
-            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>"
+            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
+            "shipping_text": "free shipping"
           }
         },
         "text_yQtWqf": {
@@ -305,7 +307,8 @@
             "heading": "1 month supply",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
-            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>"
+            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
+            "shipping_text": ""
           }
         }
       },
@@ -359,6 +362,67 @@
         "heading": "What medical experts are saying about\u2028Super Mushroom complex",
         "text": ""
       }
+    },
+    "faq_section_4hkffF": {
+      "type": "faq-section",
+      "blocks": {
+        "collapsible_row_PVQLFt": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "What mushrooms are in the super mushroom complex?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_A4jgDd": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "What are the health benefits of super mushroom complex?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_DAgDCr": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "When should you take super mushroom complex?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_Y6wWpq": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "What is the right dosage?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PVQLFt",
+        "collapsible_row_A4jgDd",
+        "collapsible_row_DAgDCr",
+        "collapsible_row_Y6wWpq"
+      ],
+      "settings": {
+        "from_metafields": false,
+        "section_heading": "FAQ's",
+        "color_scheme": "primary",
+        "enable_background_around_container": false,
+        "container_size": "large",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "expand_first_collapsible_row": false
+      }
     }
   },
   "order": [
@@ -371,6 +435,7 @@
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc",
     "landing_page_bundle_section_6G3dtP",
-    "landing_page_testimonials_MrGMLF"
+    "landing_page_testimonials_MrGMLF",
+    "faq_section_4hkffF"
   ]
 }

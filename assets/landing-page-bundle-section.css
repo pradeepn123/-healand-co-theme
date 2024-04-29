@@ -88,12 +88,14 @@
 }
 
 .landing-bundle-sec-info__wrapper {
+  height: 100%;
   position: relative;
 }
 .landing-bundle-sec-info__content {
   background: #fff;
   text-align: center;
   padding: var(--section-padding);
+  height: 100%;
 }
 .landing-bundle-sec-info__heading {
   font-family: "proximanova-regular";
@@ -187,10 +189,26 @@
     font-family: "proximanovaexcn-regular";
   }
 }
-.landing-bundle-sec-info :--image {
-  width: 257px;
-  margin: 0 auto;
-  margin: var(--setion-top-padding) auto;
+.landing-bundle-sec-info__shopping-bag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: var(--setion-top-padding);
+  font-family: "proximanova-regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.landing-bundle-sec-info__compare-price {
+  color: #97A3BA;
+}
+.landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper) {
+  height: auto !important;
 }
 .landing-bundle-sec-info :is(.landing-bundle-sec-info__content .button) {
   margin: 0 auto;

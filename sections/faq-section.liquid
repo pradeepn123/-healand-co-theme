@@ -14,7 +14,7 @@
   assign data_metafields = product.metafields.custom.faq_section_data.value
   assign data_metafields_checkbox = section.settings.from_metafields
   assign blocks_length = section.blocks | size
-  assign highlighted_background_color = product.metafields.custom.color_schema.value.highlighted_background_color | default: '#EA6852'
+  assign highlighted_background_color = product.metafields.custom.color_schema.value.highlighted_background_color | default: '#2F4775'
   assign highlighted_text_color = product.metafields.custom.color_schema.value.highlighted_text_color | default: '#FFF'
 
   assign section_heading = options.section_heading
@@ -44,9 +44,17 @@
         display: none;
       }
     {% endif %}
+    {% if page.handle == 'landing-page' %}
+      .faq-section--parent accordeon-component,
+      .faq-section--parent .faq-section__rte{
+          color: #2F4775;
+      }
+      .section-{{ section.id }} {
+        margin-top:80px;
+      }
+    {% endif %}
   {% endstyle %}
 {% endcapture %}
-
 {% render 'inline-css-minifier', css: css %}
 {% if data_metafields_checkbox == false %}
   <div

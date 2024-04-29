@@ -6,6 +6,7 @@
     assign product = options.product
     assign product_image = options.product.featured_image
     assign description = options.description
+    assign freeShipping = options.shipping_text
     
 -%}
 <div class="landing-bundle-sec-info">
@@ -30,6 +31,12 @@
                 <path d="M16.3536 4.15043C16.5488 3.95517 16.5488 3.63858 16.3536 3.44332L13.1716 0.261341C12.9763 0.0660789 12.6597 0.0660789 12.4645 0.261341C12.2692 0.456603 12.2692 0.773186 12.4645 0.968448L15.2929 3.79688L12.4645 6.6253C12.2692 6.82056 12.2692 7.13715 12.4645 7.33241C12.6597 7.52767 12.9763 7.52767 13.1716 7.33241L16.3536 4.15043ZM0 4.29688H16V3.29688H0V4.29688Z" fill="white"/>
                 </svg>
             </button>
+            {% if freeShipping != blank%}
+            <div class="landing-bundle-sec-info__shopping-bag">
+                <div>{%- render 'icon', icon_name: 'shoppingBag', class: 'shopping-bag__icon' -%}</div>
+                <div>{{freeShipping}}</div>
+            </div>
+            {% endif %} 
         </div>
     </div>
 </div>

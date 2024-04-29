@@ -6,6 +6,7 @@
 
 
 @custom-selector :--button .landing-bundle-sec-info__content .button;
+@custom-selector :--image .landing-bundle-sec-info__wrapper .responsive-image__wrapper;
 @custom-selector :--title .landing-page-bundle-section__heading .section-header__title;
 @custom-selector :--sub_title .landing-page-bundle-section__heading .section-header__content p;  
 
@@ -41,13 +42,14 @@
 
 .landing-bundle-sec-info{
     &__wrapper{
-         
+         height: 100%;
         position: relative;    
     }
     &__content{
         background: colors.$white;
         text-align: center;
         padding: var(--section-padding);
+        height: 100%;
     }
     &__heading{
         @include use-text-style('heading-2');
@@ -109,11 +111,20 @@
             font-family: 'proximanovaexcn-regular';
         }
     }
+    &__shopping-bag{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding-top: var(--setion-top-padding);
+        @include use-text-style('body-alt');
+        font-weight: typography.$heading-weight;  
+    }
+    &__compare-price{
+        color: colors.$light-blue;
+    }
 
     :--image{
-        width: 257px;
-        margin: 0 auto;
-        margin: var(--setion-top-padding) auto; 
+        height: auto !important;
     }
     :--button{
         margin: 0 auto;
