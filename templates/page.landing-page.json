@@ -219,9 +219,7 @@
         "block_heading_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_heading.value }}",
         "block_heading_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_heading.value }}",
         "image_other_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_image.value }}",
-        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}",
-        "first_info_type": "{{ page.metafields.custom.landing_page_compare_section.value.first_section_block_type.value }}",
-        "second_info_type": "{{ page.metafields.custom.landing_page_compare_section.value.second_section_block_type.value }}"
+        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}"
       }
     },
     "landing_page_timeline_kfRwhc": {

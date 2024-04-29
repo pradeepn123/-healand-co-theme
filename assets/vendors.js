@@ -2584,7 +2584,7 @@ function toPrimitive(t, r) {
 
 function toPropertyKey(t) {
   var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
-  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : String(i);
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
 }
 
 /***/ }),
@@ -3190,7 +3190,7 @@ if (typeof HTMLElement === 'function') {
 			if (!this.$$c) {
 				// We wait one tick to let possible child slot elements be created/mounted
 				await Promise.resolve();
-				if (!this.$$cn) {
+				if (!this.$$cn || this.$$c) {
 					return;
 				}
 				function create_slot(name) {
@@ -5828,7 +5828,7 @@ function beforeUpdate(fn) {
  *
  * If a function is returned _synchronously_ from `onMount`, it will be called when the component is unmounted.
  *
- * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+ * `onMount` does not run inside a [server-side component](https://svelte.dev/docs#run-time-server-side-component-api).
  *
  * https://svelte.dev/docs/svelte#onmount
  * @template T
@@ -5867,7 +5867,7 @@ function onDestroy(fn) {
 }
 
 /**
- * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
+ * Creates an event dispatcher that can be used to dispatch [component events](https://svelte.dev/docs#template-syntax-component-directives-on-eventname).
  * Event dispatchers are functions that can take two arguments: `name` and `detail`.
  *
  * Component events created with `createEventDispatcher` create a
@@ -7590,7 +7590,7 @@ function draw(node, { delay = 0, speed, duration, easing = _easing_index_js__WEB
 }
 
 /**
- * The `crossfade` function creates a pair of [transitions](/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
+ * The `crossfade` function creates a pair of [transitions](https://svelte.dev/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
  *
  * https://svelte.dev/docs/svelte-transition#crossfade
  * @param {import('./public').CrossfadeParams & {
@@ -7788,7 +7788,7 @@ function is_svg(name) {
  * https://svelte.dev/docs/svelte-compiler#svelte-version
  * @type {string}
  */
-const VERSION = '4.2.8';
+const VERSION = '4.2.15';
 const PUBLIC_VERSION = '4';
 
 

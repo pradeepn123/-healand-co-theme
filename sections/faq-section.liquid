@@ -50,7 +50,14 @@
           color: #2F4775;
       }
       .section-{{ section.id }} {
-        margin-top:80px;
+        margin-top:25px;
+        padding-top:25px;
+      }
+      @media(min-width:768px){
+        .section-{{ section.id }} {
+          margin-top:40px;
+          padding-top:40px;
+        }
       }
     {% endif %}
   {% endstyle %}
