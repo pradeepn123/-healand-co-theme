@@ -24,6 +24,15 @@
   font-weight: 600;
   line-height: 1.4;
 }
+.text-with-button__text-content p {
+  color: #fff;
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.4;
+}
 
 .button {
   display: -webkit-box;
@@ -45,6 +54,8 @@
   line-height: 1.2;
   font-family: var(--secondary-alt-font-family);
   font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .landing-page-header__content {
@@ -83,6 +94,15 @@
             justify-content: space-between;
     border-bottom: 1px solid #E7E7E7;
   }
+}
+.landing-page-header__text-content p {
+  color: #fff;
+  font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.4;
 }
 .landing-page-header__top-content {
   padding: 10px 20px;

@@ -4,9 +4,10 @@
       "type": "landing-page-header",
       "disabled": true,
       "settings": {
-        "header_teaser": "Join 750,000+ HEAL + CO. Customer 🤍",
-        "header_text": "LIMITED TIME - Save up to 40% + a FREE Super mushroom complex Bottle 🌱",
-        "btn_text": "Get Offer"
+        "header_teaser": "<p>{{ page.metafields.custom.landing_page_header_section.value.teaser_text | metafield_tag }}<\/p>",
+        "header_text": "<p>{{ page.metafields.custom.landing_page_header_section.value.description | metafield_tag }}<\/p>",
+        "btn_text": "<p>Get Offer<\/p>",
+        "btn_link": "{{ page.metafields.custom.landing_page_header_section.value.redirection_link.value }}"
       }
     },
     "landing_page_main_product_PGnkxL": {
@@ -224,53 +225,9 @@
     },
     "landing_page_timeline_kfRwhc": {
       "type": "landing-page-timeline",
-      "blocks": {
-        "text_yVCBaA": {
-          "type": "text",
-          "settings": {
-            "title": "Day 1",
-            "timeline_block_text": "Setting up your brand new relic of imbued evil."
-          }
-        },
-        "text_6ycQ8Q": {
-          "type": "text",
-          "settings": {
-            "title": "Day 2",
-            "timeline_block_text": "Hushing the murmurs that do not cease"
-          }
-        },
-        "text_JFewWA": {
-          "type": "text",
-          "settings": {
-            "title": "Day 3",
-            "timeline_block_text": "Integrating with marketo"
-          }
-        },
-        "text_RAXRCB": {
-          "type": "text",
-          "settings": {
-            "title": "Day 4",
-            "timeline_block_text": "Productivity tips for you and your new pet."
-          }
-        },
-        "text_UBDyBq": {
-          "type": "text",
-          "settings": {
-            "title": "Day 5",
-            "timeline_block_text": "Email marketing! and the endless void that awaits."
-          }
-        }
-      },
-      "block_order": [
-        "text_yVCBaA",
-        "text_6ycQ8Q",
-        "text_JFewWA",
-        "text_RAXRCB",
-        "text_UBDyBq"
-      ],
       "settings": {
-        "heading": "The “NOW YOU’RE MARKETING WITH (INCREDIBLY DANGEROUS) POWER” Course:",
-        "text": "A 5-days guide to controlling what cannot be controlled"
+        "heading": "{{ page.metafields.custom.landing_page_timeline_section.value.heading.value }}",
+        "text": "{{ page.metafields.custom.landing_page_timeline_section.value.content.value }}"
       }
     },
     "landing_page_bundle_section_6G3dtP": {
@@ -323,38 +280,19 @@
     "landing_page_testimonials_MrGMLF": {
       "type": "landing-page-testimonials",
       "blocks": {
-        "text_99iKkV": {
-          "type": "text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
-            "heading": "Jess Jaunty",
-            "sub_heading": "Current content marketer,soon-to-be incarnation of seething despair",
-            "description": "<p>I’m just thrilled with the results my relic has produced. Not only has it generated a ton of new business, It’s enabled me to completely obliterate my competition. Literally! ha ha ha!<\/p>"
-          }
-        },
         "text_i4QczC": {
           "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_testimonials_section.value.landing_page_testimonials_blocks.value }}",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
-            "heading": "Eric Enigma",
-            "sub_heading": "Custom Tortoiseshell PC case craftman",
-            "description": "<p>I’m just thrilled with the results my relic has produced. Not only has it generated a ton of new business, It’s enabled me to completely obliterate my competition. Literally! ha ha ha!<\/p>"
-          }
-        },
-        "text_nDQKAR": {
-          "type": "text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Mask_group_b0979c7b-7f30-4d17-8aa2-d1d47bb37231.png",
-            "heading": "Heading 1",
-            "sub_heading": "lala position",
-            "description": "<p>ulalallaaaaaaaaa.......<\/p>"
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.sub_title.value }}",
+            "sub_heading": "{{ block.repeater.title.value }}",
+            "description": "{{ block.repeater.description | metafield_tag }}"
           }
         }
       },
       "block_order": [
-        "text_99iKkV",
-        "text_i4QczC",
-        "text_nDQKAR"
+        "text_i4QczC"
       ],
       "settings": {
         "heading": "What medical experts are saying about\u2028Super Mushroom complex",

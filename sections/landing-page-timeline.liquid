@@ -4,6 +4,8 @@
   assign options = section.settings
   assign heading = options.heading
   assign text = options.text
+
+  assign metafield_data = page.metafields.custom.landing_page_timeline_section.value.timeline_blocks
 -%}
 
 <div class="landing-page-timeline">
@@ -17,10 +19,10 @@
         </div>
         <div class="landing-page-timeline__content-wrapper">
             <ul class="landing-page-timeline__content">
-                {% for block in section.blocks %}
+                {% for item in metafield_data.value %}
                 <li class="landing-page-timeline__content-block">
-                    <div class="landing-page-timeline__content-heading">{{ block.settings.title }}</div>
-                    <p class="landing-page-timeline__content-text">{{ block.settings.timeline_block_text }}</p>
+                    <div class="landing-page-timeline__content-heading">{{ item.heading }}</div>
+                    <p class="landing-page-timeline__content-text">{{ item.description }}</p>
                 </li>
                 {% endfor %}
             </ul>
@@ -42,24 +44,6 @@
             "type": "text",
             "id": "text",            
             "label": "Content"
-        }
-    ],
-    "blocks": [
-        {
-          "name": "Timeline Blocks",
-          "type": "text",
-          "settings": [
-            {
-              "type": "text",
-              "id": "title",
-              "label": "Heading"
-            },
-            {
-              "type": "text",
-              "id": "timeline_block_text",
-              "label": "Description"
-            }
-          ]
         }
     ],
     "presets": [

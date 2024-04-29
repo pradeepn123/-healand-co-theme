@@ -27,6 +27,13 @@
       }
     }
 
+    &__text-content p {
+      color: colors.$white;
+      @include use-text-style('body-title');
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
     &__top-content {
       padding: 10px 20px;
       text-align: center;
