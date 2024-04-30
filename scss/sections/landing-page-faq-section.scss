@@ -6,7 +6,7 @@
 
 .faq-section--parent accordeon-component,
 .faq-section--parent .faq-section__rte{
-    color: #2F4775;
+    color: colors.$dark-blue;
 }
 
 .section-spacing{
@@ -29,6 +29,6 @@
 
 .faq-section--parent {
     .container {
-        padding-bottom: 50px;
+        padding-bottom: calc(var(--setion-top-padding)*2);
     }
 }

@@ -46,7 +46,6 @@
     -webkit-column-gap: 70px;
        -moz-column-gap: 70px;
             column-gap: 70px;
-    padding: 0 64px;
   }
 }
 @media (min-width: 1024px) and (min-width: 1024px) {
@@ -186,6 +185,9 @@
   color: #fff;
   border-radius: 50px;
   font-family: "proximanova-regular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 .landing-page-main-product__banner-teaser {
   padding-top: calc(var(--nav-vertical-padding) * 3);

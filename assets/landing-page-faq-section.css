@@ -30,5 +30,5 @@
 }
 
 .faq-section--parent .container {
-  padding-bottom: 50px;
+  padding-bottom: calc(var(--setion-top-padding) * 2);
 }

@@ -21,7 +21,6 @@
             padding: 0 64px;
             @include mixins.grid(2,100px,100px);
             column-gap: 70px; 
-            padding: 0 64px;
         }
     }
 
@@ -97,7 +96,7 @@
         background: colors.$dark-blue;
         color: colors.$white;
         border-radius: 50px;
-        font-family: "proximanova-regular";
+        @include use-text-style('body-title');
     }
 
     &__banner-teaser{
