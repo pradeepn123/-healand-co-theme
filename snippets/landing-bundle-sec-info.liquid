@@ -10,49 +10,68 @@
     assign freeShipping = options.shipping_text
     
 -%}
-<div class="landing-bundle-sec-info">
+<div class="landing-bundle-sec-info landing-bundle-sec-info__block-{{block_index}}">
     <div class="landing-bundle-sec-info__wrapper">
         <div class="landing-bundle-sec-info__content">
-            <div class="landing-bundle-sec-info__percentage-off">
-                <span class="">{{ tag_heading }}</span>
+            <div class="landing-bundle-sec-info__top-section">
+                {% if tag_heading %}
+                    <div class="landing-bundle-sec-info__percentage-off">
+                        <span class="">{{ tag_heading }}</span>
+                    </div>
+                {% endif %}
+                {% if heading %}
+                    <h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>
+                {% endif %}
+                {% if button_label %}
+                    <button class="landing-bundle-sec-info__button button--primary {% if heading == blank %}landing-bundle-sec-info__button-top{% endif %}">
+                        {{ button_label }}
+                    </button>
+                {% endif %}
+                {% if content %}
+                    <span class="landing-bundle-sec-info__gift-price">{{ content }}</span>
+                {% endif %}
+                {% render 'shopify-responsive-image', image: product_image, aspect_ratio: 1.2 %}
+                {% if description %}
+                    <div class="landing-bundle-sec-info__description">{{ description }}</div>
+                {% endif %}
             </div>
-            <h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>
-            <button class="landing-bundle-sec-info__button button--primary {% if heading == blank %}landing-bundle-sec-info__button-top{% endif %}">{{ button_label }}</button>
-            <span class="landing-bundle-sec-info__gift-price">{{ content }}</span>
-            {% render 'shopify-responsive-image', image: product_image, aspect_ratio: 1.2 %}
-            <div class="landing-bundle-sec-info__description">{{ description }}</div>
-            
-            
-            {% assign compare_blocks = page.metafields.custom.landing_page_bundle_section.value %} 
-            {% assign current_selected_compare_block = '' %}           
-            {% for compare_block in compare_blocks %}
-                 {% if forloop.index == block_index %} 
-                   {% assign current_selected_compare_block = compare_block %}  
-                 {% endif %} 
-            {% endfor %} 
+            <div class="landing-bundle-sec-info__middle-section">
+                {% assign compare_blocks = page.metafields.custom.landing_page_bundle_section.value %}
+                {% assign current_selected_compare_block = '' %}
+                {% for compare_block in compare_blocks %}
+                    {% if forloop.index == block_index %}
+                    {% assign current_selected_compare_block = compare_block %}
+                    {% endif %}
+                {% endfor %} 
 
-            {% assign current_selected_bullet_points = current_selected_compare_block.content_info_bullet.value %}
-            {% for bullet_points in current_selected_bullet_points %} 
-                {% assign image = bullet_points.icon_image %}
-                {% assign content = bullet_points.description_info %}
-                {% render 'landing-page-compare-info', image: image, content: content %}
-            {% endfor %}
-
-            <div class="landing-bundle-sec-info__price">
-                <div class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</div>
-                <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
-            </div>
-            <button class="button button--primary">checkout
-                <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.3536 4.15043C16.5488 3.95517 16.5488 3.63858 16.3536 3.44332L13.1716 0.261341C12.9763 0.0660789 12.6597 0.0660789 12.4645 0.261341C12.2692 0.456603 12.2692 0.773186 12.4645 0.968448L15.2929 3.79688L12.4645 6.6253C12.2692 6.82056 12.2692 7.13715 12.4645 7.33241C12.6597 7.52767 12.9763 7.52767 13.1716 7.33241L16.3536 4.15043ZM0 4.29688H16V3.29688H0V4.29688Z" fill="white"/>
-                </svg>
-            </button>
-            {% if freeShipping != blank%}
-                <div class="landing-bundle-sec-info__shopping-bag">
-                    <div>{%- render 'icon', icon_name: 'shoppingBag', class: 'shopping-bag__icon' -%}</div>
-                    <div>{{freeShipping}}</div>
+                {% assign current_selected_bullet_points = current_selected_compare_block.content_info_bullet.value %}
+                <div class="landing-bundle-sec-info__bullet-points">
+                    {% for bullet_points in current_selected_bullet_points %}
+                        {% assign image = bullet_points.icon_image | image_url: width: 24 %}
+                        {% assign content = bullet_points.description_info %}
+                        {% render 'landing-page-compare-info', image: image, content: content %}
+                    {% endfor %}
                 </div>
-            {% endif %} 
+            </div>
+
+            <div class="landing-bundle-sec-info__bottom-section">
+                <div class="landing-bundle-sec-info__price">
+                    <div class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</div>
+                    <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
+                </div>
+                {% assign product_id = product.selected_or_first_available_variant.id %}
+                <a class="button button--primary" href="https://healco.com/cart/clear?return_to=/cart/add?items[][id]={{product_id}}%26items[][quantity]=1%26return_to=/checkout">checkout
+                    <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.3536 4.15043C16.5488 3.95517 16.5488 3.63858 16.3536 3.44332L13.1716 0.261341C12.9763 0.0660789 12.6597 0.0660789 12.4645 0.261341C12.2692 0.456603 12.2692 0.773186 12.4645 0.968448L15.2929 3.79688L12.4645 6.6253C12.2692 6.82056 12.2692 7.13715 12.4645 7.33241C12.6597 7.52767 12.9763 7.52767 13.1716 7.33241L16.3536 4.15043ZM0 4.29688H16V3.29688H0V4.29688Z" fill="white"/>
+                    </svg>
+                </a>
+                {% if freeShipping != blank %}
+                    <div class="landing-bundle-sec-info__shopping-bag">
+                        <div>{%- render 'icon', icon_name: 'shoppingBag', class: 'shopping-bag__icon' -%}</div>
+                        <div>{{ freeShipping }}</div>
+                    </div>
+                {% endif %} 
+            </div>
         </div>
     </div>
 </div>

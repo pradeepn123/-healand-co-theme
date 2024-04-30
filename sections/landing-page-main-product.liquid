@@ -24,15 +24,15 @@
 
   {%  capture slider_content %} 
     {%  for block in slider_content_blocks %}
+        {% if block.type == 'image' %}
           {%  if isProductImagesSlider %} 
             {%  assign image = block %}
           {%  else  %}
               {%  assign image = block.settings.product_image %}
           {%  endif %}
-          {% if block.type == 'image' %}
             {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
-          {% endif %}
           {%  unless forloop.last %}::carousel_item {%  endunless %}
+        {% endif %}
     {%  endfor  %}
   {%  endcapture %}
 
