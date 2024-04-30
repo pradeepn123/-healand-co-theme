@@ -22,6 +22,7 @@
         @media(--lg){
             @include mixins.grid(5,100px,100px);
             column-gap: 70px;
+            align-items: center;
         }        
     }
     &__image{

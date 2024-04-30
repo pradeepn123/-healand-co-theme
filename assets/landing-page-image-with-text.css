@@ -60,6 +60,9 @@
     -webkit-column-gap: 70px;
        -moz-column-gap: 70px;
             column-gap: 70px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 @media (min-width: 1440px) and (min-width: 1024px) {

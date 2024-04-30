@@ -13,6 +13,12 @@
     "landing_page_main_product_PGnkxL": {
       "type": "landing-page-main-product",
       "blocks": {
+        "okendo_star_rating_Q8bYYm": {
+          "type": "shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{section.settings.product_selected}}"
+          }
+        },
         "image_UrRVac": {
           "type": "image",
           "settings": {
@@ -51,6 +57,7 @@
         }
       },
       "block_order": [
+        "okendo_star_rating_Q8bYYm",
         "image_UrRVac",
         "image_Bd3yMM",
         "image_YdwcGW",

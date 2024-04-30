@@ -96,7 +96,7 @@
         background: colors.$dark-blue;
         color: colors.$white;
         border-radius: 50px;
-        @include use-text-style('body-title');
+        @include use-text-style('body-mobile');
     }
 
     &__banner-teaser{

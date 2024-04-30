@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
   readLessBTN.addEventListener('click', () => {
     readLessBTN.style.display = 'none';
     readLessContent.style.display = 'none';
-    readMoreBTN.style.display = 'block';
+    readMoreBTN.style.display = 'inline';
     readMoreParentContent.style.display = 'block';
   });
 });

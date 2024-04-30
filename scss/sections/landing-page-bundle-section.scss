@@ -50,6 +50,12 @@
         text-align: center;
         padding: var(--section-padding);
         height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
     }
     &__heading{
         @include use-text-style('heading-2');
@@ -161,6 +167,12 @@
     color: colors.$white;
 }     
 :--sub_title {
-    color: colors.$white;  
+    color: colors.$white;
+    @include use-text-style('heading-3');
+    font-family: var(--secondary-font-family);
+    @media(--sm){
+        @include use-text-style('heading-2');
+        font-family: var(--secondary-font-family);
+    }
 }
 
