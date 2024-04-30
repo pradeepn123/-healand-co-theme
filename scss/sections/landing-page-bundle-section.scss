@@ -79,9 +79,9 @@
     }
     &__gift-price{
         display: block;
-        color: colors.$black;
+        color: colors.$dark-blue;
         @include use-text-style('body-title');
-        font-weight: 600;
+        font-weight: 600;        
     }
     &__bullet-points{
         .info-compare__description-wrap{
@@ -137,6 +137,7 @@
     }
     &__compare-price{
         color: colors.$light-blue;
+        text-decoration: line-through;
     }
 
     :--image{
@@ -144,6 +145,7 @@
     }
     :--button{
         margin: 0 auto;
+        width: fit-content;
         justify-content: center;
         text-transform: capitalize;
     }

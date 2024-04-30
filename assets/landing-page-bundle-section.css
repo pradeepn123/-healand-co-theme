@@ -142,7 +142,7 @@
 }
 .landing-bundle-sec-info__gift-price {
   display: block;
-  color: #000;
+  color: #2F4775;
   font-family: "proximanova-regular";
   font-size: 16px;
   font-weight: 500;
@@ -231,12 +231,17 @@
 }
 .landing-bundle-sec-info__compare-price {
   color: #97A3BA;
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
 }
 .landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper) {
   height: auto !important;
 }
 .landing-bundle-sec-info :is(.landing-bundle-sec-info__content .button) {
   margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
