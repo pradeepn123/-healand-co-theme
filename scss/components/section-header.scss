@@ -3,7 +3,7 @@
 
 .section-header{
     &__wrapper{
-        padding-bottom: var(--section-padding);
+        margin-bottom: var(--section-spacing);
     }
     &__content{
         max-width: 670px;

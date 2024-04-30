@@ -30,7 +30,7 @@
           {%  else  %}
               {%  assign image = block.settings.product_image %}
           {%  endif %}
-            {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1 %}
+            {%  render 'shopify-responsive-image', image: image , aspect_ratio: 1, cover: true %}
           {%  unless forloop.last %}::carousel_item {%  endunless %}
         {% endif %}
     {%  endfor  %}
@@ -45,8 +45,8 @@
               {%  render 'custom-carousel' , slider_content: slider_content %}
               <script type="text/json" data-settings>
                 {
-                  "spaceBetween": 10,
-                  "slidesPerView": 5,
+                  "slidesPerView": "5.5",
+                  "spaceBetween": "20",
                   "freeMode": true,
                   "watchSlidesVisibility": true,
                   "watchSlidesProgress": true,
