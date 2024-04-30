@@ -136,6 +136,10 @@
   }
 }
 
+.info-compare__compare-section .section-header__content {
+  max-width: 750px;
+}
+
 .section-header--compare-section {
   text-align: center;
 }

@@ -26,10 +26,8 @@
   cursor: not-allowed;
   opacity: 0.35;
 }
-@media (min-width: 768px) {
-  .landing-page-image-with-description__carousel-btn--desktop-hide {
-    display: none;
-  }
+.landing-page-image-with-description__carousel-btn--desktop-hide {
+  display: none;
 }
 .landing-page-image-with-description__carousel-btn--mobile-hide {
   display: none;

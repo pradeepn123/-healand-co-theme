@@ -16,10 +16,12 @@
 
     &__container{
         @include mixins.grid(1,100px,100px);
+        padding: 0;
         @media(--md){
             padding: 0 64px;
             @include mixins.grid(2,100px,100px);
             column-gap: 70px; 
+            padding: 0 64px;
         }
     }
 
@@ -75,8 +77,9 @@
         @include mixins.grid(1,20px,20px);
         @media(--sm){
             @include mixins.grid(4,100px,100px);
-            column-gap: 40px;
+            column-gap:var(--setion-top-padding);
             padding-top: calc(var(--nav-vertical-padding)*2);  
+            text-align: center;
         }
     }
 
@@ -94,6 +97,7 @@
         background: colors.$dark-blue;
         color: colors.$white;
         border-radius: 50px;
+        font-family: "proximanova-regular";
     }
 
     &__banner-teaser{

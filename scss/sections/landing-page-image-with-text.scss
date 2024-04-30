@@ -6,6 +6,7 @@
 @import 'StyleComponents/text-image';
 
 @custom-selector :--text-image .text-image;
+@custom-selector :--heading-description .landing-page-image-with-text .section-header__content p;
 @custom-selector :--text-image-heading .text-image--image-with-text .text-image__heading;
 @custom-selector :--text-image-heading-text .text-image--image-with-text .text-image__heading-text;
 @custom-selector :--text-image-responsive .text-image--image-with-text .text-image__heading .responsive-image__wrapper;
@@ -59,7 +60,9 @@
     align-items: center;
     padding-bottom: var(--section-heading-margin);
 }
-:--text-image-heading-text{
+
+:--heading-description{
+    @include use-text-style('heading-2');
     font-family: var(--secondary-font-family);
 }
 

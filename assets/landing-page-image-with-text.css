@@ -109,7 +109,11 @@
   padding-bottom: var(--section-heading-margin);
 }
 
-.text-image--image-with-text .text-image__heading-text {
+.landing-page-image-with-text .section-header__content p {
+  font-family: "proximanova-regular";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
   font-family: var(--secondary-font-family);
 }
 

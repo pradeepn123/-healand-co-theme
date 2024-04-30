@@ -25,9 +25,7 @@
         }
     }
     &__carousel-btn--desktop-hide{
-        @media(--sm){
-            display: none;
-        }
+        display: none;
     }
     &__carousel-btn--mobile-hide{
         display: none;

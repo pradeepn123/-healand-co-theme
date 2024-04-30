@@ -13,13 +13,6 @@
     "landing_page_main_product_PGnkxL": {
       "type": "landing-page-main-product",
       "blocks": {
-        "okendo_star_rating_yBwmtG": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "disabled": true,
-          "settings": {
-            "product": "beetroot-650mg"
-          }
-        },
         "image_UrRVac": {
           "type": "image",
           "settings": {
@@ -58,7 +51,6 @@
         }
       },
       "block_order": [
-        "okendo_star_rating_yBwmtG",
         "image_UrRVac",
         "image_Bd3yMM",
         "image_YdwcGW",
@@ -124,6 +116,25 @@
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false,
         "show_navigation_on_hover": true
+      }
+    },
+    "tolstoy_yyNWNw": {
+      "type": "tolstoy",
+      "blocks": {
+        "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "6d5l6kt75mcwd"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4"
+      ],
+      "settings": {
+        "section_bg_color": "#eaedf1",
+        "section_heading": "Follow us @healcohealth",
+        "heading_color": ""
       }
     },
     "landing_page_image_with_text_AkGUxq": {
@@ -373,6 +384,7 @@
     "page",
     "landing_page_image_with_description_A7N4YH",
     "key_ingredients_k8Qhr4",
+    "tolstoy_yyNWNw",
     "landing_page_image_with_text_AkGUxq",
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc",

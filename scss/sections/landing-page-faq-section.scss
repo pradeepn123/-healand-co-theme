@@ -1,0 +1,34 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+.faq-section--parent accordeon-component,
+.faq-section--parent .faq-section__rte{
+    color: #2F4775;
+}
+
+.section-spacing{
+    .section_heading{
+        @include use-text-style('heading-brown-h2');
+        @media(--sm){
+            @include use-text-style('heading-brown-font');
+        }
+    }
+}
+
+.faq-section--parent{
+    accordeon-component{
+        accordeon-btn{
+            @include use-text-style('body-alt');
+            font-weight: typography.$heading-weight;
+        }
+    }
+}
+
+.faq-section--parent {
+    .container {
+        padding-bottom: 50px;
+    }
+}

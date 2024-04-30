@@ -45,11 +45,7 @@
       }
     {% endif %}
     {% if page.handle == 'landing-page' %}
-      .faq-section--parent accordeon-component,
-      .faq-section--parent .faq-section__rte{
-          color: #2F4775;
-      }
-      .section-{{ section.id }} {
+     .section-{{ section.id }} {
         margin-top:25px;
         padding-top:25px;
       }
@@ -62,6 +58,11 @@
     {% endif %}
   {% endstyle %}
 {% endcapture %}
+
+{% if page.handle == 'landing-page' %}
+    {{ 'landing-page-faq-section.css' | asset_url | stylesheet_tag }}
+{% endif %}
+  
 {% render 'inline-css-minifier', css: css %}
 {% if data_metafields_checkbox == false %}
   <div

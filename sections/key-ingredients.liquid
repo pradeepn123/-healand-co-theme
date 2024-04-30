@@ -111,7 +111,12 @@
     {% endif %}
     {% if page.handle == 'landing-page' %}
       .section-spacing {
-        padding-bottom: 0;
+        padding-bottom: 50px;
+      }
+      @media(min-width:1024px){
+        .section-spacing {
+        padding-bottom: 80px;
+      }
       }
     {% endif %}
 
