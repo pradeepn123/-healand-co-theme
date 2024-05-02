@@ -2,14 +2,22 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-timeline.scss ***!
   \*************************************************************************************************************************************************************************************************************************************/
 .landing-page-timeline {
+  --section-header-spacing: 40px;
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   padding-top: var(--section-padding);
   margin-top: var(--section-margin);
+  padding-bottom: var(--section-padding);
+  margin-bottom: var(--section-margin);
 }
-@media (--lg) {
+@media (min-width: 768px) {
+  .landing-page-timeline {
+    --section-header-spacing: 80px;
+  }
+}
+@media (min-width: 1440px) {
   .landing-page-timeline {
     max-width: calc(100% - 2 * var(--base-margin));
   }
@@ -24,8 +32,19 @@
   list-style: none;
   border-radius: 12px;
   position: relative;
-  padding: 0;
+  padding: 0 12px;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .landing-page-timeline__content {
+    padding: 0;
+  }
+}
+.landing-page-timeline__heading .section-header__content {
+  max-width: 970px;
+}
+.landing-page-timeline__heading .section-header__wrapper {
+  margin-bottom: var(--section-header-spacing);
 }
 .landing-page-timeline__content-block {
   list-style: none;

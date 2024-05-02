@@ -3,10 +3,20 @@
 @use 'StyleComponents/colors';
 @use 'StyleComponents/typography';
 @import 'Token';
+@import 'StyleComponents/breakpoints';
 
 .landing-page-timeline{
+
+    --section-header-spacing: 40px;
+
+    @media (--sm) {
+        --section-header-spacing: 80px;
+    }
+
     @include mixins.container;
     @include mixins.section-spacing;
+    padding-bottom: var(--section-padding);
+    margin-bottom: var(--section-margin);
 
     &__content-wrapper {
         max-width: fit-content;
@@ -17,8 +27,20 @@
         list-style: none;
         border-radius: 12px;
         position: relative;
-        padding: 0;
+        padding: 0 12px;
         margin: 0;
+        
+        @media (--sm) {
+            padding: 0;
+        }
+    }
+
+    &__heading .section-header__content {
+        max-width: 970px;
+    }
+
+    &__heading .section-header__wrapper {
+        margin-bottom: var(--section-header-spacing);
     }
 
     &__content-block {
