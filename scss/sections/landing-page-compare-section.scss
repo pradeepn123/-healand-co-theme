@@ -61,9 +61,12 @@
 
     &__description-wrap{
         display: flex;
-        // margin-bottom: var(--grid-row-gap);
-        column-gap: var(--setion-top-padding);
-        // margin-top: var(--setion-top-padding);
+        align-items: flex-start;
+        margin-bottom: var(--inner-content-spacing);
+        column-gap: var(--inner-block-grid-gap);
+        &:last-child{
+            margin-bottom: 0;
+        }
         @media(--sm){
             align-items: center;
         }
@@ -75,12 +78,10 @@
 
     &__text{
         @include use-text-style('body-title');
-        font-family: 'proximanova-regular';
-        text-align: left;
+        font-family: var(--primary-font-family);
         @media(--sm){
             @include use-text-style('body-alt');
-            font-family: 'proximanova-regular';
-            text-align: left;
+            font-family: var(--primary-font-family);
         }
     }
 }
@@ -90,3 +91,12 @@
 .section-header--compare-section {
     text-align: center;
 }
+
+
+ 
+
+
+
+
+
+
