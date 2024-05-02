@@ -1,6 +1,20 @@
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-compare-section.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
+.info-compare {
+  --sub-heading-spacing: 10px;
+  --inner-block-list-padding: 24px 16px;
+  --inner-content-spacing: 12px;
+  --inner-block-grid-gap: 24px;
+}
+@media (min-width: 1024px) {
+  .info-compare {
+    --sub-heading-spacing: 16px;
+    --inner-block-list-padding: 24px 32px;
+    --inner-content-spacing: 16px;
+    --inner-block-grid-gap: 24px;
+  }
+}
 .info-compare__compare-section {
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
@@ -25,7 +39,7 @@
   grid-auto-flow: dense;
   grid-row-gap: var(--grid-row-gap);
   row-gap: var(--grid-row-gap);
-  row-gap: calc(var(--grid-row-gap-large) * 2);
+  row-gap: calc(var(--grid-row-gap-large) * 1);
 }
 @media (min-width: 1024px) {
   .info-compare__wrapper {
@@ -67,19 +81,21 @@
           justify-content: stretch;
 }
 .info-compare__heading {
-  padding-bottom: var(--nav-vertical-padding);
+  padding-bottom: var(--sub-heading-spacing);
   font-family: "proximanova-regular";
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
+  font-family: var(--primary-semibold-font-family);
 }
 @media (min-width: 768px) {
   .info-compare__heading {
-    padding-bottom: var(--heading-bottom-padding);
+    padding-bottom: var(--sub-heading-spacing);
     font-family: "proximanova-regular";
     font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
+    font-family: var(--primary-semibold-font-family);
   }
 }
 .info-compare__description {
@@ -92,28 +108,43 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background: #F9F9FB;
-  padding: var(--setion-top-padding) var(--nav-vertical-padding);
-  -webkit-column-gap: var(--setion-top-padding);
-     -moz-column-gap: var(--setion-top-padding);
-          column-gap: var(--setion-top-padding);
+  padding: var(--inner-block-list-padding);
+  -webkit-column-gap: var(--inner-block-grid-gap);
+     -moz-column-gap: var(--inner-block-grid-gap);
+          column-gap: var(--inner-block-grid-gap);
 }
 @media (min-width: 768px) {
   .info-compare__description {
-    padding: var(--setion-top-padding) var(--setion-heading-padding);
+    -webkit-column-gap: var(--inner-block-grid-gap);
+       -moz-column-gap: var(--inner-block-grid-gap);
+            column-gap: var(--inner-block-grid-gap);
+    padding: var(--inner-block-list-padding);
   }
 }
 .info-compare__description-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: var(--grid-row-gap);
-  -webkit-column-gap: var(--setion-top-padding);
-     -moz-column-gap: var(--setion-top-padding);
-          column-gap: var(--setion-top-padding);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: var(--inner-content-spacing);
+  -webkit-column-gap: var(--inner-block-grid-gap);
+     -moz-column-gap: var(--inner-block-grid-gap);
+          column-gap: var(--inner-block-grid-gap);
+}
+.info-compare__description-wrap:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .info-compare__description-wrap {
-    margin-bottom: var(--nav-vertical-padding);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: var(--inner-block-grid-gap);
+       -moz-column-gap: var(--inner-block-grid-gap);
+            column-gap: var(--inner-block-grid-gap);
+    margin-bottom: var(--inner-content-spacing);
   }
 }
 .info-compare__bullet-img {
@@ -124,7 +155,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
-  font-family: "proximanova-regular";
+  font-family: var(--primary-font-family);
 }
 @media (min-width: 768px) {
   .info-compare__text {
@@ -132,7 +163,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.2;
-    font-family: "proximanova-regular";
+    font-family: var(--primary-font-family);
   }
 }
 

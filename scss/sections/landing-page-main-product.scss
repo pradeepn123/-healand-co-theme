@@ -14,12 +14,17 @@
 	 --content-spacing: 24px;
 	 --inner-content-spacing: 16px;
 
-	 @media(--md) {
+	@media(--md) {
 		--content-spacing: 32px;
 		--inner-content-spacing: 24px;
-	 }
+	}
 
-
+    &__wrapper{
+        @include mixins.container;
+        padding-top: var(--section-padding);
+        margin-top: var(--section-margin);
+    }
+    
 	&__container {
 		@include mixins.grid(1, 100px, 100px);
 		justify-content: space-between;
@@ -42,10 +47,21 @@
 
 	&__main-carousel {
 		@media(--md) {
-		 margin-bottom: 20px;
+		    margin-bottom: 20px;        
 		}
+        .swiper-slide {
+            @media(--md-large){
+                max-height: 551px;
+            }
+            @media(--xlg){
+                max-height: 665px;
+            }
+            @media(min-width:1980px){
+                max-height: inherit;
+            }
+        }
 	}
-
+    
 
 	&__thumbnail-carousel {
 		display: none;

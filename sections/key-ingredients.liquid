@@ -141,8 +141,7 @@
         data-section-id="{{ section.id }}"
       >
         <div
-          class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}"
-          data-aos="fade-up"
+          class="main_title_key {% if alignment == 'center' %}key-list__header--center{% endif %}"          
         >
           <carousel-btn
             class="carousel-btn card-carousel__carousel-btn card-carousel__carousel-btn--prev"
@@ -169,7 +168,7 @@
         >
           <div class="card-carousel__container announcement__carousel-container" data-carousel-container>
             {% for item in keymetadata %}
-              <div class="card-carousel__slide" data-aos="fade-up">
+              <div class="card-carousel__slide">
                 {% render 'key-ingredients', item: item %}
               </div>
             {% endfor %}

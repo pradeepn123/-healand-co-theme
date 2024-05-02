@@ -6,23 +6,27 @@
         margin-bottom: var(--section-spacing);
     }
     &__content{
-        max-width: 670px;
-        margin: 0 auto;
+        @media(--md-large){
+            max-width: 670px;
+            margin: 0 auto;
+        }
     }
     
     &__title{
         @include use-text-style('heading-mob');
         padding-bottom: 20px;
+        font-family: var(--secondary-font-family);
         @media(--lg){
             @include use-text-style('heading-brown-h1');
+            font-family: var(--secondary-font-family);
         }
-        font-family: var(--secondary-font-family);
     }
     &__text{
         @include use-text-style('heading-3');
+        font-family: var(--secondary-font-family);
         @media(--lg){
             @include use-text-style('heading-2');
+            font-family: var(--secondary-font-family);
         }
-        font-family: var(--secondary-font-family);
     }
 } 
