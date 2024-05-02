@@ -34,23 +34,27 @@
         <div class="landing-page-testimonials__carousel" data-parent>
             <div class="landing-page-testimonials__main-carousel">
               <custom-carousel>
-                {%  render 'custom-carousel' , slider_content: slider_content %}
+                {%  render 'custom-carousel' , slider_content: slider_content, pagination: true %}
                 <script type="text/json" data-settings>
                 {
-                    "slidesPerView": 2,
-                    "spaceBetween": 150,
+                
+                    "overflowNagivation": true,
+                    "spaceBetween": "20",
+                    "pagination": true,
+                    "slidesPerView": 1.1,
                     "breakpoints": {
-                        "320": {
-                            "pagination": true,
-                            "slidesPerView": 1
-                        },
                         "768": {
-                            "spaceBetween": 20,
-                            "pagination": true
+                          "slidesPerView": 2,
+                          "slidesPerGroup": 2,
+                          "spaceBetween": "60",
+                          "pagination": true
                         },
                         "1024": {
-                            "navigation": true,
-                            "pagination": true
+                          "slidesPerView": 2,
+                          "slidesPerGroup": 2,
+                          "spaceBetween": "150",
+                          "navigation": true,
+                          "pagination": true
                         }
                     }
                 }

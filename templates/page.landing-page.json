@@ -2,7 +2,6 @@
   "sections": {
     "landing_page_header_e47V3w": {
       "type": "landing-page-header",
-      "disabled": true,
       "settings": {
         "header_teaser": "<p>{{ page.metafields.custom.landing_page_header_section.value.teaser_text | metafield_tag }}<\/p>",
         "header_text": "<p>{{ page.metafields.custom.landing_page_header_section.value.description | metafield_tag }}<\/p>",
@@ -256,9 +255,9 @@
           "repeater": "{{ page.metafields.custom.landing_page_testimonials_section.value.landing_page_testimonials_blocks.value }}",
           "settings": {
             "image": "{{ block.repeater.image.value }}",
-            "heading": "{{ block.repeater.sub_title.value }}",
-            "sub_heading": "{{ block.repeater.title.value }}",
-            "description": "{{ block.repeater.description | metafield_tag }}"
+            "heading": "{{ block.repeater.title.value }}",
+            "sub_heading": "{{ block.repeater.sub_title.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
           }
         }
       },
