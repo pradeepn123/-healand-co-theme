@@ -44,8 +44,7 @@
         padding-bottom: var(--sub-heading-spacing);
         @include use-text-style('heading-3');
         font-family: var(--primary-semibold-font-family);
-        @media(--sm){
-            padding-bottom: var(--sub-heading-spacing);
+        @media(--sm){            
             @include use-text-style('heading-2');
             font-family: var(--primary-semibold-font-family);
         }
@@ -69,7 +68,7 @@
             margin-bottom: 0;
         }
         @media(--sm){
-            align-items: center;                     
+            align-items: center;
         }
     }
 
