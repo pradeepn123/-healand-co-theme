@@ -57,11 +57,7 @@
         flex-direction: column;
         background: colors.$off-white;
         padding: var(--inner-block-list-padding);
-        column-gap: var(--inner-block-grid-gap);
-        @media(--sm){
-            column-gap: var(--inner-block-grid-gap);
-            padding: var(--inner-block-list-padding);
-        }
+        column-gap: var(--inner-block-grid-gap);        
     }
 
     &__description-wrap{
@@ -73,9 +69,7 @@
             margin-bottom: 0;
         }
         @media(--sm){
-            align-items: center;
-            column-gap: var(--inner-block-grid-gap);
-            margin-bottom: var(--inner-content-spacing);
+            align-items: center;                     
         }
     }
 
