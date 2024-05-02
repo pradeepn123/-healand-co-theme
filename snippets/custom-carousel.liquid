@@ -8,5 +8,9 @@
       {% endfor %}
     </div>
   </div>
-  <div class="swiper-pagination" data-pagination></div>
+  {%  if pagination %}
+    <div class="swiper-pagination" data-pagination></div>
+  {%  endif %}
+
   <div class="swiper-navigations" data-navigations></div>
+  

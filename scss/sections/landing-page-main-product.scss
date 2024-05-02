@@ -9,39 +9,62 @@
 @custom-selector :--product-thumbnail .landing-page-main-product__thumbnail-carousel .swiper-wrapper;
 
 .landing-page-main-product {
-
+	//section scoped variables
 	 --column-spacing: 50px; 
+	 --content-spacing: 24px;
+	 --inner-content-spacing: 16px;
 
-	&__wrapper {
-		@include mixins.container;
-	}
+	 @media(--md) {
+		--content-spacing: 32px;
+		--inner-content-spacing: 24px;
+	 }
+
 
 	&__container {
 		@include mixins.grid(1, 100px, 100px);
 		justify-content: space-between;
 		@media(--md) {
 			@include mixins.grid(6, 100px, 100px);
+			align-items: flex-start;
 		}
 	}
 
 	&__carousel {
 		display: flex;
 		grid-column: span 3;
-		padding: 0 var(--column-spacing);
 		flex-direction: column-reverse;
 		justify-content: center;
-	}
 
-	&__content {
-		grid-column: span 3;
 		@media(--md) {
-			background: colors.$off-white;
 			padding: 0 var(--column-spacing);
 		}
 	}
 
+	&__main-carousel {
+		@media(--md) {
+		 margin-bottom: 20px;
+		}
+	}
+
+
+	&__thumbnail-carousel {
+		display: none;
+		@media(--md) {
+			display: block;
+		}
+	}
+
+	&__content {
+		margin-top: 8px;
+		grid-column: span 3;
+		@media(--md) {
+			background: colors.$off-white;
+			padding: 54px var(--column-spacing);
+		}
+	}
+
 	&__reviews {
-		padding-top: var(--setion-top-padding);
+	 line-height: 1; 
 	}
 
 	&__title {
@@ -57,45 +80,37 @@
 	&__description_title {
 		@include use-text-style('heading-3');
 		font-family: 'BrownStd-Bold';
-		padding-top: var(--setion-top-padding);
 
 		@media(--md) {
 			@include use-text-style('heading-mob');
 			font-family: 'BrownStd-Bold';
-			padding-top: calc(var(--nav-vertical-padding) * 2)
 		}
 	}
 
 	&__description {
 		@include use-text-style('body-title');
-		padding-top: var(--header-padding);
 
 		@media(--md) {
-			padding-top: var(--nav-vertical-padding);
 			@include use-text-style('body-alt');
 		}
 	}
 
 	&__icon-text-wrapper {
-		padding-top: calc(var(--grid-row-gap-large)*2);
-		@include mixins.grid(1, 20px, 20px);
+		@include mixins.container;
+		display: flex;
+		flex-direction: column;
+		gap: var(--inner-content-spacing);
 
 		@media(--md) {
-			@include mixins.grid(4, 100px, 100px);
-			column-gap: var(--setion-top-padding);
-			padding-top: calc(var(--nav-vertical-padding)*2);
-			text-align: center;
+			flex-direction: row;
+			justify-content: space-between;
+			max-width: 100%;
 		}
 	}
 
 	&__tags {
 		display: flex;
-		gap: calc(var(--grid-row-gap)/2);
-		padding-top: var(--nav-vertical-padding);
-
-		@media(--md) {
-			padding-top: var(--setion-top-padding);
-		}
+		gap: 8px;
 	}
 
 	&__tags-list {
@@ -107,11 +122,7 @@
 	}
 
 	&__banner-teaser {
-		padding-top: calc(var(--nav-vertical-padding)*3);
-
-		@media(--md) {
-			padding-top: var(--setion-top-padding);
-		}
+		background: colors.$dark-blue;
 	}
 
 	&__text {
@@ -122,12 +133,29 @@
 
 	&__icon-text-wrapper-item {
 		display: flex;
-		column-gap: calc(var(--grid-row-gap)*2);
 		align-items: center;
 		justify-content: flex-start;
+		gap: var(--grid-column-gap);
+		text-align: center;
 
 		@media(--md) {
 			flex-direction: column;
+			gap: 10px;
+			max-width: 110px;
+		}
+	}
+
+	&__icon {
+
+		.responsive-image__wrapper  {
+			width: 42px;
+			height: 42px; 
+
+
+			@media(--md) {
+				width: 60px;
+				height: 60px;
+			}
 		}
 	}
 
@@ -146,8 +174,36 @@
 	}
 
 
-	:--product-thumbnail {
-		margin-top: 21px;
+	&__info-bottom-content {
+		display: flex;
+		gap: var(--inner-content-spacing);
+		flex-direction: column;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: var(--content-spacing);
+		&-top-content {
+			@include mixins.container;
+			display: flex;
+			flex-direction: column;
+			gap: var(--inner-content-spacing);
+
+			@media(--md) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__description-box {
+	  @include mixins.container;
+       display: flex;
+	   flex-direction: column;
+	   gap: var(--inner-content-spacing);
+	   @media(--md) {
+		max-width: 100%;
+	  }
 	}
 }
 
@@ -158,5 +214,15 @@
 }
 
 .text-with-button--product-section .text-with-button__container {
-	padding: 10px 30px;
+	padding: 16px 0;
+	@include mixins.container;
+	background: transparent;
+	@media(--md) {
+		max-width: 100%;
+		padding: 16px 32px;
+	}
+}
+
+.text-with-button--product-section .text-with-button__text-content {
+	max-width: 50%;
 }

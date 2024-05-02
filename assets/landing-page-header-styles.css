@@ -1,6 +1,62 @@
 /*!******************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/landing-page-header-styles.scss ***!
   \******************************************************************************************************************************************************************************************************************************************/
+:root {
+  --base-margin: 20px;
+  --section-spacing: 30px;
+  --section-margin: 20px;
+  --section-padding: 20px;
+  --grid-column-gap: 20px;
+  --grid-column-gap-large: 40px;
+  --grid-row-gap: 32px;
+  --grid-row-gap-large: 40px;
+}
+@media (min-width: 768px) {
+  :root {
+    --base-margin: 20px;
+    --section-spacing: 30px;
+    --section-margin: 20px;
+    --section-padding: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 48px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-spacing: 40px;
+  }
+}
+
+.button {
+  padding: 12px 20px;
+}
+.button--primary {
+  background-color: #2F4775;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+.button--primary:hover {
+  opacity: 0.8;
+}
+.button--secondary {
+  background-color: #fff;
+  color: #2F4775;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+.button--secondary:hover {
+  background-color: #EAEDF1;
+}
+
+.needsclick {
+  min-height: 0 !important;
+}
 .text-with-button__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,7 +87,7 @@
   font-weight: 500;
   line-height: 1.2;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 20px;
 }
 
 .button {
@@ -98,38 +154,36 @@
 .landing-page-header__text-content p {
   color: #fff;
   font-family: "proximanova-regular";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2;
-  font-weight: 600;
-  line-height: 1.4;
-}
-.landing-page-header__top-content {
-  padding: 10px 20px;
-  text-align: center;
-  background: #2F4775;
-}
-.landing-page-header__teaser, .landing-page-header__text {
-  color: #fff;
-  font-family: "proximanova-regular";
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.2;
-  font-weight: 600;
-  line-height: 1.4;
+  line-height: 18px;
+  font-family: "proximanova-semibold";
 }
 @media (min-width: 768px) {
-  .landing-page-header__teaser, .landing-page-header__text {
+  .landing-page-header__text-content p {
     font-family: "proximanova-regular";
     font-size: 16px;
     font-weight: 500;
     line-height: 1.2;
-    font-weight: 600;
-    line-height: 1.4;
   }
 }
+.landing-page-header__top-content {
+  padding: 4px 8px;
+  text-align: center;
+  background: #2F4775;
+}
 .landing-page-header__bottom-content {
-  padding: 10px 20px;
+  padding: 8px 0 12px 0;
+  border-bottom: 1px solid #E7E7E7;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
+}
+.landing-page-header__bottom-content-wrapper {
+  max-width: calc(100% - 2 * 20px);
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,9 +193,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
+}
+@media (min-width: 1440px) {
+  .landing-page-header__bottom-content-wrapper {
+    max-width: calc(100% - 2 * 20px);
+    max-width: calc(100% - 2 * var(--base-margin));
+  }
 }
 .landing-page-header__left-content {
   -ms-flex-preferred-size: 35%;

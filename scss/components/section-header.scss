@@ -9,7 +9,6 @@
         max-width: 670px;
         margin: 0 auto;
     }
-    // TODO remove options from customization
     
     &__title{
         @include use-text-style('heading-mob');
@@ -21,10 +20,9 @@
     }
     &__text{
         @include use-text-style('heading-3');
-        font-family: var(--secondary-font-family);
         @media(--lg){
             @include use-text-style('heading-2');
-            font-family: var(--secondary-font-family);
         }
+        font-family: var(--secondary-font-family);
     }
 } 

@@ -506,9 +506,9 @@
 }
 
 .swiper-pagination-bullet {
-  width: 9px;
+  width: 5px;
   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: 9px;
+  height: 5px;
   height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
   display: inline-block;
   border-radius: 50%;
@@ -659,29 +659,36 @@ button.swiper-pagination-bullet {
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
-  left: 50% !important;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  -webkit-transform: translateX(-50%) !important;
-          transform: translateX(-50%) !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 .swiper-pagination:not(.swiper-pagination-progressbar) {
-  height: 9px !important;
-  bottom: 24px !important;
+  height: 11px !important;
+  bottom: 11px !important;
+}
+.swiper-pagination:not(.swiper-pagination--relative) {
+  -webkit-transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important;
+  left: 50% !important;
 }
 .swiper-pagination-bullet {
   background: #fff;
   opacity: 1;
+  border: 3px solid #97A3BA;
 }
 .swiper-pagination-bullet-active {
-  background: transparent;
-  border: 2px solid #fff;
+  background: #2F4775;
+  border-color: #2F4775;
 }
 .swiper-pagination--hide {
   display: none;
+}
+.swiper-pagination--relative {
+  position: static;
+  margin-top: 8px;
 }
 
 .swiper-slide {
@@ -737,8 +744,8 @@ img {
 }
 
 :root {
-  --swiper-pagination-bullet-width: 9px;
-  --swiper-pagination-bullet-height: 9px;
+  --swiper-pagination-bullet-width: 5px;
+  --swiper-pagination-bullet-height: 5px;
   --swiper-pagination-progressbar-bg-color: #DADADA;
   --swiper-pagination-progressbar-size: 1px;
   --swiper-pagination-color: #000;
@@ -817,10 +824,12 @@ custom-carousel {
   }
 }
 
+.button {
+  padding: 12px 20px;
+}
 .button--primary {
   background-color: #2F4775;
   color: #fff;
-  padding: var(--button-padding);
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
@@ -832,7 +841,6 @@ custom-carousel {
 .button--secondary {
   background-color: #fff;
   color: #2F4775;
-  padding: var(--button-padding);
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
@@ -882,6 +890,5 @@ custom-carousel {
     font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
-    font-family: var(--secondary-font-family);
   }
 }

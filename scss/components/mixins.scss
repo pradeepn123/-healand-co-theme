@@ -5,6 +5,7 @@
   max-width: calc(100% - 2*var(--base-margin));
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   
   @media(--lg) {
     max-width: calc(100% - 2*var(--base-margin));

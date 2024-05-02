@@ -1,6 +1,7 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
 @use 'StyleComponents/typography';
+@import 'StyleComponents/button';
 @import 'breakpoints';
 @import 'Token';
 @import 'StyleComponents/text-with-button';
@@ -29,35 +30,29 @@
 
     &__text-content p {
       color: colors.$white;
-      @include use-text-style('body-title');
-      font-weight: 600;
-      line-height: 1.4;
+      @include use-text-style('body-regular');
+      font-family: "proximanova-semibold";
+
+      @media(--sm) {
+        @include use-text-style('body-title');
+      }
     }
 
     &__top-content {
-      padding: 10px 20px;
+      padding: 4px 8px;
       text-align: center;
       background: colors.$dark-blue;
     }
 
-    &__teaser, &__text {
-      color: colors.$white;
-      @include use-text-style('body-regular');
-      font-weight: 600;
-      line-height: 1.4;
-
-      @media(--sm) {
-        @include use-text-style('body-title');
-        font-weight: 600;
-        line-height: 1.4;
-      }
-    }
 
     &__bottom-content {
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      &-wrapper {
+        @include mixins.container;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      padding: 8px 0 12px 0;
       border-bottom: 1px solid #E7E7E7;
       box-shadow: 0px 8px 16px 0px #0000000D;
     }
