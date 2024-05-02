@@ -48,11 +48,9 @@
     {% if template.name == 'password' %}
       {% sections 'password-header-group' %}
     {% else %}
-      {% if template.name == 'page' and page.handle == 'landing-page' %}
-
-      {% else %}
+      {% unless template.name == 'page' and page.handle == 'landing-page' %}
         {% sections 'main-header-group' %}
-      {% endif %}
+      {% endunless %}
       {% sections 'main-aside-group' %}
     {% endif %}
 
@@ -63,7 +61,9 @@
     {%- if template.name == 'password' -%}
       {% sections 'password-footer-group' %}
     {%- else -%}
-      {% sections 'main-footer-group' %}
+      {% unless template.name == 'page' and page.handle == 'landing-page' %}
+        {% sections 'main-footer-group' %}
+      {% endunless %}
     {%- endif -%}
 
     {%- if settings.show_back_to_top_button -%}

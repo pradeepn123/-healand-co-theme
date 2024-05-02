@@ -382,6 +382,16 @@
         "section_spacing_bottom": 0,
         "expand_first_collapsible_row": false
       }
+    },
+    "spacer_H4wqi4": {
+      "type": "spacer",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "desktop_height": 150,
+        "mobile_height": 100,
+        "show_separator": false
+      }
     }
   },
   "order": [
@@ -396,6 +406,7 @@
     "landing_page_timeline_kfRwhc",
     "landing_page_testimonials_MrGMLF",
     "landing_page_bundle_section_6G3dtP",
-    "faq_section_4hkffF"
+    "faq_section_4hkffF",
+    "spacer_H4wqi4"
   ]
 }
