@@ -61,12 +61,9 @@
 
     &__description-wrap{
         display: flex;
-        align-items: flex-start;
-        margin-bottom: var(--inner-content-spacing);
-        column-gap: var(--inner-block-grid-gap);
-        &:last-child{
-            margin-bottom: 0;
-        }
+        // margin-bottom: var(--grid-row-gap);
+        column-gap: var(--setion-top-padding);
+        // margin-top: var(--setion-top-padding);
         @media(--sm){
             align-items: center;
         }
@@ -78,10 +75,12 @@
 
     &__text{
         @include use-text-style('body-title');
-        font-family: var(--primary-font-family);
+        font-family: 'proximanova-regular';
+        text-align: left;
         @media(--sm){
             @include use-text-style('body-alt');
-            font-family: var(--primary-font-family);
+            font-family: 'proximanova-regular';
+            text-align: left;
         }
     }
 }

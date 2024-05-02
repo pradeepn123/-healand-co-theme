@@ -11,23 +11,19 @@
 @custom-selector :--sub_title .landing-page-bundle-section__heading .section-header__content p;  
 
 .landing-page-bundle-section{
-    background: colors.$dark-blue;
+
+    --section-paddings: 100px;
+
     &__information{
         @include mixins.container;   
     }
     &__wrapper{
-        padding-top: calc(var(--grid-row-gap-large)*3);
-        padding-bottom: calc(var(--grid-row-gap-large)*3);
-        margin-top: calc( var(--setion-top-padding)*2);
-        @media(--md){
-            padding-top: calc(var(--setion-top-padding)*4);
-            padding-bottom: calc(var(--setion-top-padding)*4);
-            margin-top: calc(var(--section-margin)*2);
-        }
+        margin-top: var(--section-margin);
+        padding-top: var(--section-padding);
     }
     &__information{
         @include mixins.grid(1,100px,100px);
-        row-gap: calc(var(--grid-row-gap-large)*3);
+        row-gap: calc(var(--grid-row-gap-large)*2);
         @media(--sm){
             @include mixins.grid(2,100px,100px);
             row-gap: calc(var(--grid-row-gap-large)*3);
@@ -37,6 +33,11 @@
             @include mixins.grid(3,100px,100px);
             
         }
+    }
+
+    &__content {
+        background: colors.$dark-blue;
+        padding: var(--section-paddings) 0;
     }
 }
 
@@ -56,16 +57,21 @@
         height: 100%;
         justify-content: space-between;
         flex-direction: column;
+        gap: var(--section-spacing); 
+ 
     }
     &__heading{
         @include use-text-style('heading-2');
         color: colors.$dark-blue;
         margin-bottom: var(--setion-top-padding);
-        padding-top:var(--grid-row-gap-large);
+        padding-top: 14px;
         font-family: var(--primary-semibold-font-family);
+        min-height: 24px;
+        margin-bottom: 17px;
         @media(--sm){
-            padding-top: 0;
-            font-family: var(--primary-semibold-font-family);
+            padding-top: 12px;
+            margin-bottom: 12px;
+            min-height: 41px;
         }
     }
     &__button.button--primary{
@@ -76,32 +82,47 @@
         margin-bottom: 16px;
         @include use-text-style('heading-3');
         font-family: var(--primary-semibold-font-family);
+        padding: 12px 36px;
     }
     &__gift-price{
         display: block;
         color: colors.$dark-blue;
         @include use-text-style('body-title');
-        font-weight: 600;        
+        font-weight: 600;   
+        @media(--sm){
+            min-height: 38px;
+        }     
     }
+
     &__bullet-points{
+        display: grid;
+        gap: 12px;
+        align-items: flex-start;
         .info-compare__description-wrap{
-            gap: 10px;
+            gap: 16px;
             margin-top: var(--nav-vertical-padding);
-            align-items: center;
+            align-items: flex-start;
+            @media(--sm){
+                gap: 24px;
+            }
         }
+    }
+    &__description_wrapper{
+        display: grid; 
+        gap: 32px; 
     }
     &__description{
         @include use-text-style('heading-3');
         font-family: var(--secondary-font-family);
-        line-height: 1.4;
+        line-height: 1.2;
     }
     &__percentage-off{
         position: absolute;
-        top: -23px;
-        right: 38px;
-        padding: var(--percentage-button-padding);
+        top: -25px;
+        right: 20px;
+        padding: 12px 14px; 
         background: colors.$dark-blue;
-        border-radius: calc(var( --setion-top-padding)*2);
+        border-radius: 25px;
         border-top: 1px solid colors.$white;
 
         span{
@@ -109,9 +130,6 @@
             color: colors.$white;
         }
     }    
-    &__button-top{
-        margin-top: var(--setion-heading-padding); 
-    }
     &__price{
         @include use-text-style('heading-mob');
         font-weight: typography.$regular-weight;
@@ -120,11 +138,17 @@
         align-items: center;
         justify-content: center;
         column-gap: var( --setion-top-padding);
-        padding-bottom: var(--setion-top-padding);
+        padding-bottom: 24px;
         @media(--xxs){
             @include use-text-style('heading-1');
             font-weight: typography.$regular-weight;
             font-family: 'proximanovaexcn-regular';
+        }
+    }
+    &__free-shipping{
+        margin-top: 24px;
+        @media(--sm){
+            min-height: 24px;
         }
     }
     &__shopping-bag{
@@ -162,7 +186,7 @@
 
 .section-header--bundle-section-center {
     text-align: center;
-    padding-bottom: calc(var(--grid-row-gap-large)*2);
+    padding-bottom: calc(var( --section-spacing) + 20px);
 }
 
 :--title {
