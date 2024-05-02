@@ -110,6 +110,8 @@
   width: 90px;
   height: 100%;
   background: white;
+  -webkit-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.0509803922);
+          box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.0509803922);
 }
 @media (min-width: 1200px) {
   .single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap img, .bundle_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap img {
@@ -187,6 +189,9 @@
           justify-content: center;
 }
 
+.single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap {
+  margin-top: -5rem;
+}
 @media (min-width: 1200px) {
   .single_key_ingredients_main .ingredients_wrapper .img_wrap_text_info .img_wrap {
     margin-top: -7rem;

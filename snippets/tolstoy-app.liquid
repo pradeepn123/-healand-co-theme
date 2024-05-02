@@ -1,3 +1,7 @@
+{% if template.name == 'page' and page.handle == 'landing-page' %}
+  {{ 'landing-page-tolstoy-app.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 <div class='tolstoy-wrapper aos-animate {% if request.page_type == 'product' %} product-page-color {% else %} other-page-background {% endif %} id='AppInfoWrapper'>
     <div class='tolstoy__info'>
       {%- liquid 
