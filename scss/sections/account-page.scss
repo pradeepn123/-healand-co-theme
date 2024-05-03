@@ -60,3 +60,7 @@
         color: colors.$dark-blue;
     }
 }
+
+.login__content h5, .login__btns button{
+    font-family: var(--secondary-font-family);
+}

@@ -45,3 +45,7 @@
   font-size: 18px;
   color: #2F4775;
 }
+
+.login__content h5, .login__btns button {
+  font-family: var(--secondary-font-family);
+}

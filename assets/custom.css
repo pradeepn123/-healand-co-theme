@@ -1172,3 +1172,17 @@ body.hamburger--open[scroll-y-offf] {
 #pandectes-banner{
     opacity: 0;
 }
+
+.cart-notification-popup-item__name-label, .cart-notification-popup__form-button{
+    font-family: var( --primary-alt-font-family);
+}
+
+.rc-login--body .rc-login--header-title,
+.rc-login--body  .rc-login-form-button{
+    font-family: var(--secondary-font-family);
+}
+
+.cart-warning h1,
+.cart-warning a{
+    font-family: var( --primary-alt-font-family);
+}

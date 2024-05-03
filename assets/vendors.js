@@ -7636,7 +7636,7 @@ function is_svg(name) {
  * https://svelte.dev/docs/svelte-compiler#svelte-version
  * @type {string}
  */
-const VERSION = '4.2.12';
+const VERSION = '4.2.15';
 const PUBLIC_VERSION = '4';
 
 

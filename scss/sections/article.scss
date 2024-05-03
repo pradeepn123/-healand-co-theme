@@ -123,6 +123,15 @@ h2.article__title {
     color: colors.$dark-blue;
     text-transform: uppercase;
 }
+.article .section-spacing .article__blocks .container .article__content h1, 
+.article .section-spacing .article__blocks .container .article__content h2, 
+.article .section-spacing .article__blocks .container .article__content h3, 
+.article .section-spacing .article__blocks .container .article__content h4, 
+.article .section-spacing .article__blocks .container .article__content h5, 
+.article .section-spacing .article__blocks .container .article__content h6{
+    font-family: var(--secondary-font-family);
+
+}
 
 .article .section-spacing .article__blocks .container .article__content h4 span strong{
     @media screen and (max-width: 540px){
