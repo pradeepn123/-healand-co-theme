@@ -23,9 +23,16 @@
     assign comments_count = 0
   endif
 -%}
+{% style %}
+  {% if template.name != "index" %} 
+    .article-card__link{
+        position: relative;
+    }
+  {% endif %}
+{% endstyle %}
 <article-card class="article-card article-card--link-for-hover link-parent-for-hover zoom-parent-for-hover {{ class }}">
   <a
-    class="article-card__link {% if template.name == 'blog' or template.name == 'search' %}article-card__relative{% endif %}"
+    class="article-card__link"
     href="{% if article.url != blank %}{{ article.url }}{% else %}#{% endif %}"
     aria-label="{{ article.title }}"
   >
