@@ -1186,3 +1186,10 @@ body.hamburger--open[scroll-y-offf] {
 .cart-warning a{
     font-family: var( --primary-alt-font-family);
 }
+
+.login .login__title{
+    font-family: var(--secondary-font-family);
+}
+.login__form .btn.login__btns{
+    font-family: var(--secondary-font-family);
+}
