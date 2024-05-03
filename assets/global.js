@@ -33,6 +33,9 @@ class CustomCarousel extends HTMLElement {
     this.container;
   }
   connectedCallback() {
+    window.addEventListener('resize', () => {
+      this.initCarousel();
+    });
     this.initCarousel();
   }
   getCarouselSettings() {

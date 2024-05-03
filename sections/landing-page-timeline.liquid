@@ -18,7 +18,7 @@
             {% render 'section-header', heading: heading, text: text, wrapper_class:'timeline-section' %}
         </div>
         <div class="landing-page-timeline__content-wrapper">
-            <ul class="landing-page-timeline__content">
+            <ul class="landing-page-timeline__content content-width__{{ options.content_width }}">
                 {% for item in metafield_data.value %}
                 <li class="landing-page-timeline__content-block">
                     <div class="landing-page-timeline__content-heading">{{ item.heading }}</div>
@@ -44,7 +44,23 @@
             "type": "text",
             "id": "text",            
             "label": "Content"
-        }
+        },
+        {
+            "type": "select",
+            "id": "content_width",
+            "label": "Content width",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "normal",
+                "label": "Normal"
+              }
+            ],
+            "default": "normal"
+          }
     ],
     "presets": [
         {

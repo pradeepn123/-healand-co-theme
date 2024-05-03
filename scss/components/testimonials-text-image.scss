@@ -26,6 +26,9 @@
     border-left: solid 35px transparent;
     border-right: solid 35px transparent;
     rotate: 225deg;
+    @media (max-width: 375px) {
+        bottom: -6%;
+    }
 }
 
 :--text-image-content {

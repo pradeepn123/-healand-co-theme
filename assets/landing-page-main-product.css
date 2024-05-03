@@ -261,10 +261,10 @@
   }
 }
 .landing-page-main-product .swiper-thumbs .swiper-slide .responsive-image__wrapper {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
 }
 .landing-page-main-product .swiper-thumbs .swiper-slide-thumb-active .responsive-image__wrapper {
-  border-color: black;
+  border-color: #2F4775;
 }
 .landing-page-main-product__info-bottom-content {
   display: -webkit-box;
@@ -360,8 +360,4 @@
     max-width: 100%;
     padding: 16px 32px;
   }
-}
-
-.text-with-button--product-section .text-with-button__text-content {
-  max-width: 50%;
 }

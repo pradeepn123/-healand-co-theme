@@ -21,6 +21,11 @@
   border-right: solid 35px transparent;
   rotate: 225deg;
 }
+@media (max-width: 375px) {
+  .text-image--testimonials-section .text-image__wrapper::after {
+    bottom: -6%;
+  }
+}
 
 .text-image--testimonials-section .text-image__content {
   display: -webkit-box;

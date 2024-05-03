@@ -215,10 +215,11 @@
         padding: 12px 14px; 
         background: colors.$dark-blue;
         border-radius: 25px;
-        border-top: 1px solid colors.$white;
+        border: 1px solid colors.$white;
 
         span{
             @include use-text-style('heading-2');
+            line-height: 24px;
             color: colors.$white;
         }
     }    

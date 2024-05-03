@@ -41,7 +41,14 @@
 @media (min-width: 768px) {
   .landing-page-timeline__content {
     padding: 0;
+    margin: 0 auto;
   }
+}
+.landing-page-timeline__content.content-width__small {
+  max-width: 550px;
+}
+.landing-page-timeline__content.content-width__normal {
+  max-width: 970px;
 }
 .landing-page-timeline__heading .section-header__content {
   max-width: 970px;
