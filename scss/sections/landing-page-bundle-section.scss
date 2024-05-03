@@ -9,9 +9,10 @@
 @custom-selector :--image .landing-bundle-sec-info__wrapper .responsive-image__wrapper;
 @custom-selector :--title .landing-page-bundle-section__heading .section-header__title;
 @custom-selector :--sub_title .landing-page-bundle-section__heading .section-header__content p;  
+@custom-selector :--section-header_content_width .section-header--bundle-section-center .section-header__content;  
 
 .landing-page-bundle-section{
-
+    --price-grid-gap: 24px;
     --section-paddings: 60px;
     @media(--sm){
         --section-paddings: 100px;
@@ -134,7 +135,7 @@
 
 .landing-bundle-sec-info{
     &__wrapper{
-         height: 100%;
+        height: 100%;
         position: relative;    
     }
     &__content{
@@ -224,16 +225,16 @@
     &__price{
         @include use-text-style('heading-mob');
         font-weight: typography.$regular-weight;
-        font-family: 'proximanovaexcn-regular';
+        font-family: var(--primary-alt-font-family);
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: var( --setion-top-padding);
+        column-gap: var(--price-grid-gap);
         padding-bottom: 24px;
         @media(--xxs){
             @include use-text-style('heading-1');
             font-weight: typography.$regular-weight;
-            font-family: 'proximanovaexcn-regular';
+            font-family: var(--primary-alt-font-family);
         }
     }
     &__free-shipping{
@@ -293,3 +294,9 @@
     }
 }
 
+:--section-header_content_width{
+    @media(--md-large){
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
