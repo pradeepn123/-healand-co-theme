@@ -198,10 +198,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
   .landing-page-header__bottom-content-wrapper {
-    max-width: calc(100% - 2 * 20px);
-    max-width: calc(100% - 2 * var(--base-margin));
+    max-width: calc(1600px - 2 * 20px);
+    max-width: calc(1600px - 2 * var(--base-margin));
   }
 }
 .landing-page-header__left-content {

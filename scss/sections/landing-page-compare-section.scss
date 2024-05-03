@@ -27,10 +27,10 @@
 
     &__wrapper{
         @include mixins.grid(1, 40px, 40px);
-        row-gap: calc(var(--grid-row-gap-large) * 1);
+        row-gap: var(--grid-row-gap-large);
         @media(--sm){
             @include mixins.grid(2, 40px, 40px);
-            column-gap: calc(var(--grid-row-gap-large) * 2);
+            column-gap: var(--grid-row-gap-large);
         }
     }
 

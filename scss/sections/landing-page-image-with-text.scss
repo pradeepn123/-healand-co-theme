@@ -15,6 +15,10 @@
     --block-content-spacing: 32px;
     --inner-content-spacing: 5px;
 
+    @media(max-width:1024px) {
+        --section-spacing: 0;
+    }
+
     @media(--md) {
         --block-content-spacing: 32px;
         --inner-content-spacing: 10px;
@@ -38,9 +42,15 @@
         }
     }
     &__textcontent{
+      display: flex;
+      flex-direction: column;
+      gap:var(--block-content-spacing);
+
         @media(--lg){
             grid-column: span 3;
         }
+
+    
     }
     &__heading{
         &--desktop{
@@ -58,9 +68,6 @@
     }
 }
 
-:--text-image{
-    margin-bottom: var(--block-content-spacing);    
-}
 
 :--text-image-heading {
     display: flex;

@@ -23,9 +23,9 @@
   padding-top: var(--section-padding);
   margin-top: var(--section-margin);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
   .info-compare__compare-section {
-    max-width: calc(100% - 2 * var(--base-margin));
+    max-width: calc(1600px - 2 * var(--base-margin));
   }
 }
 .info-compare__wrapper {
@@ -39,7 +39,7 @@
   grid-auto-flow: dense;
   grid-row-gap: var(--grid-row-gap);
   row-gap: var(--grid-row-gap);
-  row-gap: calc(var(--grid-row-gap-large) * 1);
+  row-gap: var(--grid-row-gap-large);
 }
 @media (min-width: 1024px) {
   .info-compare__wrapper {
@@ -58,9 +58,9 @@
     grid-auto-flow: dense;
     grid-row-gap: var(--grid-row-gap);
     row-gap: var(--grid-row-gap);
-    -webkit-column-gap: calc(var(--grid-row-gap-large) * 2);
-       -moz-column-gap: calc(var(--grid-row-gap-large) * 2);
-            column-gap: calc(var(--grid-row-gap-large) * 2);
+    -webkit-column-gap: var(--grid-row-gap-large);
+       -moz-column-gap: var(--grid-row-gap-large);
+            column-gap: var(--grid-row-gap-large);
   }
 }
 @media (min-width: 768px) and (min-width: 1024px) {

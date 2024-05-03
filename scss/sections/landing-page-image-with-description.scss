@@ -33,17 +33,21 @@
             display: block;
         }
     }
+
+    .text-image--image-with-description {
+        .text-image__wrapper{
+        padding: 27px 12px;
+
+        @media(--md) {
+            padding:27px 40px;
+        }
+    }
+    .text-image__description {
+            margin-top: 8px;
+        }
+    }
 } 
 
-.carousel {
-    &--image-with-desc{
-        display: flex;
-        align-items: center;
-        max-width: 100%;
-        column-gap: 2.4rem;
-        margin: 0 auto;
-    }
-}
 
 :--text-image-with-desc{
     text-align: center;
