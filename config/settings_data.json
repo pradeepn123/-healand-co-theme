@@ -71,7 +71,7 @@
     "product_card_highlight_sale_price": true,
     "product_highlight_sale_price_color": "#2f4775",
     "product_card_custom_badge_1_text": "Promo",
-    "product_card_custom_badge_1_tag": "Promo",
+    "product_card_custom_badge_1_tag": "special_offer",
     "product_card_custom_badge_1_bg": "#cbd1dc",
     "product_card_custom_badge_1_color": "#2f4775",
     "product_card_custom_badge_2_bg": "#5d54a3",
