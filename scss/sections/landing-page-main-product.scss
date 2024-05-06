@@ -42,6 +42,9 @@
 		justify-content: center;
 
 		@media(--md) {
+            padding: 0 24px 0 0;
+        }
+		@media(--md-large) {
 			padding: 0 var(--column-spacing) 0 0;
 		}
 	}
@@ -92,8 +95,11 @@
 		@media(--md) {
 			margin-top: 0;
 			background: colors.$off-white;
-			padding: 54px var(--column-spacing);
+			padding: 25px;
 		}
+        @media(--lg){
+            padding: 54px var(--column-spacing);
+        }
 	}
 
 	&__reviews {

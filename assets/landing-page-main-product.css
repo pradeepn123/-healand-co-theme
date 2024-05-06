@@ -72,6 +72,11 @@
 }
 @media (min-width: 1024px) {
   .landing-page-main-product__carousel {
+    padding: 0 24px 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  .landing-page-main-product__carousel {
     padding: 0 var(--column-spacing) 0 0;
   }
 }
@@ -114,6 +119,11 @@
   .landing-page-main-product__content {
     margin-top: 0;
     background: #F9F9FB;
+    padding: 25px;
+  }
+}
+@media (min-width: 1440px) {
+  .landing-page-main-product__content {
     padding: 54px var(--column-spacing);
   }
 }
