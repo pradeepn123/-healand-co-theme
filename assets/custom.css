@@ -1193,3 +1193,16 @@ body.hamburger--open[scroll-y-offf] {
 .login__form .btn.login__btns{
     font-family: var(--secondary-font-family);
 }
+
+body .tl-custom-position{
+    position: absolute !important;
+    bottom: 110px !important;
+    left: auto !important;
+    right: 20px !important;
+}
+
+@media(min-width:768px){
+    body .tl-custom-position{
+        bottom: 120px !important;
+    }
+}
