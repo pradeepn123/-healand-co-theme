@@ -39,11 +39,11 @@
   }
 }
 .landing-page-image-with-description .text-image--image-with-description .text-image__wrapper {
-  padding: 27px 12px;
+  padding: 6px 12px;
 }
 @media (min-width: 1024px) {
   .landing-page-image-with-description .text-image--image-with-description .text-image__wrapper {
-    padding: 27px 40px;
+    padding: 0px 40px;
   }
 }
 .landing-page-image-with-description .text-image--image-with-description .text-image__description {
