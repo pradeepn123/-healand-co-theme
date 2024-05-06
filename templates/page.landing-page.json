@@ -300,16 +300,18 @@
       "blocks": {
         "collapsible_row_PVQLFt": {
           "type": "collapsible_row",
+          "repeater": "{{ page.metafields.custom.landing_page_faq_section.value }}",
           "settings": {
-            "title": "What mushrooms are in the super mushroom complex?",
+            "title": "{{ block.repeater.question.value }}",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "text": "{{ block.repeater.answer | metafield_tag }}",
             "page": "",
             "image_width": 100
           }
         },
         "collapsible_row_A4jgDd": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "title": "What are the health benefits of super mushroom complex?",
             "icon": "none",
@@ -320,6 +322,7 @@
         },
         "collapsible_row_DAgDCr": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "title": "When should you take super mushroom complex?",
             "icon": "none",
@@ -330,6 +333,7 @@
         },
         "collapsible_row_Y6wWpq": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "title": "What is the right dosage?",
             "icon": "none",
