@@ -116,6 +116,12 @@
 @media (min-width: 768px) {
   .landing-page-testimonials__main-carousel .carousel__container {
     padding-bottom: 70px;
+    max-width: 860px;
+  }
+}
+@media (min-width: 1200px) {
+  .landing-page-testimonials__main-carousel .carousel__container {
+    max-width: 1100px;
   }
 }
 

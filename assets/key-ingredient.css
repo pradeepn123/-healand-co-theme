@@ -267,13 +267,16 @@
 }
 
 .single_key_ingredients_main .card-carousel__carousel-btn[disabled],
-.bundle_key_ingredients_main .card-carousel__carousel-btn[disabled],
-.single_key_ingredients_main .card-carousel__carousel-btn,
-.bundle_key_ingredients_main .card-carousel__carousel-btn {
+.bundle_key_ingredients_main .card-carousel__carousel-btn[disabled] {
   background-color: rgb(217, 217, 217);
-  color: white !important;
+  color: white;
   opacity: 1;
   pointer-events: none;
+}
+
+.single_key_ingredients_main .card-carousel__carousel-btn,
+.bundle_key_ingredients_main .card-carousel__carousel-btn {
+  color: white !important;
 }
 
 .key_ingredient_section .main_title_key h4 {
