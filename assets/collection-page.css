@@ -413,3 +413,22 @@
         left: 0;
     }
 }
+
+.product-card-badge{
+    --gsc-product-card-badge-font-size: 10px;
+    padding:0.2rem 0.6rem;
+}
+    @media screen  and (min-width:1024px){ 
+        .product-card-badge{
+            --gsc-product-card-badge-font-size: 1.3rem;
+            padding:0.4rem 0.8rem;
+        }
+    }
+   
+
+    @media screen  and (min-width:1024px){
+        .product-card__badges{
+            flex-flow: row;
+            column-gap: 0.8rem;
+    }
+}
