@@ -42,7 +42,7 @@
 		justify-content: center;
 
 		@media(--md) {
-			padding: 0 var(--column-spacing);
+			padding: 0 var(--column-spacing) 0 0;
 		}
 	}
 

@@ -17,7 +17,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-timeline {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media screen and (max-width: 760px) {

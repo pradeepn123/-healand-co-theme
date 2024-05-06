@@ -8,7 +8,7 @@
 
 .landing-page-header {
     &__content {
-      flex-direction: column;
+      flex-direction: column;      
       &--mobile {
         display: flex;
         @media(--sm) {
@@ -24,6 +24,7 @@
           flex-direction: row;
           justify-content: space-between;
           border-bottom: 1px solid #E7E7E7;
+          background: colors.$dark-blue;
         }
       }
     }

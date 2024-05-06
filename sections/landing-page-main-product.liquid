@@ -135,7 +135,7 @@
                       {% endif %} 
                     </div>
                     <div class="landing-page-main-product__banner-teaser">
-                      {% render 'text-with-button', wrapper_class:"product-section", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary" %}
+                      {% render 'text-with-button', wrapper_class:"product-section", teaser_text:options.header_teaser, text:options.header_text, btn_text:options.btn_text, btn_style:"secondary", btn_link:options.btn_link %}
                     </div>
               </div>
             </div>
@@ -166,6 +166,11 @@
           "type": "text",
           "id": "btn_text",
           "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button link"
         }
     ],
     "blocks": [

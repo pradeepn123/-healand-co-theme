@@ -4,11 +4,17 @@
 .landing-page-bundle-section {
   --price-grid-gap: 24px;
   --section-paddings: 60px;
+  --section-left-right-padding: 0;
   @custom-selector :--heading_width .info-compare__compare-section .section-header__content;
 }
 @media (min-width: 768px) {
   .landing-page-bundle-section {
     --section-paddings: 100px;
+  }
+}
+@media (min-width: 1600px) {
+  .landing-page-bundle-section {
+    --section-left-right-padding: 48px;
   }
 }
 .landing-page-bundle-section__information {
@@ -19,7 +25,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-bundle-section__information {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 .landing-page-bundle-section__wrapper {
@@ -88,7 +94,7 @@
 }
 .landing-page-bundle-section__content {
   background: #2F4775;
-  padding: var(--section-paddings) 0;
+  padding: var(--section-paddings) var(--section-left-right-padding);
 }
 .landing-page-bundle-section .info-compare {
   --sub-heading-spacing: 10px;
@@ -114,7 +120,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-bundle-section .info-compare__compare-section {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 .landing-page-bundle-section .info-compare__wrapper {

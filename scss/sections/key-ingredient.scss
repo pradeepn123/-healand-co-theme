@@ -1,3 +1,4 @@
+@use 'StyleComponents/mixins';
 @use 'StyleComponents/colors';
 @use 'StyleComponents/typography';
 @import 'breakpoints';
@@ -16,7 +17,9 @@
         }
     }
 }
-
+.landing_page__container{
+    @include mixins.container;
+}
 .single_key_ingredients_main, .bundle_key_ingredients_main{
     .main_title_key {
         display: flex;
@@ -219,9 +222,11 @@
 
 
 .single_key_ingredients_main .card-carousel__carousel-btn[disabled],
-.bundle_key_ingredients_main .card-carousel__carousel-btn[disabled]{
+.bundle_key_ingredients_main .card-carousel__carousel-btn[disabled], 
+.single_key_ingredients_main .card-carousel__carousel-btn,
+.bundle_key_ingredients_main .card-carousel__carousel-btn {
     background-color: rgba(217, 217, 217, 1);
-    color: white;
+    color: white !important;
     opacity: 1;
     pointer-events: none;
 }

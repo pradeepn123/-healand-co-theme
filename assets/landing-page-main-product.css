@@ -25,7 +25,7 @@
 }
 @media (min-width: 1024px) and (min-width: 1600px) {
   .landing-page-main-product__wrapper {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 .landing-page-main-product__container {
@@ -85,7 +85,7 @@
 }
 @media (min-width: 1024px) {
   .landing-page-main-product__carousel {
-    padding: 0 var(--column-spacing);
+    padding: 0 var(--column-spacing) 0 0;
   }
 }
 @media (min-width: 1024px) {
@@ -177,7 +177,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-main-product__icon-text-wrapper {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media (min-width: 1024px) {
@@ -291,7 +291,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-main-product__info-top-content {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media (min-width: 1024px) {
@@ -315,7 +315,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-main-product__description-box {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media (min-width: 1024px) {
@@ -341,7 +341,7 @@
 }
 @media (min-width: 1600px) {
   .text-with-button--product-section .text-with-button__container {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media (min-width: 1024px) {
@@ -368,7 +368,7 @@
 }
 @media (min-width: 1600px) {
   .container, .container--page-width {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 

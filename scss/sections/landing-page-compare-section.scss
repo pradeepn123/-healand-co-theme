@@ -30,7 +30,7 @@
         row-gap: var(--grid-row-gap-large);
         @media(--sm){
             @include mixins.grid(2, 40px, 40px);
-            column-gap: var(--grid-row-gap-large);
+            column-gap: 0;
         }
     }
 
@@ -44,11 +44,16 @@
         padding-bottom: var(--sub-heading-spacing);
         @include use-text-style('heading-3');
         font-family: var(--primary-semibold-font-family);
+        text-transform: uppercase;
         @media(--sm){            
             @include use-text-style('heading-2');
             font-family: var(--primary-semibold-font-family);
         }
+        &-center{
+            text-align: center;
+        }
     }
+    
 
     &__description{
         display: flex;

@@ -4,7 +4,7 @@
   assign options = section.settings
   assign heading = options.heading
   assign text = options.text
-  assign heading_alignment = options.heading_alignment
+  assign content_align = options.content_align
   assign firstHeading = options.block_heading_one
   assign firstImage = options.image_other_one
   assign secondHeading = options.block_heading_two
@@ -23,7 +23,7 @@
         <div class="info-compare">
             <div class="info-compare__wrapper">
                <div class="info-compare__container">
-                    <div class="info-compare__heading">{{firstHeading}}</div>
+                    <div class="info-compare__heading {% if content_align == 'center' %}info-compare__heading-center{% endif %}">{{firstHeading}}</div>
                     <div class="info-compare__image"> {% render 'shopify-responsive-image', image:firstImage, aspect_ratio: 1.4 %} </div>
                     <div class="info-compare__text-wrapp">
                         <div class="info-compare__description">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="info-compare__container">
-                    <div class="info-compare__heading">{{secondHeading}}</div>
+                    <div class="info-compare__heading {% if content_align == 'center' %}info-compare__heading-center{% endif %}">{{secondHeading}}</div>
                     <div class="info-compare__image"> {% render 'shopify-responsive-image', image:SecondImage, aspect_ratio: 1.4 %} </div>
                     <div class="info-compare__description">
                          {% for block in section.blocks %}
@@ -98,6 +98,22 @@
             "type": "image_picker",
             "id": "image_other_two",
             "label": "Second Image"
+        },
+        {
+            "type": "select",
+            "id": "content_align",
+            "label": "t:sections.general_section_settings.content_alignment_label",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.general_section_settings.alignment_option_left_label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.general_section_settings.alignment_option_center_label"
+                }
+            ],
+            "default": "center"
         }
     ],
     "blocks": [
@@ -119,35 +135,13 @@
                     "type": "text",
                     "id": "info_type",
                     "label": "Add block type"
-                }
+                }                
             ]
-        },
-        {
-            "type": "heal_and_co",
-            "name": "Heal_and_co",
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "svg_image_heal_and_co",
-                    "label": "Bullets image"
-                },
-                {
-                    "type": "text",
-                    "id": "description_heal_and_co",
-                    "label": "Description"
-                },
-                {
-                    "type": "text",
-                    "id": "info_type",
-                    "label": "Add block type"
-                }
-            ]
-
         }
     ],
     "presets": [
         {
-        "name": "Landing compare section"
+            "name": "Landing compare section"
         }
     ]
 }

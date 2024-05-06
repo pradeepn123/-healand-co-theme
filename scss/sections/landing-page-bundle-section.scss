@@ -14,8 +14,12 @@
 .landing-page-bundle-section{
     --price-grid-gap: 24px;
     --section-paddings: 60px;
+    --section-left-right-padding: 0;
     @media(--sm){
         --section-paddings: 100px;
+    }
+    @media(--xlg){
+        --section-left-right-padding: 48px;
     }
     &__information{
         @include mixins.container;   
@@ -40,7 +44,7 @@
 
     &__content {
         background: colors.$dark-blue;
-        padding: var(--section-paddings) 0;
+        padding: var(--section-paddings) var(--section-left-right-padding);
     }
     
     @custom-selector :--heading_width .info-compare__compare-section .section-header__content;

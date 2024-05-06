@@ -68,7 +68,8 @@
         "product_selected": "8-mushroom-immunity-tincture-500mg",
         "header_teaser": "LIMITED TIME OFFER",
         "header_text": "Save up to 40% off on your first order",
-        "btn_text": "Get Offer"
+        "btn_text": "Get Offer",
+        "btn_link": "{{ page.metafields.custom.landing_page_header_section.value.redirection_link.value }}"
       }
     },
     "page": {
@@ -194,42 +195,12 @@
             "description_other": "Bitter \/ bad \/ rancid taste",
             "info_type": ""
           }
-        },
-        "heal_and_co_Kw4GW8": {
-          "type": "heal_and_co",
-          "disabled": true,
-          "settings": {
-            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "No Filter added",
-            "info_type": ""
-          }
-        },
-        "heal_and_co_AyagQ4": {
-          "type": "heal_and_co",
-          "disabled": true,
-          "settings": {
-            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "A combination of 5 medicinal mushrooms in every capsule",
-            "info_type": ""
-          }
-        },
-        "heal_and_co_DTaQgK": {
-          "type": "heal_and_co",
-          "disabled": true,
-          "settings": {
-            "svg_image_heal_and_co": "shopify:\/\/shop_images\/Frame_636_1.svg",
-            "description_heal_and_co": "No taste or aftertaste",
-            "info_type": ""
-          }
         }
       },
       "block_order": [
         "other_LzCRMd",
         "other_HxKin6",
-        "other_XtWpLD",
-        "heal_and_co_Kw4GW8",
-        "heal_and_co_AyagQ4",
-        "heal_and_co_DTaQgK"
+        "other_XtWpLD"
       ],
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_compare_section.value.heading.value }}",
@@ -237,14 +208,16 @@
         "block_heading_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_heading.value }}",
         "block_heading_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_heading.value }}",
         "image_other_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_image.value }}",
-        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}"
+        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}",
+        "content_align": "center"
       }
     },
     "landing_page_timeline_kfRwhc": {
       "type": "landing-page-timeline",
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_timeline_section.value.heading.value }}",
-        "text": "{{ page.metafields.custom.landing_page_timeline_section.value.content.value }}"
+        "text": "{{ page.metafields.custom.landing_page_timeline_section.value.content.value }}",
+        "content_width": "normal"
       }
     },
     "landing_page_testimonials_MrGMLF": {

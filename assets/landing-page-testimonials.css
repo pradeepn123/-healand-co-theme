@@ -91,7 +91,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-testimonials__wrapper {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 @media (min-width: 1024px) {

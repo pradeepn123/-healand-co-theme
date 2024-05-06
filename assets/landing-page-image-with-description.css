@@ -9,7 +9,7 @@
 }
 @media (min-width: 1600px) {
   .landing-page-image-with-description {
-    max-width: calc(1600px - 2 * var(--base-margin));
+    max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
 .landing-page-image-with-description__wrapper {
