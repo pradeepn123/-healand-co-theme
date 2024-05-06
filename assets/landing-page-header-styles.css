@@ -176,12 +176,14 @@
   padding: 4px 8px;
   text-align: center;
   background: #2F4775;
+  border-bottom: 1px solid #E7E7E7;
 }
 .landing-page-header__bottom-content {
   padding: 8px 0 12px 0;
   border-bottom: 1px solid #E7E7E7;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0509803922);
+  background: #2F4775;
 }
 .landing-page-header__bottom-content-wrapper {
   max-width: calc(100% - 2 * 20px);

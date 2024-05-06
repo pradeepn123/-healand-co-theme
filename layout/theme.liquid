@@ -114,7 +114,15 @@
         div1.after(div2);
       </script>
     {%- endif -%}
-   {% include 'smile-initializer' %}
+
+    {% if template.name == 'page' and page.handle == 'landing-page' %}
+      {% style %}
+        #smile-ui-lite-container{
+          display: none;
+        }
+      {% endstyle %}
+    {% endif %}
+    {% include 'smile-initializer' %} 
 
     {%- render 'layouthub_footer' -%} 
 
