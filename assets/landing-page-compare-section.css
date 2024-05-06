@@ -160,6 +160,7 @@
 
 .info-compare__compare-section .section-header__content {
   max-width: 750px;
+  margin: 0 auto;
 }
 
 .section-header--compare-section {
