@@ -110,7 +110,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #F9F9FB;
+  background: #fff;
   padding: var(--inner-block-list-padding);
   -webkit-column-gap: var(--inner-block-grid-gap);
      -moz-column-gap: var(--inner-block-grid-gap);
