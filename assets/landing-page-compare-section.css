@@ -169,6 +169,10 @@
   margin: 0 auto;
 }
 
+.info-compare__compare-section .info-compare__container:last-child .info-compare__description {
+  background: #F9F9FB;
+}
+
 .section-header--compare-section {
   text-align: center;
 }

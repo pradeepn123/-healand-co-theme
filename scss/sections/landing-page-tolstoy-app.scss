@@ -3,7 +3,14 @@
 @import 'breakpoints';
 @import 'Token';
 
+
 .custom_app_tolstoy{
     --section-tolstoy-bottom-spacing: 40px;
     padding-bottom: calc(var(--section-tolstoy-bottom-spacing) * 2);
+    .tolstoy-next-button, .tolstoy-previous-button{
+        background: colors.$dark-blue;
+        svg path{
+            fill: colors.$white;
+        }
+    }
 }

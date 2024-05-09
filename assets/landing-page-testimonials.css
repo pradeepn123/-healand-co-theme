@@ -126,11 +126,11 @@
 }
 
 .landing-page-testimonials__main-carousel .swiper-navigation--next circle,.landing-page-testimonials__main-carousel .swiper-navigation--prev circle {
-  fill: #fff;
+  fill: #2F4775;
 }
 
 .landing-page-testimonials__main-carousel .swiper-navigation--next path,.landing-page-testimonials__main-carousel .swiper-navigation--prev path {
-  stroke: #000;
+  stroke: #fff;
 }
 
 .landing-page-testimonials__main-carousel .swiper-pagination {

@@ -7,6 +7,7 @@
 @custom-selector :--heading_width .info-compare__compare-section .section-header__content;
 @custom-selector :--image-container .info-compare__image;
 @custom-selector :--responsive-image .info-compare__image .responsive-image__wrapper;
+@custom-selector :--description-last .info-compare__compare-section .info-compare__container:last-child .info-compare__description;
 
 .info-compare{
 
@@ -100,6 +101,9 @@
 :--heading_width{
     max-width: 750px;
     margin: 0 auto;
+}
+:--description-last{
+    background: colors.$off-white;
 }
 .section-header--compare-section {
     text-align: center;
