@@ -3,9 +3,14 @@
   \*******************************************************************************************************************************************************************************************************************************************/
 .landing-page-bundle-section {
   --price-grid-gap: 24px;
-  --section-paddings: 60px;
+  --section-paddings: 40px;
   --section-left-right-padding: 0;
   @custom-selector :--heading_width .info-compare__compare-section .section-header__content;
+}
+@media (min-width: 1024px) {
+  .landing-page-bundle-section {
+    --section-paddings: 60px;
+  }
 }
 @media (min-width: 1600px) {
   .landing-page-bundle-section {

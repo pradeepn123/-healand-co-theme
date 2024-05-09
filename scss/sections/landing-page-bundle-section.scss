@@ -13,8 +13,11 @@
 
 .landing-page-bundle-section{
     --price-grid-gap: 24px;
-    --section-paddings: 60px;
+    --section-paddings: 40px;
     --section-left-right-padding: 0;
+    @media(--md){
+        --section-paddings: 60px;
+    }
     @media(--xlg){
         --section-left-right-padding: 48px;
     }
