@@ -30,7 +30,7 @@
 }
 .landing-page-bundle-section__wrapper {
   margin-top: var(--section-margin);
-  padding-top: var(--section-paddings);
+  padding: var(--section-paddings) 0;
   background: #2F4775;
 }
 .landing-page-bundle-section__information {
