@@ -6,8 +6,8 @@
         "image_banner_afRHFM": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Mothers_day_2.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Mothers_day_3.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/Wellness.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Wellness_1.jpg",
             "desktop_overlay_opacity": 30,
             "mobile_overlay_opacity": 0,
             "background_color": "",
