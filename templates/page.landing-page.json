@@ -20,8 +20,9 @@
         },
         "image_UrRVac": {
           "type": "image",
+          "repeater": "{{ page.metafields.custom.landing_page_product_info.value.product_images.value }}",
           "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
+            "product_image": "{{ block.repeater.images.value }}"
           }
         }
       },
