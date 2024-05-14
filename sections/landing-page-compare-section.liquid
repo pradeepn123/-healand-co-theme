@@ -45,7 +45,7 @@
                 <div class="info-compare__container">
                     <div class="info-compare__heading {% if content_align == 'center' %}info-compare__heading-center{% endif %}">{{secondHeading}}</div>
                     <div class="info-compare__image"> {% render 'shopify-responsive-image', image:SecondImage, aspect_ratio: 1.4 %} </div>
-                    <div class="info-compare__description">
+                    <div class="info-compare__description info-compare__description__healandco-background">
                          {% for block in section.blocks %}
                             {% liquid
                                 assign options = block.settings

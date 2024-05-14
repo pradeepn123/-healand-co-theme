@@ -23,7 +23,7 @@
 
   assign section_layout = options.section_layout
   assign show_navigation_on_hover = options.show_navigation_on_hover
-  assign keymetadata = page.metafields.custom.key_ingredients.value | default: product.metafields.custom.key_ingredients.value
+  assign keymetadata = product.metafields.custom.key_ingredients.value
 
   if section_layout == 'carousel-overflow'
     assign half_desktop_slide_width = desktop_carousel_percent_width | divided_by: desktop_columns | times: 0.33
@@ -35,7 +35,7 @@
     assign tablet_carousel_percent_width = tablet_carousel_percent_width | minus: half_tablet_slide_width
   endif
 
-  assign colorsMetafield = page.metafields.custom.color_schema.value | default: product.metafields.custom.key_ingredients.value
+  assign colorsMetafield = product.metafields.custom.key_ingredients.value
 -%}
 {% capture css %}
   {% style %}

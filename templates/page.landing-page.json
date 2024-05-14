@@ -108,6 +108,7 @@
     },
     "key_ingredients_k8Qhr4": {
       "type": "key-ingredients",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
@@ -125,13 +126,46 @@
         "show_navigation_on_hover": true
       }
     },
+    "landing_page_key_ingredients_WMmTVg": {
+      "type": "landing-page-key-ingredients",
+      "blocks": {
+        "text_wwiKJY": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_key_ingredients.value.block_values.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_wwiKJY"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "{{ page.metafields.custom.landing_page_key_ingredients.value.section_heading.value }}",
+        "heading_size": "h5",
+        "mobile_title_size": 24,
+        "alignment": "center",
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
+    },
     "tolstoy_yyNWNw": {
       "type": "tolstoy",
       "blocks": {
         "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4": {
           "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
-            "publishId": "6d5l6kt75mcwd"
+            "publishId": "{{ page.metafields.custom.landing_page_tolstoy_id.value }}"
           }
         }
       },
@@ -164,6 +198,28 @@
         "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
         "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
         "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
+      }
+    },
+    "171568127909df6d51": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_nrmbUt": {
+          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ page.metafields.custom.okendo_review_product_id.value }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_nrmbUt"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 60,
+        "section_spacing_bottom": 0,
+        "custom_liquid": ""
       }
     },
     "landing_page_compare_section_QTFTk3": {
@@ -377,8 +433,10 @@
     "page",
     "landing_page_image_with_description_A7N4YH",
     "key_ingredients_k8Qhr4",
+    "landing_page_key_ingredients_WMmTVg",
     "tolstoy_yyNWNw",
     "landing_page_image_with_text_AkGUxq",
+    "171568127909df6d51",
     "landing_page_compare_section_QTFTk3",
     "landing_page_timeline_kfRwhc",
     "landing_page_testimonials_MrGMLF",

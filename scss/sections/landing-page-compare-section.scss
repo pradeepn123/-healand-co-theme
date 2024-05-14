@@ -5,6 +5,8 @@
 @import 'Token';
 
 @custom-selector :--heading_width .info-compare__compare-section .section-header__content;
+@custom-selector :--image-container .info-compare__image;
+@custom-selector :--responsive-image .info-compare__image .responsive-image__wrapper;
 
 .info-compare{
 
@@ -38,6 +40,7 @@
         display: flex;
         flex-direction: column;
         justify-content: stretch;
+        justify-content: space-between;
     }
 
     &__heading{
@@ -61,7 +64,11 @@
         flex-direction: column;
         background: colors.$white;
         padding: var(--inner-block-list-padding);
-        column-gap: var(--inner-block-grid-gap);        
+        column-gap: var(--inner-block-grid-gap);
+
+        &__healandco-background {
+            background: #f2f2f0;
+        }
     }
 
     &__description-wrap{
@@ -96,6 +103,12 @@
 }
 .section-header--compare-section {
     text-align: center;
+}
+:--image-container {
+    height: 100%;
+}
+:--responsive-image {
+    margin: 0 auto;
 }
 
 

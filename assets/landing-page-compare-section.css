@@ -79,6 +79,9 @@
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .info-compare__heading {
   padding-bottom: var(--sub-heading-spacing);
@@ -115,6 +118,9 @@
   -webkit-column-gap: var(--inner-block-grid-gap);
      -moz-column-gap: var(--inner-block-grid-gap);
           column-gap: var(--inner-block-grid-gap);
+}
+.info-compare__description__healandco-background {
+  background: #f2f2f0;
 }
 .info-compare__description-wrap {
   display: -webkit-box;
@@ -165,4 +171,12 @@
 
 .section-header--compare-section {
   text-align: center;
+}
+
+.info-compare__image {
+  height: 100%;
+}
+
+.info-compare__image .responsive-image__wrapper {
+  margin: 0 auto;
 }
