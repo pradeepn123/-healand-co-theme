@@ -442,13 +442,14 @@
         "ee728319-72f2-4d6e-846c-85979a78983a": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/how-long-does-it-take-the-supplements-to-work",
+            "article": "news\/unveiling-the-magic-the-super-mushroom-complex-and-its-fantastical-benefits",
             "title": "BLOG",
             "color_scheme": "white",
             "desktop_columns": 2,
             "desktop_rows": 1,
             "heading_size": "h6",
             "show_product_count": true,
+            "blog_image": "shopify:\/\/shop_images\/Super_Mushroom_f58cc546-85dd-4739-b7e5-2561a235ac75.jpg",
             "overlay_opacity": 20,
             "link_text": "https:\/\/healandco.co\/blogs\/news\/the-best-natural-remedies-for-anxiety-and-stress",
             "content_position": "top-left"
