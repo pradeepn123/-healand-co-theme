@@ -39,17 +39,17 @@
   -%}
   {% capture css %}
     {% style %}
-    @media screen and (max-width: 480px){
-      .single_key_ingredients_main .main_title_key h4{
-        font-size: {{ section.settings.mobile_title_size }}px !important;
+      @media screen and (max-width: 480px){
+        .single_key_ingredients_main .main_title_key h4{
+          font-size: {{ section.settings.mobile_title_size }}px !important;
+        }
       }
-    }
       .section-{{ section.id }} {
-          --gsc-space-between-cards: {{ mobile_space_between_cards }}px;
-          --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
-          --gsc-columns: 1;
-          --gsc-section--spacing-top: {{ section_spacing_top }}px;
-          --gsc-section--spacing-bottom: {{ section_spacing_bottom }}px;
+        --gsc-space-between-cards: {{ mobile_space_between_cards }}px;
+        --gsc-slide-width: {{ desktop_carousel_percent_width | times: 1.00 | divided_by: desktop_columns }}%;
+        --gsc-columns: 1;
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
       }
       @media(max-width:767px){
           .section-{{ section.id}} .card-carousel__position-btn-wrap, 
@@ -100,23 +100,29 @@
       {% endif %}
       
       {% if colorsMetafield %}
-          .ingredients_wrapper{
-              background: var(--meta-background-color);
-              color: var(--meta-text-color);
-          }
-          .key_ingredient_section .main_title_key .carousel-btn{
-              background: var(--meta-background-color);
-              color: var(--meta-text-color);
-          }
+        .ingredients_wrapper{
+          background: var(--meta-background-color);
+          color: var(--meta-text-color);
+        }
+        .key_ingredient_section .main_title_key .carousel-btn{
+          background: var(--meta-background-color);
+          color: var(--meta-text-color);
+        }
       {% endif %}
       {% if page.handle == 'landing-page' %}
-        .section--spacing {
-          padding-bottom: 50px;
+        .section-{{ section.id }} .section-spacing {
+          padding-top: var(--section-padding);
+          margin-top: var(--section-margin);
+          padding-bottom: var(--section-padding);
+          margin-bottom: var(--section-margin);
         }
         @media(min-width:1024px){
-          .section--spacing {
-          padding-bottom: 80px;
-        }
+          .section-{{ section.id }} .section-spacing {
+            padding-top: var(--section-padding);
+            margin-top: var(--section-margin);
+            padding-bottom: var(--section-padding);
+            margin-bottom: var(--section-margin);
+          }
         }
       {% endif %}
   
@@ -130,7 +136,7 @@
   
   {% if section.blocks != blank %}
     <div class="section-{{ section.id }} single_key_ingredients_main">
-      <div class="{% if page.handle == 'landing-page' %}landing_page__container{% else%}container{% endif %} container--{{ container_size }} section--spacing">
+      <div class="{% if page.handle == 'landing-page' %}landing_page__container{% else%}container{% endif %} container--{{ container_size }} section-spacing">
         <carousel-component
           class="
             card-carousel key-ingredients
