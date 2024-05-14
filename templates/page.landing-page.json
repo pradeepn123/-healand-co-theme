@@ -20,36 +20,42 @@
         },
         "image_UrRVac": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
           }
         },
         "image_Bd3yMM": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_1_2ac61549-76d3-4041-8199-a1d1aedd3e24.png"
           }
         },
         "image_YdwcGW": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_4.png"
           }
         },
         "image_NTRWRC": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
           }
         },
         "image_HdYxnX": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
           }
         },
         "image_XFKHjy": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_2.png"
           }
@@ -65,11 +71,11 @@
         "image_XFKHjy"
       ],
       "settings": {
-        "product_selected": "8-mushroom-immunity-tincture-500mg",
-        "header_teaser": "LIMITED TIME OFFER",
-        "header_text": "Save up to 40% off on your first order",
-        "btn_text": "Get Offer",
-        "btn_link": "{{ page.metafields.custom.landing_page_header_section.value.redirection_link.value }}"
+        "product_selected": "{{ page.metafields.custom.landing_page_product_info.value.product.value }}",
+        "header_teaser": "{{ page.metafields.custom.landing_page_product_info.value.content_teaser_text.value }}",
+        "header_text": "{{ page.metafields.custom.landing_page_product_info.value.content_text.value }}",
+        "btn_text": "{{ page.metafields.custom.landing_page_product_info.value.button_text.value }}",
+        "btn_link": "{{ page.metafields.custom.landing_page_product_info.value.button_link.value }}"
       }
     },
     "page": {
