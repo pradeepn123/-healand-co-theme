@@ -2531,12 +2531,11 @@ function _objectWithoutProperties(source, excluded) {
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
   }
   return target;
 }
@@ -2584,7 +2583,7 @@ function toPrimitive(t, r) {
 
 function toPropertyKey(t) {
   var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
-  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : String(i);
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
 }
 
 /***/ }),
@@ -3190,7 +3189,7 @@ if (typeof HTMLElement === 'function') {
 			if (!this.$$c) {
 				// We wait one tick to let possible child slot elements be created/mounted
 				await Promise.resolve();
-				if (!this.$$cn) {
+				if (!this.$$cn || this.$$c) {
 					return;
 				}
 				function create_slot(name) {
@@ -3298,7 +3297,7 @@ if (typeof HTMLElement === 'function') {
 			this.$$cn = false;
 			// In a microtask, because this could be a move within the DOM
 			Promise.resolve().then(() => {
-				if (!this.$$cn) {
+				if (!this.$$cn && this.$$c) {
 					this.$$c.$destroy();
 					this.$$c = undefined;
 				}
@@ -5828,7 +5827,7 @@ function beforeUpdate(fn) {
  *
  * If a function is returned _synchronously_ from `onMount`, it will be called when the component is unmounted.
  *
- * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+ * `onMount` does not run inside a [server-side component](https://svelte.dev/docs#run-time-server-side-component-api).
  *
  * https://svelte.dev/docs/svelte#onmount
  * @template T
@@ -5867,7 +5866,7 @@ function onDestroy(fn) {
 }
 
 /**
- * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
+ * Creates an event dispatcher that can be used to dispatch [component events](https://svelte.dev/docs#template-syntax-component-directives-on-eventname).
  * Event dispatchers are functions that can take two arguments: `name` and `detail`.
  *
  * Component events created with `createEventDispatcher` create a
@@ -6455,7 +6454,7 @@ function add_classes(classes) {
 /** @returns {string} */
 function style_object_to_string(style_object) {
 	return Object.keys(style_object)
-		.filter((key) => style_object[key])
+		.filter((key) => style_object[key] != null && style_object[key] !== '')
 		.map((key) => `${key}: ${escape_attribute_value(style_object[key])};`)
 		.join(' ');
 }
@@ -7590,7 +7589,7 @@ function draw(node, { delay = 0, speed, duration, easing = _easing_index_js__WEB
 }
 
 /**
- * The `crossfade` function creates a pair of [transitions](/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
+ * The `crossfade` function creates a pair of [transitions](https://svelte.dev/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
  *
  * https://svelte.dev/docs/svelte-transition#crossfade
  * @param {import('./public').CrossfadeParams & {
@@ -7788,7 +7787,7 @@ function is_svg(name) {
  * https://svelte.dev/docs/svelte-compiler#svelte-version
  * @type {string}
  */
-const VERSION = '4.2.8';
+const VERSION = '4.2.17';
 const PUBLIC_VERSION = '4';
 
 
@@ -8234,7 +8233,7 @@ function Autoplay(_ref) {
     if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
     if (e.target !== swiper.wrapperEl) return;
     swiper.wrapperEl.removeEventListener('transitionend', onTransitionEnd);
-    if (pausedByPointerEnter) {
+    if (pausedByPointerEnter || e.detail && e.detail.bySwiperTouchMove) {
       return;
     }
     resume();
@@ -14604,8 +14603,9 @@ function updateSlides() {
       allSlidesSize += slideSizeValue + (spaceBetween || 0);
     });
     allSlidesSize -= spaceBetween;
-    if (allSlidesSize < swiperSize) {
-      const allSlidesOffset = (swiperSize - allSlidesSize) / 2;
+    const offsetSize = (params.slidesOffsetBefore || 0) + (params.slidesOffsetAfter || 0);
+    if (allSlidesSize + offsetSize < swiperSize) {
+      const allSlidesOffset = (swiperSize - allSlidesSize - offsetSize) / 2;
       snapGrid.forEach((snap, snapIndex) => {
         snapGrid[snapIndex] = snap - allSlidesOffset;
       });
@@ -14709,6 +14709,13 @@ function updateSlidesOffset() {
   }
 }
 
+const toggleSlideClasses$1 = (slideEl, condition, className) => {
+  if (condition && !slideEl.classList.contains(className)) {
+    slideEl.classList.add(className);
+  } else if (!condition && slideEl.classList.contains(className)) {
+    slideEl.classList.remove(className);
+  }
+};
 function updateSlidesProgress(translate) {
   if (translate === void 0) {
     translate = this && this.translate || 0;
@@ -14724,11 +14731,6 @@ function updateSlidesProgress(translate) {
   if (typeof slides[0].swiperSlideOffset === 'undefined') swiper.updateSlidesOffset();
   let offsetCenter = -translate;
   if (rtl) offsetCenter = translate;
-
-  // Visible Slides
-  slides.forEach(slideEl => {
-    slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass);
-  });
   swiper.visibleSlidesIndexes = [];
   swiper.visibleSlides = [];
   let spaceBetween = params.spaceBetween;
@@ -14752,11 +14754,9 @@ function updateSlidesProgress(translate) {
     if (isVisible) {
       swiper.visibleSlides.push(slide);
       swiper.visibleSlidesIndexes.push(i);
-      slides[i].classList.add(params.slideVisibleClass);
     }
-    if (isFullyVisible) {
-      slides[i].classList.add(params.slideFullyVisibleClass);
-    }
+    toggleSlideClasses$1(slide, isVisible, params.slideVisibleClass);
+    toggleSlideClasses$1(slide, isFullyVisible, params.slideFullyVisibleClass);
     slide.progress = rtl ? -slideProgress : slideProgress;
     slide.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
   }
@@ -16402,7 +16402,10 @@ function onTouchMove(event) {
     if (swiper.animating) {
       const evt = new window.CustomEvent('transitionend', {
         bubbles: true,
-        cancelable: true
+        cancelable: true,
+        detail: {
+          bySwiperTouchMove: true
+        }
       });
       swiper.wrapperEl.dispatchEvent(evt);
     }
@@ -18514,7 +18517,7 @@ function makeElementsArray(el) {
 /* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/effect-creative.mjs */ "./node_modules/swiper/modules/effect-creative.mjs");
 /* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/effect-cards.mjs */ "./node_modules/swiper/modules/effect-cards.mjs");
 /**
- * Swiper 11.1.1
+ * Swiper 11.1.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -18522,7 +18525,7 @@ function makeElementsArray(el) {
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: May 13, 2024
  */
 
 
@@ -18575,7 +18578,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 /* harmony import */ var _shared_get_element_params_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/get-element-params.mjs */ "./node_modules/swiper/shared/get-element-params.mjs");
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper Custom Element 11.1.1
+ * Swiper Custom Element 11.1.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -18583,7 +18586,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: May 13, 2024
  */
 
 
@@ -18877,7 +18880,7 @@ if (typeof window !== 'undefined') {
 /* harmony export */ });
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper 11.1.1
+ * Swiper 11.1.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -18885,7 +18888,7 @@ if (typeof window !== 'undefined') {
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: May 13, 2024
  */
 
 

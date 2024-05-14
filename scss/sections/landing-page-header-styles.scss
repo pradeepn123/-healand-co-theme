@@ -73,3 +73,18 @@
     }   
 
 }
+
+.sticky_header_landingpage{
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.sticky_header_landingpage{
+  .landing-page-header__bottom-content{
+    background: colors.$white;
+    @media(--sm){
+      background: colors.$dark-blue;
+    }
+  }
+}

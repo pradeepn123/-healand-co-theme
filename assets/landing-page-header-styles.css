@@ -221,3 +221,18 @@
   width: -moz-fit-content;
   width: fit-content;
 }
+
+.sticky_header_landingpage {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.sticky_header_landingpage .landing-page-header__bottom-content {
+  background: #fff;
+}
+@media (min-width: 768px) {
+  .sticky_header_landingpage .landing-page-header__bottom-content {
+    background: #2F4775;
+  }
+}
