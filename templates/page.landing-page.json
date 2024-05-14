@@ -20,55 +20,14 @@
         },
         "image_UrRVac": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
-          }
-        },
-        "image_Bd3yMM": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_1_2ac61549-76d3-4041-8199-a1d1aedd3e24.png"
-          }
-        },
-        "image_YdwcGW": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_4.png"
-          }
-        },
-        "image_NTRWRC": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
-          }
-        },
-        "image_HdYxnX": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_3.png"
-          }
-        },
-        "image_XFKHjy": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "product_image": "shopify:\/\/shop_images\/Berberine_2.png"
           }
         }
       },
       "block_order": [
         "okendo_star_rating_Q8bYYm",
-        "image_UrRVac",
-        "image_Bd3yMM",
-        "image_YdwcGW",
-        "image_NTRWRC",
-        "image_HdYxnX",
-        "image_XFKHjy"
+        "image_UrRVac"
       ],
       "settings": {
         "product_selected": "{{ page.metafields.custom.landing_page_product_info.value.product.value }}",
