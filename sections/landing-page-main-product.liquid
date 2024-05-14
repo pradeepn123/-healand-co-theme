@@ -10,7 +10,7 @@
     assign isProductImagesSlider = section.blocks.size
     assign productTag = product.metafields.custom.landing_page_tag.value
     assign description = descriptionContent.description | strip_html
-    if isProductImagesSlider <= 0
+    if isProductImagesSlider <= 1
       assign isProductImagesSlider = true
     else 
       assign isProductImagesSlider = false
@@ -24,7 +24,7 @@
 
   {%  capture slider_content %} 
     {%  for block in slider_content_blocks %}
-        {% if block.type == 'image' %}
+        {% if block.type == 'image' or isProductImagesSlider %}
           {%  if isProductImagesSlider %} 
             {%  assign image = block %}
           {%  else  %}
