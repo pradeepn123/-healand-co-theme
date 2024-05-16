@@ -6,7 +6,7 @@
     assign product = options.product_selected
     assign descriptionContent = page.metafields.custom.landing_page_description.value
     assign descriptionTitle = descriptionContent.title 
-    assign textIcons = product.metafields.custom.texticons.value
+    assign textIcons = page.metafields.custom.landing_page_texticon.value
     assign isProductImagesSlider = section.blocks.size
     assign productTag = product.metafields.custom.landing_page_tag.value
     assign description = descriptionContent.description | strip_html
@@ -126,7 +126,7 @@
                     <div class="landing-page-main-product__icon-text-wrapper">
                       {% if textIcons %}
                         {% for item in textIcons %}
-                          {%liquid assign image = item.icon.value %}
+                          {%liquid assign image = item.image_icon.value %}
                             <div class="landing-page-main-product__icon-text-wrapper-item">
                               <div class="landing-page-main-product__icon">{% render 'shopify-responsive-image', image: image, aspect_ratio: 1 %}</div>
                               <div class="landing-page-main-product__text">{{item.text}}</div>
