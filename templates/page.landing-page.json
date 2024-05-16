@@ -20,6 +20,7 @@
         },
         "image_UrRVac": {
           "type": "image",
+          "disabled": true,
           "repeater": "{{ page.metafields.custom.landing_page_product_info.value.product_images.value }}",
           "settings": {
             "product_image": "{{ block.repeater.images.value }}"
