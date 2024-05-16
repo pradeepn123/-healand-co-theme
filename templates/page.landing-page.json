@@ -314,8 +314,8 @@
         "text_yQtWqf"
       ],
       "settings": {
-        "heading": "Get your daily immune support",
-        "text": "<p>Discounts cannot be used in conjunction with any other offer.<\/p>"
+        "heading": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.heading.value }}",
+        "text": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}"
       }
     },
     "faq_section_4hkffF": {
@@ -327,7 +327,7 @@
           "settings": {
             "title": "{{ block.repeater.question.value }}",
             "icon": "none",
-            "text": "{{ block.repeater.answer | metafield_tag }}",
+            "text": "<p>{{ block.repeater.answer | metafield_tag }}<\/p>",
             "page": "",
             "image_width": 100
           }
