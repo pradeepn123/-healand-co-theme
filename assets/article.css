@@ -81,23 +81,23 @@ svg.link__prev_chevron path {
 
 h2.article__title {
   font-family: "proximanova-regular";
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
+  margin-top: 2rem;
   font-family: var(--secondary-font-family);
   letter-spacing: 0em;
   text-align: left;
-  text-transform: capitalize;
   color: #2F4775;
 }
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
   h2.article__title {
     font-family: "proximanova-regular";
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1.2;
     font-family: var(--secondary-font-family);
-    margin-top: 2rem;
+    margin-top: 0;
   }
 }
 

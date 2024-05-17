@@ -76,7 +76,6 @@
         @include use-text-style('heading-3');
         font-family: var(--secondary-font-family) !important;        
         text-align: left;
-        text-transform: capitalize;
         @media(--sm){
             @include use-text-style('heading-1-alt');
         }

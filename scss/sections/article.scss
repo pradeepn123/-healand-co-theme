@@ -65,16 +65,16 @@ svg.link__prev_chevron path {
 }
 
 h2.article__title {
-    @include use-text-style('heading-1');
+    @include use-text-style('heading-mob');
+    margin-top: 2rem;
     font-family: var(--secondary-font-family);
     letter-spacing: 0em;
     text-align: left;
-    text-transform: capitalize;
     color: colors.$dark-blue;
-    @media screen and (max-width: 767px){
-        @include use-text-style('heading-mob');
+    @media screen and (min-width: 768px){
+        @include use-text-style('heading-1');
         font-family: var(--secondary-font-family);
-        margin-top: 2rem;
+       margin-top: 0;
     }
 }
 
