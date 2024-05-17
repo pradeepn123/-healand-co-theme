@@ -53,6 +53,13 @@
     "landing_page_image_with_description_A7N4YH": {
       "type": "landing-page-image-with-description",
       "blocks": {
+        "text_47ErRe": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
         "text_jQ7rrn": {
           "type": "text",
           "repeater": "{{ page.metafields.custom.landing_page_image_with_description.value }}",
@@ -61,10 +68,19 @@
             "heading": "{{ block.repeater.heading.value }}",
             "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
           }
+        },
+        "text_AxYFk7": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
         }
       },
       "block_order": [
-        "text_jQ7rrn"
+        "text_47ErRe",
+        "text_jQ7rrn",
+        "text_AxYFk7"
       ],
       "settings": {
         "section_layout": "carousel",
@@ -109,6 +125,9 @@
       "block_order": [
         "text_wwiKJY"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
@@ -116,8 +135,8 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel-overflow",
         "title": "{{ page.metafields.custom.landing_page_key_ingredients.value.section_heading.value }}",
-        "heading_size": "h5",
-        "mobile_title_size": 24,
+        "heading_size": "h2",
+        "mobile_title_size": 43,
         "alignment": "center",
         "desktop_columns": 2,
         "desktop_space_between_cards": 16,
@@ -261,7 +280,7 @@
         "text_i4QczC"
       ],
       "settings": {
-        "heading": "What medical experts are saying about\u2028Super Mushroom complex",
+        "heading": "What experts are saying:",
         "text": ""
       }
     },
