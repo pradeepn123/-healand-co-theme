@@ -10,7 +10,7 @@
     "checkoutRootDomain": "",
     "storefrontAccessToken": ""
   },
-  "tsPublished": 1716365721,
+  "tsPublished": 1716365871,
   "declaration": {
     "showPurpose": false,
     "showProvider": false,
@@ -335,7 +335,7 @@
     },
     "position": "bottom-center",
     "theme": "wired",
-    "revokable": false,
+    "revokable": true,
     "animateRevokable": false,
     "revokableReset": false,
     "revokableLogoUrl": "https:\/\/cdn.shopify.com\/s\/files\/1\/0436\/8993\/5006\/t\/108\/assets\/pandectes-reopen-logo.png?v=1705004815",
