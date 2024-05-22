@@ -6,7 +6,7 @@
         "header_teaser": "<p>{{ page.metafields.custom.landing_page_header_section.value.teaser_text | metafield_tag }}<\/p>",
         "header_text": "<p>{{ page.metafields.custom.landing_page_header_section.value.description | metafield_tag }}<\/p>",
         "btn_text": "<p>Get Offer<\/p>",
-        "btn_link": "{{ page.metafields.custom.landing_page_header_section.value.redirection_link.value }}"
+        "btn_link": "#shopify-section-template--17222041862302__landing_page_bundle_section_6G3dtP"
       }
     },
     "landing_page_main_product_PGnkxL": {
@@ -36,7 +36,7 @@
         "header_teaser": "{{ page.metafields.custom.landing_page_product_info.value.content_teaser_text.value }}",
         "header_text": "{{ page.metafields.custom.landing_page_product_info.value.content_text.value }}",
         "btn_text": "{{ page.metafields.custom.landing_page_product_info.value.button_text.value }}",
-        "btn_link": "{{ page.metafields.custom.landing_page_product_info.value.button_link.value }}"
+        "btn_link": "#shopify-section-template--17222041862302__landing_page_bundle_section_6G3dtP"
       }
     },
     "page": {
@@ -135,7 +135,7 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel-overflow",
         "title": "{{ page.metafields.custom.landing_page_key_ingredients.value.section_heading.value }}",
-        "heading_size": "h2",
+        "heading_size": "h6",
         "mobile_title_size": 43,
         "alignment": "center",
         "desktop_columns": 2,

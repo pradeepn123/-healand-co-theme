@@ -46,6 +46,29 @@
             margin-top: 8px;
         }
     }
+
+    carousel-component{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    carousel-component carousel-btn {
+        display: none;
+        @media(--sm){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: colors.$dark-blue;
+            width: 42px;
+            height: 42px;
+            border-radius: 50px;
+        }
+    }
+
+    carousel-component .logo-list__chevron{
+        color: white;
+    }
 } 
 
 

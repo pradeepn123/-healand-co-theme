@@ -4,6 +4,7 @@
 .landing-page-bundle-section {
   --price-grid-gap: 24px;
   --section-paddings: 40px;
+  --bundle-section-margin: 50px;
   --section-left-right-padding: 0;
   @custom-selector :--heading_width .info-compare__compare-section .section-header__content;
 }
@@ -29,9 +30,14 @@
   }
 }
 .landing-page-bundle-section__wrapper {
-  margin-top: var(--section-margin);
+  margin-top: var(--bundle-section-margin);
   padding: var(--section-paddings) 0;
   background: #2F4775;
+}
+@media (min-width: 1024px) {
+  .landing-page-bundle-section__wrapper {
+    margin-top: calc(var(--section-margin) * 2);
+  }
 }
 .landing-page-bundle-section__information {
   display: grid;

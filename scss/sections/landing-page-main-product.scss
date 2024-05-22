@@ -135,12 +135,14 @@
 	}
 
 	&__icon-text-wrapper {
-		@include mixins.container;
+		max-width: fit-content;
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		gap: var(--inner-content-spacing);
 
 		@media(--md) {
+			@include mixins.container;
 			flex-direction: row;
 			justify-content: space-between;
 			max-width: 100%;
@@ -195,6 +197,21 @@
 				width: 60px;
 				height: 60px;
 			}
+		}
+	}
+
+	&__desktop{
+		display: none;
+		@media(--md){
+			display: block;
+		}
+	}
+
+	&__mobile{
+		display: block;
+		margin-top: 16px;
+		@media(--md){
+			display: none;
 		}
 	}
 

@@ -14,6 +14,7 @@
 .landing-page-bundle-section{
     --price-grid-gap: 24px;
     --section-paddings: 40px;
+    --bundle-section-margin: 50px;
     --section-left-right-padding: 0;
     @media(--md){
         --section-paddings: 60px;
@@ -25,9 +26,12 @@
         @include mixins.container;   
     }
     &__wrapper{
-        margin-top: var(--section-margin);
+        margin-top: var(--bundle-section-margin);
         padding: var(--section-paddings) 0;
         background: colors.$dark-blue;
+        @media(--md){
+            margin-top: calc(var(--section-margin)*2);
+        }
     }
     &__information{
         @include mixins.grid(1,100px,100px);

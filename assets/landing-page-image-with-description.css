@@ -49,6 +49,40 @@
 .landing-page-image-with-description .text-image--image-with-description .text-image__description {
   margin-top: 8px;
 }
+.landing-page-image-with-description carousel-component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.landing-page-image-with-description carousel-component carousel-btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .landing-page-image-with-description carousel-component carousel-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #2F4775;
+    width: 42px;
+    height: 42px;
+    border-radius: 50px;
+  }
+}
+.landing-page-image-with-description carousel-component .logo-list__chevron {
+  color: white;
+}
 
 .text-image.text-image--image-with-description {
   text-align: center;
