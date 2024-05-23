@@ -23,7 +23,7 @@
         --section-left-right-padding: 48px;
     }
     &__information{
-        @include mixins.container;   
+        @include mixins.container;  
     }
     &__wrapper{
         margin-top: var(--bundle-section-margin);
@@ -36,13 +36,9 @@
     &__information{
         @include mixins.grid(1,100px,100px);
         row-gap: calc(var(--grid-row-gap-large)*2);
-        @media(--sm){
-            @include mixins.grid(2,100px,100px);
-            row-gap: calc(var(--grid-row-gap-large)*3);
-            column-gap: var(--grid-row-gap-large);
-        }
         @media(--md-large){
             @include mixins.grid(3,100px,100px);
+            align-items: center; 
             
         }
     }
@@ -143,14 +139,14 @@
 }
 
 .landing-bundle-sec-info{
+    --percentage-button-padding: 10px 20px;
+    --card-padding: 32px 40px;
     &__wrapper{
-        height: 100%;
         position: relative;    
     }
     &__content{
-        background: colors.$white;
         text-align: center;
-        padding: var(--section-padding);
+        padding: var(--card-padding);
         height: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -167,12 +163,11 @@
         margin-bottom: var(--setion-top-padding);
         padding-top: 14px;
         font-family: var(--primary-semibold-font-family);
-        min-height: 24px;
+  
         margin-bottom: 17px;
         @media(--sm){
             padding-top: 12px;
-            margin-bottom: 12px;
-            min-height: 41px;
+            margin-bottom: 12px;    
         }
     }
     &__button.button--primary{
@@ -191,7 +186,7 @@
         @include use-text-style('body-title');
         font-weight: 600;   
         @media(--sm){
-            min-height: 38px;
+        min-height: 38px;
         }     
     }
 
@@ -221,7 +216,7 @@
         position: absolute;
         top: -25px;
         right: 20px;
-        padding: 12px 14px; 
+        padding: var(--percentage-button-padding); 
         background: colors.$dark-blue;
         border-radius: 25px;
         border: 1px solid colors.$white;
@@ -249,9 +244,6 @@
     }
     &__free-shipping{
         margin-top: 24px;
-        @media(--sm){
-            min-height: 24px;
-        }
     }
     &__shopping-bag{
         display: flex;
@@ -275,14 +267,52 @@
         justify-content: center;
         text-transform: capitalize;
     }
-    &__block-1 .landing-bundle-sec-info__button{
-        background: colors.$grey;
+    &__block-1 {
+        .landing-bundle-sec-info__button{
+            background: colors.$light-blue;
+        }
+        .landing-bundle-sec-info__percentage-off{
+            background: colors.$white;
+            span{
+                color: colors.$dark-blue;
+            }
+        }
+    } 
+    &__block-2 {
+        .landing-bundle-sec-info__button{
+            background: colors.$light-blue;
+        }
+        .landing-bundle-sec-info__percentage-off{
+            background: colors.$white;
+            span{
+                color: colors.$dark-blue;   
+            }       
+        }
+        // .landing-bundle-sec-info__top-section .product__image{
+        //     @media(--sm){
+        //         min-height: 300px !important;
+        //     }
+        // }
     }
-    &__block-2 .landing-bundle-sec-info__button{
-        background: colors.$light-blue;
+    &__block-3 {
+        .landing-bundle-sec-info__button{
+            background: colors.$dark-blue;
+        }
+        // .landing-bundle-sec-info__top-section .product__image {
+        //    @media(--sm){
+        //     min-height: 506px !important;
+        //    }
+        // }
     }
-    &__block-3 .landing-bundle-sec-info__button{
-        background: colors.$dark-blue;
+    &__block-1 .landing-bundle-sec-info__content , &__block-2 .landing-bundle-sec-info__content{
+        background: colors.$light-grey;
+    }
+    &__block-3 .landing-bundle-sec-info__content{
+        background: colors.$white;
+    }
+
+    .responsive-image__image {
+        object-fit: contain;
     }
 }
 
@@ -310,3 +340,4 @@
         margin: 0 auto;
     }
 }
+

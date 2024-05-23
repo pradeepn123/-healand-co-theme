@@ -205,21 +205,34 @@
     max-width: calc(1680px - 2 * var(--base-margin));
   }
 }
-.landing-page-header__left-content {
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 16px var(--gsc-container-padding);
+@media (min-width: 768px) {
+  .landing-page-header__left-content {
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 16px var(--gsc-container-padding);
+  }
 }
-.landing-page-header__right-content {
-  -ms-flex-preferred-size: 65%;
-      flex-basis: 65%;
+@media (min-width: 768px) {
+  .landing-page-header__right-content {
+    -ms-flex-preferred-size: 65%;
+        flex-basis: 65%;
+  }
 }
 .landing-page-header__logo {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+.landing-page-header__content--mobile .text-with-button__container {
+  padding: 0;
+}
+.landing-page-header__content--mobile .landing-page-header__right-content .button svg {
+  stroke: #fff;
+}
+.landing-page-header__content--mobile .landing-page-header__right-content .button path {
+  fill: #fff;
 }
 
 .sticky_header_landingpage {

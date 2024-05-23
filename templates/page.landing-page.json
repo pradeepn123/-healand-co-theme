@@ -36,7 +36,7 @@
         "header_teaser": "{{ page.metafields.custom.landing_page_product_info.value.content_teaser_text.value }}",
         "header_text": "{{ page.metafields.custom.landing_page_product_info.value.content_text.value }}",
         "btn_text": "{{ page.metafields.custom.landing_page_product_info.value.button_text.value }}",
-        "btn_link": "#shopify-section-template--17222041862302__landing_page_bundle_section_6G3dtP"
+        "btn_link": "{{ page.metafields.custom.landing_page_product_info.value.url.value }}"
       }
     },
     "page": {
@@ -135,7 +135,6 @@
         "section_spacing_bottom": 48,
         "section_layout": "carousel-overflow",
         "title": "{{ page.metafields.custom.landing_page_key_ingredients.value.section_heading.value }}",
-        "heading_size": "h6",
         "mobile_title_size": 43,
         "alignment": "center",
         "desktop_columns": 2,
@@ -296,6 +295,7 @@
             "button_label": "{{ block.repeater.button_label.value }}",
             "content": "<p>{{ block.repeater.content_info | metafield_tag }}<\/p>",
             "product": "{{ block.repeater.product.value }}",
+            "product_image_size": "{{ page.metafields.custom.landing_page_bundle_section | metafield_text: field: 'product_image_ratio' }}",
             "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>",
             "shipping_text": "{{ block.repeater.free_shipping_text.value }}"
           }
@@ -309,6 +309,7 @@
             "button_label": "",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
+            "product_image_size": "",
             "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
             "shipping_text": "free shipping"
           }
@@ -322,6 +323,7 @@
             "button_label": "",
             "content": "<p>$0.70 per day<\/p>",
             "product": "8-mushroom-immunity-tincture-500mg",
+            "product_image_size": "",
             "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
             "shipping_text": ""
           }
@@ -334,7 +336,7 @@
       ],
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.heading.value }}",
-        "text": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}"
+        "text": "<p>{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}<\/p>"
       }
     },
     "faq_section_4hkffF": {

@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./js/components/custom-carousel.js":
@@ -7,7 +8,6 @@
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -191,7 +191,6 @@ class CustomCarousel extends HTMLElement {
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -209,7 +208,6 @@ class CustomCarousel extends HTMLElement {
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -230,7 +228,6 @@ class CustomCarousel extends HTMLElement {
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -251,13 +248,11 @@ class CustomCarousel extends HTMLElement {
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
 /* harmony import */ var _bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bundleTabsSection */ "./js/sections/bundleTabsSection.js");
 /* harmony import */ var _hideRewards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hideRewards */ "./js/sections/hideRewards.js");
 /* harmony import */ var JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/import-custom-elements */ "./js/components/import-custom-elements.js");
 /* harmony import */ var _readmore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./readmore */ "./js/sections/readmore.js");
-/* harmony import */ var _readmore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_readmore__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _section_scroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./section-scroll */ "./js/sections/section-scroll.js");
 //global imports here
 
@@ -274,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_bundleTabsSection__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_hideRewards__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,JsComponents_import_custom_elements__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  _readmore__WEBPACK_IMPORTED_MODULE_4___default()();
+  (0,_readmore__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_section_scroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
 });
 
@@ -286,7 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -319,20 +313,23 @@ var hideReward = () => {
 /*!*********************************!*\
   !*** ./js/sections/readmore.js ***!
   \*********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-document.addEventListener('DOMContentLoaded', () => {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
   var readMoreParentContent = document.querySelector("#show_more_prodDescription");
   var readMoreBTN = document.querySelector('#readMore_btn');
   var readLessContent = document.querySelector("#show_less_prodDescription");
   var readLessBTN = document.querySelector('#readLess_btn');
-  readMoreBTN.addEventListener('click', () => {
+  readMoreBTN === null || readMoreBTN === void 0 || readMoreBTN.addEventListener('click', () => {
     readMoreBTN.style.display = 'none';
     readMoreParentContent.style.display = 'none';
     readLessBTN.style.display = 'block';
     readLessContent.style.display = 'block';
   });
-  readLessBTN.addEventListener('click', () => {
+  readLessBTN === null || readLessBTN === void 0 || readLessBTN.addEventListener('click', () => {
     readLessBTN.style.display = 'none';
     readLessContent.style.display = 'none';
     readMoreBTN.style.display = 'inline';
@@ -348,13 +345,12 @@ document.addEventListener('DOMContentLoaded', () => {
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/scroll-on-click */ "./js/components/scroll-on-click.js");
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.text-with-button__CTA', '.landing-page-bundle-section', 200));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.text-with-button__CTA', '.landing-page-bundle-section', 150));
 
 /***/ })
 

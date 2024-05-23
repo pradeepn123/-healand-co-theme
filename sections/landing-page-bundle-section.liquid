@@ -4,6 +4,7 @@
     assign options = section.settings    
     assign heading = options.heading
     assign text = options.text
+    assign productVariant = page.metafields.custom.landing_page_bundle_section
 -%}
 
 <div class="landing-page-bundle-section">
@@ -18,7 +19,7 @@
             </div>
             <div class="landing-page-bundle-section__information">
                 {% for block in section.blocks %}
-                    {% render 'landing-bundle-sec-info', block: block , block_index: forloop.index %}
+                    {% render 'landing-bundle-sec-info', block: block , block_index: forloop.index , product: productVariant %}
                 {% endfor %}
             </div>
         </div>
@@ -74,6 +75,11 @@
                     "type": "product",
                     "id": "product",
                     "label": "Choose Product"
+                },
+                {
+                    "type": "text",
+                    "id": "product_image_size",
+                    "label": "product image ratio"
                 },
                 {
                     "type": "richtext",

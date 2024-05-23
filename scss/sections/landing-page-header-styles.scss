@@ -59,19 +59,43 @@
     }
 
     &__left-content {
-      flex-basis: 35%;
+      @media(--sm){
+        flex-basis: 35%;
       align-content: center;
       padding: 16px var(--gsc-container-padding);
+      }
     }
 
     &__right-content {
-      flex-basis: 65%;
+      @media(--sm){
+        flex-basis: 65%;
+      }
     }
 
     &__logo {
       width: fit-content;
     }   
 
+    &__content{
+      &--mobile{
+        .text-with-button{
+          &__container{
+            padding: 0;
+          }
+        }
+        .landing-page-header__right-content{
+          .button{
+            svg{
+              stroke: colors.$white;
+            }
+            path{
+              fill: colors.$white;
+            }
+          }
+        }
+      }
+      
+    }
 }
 
 .sticky_header_landingpage{

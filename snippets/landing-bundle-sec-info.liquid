@@ -8,7 +8,7 @@
     assign product_image = options.product.featured_image
     assign description = options.description
     assign freeShipping = options.shipping_text
-    
+
 -%}
 <div class="landing-bundle-sec-info landing-bundle-sec-info__block-{{block_index}}">
     <div class="landing-bundle-sec-info__wrapper">
@@ -19,9 +19,7 @@
                         <span class="">{{ tag_heading }}</span>
                     </div>
                 {% endif %}
-                {% if heading %}
                     <h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>
-                {% endif %}
                 {% if button_label %}
                     <button class="landing-bundle-sec-info__button button--primary {% if heading == blank %}landing-bundle-sec-info__button-top{% endif %}">
                         {{ button_label }}
@@ -30,19 +28,25 @@
                 {% if content %}
                     <span class="landing-bundle-sec-info__gift-price">{{ content }}</span>
                 {% endif %}
-                {% render 'shopify-responsive-image', image: product_image, aspect_ratio: 1.2 %}
+                {% assign compare_blocks = page.metafields.custom.landing_page_bundle_section.value %}
+                 {% assign current_selected_compare_block = '' %}
+                {% for compare_block in compare_blocks %}
+                    {% if forloop.index == block_index %}
+                    {% assign current_selected_compare_block = compare_block %}
+                    {% endif %}
+                {% endfor %} 
+                {% assign currentVariant = current_selected_compare_block.select_product_variant.value %}
+                {% assign ratio = current_selected_compare_block.product_image_ratio  | plus: 0  %}
+                {% if currentVariant.featured_image.src != blank %}
+                    {% render 'shopify-responsive-image', image: currentVariant.featured_image.src, aspect_ratio: ratio , wrapper_class: "product__image" %}
+                {% else %}
+                    {% render 'shopify-responsive-image', image: product_image, aspect_ratio: ratio  , wrapper_class: "product__image" %}
+                {% endif %}
                 <div class="landing-bundle-sec-info__description_wrapper">
                     {% if description %}
                         <div class="landing-bundle-sec-info__description">{{ description }}</div>
                     {% endif %}
-                    <div class="landing-bundle-sec-info__middle-section">
-                        {% assign compare_blocks = page.metafields.custom.landing_page_bundle_section.value %}
-                        {% assign current_selected_compare_block = '' %}
-                        {% for compare_block in compare_blocks %}
-                            {% if forloop.index == block_index %}
-                            {% assign current_selected_compare_block = compare_block %}
-                            {% endif %}
-                        {% endfor %} 
+                    <div class="landing-bundle-sec-info__middle-section">    
         
                         {% assign current_selected_bullet_points = current_selected_compare_block.content_info_bullet.value %}
                         <div class="landing-bundle-sec-info__bullet-points">
@@ -59,8 +63,13 @@
 
             <div class="landing-bundle-sec-info__bottom-section">
                 <div class="landing-bundle-sec-info__price">
-                    {% if product.compare_at_price > product.price %}<div class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</div>{% endif %}
-                    <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
+                    {% if currentVariant != blank %}
+                        {% if currentVariant.compare_at_price > currentVariant.price %}<div class="landing-bundle-sec-info__compare-price">{{- currentVariant.compare_at_price | money -}}</div>{% endif %}
+                        <div class="landing-bundle-sec-info__origin-price">{{ currentVariant.price | money }} USD</div>    
+                    {% else %}
+                        {% if product.compare_at_price > product.price %}<div class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</div>{% endif %}
+                        <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
+                    {% endif %}
                 </div>
                 {% assign product_id = product.selected_or_first_available_variant.id %}
                 <a class="button button--primary" href="https://healco.com/cart/clear?return_to=/cart/add?items[][id]={{product_id}}%26items[][quantity]=1%26return_to=/checkout">checkout
@@ -68,14 +77,14 @@
                         <path d="M16.3536 4.15043C16.5488 3.95517 16.5488 3.63858 16.3536 3.44332L13.1716 0.261341C12.9763 0.0660789 12.6597 0.0660789 12.4645 0.261341C12.2692 0.456603 12.2692 0.773186 12.4645 0.968448L15.2929 3.79688L12.4645 6.6253C12.2692 6.82056 12.2692 7.13715 12.4645 7.33241C12.6597 7.52767 12.9763 7.52767 13.1716 7.33241L16.3536 4.15043ZM0 4.29688H16V3.29688H0V4.29688Z" fill="white"/>
                     </svg>
                 </a>
-                <div class="landing-bundle-sec-info__free-shipping">
-                    {% if freeShipping != blank %}
+                {% if freeShipping != blank %}
+                    <div class="landing-bundle-sec-info__free-shipping">
                         <div class="landing-bundle-sec-info__shopping-bag">
                             <div>{%- render 'icon', icon_name: 'shoppingBag', class: 'shopping-bag__icon' -%}</div>
                             <div>{{ freeShipping }}</div>
                         </div>
-                    {% endif %} 
-                </div>
+                    </div>
+                {% endif %} 
             </div>
         </div>
     </div>
