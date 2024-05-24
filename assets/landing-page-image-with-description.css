@@ -75,9 +75,14 @@
         -ms-flex-align: center;
             align-items: center;
     background-color: #2F4775;
-    width: 47px;
+    width: 54px;
     height: 47px;
     border-radius: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .landing-page-image-with-description carousel-component carousel-btn {
+    width: 47px;
   }
 }
 .landing-page-image-with-description carousel-component .logo-list__chevron {

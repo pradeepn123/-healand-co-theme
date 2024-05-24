@@ -24,12 +24,10 @@
     .main_title_key {
         display: flex;
         justify-content: center;
-        gap: 0.8em;
         @media(--sm){
             gap: 2.6em;
         }
         @media(max-width:480px){
-            gap: 2.8rem;
             justify-content: space-around;
         }
         h4{

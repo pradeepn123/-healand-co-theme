@@ -19,7 +19,7 @@
                         <span class="">{{ tag_heading }}</span>
                     </div>
                 {% endif %}
-                    <h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>
+                {% if heading  != blank %}<h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>{% endif %}
                 {% if button_label %}
                     <button class="landing-bundle-sec-info__button button--primary {% if heading == blank %}landing-bundle-sec-info__button-top{% endif %}">
                         {{ button_label }}

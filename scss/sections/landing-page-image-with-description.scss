@@ -60,9 +60,12 @@
             justify-content: center;
             align-items: center;
             background-color: colors.$dark-blue;
-            width: 47px;
+            width: 54px;
             height: 47px;
             border-radius: 50px;
+        }
+        @media(--md){
+            width: 47px;
         }
     }
 

@@ -33,7 +33,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 0.8em;
 }
 @media (min-width: 768px) {
   .single_key_ingredients_main .main_title_key, .bundle_key_ingredients_main .main_title_key {
@@ -42,7 +41,6 @@
 }
 @media (max-width: 480px) {
   .single_key_ingredients_main .main_title_key, .bundle_key_ingredients_main .main_title_key {
-    gap: 2.8rem;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
