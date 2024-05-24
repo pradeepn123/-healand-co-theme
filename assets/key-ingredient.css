@@ -245,6 +245,11 @@
   }
 }
 
+@media screen and (max-width: 520px) {
+  .key_ingredient_section .main_title_key h4 {
+    font-size: 32px !important;
+  }
+}
 @media screen and (max-width: 375px) {
   .key_ingredient_section .main_title_key h4 {
     font-size: 20px !important;

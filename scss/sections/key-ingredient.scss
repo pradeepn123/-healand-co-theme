@@ -197,6 +197,9 @@
     }
 }
 .key_ingredient_section .main_title_key h4{
+    @media screen and (max-width: 520px){
+        font-size: 32px !important;
+    }
     @media screen and (max-width: 375px){
         font-size: 20px !important;
     }
