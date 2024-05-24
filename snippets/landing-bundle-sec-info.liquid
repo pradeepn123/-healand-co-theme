@@ -35,7 +35,6 @@
                     {% assign current_selected_compare_block = compare_block %}
                     {% endif %}
                 {% endfor %} 
-                {{ options.product | json}}
                 {% assign currentVariant = current_selected_compare_block.select_product_variant.value %}
                 {% assign ratio = current_selected_compare_block.product_image_ratio  | plus: 0  %}
                 {% if currentVariant.featured_image.src != blank %}
