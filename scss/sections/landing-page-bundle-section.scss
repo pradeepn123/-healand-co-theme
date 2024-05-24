@@ -110,9 +110,7 @@
     
         &__description-wrap{
             display: flex;
-            // margin-bottom: var(--grid-row-gap);
             column-gap: var(--setion-top-padding);
-            // margin-top: var(--setion-top-padding);
             @media(--sm){
                 align-items: center;
             }
@@ -134,7 +132,6 @@
     .section-header--compare-section {
         text-align: center;
     }
-
     .section-header__title{
         width: 90%;
         margin: 0 auto;

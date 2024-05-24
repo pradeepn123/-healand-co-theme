@@ -1196,13 +1196,16 @@ body.hamburger--open[scroll-y-offf] {
 
 body .tl-custom-position{
     position: absolute !important;
-    bottom: 110px !important;
-    left: auto !important;
-    right: 20px !important;
+    /* bottom: 110px !important; */
+    left: 20px !important;
+    right: 0px !important;
+    width: fit-content;
 }
 
 @media(min-width:768px){
     body .tl-custom-position{
         bottom: 120px !important;
+        right: 20px !important;
+        left: auto !important;
     }
 }
