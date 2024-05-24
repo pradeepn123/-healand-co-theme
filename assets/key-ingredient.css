@@ -234,6 +234,12 @@
 
 @media (max-width: 480px) {
   .single_key_ingredients_main .carousel-btn {
+    width: 5.1rem;
+    height: 4.1rem;
+  }
+}
+@media (max-width: 3750px) {
+  .single_key_ingredients_main .carousel-btn {
     width: 4.1rem;
     height: 4.1rem;
   }
