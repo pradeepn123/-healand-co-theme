@@ -237,7 +237,7 @@
 }
 
 .landing-bundle-sec-info {
-  --percentage-button-padding: 10px 20px;
+  --percentage-button-padding: 10px 30px;
   --card-padding: 32px 40px;
 }
 .landing-bundle-sec-info__wrapper {
@@ -430,6 +430,7 @@
 }
 .landing-bundle-sec-info__block-1 .landing-bundle-sec-info__percentage-off {
   background: #fff;
+  border: 1px solid #2F4775;
 }
 .landing-bundle-sec-info__block-1 .landing-bundle-sec-info__percentage-off span {
   color: #2F4775;
@@ -439,6 +440,7 @@
 }
 .landing-bundle-sec-info__block-2 .landing-bundle-sec-info__percentage-off {
   background: #fff;
+  border: 1px solid #2F4775;
 }
 .landing-bundle-sec-info__block-2 .landing-bundle-sec-info__percentage-off span {
   color: #2F4775;

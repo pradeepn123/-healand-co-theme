@@ -139,7 +139,7 @@
 }
 
 .landing-bundle-sec-info{
-    --percentage-button-padding: 10px 20px;
+    --percentage-button-padding: 10px 30px;
     --card-padding: 32px 40px;
     &__wrapper{
         position: relative;    
@@ -273,6 +273,7 @@
         }
         .landing-bundle-sec-info__percentage-off{
             background: colors.$white;
+            border: 1px solid colors.$dark-blue;
             span{
                 color: colors.$dark-blue;
             }
@@ -280,29 +281,20 @@
     } 
     &__block-2 {
         .landing-bundle-sec-info__button{
-            background: colors.$light-blue;
+            background: colors.$light-blue;         
         }
         .landing-bundle-sec-info__percentage-off{
             background: colors.$white;
+            border: 1px solid colors.$dark-blue;
             span{
                 color: colors.$dark-blue;   
             }       
         }
-        // .landing-bundle-sec-info__top-section .product__image{
-        //     @media(--sm){
-        //         min-height: 300px !important;
-        //     }
-        // }
     }
     &__block-3 {
         .landing-bundle-sec-info__button{
             background: colors.$dark-blue;
         }
-        // .landing-bundle-sec-info__top-section .product__image {
-        //    @media(--sm){
-        //     min-height: 506px !important;
-        //    }
-        // }
     }
     &__block-1 .landing-bundle-sec-info__content , &__block-2 .landing-bundle-sec-info__content{
         background: colors.$light-grey;
