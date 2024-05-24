@@ -16,6 +16,8 @@
     --section-paddings: 40px;
     --bundle-section-margin: 50px;
     --section-left-right-padding: 0;
+    --bundle-section-paddings: 100px;
+    --section-padding-mobile: 60px;
     @media(--md){
         --section-paddings: 60px;
     }
@@ -26,11 +28,10 @@
         @include mixins.container;  
     }
     &__wrapper{
-        margin-top: var(--bundle-section-margin);
-        padding: var(--section-paddings) 0;
+        padding: var(--section-padding-mobile) 0;
         background: colors.$dark-blue;
         @media(--md){
-            margin-top: calc(var(--section-margin)*2);
+            padding: var(--bundle-section-paddings) 0;
         }
     }
     &__information{
@@ -294,6 +295,9 @@
     &__block-3 {
         .landing-bundle-sec-info__button{
             background: colors.$dark-blue;
+        }
+        .landing-bundle-sec-info__heading{
+            @include use-text-style('heading-1-alt');
         }
     }
     &__block-1 .landing-bundle-sec-info__content , &__block-2 .landing-bundle-sec-info__content{
