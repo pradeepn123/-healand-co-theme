@@ -35,6 +35,7 @@
                     {% assign current_selected_compare_block = compare_block %}
                     {% endif %}
                 {% endfor %} 
+                {{ options.product | json}}
                 {% assign currentVariant = current_selected_compare_block.select_product_variant.value %}
                 {% assign ratio = current_selected_compare_block.product_image_ratio  | plus: 0  %}
                 {% if currentVariant.featured_image.src != blank %}
@@ -71,7 +72,11 @@
                         <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
                     {% endif %}
                 </div>
-                {% assign product_id = product.selected_or_first_available_variant.id %}
+                {% if currentVariant != blank %}
+                    {% assign product_id = currentVariant.id %}
+                {% else %}
+                    {% assign product_id = product.selected_or_first_available_variant.id %}
+                {% endif %}
                 <a class="button button--primary" href="https://healco.com/cart/clear?return_to=/cart/add?items[][id]={{product_id}}%26items[][quantity]=1%26return_to=/checkout">checkout
                     <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.3536 4.15043C16.5488 3.95517 16.5488 3.63858 16.3536 3.44332L13.1716 0.261341C12.9763 0.0660789 12.6597 0.0660789 12.4645 0.261341C12.2692 0.456603 12.2692 0.773186 12.4645 0.968448L15.2929 3.79688L12.4645 6.6253C12.2692 6.82056 12.2692 7.13715 12.4645 7.33241C12.6597 7.52767 12.9763 7.52767 13.1716 7.33241L16.3536 4.15043ZM0 4.29688H16V3.29688H0V4.29688Z" fill="white"/>
