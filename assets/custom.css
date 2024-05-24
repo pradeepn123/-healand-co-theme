@@ -1202,10 +1202,16 @@ body .tl-custom-position{
     width: fit-content;
 }
 
+.tl-dropdown.bottom-right {
+    right: -34px !important;
+}
 @media(min-width:768px){
     body .tl-custom-position{
         bottom: 120px !important;
         right: 20px !important;
         left: auto !important;
     }
+    .tl-dropdown.bottom-right {
+        right: 0 !important;
+    } 
 }
