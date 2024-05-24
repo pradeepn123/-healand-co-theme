@@ -3,16 +3,6 @@
     "featured-blog-posts": {
       "type": "featured-blog-post",
       "blocks": {
-        "featured_post_pcYcen": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/feeling-stressed-try-these-7-foods-for-stress-relief",
-            "article_title_color": "#ffffff",
-            "article_text_color": "",
-            "read_more_text_color": "",
-            "image": "shopify:\/\/shop_images\/AdobeStock_274212271.jpg"
-          }
-        },
         "featured_post_9fQVtb": {
           "type": "featured_post",
           "settings": {
@@ -21,6 +11,16 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff",
             "image": "shopify:\/\/shop_images\/Berberine.jpg"
+          }
+        },
+        "featured_post_pcYcen": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/feeling-stressed-try-these-7-foods-for-stress-relief",
+            "article_title_color": "#ffffff",
+            "article_text_color": "",
+            "read_more_text_color": "",
+            "image": "shopify:\/\/shop_images\/AdobeStock_274212271.jpg"
           }
         },
         "featured_post_F4XAxa": {
@@ -34,8 +34,8 @@
         }
       },
       "block_order": [
-        "featured_post_pcYcen",
         "featured_post_9fQVtb",
+        "featured_post_pcYcen",
         "featured_post_F4XAxa"
       ],
       "settings": {
