@@ -30,12 +30,23 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
+        },
+        "featured_post_pcYcen": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/feeling-stressed-try-these-7-foods-for-stress-relief",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": "",
+            "image": "shopify:\/\/shop_images\/AdobeStock_274212271.jpg"
+          }
         }
       },
       "block_order": [
         "featured_post_9fQVtb",
         "featured_post_F4XAxa",
-        "featured_post_L7Fc6z"
+        "featured_post_L7Fc6z",
+        "featured_post_pcYcen"
       ],
       "settings": {
         "color_scheme": "default",
