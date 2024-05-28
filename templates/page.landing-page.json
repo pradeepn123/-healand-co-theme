@@ -211,6 +211,13 @@
     "landing_page_compare_section_QTFTk3": {
       "type": "landing-page-compare-section",
       "blocks": {
+        "other_TznBYa": {
+          "type": "other",
+          "settings": {
+            "description_other": "",
+            "info_type": ""
+          }
+        },
         "other_LzCRMd": {
           "type": "other",
           "repeater": "{{ page.metafields.custom.landing_page_compare_section.value.landing_page_compare_sec_inner_blocks.value }}",
@@ -240,6 +247,7 @@
         }
       },
       "block_order": [
+        "other_TznBYa",
         "other_LzCRMd",
         "other_HxKin6",
         "other_XtWpLD"
@@ -279,6 +287,7 @@
       "block_order": [
         "text_i4QczC"
       ],
+      "disabled": true,
       "settings": {
         "heading": "What experts are saying:",
         "text": ""
