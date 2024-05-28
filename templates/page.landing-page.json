@@ -82,6 +82,7 @@
         "text_jQ7rrn",
         "text_AxYFk7"
       ],
+      "disabled": true,
       "settings": {
         "section_layout": "carousel",
         "desktop_columns": 4,
@@ -182,7 +183,7 @@
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
         "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
-        "image": "shopify:\/\/shop_images\/Rectangle_356.jpg"
+        "image": "shopify:\/\/shop_images\/Untitled_design_17.png"
       }
     },
     "171568127909df6d51": {
