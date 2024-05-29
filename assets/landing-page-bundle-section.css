@@ -43,6 +43,7 @@
 @media (min-width: 1024px) {
   .landing-page-bundle-section__wrapper {
     padding: var(--bundle-section-paddings) 0;
+    margin-top: calc(var(--section-margin) * 2);
   }
 }
 .landing-page-bundle-section__information {

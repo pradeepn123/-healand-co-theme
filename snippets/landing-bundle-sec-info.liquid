@@ -8,6 +8,13 @@
     assign product_image = options.product.featured_image
     assign description = options.description
     assign freeShipping = options.shipping_text
+    assign price = product.price | default: 0
+
+    if settings.show_currency_code
+        assign money_price = price | money_with_currency
+    else
+        assign money_price = price | money
+    endif
 
 -%}
 <div class="landing-bundle-sec-info landing-bundle-sec-info__block-{{block_index}}">
@@ -19,24 +26,31 @@
                         <span class="">{{ tag_heading }}</span>
                     </div>
                 {% endif %}
+                
                 {% if heading  != blank %}<h3 class="landing-bundle-sec-info__heading">{{ heading }}</h3>{% endif %}
+
                 {% if button_label %}
                     <button class="landing-bundle-sec-info__button button--primary {% if heading == blank %}landing-bundle-sec-info__button-top{% endif %}">
                         {{ button_label }}
                     </button>
                 {% endif %}
+
                 {% if content %}
                     <span class="landing-bundle-sec-info__gift-price">{{ content }}</span>
                 {% endif %}
+                
                 {% assign compare_blocks = page.metafields.custom.landing_page_bundle_section.value %}
-                 {% assign current_selected_compare_block = '' %}
+                {% assign current_selected_compare_block = '' %}
+                
                 {% for compare_block in compare_blocks %}
                     {% if forloop.index == block_index %}
                     {% assign current_selected_compare_block = compare_block %}
                     {% endif %}
                 {% endfor %} 
+                
                 {% assign currentVariant = current_selected_compare_block.select_product_variant.value %}
                 {% assign ratio = current_selected_compare_block.product_image_ratio  | plus: 0  %}
+
                 {% if currentVariant.featured_image.src != blank %}
                     {% render 'shopify-responsive-image', image: currentVariant.featured_image.src, aspect_ratio: ratio , wrapper_class: "product__image" %}
                 {% else %}
@@ -64,11 +78,16 @@
             <div class="landing-bundle-sec-info__bottom-section">
                 <div class="landing-bundle-sec-info__price">
                     {% if currentVariant != blank %}
+                        {% if settings.show_currency_code %}
+                            {% assign currentVariant_price = currentVariant.price | money_with_currency %}
+                        {% else %}
+                            {% assign currentVariant_price = currentVariant.price | money %}
+                        {% endif %}
                         {% if currentVariant.compare_at_price > currentVariant.price %}<div class="landing-bundle-sec-info__compare-price">{{- currentVariant.compare_at_price | money -}}</div>{% endif %}
-                        <div class="landing-bundle-sec-info__origin-price">{{ currentVariant.price | money }} USD</div>    
+                        <div class="landing-bundle-sec-info__origin-price">{{ currentVariant_price }}</div>    
                     {% else %}
                         {% if product.compare_at_price > product.price %}<div class="landing-bundle-sec-info__compare-price">{{- product.compare_at_price | money -}}</div>{% endif %}
-                        <div class="landing-bundle-sec-info__origin-price">{{ product.price | money }} USD</div>
+                        <div class="landing-bundle-sec-info__origin-price">{{ money_price }}</div>
                     {% endif %}
                 </div>
                 {% if currentVariant != blank %}

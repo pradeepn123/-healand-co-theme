@@ -10,7 +10,7 @@
 
 /* harmony import */ var JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/scroll-on-click */ "./js/components/scroll-on-click.js");
 
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.text-with-button__CTA', '.landing-page-bundle-section', 150));
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.text-with-button__CTA', '.landing-page-bundle-section', 100));
 
 /***/ })
 
