@@ -80,6 +80,9 @@
                     display: block;
                 }
                 display: none;
+				img{
+					cursor: pointer;
+				}
             }
         }
         .carousel__container.swiper-initialized{

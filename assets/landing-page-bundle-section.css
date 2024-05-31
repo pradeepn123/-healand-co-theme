@@ -39,6 +39,7 @@
 .landing-page-bundle-section__wrapper {
   padding: var(--section-padding-mobile) 0;
   background: #2F4775;
+  margin-top: var(--section-margin);
 }
 @media (min-width: 1024px) {
   .landing-page-bundle-section__wrapper {
@@ -257,8 +258,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   height: 100%;
@@ -274,6 +273,12 @@
 @media (min-width: 768px) {
   .landing-bundle-sec-info__content {
     padding: var(--card-padding-desktop);
+  }
+}
+@media (min-width: 1200px) {
+  .landing-bundle-sec-info__content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 .landing-bundle-sec-info__heading {
