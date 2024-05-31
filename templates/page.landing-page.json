@@ -150,7 +150,7 @@
         "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4": {
           "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
-            "publishId": "bsreeh70cmlyd"
+            "publishId": "{{ page.metafields.custom.landing_page_tolstoy_id.value }}"
           }
         }
       },
