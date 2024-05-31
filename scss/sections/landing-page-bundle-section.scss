@@ -7,6 +7,8 @@
 
 @custom-selector :--button .landing-bundle-sec-info__content .button;
 @custom-selector :--image .landing-bundle-sec-info__wrapper .responsive-image__wrapper;
+@custom-selector :--image-desktop .landing-bundle-sec-info__wrapper .responsive-image__wrapper.desktop;
+@custom-selector :--image-mobile .landing-bundle-sec-info__wrapper .responsive-image__wrapper.mobile;
 @custom-selector :--title .landing-page-bundle-section__heading .section-header__title;
 @custom-selector :--sub_title .landing-page-bundle-section__heading .section-header__content p;  
 @custom-selector :--section-header_content_width .section-header--bundle-section-center .section-header__content;  
@@ -275,6 +277,18 @@
 
     :--image{
         height: auto !important;
+    }
+    :--image-desktop{
+        display: none;
+        @media(--md-large){
+            display: block;
+        }
+    }
+    :--image-mobile{
+        display: block;
+        @media(--md-large){
+            display: none;
+        }
     }
     :--button{
         margin: 0 auto;

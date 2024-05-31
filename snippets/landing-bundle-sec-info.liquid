@@ -50,12 +50,16 @@
                 
                 {% assign currentVariant = current_selected_compare_block.select_product_variant.value %}
                 {% assign ratio = current_selected_compare_block.product_image_ratio  | plus: 0  %}
-
+                {% assign mobile_ratio = current_selected_compare_block.product_mobile_image_ratio  | plus: 0 %}
+                
                 {% if currentVariant.featured_image.src != blank %}
-                    {% render 'shopify-responsive-image', image: currentVariant.featured_image.src, aspect_ratio: ratio , wrapper_class: "product__image" %}
+                    {% render 'shopify-responsive-image', image: currentVariant.featured_image.src, aspect_ratio: ratio , wrapper_class: "product__image desktop" %}
+                    {% render 'shopify-responsive-image', image: currentVariant.featured_image.src, aspect_ratio: mobile_ratio , wrapper_class: "product__image mobile" %}
                 {% else %}
-                    {% render 'shopify-responsive-image', image: product_image, aspect_ratio: ratio  , wrapper_class: "product__image" %}
+                    {% render 'shopify-responsive-image', image: product_image, aspect_ratio: ratio, wrapper_class: "product__image desktop" %}
+                    {% render 'shopify-responsive-image', image: product_image, aspect_ratio: mobile_ratio, wrapper_class: "product__image mobile" %}
                 {% endif %}
+
                 <div class="landing-bundle-sec-info__description_wrapper">
                     {% if description %}
                         <div class="landing-bundle-sec-info__description">{{ description }}</div>

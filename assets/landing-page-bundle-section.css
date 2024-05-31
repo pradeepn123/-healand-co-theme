@@ -442,6 +442,22 @@
 .landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper) {
   height: auto !important;
 }
+.landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper.desktop) {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper.desktop) {
+    display: block;
+  }
+}
+.landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper.mobile) {
+  display: block;
+}
+@media (min-width: 1200px) {
+  .landing-bundle-sec-info :is(.landing-bundle-sec-info__wrapper .responsive-image__wrapper.mobile) {
+    display: none;
+  }
+}
 .landing-bundle-sec-info :is(.landing-bundle-sec-info__content .button) {
   margin: 0 auto;
   width: -webkit-fit-content;
