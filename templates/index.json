@@ -645,6 +645,27 @@
         "social_product_id": "none",
         "social_widget_type": "none"
       }
+    },
+    "171719212547154637": {
+      "type": "apps",
+      "blocks": {
+        "tolstoy_shoppable_video_ugc_carousel_block_gkPcVg": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "bsreeh70cmlyd"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_ugc_carousel_block_gkPcVg"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "custom_liquid": ""
+      }
     }
   },
   "order": [
@@ -659,6 +680,7 @@
     "e67794d1-b35b-4d67-bc2c-48ee9d1bba11",
     "a439ae74-a95a-4922-bad6-34914c4586e7",
     "1688623969ca5b3d7b",
-    "social_widget_2736"
+    "social_widget_2736",
+    "171719212547154637"
   ]
 }

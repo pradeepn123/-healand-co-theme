@@ -429,6 +429,12 @@
         "mobile_height": 100,
         "show_separator": false
       }
+    },
+    "tolstoy_carousel_gYeh98": {
+      "type": "tolstoy-carousel",
+      "settings": {
+        "publishId": "bsreeh70cmlyd"
+      }
     }
   },
   "order": [
@@ -446,6 +452,7 @@
     "landing_page_testimonials_MrGMLF",
     "landing_page_bundle_section_6G3dtP",
     "faq_section_4hkffF",
-    "spacer_H4wqi4"
+    "spacer_H4wqi4",
+    "tolstoy_carousel_gYeh98"
   ]
 }
