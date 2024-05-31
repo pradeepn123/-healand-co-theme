@@ -194,10 +194,17 @@
             "product": "{{ page.metafields.custom.okendo_review_product_id.value }}",
             "widget_type": "reviews_widget"
           }
+        },
+        "tolstoy_shoppable_video_ugc_carousel_block_z93r9D": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "fa97d34c-ab00-41f9-a8c1-24710d0b2223"
+          }
         }
       },
       "block_order": [
-        "okendo_reviews_widget_nrmbUt"
+        "okendo_reviews_widget_nrmbUt",
+        "tolstoy_shoppable_video_ugc_carousel_block_z93r9D"
       ],
       "settings": {
         "color_scheme": "default",
