@@ -43,6 +43,14 @@
     {{ content_for_header }}
   
 {% render 'gsf-conversion-pixels' %}
+<!-- move this to snippet -->
+<style>
+.tolstoy-carousel-image {
+  display:block;
+  position: absolute;
+  top: 0;
+}
+</style
 </head>
   <body class='color-{{ settings.default_color_scheme }} theme-with-{{ settings.edge_rounding_degree }}-rounded-style {% if settings.edge_rounding_degree != 'none' %} theme-with-rounded-style{% endif %}'>
     {% if template.name == 'password' %}
