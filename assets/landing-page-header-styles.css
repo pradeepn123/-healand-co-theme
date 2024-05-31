@@ -10,6 +10,7 @@
   --grid-column-gap-large: 40px;
   --grid-row-gap: 32px;
   --grid-row-gap-large: 40px;
+  --grid-product-badge-padding: 4px 12px;
   --setion-heading-padding: 30px;
 }
 @media (min-width: 768px) {
