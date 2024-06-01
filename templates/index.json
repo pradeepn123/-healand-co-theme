@@ -6,8 +6,8 @@
         "image_banner_afRHFM": {
           "type": "image-banner",
           "settings": {
-            "desktop_img": "shopify:\/\/shop_images\/Wellness.jpg",
-            "mobile_img": "shopify:\/\/shop_images\/Wellness_1.jpg",
+            "desktop_img": "shopify:\/\/shop_images\/Lion_s_Mane_3f3b7e9a-2c67-44f0-b3ef-50192fd4cd99.jpg",
+            "mobile_img": "shopify:\/\/shop_images\/Lion_s_Mane_1.jpg",
             "desktop_overlay_opacity": 30,
             "mobile_overlay_opacity": 0,
             "background_color": "",
@@ -30,7 +30,7 @@
             "desktop_content_background": "none",
             "mobile_content_background": "none",
             "btn_text": "",
-            "btn_url": "shopify:\/\/collections\/shop-all",
+            "btn_url": "shopify:\/\/products\/lions-mane-500mg",
             "btn_style": "solid",
             "extra_btn_text": "",
             "extra_btn_url": "",
