@@ -47,11 +47,12 @@
 <style>
 </style
 </head>
+{{ template }}
   <body class='color-{{ settings.default_color_scheme }} theme-with-{{ settings.edge_rounding_degree }}-rounded-style {% if settings.edge_rounding_degree != 'none' %} theme-with-rounded-style{% endif %}'>
     {% if template.name == 'password' %}
       {% sections 'password-header-group' %}
     {% else %}
-      {% unless template.name == 'page' and page.handle == 'landing-page' %}
+      {% unless template.name == 'page' and template == 'page.landing-page' %}
         {% sections 'main-header-group' %}
       {% endunless %}
       {% sections 'main-aside-group' %}
@@ -64,7 +65,7 @@
     {%- if template.name == 'password' -%}
       {% sections 'password-footer-group' %}
     {%- else -%}
-      {% unless template.name == 'page' and page.handle == 'landing-page' %}
+      {% unless template.name == 'page' and template == 'page.landing-page' %}
         {% sections 'main-footer-group' %}
       {% endunless %}
     {%- endif -%}
@@ -117,18 +118,7 @@
         div1.after(div2);
       </script>
     {%- endif -%}
-
-    {% if template.name == 'page' and page.handle == 'landing-page' %}
-      {% style %}
-        #smile-ui-lite-container{
-          display: none;
-        }
-        .kl-private-reset-css-Xuajs1{
-          display: none;
-        }
-      {% endstyle %}
-    {% endif %}
-    {% include 'smile-initializer' %} 
+   {% include 'smile-initializer' %}
 
     {%- render 'layouthub_footer' -%} 
 

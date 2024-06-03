@@ -44,7 +44,7 @@
         display: none;
       }
     {% endif %}
-    {% if page.handle == 'landing-page' %}
+    {% if template == 'page.landing-page' %}
      .section-{{ section.id }} {
         margin-top:25px;
         padding-top:25px;
@@ -59,7 +59,7 @@
   {% endstyle %}
 {% endcapture %}
 
-{% if page.handle == 'landing-page' %}
+{% if template == 'page.landing-page' %}
     {{ 'landing-page-faq-section.css' | asset_url | stylesheet_tag }}
 {% endif %}
   

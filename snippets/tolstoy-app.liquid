@@ -1,4 +1,4 @@
-{% if template.name == 'page' and page.handle == 'landing-page' %}
+{% if template.name == 'page' and template == 'page.landing-page' %}
   {{ 'landing-page-tolstoy-app.css' | asset_url | stylesheet_tag }}
 {% endif %}
 

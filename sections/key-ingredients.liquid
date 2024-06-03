@@ -109,7 +109,7 @@
             color: var(--meta-text-color);
         }
     {% endif %}
-    {% if page.handle == 'landing-page' %}
+    {% if template == 'page.landing-page' %}
       .section-spacing {
         padding-bottom: 50px;
       }
@@ -130,7 +130,7 @@
 
 {% if keymetadata != blank %}
   <div class="section-{{ section.id }} single_key_ingredients_main">
-    <div class="{% if page.handle == 'landing-page' %}landing_page__container{% else%}container{% endif %} container--{{ container_size }} section-spacing">
+    <div class="{% if template == 'page.landing-page' %}landing_page__container{% else%}container{% endif %} container--{{ container_size }} section-spacing">
       <carousel-component
         class="
           card-carousel key-ingredients
