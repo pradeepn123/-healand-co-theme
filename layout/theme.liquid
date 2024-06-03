@@ -117,6 +117,16 @@
         div1.after(div2);
       </script>
     {%- endif -%}
+    {% if template == 'page.landing-page' %}
+      <style>
+        #smile-ui-lite-launcher-frame-container{
+          display: none; 
+        }
+        .kl-private-reset-css-Xuajs1{
+          display: none;  
+        }
+      </style>
+    {% endif %}
    {% include 'smile-initializer' %}
 
     {%- render 'layouthub_footer' -%} 
