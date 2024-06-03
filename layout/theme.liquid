@@ -45,9 +45,8 @@
 {% render 'gsf-conversion-pixels' %}
 <!-- move this to snippet override these at any cost -->
 <style>
-</style
+</style>
 </head>
-{{ template }}
   <body class='color-{{ settings.default_color_scheme }} theme-with-{{ settings.edge_rounding_degree }}-rounded-style {% if settings.edge_rounding_degree != 'none' %} theme-with-rounded-style{% endif %}'>
     {% if template.name == 'password' %}
       {% sections 'password-header-group' %}
