@@ -94,7 +94,6 @@
   font-weight: 700;
   line-height: 1.2;
   font-family: var(--primary-semibold-font-family);
-  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .info-compare__heading {
