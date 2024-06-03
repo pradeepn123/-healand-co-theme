@@ -1197,7 +1197,7 @@ body.hamburger--open[scroll-y-offf] {
 body .tl-custom-position{
     position: absolute !important;
     /* bottom: 110px !important; */
-    left: 20px !important;
+    left: 130px !important;
     right: 0px !important;
     width: fit-content;
 }
