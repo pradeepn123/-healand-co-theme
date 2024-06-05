@@ -150,8 +150,10 @@
     --percentage-button-padding: 10px 27px;
     --card-padding-desktop: 32px 40px;
     --card-padding-mobile: 32px 20px;
+    height: 100%;
     &__wrapper{
-        position: relative;    
+        position: relative;
+        height: 100%;
     }
     &__content{
         text-align: center;
@@ -180,6 +182,9 @@
         @media(--sm){
             padding-top: 12px;  
             margin-bottom: var(--grid-row-gap); 
+        }
+        &.add-spacing{
+            min-height: 42px;
         }
     }
     &__button.button--primary{
@@ -261,6 +266,9 @@
     }
     &__free-shipping{
         margin-top: 24px;
+        &.add-spacing{
+            margin-bottom: 46px;
+        }
     }
     &__shopping-bag{
         display: flex;
@@ -268,7 +276,7 @@
         justify-content: center;
         padding-top: var(--setion-top-padding);
         @include use-text-style('body-alt');
-        font-weight: typography.$heading-weight;  
+        font-weight: typography.$heading-weight;
     }
     &__compare-price{
         color: colors.$light-blue;
@@ -338,7 +346,7 @@
             span{
                 color: colors.$dark-blue;   
             }       
-        }
+        } 
         @media(--md){
             .landing-bundle-sec-info__description_wrapper{
                 margin-bottom: var(--section-paddings);
@@ -349,19 +357,19 @@
                 margin-bottom: 0;
             }
         }
+        .landing-bundle-sec-info__heading{
+            @include use-text-style('heading-1-alt');
+        }
     }
     &__block-3 {
         .landing-bundle-sec-info__button{
             background: colors.$dark-blue;
         }
-        .landing-bundle-sec-info__heading{
-            @include use-text-style('heading-1-alt');
-        }
     }
-    &__block-1 .landing-bundle-sec-info__content , &__block-2 .landing-bundle-sec-info__content{
+    &__block-1 .landing-bundle-sec-info__content , &__block-3 .landing-bundle-sec-info__content{
         background: colors.$light-grey;
     }
-    &__block-3 .landing-bundle-sec-info__content{
+    &__block-2 .landing-bundle-sec-info__content{
         background: colors.$white;
     }
     .responsive-image__image {

@@ -247,9 +247,11 @@
   --percentage-button-padding: 10px 27px;
   --card-padding-desktop: 32px 40px;
   --card-padding-mobile: 32px 20px;
+  height: 100%;
 }
 .landing-bundle-sec-info__wrapper {
   position: relative;
+  height: 100%;
 }
 .landing-bundle-sec-info__content {
   text-align: center;
@@ -297,6 +299,9 @@
     padding-top: 12px;
     margin-bottom: var(--grid-row-gap);
   }
+}
+.landing-bundle-sec-info__heading.add-spacing {
+  min-height: 42px;
 }
 .landing-bundle-sec-info__button.button--primary {
   border-radius: 4rem;
@@ -419,6 +424,9 @@
 .landing-bundle-sec-info__free-shipping {
   margin-top: 24px;
 }
+.landing-bundle-sec-info__free-shipping.add-spacing {
+  margin-bottom: 46px;
+}
 .landing-bundle-sec-info__shopping-bag {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -526,19 +534,19 @@
     margin-bottom: 0;
   }
 }
-.landing-bundle-sec-info__block-3 .landing-bundle-sec-info__button {
-  background: #2F4775;
-}
-.landing-bundle-sec-info__block-3 .landing-bundle-sec-info__heading {
+.landing-bundle-sec-info__block-2 .landing-bundle-sec-info__heading {
   font-family: "proximanova-regular";
   font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
 }
-.landing-bundle-sec-info__block-1 .landing-bundle-sec-info__content, .landing-bundle-sec-info__block-2 .landing-bundle-sec-info__content {
+.landing-bundle-sec-info__block-3 .landing-bundle-sec-info__button {
+  background: #2F4775;
+}
+.landing-bundle-sec-info__block-1 .landing-bundle-sec-info__content, .landing-bundle-sec-info__block-3 .landing-bundle-sec-info__content {
   background: #EAEDF1;
 }
-.landing-bundle-sec-info__block-3 .landing-bundle-sec-info__content {
+.landing-bundle-sec-info__block-2 .landing-bundle-sec-info__content {
   background: #fff;
 }
 .landing-bundle-sec-info .responsive-image__image {

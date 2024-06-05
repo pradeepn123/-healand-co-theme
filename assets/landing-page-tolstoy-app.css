@@ -3,8 +3,6 @@
   \****************************************************************************************************************************************************************************************************************************************/
 .custom_app_tolstoy {
   --section-tolstoy-bottom-spacing: 40px;
-  padding-bottom: calc(40px * 2);
-  padding-bottom: calc(var(--section-tolstoy-bottom-spacing) * 2);
 }
 .custom_app_tolstoy .tolstoy-next-button, .custom_app_tolstoy .tolstoy-previous-button {
   background: #2F4775;
