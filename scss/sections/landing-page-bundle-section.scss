@@ -164,7 +164,7 @@
         height: 100%;
         justify-content: space-between;
         flex-direction: column;
-        gap: var(--section-spacing); 
+        gap: var(--price-grid-gap); 
         @media(--sm){
             padding: var(--card-padding-desktop);
         }
@@ -180,8 +180,8 @@
         font-family: var(--primary-semibold-font-family);
         margin-bottom: 17px;
         @media(--sm){
-            padding-top: 12px;  
-            margin-bottom: var(--grid-row-gap); 
+            // padding-top: 12px;
+            margin-bottom: 12px;
         }
         &.add-spacing{
             min-height: 42px;
@@ -257,7 +257,7 @@
         align-items: center;
         justify-content: center;
         column-gap: var(--price-grid-gap);
-        padding-bottom: 24px;
+        padding-bottom: 20px;
         @media(--xs){
             @include use-text-style('heading-1');
             font-weight: typography.$regular-weight;
@@ -338,15 +338,8 @@
     } 
     &__block-2 {
         .landing-bundle-sec-info__button{
-            background: colors.$light-blue;         
+            background: colors.$dark-blue;
         }
-        .landing-bundle-sec-info__percentage-off{
-            background: colors.$white;
-            border: 1px solid colors.$dark-blue;
-            span{
-                color: colors.$dark-blue;   
-            }       
-        } 
         @media(--md){
             .landing-bundle-sec-info__description_wrapper{
                 margin-bottom: var(--section-paddings);
@@ -363,8 +356,15 @@
     }
     &__block-3 {
         .landing-bundle-sec-info__button{
-            background: colors.$dark-blue;
+            background: colors.$light-blue;
         }
+        .landing-bundle-sec-info__percentage-off{
+            background: colors.$white;
+            border: 1px solid colors.$dark-blue;
+            span{
+                color: colors.$dark-blue;   
+            }       
+        } 
     }
     &__block-1 .landing-bundle-sec-info__content , &__block-3 .landing-bundle-sec-info__content{
         background: colors.$light-grey;

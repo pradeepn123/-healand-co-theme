@@ -157,6 +157,9 @@
       "block_order": [
         "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4"
       ],
+      "custom_css": [
+        ".tolstoy-next-button,.tolstoy-previous-button {display: none !important;}"
+      ],
       "settings": {
         "section_bg_color": "#eaedf1",
         "section_heading": "shout-outs from our besties:",
