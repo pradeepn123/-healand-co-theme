@@ -7,6 +7,7 @@
       "blocks": {
         "footer-1": {
           "type": "logo_with_text",
+          "disabled": true,
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/footer_logo_0fed2412-ec58-48f4-8e6a-4492be55492f.png",
             "logo_width": 90,
@@ -16,6 +17,7 @@
         },
         "footer-2": {
           "type": "menu",
+          "disabled": true,
           "settings": {
             "menu": "footer",
             "title": "Menu"
@@ -23,6 +25,7 @@
         },
         "018fbce4-9340-47e5-b816-7dd578360ba6": {
           "type": "menu",
+          "disabled": true,
           "settings": {
             "menu": "support",
             "title": "Support"
@@ -30,6 +33,7 @@
         },
         "footer-3": {
           "type": "social_media",
+          "disabled": true,
           "settings": {
             "title": "Follow us",
             "text": "<p>Want to learn more about us? Check out our recent posts and join the community.<\/p>"
@@ -43,6 +47,13 @@
             "text": "<p>Invite customers to join your mailing list.<\/p>",
             "input_style": "solid"
           }
+        },
+        "text_HKU6ry": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "text": "<p>1. adfasd<\/p><p>2. adsfa<\/p><p>3. adf<\/p><p>4.asdf<\/p>"
+          }
         }
       },
       "block_order": [
@@ -50,7 +61,8 @@
         "footer-2",
         "018fbce4-9340-47e5-b816-7dd578360ba6",
         "footer-3",
-        "footer-4"
+        "footer-4",
+        "text_HKU6ry"
       ],
       "settings": {
         "color_scheme": "secondary",
