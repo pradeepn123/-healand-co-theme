@@ -1,0 +1,454 @@
+{
+  "sections": {
+    "landing_page_header_e47V3w": {
+      "type": "landing-page-header",
+      "settings": {
+        "header_teaser": "<p>{{ page.metafields.custom.landing_page_header_section.value.teaser_text | metafield_tag }}<\/p>",
+        "header_text": "<p>{{ page.metafields.custom.landing_page_header_section.value.description | metafield_tag }}<\/p>",
+        "btn_text": "<p>Get Offer<\/p>",
+        "btn_link": "#shopify-section-template--17222041862302__landing_page_bundle_section_6G3dtP"
+      }
+    },
+    "landing_page_main_product_PGnkxL": {
+      "type": "landing-page-main-product",
+      "blocks": {
+        "okendo_star_rating_Q8bYYm": {
+          "type": "shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ page.metafields.custom.landing_page_product_info.value.okendo_product_review.value }}"
+          }
+        },
+        "image_UrRVac": {
+          "type": "image",
+          "repeater": "{{ page.metafields.custom.landing_page_product_info.value.product_images.value }}",
+          "settings": {
+            "product_image": "{{ block.repeater.images.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_star_rating_Q8bYYm",
+        "image_UrRVac"
+      ],
+      "settings": {
+        "product_selected": "{{ page.metafields.custom.landing_page_product_info.value.product.value }}",
+        "header_teaser": "{{ page.metafields.custom.landing_page_product_info.value.content_teaser_text.value }}",
+        "header_text": "{{ page.metafields.custom.landing_page_product_info.value.content_text.value }}",
+        "btn_text": "{{ page.metafields.custom.landing_page_product_info.value.button_text.value }}",
+        "btn_link": "{{ page.metafields.custom.landing_page_product_info.value.url.value }}"
+      }
+    },
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "xsmall",
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_heading": false
+      }
+    },
+    "landing_page_image_with_description_A7N4YH": {
+      "type": "landing-page-image-with-description",
+      "blocks": {
+        "text_47ErRe": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        },
+        "text_jQ7rrn": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_image_with_description.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        },
+        "text_AxYFk7": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_47ErRe",
+        "text_jQ7rrn",
+        "text_AxYFk7"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_layout": "carousel",
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 12
+      }
+    },
+    "key_ingredients_k8Qhr4": {
+      "type": "key-ingredients",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "Key Ingredients",
+        "heading_size": "h5",
+        "mobile_title_size": 24,
+        "alignment": "center",
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
+    },
+    "landing_page_key_ingredients_WMmTVg": {
+      "type": "landing-page-key-ingredients",
+      "blocks": {
+        "text_wwiKJY": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_key_ingredients.value.block_values.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_wwiKJY"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48,
+        "section_layout": "carousel-overflow",
+        "title": "{{ page.metafields.custom.landing_page_key_ingredients.value.section_heading.value }}",
+        "mobile_title_size": 43,
+        "alignment": "center",
+        "desktop_columns": 2,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "enable_carousel_on_mobile": false,
+        "show_navigation_on_hover": true
+      }
+    },
+    "tolstoy_yyNWNw": {
+      "type": "tolstoy",
+      "blocks": {
+        "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "{{ page.metafields.custom.landing_page_tolstoy_id.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_ugc_carousel_block_XgBFH4"
+      ],
+      "custom_css": [
+        ".tolstoy-next-button,.tolstoy-previous-button {display: none !important;}"
+      ],
+      "settings": {
+        "section_bg_color": "#eaedf1",
+        "section_heading": "shout-outs from our besties:",
+        "heading_color": ""
+      }
+    },
+    "landing_page_image_with_text_AkGUxq": {
+      "type": "landing-page-image-with-text",
+      "blocks": {
+        "text_Aw6UG8": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_image_with_text.value.landing_page_image_with_text_inner.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image_or_icon.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Aw6UG8"
+      ],
+      "settings": {
+        "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
+        "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
+        "image": "shopify:\/\/shop_images\/Untitled_design_17.png"
+      }
+    },
+    "171568127909df6d51": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_nrmbUt": {
+          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ page.metafields.custom.okendo_review_product_id.value }}",
+            "widget_type": "reviews_widget"
+          }
+        },
+        "tolstoy_shoppable_video_ugc_carousel_block_z93r9D": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "fa97d34c-ab00-41f9-a8c1-24710d0b2223"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_nrmbUt",
+        "tolstoy_shoppable_video_ugc_carousel_block_z93r9D"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_top": 60,
+        "section_spacing_bottom": 0,
+        "custom_liquid": ""
+      }
+    },
+    "landing_page_compare_section_QTFTk3": {
+      "type": "landing-page-compare-section",
+      "blocks": {
+        "other_TznBYa": {
+          "type": "other",
+          "settings": {
+            "description_other": "",
+            "info_type": ""
+          }
+        },
+        "other_LzCRMd": {
+          "type": "other",
+          "repeater": "{{ page.metafields.custom.landing_page_compare_section.value.landing_page_compare_sec_inner_blocks.value }}",
+          "settings": {
+            "svg_image_other": "{{ block.repeater.image_icon.value }}",
+            "description_other": "{{ block.repeater.description.value }}",
+            "info_type": "{{ block.repeater.block_type.value }}"
+          }
+        },
+        "other_HxKin6": {
+          "type": "other",
+          "disabled": true,
+          "settings": {
+            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
+            "description_other": "Low potency despite lable",
+            "info_type": ""
+          }
+        },
+        "other_XtWpLD": {
+          "type": "other",
+          "disabled": true,
+          "settings": {
+            "svg_image_other": "shopify:\/\/shop_images\/Frame_636.svg",
+            "description_other": "Bitter \/ bad \/ rancid taste",
+            "info_type": ""
+          }
+        }
+      },
+      "block_order": [
+        "other_TznBYa",
+        "other_LzCRMd",
+        "other_HxKin6",
+        "other_XtWpLD"
+      ],
+      "settings": {
+        "heading": "{{ page.metafields.custom.landing_page_compare_section.value.heading.value }}",
+        "text": "{{ page.metafields.custom.landing_page_compare_section.value.content_info.value }}",
+        "block_heading_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_heading.value }}",
+        "block_heading_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_heading.value }}",
+        "image_other_one": "{{ page.metafields.custom.landing_page_compare_section.value.first_block_image.value }}",
+        "image_other_two": "{{ page.metafields.custom.landing_page_compare_section.value.second_block_image.value }}",
+        "content_align": "center"
+      }
+    },
+    "landing_page_timeline_kfRwhc": {
+      "type": "landing-page-timeline",
+      "settings": {
+        "heading": "{{ page.metafields.custom.landing_page_timeline_section.value.heading.value }}",
+        "text": "{{ page.metafields.custom.landing_page_timeline_section.value.content.value }}",
+        "content_width": "normal"
+      }
+    },
+    "landing_page_testimonials_MrGMLF": {
+      "type": "landing-page-testimonials",
+      "blocks": {
+        "text_i4QczC": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_testimonials_section.value.landing_page_testimonials_blocks.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.title.value }}",
+            "sub_heading": "{{ block.repeater.sub_title.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_i4QczC"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "What experts are saying:",
+        "text": ""
+      }
+    },
+    "landing_page_bundle_section_6G3dtP": {
+      "type": "landing-page-bundle-section",
+      "blocks": {
+        "text_E9iNQ9": {
+          "type": "text",
+          "repeater": "{{ page.metafields.custom.landing_page_bundle_section.value }}",
+          "settings": {
+            "tag_heading": "{{ block.repeater.percentage_heading.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "button_label": "{{ block.repeater.button_label.value }}",
+            "content": "<p>{{ block.repeater.content_info | metafield_tag }}<\/p>",
+            "product": "{{ block.repeater.product.value }}",
+            "product_image_size": "{{ page.metafields.custom.landing_page_bundle_section | metafield_text: field: 'product_image_ratio' }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}<\/p>",
+            "shipping_text": "{{ block.repeater.free_shipping_text.value }}"
+          }
+        },
+        "text_d8fp4A": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "tag_heading": "15% off",
+            "heading": "",
+            "button_label": "",
+            "content": "<p>$0.70 per day<\/p>",
+            "product": "8-mushroom-immunity-tincture-500mg",
+            "product_image_size": "",
+            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
+            "shipping_text": "free shipping"
+          }
+        },
+        "text_yQtWqf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "tag_heading": "15%",
+            "heading": "1 month supply",
+            "button_label": "",
+            "content": "<p>$0.70 per day<\/p>",
+            "product": "8-mushroom-immunity-tincture-500mg",
+            "product_image_size": "",
+            "description": "<p>Given clean green a try and get started on your journey to better health.<\/p>",
+            "shipping_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_E9iNQ9",
+        "text_d8fp4A",
+        "text_yQtWqf"
+      ],
+      "settings": {
+        "heading": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.heading.value }}",
+        "text": "<p>{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}<\/p>"
+      }
+    },
+    "faq_section_4hkffF": {
+      "type": "faq-section",
+      "blocks": {
+        "collapsible_row_PVQLFt": {
+          "type": "collapsible_row",
+          "repeater": "{{ page.metafields.custom.landing_page_faq_section.value }}",
+          "settings": {
+            "title": "{{ block.repeater.question.value }}",
+            "icon": "none",
+            "text": "<p>{{ block.repeater.answer | metafield_tag }}<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_A4jgDd": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "title": "What are the health benefits of super mushroom complex?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_DAgDCr": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "title": "When should you take super mushroom complex?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        },
+        "collapsible_row_Y6wWpq": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "title": "What is the right dosage?",
+            "icon": "none",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.<\/p>",
+            "page": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PVQLFt",
+        "collapsible_row_A4jgDd",
+        "collapsible_row_DAgDCr",
+        "collapsible_row_Y6wWpq"
+      ],
+      "settings": {
+        "from_metafields": false,
+        "section_heading": "FAQ's",
+        "color_scheme": "primary",
+        "enable_background_around_container": false,
+        "container_size": "large",
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0,
+        "expand_first_collapsible_row": false
+      }
+    },
+    "spacer_H4wqi4": {
+      "type": "spacer",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "desktop_height": 150,
+        "mobile_height": 100,
+        "show_separator": false
+      }
+    }
+  },
+  "order": [
+    "landing_page_header_e47V3w",
+    "landing_page_main_product_PGnkxL",
+    "page",
+    "landing_page_image_with_description_A7N4YH",
+    "key_ingredients_k8Qhr4",
+    "landing_page_key_ingredients_WMmTVg",
+    "tolstoy_yyNWNw",
+    "landing_page_image_with_text_AkGUxq",
+    "171568127909df6d51",
+    "landing_page_compare_section_QTFTk3",
+    "landing_page_timeline_kfRwhc",
+    "landing_page_testimonials_MrGMLF",
+    "landing_page_bundle_section_6G3dtP",
+    "faq_section_4hkffF",
+    "spacer_H4wqi4"
+  ]
+}
