@@ -186,7 +186,7 @@
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
         "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
-        "image": "shopify:\/\/shop_images\/Untitled_design_17.png"
+        "image": "shopify:\/\/shop_images\/Untitled_design_23.png"
       }
     },
     "171568127909df6d51": {
@@ -356,7 +356,7 @@
       ],
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.heading.value }}",
-        "text": "<p>{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}<\/p>"
+        "text": "{{ page.metafields.custom.landing_page_bundle_section_heading.value.sub_heading | metafield_tag }}"
       }
     },
     "faq_section_4hkffF": {
