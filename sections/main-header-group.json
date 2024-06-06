@@ -44,7 +44,6 @@
         "announcement_3",
         "announcement_4"
       ],
-      "disabled": true,
       "settings": {
         "text": "<p>Make an announcement<\/p>",
         "link": "shopify:\/\/policies\/shipping-policy",
@@ -174,7 +173,6 @@
         "bb6437d8-87b2-49a9-972f-9fb5b94cc5b6",
         "83080f15-bfa2-4fe6-a15c-86e118ea2ddd"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "full-screen",

@@ -7,7 +7,6 @@
       "blocks": {
         "footer-1": {
           "type": "logo_with_text",
-          "disabled": true,
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/footer_logo_0fed2412-ec58-48f4-8e6a-4492be55492f.png",
             "logo_width": 90,
@@ -17,7 +16,6 @@
         },
         "footer-2": {
           "type": "menu",
-          "disabled": true,
           "settings": {
             "menu": "footer",
             "title": "Menu"
@@ -25,7 +23,6 @@
         },
         "018fbce4-9340-47e5-b816-7dd578360ba6": {
           "type": "menu",
-          "disabled": true,
           "settings": {
             "menu": "support",
             "title": "Support"
@@ -33,7 +30,6 @@
         },
         "footer-3": {
           "type": "social_media",
-          "disabled": true,
           "settings": {
             "title": "Follow us",
             "text": "<p>Want to learn more about us? Check out our recent posts and join the community.<\/p>"
@@ -50,6 +46,7 @@
         },
         "text_HKU6ry": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "title": "",
             "text": "<p>1.https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC5987239\/<\/p><p>2.https:\/\/pubmed.ncbi.nlm.nih.gov\/31413233\/#:~:text=erinaceus%20significantly%20improved%20cognitive%20functions,networks%20and%20improve%20cognitive%20functions.<\/p><p>3.https:\/\/pubmed.ncbi.nlm.nih.gov\/21383512\/<\/p><p>4.https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC6982118\/<\/p>"
