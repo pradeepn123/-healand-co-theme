@@ -185,7 +185,7 @@
       "settings": {
         "heading": "{{ page.metafields.custom.landing_page_image_with_text.value.heading.value }}",
         "text": "<p>{{ page.metafields.custom.landing_page_image_with_text.value.description | metafield_tag }}<\/p>",
-        "image": "shopify:\/\/shop_images\/Untitled_design_17.png"
+        "image": "{{ page.metafields.custom.landing_page_image_section.value }}"
       }
     },
     "171568127909df6d51": {
