@@ -135,6 +135,14 @@
         }
       </style>
     {% endif %}
+    {% if page.metafields.custom.landing_page_tolstoy_id == blank %}
+      <style>
+        .tolstoy-wrapper{
+          display: none;
+        }
+      </style>
+    {% endif %}
+    
    {% include 'smile-initializer' %}
 
     {%- render 'layouthub_footer' -%} 
