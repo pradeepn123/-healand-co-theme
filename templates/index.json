@@ -314,93 +314,6 @@
         "show_navigation_on_hover": true
       }
     },
-    "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
-      "type": "text-with-image",
-      "blocks": {
-        "30c0db77-d122-4859-a060-9d0d4aa76d13": {
-          "type": "image",
-          "settings": {
-            "image_small": "shopify:\/\/shop_images\/vegan_a63e4555-10c1-4c0f-b8f5-34b494129f87.png",
-            "image_heading": "Vegan",
-            "image_heading-color": "#2f4775",
-            "image_heading_font_desktop": 24,
-            "image_heading_font_mobile": 20,
-            "image_richtext": "<p>100% plant-based ingredients<\/p>",
-            "image_subheading-color": "#2f4775",
-            "image_subheading_font_desktop": 16,
-            "image_subheading_font_mobile": 14
-          }
-        },
-        "f2d8cef6-0613-4af8-a42a-bc4858bef89c": {
-          "type": "image",
-          "settings": {
-            "image_small": "shopify:\/\/shop_images\/potent_extract.png",
-            "image_heading": "Potent Extract",
-            "image_heading-color": "#2f4775",
-            "image_heading_font_desktop": 24,
-            "image_heading_font_mobile": 20,
-            "image_richtext": "<p>High efficacy, fewer doses<\/p>",
-            "image_subheading-color": "#2f4775",
-            "image_subheading_font_desktop": 16,
-            "image_subheading_font_mobile": 14
-          }
-        },
-        "4324d8b8-f6ae-43f1-915d-95fd85a32907": {
-          "type": "image",
-          "settings": {
-            "image_small": "shopify:\/\/shop_images\/made-in-canada_d31e4317-2ef4-4ff1-8cfe-1747cf0e60f5.png",
-            "image_heading": "Made in Canada",
-            "image_heading-color": "#2f4775",
-            "image_heading_font_desktop": 24,
-            "image_heading_font_mobile": 20,
-            "image_richtext": "<p>Health Canada approved, <\/p><p>GMP-certified<\/p>",
-            "image_subheading-color": "#2f4775",
-            "image_subheading_font_desktop": 16,
-            "image_subheading_font_mobile": 14
-          }
-        },
-        "image_cFpxjg": {
-          "type": "image",
-          "settings": {
-            "image_heading": "Heading",
-            "image_heading-color": "",
-            "image_heading_font_desktop": 24,
-            "image_heading_font_mobile": 20,
-            "image_richtext": "<p>Description<\/p>",
-            "image_subheading-color": "",
-            "image_subheading_font_desktop": 16,
-            "image_subheading_font_mobile": 14
-          }
-        }
-      },
-      "block_order": [
-        "30c0db77-d122-4859-a060-9d0d4aa76d13",
-        "f2d8cef6-0613-4af8-a42a-bc4858bef89c",
-        "4324d8b8-f6ae-43f1-915d-95fd85a32907",
-        "image_cFpxjg"
-      ],
-      "settings": {
-        "container-background": "#eaedf1",
-        "title_color": "#2f4775",
-        "subtitle_color": "#2f4775",
-        "button_color": "#ffffff",
-        "buton_bg_color": "#2f4775",
-        "color_scheme": "default",
-        "container_size": "page-width",
-        "section_spacing_for_top": 65,
-        "section_spacing_for_bottom": 65,
-        "contents_position": "left",
-        "icons": "none",
-        "captions": "",
-        "heading": "<p>healthy living, boosted by nature<\/p>",
-        "texts": "<p>We’re on a mission to deliver the healing powers of nature, one bottle at a time. When you start your supplement journey with us, you can feel confident that you’re making the right choice for your health. All our ingredients are sourced from none other than Mother Nature herself.<\/p>",
-        "headings_size": "h2",
-        "body_sizes": "body3",
-        "text_link": "About us",
-        "url_link": "shopify:\/\/pages\/about",
-        "button_style": "solid"
-      }
-    },
     "3a8446b4-f3d0-4013-84a1-245927640c4e": {
       "type": "collection-text",
       "settings": {
@@ -506,6 +419,93 @@
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "enable_carousel_on_mobile": false
+      }
+    },
+    "3f1076ce-3ef8-4121-b953-17e5b6975dad": {
+      "type": "text-with-image",
+      "blocks": {
+        "30c0db77-d122-4859-a060-9d0d4aa76d13": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/vegan_a63e4555-10c1-4c0f-b8f5-34b494129f87.png",
+            "image_heading": "Vegan",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
+            "image_richtext": "<p>100% plant-based ingredients<\/p>",
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
+          }
+        },
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/potent_extract.png",
+            "image_heading": "Potent Extract",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
+            "image_richtext": "<p>High efficacy, fewer doses<\/p>",
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
+          }
+        },
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907": {
+          "type": "image",
+          "settings": {
+            "image_small": "shopify:\/\/shop_images\/made-in-canada_d31e4317-2ef4-4ff1-8cfe-1747cf0e60f5.png",
+            "image_heading": "Made in Canada",
+            "image_heading-color": "#2f4775",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
+            "image_richtext": "<p>Health Canada approved, <\/p><p>GMP-certified<\/p>",
+            "image_subheading-color": "#2f4775",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
+          }
+        },
+        "image_cFpxjg": {
+          "type": "image",
+          "settings": {
+            "image_heading": "Heading",
+            "image_heading-color": "",
+            "image_heading_font_desktop": 24,
+            "image_heading_font_mobile": 20,
+            "image_richtext": "<p>Description<\/p>",
+            "image_subheading-color": "",
+            "image_subheading_font_desktop": 16,
+            "image_subheading_font_mobile": 14
+          }
+        }
+      },
+      "block_order": [
+        "30c0db77-d122-4859-a060-9d0d4aa76d13",
+        "f2d8cef6-0613-4af8-a42a-bc4858bef89c",
+        "4324d8b8-f6ae-43f1-915d-95fd85a32907",
+        "image_cFpxjg"
+      ],
+      "settings": {
+        "container-background": "#eaedf1",
+        "title_color": "#2f4775",
+        "subtitle_color": "#2f4775",
+        "button_color": "#ffffff",
+        "buton_bg_color": "#2f4775",
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "section_spacing_for_top": 65,
+        "section_spacing_for_bottom": 65,
+        "contents_position": "left",
+        "icons": "none",
+        "captions": "",
+        "heading": "<p>healthy living, boosted by nature<\/p>",
+        "texts": "<p>We’re on a mission to deliver the healing powers of nature, one bottle at a time. When you start your supplement journey with us, you can feel confident that you’re making the right choice for your health. All our ingredients are sourced from none other than Mother Nature herself.<\/p>",
+        "headings_size": "h2",
+        "body_sizes": "body3",
+        "text_link": "About us",
+        "url_link": "shopify:\/\/pages\/about",
+        "button_style": "solid"
       }
     },
     "f5533591-0b28-41cc-91e3-9e843615e37b": {
@@ -687,9 +687,9 @@
     "35abde66-b33a-4178-b3ef-5bba319784ba",
     "af64247e-1121-4d64-91e7-f013b0ab11b0",
     "16f05ee5-8dda-4165-b9a7-b4489c25c3d9",
-    "3f1076ce-3ef8-4121-b953-17e5b6975dad",
     "3a8446b4-f3d0-4013-84a1-245927640c4e",
     "8365b2f6-b7d7-4ae2-9d42-07d515c51aa1",
+    "3f1076ce-3ef8-4121-b953-17e5b6975dad",
     "f5533591-0b28-41cc-91e3-9e843615e37b",
     "6bd854d6-6a11-48bc-a56c-aeff798f8299",
     "e67794d1-b35b-4d67-bc2c-48ee9d1bba11",
