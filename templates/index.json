@@ -285,7 +285,7 @@
         "section_spacing_bottom": 65,
         "section_layout": "carousel",
         "title": "best sellers",
-        "title_decoration": false,
+        "title_decoration": true,
         "heading_size": "h4",
         "alignment": "center",
         "shop_all_title": "Shop all",
