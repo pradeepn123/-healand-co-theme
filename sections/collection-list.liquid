@@ -180,7 +180,7 @@
         class="collection-list__header {% if alignment == 'center' %}collection-list__header--center{% endif %} {% if section.settings.shop_all_title != blank %}mr-8{% endif %}"
         data-aos="fade-up"
       >
-        <h5 class="{{ heading_size }} decorated_heading">{{ title }}</h5>
+        <h5 class="{{ heading_size }} text_heading {% if section.settings.decore_heading %}decorated_heading{% endif %}">{{ title }}</h5>
         {% if section.settings.shop_all_title != blank %}
           <a href="{{ section.settings.shop_all_url }}" class="link view-btn shop_all w-full-sp">
             <span class="link__text">{{ section.settings.shop_all_title }}</span>
@@ -303,6 +303,12 @@
     {
       "type": "header",
       "content": "t:sections.collection_list.collection_settings_header"
+    },
+    {
+      "type": "checkbox",
+      "id": "decore_heading",
+      "default": true,
+      "label": "Decore Heading with underline"
     },
     {
       "type": "text",

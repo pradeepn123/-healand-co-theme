@@ -19,6 +19,24 @@
   }
 }
 
+.text_heading {
+  font-family: "proximanova-regular";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: var(--secondary-font-family);
+  color: #2F4775;
+}
+@media (min-width: 768px) {
+  .text_heading {
+    font-family: "proximanova-regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: "BrownStd-Bold";
+  }
+}
+
 .view-btn.shop_all {
   color: #2F4775;
   font-size: 18px;

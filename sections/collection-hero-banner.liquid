@@ -184,7 +184,7 @@
           {%- if show_collection_title and title != blank -%}
             <h5 class="collection-hero__title">{{ title }}</h5>
           {%- endif -%}
-          {% if collection.title != blank and request.path != '/collections/all' %}
+          {% comment %} {% if collection.title != blank and request.path != '/collections/all' %}
             <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">
               {{- collection.title -}}
             </span>
@@ -192,7 +192,7 @@
             <span class="collection-custom__title" style="color: {{section.settings.collection_title_color}};">
               {{- section.settings.collection_title -}}
             </span>
-          {% endif %}
+          {% endif %} {% endcomment %}
           {%- if show_collection_description and description != blank -%}
             <div class="collection-hero__description body-font-weight-from-global-settings">{{ description }}</div>
           {%- endif -%}

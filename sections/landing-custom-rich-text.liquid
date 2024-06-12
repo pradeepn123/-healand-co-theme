@@ -1,0 +1,352 @@
+{%- liquid
+  assign options = section.settings
+  assign section_spacing_top = options.section_spacing_top
+  assign section_spacing_bottom = options.section_spacing_bottom
+  assign content_align = options.content_align
+  assign color_scheme = options.color_scheme
+  assign enable_background_around_container = options.enable_background_around_container
+  assign container_size = options.container_size
+-%}
+
+{% capture css %}
+  {% style %}
+    .section-{{section.id}} {
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+    }
+    .rte.rich-text__text.rich-text-section__text ul{
+        padding-inline-start: 20px;
+    }
+  {% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+
+<div class="rich-text__outer-container section-{{ section.id }} {% if enable_background_around_container %} section color-{{ color_scheme }}{% endif %}">
+  <div class="section-spacing rich-text rich-text--section container--{{ container_size }}">
+    <div class="rich-text__container  {% unless enable_background_around_container %} rich-text__container--with-aside-spacing section color-{{ color_scheme }}{% endunless %}">
+      <div class="rich-text__content rich-text__content--with-{{ content_align }}-align">
+        {%- for block in section.blocks -%}
+            {%- liquid
+                assign options = block.settings
+                assign caption = options.caption
+                assign title = options.title
+                assign heading_size = options.heading_size
+                assign text = options.text
+                assign text_2 = options.text_2
+                assign text_3 = options.text_3
+                assign text_4 = options.text_4
+                assign btn_text = options.btn_text
+                assign btn_url = options.btn_url
+                assign btn_style = options.btn_style
+                assign extra_btn_url = options.extra_btn_url
+                assign extra_btn_text = options.extra_btn_text
+                assign extra_btn_style = options.extra_btn_style
+                assign body_size = options.body_size
+                assign decore_heading = options.decore_heading
+                assign icon = options.icon
+            -%}
+            {% style %}
+                .rich-text__text-wrapper.block-{{block.id}}{
+                    width: 100%;
+                }
+            {% endstyle %}
+            {%- case block.type -%}
+                {%- when 'text' -%}
+                {%- if caption != blank -%}
+                    <div class="caption rich-text__caption block-{{block.id}}" {{ block.shopify_attributes }}>
+                        {{ caption }}
+                    </div>
+                {%- endif -%}
+                {%- if title != blank -%}
+                    <h5 class="rte block-{{block.id}} section-header__title {{ heading_size }} {% if decore_heading %}decorated_heading{% endif %}" {{ block.shopify_attributes }}>
+                        {{ title }}
+                    </h5>
+                {%- endif -%}
+                {%- if text != blank or text_2 != blank or text_3 != blank or text_4 != blank -%}
+                    <div
+                        class=" {{ body_size }} rich-text__text-wrapper block-{{block.id}} body-font-weight-from-global-settings {% if container_size != 'xsmall' %} rich-text__text-wrapper--with-large-desktop-gap{% endif %}"
+                        {{ block.shopify_attributes }}
+                    >
+                        {% if text != blank %}
+                            <div class="rte rich-text__text rich-text-section__text">
+                                {{ text }}
+                            </div>
+                        {% endif %}
+                        {% if text_2 != blank %}
+                            <div class="rte rich-text__text rich-text-section__text">
+                                {{ text_2 }}
+                            </div>
+                        {% endif %}
+                        {% if text_3 != blank %}
+                            <div class="rte rich-text__text rich-text-section__text">
+                                {{ text_3 }}
+                            </div>
+                        {% endif %}
+                        {% if text_4 != blank %}
+                            <div class="rte rich-text__text rich-text-section__text">
+                                {{ text_4 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {%- endif -%}            
+            {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Rich Text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.general_section_settings.color_scheme_option_default_label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.general_section_settings.color_scheme_option_primary_label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.general_section_settings.color_scheme_option_secondary_label"
+        },
+        {
+          "value": "custom-1",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_1_label"
+        },
+        {
+          "value": "custom-2",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_2_label"
+        },
+        {
+          "value": "custom-3",
+          "label": "t:sections.general_section_settings.color_scheme_option_custom_3_label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.general_section_settings.color_scheme_label",
+      "info": "t:sections.general_section_settings.color_scheme_tip"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_background_around_container",
+      "default": false,
+      "label": "t:sections.general_section_settings.enable_background_around_container_label"
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.general_section_settings.container_size.page_width_option"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.general_section_settings.container_size.large_width_option"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.general_section_settings.container_size.medium_width_option"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.general_section_settings.container_size.small_width_option"
+        },
+        {
+          "value": "xsmall",
+          "label": "t:sections.general_section_settings.container_size.extra_small_width_option"
+        }
+      ],
+      "default": "page-width",
+      "label": "t:sections.general_section_settings.container_size.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_top.unit",
+      "label": "t:sections.general_section_settings.section_spacing_top.label"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "t:sections.general_section_settings.section_spacing_bottom.unit",
+      "label": "t:sections.general_section_settings.section_spacing_bottom.label"
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "t:sections.general_section_settings.content_alignment_label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.general_section_settings.alignment_option_left_label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.general_section_settings.alignment_option_center_label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.general_section_settings.alignment_option_right_label"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [    
+    {
+      "type": "text",
+      "name": "t:sections.rich_text.text_block_name",
+      "settings": [
+        {
+            "type": "text",
+            "id": "caption",
+            "label": "t:sections.rich_text.caption_block_caption_label"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "title",
+            "label": "t:sections.rich_text.heading_block_title_label",
+            "default": "Tell about your brand"
+        },
+        {
+            "type": "checkbox",
+            "id": "decore_heading",
+            "default": true,
+            "label": "Decore Heading with underline"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:sections.general_section_settings.label_for_heading_size_setting",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.general_section_settings.heading_size_0_option"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.general_section_settings.heading_size_1_option"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.general_section_settings.heading_size_2_option"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.general_section_settings.heading_size_3_option"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.general_section_settings.heading_size_4_option"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.general_section_settings.heading_size_5_option"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.general_section_settings.heading_size_6_option"
+            },
+            {
+              "value": "h7",
+              "label": "t:sections.general_section_settings.heading_size_7_option"
+            }
+          ],
+          "default": "h5"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.rich_text.blocks.text.description.content"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+          "label": "t:sections.rich_text.blocks.text.text_1.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "t:sections.rich_text.blocks.text.text_2.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text_3",
+          "label": "t:sections.rich_text.blocks.text.text_3.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text_4",
+          "label": "Column 4"
+        },
+        {
+          "type": "select",
+          "id": "body_size",
+          "label": "t:sections.general_section_settings.label_for_body_size_setting",
+          "info": "t:sections.general_section_settings.info_for_body_size_setting",
+          "options": [
+            {
+              "value": "body0",
+              "label": "t:sections.general_section_settings.body_size_0_option"
+            },
+            {
+              "value": "body1",
+              "label": "t:sections.general_section_settings.body_size_1_option"
+            },
+            {
+              "value": "body2",
+              "label": "t:sections.general_section_settings.body_size_2_option"
+            },
+            {
+              "value": "body3",
+              "label": "t:sections.general_section_settings.body_size_3_option"
+            },
+            {
+              "value": "body4",
+              "label": "t:sections.general_section_settings.body_size_4_option"
+            },
+            {
+              "value": "body5",
+              "label": "t:sections.general_section_settings.body_size_5_option"
+            },
+            {
+              "value": "body6",
+              "label": "t:sections.general_section_settings.body_size_6_option"
+            }
+          ],
+          "default": "body3"
+        }
+      ],
+      "limit": 1
+    } 
+  ],
+  "presets": [
+    {
+      "name": "Custom Rich Text",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

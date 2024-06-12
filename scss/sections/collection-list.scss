@@ -13,6 +13,15 @@
         font-family: 'BrownStd-Bold';
     }
 }
+.text_heading{
+    @include use-text-style('heading-mob');
+    font-family: var(--secondary-font-family);
+    color: colors.$dark-blue;
+    @media(--sm){
+        @include use-text-style('heading-1');
+        font-family: 'BrownStd-Bold';
+    }
+}
 .view-btn.shop_all {
     color: colors.$dark-blue;
     font-size: typography.$body-alt-size;
