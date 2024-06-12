@@ -153,6 +153,9 @@
   height: 18px;
   text-align: center;
 }
+.contact__methods_icon img {
+  width: inherit;
+}
 .contact__methods__heading {
   color: #2f4775;
   font-size: 18px;
