@@ -52,7 +52,7 @@
         "text_bg": "#2f4775",
         "page_title": "Supplement Spotlight",
         "page_title_color": "#2f4775",
-        "decore_heading": true,
+        "decore_heading": false,
         "page_subtitle": "",
         "page_subtitle_color": "#2f4775",
         "enable_background_around_container": false,

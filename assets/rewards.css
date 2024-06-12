@@ -235,6 +235,13 @@
 .faq__container{
     row-gap: 42px;
 }
+.text_heading {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2f4775;
+    font-family: var(--secondary-font-family);
+}
 /* End: Heal+ Club, Points, Cards and Refer and Earn Sections */
 
 /* Begin: Media Query */
@@ -383,6 +390,9 @@
 }
 
 @media screen and (min-width: 768px) {
+    .text_heading{
+        font-size: 40px;
+    }
     .faq__content h5.h5 {
         font-size: 40px;
         line-height: 76.8px;

@@ -34,3 +34,6 @@
     line-height: 1.2;
   }
 }
+.ingredient_benefits_wrapper .ingredient_benefits_container .benefits_list .benefit img {
+  width: inherit;
+}

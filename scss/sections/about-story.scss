@@ -4,6 +4,15 @@
 @import 'Token';
 
 
+.text_heading{
+    @include use-text-style('heading-mob');
+    font-family: var(--secondary-font-family);
+    color: colors.$dark-blue;
+    @media(--sm){
+        @include use-text-style('heading-1');
+        font-family: 'BrownStd-Bold';
+    }
+}
 
 .our-story{
     .astory_wrp{

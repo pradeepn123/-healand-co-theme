@@ -24,6 +24,9 @@
                 @media(--sm){
                     @include use-text-style('body-alt');
                 }
+                img{
+                    width: inherit;
+                }
             }
         }
     }

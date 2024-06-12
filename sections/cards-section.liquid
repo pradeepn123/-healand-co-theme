@@ -3,7 +3,7 @@
 {% endif %}
 
 <div class="cards_section_container" style="background-color:{{section.settings.cards_section_bg}}">
-  <h3 class="decorated_heading">{{ section.settings.cards_section_header }}</h3>
+  <h3 class="text_heading">{{ section.settings.cards_section_header }}</h3>
   <div class="cards_section_content">
     {% for block in section.blocks %}
       {% if block.settings.card_title != blank and block.settings.card_text != blank %}
