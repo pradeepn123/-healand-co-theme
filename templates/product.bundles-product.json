@@ -466,7 +466,8 @@
       "disabled": true,
       "settings": {
         "section_bg_color": "#ec7662",
-        "section_heading": ""
+        "section_heading": "",
+        "heading_color": ""
       }
     },
     "edd01020-fd3e-4a56-bdef-3698127f931d": {
@@ -567,7 +568,7 @@
         "template--16187656929438__9c351037-cecc-436a-98df-4d0530b584e8-1685613412bb8254b3-1": {
           "type": "title",
           "settings": {
-            "title": "Get 20% off your first order",
+            "title": "get 20% off your first order",
             "color": "#ffffff",
             "heading_size": "h4"
           }
