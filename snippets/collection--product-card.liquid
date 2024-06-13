@@ -95,6 +95,9 @@
       <a
         class='product-card__link'
         href='{{ product.url }}'
+        {% if product.type == 'Bundle' %}
+          target="_blank"
+        {% endif %}
         aria-label='{{ product.title }}'
       ></a>
       {%- if images.size > 0 -%}
@@ -518,6 +521,9 @@
           <a
             class='product-card__title unstyled-link {% if product.metafields.custom.featured_tag == blank %} pro-heading-padding {% endif %}'
             href='{{ product.url }}'
+            {% if product.type == 'Bundle' %}
+              target="_blank"
+            {% endif %}
             aria-label='{{ product.title }}'
           >
             {{- product.title -}}
@@ -679,6 +685,9 @@
       <a
         class='product-card__link'
         href='#'
+        {% if product.type == 'Bundle' %}
+          target="_blank"
+        {% endif %}
         aria-label='{{ product.title }}'
       ></a>
 
@@ -748,6 +757,9 @@
           <a
             class='product-card__title unstyled-link'
             href='#'
+            {% if product.type == 'Bundle' %}
+              target="_blank"
+            {% endif %}
             aria-label='{{ product.title }}'
           >
             {{- 'cards.product_card.default_title' | t -}}
