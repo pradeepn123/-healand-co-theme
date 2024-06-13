@@ -542,7 +542,7 @@
         "section_spacing_top": 48,
         "section_spacing_bottom": 69,
         "section_layout": "carousel",
-        "title": "Products you might like",
+        "title": "products you might like",
         "heading_size": "h5",
         "alignment": "center",
         "product_recommendations_type": "auto",
