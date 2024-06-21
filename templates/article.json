@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -65,11 +74,7 @@
         "shop_all_title": "",
         "shop_all_url": "",
         "collection": "",
-        "featured_products": [
-          "quercetin-500mg",
-          "quercetin-bundle",
-          "the-essential-bundle"
-        ],
+        "featured_products": "{{ article.metafields.custom.featured_products.value }}",
         "img_ratio": "square",
         "product_card_align": "left",
         "cards_to_show": 16,
