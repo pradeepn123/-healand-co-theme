@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "featured-blog-posts": {
@@ -6,7 +15,7 @@
         "featured_post_9fQVtb": {
           "type": "featured_post",
           "settings": {
-            "article": "feature-posts\/know-why-switching-to-berberine-is-the-right-move",
+            "article": "news\/know-why-switching-to-berberine-is-the-right-move",
             "article_title_color": "#ffffff",
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff",
