@@ -4,7 +4,8 @@ import bundleTabsSection from "./bundleTabsSection";
 import hideRewards from "./hideRewards";
 import importCustomElements from "JsComponents/import-custom-elements";
 import readmore from "./readmore";
-import sectionScroll from './section-scroll'
+import sectionScroll from './section-scroll';
+import targetBlank from './target-blank';
 
 //config lazyload to default settings
 
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
     importCustomElements();
     readmore();
     sectionScroll();
+    targetBlank();
 })

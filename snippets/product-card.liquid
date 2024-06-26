@@ -72,9 +72,9 @@
       {% endif %}
     >
       <a
-        class='product-card__link'
+        class='product-card__link targetblank_only-mobile'
         href='{{ product.url }}'
-        {% if product.type == 'Bundle' %}
+        {% if request.page_type == 'article' %}
           target="_blank"
         {% endif %}
         aria-label='{{ product.title }}'
@@ -666,9 +666,9 @@
       {% endif %}
     >
       <a
-        class='product-card__link'
+        class='product-card__link targetblank_only-mobile'
         href='#'
-        {% if product.type == 'Bundle' %}
+        {% if request.page_type == 'article' %}
           target="_blank"
         {% endif %}
         aria-label='{{ product.title }}'
