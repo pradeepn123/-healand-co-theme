@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "35abde66-b33a-4178-b3ef-5bba319784ba": {
@@ -371,7 +380,7 @@
         "ee728319-72f2-4d6e-846c-85979a78983a": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/unveiling-the-magic-the-super-mushroom-complex-and-its-fantastical-benefits",
+            "article": "news\/the-spiritual-power-of-lions-mane",
             "title": "BLOG",
             "color_scheme": "white",
             "desktop_columns": 2,
