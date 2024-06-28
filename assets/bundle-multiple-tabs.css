@@ -59,23 +59,24 @@
   }
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names a.button.button-small {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
-  padding: 8px;
-  margin-top: 8px;
+  padding: 16px 8px;
+  width: 100%;
   -webkit-text-decoration: none;
   text-decoration: none;
-  border: 1px solid #2F4775;
-  border-radius: 4rem;
+  background-color: #2F4775;
+  color: #fff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   z-index: 9;
@@ -87,9 +88,8 @@
   transition: 0.2s;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names a.button.button-small .label-hidden {
-  max-width: 0;
-  opacity: 0;
-  font-size: 12px;
+  font-size: 16px;
+  font-family: var(--secondary-font-family);
   text-transform: none;
   text-transform: initial;
   white-space: nowrap;
@@ -97,8 +97,6 @@
   transition: 0.2s;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names a.button.button-small:hover .label-hidden {
-  max-width: 200px;
-  margin-left: 4px;
   opacity: 1;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .product_fixedTitle {
@@ -124,6 +122,9 @@
           align-items: center;
   background-color: white;
   padding: 14px;
+}
+.bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative.selected {
+  padding-bottom: 64px;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative.selected a.button.button-small {
   display: -webkit-inline-box;
@@ -257,6 +258,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media screen and (max-width: 375px) {
   .bundles_page_tabChains .pc_tabs_mobile .top_accordion {
@@ -275,10 +278,7 @@
       -ms-flex: 1 0 20%;
           flex: 1 0 20%;
 }
-.bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings {
-  overflow: hidden;
-}
-.bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings a.button.button-small {
+.bundles_page_tabChains .pc_tabs_mobile .top_accordion a.button.button-small {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -286,28 +286,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
-  padding: 6px 8px;
-  margin-top: 10px;
+  padding: 14px 8px;
+  width: 200%;
   -webkit-text-decoration: none;
   text-decoration: none;
-  border: 1px solid #2F4775;
-  border-radius: 4rem;
+  background-color: #2F4775;
+  color: #fff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   z-index: 9;
   display: none;
+  margin: 0px -16px 0 -12px;
 }
-.bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings a.button.button-small .label-hidden {
-  font-size: 13px;
+.bundles_page_tabChains .pc_tabs_mobile .top_accordion a.button.button-small .label-hidden {
+  font-size: 14px;
+  font-family: var(--secondary-font-family);
   text-transform: none;
   text-transform: initial;
   white-space: nowrap;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+.bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings {
+  overflow: hidden;
 }
 .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_subheading {
   font-family: "proximanova-regular";
