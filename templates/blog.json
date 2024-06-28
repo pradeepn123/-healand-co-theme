@@ -15,11 +15,20 @@
         "featured_post_9fQVtb": {
           "type": "featured_post",
           "settings": {
-            "article": "news\/know-why-switching-to-berberine-is-the-right-move",
+            "article": "news\/the-spiritual-power-of-lions-mane",
             "article_title_color": "#ffffff",
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff",
-            "image": "shopify:\/\/shop_images\/Berberine.jpg"
+            "image": "shopify:\/\/shop_images\/lion_s_mane_blog.jpg"
+          }
+        },
+        "featured_post_XBaALj": {
+          "type": "featured_post",
+          "settings": {
+            "article": "news\/know-why-switching-to-berberine-is-the-right-move",
+            "article_title_color": "#ffffff",
+            "article_text_color": "#ffffff",
+            "read_more_text_color": ""
           }
         },
         "featured_post_pcYcen": {
@@ -40,12 +49,23 @@
             "article_text_color": "#ffffff",
             "read_more_text_color": "#ffffff"
           }
+        },
+        "featured_post_Ghfthj": {
+          "type": "featured_post",
+          "settings": {
+            "article": "",
+            "article_title_color": "",
+            "article_text_color": "",
+            "read_more_text_color": ""
+          }
         }
       },
       "block_order": [
         "featured_post_9fQVtb",
+        "featured_post_XBaALj",
         "featured_post_pcYcen",
-        "featured_post_F4XAxa"
+        "featured_post_F4XAxa",
+        "featured_post_Ghfthj"
       ],
       "settings": {
         "color_scheme": "default",
