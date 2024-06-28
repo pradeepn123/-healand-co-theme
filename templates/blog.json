@@ -40,32 +40,12 @@
             "read_more_text_color": "#ffffff",
             "image": "shopify:\/\/shop_images\/AdobeStock_274212271.jpg"
           }
-        },
-        "featured_post_F4XAxa": {
-          "type": "featured_post",
-          "settings": {
-            "article": "news\/the-science-behind-napping",
-            "article_title_color": "#ffffff",
-            "article_text_color": "#ffffff",
-            "read_more_text_color": "#ffffff"
-          }
-        },
-        "featured_post_Ghfthj": {
-          "type": "featured_post",
-          "settings": {
-            "article": "",
-            "article_title_color": "",
-            "article_text_color": "",
-            "read_more_text_color": ""
-          }
         }
       },
       "block_order": [
         "featured_post_9fQVtb",
         "featured_post_XBaALj",
-        "featured_post_pcYcen",
-        "featured_post_F4XAxa",
-        "featured_post_Ghfthj"
+        "featured_post_pcYcen"
       ],
       "settings": {
         "color_scheme": "default",
