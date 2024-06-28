@@ -1230,6 +1230,9 @@
             function n() {
                 var e;
                 return h(this, n), v(E(e = t.call(this)), "_handleTabNameClick", (function(t) {
+                    if(t.target.closest('a.button.button-small')){
+                        return
+                    }
                     t.preventDefault();
                     var n = t.target;
                     n.dataset.id && e.selectTab(n.dataset.id)
@@ -3109,6 +3112,9 @@
             function n() {
                 var e;
                 return h(this, n), v(E(e = t.apply(this, arguments)), "_handleButtonClick", (function(t) {
+                    if(t.target.closest('a.button.button-small')){
+                        return
+                    }
                     t.preventDefault(), e.update()
                 })), v(E(e), "_handleKeyDown", (function(t) {
                     Q(t.key || t.keyCode) && (t.preventDefault(), e.update())

@@ -58,7 +58,9 @@
               {% assign loopingFixedValues = eachProduct.metafields.custom.powerful_benefits_extra_info.value %}
               {% assign custom_icon_image = loopingFixedValues.featured_image | default: eachProduct.featured_image %}
   
-              <div class="content_parent content_parent_position_relative">
+              <div class="content_parent content_parent_position_relative {% if forloop.index == 1 %}selected{% endif %}" data-tabs-name
+                data-id="{{ forloop.index }}"
+                tabindex="0">
                 <img
                   class="product-details__tab-name-icon lazyload"
                   {% render 'image-attributes', image: custom_icon_image, size: 'medium' %}
@@ -66,6 +68,10 @@
                 <span class="tab_Heading_Content">
                   <p class="subheading">{{ loopingFixedValues.subheading }}</p>
                   <p class="featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>
+                  <a class="button button-small {% if forloop.index == 1 %}selected{% endif %}" target="_blank" rel="noopener noreferrer" href="{{loopingFixedValues.url | default: eachProduct.url }}">
+                    {%- render 'icon-pack', icon: 'right-cross-arrow', class: 'right-cross-arrow', icon_style: icon_style -%}
+                    <span class="label-hidden">View product</span>
+                  </a>
                 </span>
                 <div
                   data-tabs-name
@@ -193,6 +199,10 @@
                     {{ eachProduct.metafields.custom.powerful_benefits_extra_info.value.subheading }}
                   </p>
                   <p class="mobile_accordion_featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>
+                  <a class="button button-small" target="_blank" rel="noopener noreferrer" href="{{loopingFixedValues.url | default: eachProduct.url }}">
+                    {%- render 'icon-pack', icon: 'right-cross-arrow', class: 'right-cross-arrow', icon_style: icon_style -%}
+                    <span class="label-hidden">View product</span>
+                  </a>
                 </div>
                 <div class="accordeon_svg_icon">
                   {%- render 'icon', icon_name: 'arrow-up', class: 'arrow-pointing-up' %}
