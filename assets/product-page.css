@@ -115,6 +115,7 @@
 }
 .product__info .product_quantity_button .product-quantity__wrap .quantity .quantity__input {
   background: #fff;
+  -moz-appearance: textfield;
 }
 .product__info .product_quantity_button .product-quantity__wrap .quantity .quantity__btn {
   background: #2F4775;

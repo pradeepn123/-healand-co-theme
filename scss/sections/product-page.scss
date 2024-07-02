@@ -86,6 +86,7 @@
             .quantity{
                 .quantity__input{
                     background: colors.$white;
+                    -moz-appearance: textfield;
                 }
                 .quantity__btn{
                     background: colors.$dark-blue;
