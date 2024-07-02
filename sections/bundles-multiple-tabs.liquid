@@ -61,24 +61,27 @@
               <div class="content_parent content_parent_position_relative {% if forloop.index == 1 %}selected{% endif %}" data-tabs-name
                 data-id="{{ forloop.index }}"
                 tabindex="0">
-                <img
-                  class="product-details__tab-name-icon lazyload"
-                  {% render 'image-attributes', image: custom_icon_image, size: 'medium' %}
-                >
-                <span class="tab_Heading_Content">
-                  <p class="subheading">{{ loopingFixedValues.subheading }}</p>
-                  <p class="featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>                  
-                </span>
-                <a class="button button-small {% if forloop.index == 1 %}selected{% endif %}" target="_blank" rel="noopener noreferrer" href="{{loopingFixedValues.url | default: eachProduct.url }}">
-                  <span class="label-hidden">View product</span>
-                  {%- render 'icon-pack', icon: 'right-cross-arrow', class: 'right-cross-arrow', icon_style: icon_style -%}
-                </a>
-                <div
-                  data-tabs-name
-                  class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
-                  data-id="{{ forloop.index }}"
-                  tabindex="0"
-                ></div>
+                  <div class="content_parent_position_relative_inner">
+                    <img
+                      class="product-details__tab-name-icon lazyload"
+                      {% render 'image-attributes', image: custom_icon_image, size: 'medium' %}
+                    >
+                    <span class="tab_Heading_Content">
+                      <p class="subheading">{{ loopingFixedValues.subheading }}</p>
+                      <p class="featuredTag">{{ eachProduct.metafields.custom.featured_tag }}</p>                  
+                    </span>
+                  </div>
+                  <a class="button button-small {% if forloop.index == 1 %}selected{% endif %}" target="_blank" rel="noopener noreferrer" href="{{loopingFixedValues.url | default: eachProduct.url }}">
+                    <span class="label-hidden">View product</span>
+                    {%- render 'icon-pack', icon: 'right-cross-arrow', class: 'right-cross-arrow', icon_style: icon_style -%}
+                  </a>
+                  <div
+                    data-tabs-name
+                    class="tab-name product-details__tab-name {% if forloop.index == 1 %}selected{% endif %}"
+                    data-id="{{ forloop.index }}"
+                    tabindex="0"
+                  ></div>
+                
               </div>
             {% endfor %}
           </div>

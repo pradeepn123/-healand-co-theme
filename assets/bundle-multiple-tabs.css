@@ -59,8 +59,7 @@
   }
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names a.button.button-small {
-  position: absolute;
-  bottom: 0;
+  grid-column: 1/4;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -81,6 +80,7 @@
   transition: 0.2s;
   z-index: 9;
   display: none;
+  position: relative;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names a.button.button-small .right-cross-arrow {
   font-size: 24px;
@@ -115,21 +115,23 @@
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative {
   position: relative;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: white;
-  padding: 14px;
-}
-.bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative.selected {
-  padding-bottom: 64px;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative.selected a.button.button-small {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+}
+.bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative .content_parent_position_relative_inner {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative .product-details__tab-name.selected {
   border: 2px solid #2F4775 !important;
@@ -151,16 +153,17 @@
   grid-area: 1/2/3/3;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative .tab_Heading_Content .subheading {
+  font-weight: 700;
   font-family: "proximanova-regular";
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
-  font-family: var(--secondary-alt-font-family);
+  font-family: var(--primary-semibold-font-family);
   color: #2F4775;
   text-transform: lowercase;
 }
 .bundles_page_tabChains .product-details__container .pc_tabs_dekstop_parent tabs-component .product-details__tab-names .content_parent_position_relative .tab_Heading_Content .featuredTag {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
   color: #fff !important;
   background: #2F4775;
@@ -238,6 +241,9 @@
   display: -webkit-inline-box !important;
   display: -ms-inline-flexbox !important;
   display: inline-flex !important;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
 }
 .bundles_page_tabChains .pc_tabs_mobile .product_fixedTitle_mobile {
   font-family: "proximanova-regular";
@@ -263,6 +269,7 @@
 }
 @media screen and (max-width: 375px) {
   .bundles_page_tabChains .pc_tabs_mobile .top_accordion {
+    row-gap: 14px;
     -webkit-column-gap: 0;
        -moz-column-gap: 0;
             column-gap: 0;
@@ -273,7 +280,7 @@
   height: 103px;
   -o-object-fit: contain;
      object-fit: contain;
-  padding: 12px;
+  padding: 4px;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 20%;
           flex: 1 0 20%;
@@ -322,9 +329,10 @@
   color: #2F4775;
   font-family: var(--primary-semibold-font-family);
   text-transform: lowercase;
+  font-weight: 700;
 }
 .bundles_page_tabChains .pc_tabs_mobile .top_accordion .mobile_accordion_headings .mobile_accordion_featuredTag {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
   color: #fff !important;
   background: #2F4775;

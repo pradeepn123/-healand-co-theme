@@ -37,8 +37,9 @@
                         margin-right: auto;
                     }
                     a.button.button-small {
-                        position: absolute;
-                        bottom: 0;
+                        // position: absolute;
+                        // bottom: 0;
+                        grid-column: 1/4;
                         display: inline-flex;
                         align-items: center;
                         justify-content: center;
@@ -51,6 +52,7 @@
                         transition: .2s;     
                         z-index: 9;                   
                         display: none;
+                        position: relative;
                         .right-cross-arrow {
                             font-size: 24px;
                             transition: .2s;
@@ -78,17 +80,20 @@
                         }                        
                     }
                     .content_parent_position_relative{
-                        position: relative;
-                        display: grid;
-                        grid-template-columns: 30% 70%;
-                        align-items: center;
-                        background-color: white;
-                        padding: 14px;
+                        position: relative;                        
+                        background-color: white;                        
                         &.selected{
-                            padding-bottom: 64px;
+                            // padding-bottom: 64px;
                             a.button.button-small {
                                 display: inline-flex;
+                                column-gap: 8px;
                             }
+                        }
+                        & .content_parent_position_relative_inner{
+                            padding: 14px;
+                            display: grid;
+                            grid-template-columns: 30% 70%;
+                            align-items: center;
                         }
                         .product-details__tab-name.selected{
                             border: 2px solid colors.$dark-blue !important;
@@ -108,13 +113,14 @@
                             word-wrap: break-word;
                             grid-area: 1/2/3/3;
                             .subheading{
+                                font-weight: 700;
                                 @include use-text-style('body-alt');
-                                font-family: var(--secondary-alt-font-family);
+                                font-family: var(--primary-semibold-font-family);
                                 color: colors.$dark-blue;
                                 text-transform: lowercase;
                             }
                             .featuredTag{
-                                font-weight: 700;
+                                font-weight: 400;
                                 font-size: 14px;
                                 color: colors.$white !important;
                                 background: colors.$dark-blue;
@@ -182,6 +188,7 @@
         .top_accordion_component[data-aria-expanded=true]{
             a.button.button-small {
                 display: inline-flex !important;
+                column-gap: 8px;
             }
         }
         .product_fixedTitle_mobile{
@@ -198,13 +205,14 @@
             align-items: center;
             flex-wrap: wrap;
             @media screen and (max-width: 375px) {
+                row-gap: 14px;
                 column-gap: 0;
             }
             img{
                 width: 76px;
                 height: 103px;
                 object-fit: contain;
-                padding: 12px;
+                padding: 4px;
                 flex: 1 0 20%;
             }
             a.button.button-small {
@@ -237,9 +245,10 @@
                     color: colors.$dark-blue;
                     font-family: var(--primary-semibold-font-family);
                     text-transform: lowercase;
+                    font-weight: 700;
                 }
                 .mobile_accordion_featuredTag{
-                    font-weight: 700;
+                    font-weight: 400;
                     font-size: 14px;
                     color: colors.$white !important;
                     background: colors.$dark-blue;
